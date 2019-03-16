@@ -1,0 +1,237 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		PROPRIETARY DISCLAIMER
+		__________________________________________________________________________________
+		2019 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		AUTHOR: https://7daystodie.com/forums/member.php?153479-Devrix
+		MOD LINK: https://7daystodie.com/forums/showthread.php?109145-Sorcery
+		TFP POLICY: https://7daystodie.com/forums/showthread.php?59817-TFP-Official-Modding-Forum-Policy
+		__________________________________________________________________________________
+		NOTICE:  All digital works, ideas, concepts and functionality contained herein, and made possible by the
+		"Sorcery Mod", is the sole digital proprietary property of mod author DEVRIX. Ownership and equal
+		rights are hereby, irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith. 
+		
+		USAGE:  This mod, and the digital works within, may be downloaded and used by players of 
+		the 7 Days to Die community with no required royalties. By doing so, users of the mod understand 
+		and accept full and sole responsibility and liability of using the mod. Author, nor The Fun Pimps, shall
+		be held responsible or liable for any possible conflict(s) as a direct or indirect result of using this mod.
+		
+		REDISTRIBUTION: The mod, and the digital works of, may be redistributed within the 7 Days to Die 
+		community. Conditions of redistribution require this notice to remain in full, unmodified, and a direct 
+		link, with credit stated, to the original mod and author. To redistribute this mod altered in any way, 
+		it is requested that your alterations to the mod are stated clearly and precisely from that of the original.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their hard
+		work and ongoing dedication to building and improving an awesome game that fuels the passion and
+		drives the creation of this mod.
+		__________________________________________________________________________________-->
+		
+	<append xpath="/quests">
+	
+		<!-- SORCERY INTRO: THE AWAKENING -->
+		<!-- INTRO: 1/5 /> -->
+		<quest id="quest_SorceryIntro">
+			<property name="group_name" value="Sorcery, The Awakening" />
+			<property name="name" value="Sorcery, The Awakening 1/5" />
+			<property name="subtitle" value="Awaken Fire Essence" />
+			<property name="description" value="Awaken Fire Essence by learning [Essence Mastery] found within the Sorcery skill tree. Only by mastering Essence can you sense and harvest it in the very earth around you. Let's start with Fire, shall we? Although it can be discovered in Trees and Boulders, Fire Essence is best found in The Burnt Forest, Coal and Oil Shale." />
+			<property name="icon" value="ui_game_symbol_hand" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="easy"/>
+			<property name="offer" value="Survivor,
+			There's little time to explain, so listen carefully.
+			You've noticed it by now, have you not?  The world is... different. No, I'm not talking about the animated corpse or vomit spewing hellspawn. There's something much worse on the horizon. The first blood moon... that's when it was discovered. Essence. The Elders believe Essence to be life and creation itself. Whether or not you 'buy into this bullshit', you won't survive much longer as a mundane. Take this and we'll meet again.  Unknown" />
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false" />
+			
+			<action type="TrackQuest" />
+
+			<objective type="FetchKeep" id="resourceEssenceFire" value="1" phase="1" />
+			<objective type="FetchKeep" id="resourceEssenceFire" value="50" phase="2" />
+
+			<reward type="Exp" value="777" />
+			<reward type="SkillPoints" value="1" />
+			<reward type="Quest" id="quest_SorceryIntro2" />
+		</quest>
+		
+		<!-- INTRO: 2/5 /> -->
+		<quest id="quest_SorceryIntro2">
+			<property name="group_name" value="Sorcery, The Awakening" />
+			<property name="name" value="Sorcery, The Awakening 2/5" />
+			<property name="subtitle" value="Craft a Fire Conjure" />
+			<property name="description" value="Let's put this Fire Essence to work now, shall we? To awaken and unlock the full power of Fire, one must craft a [Fire Conjure] and feed it [Fire Essence]. By performing this transmutation, a Master Fire Sorcerer can invoke Fire in its raw form to craft and perform Fire Sorceries of... unspeakable devastation. Start your training by learning [Fire Mastery] to unlock the crafting of a [Fire Conjure]." />
+			<property name="icon" value="ui_game_symbol_fire" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="easy"/>
+			<property name="offer" value="Survivor,
+			There's little time to explain, so listen carefully.
+			You've noticed it by now, have you not?  The world is... different. No, I'm not talking about the animated corpse or vomit spewing hellspawn. There's something much worse on the horizon. The first blood moon... that's when it was discovered. Essence. The Elders believe Essence to be life and creation itself. Whether or not you 'buy into this bullshit', you won't survive much longer as a mundane. Take this and we'll meet again.  Unknown" />
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false" />
+			
+			<action type="TrackQuest" />
+
+			<objective type="FetchKeep" id="resourceEssenceFire" value="50" phase="1" />
+			<objective type="FetchKeep" id="resourceCoal" value="100" phase="1" />
+			<objective type="FetchKeep" id="resourceRockSmall" value="300" phase="1" />
+			<objective type="FetchKeep" id="resourceClayLump" value="200" phase="1" />
+			
+			<objective type="Craft">
+				<property name="phase" value="2" />
+				<property name="item" value="conjureFire" />
+				<property name="count" value="1" />
+			</objective>
+
+			<objective type="BlockPlace" id="conjureFire" value="1" phase="2" />
+			
+			<reward type="Exp" value="777" />
+			<reward type="SkillPoints" value="1" />
+			<reward type="Quest" id="quest_SorceryIntro3" />
+		</quest>
+		
+		<!-- INTRO: 3/5 /> -->
+		<quest id="quest_SorceryIntro3">
+			<property name="group_name" value="Sorcery, The Awakening" />
+			<property name="name" value="Sorcery, The Awakening 3/5" />
+			<property name="subtitle" value="Craft Your First Fire Spell" />
+			<property name="description" value="Very good, now we're cooking with Essence! Using your [Fire Conjure], you can Transmute the various Fire Essences found throughout the world into their raw form... Fire. This may sound easy enough, but there's a reason The Elders call upon you. Invoking and conjuring Fire is a near impossible task... it takes decades of training, luck and patience. Unfortunately, we don't have such luxury. Now, place the [Fire Essence] into your [Fire Conjure] and Transmute it into [Fire]. Then, craft your first [Fire Spell]. You'll need to learn how to do so first." />
+			<property name="icon" value="ui_game_symbol_fire" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="easy"/>
+			<property name="offer" value="Survivor,
+			There's little time to explain, so listen carefully.
+			You've noticed it by now, have you not?  The world is... different. No, I'm not talking about the animated corpse or vomit spewing hellspawn. There's something much worse on the horizon. The first blood moon... that's when it was discovered. Essence. The Elders believe Essence to be life and creation itself. Whether or not you 'buy into this bullshit', you won't survive much longer as a mundane. Take this and we'll meet again.  Unknown" />
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false" />
+			
+			<action type="TrackQuest" />
+
+			<objective type="FetchKeep" id="spellFireball" value="1" phase="1" />
+			<!-- <objective type="Craft">
+				<property name="phase" value="1" />
+				<property name="item" value="spellFireball" />
+				<property name="count" value="1" />
+			</objective> -->
+			
+			<reward type="Exp" value="777" />
+			<reward type="SkillPoints" value="1" />
+			<reward type="Quest" id="quest_SorceryIntro4" />
+		</quest>
+		
+		<!-- INTRO: 4/5 /> -->
+		<quest id="quest_SorceryIntro4">
+			<property name="group_name" value="Sorcery, The Awakening" />
+			<property name="name" value="Sorcery, The Awakening 4/5" />
+			<property name="subtitle" value="Craft Your First Fire Spellcast" />
+			<property name="description" value="Very good. By now, you're becoming familiar with the importance of Essence. Transmuting Fire is one thing, but how to wield [Fire] itself... ah, now THAT is the question! To cast Fire Spells, they must be channeled through a [Fire Spellcast]. You can craft one now through your Fire Conjure by learning [Fire Spellcast]. Let's do this now so you can roast these abominations with your [Fire Spell]!" />
+			<property name="icon" value="ui_game_symbol_fire" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="easy"/>
+			<property name="offer" value="Survivor,
+			There's little time to explain, so listen carefully.
+			You've noticed it by now, have you not?  The world is... different. No, I'm not talking about the animated corpse or vomit spewing hellspawn. There's something much worse on the horizon. The first blood moon... that's when it was discovered. Essence. The Elders believe Essence to be life and creation itself. Whether or not you 'buy into this bullshit', you won't survive much longer as a mundane. Take this and we'll meet again.  Unknown" />
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false" />
+			
+			<action type="TrackQuest" />
+
+			<objective type="FetchKeep" id="spellcastFire" value="1" phase="1" />
+			<!-- <objective type="Craft">
+				<property name="phase" value="1" />
+				<property name="item" value="spellcastFire" />
+				<property name="count" value="1" />
+			</objective> -->
+			
+			<reward type="Exp" value="777" />
+			<reward type="SkillPoints" value="1" />
+			<reward type="Quest" id="quest_SorceryIntro5" />
+		</quest>		
+		
+		<!-- INTRO: 5/5 /> -->
+		<quest id="quest_SorceryIntro5">
+			<property name="group_name" value="Sorcery, The Awakening" />
+			<property name="name" value="Sorcery, The Awakening 5/5" />
+			<property name="subtitle" value="Sorcerer Initiation" />
+			<property name="description" value="The time has come, Survivor. Let's see if The Elders were right about you. For your sake, I sure as hell hope so. I've tracked down a couple lesser hellspawns for you to incinerate... further, with your [Fire Spell]. What takes most a lifetime to even come close to achieving, you must do in a single day. Be well prepared for what lies ahead, Survivor. It's all or nothing now, after all... good luck!" />
+			<property name="icon" value="ui_game_symbol_fire" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="normal"/>
+			<property name="offer" value="Survivor,
+			There's little time to explain, so listen carefully.
+			You've noticed it by now, have you not?  The world is... different. No, I'm not talking about the animated corpse or vomit spewing hellspawn. There's something much worse on the horizon. The first blood moon... that's when it was discovered. Essence. The Elders believe Essence to be life and creation itself. Whether or not you 'buy into this bullshit', you won't survive much longer as a mundane. Take this and we'll meet again.  Unknown" />
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false" />
+			
+			<action type="TrackQuest" />
+
+			<objective type="FetchKeep" id="spellFireball" value="20" phase="1" />
+			<!-- <objective type="Craft">
+				<property name="phase" value="1" />
+				<property name="item" value="spellFireball" />
+				<property name="count" value="20" />
+			</objective> -->
+			
+			<!-- <objective type="RandomGoto" value="80-100" phase="2">
+				<property name="completion_distance" value="50" />
+			</objective>
+
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create" />
+				<property name="phase" value="3" />
+			</objective>
+			
+			<action type="SpawnEnemy" id="zombieBurnt" value="2" phase="4" />
+			<objective type="ZombieKill" id="zombieBurnt" value="2" phase="4" /> -->
+			
+			<!-- <requirement type="Holding" id="spellcastFire" phase="4" /> -->
+			<!-- phase="4" -->
+			
+			<reward type="Exp" value="777" />
+			<reward type="SkillPoints" value="1" chainreward="true" />
+			<!-- <reward type="Quest" id="challenge_SorcererInitiation" /> -->
+		</quest>
+		
+		<!-- CHALLENGES -->
+		<quest id="challenge_SorcererInitiation">
+			<property name="group_name" value="Sorcery, The Awakening" />
+			<property name="name" value="Sorcery, Trial of Fire" />
+			<property name="subtitle" value="Use Fire to Kill Lesser Hellspawn" />
+			<property name="description" value="The time has come, Survivor. Let's see if The Elders were right about you. For your sake, I sure as hell hope so. I've tracked down a couple lesser hellspawns for you to incinerate... further, with your [Fire Spell]. What takes most a lifetime to even come close to achieving, you must do in a single day. Be well prepared for what lies ahead, Survivor. It's all or nothing now, after all... good luck!" />
+			<property name="icon" value="ui_game_symbol_fire" />
+			<property name="category_key" value="challenge" />
+			<property name="difficulty" value="normal"/>
+			<property name="offer" value="Survivor,
+			There's little time to explain, so listen carefully.
+			You've noticed it by now, have you not?  The world is... different. No, I'm not talking about the animated corpse or vomit spewing hellspawn. There's something much worse on the horizon. The first blood moon... that's when it was discovered. Essence. The Elders believe Essence to be life and creation itself. Whether or not you 'buy into this bullshit', you won't survive much longer as a mundane. Take this and we'll meet again.  Unknown" />
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false" />
+			
+			<objective type="RandomGoto" value="80-100" phase="1">
+				<property name="completion_distance" value="50" />
+			</objective>
+
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create" />
+				<property name="phase" value="2" />
+			</objective>
+			
+			<action type="SpawnEnemy" id="zombieBurnt" value="3" phase="3" />
+			<objective type="ZombieKill" id="zombieBurnt" value="3" phase="3" />
+			
+	<!-- <requirement type="Holding" id="spellcastFire" phase="3" /> -->
+			
+			<!-- <requirement type="Group" value="OR" phase="3" >
+				<requirement type="Buff" id="buffSorceryWieldFire" />
+				<requirement type="Buff" id="buffSorceryWieldFire" />
+			</requirement> -->
+			
+			<reward type="Exp" value="777" />
+			<reward type="SkillPoints" value="1" />
+			<!-- <reward type="Item" id="resourceEssenceFire" value="1" />
+			<reward type="Quest" id="quest_SorceryIntro4" /> -->
+		</quest>		
+		
+	</append> 	
+</Sorcery>

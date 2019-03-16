@@ -1,0 +1,2232 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		PROPRIETARY DISCLAIMER
+		__________________________________________________________________________________
+		2019 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		AUTHOR: https://7daystodie.com/forums/member.php?153479-Devrix
+		MOD LINK: https://7daystodie.com/forums/showthread.php?109145-Sorcery
+		TFP POLICY: https://7daystodie.com/forums/showthread.php?59817-TFP-Official-Modding-Forum-Policy
+		__________________________________________________________________________________
+		NOTICE:  All digital works, ideas, concepts and functionality contained herein, and made possible by the
+		"Sorcery Mod", is the sole digital proprietary property of mod author DEVRIX. Ownership and equal
+		rights are hereby, irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith. 
+		
+		USAGE:  This mod, and the digital works within, may be downloaded and used by players of 
+		the 7 Days to Die community with no required royalties. By doing so, users of the mod understand 
+		and accept full and sole responsibility and liability of using the mod. Author, nor The Fun Pimps, shall
+		be held responsible or liable for any possible conflict(s) as a direct or indirect result of using this mod.
+		
+		REDISTRIBUTION: The mod, and the digital works of, may be redistributed within the 7 Days to Die 
+		community. Conditions of redistribution require this notice to remain in full, unmodified, and a direct 
+		link, with credit stated, to the original mod and author. To redistribute this mod altered in any way, 
+		it is requested that your alterations to the mod are stated clearly and precisely from that of the original.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their hard
+		work and ongoing dedication to building and improving an awesome game that fuels the passion and
+		drives the creation of this mod.
+		__________________________________________________________________________________-->
+		
+	<append xpath="/item_modifiers" >
+	
+		<!-- Sorcery Mods AKA Runes: SPELLCAST -->
+		<!-- Runes: FIRE -->
+		<!-- DEV -->
+		<item_modifier name="modFireCauterizeTEST" installable_tags="spellcastFire" type="attachment" rarity="0.1">
+			<property name="Meshfile" value="#@modfolder:Resources/runeCauterize.unity3d?runeCauterize"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/runeCauterize.unity3d?runeCauterize"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/runeCauterize.unity3d?runeCauterize"/>
+			<property name="HoldType" value="21"/>
+			<!-- <property name="DropScale" value="3"/> -->
+			<!-- <property name="HoldType" value="45"/> -->
+			<property name="Stacknumber" value="1"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<effect_group tiered="false">
+				<!-- band: test 2nd-->
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/modArmBand3.unity3d?modArmBand3" parent_transform="Attachments/Mod1" local_offset="-1.3,-0.65,-2.7" local_rotation="-23,23,0"/>				
+				<!-- band -->
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/modArmBand2.unity3d?modArmBand2" parent_transform="Attachments/Mod2" local_offset="-1.37,-0.737,-3" local_rotation="-17,16.6,32"/>
+				<!-- band: thick-->
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/modArmBand.unity3d?modArmBand" parent_transform="Attachments/Mod3" local_offset="-1.5,-0.88,-3.4" local_rotation="-16.6,16.6,20"/>
+				
+				<!-- RUNEWORD, VERTICAL-->
+				<!-- <triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/modArmRune.unity3d?modArmRune" parent_transform="Attachments/Mod4" local_offset="-2.2,-0.57,-5.1" local_rotation="-10,-260,0" /> -->
+				
+				<!-- <triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/runeCauterize.unity3d?runeCauterize" parent_transform="Attachments/Mod4" local_offset="-1.3,-0.6,-4.2" local_rotation="-10,-78,15" /> -->
+				<!-- <triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/runeCauterize.unity3d?runeCauterize" parent_transform="Attachments/Mod3" local_offset="-1.3,-0.6,-4.2" local_rotation="-10,-78,15" /> -->
+				
+				<!-- <triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/runeCauterize2.unity3d?runeCauterize2" parent_transform="Attachments/Mod2" local_offset="-1.15,-0.55,-2" local_rotation="-20,25,0"/> -->
+				<!-- <triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/runeCauterize2.unity3d?runeCauterize2" parent_transform="Attachments/Mod5" local_offset="-1.56,-0.98,-3.5" local_rotation="-20,20,40"/> -->
+			</effect_group>
+		</item_modifier>
+		<!-- DEV -->
+		<item_modifier name="runeFireCauterizeMend" installable_tags="spellcastFire" type="attachment" rarity="0.1">
+			<property name="Meshfile" value="#@modfolder:Resources/modArmBand.unity3d?modArmBand"/>
+			<property name="HoldType" value="21"/>
+			<property name="DropScale" value="0.2"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<effect_group tiered="false">
+				<!-- band: thick-->
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/modArmBand.unity3d?modArmBand" parent_transform="Attachments/Mod3" local_offset="-1.5,-0.88,-3.4" local_rotation="-16.6,16.6,20"/>
+			</effect_group>
+		</item_modifier>
+		
+		
+		
+		
+		
+		<!-- SORCERY ARMOR RUNES -->
+		<!-- FIRE SKIN -->
+		<item_modifier name="runeArmor_fireskin" installable_tags="sorceryArmor" modifier_tags="runeArmor_fireskin" type="attachment" rarity="0.4">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="2"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="EconomicValue" value="1400"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_fireskinDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="FIRE SKIN" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+					<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffRune_fireskin" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeArmor_fireskin2" installable_tags="sorceryArmor" modifier_tags="runeArmor_fireskin2" type="attachment" rarity="0.2">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="4"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="1600"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_fireskinDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="FIRE SKIN: II" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+					<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffRune_fireskin" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeArmor_fireskin3" installable_tags="sorceryArmor" modifier_tags="runeArmor_fireskin3" type="attachment" rarity="0.05">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="8"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="1800"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_fireskinDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="FIRE SKIN: III" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+					<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffRune_fireskin" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeArmor_fireskin4" installable_tags="sorceryArmor" modifier_tags="runeArmor_fireskin4" type="attachment" rarity="0.01">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="12"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="2000"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_fireskinDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="FIRE SKIN: IV" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+					<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffRune_fireskin" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeArmor_fireskin5" installable_tags="sorceryArmor" modifier_tags="runeArmor_fireskin5" type="attachment" rarity="0.001">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="16"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="2500"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_fireskinDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="FIRE SKIN: V" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+					<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffRune_fireskin" />
+				</effect_group>
+		</item_modifier>
+		
+		
+		<!-- ICE SKIN -->
+		<item_modifier name="runeArmor_iceskin" installable_tags="sorceryArmor" modifier_tags="runeArmor_iceskin" type="attachment" rarity="0.4">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="2"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1400"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_iceskinDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="ICE SKIN" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+					<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffRune_iceskin" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeArmor_iceskin2" installable_tags="sorceryArmor" modifier_tags="runeArmor_iceskin2" type="attachment" rarity="0.2">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="4"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="1600"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_iceskinDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="ICE SKIN: II" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+					<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffRune_iceskin" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeArmor_iceskin3" installable_tags="sorceryArmor" modifier_tags="runeArmor_iceskin3" type="attachment" rarity="0.05">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="8"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="1800"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_iceskinDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="ICE SKIN: III" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+					<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffRune_iceskin" />
+				</effect_group>
+		</item_modifier>
+
+		<item_modifier name="runeArmor_iceskin4" installable_tags="sorceryArmor" modifier_tags="runeArmor_iceskin4" type="attachment" rarity="0.01">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="12"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="2000"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_iceskinDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="ICE SKIN: IV" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+					<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffRune_iceskin" />
+				</effect_group>
+		</item_modifier>
+
+		<item_modifier name="runeArmor_iceskin5" installable_tags="sorceryArmor" modifier_tags="runeArmor_iceskin5" type="attachment" rarity="0.001">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="16"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="2500"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_iceskinDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="ICE SKIN: V" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+					<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffRune_iceskin" />
+				</effect_group>
+		</item_modifier>
+
+
+		<!-- FIRE NOVA -->
+		<item_modifier name="runeArmor_firenova" installable_tags="sorceryArmorEpic,sorceryArmorLegendary,sorceryArmorTranscendent" modifier_tags="runeArmor_firenova" type="attachment" rarity="0.4">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire2"/>
+			<property name="Weight" value="2"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="2000"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_firenovaDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="FIRE NOVA" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="4"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRune_firenova" />
+				</effect_group>
+		</item_modifier>
+
+		<item_modifier name="runeArmor_firenova2" installable_tags="sorceryArmorEpic,sorceryArmorLegendary,sorceryArmorTranscendent" modifier_tags="runeArmor_firenova2" type="attachment" rarity="0.2">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire2"/>
+			<property name="Weight" value="4"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2300"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_firenovaDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="FIRE NOVA: II" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="8"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRune_firenova" />
+				</effect_group>
+		</item_modifier>		
+		
+		<item_modifier name="runeArmor_firenova3" installable_tags="sorceryArmorEpic,sorceryArmorLegendary,sorceryArmorTranscendent" modifier_tags="runeArmor_firenova3" type="attachment" rarity="0.05">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire2"/>
+			<property name="Weight" value="8"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2600"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_firenovaDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="FIRE NOVA: III" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="12"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRune_firenova" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeArmor_firenova4" installable_tags="sorceryArmorEpic,sorceryArmorLegendary,sorceryArmorTranscendent" modifier_tags="runeArmor_firenova4" type="attachment" rarity="0.01">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire2"/>
+			<property name="Weight" value="12"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2900"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_firenovaDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="FIRE NOVA: IV" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="16"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRune_firenova" />
+				</effect_group>
+		</item_modifier>
+
+		<item_modifier name="runeArmor_firenova5" installable_tags="sorceryArmorEpic,sorceryArmorLegendary,sorceryArmorTranscendent" modifier_tags="runeArmor_firenova5" type="attachment" rarity="0.001">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire2"/>
+			<property name="Weight" value="16"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="3500"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_firenovaDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="FIRE NOVA: V" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRune_firenova" />
+				</effect_group>
+		</item_modifier>
+
+		
+		<!-- ICE NOVA -->
+		<item_modifier name="runeArmor_icenova" installable_tags="sorceryArmorEpic,sorceryArmorLegendary,sorceryArmorTranscendent" modifier_tags="runeArmor_icenova" type="attachment" rarity="0.4">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice2"/>
+			<property name="Weight" value="2"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="2000"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_icenovaDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="ICE NOVA" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="4"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRune_icenova" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeArmor_icenova2" installable_tags="sorceryArmorEpic,sorceryArmorLegendary,sorceryArmorTranscendent" modifier_tags="runeArmor_icenova2" type="attachment" rarity="0.2">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice2"/>
+			<property name="Weight" value="4"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2300"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_icenovaDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="ICE NOVA: II" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="8"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRune_icenova" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeArmor_icenova3" installable_tags="sorceryArmorEpic,sorceryArmorLegendary,sorceryArmorTranscendent" modifier_tags="runeArmor_icenova3" type="attachment" rarity="0.05">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice2"/>
+			<property name="Weight" value="8"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2600"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_icenovaDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="ICE NOVA: III" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="12"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRune_icenova" />
+				</effect_group>
+		</item_modifier>		
+		
+		<item_modifier name="runeArmor_icenova4" installable_tags="sorceryArmorEpic,sorceryArmorLegendary,sorceryArmorTranscendent" modifier_tags="runeArmor_icenova4" type="attachment" rarity="0.01">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice2"/>
+			<property name="Weight" value="12"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2900"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_icenovaDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="ICE NOVA: IV" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="16"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRune_icenova" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeArmor_icenova5" installable_tags="sorceryArmorEpic,sorceryArmorLegendary,sorceryArmorTranscendent" modifier_tags="runeArmor_icenova5" type="attachment" rarity="0.001">
+			<property name="Tags" value="runeArmor"/>
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice2"/>
+			<property name="Weight" value="16"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="3500"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeArmor_icenovaDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>
+				<effect_group name="ICE NOVA: V" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRune_icenova" />
+				</effect_group>
+		</item_modifier>
+
+
+		
+
+		<!-- SORCERY SPELLCAST RUNES -->
+		<!-- FIRE STORM -->
+		<item_modifier name="runeSpellcast_firestorm" installable_tags="spellcast" modifier_tags="runeSpellcast_firestorm" type="attachment" rarity="0.4">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire2"/>
+			<property name="Weight" value="2"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2400"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeSpellcast_firestormDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: I" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="self" buff="buffRune_firestorm" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeSpellcast_firestorm2" installable_tags="spellcast" modifier_tags="runeSpellcast_firestorm2" type="attachment" rarity="0.2">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire2"/>
+			<property name="Weight" value="4"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2700"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeSpellcast_firestormDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: II" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="self" buff="buffRune_firestorm" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeSpellcast_firestorm3" installable_tags="spellcast" modifier_tags="runeSpellcast_firestorm3" type="attachment" rarity="0.05">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire2"/>
+			<property name="Weight" value="8"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="3000"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeSpellcast_firestormDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: III" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="self" buff="buffRune_firestorm" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeSpellcast_firestorm4" installable_tags="spellcast" modifier_tags="runeSpellcast_firestorm4" type="attachment" rarity="0.01">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire2"/>
+			<property name="Weight" value="12"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="3400"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeSpellcast_firestormDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: IV" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="self" buff="buffRune_firestorm" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeSpellcast_firestorm5" installable_tags="spellcast" modifier_tags="runeSpellcast_firestorm5" type="attachment" rarity="0.001">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire2"/>
+			<property name="Weight" value="16"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="3900"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeSpellcast_firestormDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: V" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="self" buff="buffRune_firestorm" />
+				</effect_group>
+		</item_modifier>
+
+
+		<!-- DEEP FREEZE -->
+		<item_modifier name="runeSpellcast_deepfreeze" installable_tags="spellcast" modifier_tags="runeSpellcast_deepfreeze" type="attachment" rarity="0.4">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice2"/>
+			<property name="Weight" value="2"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2400"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeSpellcast_deepfreezeDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: I" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="3"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="self" buff="buffRune_deepfreeze" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeSpellcast_deepfreeze2" installable_tags="spellcast" modifier_tags="runeSpellcast_deepfreeze2" type="attachment" rarity="0.2">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice2"/>
+			<property name="Weight" value="4"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2700"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeSpellcast_deepfreezeDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: II" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="self" buff="buffRune_deepfreeze" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeSpellcast_deepfreeze3" installable_tags="spellcast" modifier_tags="runeSpellcast_deepfreeze3" type="attachment" rarity="0.05">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice2"/>
+			<property name="Weight" value="8"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="3000"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeSpellcast_deepfreezeDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: III" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="7"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="self" buff="buffRune_deepfreeze" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeSpellcast_deepfreeze4" installable_tags="spellcast" modifier_tags="runeSpellcast_deepfreeze4" type="attachment" rarity="0.01">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice2"/>
+			<property name="Weight" value="12"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="3400"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeSpellcast_deepfreezeDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: IV" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="9"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="self" buff="buffRune_deepfreeze" />
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeSpellcast_deepfreeze5" installable_tags="spellcast" modifier_tags="runeSpellcast_deepfreeze5" type="attachment" rarity="0.001">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice2"/>
+			<property name="Weight" value="16"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="3900"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeSpellcast_deepfreezeDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: V" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="12"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="self" buff="buffRune_deepfreeze" />
+				</effect_group>
+		</item_modifier>
+
+		
+		
+		
+		<!-- SORCERY GENERAL RUNES -->
+		<!-- SPIRIT BOON -->
+		<item_modifier name="runeGeneral_spiritboon" installable_tags="spellcast,sorceryArmor,sorceryAccessory" modifier_tags="runeGeneral_spiritboon" type="attachment" rarity="0.4">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="2"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1200"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="RUNE" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="NotHasBuff" buff="buffSpellcastFire" />
+					<requirement name="NotHasBuff" buff="buffSpellcastIce" />
+					<requirement name="NotHasBuff" buff="buffSpellcastSecondaryFire" />
+					<requirement name="NotHasBuff" buff="buffSpellcastSecondaryIce" />
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".02" />
+					
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_spiritboon2" installable_tags="spellcast,sorceryArmor,sorceryAccessory" modifier_tags="runeGeneral_spiritboon2" type="attachment" rarity="0.2">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="4"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1400"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="RUNE: II" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="NotHasBuff" buff="buffSpellcastFire" />
+					<requirement name="NotHasBuff" buff="buffSpellcastIce" />
+					<requirement name="NotHasBuff" buff="buffSpellcastSecondaryFire" />
+					<requirement name="NotHasBuff" buff="buffSpellcastSecondaryIce" />
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".04" />
+					
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_spiritboon3" installable_tags="spellcast,sorceryArmor,sorceryAccessory" modifier_tags="runeGeneral_spiritboon3" type="attachment" rarity="0.05">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="8"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1600"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="RUNE: III" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="NotHasBuff" buff="buffSpellcastFire" />
+					<requirement name="NotHasBuff" buff="buffSpellcastIce" />
+					<requirement name="NotHasBuff" buff="buffSpellcastSecondaryFire" />
+					<requirement name="NotHasBuff" buff="buffSpellcastSecondaryIce" />
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".06" />
+					
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_spiritboon4" installable_tags="spellcast,sorceryArmor,sorceryAccessory" modifier_tags="runeGeneral_spiritboon4" type="attachment" rarity="0.01">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="12"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1800"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="RUNE: IV" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="NotHasBuff" buff="buffSpellcastFire" />
+					<requirement name="NotHasBuff" buff="buffSpellcastIce" />
+					<requirement name="NotHasBuff" buff="buffSpellcastSecondaryFire" />
+					<requirement name="NotHasBuff" buff="buffSpellcastSecondaryIce" />
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".08" />
+					
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_spiritboon5" installable_tags="spellcast,sorceryArmor,sorceryAccessory" modifier_tags="runeGeneral_spiritboon5" type="attachment" rarity="0.001">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="16"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2200"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="RUNE: V" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					<requirement name="NotHasBuff" buff="buffSpellcastFire" />
+					<requirement name="NotHasBuff" buff="buffSpellcastIce" />
+					<requirement name="NotHasBuff" buff="buffSpellcastSecondaryFire" />
+					<requirement name="NotHasBuff" buff="buffSpellcastSecondaryIce" />
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".10" />
+					
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_add" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>
+		</item_modifier>
+		
+		
+		<!-- FIRE ESSENCE BOON -->
+		<item_modifier name="runeGeneral_fireessenceboon" installable_tags="tool" modifier_tags="runeGeneral_fireessenceboon" type="attachment" rarity="0.4">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="2"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1300"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: I" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".1" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_fireessenceboon2" installable_tags="tool" modifier_tags="runeGeneral_fireessenceboon2" type="attachment" rarity="0.2">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="4"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1600"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: II" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_fireessenceboon3" installable_tags="tool" modifier_tags="runeGeneral_fireessenceboon3" type="attachment" rarity="0.05">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="8"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1900"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: III" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_fireessenceboon4" installable_tags="tool" modifier_tags="runeGeneral_fireessenceboon4" type="attachment" rarity="0.01">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="12"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2300"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: IV" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".25" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_fireessenceboon5" installable_tags="tool" modifier_tags="runeGeneral_fireessenceboon5" type="attachment" rarity="0.001">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="fire"/>
+			<property name="Weight" value="16"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2800"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>	
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".008">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".006">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".004">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".0008">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>
+				<effect_group name="RUNE: V" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".3" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+				</effect_group>
+		</item_modifier>
+
+
+		<!-- ICE ESSENCE BOON -->
+		<item_modifier name="runeGeneral_iceessenceboon" installable_tags="tool" modifier_tags="runeGeneral_iceessenceboon" type="attachment" rarity="0.4">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="2"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1300"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: I" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".1" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_iceessenceboon2" installable_tags="tool" modifier_tags="runeGeneral_iceessenceboon2" type="attachment" rarity="0.2">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="4"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="1600"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: II" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_iceessenceboon3" installable_tags="tool" modifier_tags="runeGeneral_iceessenceboon3" type="attachment" rarity="0.05">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="8"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="1900"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: III" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_iceessenceboon4" installable_tags="tool" modifier_tags="runeGeneral_iceessenceboon4" type="attachment" rarity="0.01">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="12"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="2300"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: IV" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".25" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_iceessenceboon5" installable_tags="tool" modifier_tags="runeGeneral_iceessenceboon5" type="attachment" rarity="0.001">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="16"/>
+			<property name="SellableToTrader" value="true"/>			
+			<property name="EconomicValue" value="2800"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>	
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".008">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".006">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".004">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".0008">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>
+				<effect_group name="RUNE: V" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".3" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+				</effect_group>
+		</item_modifier>		
+
+		
+		<!-- LIGHTNING ESSENCE BOON -->
+		<item_modifier name="runeGeneral_lightningessenceboon" installable_tags="tool" modifier_tags="runeGeneral_lightningessenceboon" type="attachment" rarity="0.4">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="lightning"/>
+			<property name="Weight" value="2"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1300"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: I" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".1" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_lightningessenceboon2" installable_tags="tool" modifier_tags="runeGeneral_lightningessenceboon2" type="attachment" rarity="0.2">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="lightning"/>
+			<property name="Weight" value="4"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1600"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: II" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".15" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_lightningessenceboon3" installable_tags="tool" modifier_tags="runeGeneral_lightningessenceboon3" type="attachment" rarity="0.05">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="lightning"/>
+			<property name="Weight" value="8"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1900"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: III" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".2" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_lightningessenceboon4" installable_tags="tool" modifier_tags="runeGeneral_lightningessenceboon4" type="attachment" rarity="0.01">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="lightning"/>
+			<property name="Weight" value="12"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2300"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: IV" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".25" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_lightningessenceboon5" installable_tags="tool" modifier_tags="runeGeneral_lightningessenceboon5" type="attachment" rarity="0.001">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="lightning"/>
+			<property name="Weight" value="16"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2800"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>	
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".008">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".006">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".004">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".0008">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>
+				<effect_group name="RUNE: V" tiered="false">
+					<passive_effect name="HarvestCount" operation="perc_add" value=".3" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+				</effect_group>
+		</item_modifier>	
+
+
+		<!-- LOCK SHATTER -->
+		<item_modifier name="runeGeneral_lockshatter" installable_tags="tool" modifier_tags="runeGeneral_lockshatter" type="attachment" rarity="0.4">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="2"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2000"/>
+			<property name="DescriptionKey" value="runeGeneral_lockshatterDesc"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="BASE" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="LTE" value="0"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="10"/>
+				</effect_group>
+				<effect_group name="RANK 1" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="8"/>
+				</effect_group>
+				<effect_group name="RANK 2" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="6"/>
+				</effect_group>
+				<effect_group name="RANK 3" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="4"/>
+				</effect_group>
+				<effect_group name="RANK 4" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="2"/>
+				</effect_group>
+				<effect_group name="RANK 5" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02"/>
+				</effect_group>				
+				<effect_group name="RUNE POWER" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="tool"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="10" tags="metalLockedSorcery,metalLocked2Sorcery"/>
+					<!-- <passive_effect name="DamageModifier" operation="base_set" value="10000" tags="metalLockedSorcery,metalLocked2Sorcery"/> -->
+				</effect_group>
+		</item_modifier>
+		
+		<item_modifier name="runeGeneral_lockshatter2" installable_tags="tool" modifier_tags="runeGeneral_lockshatter2" type="attachment" rarity="0.2">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="4"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2400"/>
+			<property name="DescriptionKey" value="runeGeneral_lockshatterDesc"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="BASE" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="LTE" value="0"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="10"/>
+				</effect_group>
+				<effect_group name="RANK 1" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="8"/>
+				</effect_group>
+				<effect_group name="RANK 2" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="6"/>
+				</effect_group>
+				<effect_group name="RANK 3" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="4"/>
+				</effect_group>
+				<effect_group name="RANK 4" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="2"/>
+				</effect_group>
+				<effect_group name="RANK 5" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02"/>
+				</effect_group>				
+				<effect_group name="RUNE POWER" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="tool"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="15" tags="metalLockedSorcery,metalLocked2Sorcery"/>
+				</effect_group>
+		</item_modifier>		
+		
+		<item_modifier name="runeGeneral_lockshatter3" installable_tags="tool" modifier_tags="runeGeneral_lockshatter3" type="attachment" rarity="0.05">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="8"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="2800"/>
+			<property name="DescriptionKey" value="runeGeneral_lockshatterDesc"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="BASE" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="LTE" value="0"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="10"/>
+				</effect_group>
+				<effect_group name="RANK 1" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="8"/>
+				</effect_group>
+				<effect_group name="RANK 2" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="6"/>
+				</effect_group>
+				<effect_group name="RANK 3" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="4"/>
+				</effect_group>
+				<effect_group name="RANK 4" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="2"/>
+				</effect_group>
+				<effect_group name="RANK 5" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02"/>
+				</effect_group>				
+				<effect_group name="RUNE POWER" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="tool"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="20" tags="metalLockedSorcery,metalLocked2Sorcery"/>
+				</effect_group>
+		</item_modifier>		
+		
+		<item_modifier name="runeGeneral_lockshatter4" installable_tags="tool" modifier_tags="runeGeneral_lockshatter4" type="attachment" rarity="0.01">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="12"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="3500"/>
+			<property name="DescriptionKey" value="runeGeneral_lockshatterDesc"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="BASE" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="LTE" value="0"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="10"/>
+				</effect_group>
+				<effect_group name="RANK 1" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="8"/>
+				</effect_group>
+				<effect_group name="RANK 2" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="6"/>
+				</effect_group>
+				<effect_group name="RANK 3" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="4"/>
+				</effect_group>
+				<effect_group name="RANK 4" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="2"/>
+				</effect_group>
+				<effect_group name="RANK 5" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02"/>
+				</effect_group>				
+				<effect_group name="RUNE POWER" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="tool"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="30" tags="metalLockedSorcery,metalLocked2Sorcery"/>
+				</effect_group>
+		</item_modifier>
+
+		<item_modifier name="runeGeneral_lockshatter5" installable_tags="tool" modifier_tags="runeGeneral_lockshatter5" type="attachment" rarity="0.001">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="ice"/>
+			<property name="Weight" value="16"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="4000"/>
+			<property name="DescriptionKey" value="runeGeneral_lockshatterDesc"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="BASE" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="LTE" value="0"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="10"/>
+				</effect_group>
+				<effect_group name="RANK 1" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="8"/>
+				</effect_group>
+				<effect_group name="RANK 2" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="6"/>
+				</effect_group>
+				<effect_group name="RANK 3" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="4"/>
+				</effect_group>
+				<effect_group name="RANK 4" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="2"/>
+				</effect_group>
+				<effect_group name="RANK 5" tiered="false">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02"/>
+				</effect_group>				
+				<effect_group name="RUNE POWER" tiered="false">
+					<requirement name="HoldingItemHasTags" tags="tool"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="40" tags="metalLockedSorcery,metalLocked2Sorcery"/>
+				</effect_group>
+		</item_modifier>
+		
+		
+	</append>
+</Sorcery>

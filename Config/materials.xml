@@ -1,0 +1,189 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		PROPRIETARY DISCLAIMER
+		__________________________________________________________________________________
+		2019 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		AUTHOR: https://7daystodie.com/forums/member.php?153479-Devrix
+		MOD LINK: https://7daystodie.com/forums/showthread.php?109145-Sorcery
+		TFP POLICY: https://7daystodie.com/forums/showthread.php?59817-TFP-Official-Modding-Forum-Policy
+		__________________________________________________________________________________
+		NOTICE:  All digital works, ideas, concepts and functionality contained herein, and made possible by the
+		"Sorcery Mod", is the sole digital proprietary property of mod author DEVRIX. Ownership and equal
+		rights are hereby, irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith. 
+		
+		USAGE:  This mod, and the digital works within, may be downloaded and used by players of 
+		the 7 Days to Die community with no required royalties. By doing so, users of the mod understand 
+		and accept full and sole responsibility and liability of using the mod. Author, nor The Fun Pimps, shall
+		be held responsible or liable for any possible conflict(s) as a direct or indirect result of using this mod.
+		
+		REDISTRIBUTION: The mod, and the digital works of, may be redistributed within the 7 Days to Die 
+		community. Conditions of redistribution require this notice to remain in full, unmodified, and a direct 
+		link, with credit stated, to the original mod and author. To redistribute this mod altered in any way, 
+		it is requested that your alterations to the mod are stated clearly and precisely from that of the original.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their hard
+		work and ongoing dedication to building and improving an awesome game that fuels the passion and
+		drives the creation of this mod.
+		__________________________________________________________________________________-->
+		
+	<append xpath="/materials">
+
+	<!--___________________________ FIRE ___________________________-->	
+		<material id="fire">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="fire"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<material id="fire2">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="fire2"/>
+			<property name="Experience" value="3"/>
+		</material>	
+		<material id="fire3">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="fire3"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<material id="fire4">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="fire4"/>
+			<property name="Experience" value="5"/>
+		</material>	
+		<material id="fire5">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="fire5"/>
+			<property name="Experience" value="6"/>
+		</material>
+	
+	<!--___________________________ ICE ___________________________-->	
+		<material id="ice">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="ice"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<material id="ice2">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="ice2"/>
+			<property name="Experience" value="3"/>
+		</material>	
+		<material id="ice3">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="ice3"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<material id="ice4">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="ice4"/>
+			<property name="Experience" value="5"/>
+		</material>	
+		<material id="ice5">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="ice5"/>
+			<property name="Experience" value="6"/>
+		</material>	
+	
+	<!--___________________________ LIGHTNING ___________________________-->	
+		<material id="lightning">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="lightning"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<material id="lightning2">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="lightning2"/>
+			<property name="Experience" value="3"/>
+		</material>	
+		<material id="lightning3">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="lightning3"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<material id="lightning4">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="lightning4"/>
+			<property name="Experience" value="5"/>
+		</material>	
+		<material id="lightning5">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="lightning5"/>
+			<property name="Experience" value="6"/>
+		</material>	
+	
+	
+	<!--___________________________ SORCERY ARMOR ___________________________-->	
+		<material id="MclothFire">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="fire"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<material id="MclothFire2">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="fire2"/>
+			<property name="Experience" value="5"/>
+		</material>
+		<material id="MclothFire3">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="fire3"/>
+			<property name="Experience" value="6"/>
+		</material>
+		<material id="MclothFire4">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="fire4"/>
+			<property name="Experience" value="7"/>
+		</material>
+		<material id="MclothFire5">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="fire4"/>
+			<property name="Experience" value="7"/>
+		</material>	
+
+	<!--___________________________ SORCERY MATERIAL ___________________________-->
+		<material id="Mmetal_hard_locked_sorcery">
+			<property name="damage_category" value="metalLockedSorcery"/>
+			<property name="surface_category" value="metal"/>
+			<property name="forge_category" value="iron"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="metal"/>
+			<property name="stability_glue" value="300"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="explosionresistance" value="1.4"/>
+			<property name="MaxDamage" value="2500"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<material id="Mmetal_hard_locked2_sorcery">
+			<property name="damage_category" value="metalLocked2Sorcery"/>
+			<property name="surface_category" value="metal"/>
+			<property name="forge_category" value="iron"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="metal"/>
+			<property name="stability_glue" value="300"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="explosionresistance" value="1.4"/>
+			<property name="MaxDamage" value="2500"/>
+			<property name="Experience" value="2"/>
+		</material>	
+	
+	  </append>		
+</Sorcery>

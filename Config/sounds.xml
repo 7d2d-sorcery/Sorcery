@@ -1,0 +1,152 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		PROPRIETARY DISCLAIMER
+		__________________________________________________________________________________
+		2019 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		AUTHOR: https://7daystodie.com/forums/member.php?153479-Devrix
+		MOD LINK: https://7daystodie.com/forums/showthread.php?109145-Sorcery
+		TFP POLICY: https://7daystodie.com/forums/showthread.php?59817-TFP-Official-Modding-Forum-Policy
+		__________________________________________________________________________________
+		NOTICE:  All digital works, ideas, concepts and functionality contained herein, and made possible by the
+		"Sorcery Mod", is the sole digital proprietary property of mod author DEVRIX. Ownership and equal
+		rights are hereby, irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith. 
+		
+		USAGE:  This mod, and the digital works within, may be downloaded and used by players of 
+		the 7 Days to Die community with no required royalties. By doing so, users of the mod understand 
+		and accept full and sole responsibility and liability of using the mod. Author, nor The Fun Pimps, shall
+		be held responsible or liable for any possible conflict(s) as a direct or indirect result of using this mod.
+		
+		REDISTRIBUTION: The mod, and the digital works of, may be redistributed within the 7 Days to Die 
+		community. Conditions of redistribution require this notice to remain in full, unmodified, and a direct 
+		link, with credit stated, to the original mod and author. To redistribute this mod altered in any way, 
+		it is requested that your alterations to the mod are stated clearly and precisely from that of the original.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their hard
+		work and ongoing dedication to building and improving an awesome game that fuels the passion and
+		drives the creation of this mod.
+		__________________________________________________________________________________-->
+		
+	<append xpath="/Sounds">
+	
+		<!-- CHANTS / RITUALS -->
+		<SoundDataNode name="sorceryRitualChant"> <AudioSource name="Sounds/AudioSource_UI"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioChant.unity3d?ritualChant"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/>
+		</SoundDataNode>	
+	
+		<!-- FIRE SORCERY -->
+		<!-- FIRE -->
+		<SoundDataNode name="sorceryFireball_wield"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?FireLoop2" Loop="true"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
+		
+		<SoundDataNode name="sorceryFireball_cast"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?FireLoop2" Loop="true"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
+		
+		<SoundDataNode name="sorceryFireball_draw"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?draw"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?draw2"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		
+		<SoundDataNode name="sorceryFireball_launch"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?launch"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?launch2"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?launch3"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		
+		<SoundDataNode name="sorceryFireball_impact"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+			<Noise ID="1" range="1" volume="5" time="3" muffled_when_crouched="0.5"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?impact" />
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?impact2" />
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>	
+		
+		<SoundDataNode name="sorceryFireball_explode"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+			<Noise ID="1" range="1" volume="5" time="3" muffled_when_crouched="0.5"/>
+			<!-- <AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?FireExplosion2"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?FireExplosion4"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?FireExplosion7"/> -->
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?FireExplosion9"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
+
+		
+		<!-- FIRENADO -->
+		<SoundDataNode name="sorceryFirestorm_launch"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<Noise ID="1" range="1" volume="5" time="3" muffled_when_crouched="0.5"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?fireTornado-launch"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?fireTornado-launch2"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?fireTornado-launch3"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>				
+		
+		
+		
+		
+		<!-- ICE SORCERY -->
+		<SoundDataNode name="sorceryIce_draw"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?FrostFadeIn"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/><MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+
+		<SoundDataNode name="sorceryIce_cast"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?FreezeLoop" Loop="true"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		
+		<SoundDataNode name="sorceryIce_launch"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?IceExplosion"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/><MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		
+		<SoundDataNode name="sorceryIce_impact"> <AudioSource name="Sounds/AudioSource_Impact"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_impact1"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_impact2"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_impact3"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/><MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
+		
+		<SoundDataNode name="sorceryIce_impacted"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+			<Noise ID="1" range="1" volume="5" time="3" muffled_when_crouched="0.5"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?FrostExplosion"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
+
+		<SoundDataNode name="sorceryIce_explode"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+			<Noise ID="1" range="1" volume="5" time="3" muffled_when_crouched="0.5"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?shout_frostbreath_006"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		
+		<SoundDataNode name="sorceryIce_freeze"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+			<Noise ID="1" range="1" volume="5" time="3" muffled_when_crouched="0.5"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_01"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_02"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_03"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_05"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_06"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>			
+		
+		<SoundDataNode name="sorceryIce_icestorm"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+			<Noise ID="1" range="1" volume="5" time="3" muffled_when_crouched="0.5"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_storm" Loop="true"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>	
+		
+	</append>
+	
+	
+	
+	<!-- DISABLE VANILLA SOUND -->
+	<!-- Spellcasts use Bow animation atm. Currently no property to override reload_part_02 sound. -->
+	<set xpath="/Sounds/SoundDataNode[@name='bow_reload_part_02']/@name">bow_reload_part_02_disabledbysorcery</set>
+
+</Sorcery>

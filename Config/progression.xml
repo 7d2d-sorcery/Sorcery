@@ -1,0 +1,447 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		PROPRIETARY DISCLAIMER
+		__________________________________________________________________________________
+		2019 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		AUTHOR: https://7daystodie.com/forums/member.php?153479-Devrix
+		MOD LINK: https://7daystodie.com/forums/showthread.php?109145-Sorcery
+		TFP POLICY: https://7daystodie.com/forums/showthread.php?59817-TFP-Official-Modding-Forum-Policy
+		__________________________________________________________________________________
+		NOTICE:  All digital works, ideas, concepts and functionality contained herein, and made possible by the
+		"Sorcery Mod", is the sole digital proprietary property of mod author DEVRIX. Ownership and equal
+		rights are hereby, irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith. 
+		
+		USAGE:  This mod, and the digital works within, may be downloaded and used by players of 
+		the 7 Days to Die community with no required royalties. By doing so, users of the mod understand 
+		and accept full and sole responsibility and liability of using the mod. Author, nor The Fun Pimps, shall
+		be held responsible or liable for any possible conflict(s) as a direct or indirect result of using this mod.
+		
+		REDISTRIBUTION: The mod, and the digital works of, may be redistributed within the 7 Days to Die 
+		community. Conditions of redistribution require this notice to remain in full, unmodified, and a direct 
+		link, with credit stated, to the original mod and author. To redistribute this mod altered in any way, 
+		it is requested that your alterations to the mod are stated clearly and precisely from that of the original.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their hard
+		work and ongoing dedication to building and improving an awesome game that fuels the passion and
+		drives the creation of this mod.
+		__________________________________________________________________________________-->
+		
+	<!-- INSERT AFTER: attIntellect -->
+	<insertAfter xpath="/progression/attributes/attribute[@name='attIntellect']">
+	
+<!--___________________ SORCERY ATTRIBUTE ___________________-->
+		<attribute name="attSorcery" name_key="attSorceryName" desc_key="attSorceryDesc" icon="ui_game_symbol_hand">
+			<level_requirements level="1"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="2"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="3"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="4"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="5"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+			<level_requirements level="6"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+			<level_requirements level="7"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+			<level_requirements level="8"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+			<level_requirements level="9"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints04"/></level_requirements>
+			<level_requirements level="10"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints05"/></level_requirements>
+			
+			<effect_group name="Spellcast Speed">
+				<requirement name="HoldingItemHasTags" tags="spellcast"/>
+				<passive_effect name="RoundsPerMinute" operation="base_add" value="0,50" level="1,10"/> 
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="16,20" level="9,10"/> <!-- anim -->
+				<passive_effect name="StaminaMax" operation="base_add" value="10,100" level="1,10"/> <!-- spirit -->
+				<!-- <passive_effect name="EntityDamage" operation="perc_add" value="0,1" level="1,10"/> -->
+			</effect_group>
+			
+			<effect_group name="ARMORCRAFTING: RECIPES">
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,10" tags="sorceryAccessory_Shades2,sorceryArmor_Bandana2,sorceryArmor_Hood2,sorceryArmor_Robe2,sorceryArmor_Chest2,sorceryArmor_Shirt2,sorceryArmor_Gloves2,sorceryArmor_Leg2,sorceryArmor_Pants2,sorceryArmor_Boots2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="6,10" tags="sorceryAccessory_Shades3,sorceryArmor_Bandana3,sorceryArmor_Hood3,sorceryArmor_Robe3,sorceryArmor_Chest3,sorceryArmor_Shirt3,sorceryArmor_Gloves3,sorceryArmor_Leg3,sorceryArmor_Pants3,sorceryArmor_Boots2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="8,10" tags="sorceryAccessory_Shades4,sorceryArmor_Bandana4,sorceryArmor_Hood4,sorceryArmor_Robe4,sorceryArmor_Chest4,sorceryArmor_Shirt4,sorceryArmor_Gloves4,sorceryArmor_Leg4,sorceryArmor_Pants4,sorceryArmor_Boots2"/>
+			</effect_group>			
+			
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="toolLoomFire,toolLoomIce"/>
+				<effect_description level="1" desc_key="attSorceryRank1Desc"/>
+				<effect_description level="2" desc_key="attSorceryRank2Desc"/>
+				<effect_description level="3" desc_key="attSorceryRank3Desc"/>
+				<effect_description level="4" desc_key="attSorceryRank4Desc"/>
+				<effect_description level="5" desc_key="attSorceryRank5Desc"/>
+				<effect_description level="6" desc_key="attSorceryRank6Desc"/>
+				<effect_description level="7" desc_key="attSorceryRank7Desc"/>
+				<effect_description level="8" desc_key="attSorceryRank8Desc"/>
+				<effect_description level="9" desc_key="attSorceryRank9Desc"/>
+				<effect_description level="10" desc_key="attSorceryRank10Desc"/>
+			</effect_group>
+		</attribute>
+	</insertAfter>
+
+<!--___________________ SORCERY SKILLS ___________________-->
+	<append xpath="/progression/skills">
+		<skill name="skillSorceryMastery" parent="attSorcery" name_key="skillSorceryMasteryName" desc_key="skillSorceryMasteryDesc" icon="ui_game_symbol_player"><effect_group/></skill>
+		<skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+		<skill name="skillSorceryIceCrafting" parent="attSorcery" name_key="skillSorceryIceCraftingName" desc_key="skillSorceryIceCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+		<skill name="skillSorceryLightningCrafting" parent="attSorcery" name_key="skillSorceryLightningCraftingName" desc_key="skillSorceryLightningCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+	</append>	
+	
+	
+<!--___________________ SORCERY PERKS ___________________-->
+	<append xpath="/progression/perks">
+		
+		<!-- ESSENCE MASTERY -->
+		<perk name="perkSorceryEssenceMastery" parent="skillSorceryMastery" name_key="perkSorceryEssenceMasteryName" desc_key="perkSorceryEssenceMasteryDesc" icon="ui_game_symbol_skills">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+
+			<effect_group name="All Essence">
+				<passive_effect name="HarvestCount" operation="perc_add" value="1,2,3,3" level="2,3,4,5" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>			
+				<passive_effect name="HarvestCount" operation="perc_add" value="1,2,3,3" level="2,3,4,5" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value="1,2,3,3" level="2,3,4,5" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+			</effect_group>			
+			
+			<effect_group name="Fire Essence">
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceFireHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="1,5" tags="essenceFireHarvest"/>
+			</effect_group>
+
+			<effect_group name="Ice Essence">
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceIceHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,5" tags="essenceIceHarvest"/>
+			</effect_group>
+			
+			<effect_group name="Lightning Essence">
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceLightningHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="3,5" tags="essenceLightningHarvest"/>
+			</effect_group>
+			
+			<effect_group>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1,3" level="1,3"/>
+				<effect_description level="1" desc_key="perkSorceryEssenceMasteryRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorceryEssenceMasteryRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorceryEssenceMasteryRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorceryEssenceMasteryRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorceryEssenceMasteryRank5Desc"/>
+			</effect_group>			
+		</perk>		
+		
+		
+		<!-- SPELLCAST MASTERY -->
+		<perk name="perkSorcerySpellcastMastery" parent="skillSorceryMastery" name_key="perkSorcerySpellcastMasteryName" desc_key="perkSorcerySpellcastMasteryDesc" icon="ui_game_symbol_skills">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorcerySpellcastMasteryRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellcastMasteryRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellcastMasteryRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellcastMasteryRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellcastMasteryRank5Desc"/>
+			</effect_group>
+		</perk>	
+	
+	
+		<!-- FIRE MASTERY -->
+		<perk name="perkSorceryFireMastery" parent="skillSorceryMastery" name_key="perkSorceryFireMasteryName" desc_key="perkSorceryFireMasteryDesc" icon="ui_game_symbol_skills">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+
+			<effect_group name="Spellcast Speed">
+				<requirement name="HoldingItemHasTags" tags="spellcastFire"/>
+				<passive_effect name="RoundsPerMinute" operation="base_add" value="5,25" level="1,5"/> 
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_add" value="4,8" level="4,5"/> <!-- anim -->
+			</effect_group>		
+
+			<effect_group name="Fire Essence">
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0,1" tags="essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,5" tags="essenceFire2Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="3,5" tags="essenceFire3Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,5" tags="essenceFire4Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="5" tags="essenceFire5Harvest"/>
+			</effect_group>
+			
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="conjureFire"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolFireCore"/>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1,4" level="2,5"/>
+				<effect_description level="1" desc_key="perkSorceryFireMasteryRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorceryFireMasteryRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorceryFireMasteryRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorceryFireMasteryRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorceryFireMasteryRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+		
+		<!-- ICE MASTERY -->
+		<perk name="perkSorceryIceMastery" parent="skillSorceryMastery" name_key="perkSorceryIceMasteryName" desc_key="perkSorceryIceMasteryDesc" icon="ui_game_symbol_skills">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+
+			<effect_group name="Spellcast Speed">
+				<requirement name="HoldingItemHasTags" tags="spellcastIce"/>
+				<passive_effect name="RoundsPerMinute" operation="base_add" value="5,25" level="1,5"/> 
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_add" value="4,8" level="4,5"/> <!-- anim -->
+			</effect_group>		
+
+			<effect_group name="Ice Essence">
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0,1" tags="essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,5" tags="essenceIce2Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="3,5" tags="essenceIce3Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,5" tags="essenceIce4Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="5" tags="essenceIce5Harvest"/>
+			</effect_group>			
+			
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="conjureIce"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolIceCore"/>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1,4" level="2,5"/>
+				<effect_description level="1" desc_key="perkSorceryIceMasteryRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorceryIceMasteryRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorceryIceMasteryRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorceryIceMasteryRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorceryIceMasteryRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+		
+		<!-- LIGHTNING MASTERY -->
+		<perk name="perkSorceryLightningMastery" parent="skillSorceryMastery" name_key="perkSorceryLightningMasteryName" desc_key="perkSorceryLightningMasteryDesc" icon="ui_game_symbol_skills">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			
+			<effect_group name="Lightning Essence">
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0,1" tags="essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,5" tags="essenceLightning2Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="3,5" tags="essenceLightning3Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,5" tags="essenceLightning4Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="5" tags="essenceLightning5Harvest"/>
+			</effect_group>			
+			
+			<effect_group>
+				<passive_effect name="CarryCapacity" operation="base_add" value="1,4" level="2,5"/>
+				<effect_description level="1" desc_key="perkSorceryLightningMasteryRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorceryLightningMasteryRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorceryLightningMasteryRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorceryLightningMasteryRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorceryLightningMasteryRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+		
+		<!-- RUNE MASTERY -->
+		<perk name="perkSorceryRuneMastery" parent="skillSorceryMastery" name_key="perkSorceryRuneMasteryName" desc_key="perkSorceryRuneMasteryDesc" icon="ui_game_symbol_skills">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			
+			<effect_group name="RUNECRAFTING: RECIPES">
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeGeneral_spiritboon2,runeGeneral_fireessenceboon2,runeGeneral_iceessenceboon2,runeArmor_fireskin2,runeArmor_iceskin2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="runeGeneral_spiritboon3,runeGeneral_fireessenceboon3,runeGeneral_iceessenceboon3,runeArmor_fireskin3,runeArmor_iceskin3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="runeGeneral_spiritboon4,runeGeneral_fireessenceboon4,runeGeneral_iceessenceboon4,runeArmor_fireskin4,runeArmor_iceskin4"/>
+			</effect_group>
+			
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolHammerFire,toolHammerIce"/>
+				<effect_description level="1" desc_key="perkSorceryRuneMasteryRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorceryRuneMasteryRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorceryRuneMasteryRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorceryRuneMasteryRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorceryRuneMasteryRank5Desc"/>
+			</effect_group>			
+		</perk>
+
+	
+<!--___________________ FIRE SORCERY ___________________-->
+		<!-- Fire Spellcast-->
+		<perk name="perkSorcerySpellcastFire" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellcastFireName" desc_key="perkSorcerySpellcastFireDesc" icon="ui_game_symbol_fire">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="5" desc_key="reqSorcerySpellcastMasteryLevel05"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellcastFire"/>
+				<effect_description level="1" desc_key="perkSorcerySpellcastFireRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellcastFireRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellcastFireRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellcastFireRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellcastFireRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+		<!-- Fire Spell: FIREBALL -->
+		<perk name="perkSorcerySpellFireball" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellFireballName" desc_key="perkSorcerySpellFireballDesc" icon="ui_game_symbol_fire">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="2" desc_key="reqSorceryFireMasteryLevel02"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="3" desc_key="reqSorceryFireMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="4" desc_key="reqSorceryFireMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="5" desc_key="reqSorceryFireMasteryLevel05"/></level_requirements>
+			
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellFireball"/>
+				<effect_description level="1" desc_key="perkSorcerySpellFireballRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellFireballRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellFireballRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellFireballRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellFireballRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+		<!-- Fire Spell: FIRESTORM -->
+		<perk name="perkSorcerySpellFirestorm" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellFirestormName" desc_key="perkSorcerySpellFirestormDesc" icon="ui_game_symbol_fire">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="2" desc_key="reqSorceryFireMasteryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="2" desc_key="reqSorceryFireMasteryLevel02"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="3" desc_key="reqSorceryFireMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="4" desc_key="reqSorceryFireMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="5" desc_key="reqSorceryFireMasteryLevel05"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellFirestorm"/>
+				<effect_description level="1" desc_key="perkSorcerySpellFirestormRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellFirestormRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellFirestormRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellFirestormRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellFirestormRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+
+
+<!--___________________ ICE SORCERY ___________________-->
+		<!-- Ice Spellcast -->
+		<perk name="perkSorcerySpellcastIce" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellcastIceName" desc_key="perkSorcerySpellcastIceDesc" icon="ui_game_symbol_cold">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="5" desc_key="reqSorcerySpellcastMasteryLevel05"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellcastIce"/>
+				<effect_description level="1" desc_key="perkSorcerySpellcastIceRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellcastIceRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellcastIceRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellcastIceRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellcastIceRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+		<!-- Ice Spell: ICEBALL -->
+		<perk name="perkSorcerySpellIceball" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellIceballName" desc_key="perkSorcerySpellIceballDesc" icon="ui_game_symbol_cold">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="2" desc_key="reqSorceryIceMasteryLevel02"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="4" desc_key="reqSorceryIceMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="5" desc_key="reqSorceryIceMasteryLevel05"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellIceBall"/>
+				<effect_description level="1" desc_key="perkSorcerySpellIceballRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellIceballRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellIceballRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellIceballRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellIceballRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+		<!-- Ice Spell: ICESPIKE -->
+		<perk name="perkSorcerySpellIceSpike" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellIceSpikeName" desc_key="perkSorcerySpellIceSpikeDesc" icon="ui_game_symbol_cold">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="2" desc_key="reqSorceryIceMasteryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="2" desc_key="reqSorceryIceMasteryLevel02"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="4" desc_key="reqSorceryIceMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="5" desc_key="reqSorceryIceMasteryLevel05"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellIceSpike"/>
+				<effect_description level="1" desc_key="perkSorcerySpellIceSpikeRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellIceSpikeRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellIceSpikeRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellIceSpikeRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellIceSpikeRank5Desc"/>
+			</effect_group>
+		</perk>		
+		
+		<!-- Ice Spell: ICESTORM -->
+		<perk name="perkSorcerySpellIcestorm" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellIcestormName" desc_key="perkSorcerySpellIcestormDesc" icon="ui_game_symbol_cold">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="4" desc_key="reqSorceryIceMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="5" desc_key="reqSorceryIceMasteryLevel05"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellIceStorm"/>
+				<effect_description level="1" desc_key="perkSorcerySpellIcestormRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellIcestormRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellIcestormRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellIcestormRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellIcestormRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+
+
+<!--___________________ LIGHTNING SORCERY ___________________-->
+		<!-- Lightning Spellcast -->
+		<perk name="perkSorcerySpellcastLightning" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellcastLightningName" desc_key="perkSorcerySpellcastLightningDesc" icon="ui_game_symbol_electric_power">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellcastLightning"/>
+				<effect_description level="1" desc_key="perkSorcerySpellcastLightningRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellcastLightningRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellcastLightningRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellcastLightningRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellcastLightningRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+		<!-- Lightning Spell: LIGHTNINGSTRIKE -->
+		<perk name="perkSorcerySpellLightningstrike" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellLightningstrikeName" desc_key="perkSorcerySpellLightningstrikeDesc" icon="ui_game_symbol_electric_power">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorcerySpellLightningstrikeRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellLightningstrikeRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellLightningstrikeRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellLightningstrikeRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellLightningstrikeRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+		<!-- Lightning Spell: LIGHTNINGSTORM -->
+		<perk name="perkSorcerySpellLightningstorm" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellLightningstormName" desc_key="perkSorcerySpellLightningstormDesc" icon="ui_game_symbol_electric_power">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorcerySpellLightningstormRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellLightningstormRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellLightningstormRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellLightningstormRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellLightningstormRank5Desc"/>
+			</effect_group>
+		</perk>		
+		
+		
+	</append>		
+
+</Sorcery>

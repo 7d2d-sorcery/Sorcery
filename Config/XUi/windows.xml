@@ -1,0 +1,434 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		PROPRIETARY DISCLAIMER
+		__________________________________________________________________________________
+		2019 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		AUTHOR: https://7daystodie.com/forums/member.php?153479-Devrix
+		MOD LINK: https://7daystodie.com/forums/showthread.php?109145-Sorcery
+		TFP POLICY: https://7daystodie.com/forums/showthread.php?59817-TFP-Official-Modding-Forum-Policy
+		__________________________________________________________________________________
+		NOTICE:  All digital works, ideas, concepts and functionality contained herein, and made possible by the
+		"Sorcery Mod", is the sole digital proprietary property of mod author DEVRIX. Ownership and equal
+		rights are hereby, irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith. 
+		
+		USAGE:  This mod, and the digital works within, may be downloaded and used by players of 
+		the 7 Days to Die community with no required royalties. By doing so, users of the mod understand 
+		and accept full and sole responsibility and liability of using the mod. Author, nor The Fun Pimps, shall
+		be held responsible or liable for any possible conflict(s) as a direct or indirect result of using this mod.
+		
+		REDISTRIBUTION: The mod, and the digital works of, may be redistributed within the 7 Days to Die 
+		community. Conditions of redistribution require this notice to remain in full, unmodified, and a direct 
+		link, with credit stated, to the original mod and author. To redistribute this mod altered in any way, 
+		it is requested that your alterations to the mod are stated clearly and precisely from that of the original.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their hard
+		work and ongoing dedication to building and improving an awesome game that fuels the passion and
+		drives the creation of this mod.
+		__________________________________________________________________________________-->
+		
+	<append xpath="/windows">
+
+		<!-- UI: SORCERY LOGO -->
+		<!-- <window name="SorceryLogo" pos="0, 0" width="228" height="46" anchor="RightTop">
+			<texture name="SorceryLogo" pos="-238, -33" width="228" height="46" texture="@modfolder:Textures/SorceryLogo.png" />
+		</window>	 -->		
+		
+		<window name="SorceryLogo" pos="0, 0" width="143" height="38" anchor="RightTop">
+			<texture name="SorceryLogo" pos="-153, -35" width="143" height="38" texture="@modfolder:Textures/SorceryLogo.png" />
+		</window>	
+		
+		<!-- UI: SORCERY TRACKER RUNES -->
+		<!-- <window name="SorceryTrackerRunes" pos="-255, -88" width="300" height="{trackerheight}" anchor="RightTop" visible="{showquest}" depth="-20" >
+			<texture name="SorceryTrackerRunes" pos="8, -67" width="240" height="27" texture="@modfolder:Textures/SorceryTrackerRunes.png" />
+		</window>	 -->
+
+<!--___________________________ FIRE CONJURE ___________________________-->	
+		<!-- CRAFTING -->
+		<window name="windowCraftingListConjureFire"  width="397" height="688" controller="CraftingListInfo" panel="Left" cursor_area="true" >
+
+		<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+			<sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="Craft_Icon_Basics"/>
+			<label style="header.name" text="basics" text_key="xuiBasics" />
+
+			<label pos="387, -6" depth="2" name="unlockedCount" width="64" height="32" text="0/65" font_size="32" color="[lightGrey]" justify="right" pivot="topright"/>
+			<sprite pos="328, -5" depth="2" name="unlockedIcon" style="icon32px" sprite="ui_game_symbol_book" color="[lightGrey]" pivot="topright"/>
+		</panel>
+
+			<panel name="content" width="100%" height="650" depth="1" pos="0,-43" on_scroll="true" disableautobackground="true">
+
+				<rect depth="2" name="categorySelector" width="390" height="44" pos="3,-6">
+					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="396" height="49" color="[black]" type="sliced" fillcenter="false" />
+					<sprite color="[mediumGrey]" type="sliced" />
+					<grid name="categories" pos="2,-7" rows="1" cols="9" width="390" height="43" cell_width="43" cell_height="43" repeat_content="true" controller="CategoryList">
+						<category_icon />
+					</grid>
+				</rect>
+
+				<rect depth="3" name="searchControls" width="390" height="44" pos="3,-52">
+					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="396" height="49" color="[black]" type="sliced" fillcenter="false" />
+					<sprite color="[darkGrey]" type="sliced" />
+					<button depth="4" name="favorites" style="icon30px, press" pos="18,-22" sprite="server_favorite" pivot="center" sound="[paging_click]" tooltip="Favorites" tooltip_key="lblFavorites" collider_scale="1.5" />
+
+					<panel pos="104,0" width="200" disableautobackground="true">
+						<sprite depth="4" name="searchIcon" style="icon30px" pos="0,-22" sprite="ui_game_symbol_search" pivot="center"/>
+						<recipe_search depth="5" name="searchInput"/>
+					</panel>
+
+					<panel pos="286,0" width="104" height="43" disableautobackground="true">
+						<button depth="4" name="pageDown" style="icon30px, press" pos="20,-22" sprite="ui_game_symbol_arrow_left" pivot="center" sound="[paging_click]" />
+						<rect depth="4" pos="37,-7" >
+							<sprite name="background" style="icon30px" color="[black]" type="sliced" />
+							<label depth="5" name="pageNumber" pos="0, -3" width="30" height="28" text="1" font_size="26" justify="center"/>
+						</rect>
+						<button depth="4" name="pageUp" style="icon30px, press" pos="84,-22" sprite="ui_game_symbol_arrow_right" pivot="center" sound="[paging_click]" />
+					</panel>
+				</rect>
+
+				<grid name="recipes" rows="12" cols="1" pos="3,-98" width="390" height="552" cell_width="390" cell_height="46" controller="RecipeList" repeat_content="true" arrangement="vertical" >
+					<recipe_entry name="0"/>
+				</grid>
+			</panel>
+		</window>	
+	
+		<!-- INFO -->
+		<window name="craftingInfoPanelConjureFire" width="603" height="392" controller="CraftingInfoWindow" style="crafting.info.window" panel="Center" cursor_area="true" >
+			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+				<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="{itemgroupicon}"/>
+				<label style="header.name" text="{itemname}" />
+
+				<rect pos="350,0" name="requiredToolOverlay">
+					<sprite size="24,24" depth="2" name="requiredToolCheckmark" pos="0,-8" sprite="ui_game_symbol_check" color="[red]"/>
+					<label depth="2" pos="35,-8" name="requiredToolText" width="200" height="32" text="Required" text_key="xuiRequired" font_size="32" upper_case="true" justify="left"/>
+				</rect>
+			</panel>
+
+			<rect name="contentCraftingInfo" height="381" depth="1" pos="0,-46">
+				<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" width="603" height="345" color="[black]" type="sliced" fillcenter="false" />
+				<rect depth="1" pos="3,-3" name="preview" width="147" height="147">
+					<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="153" height="153" color="[black]" type="sliced" fillcenter="false" />
+					<sprite depth="1" color="[darkGrey]" type="sliced" globalopacity="true" />
+					<sprite depth="2" name="itemPreview" width="120" height="83" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="13,-15" foregroundlayer="true"/>
+					<sprite depth="3" name="clockIcon" size="24,24" sprite="ui_game_symbol_clock" pos="25, -116" type="sliced" color="[iconColor]" foregroundlayer="true" />
+					<!-- <label depth="3" name="TimeLabel" style="icon30px" pos="53, -119" text="TIME" text_key="xuiTime" font_size="22" /> -->
+					<label depth="3" name="craftingTime" width="100" height="32" pos="55, -115" text="{craftingtime}" font_size="26" color="[beige]"/>
+				</rect>
+
+				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,-150" width="153" height="195" color="[black]" type="sliced" fillcenter="false" />
+				<grid name="itemActions" rows="4" cols="1" pos="3,-153" width="147" cell_width="147" cell_height="42" controller="ItemActionList">
+					<rect depth="1" name="actions" width="147" height="225">
+						<sprite color="[mediumGrey]" type="sliced" height="43" />
+						<rect name="recipeCraftCountControl" width="120" height="210" pos="27,0" controller="RecipeCraftCount">
+							<button depth="2" name="countDown" style="icon30px, press" pos="-5,-20" sprite="ui_game_symbol_arrow_left" pivot="center" sound="[paging_click]"/>
+							<count_control_input name="count_input" depth="2" pos="10,-5" />
+							<button depth="2" name="countUp" style="icon30px, press" pos="59,-20" sprite="ui_game_symbol_arrow_right" pivot="center" sound="[paging_click]"/>
+							<button depth="2" name="countMax" style="icon30px, press" pos="91,-20" sprite="ui_game_symbol_arrow_max" pivot="center" sound="[paging_click]"/>
+						</rect>
+					</rect>
+					<item_action_entry />
+					<item_action_entry />
+					<item_action_entry />
+					<sprite depth="3" name="fillerBackground" height="22" color="[mediumGrey]" type="sliced"/>
+				</grid>
+				<rect depth="1" pos="153,-3" name="description" width="447" height="120">
+					<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="453" height="126" color="[black]" type="sliced" fillcenter="false" />
+					<sprite color="[mediumGrey]" type="sliced" />
+					<label depth="2" name="descriptionText" pos="6,-5" width="440" height="98" text="{itemdescription}" />
+				</rect>
+
+				<rect depth="1" pos="153,-124" name="ingredients" width="447" height="264">
+
+					<grid rows="6" width="447" height="231" cell_height="44" cell_width="447" controller="IngredientList" arrangement="vertical">
+						<ingredient_row name="0"/>
+						<ingredient_row name="1"/>
+						<ingredient_row name="2"/>
+						<ingredient_row name="3"/>
+						<ingredient_row name="4"/>
+					</grid>
+				</rect>
+
+			</rect>
+		</window>	
+	
+	
+		<!-- TOOLS -->
+		<window name="windowToolsConjureFire" width="228" height="121" panel="Right" cursor_area="true" >
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_forge"/>
+				<label style="header.name" text="FIRE AUGMENTS" />
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true" on_press="true">
+
+				<grid name="inventory" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false"
+				required_tools="toolFireCore,toolLoomFire,toolHammerFire" required_tools_only="true">
+					<required_item_stack name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+	
+		<!-- FUEL -->
+		<window name="windowFuelConjureFire" width="228" height="166" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_fire"/>
+				<label style="header.name" text="WOOD" />
+				<label style="header.timer"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="79" >
+				<rect disablefallthrough="true" on_press="true">
+					<grid rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationFuelGrid" repeat_content="true" allow_sort_order="false">
+						<item_stack name="0"/>
+					</grid>
+				</rect>
+				<grid name="slot_preview" depth="1" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="SlotPreview">
+					<rect>
+						<sprite name="slot" depth="2" width="70" height="50" sprite="resourceWood" atlas="ItemIconAtlasGreyscale" pos="35,-30" pivot="center" foregroundlayer="true"/>
+					</rect>
+					<rect>
+						<sprite name="slot" depth="2" width="70" height="50" sprite="resourceWood" atlas="ItemIconAtlasGreyscale" pos="35,-30" pivot="center" foregroundlayer="true"/>
+					</rect>
+					<rect>
+						<sprite name="slot" depth="2" width="70" height="50" sprite="resourceWood" atlas="ItemIconAtlasGreyscale" pos="35,-30" pivot="center" foregroundlayer="true"/>
+					</rect>
+				</grid>
+			</rect>
+
+			<panel name="buttonContent" depth="5" pos="0, -121" height="40" backgroundcolor="[black]" bordercolor="[black]">
+				<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+				<rect depth="1" pos="3,-3" width="225" height="34">
+					<button name="button" sprite="menu_empty" defaultcolor="[mediumGrey]" disabledcolor="[mediumGrey]" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" width="222"  hoverscale="1.0" />
+					<sprite depth="2" name="flameIcon" style="icon32px" pos="5,0" sprite="ui_game_symbol_fire" />
+					<label depth="2" name="onoff" pos="0,-6" justify="center" text="TRANSMUTE" font_size="26" />
+				</rect>
+			</panel>
+		</window>
+	
+	
+		<!-- INPUT -->
+		<window name="windowConjureFireInput" width="228" height="204" panel="Right"
+			controller="WorkstationMaterialInputWindow" materials_accepted="fire,fire2,fire3,fire4,fire5" valid_materials_color="[green]" invalid_materials_color="[red]" cursor_area="true" >
+
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_fire"/>
+				<label style="header.name" text="FIRE ESSENCE" />
+			</panel>
+
+			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,-46" height="153" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+			<rect name="content" depth="1" pos="0,-46" height="153">
+				<!-- depth: # units -->
+				<grid depth="5" rows="2" cols="1" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationMaterialInputGrid" repeat_content="true">
+					<item_stack name="0"/>
+				</grid>
+
+			</rect>
+			
+			<!-- Unit -->
+			<rect name="content2" depth="0" pos="78, -49" width="147" height="148">
+				<sprite depth="1" color="[mediumGrey]" type="sliced" on_press="true"/>
+				<!-- rows: # units -->
+				<grid rows="5" cols="1" pos="3,-3" cell_width="147" cell_height="24"  repeat_content="true">
+					<forge_material name="0"/>
+				</grid>
+			</rect>
+		</window>	
+	
+
+	
+	
+	
+<!--___________________________ ICE CONJURE ___________________________-->	
+		<!-- CRAFTING -->
+		<window name="windowCraftingListConjureIce"  width="397" height="688" controller="CraftingListInfo" panel="Left" cursor_area="true" >
+
+			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+				<sprite pos="4,-5" depth="2" name="windowIcon" style="icon32px" sprite="Craft_Icon_Basics"/>
+				<label style="header.name" text="basics" text_key="xuiBasics" />
+
+				<label pos="387, -6" depth="2" name="unlockedCount" width="64" height="32" text="0/65" font_size="32" color="[lightGrey]" justify="right" pivot="topright"/>
+				<sprite pos="328, -5" depth="2" name="unlockedIcon" style="icon32px" sprite="ui_game_symbol_book" color="[lightGrey]" pivot="topright"/>
+			</panel>
+
+			<panel name="content" width="100%" height="650" depth="1" pos="0,-43" on_scroll="true" disableautobackground="true">
+
+				<rect depth="2" name="categorySelector" width="390" height="44" pos="3,-6">
+					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="396" height="49" color="[black]" type="sliced" fillcenter="false" />
+					<sprite color="[mediumGrey]" type="sliced" />
+					<grid name="categories" pos="2,-7" rows="1" cols="9" width="390" height="43" cell_width="43" cell_height="43" repeat_content="true" controller="CategoryList">
+						<category_icon />
+					</grid>
+				</rect>
+
+				<rect depth="3" name="searchControls" width="390" height="44" pos="3,-52">
+					<sprite name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="396" height="49" color="[black]" type="sliced" fillcenter="false" />
+					<sprite color="[darkGrey]" type="sliced" />
+					<button depth="4" name="favorites" style="icon30px, press" pos="18,-22" sprite="server_favorite" pivot="center" sound="[paging_click]" tooltip="Favorites" tooltip_key="lblFavorites" collider_scale="1.5" />
+
+					<panel pos="104,0" width="200" disableautobackground="true">
+						<sprite depth="4" name="searchIcon" style="icon30px" pos="0,-22" sprite="ui_game_symbol_search" pivot="center"/>
+						<recipe_search depth="5" name="searchInput"/>
+					</panel>
+
+					<panel pos="286,0" width="104" height="43" disableautobackground="true">
+						<button depth="4" name="pageDown" style="icon30px, press" pos="20,-22" sprite="ui_game_symbol_arrow_left" pivot="center" sound="[paging_click]" />
+						<rect depth="4" pos="37,-7" >
+							<sprite name="background" style="icon30px" color="[black]" type="sliced" />
+							<label depth="5" name="pageNumber" pos="0, -3" width="30" height="28" text="1" font_size="26" justify="center"/>
+						</rect>
+						<button depth="4" name="pageUp" style="icon30px, press" pos="84,-22" sprite="ui_game_symbol_arrow_right" pivot="center" sound="[paging_click]" />
+					</panel>
+				</rect>
+
+				<grid name="recipes" rows="12" cols="1" pos="3,-98" width="390" height="552" cell_width="390" cell_height="46" controller="RecipeList" repeat_content="true" arrangement="vertical" >
+					<recipe_entry name="0"/>
+				</grid>
+			</panel>
+		</window>	
+	
+		<!-- INFO -->
+		<window name="craftingInfoPanelConjureIce" width="603" height="392" controller="CraftingInfoWindow" style="crafting.info.window" panel="Center" cursor_area="true" >
+			<panel name="header" height="43" depth="1" backgroundspritename="ui_game_panel_header">
+				<sprite depth="2" name="windowIcon" style="icon32px" pos="4,-5" sprite="{itemgroupicon}"/>
+				<label style="header.name" text="{itemname}" />
+
+				<rect pos="350,0" name="requiredToolOverlay">
+					<sprite size="24,24" depth="2" name="requiredToolCheckmark" pos="0,-8" sprite="ui_game_symbol_check" color="[red]"/>
+					<label depth="2" pos="35,-8" name="requiredToolText" width="200" height="32" text="Required" text_key="xuiRequired" font_size="32" upper_case="true" justify="left"/>
+				</rect>
+			</panel>
+
+			<rect name="contentCraftingInfo" height="381" depth="1" pos="0,-46">
+				<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" width="603" height="345" color="[black]" type="sliced" fillcenter="false" />
+				<rect depth="1" pos="3,-3" name="preview" width="147" height="147">
+					<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="153" height="153" color="[black]" type="sliced" fillcenter="false" />
+					<sprite depth="1" color="[darkGrey]" type="sliced" globalopacity="true" />
+					<sprite depth="2" name="itemPreview" width="120" height="83" atlas="ItemIconAtlas" sprite="{itemicon}" color="{itemicontint}" pos="13,-15" foregroundlayer="true"/>
+					<sprite depth="3" name="clockIcon" size="24,24" sprite="ui_game_symbol_clock" pos="25, -116" type="sliced" color="[iconColor]" foregroundlayer="true" />
+					<!-- <label depth="3" name="TimeLabel" style="icon30px" pos="53, -119" text="TIME" text_key="xuiTime" font_size="22" /> -->
+					<label depth="3" name="craftingTime" width="100" height="32" pos="55, -115" text="{craftingtime}" font_size="26" color="[beige]"/>
+				</rect>
+
+				<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="0,-150" width="153" height="195" color="[black]" type="sliced" fillcenter="false" />
+				<grid name="itemActions" rows="4" cols="1" pos="3,-153" width="147" cell_width="147" cell_height="42" controller="ItemActionList">
+					<rect depth="1" name="actions" width="147" height="225">
+						<sprite color="[mediumGrey]" type="sliced" height="43" />
+						<rect name="recipeCraftCountControl" width="120" height="210" pos="27,0" controller="RecipeCraftCount">
+							<button depth="2" name="countDown" style="icon30px, press" pos="-5,-20" sprite="ui_game_symbol_arrow_left" pivot="center" sound="[paging_click]"/>
+							<count_control_input name="count_input" depth="2" pos="10,-5" />
+							<button depth="2" name="countUp" style="icon30px, press" pos="59,-20" sprite="ui_game_symbol_arrow_right" pivot="center" sound="[paging_click]"/>
+							<button depth="2" name="countMax" style="icon30px, press" pos="91,-20" sprite="ui_game_symbol_arrow_max" pivot="center" sound="[paging_click]"/>
+						</rect>
+					</rect>
+					<item_action_entry />
+					<item_action_entry />
+					<item_action_entry />
+					<sprite depth="3" name="fillerBackground" height="22" color="[mediumGrey]" type="sliced"/>
+				</grid>
+				<rect depth="1" pos="153,-3" name="description" width="447" height="120">
+					<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="453" height="126" color="[black]" type="sliced" fillcenter="false" />
+					<sprite color="[mediumGrey]" type="sliced" />
+					<label depth="2" name="descriptionText" pos="6,-5" width="440" height="98" text="{itemdescription}" />
+				</rect>
+
+				<rect depth="1" pos="153,-124" name="ingredients" width="447" height="264">
+
+					<grid rows="6" width="447" height="231" cell_height="44" cell_width="447" controller="IngredientList" arrangement="vertical">
+						<ingredient_row name="0"/>
+						<ingredient_row name="1"/>
+						<ingredient_row name="2"/>
+						<ingredient_row name="3"/>
+						<ingredient_row name="4"/>
+					</grid>
+				</rect>
+
+			</rect>
+		</window>	
+	
+	
+		<!-- TOOLS -->
+		<window name="windowToolsConjureIce" width="228" height="121" panel="Right" cursor_area="true" >
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_forge"/>
+				<label style="header.name" text="ICE AUGMENTS" />
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true" on_press="true">
+
+				<grid name="inventory" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false"
+				required_tools="toolIceCore,toolLoomIce,toolHammerIce" required_tools_only="true">
+					<required_item_stack name="0"/>
+				</grid>
+			</rect>
+		</window>
+	
+	
+		<!-- FUEL -->
+		<window name="windowFuelConjureIce" width="228" height="166" panel="Right" cursor_area="true">
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_fire"/>
+				<label style="header.name" text="WOOD" />
+				<label style="header.timer"/>
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="79" >
+				<rect disablefallthrough="true" on_press="true">
+					<grid rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationFuelGrid" repeat_content="true" allow_sort_order="false">
+						<item_stack name="0"/>
+					</grid>
+				</rect>
+				<grid name="slot_preview" depth="1" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="SlotPreview">
+					<rect>
+						<sprite name="slot" depth="2" width="70" height="50" sprite="resourceWood" atlas="ItemIconAtlasGreyscale" pos="35,-30" pivot="center" foregroundlayer="true"/>
+					</rect>
+					<rect>
+						<sprite name="slot" depth="2" width="70" height="50" sprite="resourceWood" atlas="ItemIconAtlasGreyscale" pos="35,-30" pivot="center" foregroundlayer="true"/>
+					</rect>
+					<rect>
+						<sprite name="slot" depth="2" width="70" height="50" sprite="resourceWood" atlas="ItemIconAtlasGreyscale" pos="35,-30" pivot="center" foregroundlayer="true"/>
+					</rect>
+				</grid>
+			</rect>
+
+			<panel name="buttonContent" depth="5" pos="0, -121" height="40" backgroundcolor="[black]" bordercolor="[black]">
+				<sprite depth="5" name="backgroundMain" sprite="menu_empty3px" color="[black]" type="sliced" fillcenter="false" />
+				<rect depth="1" pos="3,-3" width="225" height="34">
+					<button name="button" sprite="menu_empty" defaultcolor="[mediumGrey]" disabledcolor="[mediumGrey]" hoversprite="ui_game_select_row" hovercolor="[white]" type="sliced" width="222"  hoverscale="1.0" />
+					<sprite depth="2" name="flameIcon" style="icon32px" pos="5,0" sprite="ui_game_symbol_fire" />
+					<label depth="2" name="onoff" pos="0,-6" justify="center" text="TRANSMUTE" font_size="26" />
+				</rect>
+			</panel>
+		</window>
+	
+	
+		<!-- INPUT -->
+		<window name="windowConjureIceInput" width="228" height="204" panel="Right"
+			controller="WorkstationMaterialInputWindow" materials_accepted="ice,ice2,ice3,ice4,ice5" valid_materials_color="[green]" invalid_materials_color="[red]" cursor_area="true" >
+
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_cold"/>
+				<label style="header.name" text="ICE ESSENCE" />
+			</panel>
+
+			<sprite depth="2" name="backgroundMain" sprite="menu_empty3px" pos="0,-46" height="153" color="[black]" type="sliced" fillcenter="false" on_press="true" />
+			<rect name="content" depth="1" pos="0,-46" height="153">
+				<!-- depth: # units -->
+				<grid depth="5" rows="2" cols="1" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationMaterialInputGrid" repeat_content="true">
+					<item_stack name="0"/>
+				</grid>
+
+			</rect>
+			
+			<!-- Unit -->
+			<rect name="content2" depth="0" pos="78, -49" width="147" height="148">
+				<sprite depth="1" color="[mediumGrey]" type="sliced" on_press="true"/>
+				<!-- rows: # units -->
+				<grid rows="5" cols="1" pos="3,-3" cell_width="147" cell_height="24"  repeat_content="true">
+					<forge_material name="0"/>
+				</grid>
+			</rect>
+		</window>		
+	
+	</append>
+</Sorcery>

@@ -1,0 +1,283 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		PROPRIETARY DISCLAIMER
+		__________________________________________________________________________________
+		2019 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		AUTHOR: https://7daystodie.com/forums/member.php?153479-Devrix
+		MOD LINK: https://7daystodie.com/forums/showthread.php?109145-Sorcery
+		TFP POLICY: https://7daystodie.com/forums/showthread.php?59817-TFP-Official-Modding-Forum-Policy
+		__________________________________________________________________________________
+		NOTICE:  All digital works, ideas, concepts and functionality contained herein, and made possible by the
+		"Sorcery Mod", is the sole digital proprietary property of mod author DEVRIX. Ownership and equal
+		rights are hereby, irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith. 
+		
+		USAGE:  This mod, and the digital works within, may be downloaded and used by players of 
+		the 7 Days to Die community with no required royalties. By doing so, users of the mod understand 
+		and accept full and sole responsibility and liability of using the mod. Author, nor The Fun Pimps, shall
+		be held responsible or liable for any possible conflict(s) as a direct or indirect result of using this mod.
+		
+		REDISTRIBUTION: The mod, and the digital works of, may be redistributed within the 7 Days to Die 
+		community. Conditions of redistribution require this notice to remain in full, unmodified, and a direct 
+		link, with credit stated, to the original mod and author. To redistribute this mod altered in any way, 
+		it is requested that your alterations to the mod are stated clearly and precisely from that of the original.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their hard
+		work and ongoing dedication to building and improving an awesome game that fuels the passion and
+		drives the creation of this mod.
+		__________________________________________________________________________________-->
+		
+	<!-- item_display -->
+	<append xpath="/ui_display_info/item_display">
+
+		<!-- SORCERY ARMOR -->
+		<item_display_info display_type="sorceryArmor_Base" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>			
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+			<display_entry name="DegradationMax" title_key="statDegradationMax"/>
+		</item_display_info>
+		
+		<item_display_info display_type="sorceryArmor_Rare" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+			<display_entry name="DegradationMax" title_key="statDegradationMax"/>
+		</item_display_info>		
+		
+		<item_display_info display_type="sorceryArmor_Epic" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+			<display_entry name="DegradationMax" title_key="statDegradationMax"/>
+		</item_display_info>
+	
+		<item_display_info display_type="sorceryArmor_Legendary" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+			<display_entry name="DegradationMax" title_key="statDegradationMax"/>
+		</item_display_info>
+	
+		<item_display_info display_type="sorceryArmor_Transcendent" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+			<display_entry name="DegradationMax" title_key="statDegradationMax"/>
+		</item_display_info>
+	
+	
+		<!-- SORCERY HOOD -->
+		<item_display_info display_type="sorceryArmorHood_Legendary" display_group="groupAttire" >
+			<display_entry name="AttributeLevel" tags="attSorcery" title_key="Sorcery+"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryArmorHood_Transcendent" display_group="groupAttire" >
+			<display_entry name="AttributeLevel" tags="attSorcery" title_key="Sorcery+"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+	
+		<!-- SORCERY ROBE -->
+		<item_display_info display_type="sorceryArmorRobe_Legendary" display_group="groupAttire" >
+			<display_entry name="dsorcMasteryAll" title_key="Sorcery Mastery+"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryArmorRobe_Transcendent" display_group="groupAttire" >
+			<display_entry name="dsorcMasteryAll" title_key="Sorcery Mastery+"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+	
+		<!-- SORCERY GLOVES -->
+		<item_display_info display_type="sorceryArmorGloves_Legendary" display_group="groupAttire" >
+			<display_entry name="PerkLevel" tags="perkSorcerySpellcastMastery" title_key="Spellcast Mastery+"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryArmorGloves_Transcendent" display_group="groupAttire" >
+			<display_entry name="PerkLevel" tags="perkSorcerySpellcastMastery" title_key="Spellcast Mastery+"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+	
+		<!-- SORCERY BOOTS -->
+		<item_display_info display_type="sorceryArmorBoots_Base" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+			<display_entry name="DegradationMax" title_key="statDegradationMax"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryArmorBoots_Rare" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+			<display_entry name="DegradationMax" title_key="statDegradationMax"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryArmorBoots_Epic" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryArmorBoots_Legendary" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryArmorBoots_Transcendent" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: Fire, Ice, Lightning" display_type="Percent"/>
+			<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>		
+	
+		<!-- SORCERY ACCESSORY -->
+		<item_display_info display_type="sorceryAccessory_Base" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcEssenceFire" title_key="Essence Harvest: Fire" display_type="Percent"/>
+			<display_entry name="dsorcEssenceIce" title_key="Essence Harvest: Ice" display_type="Percent"/>
+			<display_entry name="dsorcEssenceLightning" title_key="Essence Harvest: Lightning" display_type="Percent"/>
+		</item_display_info>
+		
+		<item_display_info display_type="sorceryAccessory_Rare" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcEssenceFire" title_key="Essence Harvest: Fire" display_type="Percent"/>
+			<display_entry name="dsorcEssenceIce" title_key="Essence Harvest: Ice" display_type="Percent"/>
+			<display_entry name="dsorcEssenceLightning" title_key="Essence Harvest: Lightning" display_type="Percent"/>
+		</item_display_info>		
+		
+		<item_display_info display_type="sorceryAccessory_Epic" display_group="groupAttire" >
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceFire" title_key="Essence Harvest: Fire" display_type="Percent"/>
+			<display_entry name="dsorcEssenceIce" title_key="Essence Harvest: Ice" display_type="Percent"/>
+			<display_entry name="dsorcEssenceLightning" title_key="Essence Harvest: Lightning" display_type="Percent"/>
+		</item_display_info>
+	
+		<item_display_info display_type="sorceryAccessory_Legendary" display_group="groupAttire" >
+			<display_entry name="PerkLevel" tags="perkSorceryEssenceMastery" title_key="Essence Mastery+"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceFire" title_key="Essence Harvest: Fire" display_type="Percent"/>
+			<display_entry name="dsorcEssenceIce" title_key="Essence Harvest: Ice" display_type="Percent"/>
+			<display_entry name="dsorcEssenceLightning" title_key="Essence Harvest: Lightning" display_type="Percent"/>
+		</item_display_info>
+	
+		<item_display_info display_type="sorceryAccessory_Transcendent" display_group="groupAttire" >
+			<display_entry name="PerkLevel" tags="perkSorceryEssenceMastery" title_key="Essence Mastery+"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+			<display_entry name="dsorcEssenceFire" title_key="Essence Harvest: Fire" display_type="Percent"/>
+			<display_entry name="dsorcEssenceIce" title_key="Essence Harvest: Ice" display_type="Percent"/>
+			<display_entry name="dsorcEssenceLightning" title_key="Essence Harvest: Lightning" display_type="Percent"/>
+		</item_display_info>
+	
+
+		
+	</append>
+
+
+
+	<!-- CHARACTER STATS -->
+	<!-- <append xpath="/ui_display_info/character_stat_display">	
+		<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+		<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+		<display_entry name="dsorcEssenceFire" title_key="Essence Harvest: Fire" display_type="Percent"/>
+		<display_entry name="dsorcEssenceIce" title_key="Essence Harvest: Ice" display_type="Percent"/>
+		<display_entry name="dsorcEssenceLightning" title_key="Essence Harvest: Lightning" display_type="Percent"/>
+		<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
+	</append> -->
+
+
+	
+	
+	<!-- crafting_category_display -->
+	<append xpath="/ui_display_info/crafting_category_display">
+	
+		<crafting_category_list display_type="conjureFire">
+			<crafting_category name="Ammo/Weapons" icon="ui_game_symbol_fire" display_name="Fire Sorcery" />
+			<crafting_category name="Clothing" icon="ui_game_symbol_light_armor" display_name="Fire Armor Crafting" />
+			<crafting_category name="Mods" icon="ui_game_symbol_assemble" display_name="Fire Rune Crafting" />
+			<crafting_category name="Resources" icon="ui_game_symbol_forge" display_name="Fire Augments" />
+			<crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Fire Quests" />
+		</crafting_category_list>
+
+		<crafting_category_list display_type="conjureIce">
+			<crafting_category name="Ammo/Weapons" icon="ui_game_symbol_cold" display_name="Ice Sorcery" />
+			<crafting_category name="Clothing" icon="ui_game_symbol_light_armor" display_name="Ice Armor Crafting" />
+			<crafting_category name="Mods" icon="ui_game_symbol_assemble" display_name="Ice Rune Crafting" />
+			<crafting_category name="Resources" icon="ui_game_symbol_forge" display_name="Ice Augments" />
+			<crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Ice Quests" />
+		</crafting_category_list>
+		
+		<crafting_category_list display_type="conjureLightning">
+			<crafting_category name="Ammo/Weapons" icon="ui_game_symbol_electric_power" display_name="Lightning Sorcery" />
+			<crafting_category name="Clothing" icon="ui_game_symbol_light_armor" display_name="Sorcerer Armor" />
+			<crafting_category name="Mods" icon="ui_game_symbol_assemble" display_name="Runes" />
+			<crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Quests" />
+		</crafting_category_list>
+		
+	</append>
+	
+	
+
+	
+	
+</Sorcery>
