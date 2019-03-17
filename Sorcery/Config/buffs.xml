@@ -1565,7 +1565,7 @@
 								</triggered_effect>
 					</effect_group>
 					
-					<effect_group name="DEV">
+					<!-- <effect_group name="DEV">
 						<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="@SorceryIceStack"/>
 						<triggered_effect trigger="onSelfBuffStart" action="LogMessage" message="buffSpell_IceStorm: START"/>
 						<triggered_effect trigger="onSelfBuffStack" action="LogMessage" message="buffSpell_IceStorm: STACK"/>
@@ -1579,7 +1579,7 @@
 						<triggered_effect trigger="onSelfBuffRemove" action="CVarLogValue" cvar="@SorceryIceStack"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="LogMessage" message="buffSpell_IceStorm: REMOVE"/>
 						<triggered_effect trigger="onSelfBuffFinish" action="LogMessage" message="buffSpell_IceStorm: FINISH"/>
-					</effect_group>	
+					</effect_group> -->	
 					
 					<effect_group name="BASE AOE">
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="5" buff="debuffSpell_IceStormAOE" target_tags="ally,party"/>
@@ -1588,7 +1588,7 @@
 					
 					<!-- RANK -->
 					<effect_group name="RANK 0-1: ICEBURN">
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormSuffer" />
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@@SorceryIceStack" />
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5" />
 						<passive_effect name="RunSpeed" operation="perc_subtract" value=".5" />
@@ -1599,7 +1599,7 @@
 					
 					<effect_group name="RANK 2: ICEBURN+">
 						<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="2"/>
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormSuffer" />
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@@SorceryIceStack" />
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".2" />
 						<passive_effect name="RunSpeed" operation="perc_subtract" value=".2" />
@@ -1669,7 +1669,7 @@
 					
 					<!-- RANK -->
 					<effect_group name="RANK 0-1: ICEBURN">
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormAOESuffer" />
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@@SorceryIceStack" />
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5" />
 						<passive_effect name="RunSpeed" operation="perc_subtract" value=".5" />
@@ -1680,7 +1680,7 @@
 					
 					<effect_group name="RANK 2: ICEBURN+">
 						<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="2"/>
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormAOESuffer" />
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@@SorceryIceStack" />
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".2" />
 						<passive_effect name="RunSpeed" operation="perc_subtract" value=".2" />
@@ -1736,7 +1736,7 @@
 				
 					<effect_group name="RANK 4: ICEPOCALYPSE">
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormFreezeSuffer" />
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
 						<passive_effect name="WalkSpeed" operation="perc_set" value="0" duration="0,3"/>
 						<passive_effect name="RunSpeed" operation="perc_set" value="0" duration="0,3"/>
 						<passive_effect name="CrouchSpeed" operation="perc_set" value="0" duration="0,3" />
