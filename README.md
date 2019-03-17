@@ -1,1 +1,1 @@
-![Sorcery](https://i.postimg.cc/rFrBGGSS/7d2d-sorcery-header.png)
+![Sorcery](https://i.postimg.cc/nLdGChKp/sorcery.jpg)
