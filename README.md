@@ -1,2 +1,2 @@
 # Sorcery
-7 Days to Die
+Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell casting elemental spells of Fire, Ice and Lightning.
