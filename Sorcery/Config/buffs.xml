@@ -1589,7 +1589,7 @@
 					<!-- RANK -->
 					<effect_group name="RANK 0-1: ICEBURN">
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormSuffer" />
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5" />
 						<passive_effect name="RunSpeed" operation="perc_subtract" value=".5" />
 						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".5"  />
@@ -1670,7 +1670,7 @@
 					<!-- RANK -->
 					<effect_group name="RANK 0-1: ICEBURN">
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormAOESuffer" />
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5" />
 						<passive_effect name="RunSpeed" operation="perc_subtract" value=".5" />
 						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".5"  />
