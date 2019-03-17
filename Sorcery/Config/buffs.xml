@@ -994,7 +994,7 @@
 				</effect_group>
 
 				<effect_group name="No Stacks">
-					<requirement name="CVarCompare" cvar="@SorceryIceStack" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="@SorceryIceStack" operation="LT" value="1" target="self"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="iceStacks/Stack1"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="iceStacks/Stack2"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="iceStacks/Stack3"/>
@@ -1002,7 +1002,7 @@
 				</effect_group>
 				
 				<effect_group name="Stack 1">
-					<requirement name="CVarCompare" cvar="@SorceryIceStack" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="@SorceryIceStack" operation="Equals" value="1" target="self"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="iceStacks/Stack1"/>					
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="iceStacks/Stack2"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="iceStacks/Stack3"/>
@@ -1010,7 +1010,7 @@
 				</effect_group>
 				
 				<effect_group name="Stack 2">
-					<requirement name="CVarCompare" cvar="@SorceryIceStack" operation="Equals" value="2"/>
+					<requirement name="CVarCompare" cvar="@SorceryIceStack" operation="Equals" value="2" target="self"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="iceStacks/Stack2"/>					
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="iceStacks/Stack1"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="iceStacks/Stack3"/>
@@ -1018,7 +1018,7 @@
 				</effect_group>
 				
 				<effect_group name="Stack 3">
-					<requirement name="CVarCompare" cvar="@SorceryIceStack" operation="Equals" value="3"/>
+					<requirement name="CVarCompare" cvar="@SorceryIceStack" operation="Equals" value="3" target="self"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="iceStacks/Stack3"/>					
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="iceStacks/Stack1"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="iceStacks/Stack2"/>
@@ -1026,7 +1026,7 @@
 				</effect_group>
 				
 				<effect_group name="Stack 4">
-					<requirement name="CVarCompare" cvar="@SorceryIceStack" operation="GTE" value="4"/>
+					<requirement name="CVarCompare" cvar="@SorceryIceStack" operation="GTE" value="4" target="self"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" transform_path="iceStacks/Stack4"/>					
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="iceStacks/Stack1"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="iceStacks/Stack2"/>
@@ -1256,9 +1256,7 @@
 				<duration value="5"/>
 				<update_rate value="1"/>
 
-					<effect_group name="INITIAL">
-						<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="@SorceryIceStack"/> <!-- DEBUG -->
-						
+					<effect_group name="INITIAL">						
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="@SorceryIceStack" operation="add" value="1" />
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="@SorceryIceStack" operation="add" value="1" />
 						
@@ -1547,27 +1545,27 @@
 
 					<effect_group name="AMPLIFY: CVAR">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAmplify" operation="set" value="@@SorceryIceStack" target="self"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAmplify" operation="multiply" value="20" target="self">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAmplify" operation="multiply" value="10" target="self">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="LT" value="5"/>
 						</triggered_effect>
 								<!-- RANK 5-->
-								<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAmplify" operation="multiply" value="40" target="self">
+								<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAmplify" operation="multiply" value="20" target="self">
 									<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="5"/>
 								</triggered_effect>
 					</effect_group>
 
 					<effect_group name="SUFFER: CVAR">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormSuffer" operation="set" value="@@SorceryIceStack" target="self"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormSuffer" operation="multiply" value="2" target="self">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormSuffer" operation="multiply" value="5" target="self">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="LT" value="5"/>
 						</triggered_effect>
 								<!-- RANK 5-->
-								<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormSuffer" operation="multiply" value="4" target="self">
+								<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormSuffer" operation="multiply" value="10" target="self">
 									<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="5"/>
 								</triggered_effect>
 					</effect_group>
 					
-					<!-- <effect_group name="DEV">
+					<effect_group name="DEV">
 						<triggered_effect trigger="onSelfBuffStart" action="CVarLogValue" cvar="@SorceryIceStack"/>
 						<triggered_effect trigger="onSelfBuffStart" action="LogMessage" message="buffSpell_IceStorm: START"/>
 						<triggered_effect trigger="onSelfBuffStack" action="LogMessage" message="buffSpell_IceStorm: STACK"/>
@@ -1581,7 +1579,7 @@
 						<triggered_effect trigger="onSelfBuffRemove" action="CVarLogValue" cvar="@SorceryIceStack"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="LogMessage" message="buffSpell_IceStorm: REMOVE"/>
 						<triggered_effect trigger="onSelfBuffFinish" action="LogMessage" message="buffSpell_IceStorm: FINISH"/>
-					</effect_group>	 -->
+					</effect_group>	
 					
 					<effect_group name="BASE AOE">
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="5" buff="debuffSpell_IceStormAOE" target_tags="ally,party"/>
@@ -1591,18 +1589,18 @@
 					<!-- RANK -->
 					<effect_group name="RANK 0-1: ICEBURN">
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormSuffer" />
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
-						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".6" />
-						<passive_effect name="RunSpeed" operation="perc_subtract" value=".6" />
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".6"  />
-						<passive_effect name="JumpStrength" operation="perc_subtract" value=".6"  />
-						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".6"  />
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5" />
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".5" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".5"  />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".5"  />
+						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".5"  />
 					</effect_group>
 					
 					<effect_group name="RANK 2: ICEBURN+">
 						<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="2"/>
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormSuffer" />
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".2" />
 						<passive_effect name="RunSpeed" operation="perc_subtract" value=".2" />
 						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".2"  />
@@ -1622,7 +1620,7 @@
 					
 					<effect_group name="RANK 4: ICEPOCALYPSE">
 						<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="4"/>
-						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="4" target="self"/>
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="6" target="self"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="debuffSpell_IceStormFreeze"/>
 					</effect_group>					
 					
@@ -1648,40 +1646,42 @@
 					</effect_group>
 
 					<effect_group name="AMPLIFY: CVAR">
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAmplify" operation="set" value="@@SorceryIceStack" target="self"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAmplify" operation="multiply" value="20" target="self">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAOEAmplify" operation="set" value="@@SorceryIceStack" target="self"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAOEAmplify" operation="multiply" value="10" target="self">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="LT" value="5"/>
 						</triggered_effect>
-								<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAmplify" operation="multiply" value="40" target="self">
+								<!-- RANK 5-->
+								<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAOEAmplify" operation="multiply" value="20" target="self">
 									<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="5"/>
 								</triggered_effect>
 					</effect_group>
 
 					<effect_group name="SUFFER: CVAR">
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormSuffer" operation="set" value="@@SorceryIceStack" target="self"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormSuffer" operation="multiply" value="2" target="self">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAOESuffer" operation="set" value="@@SorceryIceStack" target="self"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAOESuffer" operation="multiply" value="5" target="self">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="LT" value="5"/>
 						</triggered_effect>
-								<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormSuffer" operation="multiply" value="4" target="self">
+								<!-- RANK 5-->
+								<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormAOESuffer" operation="multiply" value="10" target="self">
 									<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="5"/>
 								</triggered_effect>
-					</effect_group>			
+					</effect_group>		
 					
 					<!-- RANK -->
 					<effect_group name="RANK 0-1: ICEBURN">
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormSuffer" />
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
-						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".6" />
-						<passive_effect name="RunSpeed" operation="perc_subtract" value=".6" />
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".6"  />
-						<passive_effect name="JumpStrength" operation="perc_subtract" value=".6"  />
-						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".6"  />
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormAOESuffer" />
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5" />
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".5" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".5"  />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".5"  />
+						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".5"  />
 					</effect_group>
 					
 					<effect_group name="RANK 2: ICEBURN+">
 						<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="2"/>
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormSuffer" />
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormAOESuffer" />
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".2" />
 						<passive_effect name="RunSpeed" operation="perc_subtract" value=".2" />
 						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".2"  />
@@ -1692,16 +1692,16 @@
 					<effect_group name="RANK 3: SUFFER">
 						<requirement name="CVarCompare" cvar="@SorceryIceStack" operation="GTE" value="1" target="self"/>
 						<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="3"/>
-						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$SorceryIceStormSuffer" target="self"/>
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$SorceryIceStormAOESuffer" target="self"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffSpellImpactTrigger_Ice"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" target="self" stat="Health" operation="subtract" value="10"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" target="self" stat="Health" operation="subtract" value="@$SorceryIceStormAmplify"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" target="self" stat="Health" operation="subtract" value="@$SorceryIceStormAOEAmplify"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="@SorceryIceStack" operation="subtract" value="1" target="self"/>
-					</effect_group>			
+					</effect_group>		
 					
 					<effect_group name="RANK 4: ICEPOCALYPSE">
 						<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="4"/>
-						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="4" target="self"/>
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5" target="self"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="debuffSpell_IceStormFreeze"/>
 					</effect_group>					
 					
@@ -1714,20 +1714,51 @@
 			<buff name="debuffSpell_IceStormFreeze" hidden="true"> 
 				<damage_type value="Piercing"/>	
 				<stack_type value="ignore"/>
-				<duration value="2"/>
+				<duration value="3"/>
 				<update_rate value="1"/>
-
+					<effect_group name="INITIAL">
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceFrozen" />
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryIce_explode" />
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceFrozen.unity3d?iceFrozen" />	
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryIce_cast" />
+					</effect_group>
+				
+					<effect_group name="SUFFER: CVAR">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormFreezeSuffer" operation="set" value="@@SorceryIceStack" target="self"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormFreezeSuffer" operation="multiply" value="3" target="self">
+							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="LT" value="5"/>
+						</triggered_effect>
+								<!-- RANK 5-->
+								<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$SorceryIceStormFreezeSuffer" operation="multiply" value="6" target="self">
+									<requirement name="ProgressionLevel" progression_name="perkSorcerySpellIcestorm" target="other" operation="GTE" value="5"/>
+								</triggered_effect>
+					</effect_group>				
+				
 					<effect_group name="RANK 4: ICEPOCALYPSE">
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="30" />
-						<passive_effect name="WalkSpeed" operation="perc_set" value="0" />
-						<passive_effect name="RunSpeed" operation="perc_set" value="0" />
-						<passive_effect name="CrouchSpeed" operation="perc_set" value="0" />
-						<passive_effect name="JumpStrength" operation="perc_set" value="0" />
-						<passive_effect name="AttacksPerMinute" operation="perc_set" value="0" />
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$SorceryIceStormFreezeSuffer" />
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+						<passive_effect name="WalkSpeed" operation="perc_set" value="0" duration="0,3"/>
+						<passive_effect name="RunSpeed" operation="perc_set" value="0" duration="0,3"/>
+						<passive_effect name="CrouchSpeed" operation="perc_set" value="0" duration="0,3" />
+						<passive_effect name="JumpStrength" operation="perc_set" value="0" duration="0,3" />
+						<passive_effect name="AttacksPerMinute" operation="perc_set" value="0" duration="0,3" />					
+					
+						<passive_effect name="WalkSpeed" operation="base_set" value="0" duration="0,3"/>
+						<passive_effect name="RunSpeed" operation="base_set" value="0" duration="0,3"/>
+						<passive_effect name="CrouchSpeed" operation="base_set" value="0" duration="0,3" />
+						<passive_effect name="JumpStrength" operation="base_set" value="0" duration="0,3" />
+						<passive_effect name="AttacksPerMinute" operation="base_set" value="0" duration="0,3" />
+					</effect_group>
+
+					<effect_group name="FINISH">
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceFrozen-finish" />
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceFrozen-finish.unity3d?iceFrozen-finish" />
+						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryIce_explode" target="self" />
 					</effect_group>
 					
-					<effect_group name="cleanup">
-						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryIce_explode" target="self" />
+					<effect_group name="CLEANUP">
+						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryIce_cast" target="self" />
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceFrozen"/>
 					</effect_group>
 			</buff>
 

@@ -9,6 +9,8 @@
 
 
 
+
+
 SORCERY_START,,LOCALIZATION,,START,,,,,
 
 
@@ -255,7 +257,7 @@ perkSorcerySpellIcestormName,progression,Perk,New,"SPELL: ICE STORM",,,,,
 perkSorcerySpellIcestormRank1Desc,progression,Perk,New,"Learn the catastrophic Ice Storm Spell to command frozen storms capable of Iceburning and freezing your foes amass. ",,,,,
 perkSorcerySpellIcestormRank2Desc,progression,Perk,New,"SUBZERO: Iceburn is greatly amplified severely slowing and crippling all foes caught within the storm.",,,,,
 perkSorcerySpellIcestormRank3Desc,progression,Perk,New,"SUFFER: Ice Storm frequently consumes Iceburn Stacks to induce drastic suffering on foes.",,,,,
-perkSorcerySpellIcestormRank4Desc,progression,Perk,New,"ICEPOCALYPSE: Ice Storm periodically Freezes foes solid and doubles their Iceburn suffering.",,,,,
+perkSorcerySpellIcestormRank4Desc,progression,Perk,New,"ICEPOCALYPSE: Ice Storm periodically Deep Freezes foes while also greatly increasing their Iceburn suffering.",,,,,
 perkSorcerySpellIcestormRank5Desc,progression,Perk,New,"Fully evolve Ice Storm into a Category 6 Storm. Subzero, Suffer and Icepocalypse are greatly amplified by stacks.",,,,,
  
 

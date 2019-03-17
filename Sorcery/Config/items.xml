@@ -879,7 +879,7 @@
 			<property name="Material" value="ice3"/>
 			<property name="Stacknumber" value="250"/> <!-- STK ammo -->
 			<property name="FuelValue" value="1"/>
-			<property name="EconomicValue" value="64"/>
+			<property name="EconomicValue" value="84"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="Damage_type" value="Piercing"/>
 			<property name="Weight" value="1"/>

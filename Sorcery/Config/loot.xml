@@ -337,6 +337,7 @@
 		<item name="spellIceBall" count="1,8" prob=".6"/>
 		<item name="spellFirestorm" count="1,3" prob="0.15"/>
 		<item name="spellIceSpike" count="1,3" prob="0.15"/>
+		<item name="spellIceStorm" count="1,2" prob="0.01"/>
 	</append> 
 
 	<append xpath="/lootcontainers/lootgroup[@name='ammoSteel']">
@@ -344,6 +345,7 @@
 		<item name="spellIceBall" count="2,8" prob=".6"/>
 		<item name="spellFirestorm" count="1,4" prob="0.15"/>
 		<item name="spellIceSpike" count="1,4" prob="0.15"/>
+		<item name="spellIceStorm" count="1,2" prob="0.03"/>
 	</append> 	
 
 	<append xpath="/lootcontainers/lootgroup[@name='militaryAmmo']">
@@ -351,20 +353,23 @@
 		<item name="spellIceBall" count="3,12" prob=".6"/>
 		<item name="spellFirestorm" count="1,5" prob="0.2"/>
 		<item name="spellIceSpike" count="1,5" prob="0.2"/>
+		<item name="spellIceStorm" count="1,2" prob="0.05"/>
 	</append> 
 
 	<append xpath="/lootcontainers/lootgroup[@name='treasureAmmo']">
-		<item name="spellFireball" count="20,40" prob=".6"/>
-		<item name="spellIceBall" count="20,40" prob=".6"/>
+		<item name="spellFireball" count="15,30" prob=".6"/>
+		<item name="spellIceBall" count="15,30" prob=".6"/>
 		<item name="spellFirestorm" count="3,12" prob="0.3"/>
 		<item name="spellIceSpike" count="3,12" prob="0.3"/>
+		<item name="spellIceStorm" count="2,8" prob="0.1"/>
 	</append>  
 
 	<append xpath="/lootcontainers/lootgroup[@name='questAmmo']">
-		<item name="spellFireball" count="15,30" loot_prob_template="GradeBLoot"/>
-		<item name="spellIceBall" count="15,30" loot_prob_template="GradeBLoot"/>
-		<item name="spellFirestorm" count="3,12" loot_prob_template="GradeCLoot"/>
-		<item name="spellIceSpike" count="3,12" loot_prob_template="GradeCLoot"/>
+		<item name="spellFireball" count="15,30" loot_prob_template="GradeALoot"/>
+		<item name="spellIceBall" count="15,30" loot_prob_template="GradeALoot"/>
+		<item name="spellFirestorm" count="3,12" loot_prob_template="GradeBLoot"/>
+		<item name="spellIceSpike" count="3,12" loot_prob_template="GradeBLoot"/>
+		<item name="spellIceStorm" count="2,8" loot_prob_template="GradeCLoot"/>
 	</append>  
   
   
@@ -372,10 +377,18 @@
 	<append xpath="/lootcontainers/lootgroup[@name='weaponsBasicGuns+ammo']">
 		<item name="spellcastFire" prob=".1"/>
 		<item name="spellcastIce" prob=".1"/>
+		<item name="spellFireball" count="5,10" prob=".5"/>
+		<item name="spellIceBall" count="5,10" prob=".5"/>
+		<item name="spellFirestorm" count="2,5" prob=".1"/>
+		<item name="spellIceSpike" count="2,5" prob=".1"/>
+		<item name="spellIceStorm" count="1,5" prob="0.05"/>
 	</append> 	
 	<append xpath="/lootcontainers/lootgroup[@name='weaponsMilitaryGuns+ammo']">
 		<item name="spellcastFire" prob=".05"/>
 		<item name="spellcastIce" prob=".05"/>
+		<item name="spellFirestorm" count="3,6" prob=".1"/>
+		<item name="spellIceSpike" count="3,6" prob=".1"/>
+		<item name="spellIceStorm" count="1,6" prob="0.05"/>		
 	</append> 	
 
 	<append xpath="/lootcontainers/lootgroup[@name='questRanged']">

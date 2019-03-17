@@ -336,6 +336,15 @@
 		<item name="spellcastIce" prob=".3"/>
 	</append>
 		
+	<!-- AMMO -->
+	<append xpath="/traders/trader_item_groups/trader_item_group[@name='ammo']">
+		<item name="spellFireball" count="5,10" prob=".6"/>
+		<item name="spellIceBall" count="5,10" prob=".6"/>
+		<item name="spellFirestorm" count="2,5" prob=".3"/>
+		<item name="spellIceSpike" count="2,5" prob=".3"/>
+		<item name="spellIceStorm" count="1,5" prob=".15"/>
+	</append>
+	
 		
 	<!-- SECRET STASH: MOD ALL -->	
 	<append xpath="/traders/trader_item_groups/trader_item_group[@name='modAllT1SecretStash']">
