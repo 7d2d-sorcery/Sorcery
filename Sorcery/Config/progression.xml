@@ -32,7 +32,7 @@
 	<append xpath="/progression/attributes[1]">
 	
 <!--___________________ SORCERY ATTRIBUTE ___________________-->
-		<attribute name="attSorcery" name_key="attSorceryName" desc_key="attSorceryDesc" icon="ui_game_symbol_hand" min_level="1" max_level="10" base_skill_point_cost="1">
+		<attribute name="attSorcery" name_key="attSorceryName" desc_key="attSorceryDesc" icon="ui_game_symbol_hand" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.18">
 			<level_requirements level="1"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
 			<level_requirements level="2"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
 			<level_requirements level="3"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
