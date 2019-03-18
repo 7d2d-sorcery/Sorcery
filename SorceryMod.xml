@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Servers>
+	<ServerGroup Name="Sorcery" Logo="https://i.postimg.cc/s221WC7s/sorcery-logo-splash.png" Description="Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.">
+			<Server Name="Sorcery" Logo="https://i.postimg.cc/s221WC7s/sorcery-logo-splash.png">
+			<Description>
+** NOTE ** This is not EAC safe, as it is SDX with Localization handling. The pure XML Modlet version of Sorcery is available at the Sorcery thread.
+			
+Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.
+- Unique animations, art, effects and sounds for spells and items
+- Pure Spellcaster playstyle
+- Spellcrafting: 5 unique abilities for each unique spell
+- Armor Crafting: Craft Fire and Ice Armor via Conjure
+- Rune Crafting: Craft Fire and Ice Rune Mods via Conjure
+- Spell Weapon Abilities: primary, secondary, passive, charge
+- Sorcery Crafting Conjures: feed rituals with Essence
+- New Attribute: Sorcery
+- New Dual Skill Tree and Perks
+- Fire, Ice, Lightning Mastery: learn how to craft and augment spells
+- Spellcast Mastery: primary, secondary, passive and charge abilities
+- Rune Mastery: harness the power of Runes to augment your spells
+- Essence Mastery: demystify and awaken the elemental essence of the world to extract and craft spells and weapons with essence.
+- Fire, Ice, Lightning Spells: upgrade each spell with five alterations
+			</Description>
+			<DownloadMode>Clone</DownloadMode>
+			<Version>Latest</Version>
+			<ReleaseNotes>https://7daystodie.com/forums/showthread.php?109145-Sorcery</ReleaseNotes>
+			<Downloads>
+			<Download>https://raw.githubusercontent.com/7D2DMods/Profiles/master/LocalizationProfile.txt</Download>
+			</Downloads>
+		</Server>
+	</ServerGroup>
+</Servers>
