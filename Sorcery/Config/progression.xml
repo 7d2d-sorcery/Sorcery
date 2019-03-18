@@ -28,11 +28,11 @@
 		drives the creation of this mod.
 		__________________________________________________________________________________-->
 		
-	<!-- INSERT AFTER: attIntellect -->
-	<insertAfter xpath="/progression/attributes/attribute[@name='attIntellect']">
+	<!-- APPEND: Attributes -->
+	<append xpath="/progression/attributes[1]">
 	
 <!--___________________ SORCERY ATTRIBUTE ___________________-->
-		<attribute name="attSorcery" name_key="attSorceryName" desc_key="attSorceryDesc" icon="ui_game_symbol_hand">
+		<attribute name="attSorcery" name_key="attSorceryName" desc_key="attSorceryDesc" icon="ui_game_symbol_hand" min_level="1" max_level="10" base_skill_point_cost="1">
 			<level_requirements level="1"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
 			<level_requirements level="2"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
 			<level_requirements level="3"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
@@ -72,10 +72,11 @@
 				<effect_description level="10" desc_key="attSorceryRank10Desc"/>
 			</effect_group>
 		</attribute>
-	</insertAfter>
+		
+	</append>
 
 <!--___________________ SORCERY SKILLS ___________________-->
-	<append xpath="/progression/skills">
+	<append xpath="/progression/skills[1]">
 		<skill name="skillSorceryMastery" parent="attSorcery" name_key="skillSorceryMasteryName" desc_key="skillSorceryMasteryDesc" icon="ui_game_symbol_player"><effect_group/></skill>
 		<skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
 		<skill name="skillSorceryIceCrafting" parent="attSorcery" name_key="skillSorceryIceCraftingName" desc_key="skillSorceryIceCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
@@ -84,10 +85,10 @@
 	
 	
 <!--___________________ SORCERY PERKS ___________________-->
-	<append xpath="/progression/perks">
-		
+	<append xpath="/progression/perks[1]">
+	<!--___________________ SORCERY PERKS ___________________-->
 		<!-- ESSENCE MASTERY -->
-		<perk name="perkSorceryEssenceMastery" parent="skillSorceryMastery" name_key="perkSorceryEssenceMasteryName" desc_key="perkSorceryEssenceMasteryDesc" icon="ui_game_symbol_skills">
+		<perk name="perkSorceryEssenceMastery" parent="skillSorceryMastery" name_key="perkSorceryEssenceMasteryName" desc_key="perkSorceryEssenceMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
@@ -127,7 +128,7 @@
 		
 		
 		<!-- SPELLCAST MASTERY -->
-		<perk name="perkSorcerySpellcastMastery" parent="skillSorceryMastery" name_key="perkSorcerySpellcastMasteryName" desc_key="perkSorcerySpellcastMasteryDesc" icon="ui_game_symbol_skills">
+		<perk name="perkSorcerySpellcastMastery" parent="skillSorceryMastery" name_key="perkSorcerySpellcastMasteryName" desc_key="perkSorcerySpellcastMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
@@ -144,7 +145,7 @@
 	
 	
 		<!-- FIRE MASTERY -->
-		<perk name="perkSorceryFireMastery" parent="skillSorceryMastery" name_key="perkSorceryFireMasteryName" desc_key="perkSorceryFireMasteryDesc" icon="ui_game_symbol_skills">
+		<perk name="perkSorceryFireMastery" parent="skillSorceryMastery" name_key="perkSorceryFireMasteryName" desc_key="perkSorceryFireMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
@@ -179,7 +180,7 @@
 		
 		
 		<!-- ICE MASTERY -->
-		<perk name="perkSorceryIceMastery" parent="skillSorceryMastery" name_key="perkSorceryIceMasteryName" desc_key="perkSorceryIceMasteryDesc" icon="ui_game_symbol_skills">
+		<perk name="perkSorceryIceMastery" parent="skillSorceryMastery" name_key="perkSorceryIceMasteryName" desc_key="perkSorceryIceMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
@@ -214,7 +215,7 @@
 		
 		
 		<!-- LIGHTNING MASTERY -->
-		<perk name="perkSorceryLightningMastery" parent="skillSorceryMastery" name_key="perkSorceryLightningMasteryName" desc_key="perkSorceryLightningMasteryDesc" icon="ui_game_symbol_skills">
+		<perk name="perkSorceryLightningMastery" parent="skillSorceryMastery" name_key="perkSorceryLightningMasteryName" desc_key="perkSorceryLightningMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
@@ -241,7 +242,7 @@
 		
 		
 		<!-- RUNE MASTERY -->
-		<perk name="perkSorceryRuneMastery" parent="skillSorceryMastery" name_key="perkSorceryRuneMasteryName" desc_key="perkSorceryRuneMasteryDesc" icon="ui_game_symbol_skills">
+		<perk name="perkSorceryRuneMastery" parent="skillSorceryMastery" name_key="perkSorceryRuneMasteryName" desc_key="perkSorceryRuneMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
@@ -267,7 +268,7 @@
 	
 <!--___________________ FIRE SORCERY ___________________-->
 		<!-- Fire Spellcast-->
-		<perk name="perkSorcerySpellcastFire" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellcastFireName" desc_key="perkSorcerySpellcastFireDesc" icon="ui_game_symbol_fire">
+		<perk name="perkSorcerySpellcastFire" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellcastFireName" desc_key="perkSorcerySpellcastFireDesc" icon="ui_game_symbol_fire" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryLevel01"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
@@ -284,7 +285,7 @@
 		</perk>
 		
 		<!-- Fire Spell: FIREBALL -->
-		<perk name="perkSorcerySpellFireball" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellFireballName" desc_key="perkSorcerySpellFireballDesc" icon="ui_game_symbol_fire">
+		<perk name="perkSorcerySpellFireball" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellFireballName" desc_key="perkSorcerySpellFireballDesc" icon="ui_game_symbol_fire" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryLevel01"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="2" desc_key="reqSorceryFireMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="3" desc_key="reqSorceryFireMasteryLevel03"/></level_requirements>
@@ -302,7 +303,7 @@
 		</perk>
 		
 		<!-- Fire Spell: FIRESTORM -->
-		<perk name="perkSorcerySpellFirestorm" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellFirestormName" desc_key="perkSorcerySpellFirestormDesc" icon="ui_game_symbol_fire">
+		<perk name="perkSorcerySpellFirestorm" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellFirestormName" desc_key="perkSorcerySpellFirestormDesc" icon="ui_game_symbol_fire" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="2" desc_key="reqSorceryFireMasteryLevel02"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="2" desc_key="reqSorceryFireMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="3" desc_key="reqSorceryFireMasteryLevel03"/></level_requirements>
@@ -322,7 +323,7 @@
 
 <!--___________________ ICE SORCERY ___________________-->
 		<!-- Ice Spellcast -->
-		<perk name="perkSorcerySpellcastIce" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellcastIceName" desc_key="perkSorcerySpellcastIceDesc" icon="ui_game_symbol_cold">
+		<perk name="perkSorcerySpellcastIce" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellcastIceName" desc_key="perkSorcerySpellcastIceDesc" icon="ui_game_symbol_cold" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryLevel01"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
@@ -339,7 +340,7 @@
 		</perk>
 		
 		<!-- Ice Spell: ICEBALL -->
-		<perk name="perkSorcerySpellIceball" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellIceballName" desc_key="perkSorcerySpellIceballDesc" icon="ui_game_symbol_cold">
+		<perk name="perkSorcerySpellIceball" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellIceballName" desc_key="perkSorcerySpellIceballDesc" icon="ui_game_symbol_cold" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryLevel01"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="2" desc_key="reqSorceryIceMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
@@ -356,7 +357,7 @@
 		</perk>
 		
 		<!-- Ice Spell: ICESPIKE -->
-		<perk name="perkSorcerySpellIceSpike" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellIceSpikeName" desc_key="perkSorcerySpellIceSpikeDesc" icon="ui_game_symbol_cold">
+		<perk name="perkSorcerySpellIceSpike" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellIceSpikeName" desc_key="perkSorcerySpellIceSpikeDesc" icon="ui_game_symbol_cold" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="2" desc_key="reqSorceryIceMasteryLevel02"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="2" desc_key="reqSorceryIceMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
@@ -373,7 +374,7 @@
 		</perk>		
 		
 		<!-- Ice Spell: ICESTORM -->
-		<perk name="perkSorcerySpellIcestorm" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellIcestormName" desc_key="perkSorcerySpellIcestormDesc" icon="ui_game_symbol_cold">
+		<perk name="perkSorcerySpellIcestorm" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellIcestormName" desc_key="perkSorcerySpellIcestormDesc" icon="ui_game_symbol_cold" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
@@ -393,7 +394,7 @@
 
 <!--___________________ LIGHTNING SORCERY ___________________-->
 		<!-- Lightning Spellcast -->
-		<perk name="perkSorcerySpellcastLightning" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellcastLightningName" desc_key="perkSorcerySpellcastLightningDesc" icon="ui_game_symbol_electric_power">
+		<perk name="perkSorcerySpellcastLightning" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellcastLightningName" desc_key="perkSorcerySpellcastLightningDesc" icon="ui_game_symbol_electric_power" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
@@ -410,7 +411,7 @@
 		</perk>
 		
 		<!-- Lightning Spell: LIGHTNINGSTRIKE -->
-		<perk name="perkSorcerySpellLightningstrike" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellLightningstrikeName" desc_key="perkSorcerySpellLightningstrikeDesc" icon="ui_game_symbol_electric_power">
+		<perk name="perkSorcerySpellLightningstrike" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellLightningstrikeName" desc_key="perkSorcerySpellLightningstrikeDesc" icon="ui_game_symbol_electric_power" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
@@ -426,7 +427,7 @@
 		</perk>
 		
 		<!-- Lightning Spell: LIGHTNINGSTORM -->
-		<perk name="perkSorcerySpellLightningstorm" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellLightningstormName" desc_key="perkSorcerySpellLightningstormDesc" icon="ui_game_symbol_electric_power">
+		<perk name="perkSorcerySpellLightningstorm" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellLightningstormName" desc_key="perkSorcerySpellLightningstormDesc" icon="ui_game_symbol_electric_power" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="goDisabled"/></level_requirements>
@@ -440,8 +441,7 @@
 				<effect_description level="5" desc_key="perkSorcerySpellLightningstormRank5Desc"/>
 			</effect_group>
 		</perk>		
-		
-		
-	</append>		
+				
+	</append>	
 
 </Sorcery>
