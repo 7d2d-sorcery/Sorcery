@@ -40,6 +40,11 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$head_essenceFireHarvest"/> -->
 					</effect_group>			 
 					 
+					<effect_group name="MARK TARGETS">
+						<!-- THIS BUFF ENSURES KILL CREDIT FOR BUFF/SPELL/TRAP/PET/ALL KILLS -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="60" buff="buffSorceryMarkTarget" target_tags="enemy,animal" />
+					</effect_group>
+					 
 					 <effect_group name="Equip: EYES">
 						<passive_effect name="HarvestCount" operation="perc_add" value="@$eyes_essenceFireHarvest" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
 						<passive_effect name="HarvestCount" operation="perc_add" value="@$eyes_essenceIceHarvest" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
@@ -90,6 +95,16 @@
 						<passive_effect name="HarvestCount" operation="perc_add" value="@$boots_essenceIceHarvest" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
 						<passive_effect name="HarvestCount" operation="perc_add" value="@$boots_essenceLightningHarvest" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>					 
 					 </effect_group>					 
+			</buff>			
+			
+			<!-- SORCERY: BUFF KILL WORKAROUND -->
+			<buff name="buffSorceryMarkTarget">
+				<damage_type value="Piercing"/>
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+					<!-- THIS BUFF ENSURES KILL CREDIT FOR BUFF/SPELL/TRAP/PET/ALL KILLS -->
+					<!-- THIS WORKS THANKS TO THE DAMAGE_TYPE PROPERTY -->
+					<!-- WILL NOT ALERT TARGETS DUE TO ABSENCE OF DAMAGE EFFECTS -->
 			</buff>			
 			
 		<!--___________________________ SPELLCASTS: SORCERY WEAPONS ___________________________-->

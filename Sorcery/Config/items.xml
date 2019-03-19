@@ -939,6 +939,7 @@
 				<!-- <triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffSpellImpactTrigger_Ice" target_tags="enemy,animal"/>
 				<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffSpell_Ice" target_tags="enemy,animal"/> -->
 				<triggered_effect name="onProjectileImpact" action="PlaySound" target="positionAOE" range="1" sound="sorceryIce_impact" />
+				<!-- <triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="20" buff="buffSorceryMarkTarget" target_tags="enemy,animal"/> -->
 				<!-- sorceryIce_impacted -->
 			</effect_group>
 			
