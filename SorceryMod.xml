@@ -3,10 +3,8 @@
 	<ServerGroup Name="Sorcery" Logo="https://i.postimg.cc/s221WC7s/sorcery-logo-splash.png" Description="Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.">
 			<Server Name="Sorcery" Logo="https://i.postimg.cc/s221WC7s/sorcery-logo-splash.png">
 			<Description>
-** NOTE ** This is not EAC safe, as it is SDX with Localization handling. The pure XML Modlet version of Sorcery is available at the Sorcery thread.
-
-Sorcery v0.68
-https://7daystodie.com/forums/showthread.php?109145-Sorcery
+Sorcery v0.68 : https://7daystodie.com/forums/showthread.php?109145-Sorcery
+Sorcery Wiki : https://github.com/7d2d-sorcery/Sorcery/wiki
 			
 Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.
 - Unique animations, art, effects and sounds for spells and items
@@ -23,6 +21,9 @@ Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. T
 - Rune Mastery: harness the power of Runes to augment your spells
 - Essence Mastery: demystify and awaken the elemental essence of the world to extract and craft spells and weapons with essence.
 - Fire, Ice, Lightning Spells: upgrade each spell with five alterations
+
+NOTE: This version of Sorcery is NOT EAC safe; You must play with EAC disabled. The pure XML Modlet version of Sorcery may be used with EAC enabled:
+https://7daystodie.com/forums/showthread.php?109145-Sorcery
 			</Description>
 			<DownloadMode>Clone</DownloadMode>
 			<Version>Latest</Version>
