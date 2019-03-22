@@ -25,6 +25,8 @@ Latest Version: 0.68
 Sorcery Wiki: https://github.com/7d2d-sorcery/Sorcery/wiki
 Sorcery Thread: https://7daystodie.com/forums/showthread.php?109145-Sorcery
 
+COMPATIBLE: Sorcery Modlet version is fully compatible with Darkness Falls 17.2 / latest. Under Darkness Falls Install: Manage Modlets > Download Sorcery > Open and Copy Sorcery Localization.txt contents and paste the copied Localization text into the Darkness Falls Localization.txt (at the very end, new line) > Ready to play! Go to the official Sorcery Thread for more details.  
+
 NOTE: This version of Sorcery is NOT EAC safe; You must play with EAC disabled. The pure XML Modlet version of Sorcery may be used with EAC enabled: https://7daystodie.com/forums/showthread.php?109145-Sorcery
 			</Description>
 			<DownloadMode>Clone</DownloadMode>
