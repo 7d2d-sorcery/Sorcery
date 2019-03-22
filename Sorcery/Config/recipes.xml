@@ -157,7 +157,7 @@
 			<ingredient name="unit_ice2" count="1"/>
 			<ingredient name="unit_ice" count="1"/>
 		</recipe>	
-		<recipe name="spellIceStorm" count="1" craft_area="conjureIce" material_based="true" tags="learnable">
+		<recipe name="spellIceStorm" count="1" craft_area="conjureIce" craft_tool="toolIceCore" material_based="true" tags="learnable">
 			<ingredient name="unit_ice3" count="1"/>
 			<ingredient name="unit_ice2" count="1"/>
 			<ingredient name="unit_ice" count="1"/>
