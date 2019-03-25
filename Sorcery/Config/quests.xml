@@ -51,7 +51,7 @@
 			<objective type="FetchKeep" id="resourceEssenceFire" value="1" phase="1" />
 			<objective type="FetchKeep" id="resourceEssenceFire" value="50" phase="2" />
 
-			<reward type="Exp" value="777" />
+			<reward type="Exp" value="1777" />
 			<reward type="SkillPoints" value="1" />
 			<reward type="Quest" id="quest_SorceryIntro2" />
 		</quest>
@@ -86,8 +86,8 @@
 
 			<objective type="BlockPlace" id="conjureFire" value="1" phase="2" />
 			
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1" />
+			<reward type="Exp" value="1777" />
+			<reward type="SkillPoints" value="2" />
 			<reward type="Quest" id="quest_SorceryIntro3" />
 		</quest>
 		
@@ -189,7 +189,7 @@
 			<!-- phase="4" -->
 			
 			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1" chainreward="true" />
+			<reward type="SkillPoints" value="2" chainreward="true" />
 			<!-- <reward type="Quest" id="challenge_SorcererInitiation" /> -->
 		</quest>
 		

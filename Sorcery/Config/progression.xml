@@ -54,8 +54,8 @@
 			
 			<effect_group name="ARMORCRAFTING: RECIPES">
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,10" tags="sorceryAccessory_Shades2,sorceryArmor_Bandana2,sorceryArmor_Hood2,sorceryArmor_Robe2,sorceryArmor_Chest2,sorceryArmor_Shirt2,sorceryArmor_Gloves2,sorceryArmor_Leg2,sorceryArmor_Pants2,sorceryArmor_Boots2"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="6,10" tags="sorceryAccessory_Shades3,sorceryArmor_Bandana3,sorceryArmor_Hood3,sorceryArmor_Robe3,sorceryArmor_Chest3,sorceryArmor_Shirt3,sorceryArmor_Gloves3,sorceryArmor_Leg3,sorceryArmor_Pants3,sorceryArmor_Boots2"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="8,10" tags="sorceryAccessory_Shades4,sorceryArmor_Bandana4,sorceryArmor_Hood4,sorceryArmor_Robe4,sorceryArmor_Chest4,sorceryArmor_Shirt4,sorceryArmor_Gloves4,sorceryArmor_Leg4,sorceryArmor_Pants4,sorceryArmor_Boots2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="6,10" tags="sorceryAccessory_Shades3,sorceryArmor_Bandana3,sorceryArmor_Hood3,sorceryArmor_Robe3,sorceryArmor_Chest3,sorceryArmor_Shirt3,sorceryArmor_Gloves3,sorceryArmor_Leg3,sorceryArmor_Pants3,sorceryArmor_Boots3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="8,10" tags="sorceryAccessory_Shades4,sorceryArmor_Bandana4,sorceryArmor_Hood4,sorceryArmor_Robe4,sorceryArmor_Chest4,sorceryArmor_Shirt4,sorceryArmor_Gloves4,sorceryArmor_Leg4,sorceryArmor_Pants4,sorceryArmor_Boots4"/>
 			</effect_group>			
 			
 			<effect_group>
