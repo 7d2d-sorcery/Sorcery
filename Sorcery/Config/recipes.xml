@@ -82,25 +82,25 @@
 		</recipe>			
 	<!--___________________ CONJURE ___________________-->
 		<!-- FIRE CONJURE -->
-		<recipe name="conjureFire" count="1" tags="learnable">
+		<recipe name="conjureFire" count="1" tags="learnable" craft_time="300">
 			<ingredient name="resourceEssenceFire" count="50"/>
 			<ingredient name="resourceCoal" count="100"/>
-			<ingredient name="resourceRockSmall" count="300"/>
-			<ingredient name="resourceClayLump" count="200"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+			<ingredient name="resourceClayLump" count="100"/>
 		</recipe>	
 		<!-- ICE CONJURE -->
-		<recipe name="conjureIce" count="1" tags="learnable">
+		<recipe name="conjureIce" count="1" tags="learnable" craft_time="300">
 			<ingredient name="resourceEssenceIce" count="50"/>
 			<ingredient name="resourcePotassiumNitratePowder" count="100"/>
-			<ingredient name="resourceRockSmall" count="300"/>
-			<ingredient name="resourceClayLump" count="200"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+			<ingredient name="resourceClayLump" count="100"/>
 		</recipe>	
 		<!-- ICE CONJURE -->
-		<recipe name="conjureLightning" count="1" tags="learnable">
+		<recipe name="conjureLightning" count="1" tags="learnable" craft_time="300">
 			<ingredient name="resourceEssenceLightning" count="50"/>
 			<ingredient name="resourceScrapLead" count="100"/>
-			<ingredient name="resourceRockSmall" count="300"/>
-			<ingredient name="resourceClayLump" count="200"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+			<ingredient name="resourceClayLump" count="100"/>
 		</recipe>	
 
 	<!--___________________ CONJURE AUGMENT TOOL ___________________-->

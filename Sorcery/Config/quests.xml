@@ -75,8 +75,8 @@
 
 			<objective type="FetchKeep" id="resourceEssenceFire" value="50" phase="1" />
 			<objective type="FetchKeep" id="resourceCoal" value="100" phase="1" />
-			<objective type="FetchKeep" id="resourceRockSmall" value="300" phase="1" />
-			<objective type="FetchKeep" id="resourceClayLump" value="200" phase="1" />
+			<objective type="FetchKeep" id="resourceRockSmall" value="100" phase="1" />
+			<objective type="FetchKeep" id="resourceClayLump" value="100" phase="1" />
 			
 			<objective type="Craft">
 				<property name="phase" value="2" />
@@ -144,7 +144,7 @@
 				<property name="count" value="1" />
 			</objective> -->
 			
-			<reward type="Exp" value="777" />
+			<reward type="Exp" value="1777" />
 			<reward type="SkillPoints" value="1" />
 			<reward type="Quest" id="quest_SorceryIntro5" />
 		</quest>		
@@ -188,7 +188,7 @@
 			<!-- <requirement type="Holding" id="spellcastFire" phase="4" /> -->
 			<!-- phase="4" -->
 			
-			<reward type="Exp" value="777" />
+			<reward type="Exp" value="1777" />
 			<reward type="SkillPoints" value="2" chainreward="true" />
 			<!-- <reward type="Quest" id="challenge_SorcererInitiation" /> -->
 		</quest>

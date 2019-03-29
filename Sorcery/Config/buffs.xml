@@ -38,7 +38,11 @@
 						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$eyes_essenceFireHarvest"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$face_essenceFireHarvest"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$head_essenceFireHarvest"/> -->
-					</effect_group>			 
+					</effect_group>
+					 
+					<effect_group name="ONE TIME INTRO HOOK BUFF">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffSorceryIntro"/>
+					</effect_group>
 					 
 					<effect_group name="MARK TARGETS">
 						<!-- THIS BUFF ENSURES KILL CREDIT FOR BUFF/SPELL/TRAP/PET/ALL KILLS -->
@@ -106,6 +110,24 @@
 					<!-- THIS WORKS THANKS TO THE DAMAGE_TYPE PROPERTY -->
 					<!-- WILL NOT ALERT TARGETS DUE TO ABSENCE OF DAMAGE EFFECTS -->
 			</buff>			
+			
+			<!-- SORCERY: INTRO HOOK BUFF -->
+			<buff name="buffSorceryIntro" name_key="buffSorceryIntroName" description_key="buffSorceryIntroDesc" tooltip_key="buffSorceryIntroTooltip" icon="ui_game_symbol_block_upgrade" icon_color="102,0,204" remove_on_death="false">
+				<stack_type value="ignore"/>
+					<effect_group name="BOOST: FIRE ESSENCE">
+						<!-- <requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="1"/> -->
+						<passive_effect name="HarvestCount" operation="perc_add" value="3" tags="essenceFireHarvest"/>
+					</effect_group>
+				
+					<effect_group name="CHECKPOINT">
+						<requirements compare_type="or">
+							<requirement name="PlayerLevel" target="self" operation="GTE" value="10"/>
+							<requirement name="ProgressionLevel" progression_name="attSorcery" operation="GT" value="3"/>
+							<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GT" value="2"/>
+						</requirements>					
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffSorceryIntro" />
+					</effect_group>
+			</buff>
 			
 		<!--___________________________ SPELLCASTS: SORCERY WEAPONS ___________________________-->
 			<!-- SPELLCAST PASSIVE: FIRE -->
