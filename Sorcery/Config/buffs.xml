@@ -230,7 +230,7 @@
 			
 		
 			<!-- SPELLCAST PRIMARY: FIRE -->
-			<buff name="buffSpellcastFire"  name_key="Fire Spellcast: Primary" description_key="Your are invoking and channeling the primary spellcasting power of your Fire Spellcast." icon="ui_game_symbol_fire"  icon_color="0,100,0" hidden="false">
+			<buff name="buffSpellcastFire"  name_key="Fire Spellcast: Primary" description_key="Your are invoking and channeling the primary spellcasting power of your Fire Spellcast." icon="ui_game_symbol_fire"  icon_color="0,150,0" hidden="false">
 				<stack_type value="replace"/>
 				<duration value="0"/> 
 				
@@ -288,7 +288,7 @@
 			</buff>
 
 			<!-- SPELLCAST PRIMARY: ICE -->
-			<buff name="buffSpellcastIce"  name_key="Ice Spellcast: Primary" description_key="Your are invoking and channeling the primary spellcasting power of your Ice Spellcast." icon="ui_game_symbol_cold"  icon_color="0,100,0" hidden="false">
+			<buff name="buffSpellcastIce"  name_key="Ice Spellcast: Primary" description_key="Your are invoking and channeling the primary spellcasting power of your Ice Spellcast." icon="ui_game_symbol_cold"  icon_color="0,150,0" hidden="false">
 				<stack_type value="replace"/>
 				<duration value="0"/> 
 				
@@ -343,7 +343,7 @@
 			
 		
 			<!-- SPELLCAST SECONDARY: FIRE -->
-			<buff name="buffSpellcastSecondaryFire" name_key="Fire Spellcast: Secondary" description_key="You are invoking and channeling the secondary power of your Fire Spellcast." icon="ui_game_symbol_fire"  icon_color="102,0,204" icon_blink="true" hidden="false" remove_on_death="true">
+			<buff name="buffSpellcastSecondaryFire" name_key="Fire Spellcast: Secondary" description_key="You are invoking and channeling the secondary power of your Fire Spellcast." icon="ui_game_symbol_fire"  icon_color="49,93,206" icon_blink="true" hidden="false" remove_on_death="true">
 				<stack_type value="ignore"/>
 				<duration value="0"/>
 				<update_rate value="1"/>
@@ -408,7 +408,7 @@
 			</buff>
 
 			<!-- SPELLCAST SECONDARY: ICE -->
-			<buff name="buffSpellcastSecondaryIce" name_key="Ice Spellcast: Secondary" description_key="You are invoking and channeling the secondary power of your Ice Spellcast." icon="ui_game_symbol_cold"  icon_color="102,0,204" icon_blink="true" hidden="false" remove_on_death="true">
+			<buff name="buffSpellcastSecondaryIce" name_key="Ice Spellcast: Secondary" description_key="You are invoking and channeling the secondary power of your Ice Spellcast." icon="ui_game_symbol_cold"  icon_color="49,93,206" icon_blink="true" hidden="false" remove_on_death="true">
 				<stack_type value="ignore"/>
 				<duration value="0"/>
 				<update_rate value="1"/>
@@ -1249,7 +1249,7 @@
 					</effect_group>
 
 					<effect_group name="ICE SHIELD">
-						<passive_effect name="HealthChangeOT" operation="base_add" value=".75"/>
+						<passive_effect name="HealthChangeOT" operation="base_add" value="1"/>
 						<passive_effect name="StaminaChangeOT" operation="base_add" value=".1"/>
 						<passive_effect name="StaminaMaxModifierOT" operation="base_add" value=".1"/>
 						<passive_effect name="PhysicalDamageResist" operation="base_add" value="25" tags="coredamageresist"/>

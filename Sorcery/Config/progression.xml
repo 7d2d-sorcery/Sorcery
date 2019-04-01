@@ -74,15 +74,24 @@
 		</attribute>
 		
 	</append>
-
+	
 <!--___________________ SORCERY SKILLS ___________________-->
 	<append xpath="/progression/skills[1]">
 		<skill name="skillSorceryMastery" parent="attSorcery" name_key="skillSorceryMasteryName" desc_key="skillSorceryMasteryDesc" icon="ui_game_symbol_player"><effect_group/></skill>
 		<skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
 		<skill name="skillSorceryIceCrafting" parent="attSorcery" name_key="skillSorceryIceCraftingName" desc_key="skillSorceryIceCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
 		<skill name="skillSorceryLightningCrafting" parent="attSorcery" name_key="skillSorceryLightningCraftingName" desc_key="skillSorceryLightningCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
-	</append>	
+	</append>
 	
+	<!-- COMPATIBILITY PATCH: RAVENHEARST -->
+	<insertAfter xpath="/progression/attributes[//attribute[@name='attArcher' or @IGNORE='MOD COMPATIBILITY PATCH']]">
+		<skills min_level="1" max_level="1">
+			<skill name="skillSorceryMastery" parent="attSorcery" name_key="skillSorceryMasteryName" desc_key="skillSorceryMasteryDesc" icon="ui_game_symbol_player"><effect_group/></skill>
+			<skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+			<skill name="skillSorceryIceCrafting" parent="attSorcery" name_key="skillSorceryIceCraftingName" desc_key="skillSorceryIceCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+			<skill name="skillSorceryLightningCrafting" parent="attSorcery" name_key="skillSorceryLightningCraftingName" desc_key="skillSorceryLightningCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+		</skills>	
+	</insertAfter>	
 	
 <!--___________________ SORCERY PERKS ___________________-->
 	<append xpath="/progression/perks[1]">

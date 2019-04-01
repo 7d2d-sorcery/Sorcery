@@ -28,6 +28,10 @@
 		drives the creation of this mod.
 		__________________________________________________________________________________-->
 		
+
+	<!-- COMPATIBILITY -->
+	<set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='8']/@cols">9</set>
+		
 	<append xpath="/windows">
 
 		<!-- UI: SORCERY LOGO -->
@@ -43,7 +47,7 @@
 		<!-- <window name="SorceryTrackerRunes" pos="-255, -88" width="300" height="{trackerheight}" anchor="RightTop" visible="{showquest}" depth="-20" >
 			<texture name="SorceryTrackerRunes" pos="8, -67" width="240" height="27" texture="@modfolder:Textures/SorceryTrackerRunes.png" />
 		</window>	 -->
-
+		
 <!--___________________________ FIRE CONJURE ___________________________-->	
 		<!-- CRAFTING -->
 		<window name="windowCraftingListConjureFire"  width="397" height="688" controller="CraftingListInfo" panel="Left" cursor_area="true" >
