@@ -76,6 +76,7 @@
 			
 			<property class="Action0">
 				<property name="Class" value="Catapult"/>
+				<property name="Hitmask_override" value="Arrow"/>
 				<property name="Magazine_items" value="spellFireball,spellFirestorm"/>
 				<property name="Delay" value="0"/>
 				<property name="Max_strain_time" value="0"/> 
