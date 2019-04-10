@@ -46,7 +46,7 @@
 			<property name="Material" value="fire"/>
 			<property name="RepairTools" value="resourceEssenceFire"/>
 			<property name="SellableToTrader" value="true"/>
-			<property name="FuelValue" value="200"/>
+			<!-- <property name="FuelValue" value="200"/> -->
 			<property name="EconomicValue" value="2000"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="Damage_type" value="Piercing"/>
@@ -75,27 +75,10 @@
 			</property> -->
 			
 			<property class="Action0">
-				<!-- <property name="Class" value="Catapult"/> -->
 				<property name="Class" value="Catapult"/>
-				<!-- <property name="Hitmask_override" value="Arrow"/> -->
-<!-- <property name="UseMeleeCrosshair" value="true"/> -->
-				<!-- Catapult might not be the best name for it but it can also be used for a slingshot -->
-				<!-- <property name="Hitmask_override" value="Arrow"/> -->
 				<property name="Magazine_items" value="spellFireball,spellFirestorm"/>
-				<property name="Delay" value="0"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Delay" value="0"/>
 				<property name="Max_strain_time" value="0"/> 
-				<!-- <property name="Reload_time" value="0"/> -->
-<!-- <property name="Rays_per_shot" value="10" />
-<property name="Rays_spread" value="10" />		 -->		
-<!-- <property name="Instantiate_on_load" value="false" />
-<property name="Reload_time" value="0,0"/> -->
-<!-- <property name="Single_magazine_usage" value="true" /> -->
-<!-- <property name="Auto_fire" value="true" /> -->
-<!-- <property name="Infinite_ammo" value="true" /> -->
-				<!-- Add for EACH Ammo -->
-<!-- 	<property name="Magazine_item_ray_counts" value="10" />
-	<property name="Magazine_item_ray_spreads" value="10" /> -->
-				<!-- <property name="Reload_time" value=".9"/> -->
 				<property name="Sound_start" value="sorceryFireball_launch"/>
 				<!-- <property name="Sound_repeat" value="FireMediumLoop"/> -->
 				<property name="Sound_repeat" value=""/>
@@ -105,36 +88,18 @@
 				<property name="Sound_draw" value="sorceryFireball_draw"/>
 				<property name="Sound_cancel" value="torch_swoosh"/>
 				<!-- <property name="Particles_muzzle_fire" value="rocketLauncherFire"/>
-				<property name="Particles_muzzle_smoke" value="nozzlesmoke_m136"/> -->				
+				<property name="Particles_muzzle_smoke" value="nozzlesmoke_m136"/> -->		
 				<property name="Particles_muzzle_fire" value="..."/>
 				<property name="Particles_muzzle_smoke" value="..."/>
-				<property name="ScopeOffset" value="-0.00062,0.088,0.065"/>
+				<!-- <property name="ScopeOffset" value="-0.00062,0.088,0.065"/> -->
 				<property name="SideOffset" value="0,0,0"/>
-				<property name="BarrelOffset" value="0,0,0"/>
-
-					<!-- <item_property_overrides name="*">
-						<property name="HoldType" value="54"/>
-						<property name="CustomIconTint" value="00ff00"/>
-					</item_property_overrides>	 -->			
+				<property name="BarrelOffset" value="0,0,0"/>	
 			</property>
-			
+
 			<property class="Action1">
-				<property name="Class" value="UseOther"/>
-				<property name="Delay" value="0"/>
-				<property name="Use_time" value="..."/>
-				<property name="Sound_start" value="..."/>
-			</property>			
-			
-			<!-- <property class="Action1"> 
-				<property name="Class" value="Repair"/>
+				<property name="Class" value="Activate"/>
 				<property name="Delay" value="1"/>
-				<property name="Repair_amount" value="0"/>
-				<property name="Upgrade_hit_offset" value="0"/>
-				<property name="Repair_action_sound" value="sorceryFireball_draw"/>
-				<property name="Upgrade_action_sound" value="sorceryFireball_draw"/>
-				<property name="Allowed_upgrade_items" value="spellcastFire,rockResource,rockResource02,resourcePotassiumNitratePowder,treeWinterEverGreen,treeWinterPine13m,treeWinterPine19m,treeWinterPine28m"/>
-				<property name="UsePowerAttackAnimation" value="false"/>
-			</property> -->
+			</property>
 
 			<effect_group tiered="false" name="PRIMARY">
 				<!-- <passive_effect name="StaminaLoss" operation="base_add" value="5" tags="primary"/> -->
@@ -173,8 +138,8 @@
 				<passive_effect name="MaxRange" operation="base_set" value="100"/>
 				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
 				
-				<passive_effect name="EntityDamage" operation="base_add" value="0" tier="1,6"/><!-- Spell buffs control this -->
-				<passive_effect name="BlockDamage" operation="base_add" value="0,6" tier="1,6"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="0"/> <!-- Spell buffs control this -->
+				<passive_effect name="BlockDamage" operation="base_add" value="6"/>
 
 				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0"/>
 				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1"/>
@@ -221,7 +186,7 @@
 			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
 			<property name="Material" value="ice"/>
 			<property name="RepairTools" value="resourceEssenceIce"/>
-			<property name="FuelValue" value="200"/>
+			<!-- <property name="FuelValue" value="200"/> -->
 			<property name="EconomicValue" value="2000"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="true"/>
@@ -238,21 +203,11 @@
 			<property name="PickupJournalEntry" value="alternateAmmoTip"/>
 			<property name="Weight" value="20"/>
 			<property name="MeltTimePerUnit" value="10"/>
-		
-			<!-- <property name="LightValue" value="0.45"/>
-			<property name="LightSource" value="lightSource"/>
-			<property name="ActivateObject" value="lightSource"/>
-			<property name="AlwaysActive" value="true"/> -->
-			
-			<!-- Add for EACH Ammo (eg. 1, 1) -->
-			<!-- <property class="Attributes">
-						<property name="EntityDamage" value="1, 1" />
-					</property> -->
 			
 			<property class="Action0">
 				<property name="Class" value="Catapult"/>
-<!-- <property name="Hitmask_override" value="Arrow"/> -->
-<!-- <property name="UseMeleeCrosshair" value="true"/> -->
+				<property name="Hitmask_override" value="Arrow"/>
+				<!-- <property name="UseMeleeCrosshair" value="true"/> -->
 				<property name="Magazine_items" value="spellIceBall,spellIceSpike,spellIceStorm"/>
 				<property name="Delay" value="0"/>
 				<property name="Max_strain_time" value="0"/> 
@@ -271,10 +226,8 @@
 			</property>
 					
 			<property class="Action1">
-				<property name="Class" value="UseOther"/>
-				<property name="Delay" value="0"/>
-				<property name="Use_time" value="..."/>
-				<property name="Sound_start" value="..."/>
+				<property name="Class" value="Activate"/>
+				<property name="Delay" value="1"/>
 			</property>
 
 			
@@ -313,8 +266,8 @@
 				<passive_effect name="MaxRange" operation="base_set" value="100"/>
 				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
 
-				<passive_effect name="EntityDamage" operation="base_add" value="0" tier="1,6"/><!-- Spell buffs control this -->
-				<passive_effect name="BlockDamage" operation="base_add" value="0,6" tier="1,6"/>
+				<passive_effect name="EntityDamage" operation="base_add" value="0"/> <!-- Spell buffs control this -->
+				<passive_effect name="BlockDamage" operation="base_add" value="6"/>
 
 				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0"/>
 				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1"/>
@@ -359,7 +312,7 @@
 			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
 			<property name="Material" value="lightning"/>
 			<property name="RepairTools" value="resourceEssenceLightning"/>
-			<property name="FuelValue" value="200"/>
+			<!-- <property name="FuelValue" value="200"/> -->
 			<property name="EconomicValue" value="5"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="false"/>
@@ -375,26 +328,15 @@
 			<property name="PickupJournalEntry" value="alternateAmmoTip"/>
 			<property name="Weight" value="20"/>
 			<property name="MeltTimePerUnit" value="10"/>
-		
-			<!-- <property name="LightValue" value="0.45"/>
-			<property name="LightSource" value="lightSource"/>
-			<property name="ActivateObject" value="lightSource"/>
-			<property name="AlwaysActive" value="true"/> -->
-				
 			
 			<effect_group name="Power Attack">
 				<passive_effect name="StaminaLoss" operation="base_add" value="10" tags="secondary"/>
 			</effect_group>
 			
-			<!-- Add for EACH Ammo (eg. 1, 1) -->
-			<!-- <property class="Attributes">
-				<property name="EntityDamage" value="1, 1" />
-			</property> -->
-			
 			<property class="Action0">
 				<property name="Class" value="Catapult"/>
-<!-- <property name="Hitmask_override" value="Arrow"/> -->
-<!-- <property name="UseMeleeCrosshair" value="true"/> -->
+				<property name="Hitmask_override" value="Arrow"/>
+				<!-- <property name="UseMeleeCrosshair" value="true"/> -->
 				<property name="Magazine_items" value="spellFireball,spellFirestorm,spellIceBall,spellIceSpike"/>
 				<property name="Delay" value="0"/>
 				<property name="Max_strain_time" value="0"/> 
@@ -412,17 +354,10 @@
 				<property name="BarrelOffset" value="0,0,0"/>	
 			</property>
 			
-			<!-- <property class="Action1"> 
-				<property name="Class" value="Repair"/>
+			<property class="Action1">
+				<property name="Class" value="Activate"/>
 				<property name="Delay" value="1"/>
-				<property name="Repair_amount" value="0"/>
-				<property name="Upgrade_hit_offset" value="0"/>
-				<property name="Repair_action_sound" value="sorceryIce_draw"/>
-				<property name="Upgrade_action_sound" value="sorceryIce_draw"/>
-				<property name="Allowed_upgrade_items" value="spellcastIce,animalStag,treeWinterEverGreen,treeWinterPine13m,treeWinterPine19m,treeWinterPine28m"/>
-				<property name="SupportHarvesting" value="true"/>
-				<property name="UsePowerAttackAnimation" value="false"/>
-			</property> -->
+			</property>		
 			
 		<!-- 	<effect_group tiered="false" name="PRIMARY">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffSpellcastIce">
@@ -524,7 +459,7 @@
 			<!-- <property name="UsableUnderwater" value="false"/> -->
 			<property name="Material" value="fire"/>
 			<property name="Stacknumber" value="500"/> <!-- STK ammo -->
-			<property name="FuelValue" value="1"/>
+			<!-- <property name="FuelValue" value="1"/> -->
 			<property name="EconomicValue" value="24"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="Damage_type" value="Piercing"/>
@@ -608,7 +543,7 @@
 			<!-- <property name="UsableUnderwater" value="false"/> -->
 			<property name="Material" value="fire2"/>
 			<property name="Stacknumber" value="250"/> <!-- STK ammo -->
-			<property name="FuelValue" value="1"/>
+			<!-- <property name="FuelValue" value="1"/> -->
 			<property name="EconomicValue" value="44"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="Damage_type" value="Piercing"/>
@@ -678,7 +613,7 @@
 			<property name="StickyOffset" value="0"/>
 			<property name="Material" value="ice"/>
 			<property name="Stacknumber" value="500"/> <!-- STK ammo -->
-			<property name="FuelValue" value="1"/>
+			<!-- <property name="FuelValue" value="1"/> -->
 			<property name="EconomicValue" value="24"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="Damage_type" value="Piercing"/>
@@ -761,7 +696,7 @@
 			<property name="StickyOffset" value="0"/>
 			<property name="Material" value="ice2"/>
 			<property name="Stacknumber" value="250"/>
-			<property name="FuelValue" value="1"/>
+			<!-- <property name="FuelValue" value="1"/> -->
 			<property name="EconomicValue" value="44"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="Damage_type" value="Piercing"/>
@@ -878,7 +813,7 @@
 			<property name="StickyOffset" value="0"/>
 			<property name="Material" value="ice3"/>
 			<property name="Stacknumber" value="250"/> <!-- STK ammo -->
-			<property name="FuelValue" value="1"/>
+			<!-- <property name="FuelValue" value="1"/> -->
 			<property name="EconomicValue" value="84"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="Damage_type" value="Piercing"/>
