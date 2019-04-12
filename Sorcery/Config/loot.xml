@@ -46,7 +46,7 @@
 			<item name="runeSpellcast_deepfreeze"/>
 			<item name="runeArmor_firenova"/>
 			<item name="runeArmor_firenova"/>
-			<item name="runeGeneral_lockshatter" prob=".1"/>
+			<item name="runeGeneral_lockshatter" prob=".2"/>
 		</lootgroup>
 		<lootgroup name="sorceryModT2" count="1">
 			<item name="runeArmor_fireskin2"/>

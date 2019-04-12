@@ -84,7 +84,7 @@
 	</append>
 	
 	<!-- COMPATIBILITY PATCH: RAVENHEARST -->
-	<insertAfter xpath="/progression/attributes[//attribute[@name='attArcher' or @IGNORE='MOD COMPATIBILITY PATCH']]">
+	<insertAfter xpath="/progression/attributes[//attribute[@name='attArcher' or @SAFE_WARNING='IGNORE: MOD COMPATIBILITY PATCH']]">
 		<skills min_level="1" max_level="1">
 			<skill name="skillSorceryMastery" parent="attSorcery" name_key="skillSorceryMasteryName" desc_key="skillSorceryMasteryDesc" icon="ui_game_symbol_player"><effect_group/></skill>
 			<skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>

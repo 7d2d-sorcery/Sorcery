@@ -7,38 +7,7 @@
 
 
 
-
 SORCERY_START,,LOCALIZATION,,START,,,,,
-
-
-   
-conjureFire,blocks,Workstation,New,"[970000]FIRE[-] Conjure",,,,,
-conjureFireDesc,blocks,Workstation,New,"A [970000]FIRE CONJURE[-] is capable of transmuting [970000]FIRE ESSENCE[-] into its raw elemental form of [970000]FIRE[-], Tiers 1-5. You can craft [970000]FIRE SPELLS[-] and other powerful [970000]FIRE SORCERIES[-] through this process of transmutation and conjuration.",,,,,
-
-conjureIce,blocks,Workstation,New,"[02599c]ICE[-] Conjure",,,,,
-conjureIceDesc,blocks,Workstation,New,"An [02599c]ICE CONJURE[-] is capable of transmuting [02599c]ICE ESSENCE[-] into its raw elemental form of [02599c]ICE[-], Tiers 1-5. You can craft [02599c]ICE SPELLS[-] and other powerful [02599c]ICE SORCERIES[-] through this process of transmutation and conjuration.",,,,,
-
-conjureLightning,blocks,Workstation,New,"[5c009d]LIGHTNING[-] Conjure",,,,,
-conjureLightningDesc,blocks,Workstation,New,"A Lightning Conjure is capable of transmuting [Lightning Essence] into its raw elemental form. Through conjuring [Lightning] in its raw form, you can craft [Spells] and other powerful Lightning sorceries.",,,,,
-
-
-toolFireCore,items,Item,New,"Fire Core",,,,,
-toolFireCoreDesc,items,Item,New,"A [970000]FIRE CORE[-] [Augment] is required to craft upper level [970000]FIRE SORCERIES[-], such as [Tier 3] [970000]FIRE SPELLS[-], at a [970000]FIRE CONJURE[-].",,,,,
-
-toolIceCore,items,Item,New,"Ice Core",,,,,
-toolIceCoreDesc,items,Item,New,"An [02599c]ICE CORE[-] [Augment] is required to craft upper level [02599c]ICE SORCERIES[-], such as [Tier 3] [02599c]ICE SPELLS[-], at an [02599c]ICE CONJURE[-].",,,,,
-
-toolLoomFire,items,Item,New,"Fire Loom",,,,,
-toolLoomFireDesc,items,Item,New,"A [970000]FIRE LOOM[-] [Augment] is required to craft [970000]FIRE ARMOR[-] at a [970000]FIRE CONJURE[-].",,,,,
-
-toolLoomIce,items,Item,New,"Ice Loom",,,,,
-toolLoomIceDesc,items,Item,New,"An [02599c]ICE LOOM[-] [Augment] is required to craft [02599c]ICE ARMOR[-] at an [02599c]ICE CONJURE[-].",,,,,
-
-toolHammerFire,items,Item,New,"Fire Hammer",,,,,
-toolHammerFireDesc,items,Item,New,"A [970000]FIRE HAMMER[-] [Augment] is required to craft [Runes] at a [970000]FIRE CONJURE[-].",,,,,
-
-toolHammerIce,items,Item,New,"Ice Hammer",,,,,
-toolHammerIceDesc,items,Item,New,"An [02599c]ICE HAMMER[-] [Augment] is required to craft [Runes] at an [02599c]ICE CONJURE[-].",,,,,
 
 unit_fire,items,Item,New,"Fire 1",,,,,
 unit_fireDesc,items,Item,New,"[Fire 1] is used in a Fire Conjure to perform [Tier 1] Fire Spellcrafting and other Fire Sorceries.",,,,,
@@ -107,26 +76,74 @@ resourceEssenceLightning5,items,Item,New,"[5c009d]LIGHTNING 5[-] Essence",,,,,
 resourceEssenceLightning5Desc,items,Item,New,"[bf0000]PRIMAL[-] [5c009d]LIGHTNING ESSENCE[-] can be transmuted into [5c009d]LIGHTNING 5[-] at a [5c009d]LIGHTNING CONJURE[-]. Primal Lightning Essence is an extremely rare and potent concentration of [5c009d]LIGHTNING[-]. This process of transmutation is required to craft spells and to perform other powerful sorceries at a [5c009d]LIGHTNING CONJURE[-].",,,,,
 
 
+conjureFire,blocks,Workstation,New,"[970000]FIRE[-] Conjure",,,,,
+conjureFireDesc,blocks,Workstation,New,"A [970000]FIRE CONJURE[-] is capable of transmuting [970000]FIRE ESSENCE[-] into its raw elemental form of [970000]FIRE[-], Tiers 1-5. You can craft [970000]FIRE SPELLS[-] and other powerful [970000]FIRE SORCERIES[-] through this process of transmutation and conjuration.",,,,,
 
+conjureIce,blocks,Workstation,New,"[02599c]ICE[-] Conjure",,,,,
+conjureIceDesc,blocks,Workstation,New,"An [02599c]ICE CONJURE[-] is capable of transmuting [02599c]ICE ESSENCE[-] into its raw elemental form of [02599c]ICE[-], Tiers 1-5. You can craft [02599c]ICE SPELLS[-] and other powerful [02599c]ICE SORCERIES[-] through this process of transmutation and conjuration.",,,,,
 
+conjureLightning,blocks,Workstation,New,"[5c009d]LIGHTNING[-] Conjure",,,,,
+conjureLightningDesc,blocks,Workstation,New,"An [5c009d]LIGHTNING CONJURE[-] is capable of transmuting [5c009d]LIGHTNING ESSENCE[-] into its raw elemental form of [5c009d]LIGHTNING[-], Tiers 1-5. You can craft [5c009d]LIGHTNING SPELLS[-] and other powerful [5c009d]LIGHTNING SORCERIES[-] through this process of transmutation and conjuration.",,,,,
+
+toolFireCore,items,Item,New,"Fire Core",,,,,
+toolFireCoreDesc,items,Item,New,"A [970000]FIRE CORE[-] [Augment] is required to craft upper level [970000]FIRE SORCERIES[-], such as [Tier 3] [970000]FIRE SPELLS[-], at a [970000]FIRE CONJURE[-].",,,,,
+
+toolIceCore,items,Item,New,"Ice Core",,,,,
+toolIceCoreDesc,items,Item,New,"An [02599c]ICE CORE[-] [Augment] is required to craft upper level [02599c]ICE SORCERIES[-], such as [Tier 3] [02599c]ICE SPELLS[-], at an [02599c]ICE CONJURE[-].",,,,,
+
+toolLightningCore,items,Item,New,"Lightning Core",,,,,
+toolLightningCoreDesc,items,Item,New,"A [5c009d]LIGHTNING CORE[-] [Augment] is required to craft upper level [5c009d]LIGHTNING SORCERIES[-], such as [Tier 3] [5c009d]LIGHTNING SPELLS[-], at a [5c009d]LIGHTNING CONJURE[-].",,,,,
+
+toolLoomFire,items,Item,New,"Fire Loom",,,,,
+toolLoomFireDesc,items,Item,New,"A [970000]FIRE LOOM[-] [Augment] is required to craft [970000]FIRE ARMOR[-] at a [970000]FIRE CONJURE[-].",,,,,
+
+toolLoomIce,items,Item,New,"Ice Loom",,,,,
+toolLoomIceDesc,items,Item,New,"An [02599c]ICE LOOM[-] [Augment] is required to craft [02599c]ICE ARMOR[-] at an [02599c]ICE CONJURE[-].",,,,,
+
+toolLoomLightning,items,Item,New,"Lightning Loom",,,,,
+toolLoomLightningDesc,items,Item,New,"A [5c009d]LIGHTNING LOOM[-] [Augment] is required to craft [5c009d]LIGHTNING ARMOR[-] at a [5c009d]LIGHTNING CONJURE[-].",,,,,
+
+toolHammerFire,items,Item,New,"Fire Hammer",,,,,
+toolHammerFireDesc,items,Item,New,"A [970000]FIRE HAMMER[-] [Augment] is required to craft [Runes] at a [970000]FIRE CONJURE[-].",,,,,
+
+toolHammerIce,items,Item,New,"Ice Hammer",,,,,
+toolHammerIceDesc,items,Item,New,"An [02599c]ICE HAMMER[-] [Augment] is required to craft [Runes] at an [02599c]ICE CONJURE[-].",,,,,
+
+toolHammerLightning,items,Item,New,"Lightning Hammer",,,,,
+toolHammerLightningDesc,items,Item,New,"A [5c009d]LIGHTNING HAMMER[-] [Augment] is required to craft [Runes] at a [5c009d]LIGHTNING CONJURE[-].",,,,,
 
 
 spellcastFire,items,Spellcast,New,"[970000]FIRE[-] SPELLCAST",,,,,
 spellcastFireDesc,items,Spellcast,New,"Invoke the incinerating force of [970000]FIRE[-] by casting your spells through this [970000]FIRE SPELLCAST[-]. Unlock these spellcast abilities through [Spellcast Mastery] and [970000]FIRE SPELLCAST[-]:\n\n[970000]CAUTERIZE[-]: Cauterize wounds on spellcasting\n[970000]BLAZING[-]: Move with blazing speed\n[970000]FIRE FLIGHT[-]: Fire Flight on jump while channeling\n[970000]EMPOWER[-]: Fire Stacks empower you\n[970000]METEOR LAND[-]: Explode on landing a Fire Flight",,,,,
+
 spellcastIce,items,Spellcast,New,"[02599c]ICE[-] SPELLCAST",,,,,
 spellcastIceDesc,items,Spellcast,New,"Invoke the freezing force of [02599c]ICE[-] by casting your spells through this [02599c]ICE SPELLCAST[-]. Unlock these spellcast abilities through [Spellcast Mastery] and [02599c]ICE SPELLCAST[-]:\n\n[02599c]METABOLIZE[-]: Slow metabolism on spellcasting\n[02599c]ICE AURA[-]: Freezing Ice Aura on channeling\n[02599c]ICE SHIELD[-]: Absorbing Ice Shield on channeling \n[02599c]EMPOWER[-]: Ice Stacks empower you\n[02599c]ICY DEATH[-]: Ice Shield attackers suffer",,,,,
 
+spellcastLightning,items,Spellcast,New,"[5c009d]LIGHTNING[-] SPELLCAST",,,,,
+spellcastLightningDesc,items,Spellcast,New,"Invoke the stunning force of [5c009d]LIGHTNING[-] by casting your spells through this [5c009d]LIGHTNING SPELLCAST[-]. Unlock these spellcast abilities through [Spellcast Mastery] and [5c009d]LIGHTNING SPELLCAST[-]:\n\n[5c009d]TBD[-]: Slow metabolism on spellcasting\n[5c009d]TBD[-]: Freezing Ice Aura on channeling\n[5c009d]TBD[-]: Absorbing Ice Shield on channeling \n[5c009d]EMPOWER[-]: Lightning Stacks empower you\n[5c009d]TBD[-]: Ice Shield attackers suffer",,,,,
+
+
 spellFireball,items,Spell,New,"[970000]FIRE[-] SPELL",,,,,
 spellFireballDesc,items,Spell,New,"The primal manifestation of raw [970000]FIRE[-] that'll incinerate the flesh off your foes and ignite them into an eternal grave... or pile of ash. Cast this [970000]TIER 1[-] Spell through a [970000]FIRE SPELLCAST[-].\n\n[970000]DOT[-]: Sets foes ablaze on impact\n[970000]AOE[-]: Ignites nearby foes on impact\n[970000]STACK[-]: Consecutive impacts amplify intensity",,,,, 
+
 spellFirestorm,items,Spell,New,"[970000]FIRENADO[-] SPELL",,,,,
 spellFirestormDesc,items,Spell,New,"A highly destructive manifestation of [970000]FIRE[-] that'll incinerate your enemies to ash in a whirling inferno of destruction. Cast this [970000]TIER 2[-] Spell through a [970000]FIRE SPELLCAST[-].\n\n[970000]DOT[-]: Sets foes ablaze on impact\n[970000]AOE[-]: Spawns on nearby foes on impact\n[970000]AMPLIFY[-]: Empowered by enemy Burn Stacks",,,,, 
 
+
 spellIceBall,items,Spell,New,"[02599c]ICE[-] SPELL",,,,,
 spellIceBallDesc,items,Spell,New,"The primal manifestation of Ice that'll freeze your foes solid while Iceburning their flesh from the inside out. Cast this [02599c]TIER 1[-] Spell through an [02599c]ICE SPELLCAST[-].\n\n[02599c]DOT[-]: Iceburn foes from the inside out\n[02599c]AOE[-]: Iceburn and slow nearby foes on impact\n[02599c]STACK[-]: Consecutive impacts amplify intensity",,,,, 
+
 spellIceSpike,items,Spell,New,"[02599c]ICE SPIKE[-] SPELL",,,,,
 spellIceSpikeDesc,items,Spell,New,"A highly destructive manifestation of Ice that'll Iceburn the flesh of your foes  while shattering their animated corpse. Cast this [02599c]TIER 2[-] Spell through an [02599c]ICE SPELLCAST[-].\n\n[02599c]PRECISE[-]: Lethally accurate manifestation of Ice\n[02599c]SHATTER[-]: Chance to shatter limbs on impact\n[02599c]AMPLIFY[-]: Empowered by enemy Iceburn Stacks",,,,, 
+
 spellIceStorm,items,Spell,New,"[02599c]ICE STORM[-] SPELL",,,,,
 spellIceStormDesc,items,Spell,New,"A cataclysmic manifestation of Ice that'll render your victim a host of frozen storm capable of Iceburning and freezing amass. Cast this [02599c]TIER 3[-] Spell through an [02599c]ICE SPELLCAST[-].\n\n[02599c]MASS DOT[-]: Iceburn host and all nearby foes\n[02599c]HOST AOE[-]: Iceburn all foes near target host\n[02599c]AMPLIFY[-]: Empowered by enemy Iceburn Stacks",,,,, 
+
+
+spellLightning,items,Spell,New,"[5c009d]LIGHTNING[-] SPELL",,,,,
+spellLightningDesc,items,Spell,New,"The primal manifestation of raw [5c009d]LIGHTNING[-] that'll shockburn your foes while stunning their feasting efforts. Cast this [5c009d]TIER 1[-] Spell through a [5c009d]LIGHTNING SPELLCAST[-].\n\n[5c009d]APPLY STACK[-]: Consecutive hits apply [5c009d]Lightning Stacks[-]\n[5c009d]DOT[-]: Sets foes ablaze on impact\n[5c009d]AOE[-]: Ignites nearby foes on impact",,,,, 
+
+
 
 attsorcery,progression,Attribute,New,Sorcery,,,,,
 attSorceryDesc,progression,Attribute,New,"Sorcery is the measure of your spellcasting, crafting and overall ability as a Sorcerer. Increasing Sorcery grants knowledge and access to devastating spells and conjurations, rendering you capable of raw elemental annihilation. If the world thought the apocalyptic aftermath of animated corpse (and acid spitting fiends) was the only sight to fear, wait until they meet a sorcerer...\n\n[6600cc]SPIRIT[-]: This is your available Spellcasting Stamina while a Spellcast is equipped. Spirit augments and coincides with Stamina as a dual resource.",,,,,
@@ -216,9 +233,9 @@ perkSorcerySpellcastFireRank5Desc,progression,Perk,New,"You are now a [970000]Ma
 perkSorcerySpellFireballDesc,progression,Perk,New,"Master the [970000]FIRE SPELL[-] to transform it from an effective primal flame into an explosive molten rock that'll incinerate your foes into early retirement.\n\nRequires: [970000]FIRE MASTERY[-] Level 1.",,,,,
 perkSorcerySpellFireballName,progression,Perk,New,"SPELL: [970000]FIRE[-]",,,,,
 perkSorcerySpellFireballRank1Desc,progression,Perk,New,"Learn the primal [970000]FIRE SPELL[-] to incinerate the flesh off your foes and ignite them into an eternal grave... or pile of ash.",,,,,
-perkSorcerySpellFireballRank2Desc,progression,Perk,New,"[970000]INCINERATE[-]: Fire burns twice as deadly engulfing victims in a second stack of unbearable flame.",,,,,
+perkSorcerySpellFireballRank2Desc,progression,Perk,New,"[970000]INCINERATE[-]: Fire has a chance to Incinerate foes on impact engulfing victims in deadlier flame while amplifying their Burn.",,,,,
 perkSorcerySpellFireballRank3Desc,progression,Perk,New,"[970000]EXPLOSIVE[-]: Fire becomes explosive incinerating and knocking down victims engulfed in four or more burning stacks.",,,,,
-perkSorcerySpellFireballRank4Desc,progression,Perk,New,"[970000]WILDFIRE[-]: Burning victims now have a chance to engulf nearby foes in flame while doubling the deadliness of their own.",,,,,
+perkSorcerySpellFireballRank4Desc,progression,Perk,New,"[970000]WILDFIRE[-]: Burning victims now have a chance to engulf nearby foes in flame while amplifying the deadliness of their own.",,,,,
 perkSorcerySpellFireballRank5Desc,progression,Perk,New,"[970000]Fully evolve[-] Fire into a deadly molten rock.\nFire no longer consumes burning stacks.\nWild Fire chance and Burning are further amplified by stacks.",,,,,
 
 perkSorcerySpellFirestormDesc,progression,Perk,New,"Master the [970000]FIRENADO SPELL[-] to transform it from a whirling inferno of destruction into a zombie locking death sentence.\n\nRequires: [970000]FIRE MASTERY[-] Level 2.",,,,,
@@ -241,7 +258,7 @@ perkSorcerySpellcastIceRank5Desc,progression,Perk,New,"You are now a [02599c]Mas
 perkSorcerySpellIceballDesc,progression,Perk,New,"Master the [02599c]ICE SPELL[-] to transform it from an effective primal frost into a freezing Force of Death that'll deep freeze your foes beyond the grave.\n\nRequires: [02599c]Ice Mastery[-] Level 1.",,,,,
 perkSorcerySpellIceballName,progression,Perk,New,"SPELL: [02599c]ICE[-]",,,,,
 perkSorcerySpellIceballRank1Desc,progression,Perk,New,"Learn the primal [02599c]ICE SPELL[-] to deep freeze your foes in time and space while Iceburning them from the inside out.",,,,,
-perkSorcerySpellIceballRank2Desc,progression,Perk,New,"[02599c]SUBZERO[-]:  Iceburn is greatly amplified severely slowing and crippling foes from within.",,,,,
+perkSorcerySpellIceballRank2Desc,progression,Perk,New,"[02599c]SUBZERO[-]:  Ice has a chance to go Subzero on impact severely slowing and crippling foes while amplifying their Iceburn.",,,,,
 perkSorcerySpellIceballRank3Desc,progression,Perk,New,"[02599c]DEEP FREEZE[-]: Ice has a chance to consume stacks to deep freeze your foes in time rendering them completely immobile.",,,,,
 perkSorcerySpellIceballRank4Desc,progression,Perk,New,"[02599c]SUFFERING[-]: Iceburn victims occasionally endure drastic suffering while spreading their Iceburn to nearby foes.",,,,,
 perkSorcerySpellIceballRank5Desc,progression,Perk,New,"[02599c]Fully evolve[-] Ice into a Freezing Force of Timely Death.\nIce no longer consumes Iceburn Stacks.\nDeep Freeze chance and Iceburn are further amplified by stacks.",,,,,
@@ -271,21 +288,30 @@ perkSorcerySpellcastLightningRank3Desc,progression,Perk,New,"???????",,,,,
 perkSorcerySpellcastLightningRank4Desc,progression,Perk,New,"???????",,,,,
 perkSorcerySpellcastLightningRank5Desc,progression,Perk,New,"???????",,,,,  
  
-perkSorcerySpellLightningstrikeDesc,progression,Perk,New,"Master the [5c009d]LIGHTNING SPELL[-] to transform it from a primal zap into a Deadly Force of Nature that'll Shock and awe your foes with stunning force.\n\nRequires: [5c009d]Lightning Mastery[-] Level 1.",,,,,
-perkSorcerySpellLightningstrikeName,progression,Perk,New,"SPELL: [5c009d]LIGHTNING[-]",,,,,
-perkSorcerySpellLightningstrikeRank1Desc,progression,Perk,New,"Learn the primal [5c009d]LIGHTNING SPELL[-] to Electrocute your foes with stunning bolts of Lightning while leaving them Shockburned.",,,,,
-perkSorcerySpellLightningstrikeRank2Desc,progression,Perk,New,"[5c009d]ELECTROCUTE[-]: Shockburn is greatly amplified and chance to Electrocute foes increased.",,,,,
-perkSorcerySpellLightningstrikeRank3Desc,progression,Perk,New,"[5c009d]DEBILITATE[-]: Lightning occasionally consumes stacks to incapacitate and greatly weaken your foes reducing their max health amongst other enfeeblement.",,,,,
-perkSorcerySpellLightningstrikeRank4Desc,progression,Perk,New,"[5c009d]ARC[-]: Lightning frequently arcs to additional nearby foes while Shockburning all victims.",,,,,
-perkSorcerySpellLightningstrikeRank5Desc,progression,Perk,New,"[5c009d]Fully evolve[-] Lightning into a Deadly Force of Nature. Lightning no longer consumes Shockburn Stacks. Electrocute, Debilitate and Arc are further amplified by stacks.",,,,,
+perkSorcerySpellLightningDesc,progression,Perk,New,"Master the [5c009d]LIGHTNING SPELL[-] to transform it from a primal zap into a Deadly Force of Nature that'll Shock and awe your foes with stunning force.\n\nRequires: [5c009d]Lightning Mastery[-] Level 1.",,,,,
+perkSorcerySpellLightningName,progression,Perk,New,"SPELL: [5c009d]LIGHTNING[-]",,,,,
+perkSorcerySpellLightningRank1Desc,progression,Perk,New,"Learn the primal [5c009d]LIGHTNING SPELL[-] to Electrocute your foes with stunning bolts of Lightning while leaving them Shockburned.",,,,,
+perkSorcerySpellLightningRank2Desc,progression,Perk,New,"[5c009d]ELECTROCUTE[-]: Lightning has a chance to Electrocute foes on impact briefly stunning them while amplifying their Shockburn.",,,,,
+perkSorcerySpellLightningRank3Desc,progression,Perk,New,"[5c009d]DEBILITATE[-]: Lightning occasionally consumes stacks to incapacitate and greatly weaken your foes reducing their max health amongst other enfeeblement.",,,,,
+perkSorcerySpellLightningRank4Desc,progression,Perk,New,"[5c009d]ARC[-]: Lightning frequently arcs to additional nearby foes while Shockburning all victims.",,,,,
+perkSorcerySpellLightningRank5Desc,progression,Perk,New,"[5c009d]Fully evolve[-] Lightning into a Deadly Force of Nature. Lightning no longer consumes Shockburn Stacks. Electrocute, Debilitate and Arc are further amplified by stacks.",,,,,
+
+perkSorcerySpellLightningNovaDesc,progression,Perk,New,"Master the [5c009d]LIGHTNING NOVA SPELL[-] to transform it from a primal zap into a Deadly Force of Nature that'll Shock and awe your foes with stunning force.\n\nRequires: [5c009d]Lightning Mastery[-] Level 2.",,,,,
+perkSorcerySpellLightningNovaName,progression,Perk,New,"SPELL: [5c009d]LIGHTNING NOVA[-]",,,,,
+perkSorcerySpellLightningNovaRank1Desc,progression,Perk,New,"Learn the destructive [5c009d]LIGHTNING NOVA SPELL[-] to get shockingly close and personal with your foes... stunning them with the closeup of a lifetime!",,,,,
+perkSorcerySpellLightningNovaRank2Desc,progression,Perk,New,"???????",,,,,
+perkSorcerySpellLightningNovaRank3Desc,progression,Perk,New,"???????",,,,,
+perkSorcerySpellLightningNovaRank4Desc,progression,Perk,New,"???????",,,,,
+perkSorcerySpellLightningNovaRank5Desc,progression,Perk,New,"???????",,,,, 
  
-perkSorcerySpellLightningstormDesc,progression,Perk,New,"Master Sorcery to learn the art of invoking the elements and becoming a devastating sorcerer. The rising dead were just the start of aftermath anomalies...\n\nRequires: [5c009d]Lightning Mastery[-] Level 3.",,,,,
-perkSorcerySpellLightningstormName,progression,Perk,New,"SPELL: [5c009d]LIGHTNING STORM[-]",,,,,
-perkSorcerySpellLightningstormRank1Desc,progression,Perk,New,"Learn the catastrophic [5c009d]LIGHTNING STORM SPELL[-] to command disastrous storms of nature capable of Electrocuting and Shockburning your foes amass. ",,,,,
-perkSorcerySpellLightningstormRank2Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellLightningstormRank3Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellLightningstormRank4Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellLightningstormRank5Desc,progression,Perk,New,"???????",,,,, 
+perkSorcerySpellLightningStormDesc,progression,Perk,New,"Master Sorcery to learn the art of invoking the elements and becoming a devastating sorcerer. The rising dead were just the start of aftermath anomalies...\n\nRequires: [5c009d]Lightning Mastery[-] Level 3.",,,,,
+perkSorcerySpellLightningStormName,progression,Perk,New,"SPELL: [5c009d]LIGHTNING STORM[-]",,,,,
+perkSorcerySpellLightningStormRank1Desc,progression,Perk,New,"Learn the catastrophic [5c009d]LIGHTNING STORM SPELL[-] to command disastrous storms of nature capable of Electrocuting and Shockburning your foes amass. ",,,,,
+perkSorcerySpellLightningStormRank2Desc,progression,Perk,New,"???????",,,,,
+perkSorcerySpellLightningStormRank3Desc,progression,Perk,New,"???????",,,,,
+perkSorcerySpellLightningStormRank4Desc,progression,Perk,New,"???????",,,,,
+perkSorcerySpellLightningStormRank5Desc,progression,Perk,New,"???????",,,,, 
+ 
  
  
 reqSorceryLevel01,progression,Attribute,New,Sorcery Level 1,,,,,
@@ -422,28 +448,28 @@ sorceryAccessoryGroupDesc,items,Clothes,New,"This Essence Infused Accessory is w
 runeFireCauterizeMend,item_modifiers,mod,New,"Mending Cauterize Rune",,,,,
 runeFireCauterizeMendDesc,item_modifiers,mod,New,"Invoke the Mending Cauterize Runeword to empower the [Cauterize] ability of a [970000]FIRE SPELLCAST[-] to heal wounds, in addition to, cauterizing them.".,,,,,
 
-runeArmor_fireskinDesc,item_modifiers,mod,New,"Invoke the Fire Skin Runeword to burn your attackers to a crisp. Only [Sorcerer Armor] can sustain the power of this Rune..\n\nFire Skin: Chance to engulf attackers in flame.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
+runeArmor_fireskinDesc,item_modifiers,mod,New,"Invoke the Fire Skin Runeword to burn your attackers to a crisp. Only [6600cc]Sorcerer Armor[-] can sustain the power of this Rune..\n\n[970000]Fire Skin[-]: Chance to engulf attackers in flame.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
 runeArmor_fireskin,item_modifiers,mod,New,"Rune: Fire Skin",,,,, 
 runeArmor_fireskin2,item_modifiers,mod,New,"[42c234]RUNE[-]: Fire Skin II",,,,,
 runeArmor_fireskin3,item_modifiers,mod,New,"[315dce]RUNE[-]: Fire Skin III",,,,,
 runeArmor_fireskin4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Fire Skin IV",,,,,
 runeArmor_fireskin5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Fire Skin V",,,,,
 
-runeArmor_iceskinDesc,item_modifiers,mod,New,"Invoke the Ice Skin Runeword to iceburn and slow your attackers. Only [Sorcerer Armor] can sustain the power of this Rune..\n\nIce Skin: Chance to iceburn attackers.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
+runeArmor_iceskinDesc,item_modifiers,mod,New,"Invoke the Ice Skin Runeword to iceburn and slow your attackers. Only [6600cc]Sorcerer Armor[-] can sustain the power of this Rune..\n\n[02599c]Ice Skin[-]: Chance to iceburn attackers.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
 runeArmor_iceskin,item_modifiers,mod,New,"Rune: Ice Skin",,,,, 
 runeArmor_iceskin2,item_modifiers,mod,New,"[42c234]RUNE[-]: Ice Skin II",,,,,
 runeArmor_iceskin3,item_modifiers,mod,New,"[315dce]RUNE[-]: Ice Skin III",,,,,
 runeArmor_iceskin4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Ice Skin IV",,,,,
 runeArmor_iceskin5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Ice Skin V",,,,,
 
-runeArmor_firenovaDesc,item_modifiers,mod,New,"Invoke the Fire Nova Runeword to knock your attackers on their ass while burning them to a crisp. Only the following Sorcerer Armor can sustain the power of this Rune: [Epic, Legendary, Transcendent].\n\nFire Nova: Chance to go supernova when getting attacked, burning and knocking down nearby foes.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
+runeArmor_firenovaDesc,item_modifiers,mod,New,"Invoke the Fire Nova Runeword to knock your attackers on their ass while burning them to a crisp. Only the following [6600cc]Sorcerer Armor[-] can sustain the power of this Rune: [315dce]EPIC[-], [a42acc]LEGENDARY[-], [bf0000]TRANSCENDENT[-].\n\n[970000]Fire Nova[-]: Chance to go supernova when getting attacked, burning and knocking down nearby foes.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
 runeArmor_firenova,item_modifiers,mod,New,"Rune: Fire Nova",,,,, 
 runeArmor_firenova2,item_modifiers,mod,New,"[42c234]RUNE[-]: Fire Nova II",,,,,
 runeArmor_firenova3,item_modifiers,mod,New,"[315dce]RUNE[-]: Fire Nova III",,,,,
 runeArmor_firenova4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Fire Nova IV",,,,,
 runeArmor_firenova5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Fire Nova V",,,,,
 
-runeArmor_icenovaDesc,item_modifiers,mod,New,"Invoke the Ice Nova Runeword to knock your attackers on their ass while burning them to a crisp. Only the following Sorcerer Armor can sustain the power of this Rune: [Epic, Legendary, Transcendent].\n\nIce Nova: Chance to go supernova when getting attacked, iceburning and knocking down nearby foes.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
+runeArmor_icenovaDesc,item_modifiers,mod,New,"Invoke the Ice Nova Runeword to knock your attackers on their ass while burning them to a crisp. Only the following [6600cc]Sorcerer Armor[-] can sustain the power of this Rune: [315dce]EPIC[-], [a42acc]LEGENDARY[-], [bf0000]TRANSCENDENT[-].\n\n[02599c]Ice Nova[-]: Chance to go supernova when getting attacked, iceburning and knocking down nearby foes.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
 runeArmor_icenova,item_modifiers,mod,New,"Rune: Ice Nova",,,,, 
 runeArmor_icenova2,item_modifiers,mod,New,"[42c234]RUNE[-]: Ice Nova II",,,,,
 runeArmor_icenova3,item_modifiers,mod,New,"[315dce]RUNE[-]: Ice Nova III",,,,,
@@ -451,14 +477,14 @@ runeArmor_icenova4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Ice Nova IV",,,,,
 runeArmor_icenova5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Ice Nova V",,,,,
 
 
-runeSpellcast_firestormDesc,item_modifiers,mod,New,"Invoke the Fire Storm Runeword to unleash fiery hell on your foes while casting. Only the following Spellcasts can sustain the power of this Rune: [Fire, Ice, Lightning].\n\nFire Storm: Chance to summon a Fire Storm on your foe when landing a direct spell.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
+runeSpellcast_firestormDesc,item_modifiers,mod,New,"Invoke the Fire Storm Runeword to unleash fiery hell on your foes while casting. Only the following [6600cc]SPELLCASTS[-] can sustain the power of this Rune: [970000]FIRE[-], [02599c]ICE[-], [5c009d]LIGHTNING[-].\n\n[970000]Fire Storm[-]: Chance to summon a Fire Storm on your foe when landing a direct spell.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
 runeSpellcast_firestorm,item_modifiers,mod,New,"Rune: Fire Storm",,,,, 
 runeSpellcast_firestorm2,item_modifiers,mod,New,"[42c234]RUNE[-]: Fire Storm II",,,,,
 runeSpellcast_firestorm3,item_modifiers,mod,New,"[315dce]RUNE[-]: Fire Storm III",,,,,
 runeSpellcast_firestorm4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Fire Storm IV",,,,,
 runeSpellcast_firestorm5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Fire Storm V",,,,,
 
-runeSpellcast_deepfreezeDesc,item_modifiers,mod,New,"Invoke the Deep Freeze Runeword to freeze your foes in time while casting. Only the following Spellcasts can sustain the power of this Rune: [Fire, Ice, Lightning].\n\nDeep Freeze: Chance to Deep Freeze your foe when landing a direct spell.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
+runeSpellcast_deepfreezeDesc,item_modifiers,mod,New,"Invoke the Deep Freeze Runeword to freeze your foes in time while casting. Only the following [6600cc]SPELLCASTS[-] can sustain the power of this Rune: [970000]FIRE[-], [02599c]ICE[-], [5c009d]LIGHTNING[-].\n\n[02599c]Deep Freeze[-]: Chance to Deep Freeze your foe when landing a direct spell.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
 runeSpellcast_deepfreeze,item_modifiers,mod,New,"Rune: Deep Freeze",,,,, 
 runeSpellcast_deepfreeze2,item_modifiers,mod,New,"[42c234]RUNE[-]: Deep Freeze II",,,,,
 runeSpellcast_deepfreeze3,item_modifiers,mod,New,"[315dce]RUNE[-]: Deep Freeze III",,,,,
@@ -466,51 +492,51 @@ runeSpellcast_deepfreeze4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Deep Freeze I
 runeSpellcast_deepfreeze5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Deep Freeze V",,,,,
 
 
-runeGeneral_spiritboonDesc,item_modifiers,mod,New,"Invoke the Spirit Boon Runeword to lessen the Burden of harnessing Runes and to improve Spirit Regeneration. Only [Spellcasts] and [Sorcerer Armor] can sustain the power of this Rune.\n\nSpirit Boon: 2% Spirit Regen (improved by Rune Mastery) while also lessening the burden of harnessing additional Runes.",,,,,
-runeGeneral_spiritboon2Desc,item_modifiers,mod,New,"Invoke the Spirit Boon Runeword to lessen the Burden of harnessing Runes and to improve Spirit Regeneration. Only [Spellcasts] and [Sorcerer Armor] can sustain the power of this Rune.\n\nSpirit Boon: 4% Spirit Regen (improved by Rune Mastery) while also lessening the burden of harnessing additional Runes.",,,,,
-runeGeneral_spiritboon3Desc,item_modifiers,mod,New,"Invoke the Spirit Boon Runeword to lessen the Burden of harnessing Runes and to improve Spirit Regeneration. Only [Spellcasts] and [Sorcerer Armor] can sustain the power of this Rune.\n\nSpirit Boon: 6% Spirit Regen (improved by Rune Mastery) while also lessening the burden of harnessing additional Runes.",,,,,
-runeGeneral_spiritboon4Desc,item_modifiers,mod,New,"Invoke the Spirit Boon Runeword to lessen the Burden of harnessing Runes and to improve Spirit Regeneration. Only [Spellcasts] and [Sorcerer Armor] can sustain the power of this Rune.\n\nSpirit Boon: 8% Spirit Regen (improved by Rune Mastery) while also lessening the burden of harnessing additional Runes.",,,,,
-runeGeneral_spiritboon5Desc,item_modifiers,mod,New,"Invoke the Spirit Boon Runeword to lessen the Burden of harnessing Runes and to improve Spirit Regeneration. Only [Spellcasts] and [Sorcerer Armor] can sustain the power of this Rune.\n\nSpirit Boon: 10% Spirit Regen (improved by Rune Mastery) while also lessening the burden of harnessing additional Runes.",,,,,
+runeGeneral_spiritboonDesc,item_modifiers,mod,New,"Invoke the Spirit Boon Runeword to lessen the Burden of harnessing Runes and to improve Spirit Regeneration. Only [6600cc]Spellcasts[-] and [6600cc]Sorcerer Armor[-] can sustain the power of this Rune.\n\n[6600cc]Spirit Boon[-]: 2% Spirit Regen (improved by Rune Mastery) while also lessening the burden of harnessing additional Runes.",,,,,
+runeGeneral_spiritboon2Desc,item_modifiers,mod,New,"Invoke the Spirit Boon Runeword to lessen the Burden of harnessing Runes and to improve Spirit Regeneration. Only [6600cc]Spellcasts[-] and [6600cc]Sorcerer Armor[-] can sustain the power of this Rune.\n\n[6600cc]Spirit Boon[-]: 4% Spirit Regen (improved by Rune Mastery) while also lessening the burden of harnessing additional Runes.",,,,,
+runeGeneral_spiritboon3Desc,item_modifiers,mod,New,"Invoke the Spirit Boon Runeword to lessen the Burden of harnessing Runes and to improve Spirit Regeneration. Only [6600cc]Spellcasts[-] and [6600cc]Sorcerer Armor[-] can sustain the power of this Rune.\n\n[6600cc]Spirit Boon[-]: 6% Spirit Regen (improved by Rune Mastery) while also lessening the burden of harnessing additional Runes.",,,,,
+runeGeneral_spiritboon4Desc,item_modifiers,mod,New,"Invoke the Spirit Boon Runeword to lessen the Burden of harnessing Runes and to improve Spirit Regeneration. Only [6600cc]Spellcasts[-] and [6600cc]Sorcerer Armor[-] can sustain the power of this Rune.\n\n[6600cc]Spirit Boon[-]: 8% Spirit Regen (improved by Rune Mastery) while also lessening the burden of harnessing additional Runes.",,,,,
+runeGeneral_spiritboon5Desc,item_modifiers,mod,New,"Invoke the Spirit Boon Runeword to lessen the Burden of harnessing Runes and to improve Spirit Regeneration. Only [6600cc]Spellcasts[-] and [6600cc]Sorcerer Armor[-] can sustain the power of this Rune.\n\n[6600cc]Spirit Boon[-]: 10% Spirit Regen (improved by Rune Mastery) while also lessening the burden of harnessing additional Runes.",,,,,
 runeGeneral_spiritboon,item_modifiers,mod,New,"Rune: Spirit Boon",,,,, 
 runeGeneral_spiritboon2,item_modifiers,mod,New,"[42c234]RUNE[-]: Spirit Boon II",,,,,
 runeGeneral_spiritboon3,item_modifiers,mod,New,"[315dce]RUNE[-]: Spirit Boon III",,,,,
 runeGeneral_spiritboon4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Spirit Boon IV",,,,,
 runeGeneral_spiritboon5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Spirit Boon V",,,,,
 
-runeGeneral_fireessenceboonDesc,item_modifiers,mod,New,"Invoke the Fire Essence Boon Runeword to discover and harvest more Fire Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 10% more Fire Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_fireessenceboon2Desc,item_modifiers,mod,New,"Invoke the Fire Essence Boon Runeword to discover and harvest more Fire Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 15% more Fire Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_fireessenceboon3Desc,item_modifiers,mod,New,"Invoke the Fire Essence Boon Runeword to discover and harvest more Fire Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 20% more Fire Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_fireessenceboon4Desc,item_modifiers,mod,New,"Invoke the Fire Essence Boon Runeword to discover and harvest more Fire Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 25% more Fire Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_fireessenceboon5Desc,item_modifiers,mod,New,"Invoke the Fire Essence Boon Runeword to discover and harvest more Fire Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 30% more Fire Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_fireessenceboonDesc,item_modifiers,mod,New,"Invoke the Fire Essence Boon Runeword to discover and harvest more Fire Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[970000]Essence Boon[-]: Discover and Harvest 10% more Fire Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_fireessenceboon2Desc,item_modifiers,mod,New,"Invoke the Fire Essence Boon Runeword to discover and harvest more Fire Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[970000]Essence Boon[-]: Discover and Harvest 15% more Fire Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_fireessenceboon3Desc,item_modifiers,mod,New,"Invoke the Fire Essence Boon Runeword to discover and harvest more Fire Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[970000]Essence Boon[-]: Discover and Harvest 20% more Fire Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_fireessenceboon4Desc,item_modifiers,mod,New,"Invoke the Fire Essence Boon Runeword to discover and harvest more Fire Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[970000]Essence Boon[-]: Discover and Harvest 25% more Fire Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_fireessenceboon5Desc,item_modifiers,mod,New,"Invoke the Fire Essence Boon Runeword to discover and harvest more Fire Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[970000]Essence Boon[-]: Discover and Harvest 30% more Fire Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
 runeGeneral_fireessenceboon,item_modifiers,mod,New,"Rune: Fire Essence Boon",,,,, 
 runeGeneral_fireessenceboon2,item_modifiers,mod,New,"[42c234]RUNE[-]: Fire Essence Boon II",,,,,
 runeGeneral_fireessenceboon3,item_modifiers,mod,New,"[315dce]RUNE[-]: Fire Essence Boon III",,,,,
 runeGeneral_fireessenceboon4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Fire Essence Boon IV",,,,,
 runeGeneral_fireessenceboon5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Fire Essence Boon V",,,,,
 
-runeGeneral_iceessenceboonDesc,item_modifiers,mod,New,"Invoke the Ice Essence Boon Runeword to discover and harvest more Ice Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 10% more Ice Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_iceessenceboon2Desc,item_modifiers,mod,New,"Invoke the Ice Essence Boon Runeword to discover and harvest more Ice Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 15% more Ice Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_iceessenceboon3Desc,item_modifiers,mod,New,"Invoke the Ice Essence Boon Runeword to discover and harvest more Ice Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 20% more Ice Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_iceessenceboon4Desc,item_modifiers,mod,New,"Invoke the Ice Essence Boon Runeword to discover and harvest more Ice Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 25% more Ice Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_iceessenceboon5Desc,item_modifiers,mod,New,"Invoke the Ice Essence Boon Runeword to discover and harvest more Ice Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 30% more Ice Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_iceessenceboonDesc,item_modifiers,mod,New,"Invoke the Ice Essence Boon Runeword to discover and harvest more Ice Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[02599c]Essence Boon[-]: Discover and Harvest 10% more Ice Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_iceessenceboon2Desc,item_modifiers,mod,New,"Invoke the Ice Essence Boon Runeword to discover and harvest more Ice Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[02599c]Essence Boon[-]: Discover and Harvest 15% more Ice Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_iceessenceboon3Desc,item_modifiers,mod,New,"Invoke the Ice Essence Boon Runeword to discover and harvest more Ice Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[02599c]Essence Boon[-]: Discover and Harvest 20% more Ice Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_iceessenceboon4Desc,item_modifiers,mod,New,"Invoke the Ice Essence Boon Runeword to discover and harvest more Ice Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[02599c]Essence Boon[-]: Discover and Harvest 25% more Ice Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_iceessenceboon5Desc,item_modifiers,mod,New,"Invoke the Ice Essence Boon Runeword to discover and harvest more Ice Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[02599c]Essence Boon[-]: Discover and Harvest 30% more Ice Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
 runeGeneral_iceessenceboon,item_modifiers,mod,New,"Rune: Ice Essence Boon",,,,, 
 runeGeneral_iceessenceboon2,item_modifiers,mod,New,"[42c234]RUNE[-]: Ice Essence Boon II",,,,,
 runeGeneral_iceessenceboon3,item_modifiers,mod,New,"[315dce]RUNE[-]: Ice Essence Boon III",,,,,
 runeGeneral_iceessenceboon4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Ice Essence Boon IV",,,,,
 runeGeneral_iceessenceboon5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Ice Essence Boon V",,,,,
 
-runeGeneral_lightningessenceboonDesc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 10% more Lightning Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_lightningessenceboon2Desc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 15% more Lightning Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_lightningessenceboon3Desc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 20% more Lightning Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_lightningessenceboon4Desc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 25% more Lightning Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
-runeGeneral_lightningessenceboon5Desc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [Tools] can sustain the power of this Rune.\n\nEssence Boon: Discover and Harvest 30% more Lightning Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_lightningessenceboonDesc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[5c009d]Essence Boon[-]: Discover and Harvest 10% more Lightning Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_lightningessenceboon2Desc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[5c009d]Essence Boon[-]: Discover and Harvest 15% more Lightning Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_lightningessenceboon3Desc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[5c009d]Essence Boon[-]: Discover and Harvest 20% more Lightning Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_lightningessenceboon4Desc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[5c009d]Essence Boon[-]: Discover and Harvest 25% more Lightning Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
+runeGeneral_lightningessenceboon5Desc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [Tools] can sustain the power of this Rune.\n\n[5c009d]Essence Boon[-]: Discover and Harvest 30% more Lightning Essence from all sources.\nStamina Burden: 1% (reduced by Rune Mastery).",,,,,
 runeGeneral_lightningessenceboon,item_modifiers,mod,New,"Rune: Lightning Essence Boon",,,,, 
 runeGeneral_lightningessenceboon2,item_modifiers,mod,New,"[42c234]RUNE[-]: Lightning Essence Boon II",,,,,
 runeGeneral_lightningessenceboon3,item_modifiers,mod,New,"[315dce]RUNE[-]: Lightning Essence Boon III",,,,,
 runeGeneral_lightningessenceboon4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Lightning Essence Boon IV",,,,,
 runeGeneral_lightningessenceboon5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Lightning Essence Boon V",,,,,
 
-runeGeneral_lockshatterDesc,item_modifiers,mod,New,"Invoke the Lock Shatter Runeword to imbue a Tool with Lock Breaking power. Only [Tools] can sustain the power of this Rune and will endure immense burden (reduced by Rune Mastery).\n\nLock Shatter: Destroy Locks with magical force on each swing.\nStamina Burden: 20% (reduced by Rune Mastery).",,,,,
+runeGeneral_lockshatterDesc,item_modifiers,mod,New,"Invoke the Lock Shatter Runeword to imbue a Tool with Safe Lock Breaking power. Only [Tools] can sustain the power of this Rune and will endure immense burden (reduced by Rune Mastery).\n\n[6600cc]Lock Shatter[-]: Destroy Safe Locks with magical force on each swing.\nStamina Burden: 20% (reduced by Rune Mastery).",,,,,
 runeGeneral_lockshatter,item_modifiers,mod,New,"Rune: Lock Shatter",,,,, 
 runeGeneral_lockshatter2,item_modifiers,mod,New,"[42c234]RUNE[-]: Lock Shatter II",,,,,
 runeGeneral_lockshatter3,item_modifiers,mod,New,"[315dce]RUNE[-]: Lock Shatter III",,,,,
