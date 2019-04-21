@@ -30,10 +30,16 @@
 		
 	<append xpath="/Sounds">
 	
+		<!-- SORCERY -->
+		<SoundDataNode name="sorceryOrbWhoosh"> <AudioSource name="Sounds/AudioSource_UI"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioSorcery.unity3d?orb_whoosh"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.01"/>
+		</SoundDataNode>		
+	
 		<!-- CHANTS / RITUALS -->
 		<SoundDataNode name="sorceryRitualChant"> <AudioSource name="Sounds/AudioSource_UI"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioChant.unity3d?ritualChant"/>
-			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.01"/>
 		</SoundDataNode>	
 	
 		<!-- FIRE SORCERY -->
@@ -140,6 +146,49 @@
 			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_storm" Loop="true"/>
 			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/>
 		</SoundDataNode>	
+		
+		
+		<!-- LIGHTNING SORCERY -->
+		<SoundDataNode name="sorceryLightning_cast"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?LightningLoop2" Loop="true"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		
+		<SoundDataNode name="sorceryLightning_crackling"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?Crackling" Loop="true"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
+		
+		<SoundDataNode name="sorceryLightning_forcefield"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?ForceFieldW" Loop="true"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>			
+		
+		<SoundDataNode name="sorceryLightning_electrocute"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?LightningLoop" Loop="true"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		
+		<SoundDataNode name="sorceryLightning_impact"> <AudioSource name="Sounds/AudioSource_Impact"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?LightningImpact1"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?LightningImpact2"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/><MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+
+		<SoundDataNode name="sorceryLightning_portalin"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?PortalIn"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/><MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		
+		<SoundDataNode name="sorceryLightning_portalout"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?PortalOut"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/><MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		
+		<SoundDataNode name="sorceryLightning_implodelow"> <AudioSource name="Sounds/AudioSource_Impact"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?LowImplodeLong"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/><MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
 		
 	</append>
 	

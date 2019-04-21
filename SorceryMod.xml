@@ -2,7 +2,7 @@
 <Servers>
 	<ServerGroup Name="Sorcery" Logo="https://i.postimg.cc/s221WC7s/sorcery-logo-splash.png" Description="Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.">
 			<Server Name="Sorcery" Logo="https://i.postimg.cc/s221WC7s/sorcery-logo-splash.png">
-			<Description>Sorcery v0.692
+			<Description>Sorcery v0.7
 https://7daystodie.com/forums/showthread.php?109145-Sorcery
 
 Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.
@@ -21,13 +21,13 @@ Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. T
 - Essence Mastery: demystify and awaken the elemental essence of the world to extract and craft spells and weapons with essence.
 - Fire, Ice, Lightning Spells: upgrade each spell with five alterations
 
-Latest Version: 0.692
+Latest Version: 0.7
 Sorcery Wiki: https://github.com/7d2d-sorcery/Sorcery/wiki
 Sorcery Thread: https://7daystodie.com/forums/showthread.php?109145-Sorcery
 
 **COMPATIBLE** DARKNESS FALLS (17.2): Sorcery Modlet version is fully compatible with Darkness Falls (17.2 / latest). Under Darkness Falls Install: Manage Modlets &gt; Download Sorcery &gt; Open and Copy Sorcery Localization.txt contents and paste the copied Localization text into the Darkness Falls Localization.txt (at the very end, new line) &gt; Ready to play! More info: https://github.com/7d2d-sorcery/Sorcery/wiki/Mod-Launcher#darkness-falls--sorcery
 
-**COMPATIBLE** RAVENHEARST (5.1): Sorcery Modlet version is fully compatible with Ravenhearst (5.1). Under Ravenhearst Install: Manage Modlets &gt; Download Sorcery &gt; Open and Copy Sorcery Localization.txt contents and paste the copied Localization text into the Ravenhearst Localization.txt (at the very end, new line) &gt; Ready to play!  More Info: https://7daystodie.com/forums/showthread.php?109145-Sorcery&amp;p=963640&amp;viewfull=1#post963640
+**COMPATIBLE** RAVENHEARST (5.1+): Sorcery Modlet version is fully compatible with Ravenhearst (5.1). Under Ravenhearst Install: Manage Modlets &gt; Download Sorcery &gt; Open and Copy Sorcery Localization.txt contents and paste the copied Localization text into the Ravenhearst Localization.txt (at the very end, new line) &gt; Ready to play!  More Info: https://7daystodie.com/forums/showthread.php?109145-Sorcery&amp;p=963640&amp;viewfull=1#post963640
 
 **NOTE** This version of Sorcery is NOT EAC safe; You must play with EAC disabled. The pure XML Modlet version of Sorcery may be used with EAC enabled: https://7daystodie.com/forums/showthread.php?109145-Sorcery
 			</Description>

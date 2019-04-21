@@ -95,7 +95,7 @@
 			<ingredient name="resourceRockSmall" count="100"/>
 			<ingredient name="resourceClayLump" count="100"/>
 		</recipe>	
-		<!-- ICE CONJURE -->
+		<!-- LIGHTNING CONJURE -->
 		<recipe name="conjureLightning" count="1" tags="learnable" craft_time="300">
 			<ingredient name="resourceEssenceLightning" count="50"/>
 			<ingredient name="resourceScrapLead" count="100"/>
@@ -109,20 +109,29 @@
 		</recipe>	
 		<recipe name="toolIceCore" count="1" craft_area="conjureIce" material_based="true" tags="learnable">
 			<ingredient name="unit_ice" count="100"/>
-		</recipe>	
+		</recipe>
+		<recipe name="toolLightningCore" count="1" craft_area="conjureLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning" count="100"/>
+		</recipe>
 		<!-- Loom -->
 		<recipe name="toolLoomFire" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolFireCore" tags="learnable">
 			<ingredient name="unit_fire" count="100"/>
 		</recipe>	
 		<recipe name="toolLoomIce" count="1" craft_area="conjureIce" material_based="true" craft_tool="toolIceCore" tags="learnable">
 			<ingredient name="unit_ice" count="100"/>
-		</recipe>	
+		</recipe>
+		<recipe name="toolLoomLightning" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolLightningCore" tags="learnable">
+			<ingredient name="unit_lightning" count="100"/>
+		</recipe>
 		<!-- Hammer -->
 		<recipe name="toolHammerFire" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolFireCore" tags="learnable">
 			<ingredient name="unit_fire2" count="100"/>
 		</recipe>	
 		<recipe name="toolHammerIce" count="1" craft_area="conjureIce" material_based="true" craft_tool="toolIceCore" tags="learnable">
 			<ingredient name="unit_ice2" count="100"/>
+		</recipe>
+		<recipe name="toolHammerLightning" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolLightningCore" tags="learnable">
+			<ingredient name="unit_lightning2" count="100"/>
 		</recipe>			
 	<!--___________________ SPELLCAST ___________________-->
 		<!-- FIRE SPELLCAST -->
@@ -138,18 +147,17 @@
 			<ingredient name="unit_lightning" count="40"/>
 		</recipe>		
 	
-	<!--___________________ SPELLS: FIRE ___________________-->
+	<!--___________________ SPELLS ___________________-->
+		<!-- FIRE SPELLS -->
 		<recipe name="spellFireball" count="1" craft_area="conjureFire" material_based="true" tags="learnable">
 			<ingredient name="unit_fire" count="1"/>
 		</recipe>
-		
 		<recipe name="spellFirestorm" count="1" craft_area="conjureFire" material_based="true" tags="learnable">
 			<ingredient name="unit_fire2" count="1"/>
 			<ingredient name="unit_fire" count="1"/>
 		</recipe>	
 	
-	
-	<!--___________________ SPELLS: ICE ___________________-->	
+		<!-- ICE SPELLS -->
 		<recipe name="spellIceBall" count="1" craft_area="conjureIce" material_based="true" tags="learnable">
 			<ingredient name="unit_ice" count="1"/>
 		</recipe>
@@ -163,6 +171,10 @@
 			<ingredient name="unit_ice" count="1"/>
 		</recipe>			
 	
+		<!-- LIGHTNING SPELLS -->
+		<recipe name="spellLightning" count="1" craft_area="conjureLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning" count="1"/>
+		</recipe>	
 	
 	<!--___________________ QUESTS: INTRO ___________________-->
 		<!-- Quest: FIRE -->

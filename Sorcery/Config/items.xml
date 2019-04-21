@@ -31,7 +31,6 @@
 	<append xpath="/items" >
 	
 <!--___________________ SPELLCAST: Sorcery Weapon ___________________-->
-	
 		<!-- Sorcery Weapon: SPELLCAST -->
 		<!-- Spellcast: FIRE -->
 		<item name="spellcastFire">
@@ -46,7 +45,6 @@
 			<property name="Material" value="fire"/>
 			<property name="RepairTools" value="resourceEssenceFire"/>
 			<property name="SellableToTrader" value="true"/>
-			<!-- <property name="FuelValue" value="200"/> -->
 			<property name="EconomicValue" value="2000"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="Damage_type" value="Piercing"/>
@@ -62,23 +60,14 @@
 			<property name="PickupJournalEntry" value="alternateAmmoTip"/>
 			<property name="Weight" value="20"/>
 			<property name="MeltTimePerUnit" value="10"/>
-			
-			<!-- <property name="LightValue" value="0.45"/>
-			<property name="LightSource" value="lightSource"/>
-			<property name="ActivateObject" value="lightSource"/>
-			<property name="AlwaysActive" value="true"/> -->
 
-			
-			<!-- Add for EACH Ammo (eg. 1, 1) -->
-			<!-- <property class="Attributes">
-				<property name="EntityDamage" value="1, 1" />
-			</property> -->
 			
 			<property class="Action0">
 				<property name="Class" value="Catapult"/>
 				<property name="Hitmask_override" value="Arrow"/>
-				<property name="Magazine_items" value="spellFireball,spellFirestorm"/>
+				<!-- <property name="UseMeleeCrosshair" value="true"/> -->
 				<property name="Delay" value="0"/>
+				<property name="Magazine_items" value="spellFireball,spellFirestorm"/>
 				<property name="Max_strain_time" value="0"/> 
 				<property name="Sound_start" value="sorceryFireball_launch"/>
 				<!-- <property name="Sound_repeat" value="FireMediumLoop"/> -->
@@ -89,18 +78,30 @@
 				<property name="Sound_draw" value="sorceryFireball_draw"/>
 				<property name="Sound_cancel" value="torch_swoosh"/>
 				<!-- <property name="Particles_muzzle_fire" value="rocketLauncherFire"/>
-				<property name="Particles_muzzle_smoke" value="nozzlesmoke_m136"/> -->		
+				<property name="Particles_muzzle_smoke" value="nozzlesmoke_m136"/> -->				
 				<property name="Particles_muzzle_fire" value="..."/>
 				<property name="Particles_muzzle_smoke" value="..."/>
-				<!-- <property name="ScopeOffset" value="-0.00062,0.088,0.065"/> -->
+				<property name="ScopeOffset" value="-0.00062,0.088,0.065"/>
 				<property name="SideOffset" value="0,0,0"/>
-				<property name="BarrelOffset" value="0,0,0"/>	
+				<property name="BarrelOffset" value="0,0,0"/>
 			</property>
-
+			
 			<property class="Action1">
 				<property name="Class" value="Activate"/>
 				<property name="Delay" value="1"/>
-			</property>
+				<!-- <property name="UsePowerAttackAnimation" value="false"/> -->
+			</property>			
+			
+			<!-- <property class="Action1"> 
+				<property name="Class" value="Repair"/>
+				<property name="Delay" value="1"/>
+				<property name="Repair_amount" value="0"/>
+				<property name="Upgrade_hit_offset" value="0"/>
+				<property name="Repair_action_sound" value="sorceryFireball_draw"/>
+				<property name="Upgrade_action_sound" value="sorceryFireball_draw"/>
+				<property name="Allowed_upgrade_items" value="spellcastFire,rockResource,rockResource02,resourcePotassiumNitratePowder,treeWinterEverGreen,treeWinterPine13m,treeWinterPine19m,treeWinterPine28m"/>
+				<property name="UsePowerAttackAnimation" value="false"/>
+			</property> -->
 
 			<effect_group tiered="false" name="PRIMARY">
 				<!-- <passive_effect name="StaminaLoss" operation="base_add" value="5" tags="primary"/> -->
@@ -178,7 +179,6 @@
 			
 		</item>
 	
-	
 		<!-- Spellcast: ICE -->
 		<item name="spellcastIce">
 			<property name="Tags" value="spellcast,spellcastIce,sorcery"/>
@@ -187,7 +187,6 @@
 			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
 			<property name="Material" value="ice"/>
 			<property name="RepairTools" value="resourceEssenceIce"/>
-			<!-- <property name="FuelValue" value="200"/> -->
 			<property name="EconomicValue" value="2000"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="true"/>
@@ -209,8 +208,8 @@
 				<property name="Class" value="Catapult"/>
 				<property name="Hitmask_override" value="Arrow"/>
 				<!-- <property name="UseMeleeCrosshair" value="true"/> -->
-				<property name="Magazine_items" value="spellIceBall,spellIceSpike,spellIceStorm"/>
 				<property name="Delay" value="0"/>
+				<property name="Magazine_items" value="spellIceBall,spellIceSpike,spellIceStorm"/>
 				<property name="Max_strain_time" value="0"/> 
 				<property name="Sound_start" value="sorceryIce_launch"/>
 				<property name="Sound_repeat" value="..."/>
@@ -227,8 +226,10 @@
 			</property>
 					
 			<property class="Action1">
-				<property name="Class" value="Activate"/>
-				<property name="Delay" value="1"/>
+				<property name="Class" value="UseOther"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="..."/>
+				<property name="Sound_start" value="..."/>
 			</property>
 
 			
@@ -304,94 +305,96 @@
 			
 		</item>	
 	
-
 		<!-- Spellcast: LIGHTNING -->
 		<item name="spellcastLightning">
 			<property name="Tags" value="spellcast,spellcastLightning,sorcery"/>
 			<property name="HoldType" value="27"/>
-			<property name="Meshfile" value="#@modfolder:Resources/spellcastIce.unity3d?spellcastIce"/>
+			<property name="Meshfile" value="#@modfolder:Resources/spellcastLightning.unity3d?spellcastLightning"/>
 			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
 			<property name="Material" value="lightning"/>
 			<property name="RepairTools" value="resourceEssenceLightning"/>
-			<!-- <property name="FuelValue" value="200"/> -->
-			<property name="EconomicValue" value="5"/>
+			<property name="EconomicValue" value="2000"/>
 			<property name="EconomicBundleSize" value="1"/>
-			<property name="SellableToTrader" value="false"/>
-			<property name="Damage_type" value="Heat"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Damage_type" value="Piercing"/>
 			<property name="DegradationBreaksAfter" value="false"/>
 			<property name="SoundJammed" value="ItemNeedsRepair"/>
 			<property name="SoundDestroy" value="wooddestroy1"/>
 			<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
 			<property name="CrosshairUpAfterShot" value="false"/>
+			<property name="Group" value="Ammo/Weapons"/>
 			<property name="ActionSkillGroup" value="Archery"/>
 			<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
 			<property name="RepairExpMultiplier" value="5.5"/>
 			<property name="PickupJournalEntry" value="alternateAmmoTip"/>
 			<property name="Weight" value="20"/>
 			<property name="MeltTimePerUnit" value="10"/>
-			
-			<effect_group name="Power Attack">
-				<passive_effect name="StaminaLoss" operation="base_add" value="10" tags="secondary"/>
-			</effect_group>
-			
+
 			<property class="Action0">
 				<property name="Class" value="Catapult"/>
 				<property name="Hitmask_override" value="Arrow"/>
 				<!-- <property name="UseMeleeCrosshair" value="true"/> -->
-				<property name="Magazine_items" value="spellFireball,spellFirestorm,spellIceBall,spellIceSpike"/>
 				<property name="Delay" value="0"/>
+				<property name="Magazine_items" value="spellLightning, spellLightningNova"/>
 				<property name="Max_strain_time" value="0"/> 
-				<property name="Sound_start" value="sorceryIce_launch"/>
-				<property name="Sound_repeat" value=""/>
-				<property name="Sound_end" value=""/>
+				<!-- <property name="Sound_start" value="sorceryIce_launch"/> -->
+				<property name="Sound_start" value="..."/>
+				<property name="Sound_repeat" value="..."/>
+				<property name="Sound_end" value="..."/>
 				<property name="Sound_empty" value="weapon_empty"/>
-				<property name="Sound_reload" value=""/>
-				<property name="Sound_draw" value="sorceryIce_draw"/>
-				<property name="Sound_cancel" value="torch_swoosh"/>
+				<property name="Sound_reload" value="..."/>
+				<!-- <property name="Sound_draw" value="sorceryIce_draw"/> -->
+				<property name="Sound_draw" value="..."/>
+				<property name="Sound_cancel" value="..."/>
 				<property name="Particles_muzzle_fire" value="..."/>
 				<property name="Particles_muzzle_smoke" value="..."/>
 				<property name="ScopeOffset" value="-0.00062,0.088,0.065"/>
 				<property name="SideOffset" value="0,0,0"/>
 				<property name="BarrelOffset" value="0,0,0"/>	
 			</property>
-			
+					
 			<property class="Action1">
 				<property name="Class" value="Activate"/>
 				<property name="Delay" value="1"/>
-			</property>		
+			</property>
 			
-		<!-- 	<effect_group tiered="false" name="PRIMARY">
-				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffSpellcastIce">
+			<effect_group tiered="false" name="PRIMARY">
+				<!-- <passive_effect name="StaminaLoss" operation="base_add" value="5" tags="primary"/> -->
+				<!-- <requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2"/> -->
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffSpellcastLightning">
 					<requirement name="StatCompareCurrent" target="self" stat="stamina" operation="GTE" value="5"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffSpellcastIce"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffSpellcastLightning"/>
 			</effect_group>			
 
 			<effect_group tiered="false" name="SECONDARY">
-				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="buffSpellcastSecondaryIce">
+				<!-- <passive_effect name="StaminaLoss" operation="base_add" value="10" tags="secondary"/> -->
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="buffSpellcastSecondaryLightning">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3"/>
 					<requirement name="StatCompareCurrent" target="self" stat="stamina" operation="GTE" value="10"/>
 				</triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" buff="buffSpellcastSecondaryIce"/>
-			</effect_group>  -->
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" buff="buffSpellcastSecondaryLightning"/>
+			</effect_group>			
 			
-			<effect_group name="Base Effects"> 
-				<!-- SPELLCAST -->
-				<!-- <triggered_effect trigger="onSelfHoldingItemCreated" action="AddBuff" target="self" buff="buffSorceryWieldIce" /> -->
+			<effect_group tiered="false" name="LIGHTNING SORCERY">
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddBuff" target="self" buff="buffSorceryWieldLightning" />
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" target="self" buff="buffSorceryWieldLightning" />
+				<triggered_effect trigger="onReloadStart" action="AddBuff" target="self" buff="buffSorceryWieldLightning" />
+			</effect_group>
 			
-				<!-- RUNE MASTERY -->
+			<effect_group tiered="false" name="RUNE MASTERY">
 				<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachPrefabToHeldItem" prefab="#@modfolder:Resources/modArmRune.unity3d?modArmRune" parent_transform="Attachments/Runeword" local_offset="-2.1,-0.55,-4.9" local_rotation="-11,-258,0">
 					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="1"/>
-				</triggered_effect>
-				
-				<passive_effect name="StaminaLoss" operation="base_set" value="10" tags="primary"/>
+				</triggered_effect>				
+			</effect_group>
+			
+			<effect_group name="SPELLCAST: TIERED"> 
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
 				<passive_effect name="MaxRange" operation="base_set" value="100"/>
 				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
-				
-				<!-- GLITCHED? --> 
-				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
-				<passive_effect name="BlockDamage" operation="base_set" value="1"/>
+
+				<passive_effect name="EntityDamage" operation="base_add" value="0"/> <!-- Spell buffs control this -->
+				<passive_effect name="BlockDamage" operation="base_add" value="6"/>
 
 				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0"/>
 				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1"/>
@@ -417,20 +420,16 @@
 				<passive_effect name="ModPowerBonus" operation="perc_add" value="0.15" tags="EntityDamage"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 			</effect_group>
-			
-			<!-- cleanup -->
+
 			<effect_group tiered="false" name="cleanup">
-				<!-- <triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffSorceryWieldIce">
-					<requirement name="HoldingItemHasTags" tags="spellcastIce" invert="true"  match_all_tags="true"/>
-				</triggered_effect> -->
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffSorceryWieldLightning">
+					<requirement name="HoldingItemHasTags" tags="spellcastLightning" invert="true"/>
+				</triggered_effect>
 			</effect_group>
-			
-			<property name="Group" value="Ammo/Weapons,Basics"/>
 		</item>
 	
 	
 <!--___________________ SPELLS: Ammo ___________________-->	
-
 	<!--___________________ FIRE SPELLS ___________________-->
 	
 		<!-- Fire Spell: FIRE -->
@@ -460,7 +459,6 @@
 			<!-- <property name="UsableUnderwater" value="false"/> -->
 			<property name="Material" value="fire"/>
 			<property name="Stacknumber" value="500"/> <!-- STK ammo -->
-			<!-- <property name="FuelValue" value="1"/> -->
 			<property name="EconomicValue" value="24"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="Damage_type" value="Piercing"/>
@@ -480,7 +478,7 @@
 					<property name="DamageBonus.water" value="1"/>
 					<property name="DamageBonus.wood" value="1"/>
 					<property name="DamageBonus.glass" value="1"/>
-					<property name="DamageBonus.cloth" value="1"/>								
+					<property name="DamageBonus.cloth" value="1"/>
 			</property>
 
 			<property name="Group" value="Ammo/Weapons"/>
@@ -491,19 +489,21 @@
 				<passive_effect name="MaxRange" operation="base_set" value="100"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="0" /> <!-- Spell buffs control this -->
-				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="10"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="35"/>
-				<!-- <passive_effect name="LightMultiplier" operation="base_add" value="0.50"/> -->
 				<passive_effect name="ProjectileStickChance" operation="base_set" value="1"/> <!-- 100% stick -->
-				<!-- <passive_effect name="ProjectileStickChance" operation="perc_set" value="1" tags="stone,earth,wood,metal,glass,cloth"/> -->
 			</effect_group>
 
-			<effect_group tiered="false" name="SPELL">
-				<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.5" buff="buffSpellImpactTrigger_Fire" target_tags="enemy,animal"/>
-				<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.5" buff="buffSpell_Burn" target_tags="enemy,animal"/>
-				<triggered_effect name="onProjectileImpact" action="PlaySound" target="positionAOE" range="1" sound="sorceryFireball_impact" />
-				<!-- <triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" sound="sorceryFireball_explode" /> -->
-			</effect_group>
+			<effect_group tiered="false" name="SPELL: Impact">
+				<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.5" buff="buffSorceryFireStacks_Add, buffSpellImpactTrigger_Fire, buffSpell_Burn"/>
+				<triggered_effect name="onProjectileImpact" action="PlaySound" target="positionAOE" range="1" sound="sorceryFireball_impact" />				
+			</effect_group>			
+			
+			<effect_group tiered="false" name="SPELL: Wield">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSorceryWield_Fire"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffSorceryWield_Fire"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffSorceryWield_Fire" />
+			</effect_group>			
 			
 			<effect_group tiered="false" name="STICKY: Transform Self">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="SetTransformActive" active="false" parent_transform="Impact" transform_path="Impacted"/>
@@ -514,8 +514,26 @@
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/fireHand.unity3d?fireHand" parent_transform="Attachments"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="fireHand" parent_transform="Attachments"/>
 			</effect_group>
+			
+			<!-- STACKS: PER SPELL -->
+			<effect_group tiered="false" name="STACK 1">
+				<requirement name="CVarCompare" cvar="FireStacksPlayer" operation="Equals" value="1" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryFireStack" operation="add" value="1" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 2">
+				<requirement name="CVarCompare" cvar="FireStacksPlayer" operation="Equals" value="2" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryFireStack" operation="add" value="2" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 3">
+				<requirement name="CVarCompare" cvar="FireStacksPlayer" operation="Equals" value="3" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryFireStack" operation="add" value="3" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 4: CAP">
+				<requirement name="CVarCompare" cvar="FireStacksPlayer" operation="GTE" value="4" target="self"/>		
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryFireStack" operation="set" value="4" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<!-- END: STACKS -->
 		</item>
-	
 	
 		<!-- Fire Spell: FIRENADO -->
 		<item name="spellFirestorm">
@@ -544,7 +562,6 @@
 			<!-- <property name="UsableUnderwater" value="false"/> -->
 			<property name="Material" value="fire2"/>
 			<property name="Stacknumber" value="250"/> <!-- STK ammo -->
-			<!-- <property name="FuelValue" value="1"/> -->
 			<property name="EconomicValue" value="44"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="Damage_type" value="Piercing"/>
@@ -576,17 +593,22 @@
 				<passive_effect name="MaxRange" operation="base_set" value="50"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="0" /> <!-- Spell buffs control this -->
-				<passive_effect name="BlockDamage" operation="base_set" value="5"/>				
-				<passive_effect name="ProjectileVelocity" operation="base_set" value="10"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="10"/>				
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="15"/>
 				<passive_effect name="ProjectileStickChance" operation="base_set" value="1"/> <!-- 100% stick -->
 			</effect_group>
 
-			<effect_group tiered="false" name="SPELL">
-				<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.5" buff="buffSpellFirestorm" target_tags="enemy,animal"/>
-				<!-- <triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.5" buff="buffSpellImpactTrigger_Fire" target_tags="enemy,animal"/> -->
-				<triggered_effect name="onProjectileImpact" action="PlaySound" target="positionAOE" range="1" sound="sorceryFireball_impact" />
+			<effect_group tiered="false" name="SPELL: Impact">
+				<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.5" buff="buffSorceryFireStacks_Add, buffSpellImpactTrigger_Fire, buffSpellFirestorm"/>
+				<triggered_effect name="onProjectileImpact" action="PlaySound" target="positionAOE" range="1" sound="sorceryFireball_impact" />				
 			</effect_group>
 			
+			<effect_group tiered="false" name="SPELL: Wield">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSorceryWield_Firenado"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffSorceryWield_Firenado"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffSorceryWield_Firenado" />
+			</effect_group>			
+
 			<effect_group tiered="false" name="STICKY: Transform Self">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="SetTransformActive" active="false" parent_transform="Impact" transform_path="Impacted"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetTransformActive" active="true" parent_transform="Impact" transform_path="Impacted"/>
@@ -598,6 +620,26 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="fireHand" parent_transform="Attachments"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="fireTornado-hand" parent_transform="Attachments"/>
 			</effect_group>
+			
+			<!-- CHARGE: Stack Application -->
+			<effect_group tiered="false" name="STACK 1">
+				<requirement name="CVarCompare" cvar="Fire2StacksPlayer" operation="Equals" value="1" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryFireStack" operation="add" value="1" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 2">
+				<requirement name="CVarCompare" cvar="Fire2StacksPlayer" operation="Equals" value="2" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryFireStack" operation="add" value="2" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 3">
+				<requirement name="CVarCompare" cvar="Fire2StacksPlayer" operation="Equals" value="3" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryFireStack" operation="add" value="3" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 4: CAP">
+				<requirement name="CVarCompare" cvar="Fire2StacksPlayer" operation="GTE" value="4" target="self"/>		
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryFireStack" operation="set" value="4" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<!-- END: CHARGE: Stack Application -->			
+			
 		</item>	
 	
 	
@@ -614,7 +656,6 @@
 			<property name="StickyOffset" value="0"/>
 			<property name="Material" value="ice"/>
 			<property name="Stacknumber" value="500"/> <!-- STK ammo -->
-			<!-- <property name="FuelValue" value="1"/> -->
 			<property name="EconomicValue" value="24"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="Damage_type" value="Piercing"/>
@@ -659,19 +700,22 @@
 				<passive_effect name="MaxRange" operation="base_set" value="100"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="0" /> <!-- Spell buffs control this -->
-				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="10"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="20"/>
 				<!-- <passive_effect name="LightMultiplier" operation="base_add" value="0.50"/> -->
 				<passive_effect name="ProjectileStickChance" operation="base_set" value="1"/> <!-- 100% stick -->
 				<!-- <passive_effect name="ProjectileStickChance" operation="perc_set" value="1" tags="stone,earth,wood,metal,glass,cloth"/> -->
 			</effect_group>
 
+			<effect_group tiered="false" name="SPELL: Impact">
+				<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.5" buff="buffSorceryIceStacks_Add, buffSpellImpactTrigger_Ice, buffSpell_Ice"/>
+				<triggered_effect name="onProjectileImpact" action="PlaySound" target="positionAOE" range="1" sound="sorceryIce_impact" />				
+			</effect_group>			
 
-			<effect_group tiered="false" name="SPELL">
-				<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffSpellImpactTrigger_Ice" target_tags="enemy,animal"/>
-				<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffSpell_Ice" target_tags="enemy,animal"/>
-				<triggered_effect name="onProjectileImpact" action="PlaySound" target="positionAOE" range="1" sound="sorceryIce_impact" />
-				<!-- sorceryIce_impacted -->
+			<effect_group tiered="false" name="SPELL: Wield">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSorceryWield_Ice"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffSorceryWield_Ice"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffSorceryWield_Ice" />
 			</effect_group>
 			
 			<effect_group tiered="false" name="STICKY: Transform Self">
@@ -684,6 +728,25 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="iceHand" parent_transform="Attachments"/>
 			</effect_group>			
 
+			<!-- CHARGE: Stack Application -->
+			<effect_group tiered="false" name="STACK 1">
+				<requirement name="CVarCompare" cvar="IceStacksPlayer" operation="Equals" value="1" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryIceStack" operation="add" value="1" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 2">
+				<requirement name="CVarCompare" cvar="IceStacksPlayer" operation="Equals" value="2" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryIceStack" operation="add" value="2" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 3">
+				<requirement name="CVarCompare" cvar="IceStacksPlayer" operation="Equals" value="3" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryIceStack" operation="add" value="3" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 4: CAP">
+				<requirement name="CVarCompare" cvar="IceStacksPlayer" operation="GTE" value="4" target="self"/>		
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryIceStack" operation="set" value="4" target="positionAOE" range="1.5"/>
+			</effect_group>
+			<!-- END: CHARGE: Stack Application -->			
+			
 		</item>
 
 		
@@ -697,7 +760,6 @@
 			<property name="StickyOffset" value="0"/>
 			<property name="Material" value="ice2"/>
 			<property name="Stacknumber" value="250"/>
-			<!-- <property name="FuelValue" value="1"/> -->
 			<property name="EconomicValue" value="44"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="Damage_type" value="Piercing"/>
@@ -734,7 +796,7 @@
 					<property name="DamageBonus.glass" value="1"/>
 					<property name="DamageBonus.cloth" value="1"/>
 					<!-- SPELL -->
-					<property name="Buff" value="buffSpell_IceSpike"/>
+					<property name="Buff" value="buffSorceryIceStacks_Add, buffSpellImpactTrigger_Ice, buffSpell_IceSpike"/>
 			</property>
 
 			<property name="Group" value="Ammo/Weapons"/>
@@ -752,7 +814,7 @@
 				<passive_effect name="MaxRange" operation="base_set" value="100"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="0" /> <!-- Spell buffs control this -->
-				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="20"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="40"/>
 				<passive_effect name="ProjectileStickChance" operation="base_set" value="1"/> <!-- 100% stick -->
 			</effect_group>
@@ -789,6 +851,12 @@
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="1" sound="sorceryIce_impact" />
 			</effect_group>
 			
+			<effect_group tiered="false" name="SPELL: Wield">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSorceryWield_IceSpike"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffSorceryWield_IceSpike"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffSorceryWield_IceSpike" />
+			</effect_group>				
+			
 			<effect_group tiered="false" name="STICKY: Transform Self">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="SetTransformActive" active="false" parent_transform="Impact" transform_path="Impacted"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetTransformActive" active="true" parent_transform="Impact" transform_path="Impacted"/>
@@ -800,12 +868,31 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="iceHand" parent_transform="Attachments"/>
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="iceSpike" parent_transform="Attachments"/>
 			</effect_group>
+			
+			<!-- CHARGE: Stack Application -->
+			<effect_group tiered="false" name="STACK 1">
+				<requirement name="CVarCompare" cvar="Ice2StacksPlayer" operation="Equals" value="1" target="self"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryIceStack" operation="add" value="1" target="other"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 2">
+				<requirement name="CVarCompare" cvar="Ice2StacksPlayer" operation="Equals" value="2" target="self"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryIceStack" operation="add" value="2" target="other"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 3">
+				<requirement name="CVarCompare" cvar="Ice2StacksPlayer" operation="Equals" value="3" target="self"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryIceStack" operation="add" value="3" target="other"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 4: CAP">
+				<requirement name="CVarCompare" cvar="Ice2StacksPlayer" operation="GTE" value="4" target="self"/>		
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryIceStack" operation="set" value="4" target="other"/>
+			</effect_group>
+			<!-- END: CHARGE: Stack Application -->
 		</item>
 		
 	
 		<!-- Ice Spell: Ice Storm -->
 		<item name="spellIceStorm">
-			<property name="Tags" value="spell,spellIceBall,spellIce,sorcery"/>
+			<property name="Tags" value="spell,spellIceStorm,spellIce,sorcery"/>
 			<property name="Meshfile" value="#@modfolder:Resources/ice-sticky.unity3d?ice-sticky"/>
 			<property name="HandMeshfile" value="Items/Misc/sackPrefab"/>
 			<property name="HoldType" value="21"/>
@@ -814,7 +901,6 @@
 			<property name="StickyOffset" value="0"/>
 			<property name="Material" value="ice3"/>
 			<property name="Stacknumber" value="250"/> <!-- STK ammo -->
-			<!-- <property name="FuelValue" value="1"/> -->
 			<property name="EconomicValue" value="84"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="Damage_type" value="Piercing"/>
@@ -850,13 +936,12 @@
 					<property name="DamageBonus.glass" value="1"/>
 					<property name="DamageBonus.cloth" value="1"/>	
 					<!-- SPELL -->
-					<property name="Buff" value="buffSpell_IceStorm"/>
+					<property name="Buff" value="buffSorceryIceStacks_Add, buffSpellImpactTrigger_Ice, buffSpell_IceStorm"/>
 			</property>
 
 			<property name="Group" value="Ammo/Weapons"/>
 			<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
-			
-			
+
 			<effect_group name="SPELL: BASE" tiered="false"> 
 				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffSpell_IceStorm"/>
 				<passive_effect name="SpreadDegreesVertical" operation="perc_subtract" value="1"/>
@@ -865,19 +950,20 @@
 				<passive_effect name="MaxRange" operation="base_set" value="100"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="0" /> <!-- Spell buffs control this -->
-				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="10"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="40"/>
 				<passive_effect name="ProjectileStickChance" operation="base_set" value="1"/> <!-- 100% stick -->
 			</effect_group>
 
-
 			<effect_group tiered="false" name="SPELL">
-				<!-- <triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffSpellImpactTrigger_Ice" target_tags="enemy,animal"/>
-				<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffSpell_Ice" target_tags="enemy,animal"/> -->
 				<triggered_effect name="onProjectileImpact" action="PlaySound" target="positionAOE" range="1" sound="sorceryIce_impact" />
-				<!-- <triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="20" buff="buffSorceryMarkTarget" target_tags="enemy,animal"/> -->
-				<!-- sorceryIce_impacted -->
 			</effect_group>
+			
+			<effect_group tiered="false" name="SPELL: Wield">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSorceryWield_IceStorm"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffSorceryWield_IceStorm"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffSorceryWield_IceStorm" />
+			</effect_group>			
 			
 			<effect_group tiered="false" name="STICKY: Transform Self">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="SetTransformActive" active="false" parent_transform="Impact" transform_path="Impacted"/>
@@ -891,9 +977,247 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="iceStorm-hand" parent_transform="Attachments"/>
 			</effect_group>			
 
+			<!-- CHARGE: Stack Application -->
+			<effect_group tiered="false" name="STACK 1">
+				<requirement name="CVarCompare" cvar="Ice3StacksPlayer" operation="Equals" value="1" target="self"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryIceStack" operation="add" value="1" target="other"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 2">
+				<requirement name="CVarCompare" cvar="Ice3StacksPlayer" operation="Equals" value="2" target="self"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryIceStack" operation="add" value="2" target="other"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 3">
+				<requirement name="CVarCompare" cvar="Ice3StacksPlayer" operation="Equals" value="3" target="self"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryIceStack" operation="add" value="3" target="other"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 4: CAP">
+				<requirement name="CVarCompare" cvar="Ice3StacksPlayer" operation="GTE" value="4" target="self"/>		
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryIceStack" operation="set" value="4" target="other"/>
+			</effect_group>
+			<!-- END: CHARGE: Stack Application -->	
 		</item>	
 	
 	
+	<!--___________________ LIGHTNING SPELLS ___________________-->
+
+		<!-- Lightning Spell: Lightning -->
+		<item name="spellLightning">
+			<property name="Tags" value="spell,spellLightning,sorcery"/>
+			<!-- <property name="Meshfile" value="#@modfolder:Resources/ice-sticky.unity3d?ice-sticky"/> -->
+			<property name="Meshfile" value="#@modfolder:Resources/lightning-sticky.unity3d?lightning-sticky"/>
+			<property name="HandMeshfile" value="Items/Misc/sackPrefab"/>
+			<!-- <property name="HoldType" value="21"/> -->
+			<property name="IsSticky" value="true"/>
+			<!-- <property name="StickyMeshFile" value="Broken ATM: Resort to Transform."/> -->
+			<property name="StickyOffset" value="0"/>
+			<property name="Material" value="lightning"/>
+			<property name="Stacknumber" value="500"/>
+			<property name="EconomicValue" value="24"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Damage_type" value="Piercing"/>
+			<property name="Weight" value="1"/>
+			<property name="MeltTimePerUnit" value="10"/>
+			
+			<!-- Sticky Workaround -->
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property class="Explosion">
+				<property name="ParticleIndex" value="0"/>
+				<property name="RadiusBlocks" value="0"/>
+				<property name="RadiusEntities" value="0"/>
+				<property name="BlockDamage" value="0"/>
+				<property name="EntityDamage" value="0"/>
+				<property name="BlastPower" value="0"/>
+			</property>
+			<!-- End: Sticky Workaround -->			
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+					<property name="Explosion.ParticleIndex" value="0"/>
+					<!-- <property name="CollisionRadius" value="0.3"/> -->
+					<!-- <property name="Collide" value="earth,wood,glass,cloth,stone,metal"/> -->
+					<property name="FlyTime" value="1"/>
+					<property name="Gravity" value="0"/>
+					<property name="LifeTime" value="12"/>
+					<property name="DamageBonus.stone" value="1"/>
+					<property name="DamageBonus.metal" value="1"/>
+					<property name="DamageBonus.earth" value="1"/>
+					<property name="DamageBonus.water" value="1"/>
+					<property name="DamageBonus.wood" value="1"/>
+					<property name="DamageBonus.glass" value="1"/>
+					<property name="DamageBonus.cloth" value="1"/>	
+					<!-- SPELL -->
+					<property name="Buff" value="buffSorceryLightningStacks_Add, buffSpellImpactTrigger_Lightning, buffSpell_Lightning"/>
+			</property>
+
+			<property name="Group" value="Ammo/Weapons"/>
+			<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+			
+			
+			<effect_group name="SPELL: BASE" tiered="false"> 
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0" /> <!-- Spell buffs control this -->
+				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="60"/>
+				<passive_effect name="ProjectileStickChance" operation="base_set" value="1"/> <!-- 100% stick -->
+				<!-- <passive_effect name="ProjectileStickChance" operation="perc_set" value="1" tags="stone,earth,wood,metal,glass,cloth"/> -->
+			</effect_group>
+
+			<effect_group tiered="false" name="SPELL: Impact">
+				<triggered_effect name="onProjectileImpact" action="PlaySound" target="positionAOE" range="1" sound="sorceryLightning_impact" />
+			</effect_group>
+			
+			<effect_group tiered="false" name="SPELL: Wield">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSorceryWield_Lightning"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffSorceryWield_Lightning"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffSorceryWield_Lightning" />
+			</effect_group>
+			
+			<effect_group tiered="false" name="STICKY: Transform Self">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="SetTransformActive" active="false" parent_transform="Impact" transform_path="Impacted"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetTransformActive" active="true" parent_transform="Impact" transform_path="Impacted"/>
+			</effect_group>
+
+			<effect_group tiered="false" name="HAND: Attach Spell">	
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/lightningHand.unity3d?lightningHand" parent_transform="Attachments"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="lightningHand" parent_transform="Attachments"/>
+			</effect_group>			
+
+			<!-- CHARGE: Stack Application -->
+			<effect_group tiered="false" name="STACK 1">
+				<requirement name="CVarCompare" cvar="LightningStacksPlayer" operation="Equals" value="1" target="self"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryLightningStack" operation="add" value="1" target="other"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 2">
+				<requirement name="CVarCompare" cvar="LightningStacksPlayer" operation="Equals" value="2" target="self"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryLightningStack" operation="add" value="2" target="other"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 3">
+				<requirement name="CVarCompare" cvar="LightningStacksPlayer" operation="Equals" value="3" target="self"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryLightningStack" operation="add" value="3" target="other"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 4: CAP">
+				<requirement name="CVarCompare" cvar="LightningStacksPlayer" operation="GTE" value="4" target="self"/>		
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="SorceryLightningStack" operation="set" value="4" target="other"/>
+			</effect_group>
+			<!-- END: CHARGE: Stack Application -->			
+		</item>	
+	
+	
+		<!-- Lightning Spell: Lightning Nova -->
+		<item name="spellLightningNova">
+			<property name="Tags" value="spell,spellLightningNova,sorcery"/>
+			<!-- <property name="Meshfile" value="#@modfolder:Resources/ice-sticky.unity3d?ice-sticky"/> -->
+			<property name="Meshfile" value="#@modfolder:Resources/lightning-sticky.unity3d?lightning-sticky"/>
+			<property name="HandMeshfile" value="Items/Misc/sackPrefab"/>
+			<!-- <property name="HoldType" value="21"/> -->
+			<property name="IsSticky" value="false"/>
+			<!-- <property name="StickyMeshFile" value="Broken ATM: Resort to Transform."/> -->
+			<property name="StickyOffset" value="0"/>
+			<property name="Material" value="lightning"/>
+			<property name="Stacknumber" value="250"/>
+			<property name="EconomicValue" value="24"/>
+			<property name="SellableToTrader" value="true"/>
+			<property name="Damage_type" value="Piercing"/>
+			<property name="Weight" value="1"/>
+			<property name="MeltTimePerUnit" value="10"/>
+			
+			<!-- Sticky Workaround -->
+			<property name="Class" value="ItemClassTimeBomb"/>
+			<property name="ExplodeOnHit" value="true"/>
+			<property class="Explosion">
+				<property name="ParticleIndex" value="0"/>
+				<property name="RadiusBlocks" value="0"/>
+				<property name="RadiusEntities" value="0"/>
+				<property name="BlockDamage" value="0"/>
+				<property name="EntityDamage" value="0"/>
+				<property name="BlastPower" value="0"/>
+			</property>
+			<!-- End: Sticky Workaround -->			
+
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+					
+					
+					<property name="CollisionRadius" value="0"/>
+					<!-- <property name="Collide" value="earth,wood,glass,cloth,stone,metal"/> -->
+					<property name="FlyTime" value="0"/>
+					<property name="Gravity" value="-100"/>
+					<property name="LifeTime" value="2"/>
+					<!-- <property name="DamageBonus.stone" value="1"/>
+					<property name="DamageBonus.metal" value="1"/>
+					<property name="DamageBonus.earth" value="5"/>
+					<property name="DamageBonus.water" value="1"/>
+					<property name="DamageBonus.wood" value="1"/>
+					<property name="DamageBonus.glass" value="1"/>
+					<property name="DamageBonus.cloth" value="1"/> -->	
+					<!-- SPELL -->
+					<property name="Buff" value="buffSpellImpactTrigger_Lightning, buffSpell_Lightning"/>
+			</property>
+
+			<property name="Group" value="Ammo/Weapons"/>
+			<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
+			
+			
+			<effect_group name="SPELL: BASE" tiered="false"> 
+				<passive_effect name="MaxRange" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="0"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0" /> <!-- Spell buffs control this -->
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="0"/>
+				<passive_effect name="ProjectileStickChance" operation="base_set" value="0"/> <!-- 100% stick -->
+				<!-- <passive_effect name="ProjectileStickChance" operation="perc_set" value="1" tags="stone,earth,wood,metal,glass,cloth"/> -->
+			</effect_group>
+			
+			<effect_group tiered="false" name="DEV">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="CVarLogValue" cvar="@LightningNovaCharge"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="CVarLogValue" cvar="@LightningNovaCharge"/>
+			</effect_group>
+			
+			<effect_group tiered="false" name="SPELL: Wield">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSorceryWield_LightningNova"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSpellCharge_LightningNova"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffSorceryWield_LightningNova"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" target="self" buff="buffSpellCharge_LightningNova"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffSorceryWield_LightningNova" />
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffSpellCharge_LightningNova" />
+			</effect_group>			
+			
+			<effect_group tiered="false" name="SPELL: Impact">
+				<triggered_effect name="onProjectileImpact" action="AddBuff" target="positionAOE" range="5" buff="buffSorceryLightningStacks_Add, buffSpellImpactTrigger_Lightning, buffSpell_LightningNova"/>
+				<triggered_effect name="onProjectileImpact" action="PlaySound" target="positionAOE" range="5" sound="sorceryLightning_impact" />		
+			</effect_group>	
+			
+			<effect_group tiered="false" name="STICKY: Transform Self">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="SetTransformActive" active="false" parent_transform="Impact" transform_path="Impacted"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetTransformActive" active="true" parent_transform="Impact" transform_path="Impacted"/>
+			</effect_group>
+
+			<effect_group tiered="false" name="HAND: Attach Spell">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/lightningHand.unity3d?lightningHand" parent_transform="Attachments"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="lightningHand" parent_transform="Attachments"/>
+			</effect_group>
+			
+			<!-- CHARGE: Stack Application -->
+			<effect_group tiered="false" name="STACK 1">
+				<requirement name="CVarCompare" cvar="Lightning2StacksPlayer" operation="Equals" value="1" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryLightningStack" operation="add" value="1" target="positionAOE" range="5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 2">
+				<requirement name="CVarCompare" cvar="Lightning2StacksPlayer" operation="Equals" value="2" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryLightningStack" operation="add" value="2" target="positionAOE" range="5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 3">
+				<requirement name="CVarCompare" cvar="Lightning2StacksPlayer" operation="Equals" value="3" target="self"/>
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryLightningStack" operation="add" value="3" target="positionAOE" range="5"/>
+			</effect_group>
+			<effect_group tiered="false" name="STACK 4: CAP">
+				<requirement name="CVarCompare" cvar="Lightning2StacksPlayer" operation="GTE" value="4" target="self"/>		
+				<triggered_effect trigger="onProjectileImpact" action="ModifyCVar" cvar="SorceryLightningStack" operation="set" value="4" target="positionAOE" range="5"/>
+			</effect_group>
+			<!-- END: CHARGE: Stack Application -->			
+		</item>		
 	
 <!--___________________ CONJURE AUGMENT TOOL ___________________-->	
 		<!-- FIRE -->
@@ -969,7 +1293,44 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="CraftingSkillGroup" value="craftSkillTools"/>
-		</item>		
+		</item>	
+		<!-- LIGHTNING -->
+		<item name="toolLightningCore">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="lightning"/>
+			<property name="Weight" value="40"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="CraftingSkillGroup" value="craftSkillTools"/>
+		</item>
+		<item name="toolLoomLightning">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="lightning"/>
+			<property name="Weight" value="40"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="CraftingSkillGroup" value="craftSkillTools"/>
+		</item>
+		<item name="toolHammerLightning">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="lightning2"/>
+			<property name="Weight" value="40"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="CraftingSkillGroup" value="craftSkillTools"/>
+		</item>			
 	
 <!--___________________ RESOURCE ___________________-->
 <!--___________________ ESSENCE ___________________-->
@@ -3476,7 +3837,7 @@
 			</effect_group>
 		</item>		
 
-				
+		
 		
 	</append>
 
