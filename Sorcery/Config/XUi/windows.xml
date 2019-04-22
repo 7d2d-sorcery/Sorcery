@@ -31,7 +31,7 @@
 
 	<!-- COMPATIBILITY -->
 	<!-- <set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='8']/@cols">9</set> -->
-	<set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='8' or @SAFE_TO_IGNORE='This is a Mod Compatibility Patch.']/@cols">9</set>
+	<set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='8' or @SAFE_TO_IGNORE='Compatibility Patch.']/@cols">9</set>
 		
 	<append xpath="/windows">
 

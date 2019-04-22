@@ -86,7 +86,7 @@
 	
 	<!-- COMPATIBILITY PATCH: RAVENHEARST -->
 	<!-- Sorcery Skills -->
-	<insertAfter xpath="/progression/attributes[//attribute[@name='attArcher' or @SAFE_TO_IGNORE='This is a Mod Compatibility Patch.']]">
+	<insertAfter xpath="/progression/attributes[//attribute[@name='attArcher' or @SAFE_TO_IGNORE='Ravenhearst Compatibility Patch.']]">
 		<skills min_level="1" max_level="1">
 			<skill name="skillSorceryMastery" parent="attSorcery" name_key="skillSorceryMasteryName" desc_key="skillSorceryMasteryDesc" icon="ui_game_symbol_player"><effect_group/></skill>
 			<skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
@@ -94,25 +94,6 @@
 			<skill name="skillSorceryLightningCrafting" parent="attSorcery" name_key="skillSorceryLightningCraftingName" desc_key="skillSorceryLightningCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
 		</skills>	
 	</insertAfter>	
-	
-	<!-- COMPATIBILITY PATCH: RAVENHEARST -->
-	<!-- Crafting Tiers+ -->
-	<append xpath="/progression/attributes/attribute[@name='attTradesman' or @SAFE_TO_IGNORE='This is a Mod Compatibility Patch.']/effect_group">
-			<!-- Sorcery Weapons -->
-			<passive_effect name="CraftingTier" operation="base_set" value="20" level="2,3" tags="spellcastFire,spellcastIce,spellcastLightning"/>
-			<passive_effect name="CraftingTier" operation="base_set" value="40" level="4,5" tags="spellcastFire,spellcastIce,spellcastLightning"/>
-			<passive_effect name="CraftingTier" operation="base_set" value="60" level="6,7" tags="spellcastFire,spellcastIce,spellcastLightning"/>
-			<passive_effect name="CraftingTier" operation="base_set" value="80" level="8" tags="spellcastFire,spellcastIce,spellcastLightning"/>
-			<passive_effect name="CraftingTier" operation="base_set" value="100" level="9" tags="spellcastFire,spellcastIce,spellcastLightning"/>
-			<passive_effect name="CraftingTier" operation="base_set" value="120" level="10" tags="spellcastFire,spellcastIce,spellcastLightning"/>
-			<!-- Sorcery Armor -->
-			<passive_effect name="CraftingTier" operation="base_set" value="20" level="2,3" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-			<passive_effect name="CraftingTier" operation="base_set" value="40" level="4,5" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-			<passive_effect name="CraftingTier" operation="base_set" value="60" level="6,7" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-			<passive_effect name="CraftingTier" operation="base_set" value="80" level="8" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-			<passive_effect name="CraftingTier" operation="base_set" value="100" level="9" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-			<passive_effect name="CraftingTier" operation="base_set" value="120" level="10" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-	</append>		
 	
 <!--___________________ SORCERY PERKS ___________________-->
 	<append xpath="/progression/perks[1]">
@@ -195,47 +176,7 @@
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,5" tags="essenceFire4Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="5" tags="essenceFire5Harvest"/>
 			</effect_group>
-			
-			<effect_group name="CRAFTING: Fire">
-				<requirement name="ProgressionLevel" progression_name="attTradesman" operation="LTE" value="0"/> <!-- RH: Compatibility --> 
-				
-				<passive_effect name="CraftingTier" operation="base_set" value="1" level="0" tags="spellcastFire"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="2" level="1" tags="spellcastFire"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="3" level="2" tags="spellcastFire"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="4" level="3" tags="spellcastFire"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="5" level="4" tags="spellcastFire"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="6" level="5" tags="spellcastFire"/>
-			</effect_group>
-			
-			<effect_group name="CRAFTING: Fire, Ice, Lightning">
-				<requirement name="ProgressionLevel" progression_name="attTradesman" operation="LTE" value="0"/> <!-- RH: Compatibility --> 
-				
-				<passive_effect name="CraftingTier" operation="base_set" value="1" level="0" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="1"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="1"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="2" level="1" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LTE" value="2"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LTE" value="2"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="3" level="2" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LTE" value="2"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LTE" value="2"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="4" level="3" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LTE" value="3"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LTE" value="3"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="5" level="4" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LTE" value="4"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LTE" value="4"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="6" level="5" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LTE" value="5"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LTE" value="5"/>
-				</passive_effect>
-			</effect_group>
-			
+						
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="conjureFire"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolFireCore"/>
@@ -246,6 +187,233 @@
 				<effect_description level="4" desc_key="perkSorceryFireMasteryRank4Desc"/>
 				<effect_description level="5" desc_key="perkSorceryFireMasteryRank5Desc"/>
 			</effect_group>
+			
+			
+			<!-- SORCERY CRAFTING -->
+			<!-- All Sorcery Crafting Managed Here -->			
+			<!-- RAVENHEARST: COMPATIBILITY PATCH: Higher Crafting Tiers -->
+			
+			<!-- FIRE CRAFTING -->
+			<effect_group name="CRAFTING 1: FIRE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="1"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="1" tags="spellcastFire"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="20" tags="spellcastFire">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 2: FIRE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="1"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="2" tags="spellcastFire"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="40" tags="spellcastFire">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 3: FIRE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="2"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="3" tags="spellcastFire"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="60" tags="spellcastFire">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 4: FIRE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="3"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="4" tags="spellcastFire"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="80" tags="spellcastFire">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 5: FIRE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="4"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="5" tags="spellcastFire"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="100" tags="spellcastFire">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 6: FIRE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="5"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="6" tags="spellcastFire"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="120" tags="spellcastFire">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			
+			<!-- ICE CRAFTING -->
+			<effect_group name="CRAFTING 1: ICE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="1"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="1" tags="spellcastIce"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="20" tags="spellcastIce">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 2: ICE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="1"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="2" tags="spellcastIce"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="40" tags="spellcastIce">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 3: ICE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="2"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="3" tags="spellcastIce"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="60" tags="spellcastIce">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 4: ICE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="3"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="4" tags="spellcastIce"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="80" tags="spellcastIce">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 5: ICE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="4"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="5" tags="spellcastIce"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="100" tags="spellcastIce">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 6: ICE">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="5"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="6" tags="spellcastIce"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="120" tags="spellcastIce">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>			
+
+			<!-- LIGHTNING CRAFTING -->
+			<effect_group name="CRAFTING 1: LIGHTNING">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="1"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="1" tags="spellcastLightning"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="20" tags="spellcastLightning">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 2: LIGHTNING">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="1"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="2" tags="spellcastLightning"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="40" tags="spellcastLightning">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 3: LIGHTNING">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="2"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="3" tags="spellcastLightning"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="60" tags="spellcastLightning">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 4: LIGHTNING">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="3"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="4" tags="spellcastLightning"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="80" tags="spellcastLightning">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 5: LIGHTNING">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="4"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="5" tags="spellcastLightning"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="100" tags="spellcastLightning">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>
+			<effect_group name="CRAFTING 6: LIGHTNING">
+				<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="5"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="6" tags="spellcastLightning"/>
+					<passive_effect name="CraftingTier" operation="base_set" value="120" tags="spellcastLightning">
+						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+					</passive_effect>
+			</effect_group>			
+			
+			<!-- SORCERY CRAFTING -->
+			<!-- All Sorcery Crafting Managed Here -->			
+			<!-- RAVENHEARST: COMPATIBILITY PATCH: Higher Crafting Tiers -->
+			
+			<!-- CRAFTING: ALL CONJURES / ELEMENTS -->
+			<effect_group name="CRAFTING 1: All Elements">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="1"/>
+				<passive_effect name="CraftingTier" operation="base_set" value="1" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
+				<passive_effect name="CraftingTier" operation="base_set" value="20" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
+					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+				</passive_effect>
+			</effect_group>
+			
+			<effect_group name="CRAFTING 2: All Elements">
+					<requirements compare_type="or">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="1"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="1"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="1"/>
+					</requirements>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="2"/>
+				<passive_effect name="CraftingTier" operation="base_set" value="2" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
+				<passive_effect name="CraftingTier" operation="base_set" value="40" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
+					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+				</passive_effect>
+			</effect_group>
+
+			<effect_group name="CRAFTING 3: All Elements">
+					<requirements compare_type="or">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="2"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="2"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="2"/>
+					</requirements>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="3"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="3"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="3"/>
+				<passive_effect name="CraftingTier" operation="base_set" value="3" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
+				<passive_effect name="CraftingTier" operation="base_set" value="60" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
+					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+				</passive_effect>
+			</effect_group>			
+			
+			<effect_group name="CRAFTING 4: All Elements">
+					<requirements compare_type="or">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="3"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="3"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="3"/>
+					</requirements>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="4"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="4"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="4"/>
+				<passive_effect name="CraftingTier" operation="base_set" value="4" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
+				<passive_effect name="CraftingTier" operation="base_set" value="80" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
+					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+				</passive_effect>
+			</effect_group>			
+			
+			<effect_group name="CRAFTING 5: All Elements">
+					<requirements compare_type="or">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="4"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="4"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="4"/>
+					</requirements>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="5"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="5"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="5"/>
+				<passive_effect name="CraftingTier" operation="base_set" value="5" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
+				<passive_effect name="CraftingTier" operation="base_set" value="100" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
+					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+				</passive_effect>
+			</effect_group>			
+
+			<effect_group name="CRAFTING 6: All Elements">
+					<requirements compare_type="or">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="5"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="5"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="5"/>
+					</requirements>
+				<passive_effect name="CraftingTier" operation="base_set" value="6" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
+				<passive_effect name="CraftingTier" operation="base_set" value="120" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
+					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
+				</passive_effect>
+			</effect_group>
+			
+						
+			
 		</perk>
 		
 		
@@ -270,47 +438,7 @@
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,5" tags="essenceIce4Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="5" tags="essenceIce5Harvest"/>
 			</effect_group>			
-			
-			<effect_group name="CRAFTING: Ice">
-				<requirement name="ProgressionLevel" progression_name="attTradesman" operation="LTE" value="0"/> <!-- RH: Compatibility --> 
-				
-				<passive_effect name="CraftingTier" operation="base_set" value="1" level="0" tags="spellcastIce"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="2" level="1" tags="spellcastIce"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="3" level="2" tags="spellcastIce"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="4" level="3" tags="spellcastIce"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="5" level="4" tags="spellcastIce"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="6" level="5" tags="spellcastIce"/>
-			</effect_group>
-			
-			<effect_group name="CRAFTING: Fire, Ice, Lightning">
-				<requirement name="ProgressionLevel" progression_name="attTradesman" operation="LTE" value="0"/> <!-- RH: Compatibility --> 
-			
-				<passive_effect name="CraftingTier" operation="base_set" value="1" level="0" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="1"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="1"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="2" level="1" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LTE" value="2"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LTE" value="2"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="3" level="2" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LTE" value="2"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LTE" value="2"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="4" level="3" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LTE" value="3"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LTE" value="3"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="5" level="4" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LTE" value="4"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LTE" value="4"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="6" level="5" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LTE" value="5"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LTE" value="5"/>
-				</passive_effect>
-			</effect_group>			
-			
+
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="conjureIce"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolIceCore"/>
@@ -338,47 +466,7 @@
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="3,5" tags="essenceLightning3Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,5" tags="essenceLightning4Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="5" tags="essenceLightning5Harvest"/>
-			</effect_group>			
-			
-			<effect_group name="CRAFTING: Lightning">
-				<requirement name="ProgressionLevel" progression_name="attTradesman" operation="LTE" value="0"/> <!-- RH: Compatibility --> 
-				
-				<passive_effect name="CraftingTier" operation="base_set" value="1" level="0" tags="spellcastLightning"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="2" level="1" tags="spellcastLightning"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="3" level="2" tags="spellcastLightning"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="4" level="3" tags="spellcastLightning"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="5" level="4" tags="spellcastLightning"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="6" level="5" tags="spellcastLightning"/>
 			</effect_group>
-			
-			<effect_group name="CRAFTING: Fire, Ice, Lightning">
-				<requirement name="ProgressionLevel" progression_name="attTradesman" operation="LTE" value="0"/> <!-- RH: Compatibility --> 
-				
-				<passive_effect name="CraftingTier" operation="base_set" value="1" level="0" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="1"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="1"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="2" level="1" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LTE" value="2"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LTE" value="2"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="3" level="2" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LTE" value="2"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LTE" value="2"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="4" level="3" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LTE" value="3"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LTE" value="3"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="5" level="4" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LTE" value="4"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LTE" value="4"/>
-				</passive_effect>
-				<passive_effect name="CraftingTier" operation="base_set" value="6" level="5" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LTE" value="5"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LTE" value="5"/>
-				</passive_effect>
-			</effect_group>			
 			
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="conjureLightning"/>

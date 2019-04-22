@@ -113,6 +113,7 @@
 						<passive_effect name="HarvestCount" operation="perc_add" value="@$boots_essenceLightningHarvest" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>					 
 					 </effect_group>
 
+					 
 					 <effect_group name="MONITOR">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SorceryFireStack" operation="set" value="0" target="self"/>					 
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SorceryIceStack" operation="set" value="0" target="self"/>
@@ -3942,7 +3943,7 @@
 				<update_rate value="10"/>
 				
 				<effect_group name="FIRE">
-					<requirement name="RandomRoll" seed_type="Random" min_max="0,2000" operation="LTE" value="100" target="self"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,2000" operation="LTE" value="30" target="self"/>
 					<requirement name="CVarCompare" cvar="SorceryFireStack" operation="LT" value="1"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SorceryFireStack" operation="add" value="1" />
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSorceryFireStacks" />
@@ -3950,14 +3951,14 @@
 				</effect_group>
 				
 				<effect_group name="ICE">
-					<requirement name="RandomRoll" seed_type="Random" min_max="0,2000" operation="LTE" value="50" target="self"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,2000" operation="LTE" value="10" target="self"/>
 					<requirement name="CVarCompare" cvar="SorceryIceStack" operation="LT" value="1"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSorceryIceStacks" />
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SorceryIceStack" operation="add" value="1" />
 				</effect_group>
 				
 				<effect_group name="LIGHTNING">
-					<requirement name="RandomRoll" seed_type="Random" min_max="0,2000" operation="LTE" value="1" target="self"/>
+					<requirement name="RandomRoll" seed_type="Random" min_max="0,2000" operation="LTE" value="3" target="self"/>
 					<requirement name="CVarCompare" cvar="SorceryLightningStack" operation="LT" value="1"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSorceryLightningStacks" />
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SorceryLightningStack" operation="add" value="1" />
