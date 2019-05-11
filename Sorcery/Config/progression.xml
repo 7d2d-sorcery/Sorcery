@@ -59,7 +59,7 @@
 			</effect_group>			
 			
 			<effect_group>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="toolLoomFire,toolLoomIce"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="toolLoomFire,toolLoomIce,toolLoomLightning"/>
 				<effect_description level="1" desc_key="attSorceryRank1Desc"/>
 				<effect_description level="2" desc_key="attSorceryRank2Desc"/>
 				<effect_description level="3" desc_key="attSorceryRank3Desc"/>
@@ -502,7 +502,7 @@
 			</effect_group>
 			
 			<effect_group>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolHammerFire,toolHammerIce"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolHammerFire,toolHammerIce,toolHammerLightning"/>
 				<effect_description level="1" desc_key="perkSorceryRuneMasteryRank1Desc"/>
 				<effect_description level="2" desc_key="perkSorceryRuneMasteryRank2Desc"/>
 				<effect_description level="3" desc_key="perkSorceryRuneMasteryRank3Desc"/>
