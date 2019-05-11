@@ -697,7 +697,7 @@
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="4" desc_key="reqSorceryLightningMasteryLevel04"/></level_requirements>
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="5" desc_key="reqSorceryLightningMasteryLevel05"/></level_requirements>
 			<effect_group>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellLightning"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellLightningNova"/>
 				<effect_description level="1" desc_key="perkSorcerySpellLightningNovaRank1Desc"/>
 				<effect_description level="2" desc_key="perkSorcerySpellLightningNovaRank2Desc"/>
 				<effect_description level="3" desc_key="perkSorcerySpellLightningNovaRank3Desc"/>
