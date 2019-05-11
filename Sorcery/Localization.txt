@@ -7,6 +7,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 SORCERY_START,,LOCALIZATION,,START,,,,,
 
 unit_fire,items,Item,New,"Fire 1",,,,,
@@ -120,7 +130,7 @@ spellcastIce,items,Spellcast,New,"[02599c]ICE[-] SPELLCAST",,,,,
 spellcastIceDesc,items,Spellcast,New,"Invoke the freezing force of [02599c]ICE[-] by casting your spells through this [02599c]ICE SPELLCAST[-]. Unlock these spellcast abilities through [Spellcast Mastery] and [02599c]ICE SPELLCAST[-]:\n\n[02599c]METABOLIZE[-]: Slow metabolism on spellcasting\n[02599c]ICE AURA[-]: Freezing Ice Aura on channeling\n[02599c]ICE SHIELD[-]: Absorbing Ice Shield on channeling \n[02599c]EMPOWER[-]: Ice Stacks empower you\n[02599c]ICY DEATH[-]: Ice Shield attackers suffer",,,,,
 
 spellcastLightning,items,Spellcast,New,"[5c009d]LIGHTNING[-] SPELLCAST",,,,,
-spellcastLightningDesc,items,Spellcast,New,"Invoke the stunning force of [5c009d]LIGHTNING[-] by casting your spells through this [5c009d]LIGHTNING SPELLCAST[-]. Unlock these spellcast abilities through [Spellcast Mastery] and [5c009d]LIGHTNING SPELLCAST[-]:\n\n[5c009d]TBD[-]: Slow metabolism on spellcasting\n[5c009d]TBD[-]: Freezing Ice Aura on channeling\n[5c009d]TBD[-]: Absorbing Ice Shield on channeling \n[5c009d]EMPOWER[-]: Lightning Stacks empower you\n[5c009d]TBD[-]: Ice Shield attackers suffer",,,,,
+spellcastLightningDesc,items,Spellcast,New,"Invoke the stunning force of [5c009d]LIGHTNING[-] by casting your spells through this [5c009d]LIGHTNING SPELLCAST[-]. Unlock these spellcast abilities through [6600cc]Spellcast Mastery[-] and [5c009d]LIGHTNING SPELLCAST[-]:\n\n[42c234]STRIKE[-]: Command Lightning Bolts from the sky\n[315dce]TELEPORT[-]: Open a rift and travel through it\n[315dce]ENERGY SHIELD[-]: Conjure a damage absorbing shield\n[a42acc]EMPOWER[-]: Lightning Stacks empower you\n[bf0000]SHOCK N AWE[-]: Charge Teleport and Energy Shield",,,,,
 
 
 spellFireball,items,Spell,New,"[970000]FIRE[-] SPELL",,,,,
@@ -129,23 +139,28 @@ spellFireballDesc,items,Spell,New,"The primal manifestation of raw [970000]FIRE[
 spellFirestorm,items,Spell,New,"[970000]FIRENADO[-] SPELL",,,,,
 spellFirestormDesc,items,Spell,New,"A highly destructive manifestation of [970000]FIRE[-] that'll incinerate your enemies to ash in a whirling inferno of destruction. Cast this [970000]TIER 2[-] Spell through a [970000]FIRE SPELLCAST[-].\n\n[970000]DOT[-]: Sets foes ablaze on impact\n[970000]AOE[-]: Spawns on nearby foes on impact\n[970000]AMPLIFY[-]: Empowered by enemy Burn Stacks",,,,, 
 
+spellFireMeteor,items,Spell,New,"[970000]METEOR[-] SPELL",,,,,
+spellFireMeteorDesc,items,Spell,New,"A cataclysmic manifestation of [970000]FIRE[-] that'll command the very stars unto your victim. Cast this [970000]TIER 3[-] Spell through a [970000]FIRE SPELLCAST[-].\n\n[970000]HOST[-]: Target victim becomes Spell host\n[970000]DOT[-]: Burn host and all nearby foes\n[970000]AOE[-]: Burn all foes near target host",,,,, 
+
 
 spellIceBall,items,Spell,New,"[02599c]ICE[-] SPELL",,,,,
-spellIceBallDesc,items,Spell,New,"The primal manifestation of Ice that'll freeze your foes solid while Iceburning their flesh from the inside out. Cast this [02599c]TIER 1[-] Spell through an [02599c]ICE SPELLCAST[-].\n\n[02599c]DOT[-]: Iceburn foes from the inside out\n[02599c]AOE[-]: Iceburn and slow nearby foes on impact\n[02599c]STACK[-]: Consecutive impacts amplify intensity",,,,, 
+spellIceBallDesc,items,Spell,New,"The primal manifestation of [02599c]ICE[-] that'll freeze your foes solid while Iceburning their flesh from the inside out. Cast this [02599c]TIER 1[-] Spell through an [02599c]ICE SPELLCAST[-].\n\n[02599c]DOT[-]: Iceburn foes from the inside out\n[02599c]AOE[-]: Iceburn and slow nearby foes on impact\n[02599c]STACK[-]: Consecutive impacts amplify intensity",,,,, 
 
 spellIceSpike,items,Spell,New,"[02599c]ICE SPIKE[-] SPELL",,,,,
-spellIceSpikeDesc,items,Spell,New,"A highly destructive manifestation of Ice that'll Iceburn the flesh of your foes while shattering their animated corpse. Cast this [02599c]TIER 2[-] Spell through an [02599c]ICE SPELLCAST[-].\n\n[02599c]PRECISE[-]: Lethally accurate manifestation of Ice\n[02599c]SHATTER[-]: Chance to shatter limbs on impact\n[02599c]AMPLIFY[-]: Empowered by enemy Iceburn Stacks",,,,, 
+spellIceSpikeDesc,items,Spell,New,"A highly destructive manifestation of [02599c]ICE[-] that'll Iceburn the flesh of your foes while shattering their animated corpse. Cast this [02599c]TIER 2[-] Spell through an [02599c]ICE SPELLCAST[-].\n\n[02599c]PRECISE[-]: Lethally accurate manifestation of Ice\n[02599c]SHATTER[-]: Chance to shatter limbs on impact\n[02599c]AMPLIFY[-]: Empowered by enemy Iceburn Stacks",,,,, 
 
 spellIceStorm,items,Spell,New,"[02599c]ICE STORM[-] SPELL",,,,,
-spellIceStormDesc,items,Spell,New,"A cataclysmic manifestation of Ice that'll render your victim a host of frozen storm capable of Iceburning and freezing amass. Cast this [02599c]TIER 3[-] Spell through an [02599c]ICE SPELLCAST[-].\n\n[02599c]MASS DOT[-]: Iceburn host and all nearby foes\n[02599c]HOST AOE[-]: Iceburn all foes near target host\n[02599c]AMPLIFY[-]: Empowered by enemy Iceburn Stacks",,,,, 
+spellIceStormDesc,items,Spell,New,"A cataclysmic manifestation of [02599c]ICE[-] that'll render your victim a host of frozen storm capable of Iceburning and freezing amass. Cast this [02599c]TIER 3[-] Spell through an [02599c]ICE SPELLCAST[-].\n\n[02599c]HOST[-]: Target victim becomes Spell host\n[02599c]DOT[-]: Iceburn host and all nearby foes\n[02599c]AOE[-]: Iceburn all foes near target host",,,,, 
 
 
 spellLightning,items,Spell,New,"[5c009d]LIGHTNING[-] SPELL",,,,,
-spellLightningDesc,items,Spell,New,"The primal manifestation of raw [5c009d]LIGHTNING[-] that'll shockburn your foes while stunning their feasting efforts. Cast this [5c009d]TIER 1[-] Spell through a [5c009d]LIGHTNING SPELLCAST[-].\n\n[5c009d]APPLY STACK[-]: Consecutive hits apply [5c009d]Lightning Stacks[-]\n[5c009d]DOT[-]: Sets foes ablaze on impact\n[5c009d]AOE[-]: Ignites nearby foes on impact",,,,, 
+spellLightningDesc,items,Spell,New,"The primal manifestation of raw [5c009d]LIGHTNING[-] that'll shockburn your foes while stunning their feasting efforts. Cast this [5c009d]TIER 1[-] Spell through a [5c009d]LIGHTNING SPELLCAST[-].\n\n[5c009d]STACK[-]: Consecutive hits apply [5c009d]Stacks[-]\n[5c009d]DOT[-]: Shockburns foes on impact\n[5c009d]CHAIN[-]: Chance to chain cast to nearby foes",,,,, 
 
 spellLightningNova,items,Spell,New,"[5c009d]LIGHTNING NOVA[-] SPELL",,,,,
-spellLightningNovaDesc,items,Spell,New,"A highly destructive manifestation of [5c009d]LIGHTNING[-] that'll shockburn your foes while stunning their feasting efforts. Cast this [5c009d]TIER 2[-] Spell through a [5c009d]LIGHTNING SPELLCAST[-].\n\n[5c009d]APPLY STACK[-]: Consecutive hits apply [5c009d]Lightning Stacks[-]\n[5c009d]DOT[-]: Sets foes ablaze on impact\n[5c009d]AOE[-]: Ignites nearby foes on impact",,,,, 
+spellLightningNovaDesc,items,Spell,New,"A highly destructive manifestation of [5c009d]LIGHTNING[-] that'll shockburn your foes while stunning their feasting efforts. Cast this [5c009d]TIER 2[-] Spell through a [5c009d]LIGHTNING SPELLCAST[-].\n\n[5c009d]NOVA[-]: Shockburn foes amass on impact\n[5c009d]STACK[-]: Consecutive hits apply [5c009d]Stacks[-]",,,,, 
 
+spellLightningStorm,items,Spell,New,"[5c009d]LIGHTNING STORM[-] SPELL",,,,,
+spellLightningStormDesc,items,Spell,New,"A cataclysmic manifestation of [5c009d]LIGHTNING[-] that'll render your victim a host of electric storm capable of Shockburning and Electrocuting amass. Cast this [5c009d]TIER 3[-] Spell through a [5c009d]LIGHTNING SPELLCAST[-].\n\n[5c009d]STORM[-]: Shockburn host and all nearby foes\n[5c009d]HOST[-]: Target victim becomes Spell host",,,,, 
 
 attsorcery,progression,Attribute,New,Sorcery,,,,,
 attSorceryDesc,progression,Attribute,New,"Sorcery is the measure of your spellcasting, crafting and overall ability as a Sorcerer. Increasing Sorcery grants knowledge and access to devastating spells and conjurations, rendering you capable of raw elemental annihilation. If the world thought the apocalyptic aftermath of animated corpse (and acid spitting fiends) was the only sight to fear, wait until they meet a sorcerer...\n\n[6600cc]SPIRIT[-]: This is your available Spellcasting Stamina while a Spellcast is equipped. Spirit augments and coincides with Stamina as a dual resource.",,,,,
@@ -248,6 +263,14 @@ perkSorcerySpellFirestormRank3Desc,progression,Perk,New,"[970000]UNSTABLE[-]: Fi
 perkSorcerySpellFirestormRank4Desc,progression,Perk,New,"[970000]CLONE[-]: Firenado occasionally spawns a lesser Firenado from victims with one or more [970000]Fire Stacks[-].",,,,,
 perkSorcerySpellFirestormRank5Desc,progression,Perk,New,"[970000]Fully Evolve[-] Firenado into a zombie consuming death trap.\nVictims find it near impossible to escape the vortex.\n[970000]Fire Stacks[-] greatly increase destructive force.",,,,, 
  
+perkSorcerySpellFireMeteorDesc,progression,Perk,New,"Master the [970000]METEOR SPELL[-] to command the very stars down onto your enemies. You'll learn how to evolve Meteor from a single impact into multiple deadly strikes. This Spell can Charge a single [970000]Fire Stack[-] and becomes deadlier with each [970000]Fire Stack[-] present on your victim.\n\n[970000]STACK CHARGE[-]: Hold [42c234]PRIMARY[-] Action Button\n\nRequires: [970000]FIRE MASTERY[-] Level 3.",,,,,
+perkSorcerySpellFireMeteorName,progression,Perk,New,"SPELL: [970000]METEOR[-]",,,,,
+perkSorcerySpellFireMeteorRank1Desc,progression,Perk,New,"Learn the devastating [970000]METEOR SPELL[-] obliterate your enemies with molten rocks from the very skies.",,,,,
+perkSorcerySpellFireMeteorRank2Desc,progression,Perk,New,"[970000]MOLTEN[-]: Meteor's core is molten severely burning foes with [970000]Stacks[-].",,,,,
+perkSorcerySpellFireMeteorRank3Desc,progression,Perk,New,"[970000]CRATER[-]: Meteor's impact becomes even more devastating always knocking down foes with [970000]Stacks[-].",,,,,
+perkSorcerySpellFireMeteorRank4Desc,progression,Perk,New,"[970000]SHOWER[-]: Meteor occasionally rains down fiery hell on nearby foes with [970000]Stacks[-].",,,,,
+perkSorcerySpellFireMeteorRank5Desc,progression,Perk,New,"[970000]HELLSTORM[-] Evolve Meteor into a molten storm of fiery hell.\n[970000]Fire Stacks[-] greatly increase destructive force.",,,,, 
+ 
 
 perkSorcerySpellcastIceDesc,progression,Perk,New,"Master [02599c]ICE SPELLCAST[-] to invoke and cast your spells with maximum freezing devastation and effect. [02599c]ICE SPELLCASTS[-] posses the deep freezing power of Time and are required to cast [02599c]ICE SPELLS[-].\n\nSPELLCAST: Hold [42c234]PRIMARY[-] Action Button\nCHANNEL: Hold [315dce]SECONDARY[-] Action Button",,,,,
 perkSorcerySpellcastIceName,progression,Perk,New,"[02599c]ICE SPELLCAST[-]",,,,,
@@ -284,35 +307,35 @@ perkSorcerySpellIcestormRank5Desc,progression,Perk,New,"[02599c]Fully evolve[-] 
 
 perkSorcerySpellcastLightningDesc,progression,Perk,New,"Master Sorcery to learn the art of invoking the elements and becoming a devastating sorcerer. The rising dead were just the start of aftermath anomalies...",,,,,
 perkSorcerySpellcastLightningName,progression,Perk,New,"[5c009d]LIGHTNING SPELLCAST[-]",,,,,
-perkSorcerySpellcastLightningRank1Desc,progression,Perk,New,"Learn the secrets to crafting a [5c009d]LIGHTNING SPELLCAST[-]. \nA Lightning Spellcast is used to cast and augment [5c009d]LIGHTNING SPELLS[-].",,,,,
-perkSorcerySpellcastLightningRank2Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellcastLightningRank3Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellcastLightningRank4Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellcastLightningRank5Desc,progression,Perk,New,"???????",,,,,  
+perkSorcerySpellcastLightningRank1Desc,progression,Perk,New,"Learn the secrets to crafting a [5c009d]LIGHTNING SPELLCAST[-]. \nA Lightning Spellcast is used to cast [5c009d]LIGHTNING SPELLS[-].",,,,,
+perkSorcerySpellcastLightningRank2Desc,progression,Perk,New,"[5c009d]LIGHTNING STRIKE[-]: You occasionally command Lightning Bolts from the sky to assault your foes on Spellcasting.\nThis is a [42c234]PRIMARY[-] Action ability.",,,,,
+perkSorcerySpellcastLightningRank3Desc,progression,Perk,New,"[5c009d]TELEPORT[-]: Electrify the air to open a rift and instantaneously travel through to the other side.\nThis is a [315dce]SECONDARY[-] Action ability.",,,,,
+perkSorcerySpellcastLightningRank4Desc,progression,Perk,New,"[5c009d]ENERGY SHIELD[-]: Conjure a damage absorbing shield. You expend Spirit to absorb damage while active.\nThis is a [a42acc]PASSIVE[-] and [315dce]SECONDARY[-] Action ability.",,,,,
+perkSorcerySpellcastLightningRank5Desc,progression,Perk,New,"You are now a [5c009d]Master of Lightning Spellcasts[-].\n[a42acc]EMPOWER[-]: Stacks from Lightning Spells now empower you.\n[bf0000]SHOCK N AWE[-]: Both [5c009d]TELEPORT[-] and [5c009d]ENERGY SHIELD[-] now Shockburn.",,,,,
  
 perkSorcerySpellLightningDesc,progression,Perk,New,"Master the [5c009d]LIGHTNING SPELL[-] to transform it from a primal zap into a Deadly Force of Nature that'll Shock and awe your foes with stunning force. This Spell is excellent at Charging [5c009d]Lightning Stacks[-] and should be used to maximize the damage and effects of all [5c009d]Lightning Spells[-].\n\n[5c009d]STACK CHARGE[-]: Hold [42c234]PRIMARY[-] Action Button\n\nRequires: [5c009d]Lightning Mastery[-] Level 1.",,,,,
 perkSorcerySpellLightningName,progression,Perk,New,"SPELL: [5c009d]LIGHTNING[-]",,,,,
 perkSorcerySpellLightningRank1Desc,progression,Perk,New,"Learn the primal [5c009d]LIGHTNING SPELL[-] to Electrocute your foes with stunning bolts of Lightning while leaving them Shockburned.",,,,,
-perkSorcerySpellLightningRank2Desc,progression,Perk,New,"[5c009d]ELECTROCUTE[-]: Lightning has a chance to Electrocute foes on impact briefly stunning them while amplifying their Shockburn.",,,,,
-perkSorcerySpellLightningRank3Desc,progression,Perk,New,"[5c009d]DEBILITATE[-]: Lightning occasionally consumes stacks to incapacitate and greatly weaken your foes reducing their max health amongst other enfeeblement.",,,,,
-perkSorcerySpellLightningRank4Desc,progression,Perk,New,"[5c009d]ARC[-]: Lightning frequently arcs to additional nearby foes while Shockburning all victims.",,,,,
-perkSorcerySpellLightningRank5Desc,progression,Perk,New,"[5c009d]Fully evolve[-] Lightning into a Deadly Force of Nature. Lightning no longer consumes Shockburn Stacks. Electrocute, Debilitate and Arc are further amplified by stacks.",,,,,
+perkSorcerySpellLightningRank2Desc,progression,Perk,New,"[5c009d]ELECTROCUTE[-]: Victims with [5c009d]Stacks[-] have a chance to be Electrocuted amplifying their Shockburn.",,,,,
+perkSorcerySpellLightningRank3Desc,progression,Perk,New,"[5c009d]DEBILITATE[-]: Lightning occasionally consumes [5c009d]Stacks[-] to incapacitate and greatly weaken your foes.",,,,,
+perkSorcerySpellLightningRank4Desc,progression,Perk,New,"[5c009d]ARC[-]: Lightning Arcs to additional nearby foes while Shockburning and applying [5c009d]Stacks[-] to all.",,,,,
+perkSorcerySpellLightningRank5Desc,progression,Perk,New,"[5c009d]Fully Evolve[-] Lightning into a Deadly Force of Nature. [5c009d]Stacks[-] no longer expire on your victims but instead greatly increase destructive force.",,,,,
 
 perkSorcerySpellLightningNovaDesc,progression,Perk,New,"Master the [5c009d]LIGHTNING NOVA SPELL[-] to transform it from a primal zap into a Deadly Force of Nature that'll Shock and awe your foes with stunning force. This Spell can Charge a single [5c009d]Lightning Stack[-] and becomes deadlier with each [5c009d]Lightning Stack[-] present on your victim.\n\n[5c009d]STACK CHARGE[-]: Hold [42c234]PRIMARY[-] Action Button\n\nRequires: [5c009d]Lightning Mastery[-] Level 2.",,,,,
 perkSorcerySpellLightningNovaName,progression,Perk,New,"SPELL: [5c009d]LIGHTNING NOVA[-]",,,,,
-perkSorcerySpellLightningNovaRank1Desc,progression,Perk,New,"Learn the destructive [5c009d]LIGHTNING NOVA SPELL[-] to get shockingly close and personal with your foes... stunning them with the closeup of a lifetime!",,,,,
-perkSorcerySpellLightningNovaRank2Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellLightningNovaRank3Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellLightningNovaRank4Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellLightningNovaRank5Desc,progression,Perk,New,"???????",,,,, 
+perkSorcerySpellLightningNovaRank1Desc,progression,Perk,New,"Learn the destructive [5c009d]LIGHTNING NOVA SPELL[-] to get shockingly up close and personal with your foes... stunning them with the closeup of a lifetime!",,,,,
+perkSorcerySpellLightningNovaRank2Desc,progression,Perk,New,"[5c009d]SHOCKWAVE[-]: Victims with [5c009d]Stacks[-] have a chance to be Electrocuted and Shockburned by the blast.",,,,,
+perkSorcerySpellLightningNovaRank3Desc,progression,Perk,New,"[5c009d]PARALYZE[-]: Victims with [5c009d]Stacks[-] are prone to mortal Debilitation rendering them severely weakened.",,,,,
+perkSorcerySpellLightningNovaRank4Desc,progression,Perk,New,"[5c009d]CONDUIT[-]: Victims with [5c009d]Stacks[-] are vulnerable to devastating Lightning Strikes on impact.",,,,,
+perkSorcerySpellLightningNovaRank5Desc,progression,Perk,New,"[5c009d]Fully Evolve[-] Lightning Nova into a disabling Ring of Death. [5c009d]Stacks[-] greatly increase destructive force.",,,,,
  
 perkSorcerySpellLightningStormDesc,progression,Perk,New,"Master Sorcery to learn the art of invoking the elements and becoming a devastating sorcerer. The rising dead were just the start of aftermath anomalies...\n\nRequires: [5c009d]Lightning Mastery[-] Level 3.",,,,,
 perkSorcerySpellLightningStormName,progression,Perk,New,"SPELL: [5c009d]LIGHTNING STORM[-]",,,,,
 perkSorcerySpellLightningStormRank1Desc,progression,Perk,New,"Learn the catastrophic [5c009d]LIGHTNING STORM SPELL[-] to command disastrous storms of nature capable of Electrocuting and Shockburning your foes amass. ",,,,,
-perkSorcerySpellLightningStormRank2Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellLightningStormRank3Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellLightningStormRank4Desc,progression,Perk,New,"???????",,,,,
-perkSorcerySpellLightningStormRank5Desc,progression,Perk,New,"???????",,,,, 
+perkSorcerySpellLightningStormRank2Desc,progression,Perk,New,"[5c009d]ELECTROCUTE[-]: Victims with [5c009d]Stacks[-] have a chance to be Electrocuted amplifying their Shockburn.",,,,,
+perkSorcerySpellLightningStormRank3Desc,progression,Perk,New,"[5c009d]DEBILITATE[-]: Victims caught in the storm with [5c009d]Stacks[-] can be greatly weakened and incapacitated.",,,,,
+perkSorcerySpellLightningStormRank4Desc,progression,Perk,New,"[5c009d]PERFECT STORM[-]: The odds of Electrocution and Debilitation become greater. Victims are prone to devastating Lightning Strikes while caught in the storm.",,,,,
+perkSorcerySpellLightningStormRank5Desc,progression,Perk,New,"[5c009d]Fully Evolve[-] Lightning Storm into a Category 6 monstrosity.\n[5c009d]Stacks[-] greatly increase the storm's destructive force.",,,,,
  
  
  
@@ -492,6 +515,13 @@ runeSpellcast_deepfreeze2,item_modifiers,mod,New,"[42c234]RUNE[-]: Deep Freeze I
 runeSpellcast_deepfreeze3,item_modifiers,mod,New,"[315dce]RUNE[-]: Deep Freeze III",,,,,
 runeSpellcast_deepfreeze4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Deep Freeze IV",,,,,
 runeSpellcast_deepfreeze5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Deep Freeze V",,,,,
+
+runeSpellcast_lightningstrikeDesc,item_modifiers,mod,New,"Invoke the Lightning Strike Runeword to call down bolts of lightning on your foes while casting. Only the following [6600cc]SPELLCASTS[-] can sustain the power of this Rune: [970000]FIRE[-], [02599c]ICE[-], [5c009d]LIGHTNING[-].\n\n[5c009d]Lightning Strike[-]: Chance to strike your foe with Lightning when landing a direct spell.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
+runeSpellcast_lightningstrike,item_modifiers,mod,New,"Rune: Lightning Strike",,,,, 
+runeSpellcast_lightningstrike2,item_modifiers,mod,New,"[42c234]RUNE[-]: Lightning Strike II",,,,,
+runeSpellcast_lightningstrike3,item_modifiers,mod,New,"[315dce]RUNE[-]: Lightning Strike III",,,,,
+runeSpellcast_lightningstrike4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Lightning Strike IV",,,,,
+runeSpellcast_lightningstrike5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Lightning Strike V",,,,,
 
 
 runeGeneral_spiritboonDesc,item_modifiers,mod,New,"Invoke the Spirit Boon Runeword to lessen the Burden of harnessing Runes and to improve Spirit Regeneration. Only [6600cc]Spellcasts[-] and [6600cc]Sorcerer Armor[-] can sustain the power of this Rune.\n\n[6600cc]Spirit Boon[-]: 2% Spirit Regen (improved by Rune Mastery) while also lessening the burden of harnessing additional Runes.",,,,,

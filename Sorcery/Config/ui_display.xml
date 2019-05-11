@@ -269,9 +269,10 @@
 		
 		<crafting_category_list display_type="conjureLightning">
 			<crafting_category name="Ammo/Weapons" icon="ui_game_symbol_electric_power" display_name="Lightning Sorcery" />
-			<crafting_category name="Clothing" icon="ui_game_symbol_light_armor" display_name="Sorcerer Armor" />
-			<crafting_category name="Mods" icon="ui_game_symbol_assemble" display_name="Runes" />
-			<crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Quests" />
+			<crafting_category name="Clothing" icon="ui_game_symbol_light_armor" display_name="Lightning Armor Crafting" />
+			<crafting_category name="Mods" icon="ui_game_symbol_assemble" display_name="Lightning Rune Crafting" />
+			<crafting_category name="Resources" icon="ui_game_symbol_forge" display_name="Lightning Augments" />
+			<crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Lightning Quests" />
 		</crafting_category_list>
 		
 	</append>

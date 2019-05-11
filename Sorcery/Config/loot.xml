@@ -44,6 +44,7 @@
 			<item name="runeArmor_icenova"/>
 			<item name="runeSpellcast_firestorm"/>
 			<item name="runeSpellcast_deepfreeze"/>
+			<item name="runeSpellcast_lightningstrike"/>
 			<item name="runeArmor_firenova"/>
 			<item name="runeArmor_firenova"/>
 			<item name="runeGeneral_lockshatter" prob=".2"/>
@@ -57,6 +58,7 @@
 			<item name="runeGeneral_lightningessenceboon2"/>
 			<item name="runeSpellcast_firestorm2"/>
 			<item name="runeSpellcast_deepfreeze2"/>
+			<item name="runeSpellcast_lightningstrike2"/>
 			<item name="runeArmor_firenova2"/>
 			<item name="runeArmor_icenova2"/>
 			<item name="runeGeneral_lockshatter2" prob=".1"/>
@@ -70,6 +72,7 @@
 			<item name="runeGeneral_lightningessenceboon3"/>
 			<item name="runeSpellcast_firestorm3"/>
 			<item name="runeSpellcast_deepfreeze3"/>
+			<item name="runeSpellcast_lightningstrike3"/>
 			<item name="runeArmor_firenova3"/>
 			<item name="runeArmor_icenova3"/>
 			<item name="runeGeneral_lockshatter3" prob=".1"/>
@@ -83,6 +86,7 @@
 			<item name="runeGeneral_lightningessenceboon4"/>
 			<item name="runeSpellcast_firestorm4"/>
 			<item name="runeSpellcast_deepfreeze4"/>
+			<item name="runeSpellcast_lightningstrike4"/>
 			<item name="runeArmor_firenova4"/>
 			<item name="runeArmor_icenova4"/>
 			<item name="runeGeneral_lockshatter4" prob=".1"/>
@@ -96,6 +100,7 @@
 			<item name="runeGeneral_lightningessenceboon5"/>
 			<item name="runeSpellcast_firestorm5"/>
 			<item name="runeSpellcast_deepfreeze5"/>
+			<item name="runeSpellcast_lightningstrike5"/>
 			<item name="runeArmor_firenova5"/>
 			<item name="runeArmor_icenova5"/>
 			<item name="runeGeneral_lockshatter5" prob=".1"/>
@@ -158,6 +163,13 @@
 			<item name="runeSpellcast_deepfreeze4" prob="0.01" count="1"/>
 			<item name="runeSpellcast_deepfreeze5" prob="0.001" count="1"/>
 		</lootgroup>	
+		<lootgroup name="sorceryModLightningStrike" count="1"> 
+			<item name="runeSpellcast_lightningstrike" count="1"/>
+			<item name="runeSpellcast_lightningstrike2" prob="0.2" count="1"/>
+			<item name="runeSpellcast_lightningstrike3" prob="0.05" count="1"/>
+			<item name="runeSpellcast_lightningstrike4" prob="0.01" count="1"/>
+			<item name="runeSpellcast_lightningstrike5" prob="0.001" count="1"/>
+		</lootgroup>
 		<lootgroup name="sorceryModFireNova" count="1"> 
 			<item name="runeArmor_firenova" count="1"/>
 			<item name="runeArmor_firenova2" prob="0.2" count="1"/>
@@ -335,41 +347,61 @@
 	<append xpath="/lootcontainers/lootgroup[@name='ammo']">
 		<item name="spellFireball" count="1,8" prob=".6"/>
 		<item name="spellIceBall" count="1,8" prob=".6"/>
+		<item name="spellLightning" count="1,8" prob=".6"/>
 		<item name="spellFirestorm" count="1,3" prob="0.15"/>
 		<item name="spellIceSpike" count="1,3" prob="0.15"/>
+		<item name="spellLightningNova" count="1,3" prob="0.15"/>
 		<item name="spellIceStorm" count="1,2" prob="0.01"/>
+		<item name="spellFireMeteor" count="1,2" prob="0.01"/>
+		<item name="spellLightningStorm" count="1,2" prob="0.01"/>
 	</append> 
 
 	<append xpath="/lootcontainers/lootgroup[@name='ammoSteel']">
 		<item name="spellFireball" count="2,8" prob=".6"/>
 		<item name="spellIceBall" count="2,8" prob=".6"/>
+		<item name="spellLightning" count="2,8" prob=".6"/>
 		<item name="spellFirestorm" count="1,4" prob="0.15"/>
 		<item name="spellIceSpike" count="1,4" prob="0.15"/>
+		<item name="spellLightningNova" count="1,4" prob="0.15"/>
 		<item name="spellIceStorm" count="1,2" prob="0.03"/>
+		<item name="spellFireMeteor" count="1,2" prob="0.03"/>
+		<item name="spellLightningStorm" count="1,2" prob="0.03"/>
 	</append> 	
 
 	<append xpath="/lootcontainers/lootgroup[@name='militaryAmmo']">
 		<item name="spellFireball" count="3,12" prob=".6"/>
 		<item name="spellIceBall" count="3,12" prob=".6"/>
+		<item name="spellLightning" count="3,12" prob=".6"/>
 		<item name="spellFirestorm" count="1,5" prob="0.2"/>
 		<item name="spellIceSpike" count="1,5" prob="0.2"/>
+		<item name="spellLightningNova" count="1,5" prob="0.2"/>
 		<item name="spellIceStorm" count="1,2" prob="0.05"/>
+		<item name="spellFireMeteor" count="1,2" prob="0.05"/>
+		<item name="spellLightningStorm" count="1,2" prob="0.05"/>
 	</append> 
 
 	<append xpath="/lootcontainers/lootgroup[@name='treasureAmmo']">
 		<item name="spellFireball" count="15,30" prob=".6"/>
 		<item name="spellIceBall" count="15,30" prob=".6"/>
+		<item name="spellLightning" count="15,30" prob=".6"/>
 		<item name="spellFirestorm" count="3,12" prob="0.3"/>
 		<item name="spellIceSpike" count="3,12" prob="0.3"/>
+		<item name="spellLightningNova" count="3,12" prob="0.3"/>
 		<item name="spellIceStorm" count="2,8" prob="0.1"/>
+		<item name="spellFireMeteor" count="2,8" prob="0.1"/>
+		<item name="spellLightningStorm" count="2,8" prob="0.1"/>
 	</append>  
 
 	<append xpath="/lootcontainers/lootgroup[@name='questAmmo']">
 		<item name="spellFireball" count="15,30" loot_prob_template="GradeALoot"/>
 		<item name="spellIceBall" count="15,30" loot_prob_template="GradeALoot"/>
+		<item name="spellLightning" count="15,30" loot_prob_template="GradeALoot"/>
 		<item name="spellFirestorm" count="3,12" loot_prob_template="GradeBLoot"/>
 		<item name="spellIceSpike" count="3,12" loot_prob_template="GradeBLoot"/>
+		<item name="spellLightningNova" count="3,12" loot_prob_template="GradeBLoot"/>
 		<item name="spellIceStorm" count="2,8" loot_prob_template="GradeCLoot"/>
+		<item name="spellFireMeteor" count="2,8" loot_prob_template="GradeCLoot"/>
+		<item name="spellLightningStorm" count="2,8" loot_prob_template="GradeCLoot"/>
 	</append>  
   
   
@@ -377,23 +409,33 @@
 	<append xpath="/lootcontainers/lootgroup[@name='weaponsBasicGuns+ammo']">
 		<item name="spellcastFire" prob=".1"/>
 		<item name="spellcastIce" prob=".1"/>
+		<item name="spellcastLightning" prob=".1"/>
 		<item name="spellFireball" count="5,10" prob=".5"/>
 		<item name="spellIceBall" count="5,10" prob=".5"/>
+		<item name="spellLightning" count="5,10" prob=".5"/>
 		<item name="spellFirestorm" count="2,5" prob=".1"/>
 		<item name="spellIceSpike" count="2,5" prob=".1"/>
+		<item name="spellLightningNova" count="2,5" prob=".1"/>
 		<item name="spellIceStorm" count="1,5" prob="0.05"/>
+		<item name="spellFireMeteor" count="1,5" prob="0.05"/>
+		<item name="spellLightningStorm" count="1,5" prob="0.05"/>
 	</append> 	
 	<append xpath="/lootcontainers/lootgroup[@name='weaponsMilitaryGuns+ammo']">
 		<item name="spellcastFire" prob=".05"/>
 		<item name="spellcastIce" prob=".05"/>
+		<item name="spellcastLightning" prob=".05"/>
 		<item name="spellFirestorm" count="3,6" prob=".1"/>
 		<item name="spellIceSpike" count="3,6" prob=".1"/>
-		<item name="spellIceStorm" count="1,6" prob="0.05"/>		
+		<item name="spellLightningNova" count="3,6" prob=".1"/>
+		<item name="spellIceStorm" count="1,6" prob="0.05"/>
+		<item name="spellFireMeteor" count="1,6" prob="0.05"/>		
+		<item name="spellLightningStorm" count="1,6" prob="0.05"/>		
 	</append> 	
 
 	<append xpath="/lootcontainers/lootgroup[@name='questRanged']">
 		<item name="spellcastFire" loot_prob_template="GradeBLoot"/>
 		<item name="spellcastIce" loot_prob_template="GradeBLoot"/>
+		<item name="spellcastLightning" loot_prob_template="GradeBLoot"/>
 	</append> 
   
   
@@ -523,6 +565,7 @@
 	<append xpath="/lootcontainers/lootgroup[@name='modGunT1']">
 		<item group="sorceryModFireStorm" />
 		<item group="sorceryModDeepFreeze" />
+		<item group="sorceryModLightningStrike" />
 		<item group="sorceryModFireNova" />
 		<item group="sorceryModIceNova" />	
 		<item group="sorceryModT2" prob="0.05" />
@@ -559,6 +602,7 @@
 	<append xpath="/lootcontainers/lootgroup[@name='modGunT2']">
 		<item group="sorceryModFireStorm" />
 		<item group="sorceryModDeepFreeze" />
+		<item group="sorceryModLightningStrike" />
 		<item group="sorceryModFireNova" />
 		<item group="sorceryModIceNova" />	
 		<item group="sorceryModT2" />
@@ -593,6 +637,7 @@
 	<append xpath="/lootcontainers/lootgroup[@name='modGunT3']">
 		<item group="sorceryModFireStorm" />
 		<item group="sorceryModDeepFreeze" />
+		<item group="sorceryModLightningStrike" />
 		<item group="sorceryModFireNova" />
 		<item group="sorceryModIceNova" />
 		<item group="sorceryModT3" />

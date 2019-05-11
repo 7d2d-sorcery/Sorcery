@@ -155,7 +155,12 @@
 		<recipe name="spellFirestorm" count="1" craft_area="conjureFire" material_based="true" tags="learnable">
 			<ingredient name="unit_fire2" count="1"/>
 			<ingredient name="unit_fire" count="1"/>
-		</recipe>	
+		</recipe>
+		<recipe name="spellFireMeteor" count="1" craft_area="conjureFire" material_based="true" tags="learnable">
+			<ingredient name="unit_fire3" count="1"/>
+			<ingredient name="unit_fire2" count="1"/>
+			<ingredient name="unit_fire" count="1"/>
+		</recipe>		
 	
 		<!-- ICE SPELLS -->
 		<recipe name="spellIceBall" count="1" craft_area="conjureIce" material_based="true" tags="learnable">
@@ -174,7 +179,16 @@
 		<!-- LIGHTNING SPELLS -->
 		<recipe name="spellLightning" count="1" craft_area="conjureLightning" material_based="true" tags="learnable">
 			<ingredient name="unit_lightning" count="1"/>
-		</recipe>	
+		</recipe>
+		<recipe name="spellLightningNova" count="1" craft_area="conjureLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning2" count="1"/>
+			<ingredient name="unit_lightning" count="1"/>
+		</recipe>
+		<recipe name="spellLightningStorm" count="1" craft_area="conjureLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning3" count="1"/>
+			<ingredient name="unit_lightning2" count="1"/>
+			<ingredient name="unit_lightning" count="1"/>
+		</recipe>		
 	
 	<!--___________________ QUESTS: INTRO ___________________-->
 		<!-- Quest: FIRE -->
@@ -548,6 +562,180 @@
 		
 		
 		
+	<!--___________________ SORCERY ARMOR: GENERAL / LIGHTNING ___________________-->
+		<!-- lightning: UNCOMMON -->
+		<recipe name="sorceryAccessory_Shades" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true">
+			<ingredient name="unit_lightning" count="30"/>
+			<ingredient name="unit_lightning2" count="30"/>
+		</recipe>
+		<recipe name="sorceryArmor_Bandana" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true">
+			<ingredient name="unit_lightning" count="20"/>
+			<ingredient name="unit_lightning2" count="10"/>
+		</recipe>		
+		<recipe name="sorceryArmor_Hood" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true">
+			<ingredient name="unit_lightning" count="20"/>
+			<ingredient name="unit_lightning2" count="20"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Robe" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true">
+			<ingredient name="unit_lightning" count="20"/>
+			<ingredient name="unit_lightning2" count="20"/>
+		</recipe>			
+		<recipe name="sorceryArmor_Chest" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true">
+			<ingredient name="unit_lightning" count="20"/>
+			<ingredient name="unit_lightning2" count="10"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Shirt" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true">
+			<ingredient name="unit_lightning" count="20"/>
+			<ingredient name="unit_lightning2" count="10"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Gloves" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true">
+			<ingredient name="unit_lightning" count="20"/>
+			<ingredient name="unit_lightning2" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Leg" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true">
+			<ingredient name="unit_lightning" count="20"/>
+			<ingredient name="unit_lightning2" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Pants" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true">
+			<ingredient name="unit_lightning" count="20"/>
+			<ingredient name="unit_lightning2" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Boots" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true">
+			<ingredient name="unit_lightning" count="20"/>
+			<ingredient name="unit_lightning2" count="10"/>
+		</recipe>
+		<!-- lightning: RARE -->
+		<recipe name="sorceryAccessory_Shades2" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning2" count="30"/>
+			<ingredient name="unit_lightning3" count="30"/>
+		</recipe>
+		<recipe name="sorceryArmor_Bandana2" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning2" count="20"/>
+			<ingredient name="unit_lightning3" count="10"/>
+		</recipe>		
+		<recipe name="sorceryArmor_Hood2" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning2" count="20"/>
+			<ingredient name="unit_lightning3" count="20"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Robe2" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning2" count="20"/>
+			<ingredient name="unit_lightning3" count="20"/>
+		</recipe>			
+		<recipe name="sorceryArmor_Chest2" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning2" count="20"/>
+			<ingredient name="unit_lightning3" count="10"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Shirt2" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning2" count="20"/>
+			<ingredient name="unit_lightning3" count="10"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Gloves2" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning2" count="20"/>
+			<ingredient name="unit_lightning3" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Leg2" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning2" count="20"/>
+			<ingredient name="unit_lightning3" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Pants2" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning2" count="20"/>
+			<ingredient name="unit_lightning3" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Boots2" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning2" count="20"/>
+			<ingredient name="unit_lightning3" count="10"/>
+		</recipe>
+		<!-- lightning: EPIC -->
+		<recipe name="sorceryAccessory_Shades3" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning3" count="30"/>
+			<ingredient name="unit_lightning4" count="30"/>
+		</recipe>
+		<recipe name="sorceryArmor_Bandana3" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning3" count="20"/>
+			<ingredient name="unit_lightning4" count="10"/>
+		</recipe>		
+		<recipe name="sorceryArmor_Hood3" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning3" count="20"/>
+			<ingredient name="unit_lightning4" count="20"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Robe3" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning3" count="20"/>
+			<ingredient name="unit_lightning4" count="20"/>
+		</recipe>			
+		<recipe name="sorceryArmor_Chest3" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning3" count="20"/>
+			<ingredient name="unit_lightning4" count="10"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Shirt3" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning3" count="20"/>
+			<ingredient name="unit_lightning4" count="10"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Gloves3" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning3" count="20"/>
+			<ingredient name="unit_lightning4" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Leg3" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning3" count="20"/>
+			<ingredient name="unit_lightning4" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Pants3" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning3" count="20"/>
+			<ingredient name="unit_lightning4" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Boots3" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning3" count="20"/>
+			<ingredient name="unit_lightning4" count="10"/>
+		</recipe>		
+		<!-- lightning: LEGENDARY -->
+		<recipe name="sorceryAccessory_Shades4" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning4" count="30"/>
+			<ingredient name="unit_lightning5" count="30"/>
+		</recipe>
+		<recipe name="sorceryArmor_Bandana4" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning4" count="20"/>
+			<ingredient name="unit_lightning5" count="10"/>
+		</recipe>		
+		<recipe name="sorceryArmor_Hood4" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning4" count="20"/>
+			<ingredient name="unit_lightning5" count="20"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Robe4" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning4" count="20"/>
+			<ingredient name="unit_lightning5" count="20"/>
+		</recipe>			
+		<recipe name="sorceryArmor_Chest4" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning4" count="20"/>
+			<ingredient name="unit_lightning5" count="10"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Shirt4" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning4" count="20"/>
+			<ingredient name="unit_lightning5" count="10"/>
+		</recipe>	
+		<recipe name="sorceryArmor_Gloves4" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning4" count="20"/>
+			<ingredient name="unit_lightning5" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Leg4" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning4" count="20"/>
+			<ingredient name="unit_lightning5" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Pants4" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning4" count="20"/>
+			<ingredient name="unit_lightning5" count="10"/>
+		</recipe>
+		<recipe name="sorceryArmor_Boots4" count="1" craft_area="conjureLightning" craft_tool="toolLoomLightning" material_based="true" tags="learnable">
+			<ingredient name="unit_lightning4" count="20"/>
+			<ingredient name="unit_lightning5" count="10"/>
+		</recipe>		
+		
+		
+		
+
+		
+		
+		
+		
+		
 	<!--___________________ RUNES: GENERAL ___________________-->
 		<!-- fire -->
 		<recipe name="runeGeneral_spiritboon" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire">
@@ -575,6 +763,19 @@
 		<recipe name="runeGeneral_spiritboon4" count="1" craft_area="conjureIce" material_based="true" craft_tool="toolHammerIce" tags="learnable">
 			<ingredient name="unit_ice4" count="50"/>
 		</recipe>			
+		<!-- lightning -->
+		<recipe name="runeGeneral_spiritboon" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+			<ingredient name="unit_lightning" count="50"/>
+		</recipe>	
+		<recipe name="runeGeneral_spiritboon2" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning" tags="learnable">
+			<ingredient name="unit_lightning2" count="50"/>
+		</recipe>
+		<recipe name="runeGeneral_spiritboon3" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning" tags="learnable">
+			<ingredient name="unit_lightning3" count="50"/>
+		</recipe>
+		<recipe name="runeGeneral_spiritboon4" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning" tags="learnable">
+			<ingredient name="unit_lightning4" count="50"/>
+		</recipe>		
 		
 	<!--___________________ RUNES: FIRE ___________________-->
 		<!-- Fire Essence Boon -->
@@ -602,7 +803,8 @@
 		</recipe>
 		<recipe name="runeArmor_fireskin4" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="learnable">
 			<ingredient name="unit_fire4" count="75"/>
-		</recipe>		
+		</recipe>
+		
 		
 	<!--___________________ RUNES: ICE ___________________-->
 		<!-- Ice Essence Boon -->
@@ -630,6 +832,54 @@
 		</recipe>
 		<recipe name="runeArmor_iceskin4" count="1" craft_area="conjureIce" material_based="true" craft_tool="toolHammerIce"  tags="learnable">
 			<ingredient name="unit_ice4" count="75"/>
+		</recipe>	
+		
+		
+	<!--___________________ RUNES: LIGHTNING ___________________-->
+		<!-- Lightning Essence Boon -->
+		<recipe name="runeGeneral_lightningessenceboon" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+			<ingredient name="unit_lightning" count="50"/>
+		</recipe>			
+		<recipe name="runeGeneral_lightningessenceboon2" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning" tags="learnable">
+			<ingredient name="unit_lightning2" count="50"/>
+		</recipe>			
+		<recipe name="runeGeneral_lightningessenceboon3" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning" tags="learnable">
+			<ingredient name="unit_lightning3" count="50"/>
+		</recipe>
+		<recipe name="runeGeneral_lightningessenceboon4" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning" tags="learnable">
+			<ingredient name="unit_lightning4" count="50"/>
+		</recipe>
+		<!-- Lightning Lock Shatter -->
+		<recipe name="runeGeneral_lockshatter" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+			<ingredient name="unit_lightning" count="100"/>
+		</recipe>
+		<recipe name="runeGeneral_lockshatter2" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+			<ingredient name="unit_lightning" count="100"/>
+			<ingredient name="unit_lightning2" count="100"/>
+		</recipe>
+		<recipe name="runeGeneral_lockshatter3" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+			<ingredient name="unit_lightning2" count="100"/>
+			<ingredient name="unit_lightning3" count="100"/>
+		</recipe>
+		<recipe name="runeGeneral_lockshatter4" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+			<ingredient name="unit_lightning3" count="100"/>
+			<ingredient name="unit_lightning4" count="100"/>
+		</recipe>
+		<!-- Lightning Lightning Strike -->
+		<recipe name="runeSpellcast_lightningstrike" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+			<ingredient name="unit_lightning" count="75"/>
+		</recipe>
+		<recipe name="runeSpellcast_lightningstrike2" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+			<ingredient name="unit_lightning" count="75"/>
+			<ingredient name="unit_lightning2" count="75"/>
+		</recipe>
+		<recipe name="runeSpellcast_lightningstrike3" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+			<ingredient name="unit_lightning2" count="75"/>
+			<ingredient name="unit_lightning3" count="75"/>
+		</recipe>
+		<recipe name="runeSpellcast_lightningstrike4" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+			<ingredient name="unit_lightning3" count="75"/>
+			<ingredient name="unit_lightning4" count="75"/>
 		</recipe>	
 		
 	</append>

@@ -454,11 +454,17 @@
 		
 		<!-- LIGHTNING MASTERY -->
 		<perk name="perkSorceryLightningMastery" parent="skillSorceryMastery" name_key="perkSorceryLightningMasteryName" desc_key="perkSorceryLightningMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="reqSorceryLevel0"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="reqSorceryLevel03"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="reqSorceryLevel05"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="reqSorceryLevel07"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="99" desc_key="reqSorceryLevel10"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			
+			<effect_group name="Spellcast Speed">
+				<requirement name="HoldingItemHasTags" tags="spellcastLightning"/>
+				<passive_effect name="RoundsPerMinute" operation="base_add" value="5,25" level="1,5"/> 
+				<passive_effect name="ReloadSpeedMultiplier" operation="base_add" value="4,8" level="4,5"/> <!-- anim -->
+			</effect_group>			
 			
 			<effect_group name="Lightning Essence">
 				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0,1" tags="essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
@@ -559,7 +565,23 @@
 			</effect_group>
 		</perk>
 		
-
+		<!-- Fire Spell: METEOR -->
+		<perk name="perkSorcerySpellFireMeteor" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellFireMeteorName" desc_key="perkSorcerySpellFireMeteorDesc" icon="ui_game_symbol_fire" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="3" desc_key="reqSorceryFireMasteryLevel03"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="3" desc_key="reqSorceryFireMasteryLevel03"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="3" desc_key="reqSorceryFireMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="4" desc_key="reqSorceryFireMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="5" desc_key="reqSorceryFireMasteryLevel05"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellFireMeteor"/>
+				<effect_description level="1" desc_key="perkSorcerySpellFireMeteorRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellFireMeteorRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellFireMeteorRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellFireMeteorRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellFireMeteorRank5Desc"/>
+			</effect_group>
+		</perk>
+		
 
 <!--___________________ ICE SORCERY ___________________-->
 		<!-- Ice Spellcast -->
@@ -635,11 +657,11 @@
 <!--___________________ LIGHTNING SORCERY ___________________-->
 		<!-- Lightning Spellcast -->
 		<perk name="perkSorcerySpellcastLightning" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellcastLightningName" desc_key="perkSorcerySpellcastLightningDesc" icon="ui_game_symbol_electric_power" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel01"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="reqSorcerySpellcastMasteryLevel04"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="99" desc_key="reqSorcerySpellcastMasteryLevel05"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="1" desc_key="reqSorceryLightningMasteryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="5" desc_key="reqSorcerySpellcastMasteryLevel05"/></level_requirements>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellcastLightning"/>
 				<effect_description level="1" desc_key="perkSorcerySpellcastLightningRank1Desc"/>
@@ -652,11 +674,11 @@
 		
 		<!-- Lightning Spell: LIGHTNING -->
 		<perk name="perkSorcerySpellLightning" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellLightningName" desc_key="perkSorcerySpellLightningDesc" icon="ui_game_symbol_electric_power" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel01"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel02"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel04"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel05"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="1" desc_key="reqSorceryLightningMasteryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="2" desc_key="reqSorceryLightningMasteryLevel02"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="3" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="4" desc_key="reqSorceryLightningMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="5" desc_key="reqSorceryLightningMasteryLevel05"/></level_requirements>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellLightning"/>
 				<effect_description level="1" desc_key="perkSorcerySpellLightningRank1Desc"/>
@@ -669,11 +691,11 @@
 		
 		<!-- Lightning Spell: LIGHTNING NOVA -->
 		<perk name="perkSorcerySpellLightningNova" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellLightningNovaName" desc_key="perkSorcerySpellLightningNovaDesc" icon="ui_game_symbol_electric_power" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel02"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel02"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel04"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel05"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="2" desc_key="reqSorceryLightningMasteryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="2" desc_key="reqSorceryLightningMasteryLevel02"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="3" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="4" desc_key="reqSorceryLightningMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="5" desc_key="reqSorceryLightningMasteryLevel05"/></level_requirements>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellLightning"/>
 				<effect_description level="1" desc_key="perkSorcerySpellLightningNovaRank1Desc"/>
@@ -686,13 +708,13 @@
 		
 		<!-- Lightning Spell: LIGHTNING STORM -->
 		<perk name="perkSorcerySpellLightningStorm" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellLightningStormName" desc_key="perkSorcerySpellLightningStormDesc" icon="ui_game_symbol_electric_power" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel04"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="99" desc_key="reqSorceryLightningMasteryLevel05"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="3" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="3" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="3" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="4" desc_key="reqSorceryLightningMasteryLevel04"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="5" desc_key="reqSorceryLightningMasteryLevel05"/></level_requirements>
 			<effect_group>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellLightning"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellLightningStorm"/>
 				<effect_description level="1" desc_key="perkSorcerySpellLightningStormRank1Desc"/>
 				<effect_description level="2" desc_key="perkSorcerySpellLightningStormRank2Desc"/>
 				<effect_description level="3" desc_key="perkSorcerySpellLightningStormRank3Desc"/>

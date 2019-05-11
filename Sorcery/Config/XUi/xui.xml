@@ -66,12 +66,12 @@
 		
 <!--___________________________ LIGHTNING CONJURE ___________________________-->	
 		<window_group name="workstation_conjureLightning" controller="XUiC_WorkstationWindowGroup">
-			<window name="windowCraftingListConjureIce"/>
-			<window name="craftingInfoPanelConjureIce"/>
+			<window name="windowCraftingListConjureLightning"/>
+			<window name="craftingInfoPanelConjureLightning"/>
 			<window name="windowCraftingQueue"/>
-			<window name="windowToolsConjureIce" />
-			<window name="windowFuelConjureIce" />
-			<window name="windowConjureIceInput" />
+			<window name="windowToolsConjureLightning" />
+			<window name="windowFuelConjureLightning" />
+			<window name="windowConjureLightningInput" />
 			<window name="windowOutput" />
 			<window name="windowNonPagingHeader" />
 		</window_group>		

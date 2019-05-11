@@ -2,8 +2,8 @@
 <Servers>
 	<ServerGroup Name="Sorcery" Logo="https://i.postimg.cc/s221WC7s/sorcery-logo-splash.png" Description="Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.">
 			<Server Name="Sorcery" Logo="https://i.postimg.cc/s221WC7s/sorcery-logo-splash.png">
-			<Description>Sorcery v0.701
-https://7daystodie.com/forums/showthread.php?109145-Sorcery
+			<Description>Sorcery v0.75 - Lightning!
+http://www.SorceryMod.com
 
 Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.
 - Unique animations, art, effects and sounds for spells and items
@@ -21,9 +21,11 @@ Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. T
 - Essence Mastery: demystify and awaken the elemental essence of the world to extract and craft spells and weapons with essence.
 - Fire, Ice, Lightning Spells: upgrade each spell with five alterations
 
-Latest Version: 0.701
-Sorcery Wiki: https://github.com/7d2d-sorcery/Sorcery/wiki
-Sorcery Thread: https://7daystodie.com/forums/showthread.php?109145-Sorcery
+Latest Version: 0.75 - Lightning!
+HOME: http://www.SorceryMod.com
+DISCORD: http://discord.SorceryMod.com
+FORUM: http://forum.SorceryMod.com
+WIKI: http://wiki.SorceryMod.com
 
 **COMPATIBLE** DARKNESS FALLS (17.2): Sorcery Modlet version is fully compatible with Darkness Falls (17.2 / latest). Under Darkness Falls Install: Manage Modlets &gt; Download Sorcery &gt; Open and Copy Sorcery Localization.txt contents and paste the copied Localization text into the Darkness Falls Localization.txt (at the very end, new line) &gt; Ready to play! More info: https://github.com/7d2d-sorcery/Sorcery/wiki/Mod-Launcher#darkness-falls--sorcery
 

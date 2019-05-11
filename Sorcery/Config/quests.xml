@@ -49,8 +49,10 @@
 			<action type="TrackQuest" />
 
 			<!-- <objective type="FetchKeep" id="resourceEssenceFire" value="50" phase="1" /> -->
+			
 			<objective type="FetchKeep" id="resourceEssenceFire" value="1" phase="1" />
 			<objective type="FetchKeep" id="resourceEssenceFire" value="50" phase="2" />
+			<!-- NRE: Two phases of identical item cause NRE if player acquires total amount prior to accepting Quest -->
 
 			<reward type="Exp" value="1777" />
 			<reward type="SkillPoints" value="1" />

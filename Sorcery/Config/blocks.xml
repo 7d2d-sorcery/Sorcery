@@ -142,7 +142,7 @@
 			<property name="StabilitySupport" value="false"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="Path" value="solid"/>
-			<property name="Model" value="#@modfolder:Resources/conjureIce.unity3d?conjureIce"/>
+			<property name="Model" value="#@modfolder:Resources/conjureLightning.unity3d?conjureLightning"/>
 			<!-- <property name="ModelOffset" value="0,0.5,0"/> -->
 			<property name="DisplayType" value="blockMulti" />
 			<property name="MultiBlockDim" value="2,2,2"/>
@@ -163,11 +163,11 @@
 				<property name="Modules" value="tools,output,fuel,material_input"/>
 				<property name="InputMaterials" value="lightning,lightning2,lightning3,lightning4,lightning5"/>
 			</property>
-			<property name="WorkstationIcon" value="ui_game_symbol_cold" />
-			<property name="OpenSound" value="sorceryIce_draw" />
-			<property name="CloseSound" value="sorceryIce_impact" />
+			<property name="WorkstationIcon" value="ui_game_symbol_electric_power" />
+			<property name="OpenSound" value="sorceryLightning_implodelow" />
+			<property name="CloseSound" value="sorceryLightning_impact" />
 			<property name="CraftSound" value="sorceryRitualChant" />
-			<property name="CraftCompleteSound" value="sorceryIce_launch" />
+			<property name="CraftCompleteSound" value="sorceryLightning_launch" />
 			<!-- <property name="WorkstationWindow" value="workstation_conjureIce" /> -->
 			<property class="RepairItems">
 				<property name="resourceEssenceLightning" value="20"/>
