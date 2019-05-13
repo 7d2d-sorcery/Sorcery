@@ -496,9 +496,9 @@
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
 			
 			<effect_group name="RUNECRAFTING: RECIPES">
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeGeneral_spiritboon2,runeGeneral_fireessenceboon2,runeGeneral_iceessenceboon2,runeArmor_fireskin2,runeArmor_iceskin2"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="runeGeneral_spiritboon3,runeGeneral_fireessenceboon3,runeGeneral_iceessenceboon3,runeArmor_fireskin3,runeArmor_iceskin3"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="runeGeneral_spiritboon4,runeGeneral_fireessenceboon4,runeGeneral_iceessenceboon4,runeArmor_fireskin4,runeArmor_iceskin4"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeGeneral_spiritboon2,runeGeneral_fireessenceboon2,runeGeneral_iceessenceboon2,runeGeneral_lightningessenceboon2,runeArmor_fireskin2,runeArmor_iceskin2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="runeGeneral_spiritboon3,runeGeneral_fireessenceboon3,runeGeneral_iceessenceboon3,runeGeneral_lightningessenceboon3,runeArmor_fireskin3,runeArmor_iceskin3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="runeGeneral_spiritboon4,runeGeneral_fireessenceboon4,runeGeneral_iceessenceboon4,runeGeneral_lightningessenceboon4,runeArmor_fireskin4,runeArmor_iceskin4"/>
 			</effect_group>
 			
 			<effect_group>
