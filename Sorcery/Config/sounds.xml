@@ -89,6 +89,12 @@
 			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
 		</SoundDataNode>
 		
+		<SoundDataNode name="sorceryFireMeteorShower_impact"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+			<Noise ID="5" range="60" volume="120" time="5" heat_map_strength="0.3" heat_map_time="120" muffled_when_crouched="0.5"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?fireMeteorShowerImpact" />
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
+		
 		<!-- FIRENADO -->
 		<SoundDataNode name="sorceryFirestorm_launch"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 			<Noise ID="1" range="1" volume="5" time="3" muffled_when_crouched="0.5"/>

@@ -882,5 +882,45 @@
 			<ingredient name="unit_lightning4" count="75"/>
 		</recipe>	
 		
+		
+		
+		
+		
+	
+
+	<!--___________________ SUPPORTER RECIPES ___________________-->
+		<recipe name="sorceryPerkSupportBronze" count="1" craft_time="300">
+			<ingredient name="casinoCoin" count="5"/>
+			<ingredient name="oldCash" count="5"/>
+			<ingredient name="resourceEssenceFire" count="1"/>
+			<ingredient name="resourceEssenceIce" count="1"/>
+			<ingredient name="resourceEssenceLightning" count="1"/>
+		</recipe>
+		<recipe name="sorceryPerkSupportSilver" count="1" craft_time="300">
+			<ingredient name="casinoCoin" count="20"/>
+			<ingredient name="oldCash" count="20"/>
+			<ingredient name="resourceEssenceFire" count="1"/>
+			<ingredient name="resourceEssenceIce" count="1"/>
+			<ingredient name="resourceEssenceLightning" count="1"/>
+		</recipe>	
+		<recipe name="sorceryPerkSupportGold" count="1" craft_time="300">
+			<ingredient name="casinoCoin" count="50"/>
+			<ingredient name="oldCash" count="50"/>
+			<ingredient name="resourceEssenceFire" count="1"/>
+			<ingredient name="resourceEssenceIce" count="1"/>
+			<ingredient name="resourceEssenceLightning" count="1"/>
+		</recipe>	
+	
+	<!--___________________ RUNES: UNIQUE / SUPPORTER ___________________-->
+		<!-- ALTIN'S TOUCH -->
+		<recipe name="runeUnique_altinstouch" count="1" tags="learnable">
+			<ingredient name="casinoCoin" count="20"/>
+			<ingredient name="resourceEssenceFire" count="50"/>
+			<ingredient name="resourceEssenceIce" count="50"/>
+			<ingredient name="resourceEssenceLightning" count="50"/>
+		</recipe>
+		
+		
+		
 	</append>
 </Sorcery>

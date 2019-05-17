@@ -4112,7 +4112,50 @@
 
 		
 		
+		
+		
+		
+	<!--___________________ SUPPORTER ITEMS ___________________-->
+		<item name="sorceryPerkSupportBronze">
+			<property name="Extends" value="unlockBookMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="sorceryKey_bronze"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property name="EconomicValue" value="0"/>
+			<property name="SellableToTrader" value="false"/>
+			<!-- <property name="Candrop" value="false"/> -->
+			<property class="Action0">
+				<requirement name="NotHasBuff" target="self" buff="buffSorcerySupportPerkNoble"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffSorcerySupportPerkNoble"/>
+			</effect_group>
+		</item>		
+		<item name="sorceryPerkSupportSilver">
+			<property name="Extends" value="sorceryPerkSupportBronze"/>
+			<property name="CustomIcon" value="sorceryKey_silver"/>
+			<property class="Action0">
+				<requirement name="NotHasBuff" target="self" buff="buffSorcerySupportPerkLord"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffSorcerySupportPerkLord"/>
+			</effect_group>
+		</item>			
+		<item name="sorceryPerkSupportGold">
+			<property name="Extends" value="sorceryPerkSupportBronze"/>
+			<property name="CustomIcon" value="sorceryKey_gold"/>
+			<property class="Action0">
+				<requirement name="NotHasBuff" target="self" buff="buffSorcerySupportPerkRoyalty"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffSorcerySupportPerkRoyalty"/>
+			</effect_group>
+		</item>			
+		
 	</append>
+
+
 
 
 

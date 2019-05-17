@@ -17,6 +17,32 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SORCERY_START,,LOCALIZATION,,START,,,,,
 
 unit_fire,items,Item,New,"Fire 1",,,,,
@@ -189,6 +215,16 @@ skillSorceryIceCraftingName,progression,Perk,New,"[02599c]ICE SORCERY[-]",,,,,
 skillSorceryLightningCraftingDesc,progression,Perk,New,"Specialize in spell crafting to learn and unlock devastating spells and their secrets. You've known for awhile now that something is different about you... it's time to embrace it.",,,,,
 skillSorceryLightningCraftingName,progression,Perk,New,"[5c009d]LIGHTNING SORCERY[-]",,,,,
  
+skillSorcerySupportDesc,progression,Perk,New,"You can help to ensure the ongoing evolution and development of Sorcery by becoming an invaluable Patron! In exchange for your patronage, Sorcery will continue to evolve at a steady pace with frequent milestone updates. Additionally, you will gain [9b874d]Early Access[-] to milestone updates and be granted Sorcery-wide access, title, rank and reward based on your level of support. \n\nSee the Patron Reward Tiers for more exciting details: \n[U]www.SorceryMod.com[/U]",,,,,
+skillSorcerySupportName,progression,Perk,New,"[9b874d]SORCERY TREASURY[-]",,,,,
+ 
+perkSorcerySupportDesc,progression,Perk,New,"You can help to ensure the ongoing evolution and development of Sorcery by becoming an invaluable Patron! In exchange for your patronage, Sorcery will continue to evolve at a steady pace with frequent milestone updates. Additionally, you will gain [9b874d]Early Access[-] to milestone updates and be granted Sorcery-wide access, title, rank and reward based on your level of support. \n\nSee the Patron Reward Tiers for more exciting details: \n[U]www.SorceryMod.com[/U]",,,,,
+perkSorcerySupportName,progression,Perk,New,"[9b874d]TREASURY REWARD TIERS[-]",,,,,
+perkSorcerySupportRank1Desc,progression,Perk,New,"Patrons of Sorcery are given early access, top priority, respect and other various perks for making the ongoing development and evolution of Sorcery possible!",,,,,
+perkSorcerySupportRank2Desc,progression,Perk,New,"[056900]NOBLE[-]: Noble Rank, Title, Access, Voting, Priority, Insight, Direction and 1-3 Day Early Access.",,,,,
+perkSorcerySupportRank3Desc,progression,Perk,New,"[0036b8]LORD[-]: Lord Rank, Title, Access, Voting, Priority, Insight, Direction, Name Immortalization, Unique Rune Design and 1 Week Earliest Access.",,,,,
+perkSorcerySupportRank4Desc,progression,Perk,New,"[6800ff]ROYALTY[-]: Royal Rank, Title, Crown, Access, Voting, Priority, Insight, Direction, Debrief, Name Immortalization, Unique Rune Design, Unique Spell Design, Unique Armor Design and 1-2 Week Earliest+ Access.",,,,,
+perkSorcerySupportRank5Desc,progression,Perk,New,"[c80000]HIGH COUNCIL[-]: High Council Rank, Title, Access, Voting, Priority, Insight, Direction, Debrief, Name Immortalization, Unique Rune Designs, Unique Spell Designs, Unique Armor Designs, Development Access, Official Lead Team Member, Choice of Reign and 1 Month Development Access.",,,,,
  
 perkSorcerySpellcastMasteryDesc,progression,Perk,New,"Master Spellcast to invoke and cast your spells with maximum devastation and effect. Learning Spellcast Mastery teaches you how to unlock the deepest secrets to Spellcast crafting and alteration, granting you transcendent spellcasting abilities.\n\nSPELLCAST: Hold [42c234]PRIMARY[-] Action Button\nCHANNEL: Hold [315dce]SECONDARY[-] Action Button",,,,,
 perkSorcerySpellcastMasteryName,progression,Perk,New,"Spellcast Mastery",,,,,
@@ -200,27 +236,27 @@ perkSorcerySpellcastMasteryRank5Desc,progression,Perk,New,"You are now a Master 
 
 perkSorceryFireMasteryDesc,progression,Perk,New,"Train to become a [970000]MASTER FIRE SORCERER[-]. Burn deeper down the explosive path of [970000]FIRE SORCERY[-] to invoke, wield and unlock its hottest secrets. Embrace this raw destructive force to incinerate your foes to the grave. [970000]FIRE SORCERERS[-] learn the secrets to awakening and harvesting even the most dormant of [970000]FIRE ESSENCE[-], fueling the creation of their devastating [970000]Fire Spells[-].",,,,,
 perkSorceryFireMasteryName,progression,Perk,New,"[970000]FIRE MASTERY[-]",,,,,
-perkSorceryFireMasteryRank1Desc,progression,Perk,New,"Take your first steps to becoming a FIRE SORCERER by learning [970000]TIER 1[-] FIRE SPELLCRAFTING, [970000]FIRE CONJURE[-] crafting and unlocking [970000]FIRE SPELLCAST[-].",,,,,
-perkSorceryFireMasteryRank2Desc,progression,Perk,New,"Learn [970000]TIER 2[-] Fire Spellcrafting. You can now [970000]ALTER[-] FIRE SPELLS. You cast Fire Spells [970000]10%[-] faster. Awaken [42c234]FIRE 2[-] ESSENCE with a chance to harvest.\nYou have learned how to craft a [970000]FIRE CORE[-].",,,,,
-perkSorceryFireMasteryRank3Desc,progression,Perk,New,"Learn [970000]TIER 3[-] Fire Spellcrafting. You can now make [970000]TWO[-] ALTERATIONS to FIRE SPELLS. You cast Fire Spells [970000]15%[-] faster.\nAwaken [315dce]FIRE 3[-] ESSENCE with a chance to harvest.",,,,,
-perkSorceryFireMasteryRank4Desc,progression,Perk,New,"Learn [970000]TIER 4[-] Fire Spellcrafting. You can now make [970000]THREE[-] ALTERATIONS to FIRE SPELLS. You cast Fire Spells [970000]20%[-] faster.\nAwaken [a42acc]FIRE 4[-] ESSENCE with a chance to harvest.",,,,,
-perkSorceryFireMasteryRank5Desc,progression,Perk,New,"You are now a [970000]MASTER FIRE SORCERER[-] and have unlocked [970000]TIER 5[-] Fire Spellcrafting along with the ability to make [970000]FOUR[-] ALTERATIONS to FIRE SPELLS. You cast Fire Spells [970000]25%[-] faster and can now perform [970000]FIRE RITUALS[-].\nAwaken [bf0000]FIRE 5[-] ESSENCE with a chance to harvest.",,,,,
+perkSorceryFireMasteryRank1Desc,progression,Perk,New,"Take your first steps to becoming a FIRE SORCERER by learning [A2A41B]TIER 1[-] FIRE SPELLCRAFTING, [970000]FIRE CONJURE[-] crafting and unlocking [970000]FIRE SPELLCAST[-].",,,,,
+perkSorceryFireMasteryRank2Desc,progression,Perk,New,"Learn [42c234]TIER 2[-] Fire Spellcrafting. You can now [970000]ALTER[-] FIRE SPELLS. You cast Fire Spells [970000]10%[-] faster. Awaken [42c234]FIRE 2[-] ESSENCE with a chance to harvest.\nYou have learned how to craft a [970000]FIRE CORE[-].",,,,,
+perkSorceryFireMasteryRank3Desc,progression,Perk,New,"Learn [315dce]TIER 3[-] Fire Spellcrafting. You can now make [970000]TWO[-] ALTERATIONS to FIRE SPELLS. You cast Fire Spells [970000]15%[-] faster.\nAwaken [315dce]FIRE 3[-] ESSENCE with a chance to harvest.",,,,,
+perkSorceryFireMasteryRank4Desc,progression,Perk,New,"Learn [a42acc]TIER 4[-] Fire Spellcrafting. You can now make [970000]THREE[-] ALTERATIONS to FIRE SPELLS. You cast Fire Spells [970000]20%[-] faster.\nAwaken [a42acc]FIRE 4[-] ESSENCE with a chance to harvest.",,,,,
+perkSorceryFireMasteryRank5Desc,progression,Perk,New,"You are now a [970000]MASTER FIRE SORCERER[-] and have unlocked [bf0000]TIER 5[-] Fire Spellcrafting along with the ability to make [970000]FOUR[-] ALTERATIONS to FIRE SPELLS. You cast Fire Spells [970000]25%[-] faster and can now perform [970000]FIRE RITUALS[-].\nAwaken [bf0000]FIRE 5[-] ESSENCE with a chance to harvest.",,,,,
 
 perkSorceryIceMasteryDesc,progression,Perk,New,"Train to become a [02599c]MASTER ICE SORCERER[-]. Slide deeper down the freezing path of [02599c]ICE SORCERY[-] to invoke, wield and unlock its coldest secrets. Embrace this raw destructive force to Iceburn your foes beyond the grave. [02599c]ICE SORCERERS[-] learn the secrets to awakening and harvesting even the most dormant of [02599c]ICE ESSENCE[-], fueling the creation of their devastating [02599c]ICE SPELLS[-].",,,,,
 perkSorceryIceMasteryName,progression,Perk,New,"[02599c]ICE MASTERY[-]",,,,,
-perkSorceryIceMasteryRank1Desc,progression,Perk,New,"Take your first steps to becoming an ICE SORCERER by learning [02599c]TIER 1[-] ICE SPELLCRAFTING, [02599c]ICE CONJURE[-] crafting and unlocking [02599c]ICE SPELLCAST[-].",,,,,
-perkSorceryIceMasteryRank2Desc,progression,Perk,New,"Learn [02599c]TIER 2[-] Ice Spellcrafting. You can now [02599c]ALTER[-] ICE SPELLS. You cast Ice Spells [02599c]10%[-] faster. Awaken [42c234]ICE 2[-] ESSENCE with a chance to harvest.\nYou have learned how to craft an [02599c]ICE CORE[-].",,,,,
-perkSorceryIceMasteryRank3Desc,progression,Perk,New,"Learn [02599c]TIER 3[-] Ice Spellcrafting. You can now make [02599c]TWO[-] ALTERATIONS to ICE SPELLS. You cast Ice Spells [02599c]15%[-] faster.\nAwaken [315dce]ICE 3[-] ESSENCE with a chance to harvest.",,,,,
-perkSorceryIceMasteryRank4Desc,progression,Perk,New,"Learn [02599c]TIER 4[-] Ice Spellcrafting. You can now make [02599c]THREE[-] ALTERATIONS to ICE SPELLS. You cast Ice Spells [02599c]20%[-] faster.\nAwaken [a42acc]ICE 4[-] ESSENCE with a chance to harvest.",,,,,
-perkSorceryIceMasteryRank5Desc,progression,Perk,New,"You are now an [02599c]MASTER ICE SORCERER[-] and have unlocked [02599c]TIER 5[-] Ice Spellcrafting along with the ability to make [02599c]FOUR[-] ALTERATIONS to ICE SPELLS. You cast Ice Spells [02599c]25%[-] faster and can now perform [02599c]ICE RITUALS[-].\nAwaken [bf0000]ICE 5[-] ESSENCE with a chance to harvest.",,,,,
+perkSorceryIceMasteryRank1Desc,progression,Perk,New,"Take your first steps to becoming an ICE SORCERER by learning [A2A41B]TIER 1[-] ICE SPELLCRAFTING, [02599c]ICE CONJURE[-] crafting and unlocking [02599c]ICE SPELLCAST[-].",,,,,
+perkSorceryIceMasteryRank2Desc,progression,Perk,New,"Learn [42c234]TIER 2[-] Ice Spellcrafting. You can now [02599c]ALTER[-] ICE SPELLS. You cast Ice Spells [02599c]10%[-] faster. Awaken [42c234]ICE 2[-] ESSENCE with a chance to harvest.\nYou have learned how to craft an [02599c]ICE CORE[-].",,,,,
+perkSorceryIceMasteryRank3Desc,progression,Perk,New,"Learn [315dce]TIER 3[-] Ice Spellcrafting. You can now make [02599c]TWO[-] ALTERATIONS to ICE SPELLS. You cast Ice Spells [02599c]15%[-] faster.\nAwaken [315dce]ICE 3[-] ESSENCE with a chance to harvest.",,,,,
+perkSorceryIceMasteryRank4Desc,progression,Perk,New,"Learn [a42acc]TIER 4[-] Ice Spellcrafting. You can now make [02599c]THREE[-] ALTERATIONS to ICE SPELLS. You cast Ice Spells [02599c]20%[-] faster.\nAwaken [a42acc]ICE 4[-] ESSENCE with a chance to harvest.",,,,,
+perkSorceryIceMasteryRank5Desc,progression,Perk,New,"You are now an [02599c]MASTER ICE SORCERER[-] and have unlocked [bf0000]TIER 5[-] Ice Spellcrafting along with the ability to make [02599c]FOUR[-] ALTERATIONS to ICE SPELLS. You cast Ice Spells [02599c]25%[-] faster and can now perform [02599c]ICE RITUALS[-].\nAwaken [bf0000]ICE 5[-] ESSENCE with a chance to harvest.",,,,,
 
 perkSorceryLightningMasteryDesc,progression,Perk,New,"Train to become a [5c009d]MASTER LIGHTNING SORCERER[-]. Zap down the electrifying path of [5c009d]LIGHTNING SORCERY[-] to invoke and wield its shocking secrets. Embrace this destructive force of nature to shock and awe your foes to an eternal grave. [5c009d]LIGHTNING SORCERERS[-] learn the secrets to awakening and harvesting even the most dormant of [5c009d]LIGHTNING ESSENCE[-], fueling the creation of their devastating [5c009d]LIGHTNING SPELLS[-].",,,,,
 perkSorceryLightningMasteryName,progression,Perk,New,"[5c009d]LIGHTNING MASTERY[-]",,,,,
-perkSorceryLightningMasteryRank1Desc,progression,Perk,New,"Take your first steps to becoming a LIGHTNING SORCERER by learning [5c009d]TIER 1[-] LIGHTNING SPELLCRAFTING, [5c009d]LIGHTNING CONJURE[-] crafting and unlocking [5c009d]LIGHTNING SPELLCAST[-].",,,,,
-perkSorceryLightningMasteryRank2Desc,progression,Perk,New,"Learn [5c009d]TIER 2[-] Lightning Spellcrafting. You can now [5c009d]ALTER[-] LIGHTNING SPELLS. You cast Lightning Spells [5c009d]10%[-] faster. Awaken [42c234]LIGHTNING 2[-] ESSENCE with a chance to harvest. You have learned how to craft a [5c009d]LIGHTNING CORE[-].",,,,,
-perkSorceryLightningMasteryRank3Desc,progression,Perk,New,"Learn [5c009d]TIER 3[-] Lightning Spellcrafting. You can now make [5c009d]TWO[-] ALTERATIONS to LIGHTNING SPELLS. You cast Lightning Spells [5c009d]15%[-] faster.\nAwaken [315dce]LIGHTNING 3[-] ESSENCE with a chance to harvest.",,,,,
-perkSorceryLightningMasteryRank4Desc,progression,Perk,New,"Learn [5c009d]TIER 4[-] Lightning Spellcrafting. You can now make [5c009d]THREE[-] ALTERATIONS to LIGHTNING SPELLS. You cast Lightning Spells [5c009d]20%[-] faster.\nAwaken [a42acc]LIGHTNING 4[-] ESSENCE with a chance to harvest.",,,,,
-perkSorceryLightningMasteryRank5Desc,progression,Perk,New,"You are now a [5c009d]MASTER LIGHTNING SORCERER[-] and have unlocked [5c009d]TIER 5[-] Lightning Spellcrafting along with the ability to make [5c009d]FOUR[-] ALTERATIONS to LIGHTNING SPELLS. You cast Lightning Spells [5c009d]25%[-] faster and can now perform [5c009d]LIGHTNING RITUALS[-].\nAwaken [bf0000]LIGHTNING 5[-] ESSENCE with a chance to harvest.",,,,,
+perkSorceryLightningMasteryRank1Desc,progression,Perk,New,"Take your first steps to becoming a LIGHTNING SORCERER by learning [A2A41B]TIER 1[-] LIGHTNING SPELLCRAFTING, [5c009d]LIGHTNING CONJURE[-] crafting and unlocking [5c009d]LIGHTNING SPELLCAST[-].",,,,,
+perkSorceryLightningMasteryRank2Desc,progression,Perk,New,"Learn [42c234]TIER 2[-] Lightning Spellcrafting. You can now [5c009d]ALTER[-] LIGHTNING SPELLS. You cast Lightning Spells [5c009d]10%[-] faster. Awaken [42c234]LIGHTNING 2[-] ESSENCE with a chance to harvest. You have learned how to craft a [5c009d]LIGHTNING CORE[-].",,,,,
+perkSorceryLightningMasteryRank3Desc,progression,Perk,New,"Learn [315dce]TIER 3[-] Lightning Spellcrafting. You can now make [5c009d]TWO[-] ALTERATIONS to LIGHTNING SPELLS. You cast Lightning Spells [5c009d]15%[-] faster.\nAwaken [315dce]LIGHTNING 3[-] ESSENCE with a chance to harvest.",,,,,
+perkSorceryLightningMasteryRank4Desc,progression,Perk,New,"Learn [a42acc]TIER 4[-] Lightning Spellcrafting. You can now make [5c009d]THREE[-] ALTERATIONS to LIGHTNING SPELLS. You cast Lightning Spells [5c009d]20%[-] faster.\nAwaken [a42acc]LIGHTNING 4[-] ESSENCE with a chance to harvest.",,,,,
+perkSorceryLightningMasteryRank5Desc,progression,Perk,New,"You are now a [5c009d]MASTER LIGHTNING SORCERER[-] and have unlocked [bf0000]TIER 5[-] Lightning Spellcrafting along with the ability to make [5c009d]FOUR[-] ALTERATIONS to LIGHTNING SPELLS. You cast Lightning Spells [5c009d]25%[-] faster and can now perform [5c009d]LIGHTNING RITUALS[-].\nAwaken [bf0000]LIGHTNING 5[-] ESSENCE with a chance to harvest.",,,,,
 
 perkSorceryRuneMasteryDesc,progression,Perk,New,"Unravel the secrets of runes to invoke and harness their transcendent power. Affixing Runes to Armor and Spellcasts is extremely powerful but cannot be performed by the mundane. Mastering Runes teaches you how to decipher the very runewords themselves, tremendously reducing the burden of harnessing their power.",,,,,
 perkSorceryRuneMasteryName,progression,Perk,New,"Rune Mastery",,,,,
@@ -258,7 +294,7 @@ perkSorcerySpellFireballRank5Desc,progression,Perk,New,"[970000]Fully Evolve[-] 
 perkSorcerySpellFirestormDesc,progression,Perk,New,"Master the [970000]FIRENADO SPELL[-] to transform it from a whirling inferno of destruction into a zombie locking death sentence. This Spell can Charge a single [970000]Fire Stack[-] and becomes deadlier with each [970000]Fire Stack[-] present on your victim.\n\n[970000]STACK CHARGE[-]: Hold [42c234]PRIMARY[-] Action Button\n\nRequires: [970000]FIRE MASTERY[-] Level 2.",,,,,
 perkSorcerySpellFirestormName,progression,Perk,New,"SPELL: [970000]FIRENADO[-]",,,,,
 perkSorcerySpellFirestormRank1Desc,progression,Perk,New,"Learn the devastating [970000]FIRENADO SPELL[-] to incinerate your enemies first class in a whirling inferno of destruction.",,,,,
-perkSorcerySpellFirestormRank2Desc,progression,Perk,New,"[970000]ENGULF[-]: Firenado occasionally engulfs nearby enemies in flame if they have one or more [970000]Fire Stacks[-].",,,,,
+perkSorcerySpellFirestormRank2Desc,progression,Perk,New,"[970000]ENGULF[-]: Firenado more frequently engulfs nearby foes with one or more [970000]Fire Stacks[-] in flame.",,,,,
 perkSorcerySpellFirestormRank3Desc,progression,Perk,New,"[970000]UNSTABLE[-]: Firenado becomes unstable consuming victim [970000]Fire Stacks[-] to bolster its destructive force even further.",,,,,
 perkSorcerySpellFirestormRank4Desc,progression,Perk,New,"[970000]CLONE[-]: Firenado occasionally spawns a lesser Firenado from victims with one or more [970000]Fire Stacks[-].",,,,,
 perkSorcerySpellFirestormRank5Desc,progression,Perk,New,"[970000]Fully Evolve[-] Firenado into a zombie consuming death trap.\nVictims find it near impossible to escape the vortex.\n[970000]Fire Stacks[-] greatly increase destructive force.",,,,, 
@@ -267,7 +303,7 @@ perkSorcerySpellFireMeteorDesc,progression,Perk,New,"Master the [970000]METEOR S
 perkSorcerySpellFireMeteorName,progression,Perk,New,"SPELL: [970000]METEOR[-]",,,,,
 perkSorcerySpellFireMeteorRank1Desc,progression,Perk,New,"Learn the devastating [970000]METEOR SPELL[-] obliterate your enemies with molten rocks from the very skies.",,,,,
 perkSorcerySpellFireMeteorRank2Desc,progression,Perk,New,"[970000]MOLTEN[-]: Meteor's core is molten severely burning foes with [970000]Stacks[-].",,,,,
-perkSorcerySpellFireMeteorRank3Desc,progression,Perk,New,"[970000]CRATER[-]: Meteor's impact becomes even more devastating always knocking down foes with [970000]Stacks[-].",,,,,
+perkSorcerySpellFireMeteorRank3Desc,progression,Perk,New,"[970000]CRATER[-]: Meteor's impact becomes even more devastating to foes with [970000]Stacks[-] and knocking them down longer.",,,,,
 perkSorcerySpellFireMeteorRank4Desc,progression,Perk,New,"[970000]SHOWER[-]: Meteor occasionally rains down fiery hell on nearby foes with [970000]Stacks[-].",,,,,
 perkSorcerySpellFireMeteorRank5Desc,progression,Perk,New,"[970000]HELLSTORM[-] Evolve Meteor into a molten storm of fiery hell.\n[970000]Fire Stacks[-] greatly increase destructive force.",,,,, 
  
@@ -309,15 +345,15 @@ perkSorcerySpellcastLightningDesc,progression,Perk,New,"Master Sorcery to learn 
 perkSorcerySpellcastLightningName,progression,Perk,New,"[5c009d]LIGHTNING SPELLCAST[-]",,,,,
 perkSorcerySpellcastLightningRank1Desc,progression,Perk,New,"Learn the secrets to crafting a [5c009d]LIGHTNING SPELLCAST[-]. \nA Lightning Spellcast is used to cast [5c009d]LIGHTNING SPELLS[-].",,,,,
 perkSorcerySpellcastLightningRank2Desc,progression,Perk,New,"[5c009d]LIGHTNING STRIKE[-]: You occasionally command Lightning Bolts from the sky to assault your foes on Spellcasting.\nThis is a [42c234]PRIMARY[-] Action ability.",,,,,
-perkSorcerySpellcastLightningRank3Desc,progression,Perk,New,"[5c009d]TELEPORT[-]: Electrify the air to open a rift and instantaneously travel through to the other side.\nThis is a [315dce]SECONDARY[-] Action ability.",,,,,
+perkSorcerySpellcastLightningRank3Desc,progression,Perk,New,"[5c009d]TELEPORT[-]: Electrify the air to open a rift and instantaneously travel through to the other side.\nThis is a [315dce]SECONDARY[-] Action ability (Forward > Sprint).",,,,,
 perkSorcerySpellcastLightningRank4Desc,progression,Perk,New,"[5c009d]ENERGY SHIELD[-]: Conjure a damage absorbing shield. You expend Spirit to absorb damage while active.\nThis is a [a42acc]PASSIVE[-] and [315dce]SECONDARY[-] Action ability.",,,,,
 perkSorcerySpellcastLightningRank5Desc,progression,Perk,New,"You are now a [5c009d]Master of Lightning Spellcasts[-].\n[a42acc]EMPOWER[-]: Stacks from Lightning Spells now empower you.\n[bf0000]SHOCK N AWE[-]: Both [5c009d]TELEPORT[-] and [5c009d]ENERGY SHIELD[-] now Shockburn.",,,,,
  
 perkSorcerySpellLightningDesc,progression,Perk,New,"Master the [5c009d]LIGHTNING SPELL[-] to transform it from a primal zap into a Deadly Force of Nature that'll Shock and awe your foes with stunning force. This Spell is excellent at Charging [5c009d]Lightning Stacks[-] and should be used to maximize the damage and effects of all [5c009d]Lightning Spells[-].\n\n[5c009d]STACK CHARGE[-]: Hold [42c234]PRIMARY[-] Action Button\n\nRequires: [5c009d]Lightning Mastery[-] Level 1.",,,,,
 perkSorcerySpellLightningName,progression,Perk,New,"SPELL: [5c009d]LIGHTNING[-]",,,,,
 perkSorcerySpellLightningRank1Desc,progression,Perk,New,"Learn the primal [5c009d]LIGHTNING SPELL[-] to Electrocute your foes with stunning bolts of Lightning while leaving them Shockburned.",,,,,
-perkSorcerySpellLightningRank2Desc,progression,Perk,New,"[5c009d]ELECTROCUTE[-]: Victims with [5c009d]Stacks[-] have a chance to be Electrocuted amplifying their Shockburn.",,,,,
-perkSorcerySpellLightningRank3Desc,progression,Perk,New,"[5c009d]DEBILITATE[-]: Lightning occasionally consumes [5c009d]Stacks[-] to incapacitate and greatly weaken your foes.",,,,,
+perkSorcerySpellLightningRank2Desc,progression,Perk,New,"[5c009d]ELECTROCUTE[-]: Victims with [5c009d]Stacks[-] have a greater chance to be Electrocuted amplifying their Shockburn.",,,,,
+perkSorcerySpellLightningRank3Desc,progression,Perk,New,"[5c009d]DEBILITATE[-]: Lightning frequently consumes [5c009d]Stacks[-] to incapacitate and greatly weaken your foes.",,,,,
 perkSorcerySpellLightningRank4Desc,progression,Perk,New,"[5c009d]ARC[-]: Lightning Arcs to additional nearby foes while Shockburning and applying [5c009d]Stacks[-] to all.",,,,,
 perkSorcerySpellLightningRank5Desc,progression,Perk,New,"[5c009d]Fully Evolve[-] Lightning into a Deadly Force of Nature. [5c009d]Stacks[-] no longer expire on your victims but instead greatly increase destructive force.",,,,,
 
@@ -332,7 +368,7 @@ perkSorcerySpellLightningNovaRank5Desc,progression,Perk,New,"[5c009d]Fully Evolv
 perkSorcerySpellLightningStormDesc,progression,Perk,New,"Master Sorcery to learn the art of invoking the elements and becoming a devastating sorcerer. The rising dead were just the start of aftermath anomalies...\n\nRequires: [5c009d]Lightning Mastery[-] Level 3.",,,,,
 perkSorcerySpellLightningStormName,progression,Perk,New,"SPELL: [5c009d]LIGHTNING STORM[-]",,,,,
 perkSorcerySpellLightningStormRank1Desc,progression,Perk,New,"Learn the catastrophic [5c009d]LIGHTNING STORM SPELL[-] to command disastrous storms of nature capable of Electrocuting and Shockburning your foes amass. ",,,,,
-perkSorcerySpellLightningStormRank2Desc,progression,Perk,New,"[5c009d]ELECTROCUTE[-]: Victims with [5c009d]Stacks[-] have a chance to be Electrocuted amplifying their Shockburn.",,,,,
+perkSorcerySpellLightningStormRank2Desc,progression,Perk,New,"[5c009d]ELECTROCUTE[-]: Victims with [5c009d]Stacks[-] have a greater chance to be Electrocuted amplifying their Shockburn.",,,,,
 perkSorcerySpellLightningStormRank3Desc,progression,Perk,New,"[5c009d]DEBILITATE[-]: Victims caught in the storm with [5c009d]Stacks[-] can be greatly weakened and incapacitated.",,,,,
 perkSorcerySpellLightningStormRank4Desc,progression,Perk,New,"[5c009d]PERFECT STORM[-]: The odds of Electrocution and Debilitation become greater. Victims are prone to devastating Lightning Strikes while caught in the storm.",,,,,
 perkSorcerySpellLightningStormRank5Desc,progression,Perk,New,"[5c009d]Fully Evolve[-] Lightning Storm into a Category 6 monstrosity.\n[5c009d]Stacks[-] greatly increase the storm's destructive force.",,,,,
@@ -387,6 +423,11 @@ reqSorceryLightningMasteryLevel03,progression,Perk,New,"[5c009d]Lightning Master
 reqSorceryLightningMasteryLevel04,progression,Perk,New,"[5c009d]Lightning Mastery[-] Level 4",,,,,
 reqSorceryLightningMasteryLevel05,progression,Perk,New,"[5c009d]Lightning Mastery[-] Level 5",,,,,
  
+reqSorcerySupportLevel00,progression,Perk,New,"[9b874d]BECOME A SUPPORTER[-]: www.SorceryMod.com",,,,,
+reqSorcerySupportLevel01,progression,Perk,New,"[056900]NOBLE[-]: www.SorceryMod.com",,,,,
+reqSorcerySupportLevel02,progression,Perk,New,"[0036b8]LORD[-]: www.SorceryMod.com",,,,,
+reqSorcerySupportLevel03,progression,Perk,New,"[6800ff]ROYAL[-]: www.SorceryMod.com",,,,,
+reqSorcerySupportLevel04,progression,Perk,New,"[bf0000]COUNCIL[-]: www.SorceryMod.com",,,,,
  
 questMasterSorcery,items,"Sorcery Quest",New,"This is a Sorcery Quest Item. Read it to initiate a Sorcerer Quest.",,,,,
 qs_SorceryIntro,items,"Sorcery Quest",KgNone,"Sorcery, The Awakening",,,,,
@@ -575,11 +616,19 @@ runeGeneral_lockshatter3,item_modifiers,mod,New,"[315dce]RUNE[-]: Lock Shatter I
 runeGeneral_lockshatter4,item_modifiers,mod,New,"[a42acc]RUNE[-]: Lock Shatter IV",,,,,
 runeGeneral_lockshatter5,item_modifiers,mod,New,"[bf0000]RUNE[-]: Lock Shatter V",,,,,
 
+runeUnique_altinstouchDesc,item_modifiers,mod,New,"Forged with the magical might of Altin himself, this Runeword possess the very power of elements. Imbued with Altin's will, any [Weapon] can sustain the power of this Rune.\n\n[9b874d]Altin's Touch[-]: Chance to cast a [970000]Fire[-], [02599c]Ice[-] or [5c009d]Lightning[-] Spell on hit.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
+runeUnique_altinstouch,item_modifiers,mod,New,"[9b874d]RUNE[-]: Altin's Touch",,,,, 
 
 buffSorceryIntroDesc,buffs,Buff,New,"Chosen by The Elders to perform impossible feats, you've received their blessing to aid your ascension. Make haste to prove yourself worthy, as this blessing won't last forever:\n\n[970000]FIRE ESSENCE[-] Harvesting is greatly increased\n\n**Awaken [970000]FIRE ESSENCE[-] through [Essence Mastery], only then will you find [970000]FIRE ESSENCE[-] abundant within [970000]The Burnt Forest Trees[-], [970000]Oak Trees[-], [970000]Coal Ore[-] and [970000]Oil Shale[-].\n\nGood luck, young Sorcerer... you're gonna need it to survive what's to come.  -Unknown",,,,,
 buffSorceryIntroName,buffs,Buff,New,"Blessed by The Elders",,,,,
 buffSorceryIntroTooltip,buffs,Buff,New,"[970000]FIRE ESSENCE[-] Harvesting is greatly increased",,,,, 
 
+sorceryPerkSupportBronze,items,Book,New,"[9b874d]SORCERY KEY[-]: Noble Treasury Access",,,,,
+sorceryPerkSupportBronzeDesc,items,Book,New,"[056900]NOBLE[-]: You are a worthy Noble supporter and wish to claim that which is rightfully yours!\n\n[9b874d]BECOME A SUPPORTER[-]: [U]www.SorceryMod.com[/U]\nPatrons of Sorcery make ongoing development possible... thank you for your support!",,,,,
+sorceryPerkSupportSilver,items,Book,New,"[9b874d]SORCERY KEY[-]: Lord Treasury Access",,,,,
+sorceryPerkSupportSilverDesc,items,Book,New,"[0036b8]LORD[-]: You are a worthy Lord supporter and wish to claim that which is rightfully yours!\n\n[9b874d]BECOME A SUPPORTER[-]: [U]www.SorceryMod.com[/U]\nPatrons of Sorcery make ongoing development possible... thank you for your support!",,,,,
+sorceryPerkSupportGold,items,Book,New,"[9b874d]SORCERY KEY[-]: Royal Treasury Access",,,,,
+sorceryPerkSupportGoldDesc,items,Book,New,"[6800ff]ROYAL[-]: You are a worthy Royal supporter and wish to claim that which is rightfully yours!\n\n[9b874d]BECOME A SUPPORTER[-]: [U]www.SorceryMod.com[/U]\nPatrons of Sorcery make ongoing development possible... thank you for your support!",,,,,
 
 SORCERY_END,,LOCALIZATION,,END,,,,,
 

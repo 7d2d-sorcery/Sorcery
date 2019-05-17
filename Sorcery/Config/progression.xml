@@ -82,6 +82,7 @@
 		<skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
 		<skill name="skillSorceryIceCrafting" parent="attSorcery" name_key="skillSorceryIceCraftingName" desc_key="skillSorceryIceCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
 		<skill name="skillSorceryLightningCrafting" parent="attSorcery" name_key="skillSorceryLightningCraftingName" desc_key="skillSorceryLightningCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+		<skill name="skillSorcerySupport" parent="attSorcery" name_key="skillSorcerySupportName" desc_key="skillSorcerySupportDesc" icon="ui_game_symbol_treasure"><effect_group/></skill>
 	</append>
 	
 	<!-- COMPATIBILITY PATCH: RAVENHEARST -->
@@ -92,6 +93,7 @@
 			<skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
 			<skill name="skillSorceryIceCrafting" parent="attSorcery" name_key="skillSorceryIceCraftingName" desc_key="skillSorceryIceCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
 			<skill name="skillSorceryLightningCrafting" parent="attSorcery" name_key="skillSorceryLightningCraftingName" desc_key="skillSorceryLightningCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+			<skill name="skillSorcerySupport" parent="attSorcery" name_key="skillSorcerySupportName" desc_key="skillSorcerySupportDesc" icon="ui_game_symbol_treasure"><effect_group/></skill>			
 		</skills>	
 	</insertAfter>	
 	
@@ -722,6 +724,24 @@
 				<effect_description level="5" desc_key="perkSorcerySpellLightningStormRank5Desc"/>
 			</effect_group>
 		</perk>		
+				
+				
+		<!-- SORCERY SUPPORT -->
+		<perk name="perkSorcerySupport" parent="skillSorcerySupport" name_key="perkSorcerySupportName" desc_key="perkSorcerySupportDesc" icon="ui_game_symbol_perk" min_level="0" max_level="5" base_skill_point_cost="0" cost_multiplier_per_level="0" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorcerySupportLevel00"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorcerySupportLevel01"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorcerySupportLevel02"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorcerySupportLevel03"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorcerySupportLevel04"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="runeUnique_altinstouch"/>
+				<effect_description level="1" desc_key="perkSorcerySupportRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorcerySupportRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorcerySupportRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorcerySupportRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorcerySupportRank5Desc"/>
+			</effect_group>
+		</perk>					
 				
 	</append>	
 

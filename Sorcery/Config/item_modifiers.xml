@@ -2431,5 +2431,53 @@
 		</item_modifier>
 		
 		
+		
+		
+		
+	<!--____________ RUNES: GENERAL / SUPPORTER ____________-->
+		<item_modifier name="runeUnique_altinstouch" installable_tags="weapon,spellcast" modifier_tags="runeUnique_altinstouch" type="attachment" rarity="0.001">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<!-- <property name="Material" value="fire"/>
+			<property name="Weight" value="16"/> -->
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="3900"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="DescriptionKey" value="runeUnique_altinstouchDesc"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".2">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".16">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".12">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".08">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: UNIQUE" tiered="false">
+						<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="self" buff="buffRuneUnique_altinstouch" />
+				</effect_group>
+		</item_modifier>		
+		
+		
+		
+		
+		
+		
 	</append>
 </Sorcery>
