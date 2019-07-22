@@ -127,37 +127,368 @@
 		</material>	
 	
 	
-	<!--___________________________ SORCERY ARMOR ___________________________-->	
-		<material id="MclothFire">
-			<property name="damage_category" value="cloth"/>
-			<property name="surface_category" value="cloth"/>
-			<property name="forge_category" value="fire"/>
+	<!--___________________________ SORCERY MATERIAL: EXTRACT ___________________________-->	
+		<!-- Extract: Omni -->
+		<material id="MsorceryExtractOmni">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractOmni"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="120"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="500"/>
 			<property name="Experience" value="4"/>
 		</material>
-		<material id="MclothFire2">
-			<property name="damage_category" value="cloth"/>
-			<property name="surface_category" value="cloth"/>
-			<property name="forge_category" value="fire2"/>
-			<property name="Experience" value="5"/>
+		<material id="MsorceryExtractOmni2">
+			<property name="Extends" value="MsorceryExtractOmni"/>
+			<property name="forge_category" value="resourceExtractOmni2"/>
 		</material>
-		<material id="MclothFire3">
-			<property name="damage_category" value="cloth"/>
-			<property name="surface_category" value="cloth"/>
-			<property name="forge_category" value="fire3"/>
-			<property name="Experience" value="6"/>
+		<material id="MsorceryExtractOmni3">
+			<property name="Extends" value="MsorceryExtractOmni"/>
+			<property name="forge_category" value="resourceExtractOmni3"/>
 		</material>
-		<material id="MclothFire4">
-			<property name="damage_category" value="cloth"/>
-			<property name="surface_category" value="cloth"/>
-			<property name="forge_category" value="fire4"/>
-			<property name="Experience" value="7"/>
+		<material id="MsorceryExtractOmni4">
+			<property name="Extends" value="MsorceryExtractOmni"/>
+			<property name="forge_category" value="resourceExtractOmni4"/>
 		</material>
-		<material id="MclothFire5">
+		<material id="MsorceryExtractOmni5">
+			<property name="Extends" value="MsorceryExtractOmni"/>
+			<property name="forge_category" value="resourceExtractOmni5"/>
+		</material>
+		<!-- Extract: Fire -->
+		<material id="MsorceryExtractFire">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractFire"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="120"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<material id="MsorceryExtractFire2">
+			<property name="Extends" value="MsorceryExtractFire"/>
+			<property name="forge_category" value="resourceExtractFire2"/>
+		</material>
+		<material id="MsorceryExtractFire3">
+			<property name="Extends" value="MsorceryExtractFire"/>
+			<property name="forge_category" value="resourceExtractFire3"/>
+		</material>
+		<material id="MsorceryExtractFire4">
+			<property name="Extends" value="MsorceryExtractFire"/>
+			<property name="forge_category" value="resourceExtractFire4"/>
+		</material>
+		<material id="MsorceryExtractFire5">
+			<property name="Extends" value="MsorceryExtractFire"/>
+			<property name="forge_category" value="resourceExtractFire5"/>
+		</material>
+		<!-- Extract: Ice -->
+		<material id="MsorceryExtractIce">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractIce"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="120"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<material id="MsorceryExtractIce2">
+			<property name="Extends" value="MsorceryExtractIce"/>
+			<property name="forge_category" value="resourceExtractIce2"/>
+		</material>
+		<material id="MsorceryExtractIce3">
+			<property name="Extends" value="MsorceryExtractIce"/>
+			<property name="forge_category" value="resourceExtractIce3"/>
+		</material>
+		<material id="MsorceryExtractIce4">
+			<property name="Extends" value="MsorceryExtractIce"/>
+			<property name="forge_category" value="resourceExtractIce4"/>
+		</material>
+		<material id="MsorceryExtractIce5">
+			<property name="Extends" value="MsorceryExtractIce"/>
+			<property name="forge_category" value="resourceExtractIce5"/>
+		</material>
+		<!-- Extract: Lightning -->
+		<material id="MsorceryExtractLightning">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractLightning"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="120"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<material id="MsorceryExtractLightning2">
+			<property name="Extends" value="MsorceryExtractLightning"/>
+			<property name="forge_category" value="resourceExtractLightning2"/>
+		</material>
+		<material id="MsorceryExtractLightning3">
+			<property name="Extends" value="MsorceryExtractLightning"/>
+			<property name="forge_category" value="resourceExtractLightning3"/>
+		</material>
+		<material id="MsorceryExtractLightning4">
+			<property name="Extends" value="MsorceryExtractLightning"/>
+			<property name="forge_category" value="resourceExtractLightning4"/>
+		</material>
+		<material id="MsorceryExtractLightning5">
+			<property name="Extends" value="MsorceryExtractLightning"/>
+			<property name="forge_category" value="resourceExtractLightning5"/>
+		</material>		
+		
+	<!--___________________________ SORCERY MATERIAL: POWDER ___________________________-->	
+		<!-- Powder: Arcane -->
+		<material id="MsorceryPowderArcane">
+			<property name="damage_category" value="earth"/>
+			<property name="surface_category" value="earth"/>
+			<property name="forge_category" value="resourcePowderArcane"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="sand"/>
+			<property name="fertile_level" value="1"/>
+			<property name="stability_glue" value="4"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<material id="MsorceryPowderArcane2">
+			<property name="Extends" value="MsorceryPowderArcane"/>
+			<property name="forge_category" value="resourcePowderArcane2"/>
+		</material>
+		<material id="MsorceryPowderArcane3">
+			<property name="Extends" value="MsorceryPowderArcane"/>
+			<property name="forge_category" value="resourcePowderArcane3"/>
+		</material>
+		<material id="MsorceryPowderArcane4">
+			<property name="Extends" value="MsorceryPowderArcane"/>
+			<property name="forge_category" value="resourcePowderArcane4"/>
+		</material>
+		<material id="MsorceryPowderArcane5">
+			<property name="Extends" value="MsorceryPowderArcane"/>
+			<property name="forge_category" value="resourcePowderArcane5"/>
+		</material>
+		<!-- Powder: Fire -->
+		<material id="MsorceryPowderFire">
+			<property name="damage_category" value="earth"/>
+			<property name="surface_category" value="earth"/>
+			<property name="forge_category" value="resourcePowderFire"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="sand"/>
+			<property name="fertile_level" value="1"/>
+			<property name="stability_glue" value="4"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<material id="MsorceryPowderFire2">
+			<property name="Extends" value="MsorceryPowderFire"/>
+			<property name="forge_category" value="resourcePowderFire2"/>
+		</material>
+		<material id="MsorceryPowderFire3">
+			<property name="Extends" value="MsorceryPowderFire"/>
+			<property name="forge_category" value="resourcePowderFire3"/>
+		</material>
+		<material id="MsorceryPowderFire4">
+			<property name="Extends" value="MsorceryPowderFire"/>
+			<property name="forge_category" value="resourcePowderFire4"/>
+		</material>
+		<material id="MsorceryPowderFire5">
+			<property name="Extends" value="MsorceryPowderFire"/>
+			<property name="forge_category" value="resourcePowderFire5"/>
+		</material>
+		<!-- Powder: Ice -->
+		<material id="MsorceryPowderIce">
+			<property name="damage_category" value="earth"/>
+			<property name="surface_category" value="earth"/>
+			<property name="forge_category" value="resourcePowderIce"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="sand"/>
+			<property name="fertile_level" value="1"/>
+			<property name="stability_glue" value="4"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<material id="MsorceryPowderIce2">
+			<property name="Extends" value="MsorceryPowderIce"/>
+			<property name="forge_category" value="resourcePowderIce2"/>
+		</material>
+		<material id="MsorceryPowderIce3">
+			<property name="Extends" value="MsorceryPowderIce"/>
+			<property name="forge_category" value="resourcePowderIce3"/>
+		</material>
+		<material id="MsorceryPowderIce4">
+			<property name="Extends" value="MsorceryPowderIce"/>
+			<property name="forge_category" value="resourcePowderIce4"/>
+		</material>
+		<material id="MsorceryPowderIce5">
+			<property name="Extends" value="MsorceryPowderIce"/>
+			<property name="forge_category" value="resourcePowderIce5"/>
+		</material>
+		<!-- Powder: Lightning -->
+		<material id="MsorceryPowderLightning">
+			<property name="damage_category" value="earth"/>
+			<property name="surface_category" value="earth"/>
+			<property name="forge_category" value="resourcePowderLightning"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="sand"/>
+			<property name="fertile_level" value="1"/>
+			<property name="stability_glue" value="4"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<material id="MsorceryPowderLightning2">
+			<property name="Extends" value="MsorceryPowderLightning"/>
+			<property name="forge_category" value="resourcePowderLightning2"/>
+		</material>
+		<material id="MsorceryPowderLightning3">
+			<property name="Extends" value="MsorceryPowderLightning"/>
+			<property name="forge_category" value="resourcePowderLightning3"/>
+		</material>
+		<material id="MsorceryPowderLightning4">
+			<property name="Extends" value="MsorceryPowderLightning"/>
+			<property name="forge_category" value="resourcePowderLightning4"/>
+		</material>
+		<material id="MsorceryPowderLightning5">
+			<property name="Extends" value="MsorceryPowderLightning"/>
+			<property name="forge_category" value="resourcePowderLightning5"/>
+		</material>
+		
+		
+	<!--___________________________ SORCERY MATERIAL: CLOTH ___________________________-->	
+		<!-- Cloth: Arcane -->
+		<material id="MsorceryClothArcane">
 			<property name="damage_category" value="cloth"/>
 			<property name="surface_category" value="cloth"/>
-			<property name="forge_category" value="fire4"/>
-			<property name="Experience" value="7"/>
+			<property name="forge_category" value="resourceThreadArcane"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.01"/>
+			<property name="stepsound" value="cloth"/>
+			<property name="lightopacity" value="4"/>
+			<property name="stability_glue" value="10"/>
+			<property name="Mass" type="int" value="5"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="MaxDamage" value="5"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<material id="MsorceryClothArcane2">
+			<property name="Extends" value="MsorceryClothArcane"/>
+			<property name="forge_category" value="resourceThreadArcane2"/>
+		</material>
+		<material id="MsorceryClothArcane3">
+			<property name="Extends" value="MsorceryClothArcane"/>
+			<property name="forge_category" value="resourceThreadArcane3"/>
+		</material>
+		<material id="MsorceryClothArcane4">
+			<property name="Extends" value="MsorceryClothArcane"/>
+			<property name="forge_category" value="resourceThreadArcane4"/>
+		</material>
+		<material id="MsorceryClothArcane5">
+			<property name="Extends" value="MsorceryClothArcane"/>
+			<property name="forge_category" value="resourceThreadArcane5"/>
+		</material>
+		<!-- Cloth: Fire -->
+		<material id="MsorceryClothFire">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="resourceThreadFire"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.01"/>
+			<property name="stepsound" value="cloth"/>
+			<property name="lightopacity" value="4"/>
+			<property name="stability_glue" value="10"/>
+			<property name="Mass" type="int" value="5"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="MaxDamage" value="5"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<material id="MsorceryClothFire2">
+			<property name="Extends" value="MsorceryClothFire"/>
+			<property name="forge_category" value="resourceThreadFire2"/>
+		</material>
+		<material id="MsorceryClothFire3">
+			<property name="Extends" value="MsorceryClothFire"/>
+			<property name="forge_category" value="resourceThreadFire3"/>
+		</material>
+		<material id="MsorceryClothFire4">
+			<property name="Extends" value="MsorceryClothFire"/>
+			<property name="forge_category" value="resourceThreadFire4"/>
+		</material>
+		<material id="MsorceryClothFire5">
+			<property name="Extends" value="MsorceryClothFire"/>
+			<property name="forge_category" value="resourceThreadFire5"/>
+		</material>		
+		<!-- Cloth: Ice -->
+		<material id="MsorceryClothIce">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="resourceThreadIce"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.01"/>
+			<property name="stepsound" value="cloth"/>
+			<property name="lightopacity" value="4"/>
+			<property name="stability_glue" value="10"/>
+			<property name="Mass" type="int" value="5"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="MaxDamage" value="5"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<material id="MsorceryClothIce2">
+			<property name="Extends" value="MsorceryClothIce"/>
+			<property name="forge_category" value="resourceThreadIce2"/>
+		</material>
+		<material id="MsorceryClothIce3">
+			<property name="Extends" value="MsorceryClothIce"/>
+			<property name="forge_category" value="resourceThreadIce3"/>
+		</material>
+		<material id="MsorceryClothIce4">
+			<property name="Extends" value="MsorceryClothIce"/>
+			<property name="forge_category" value="resourceThreadIce4"/>
+		</material>
+		<material id="MsorceryClothIce5">
+			<property name="Extends" value="MsorceryClothIce"/>
+			<property name="forge_category" value="resourceThreadIce5"/>
 		</material>	
+		<!-- Cloth: Lightning -->
+		<material id="MsorceryClothLightning">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="resourceThreadLightning"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.01"/>
+			<property name="stepsound" value="cloth"/>
+			<property name="lightopacity" value="4"/>
+			<property name="stability_glue" value="10"/>
+			<property name="Mass" type="int" value="5"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="MaxDamage" value="5"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<material id="MsorceryClothLightning2">
+			<property name="Extends" value="MsorceryClothLightning"/>
+			<property name="forge_category" value="resourceThreadLightning2"/>
+		</material>
+		<material id="MsorceryClothLightning3">
+			<property name="Extends" value="MsorceryClothLightning"/>
+			<property name="forge_category" value="resourceThreadLightning3"/>
+		</material>
+		<material id="MsorceryClothLightning4">
+			<property name="Extends" value="MsorceryClothLightning"/>
+			<property name="forge_category" value="resourceThreadLightning4"/>
+		</material>
+		<material id="MsorceryClothLightning5">
+			<property name="Extends" value="MsorceryClothLightning"/>
+			<property name="forge_category" value="resourceThreadLightning5"/>
+		</material>
 
 	<!--___________________________ SORCERY MATERIAL ___________________________-->
 		<material id="Mmetal_hard_locked_sorcery">

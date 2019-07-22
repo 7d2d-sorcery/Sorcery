@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Servers>
-	<ServerGroup Name="Sorcery" Logo="https://i.postimg.cc/s221WC7s/sorcery-logo-splash.png" Description="Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.">
-			<Server Name="Sorcery" Logo="https://i.postimg.cc/s221WC7s/sorcery-logo-splash.png">
-			<Description>Sorcery v0.76 - Lightning + Balance!
+	<ServerGroup Name="Sorcery" Logo="https://i.postimg.cc/J4jwL4Ny/sorcery-logo-v08-splash.png" Description="Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.">
+			<Server Name="Sorcery" Logo="https://i.postimg.cc/J4jwL4Ny/sorcery-logo-v08-splash.png">
+			<Description>Sorcery v0.8 - Alchemy + Mastery Overhaul!
 http://www.SorceryMod.com
 
 Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.
 - Unique animations, art, effects and sounds for spells and items
 - Pure Spellcaster playstyle
 - Spellcrafting: 5 unique abilities for each unique spell
-- Armor Crafting: Craft Fire and Ice Armor via Conjure
-- Rune Crafting: Craft Fire and Ice Rune Mods via Conjure
+- Spell Arrows + Bolts
+- Spell Bombs
+- Alchemy + Potion Crafting
+- Armor Crafting
+- Rune Crafting
 - Spell Weapon Abilities: primary, secondary, passive, charge
-- Sorcery Crafting Conjures: feed rituals with Essence
 - New Attribute: Sorcery
 - New Dual Skill Tree and Perks
 - Fire, Ice, Lightning Mastery: learn how to craft and augment spells
 - Spellcast Mastery: primary, secondary, passive and charge abilities
 - Rune Mastery: harness the power of Runes to augment your spells
+- Alchemy Mastery: craft potions, elixirs and bombs
 - Essence Mastery: demystify and awaken the elemental essence of the world to extract and craft spells and weapons with essence.
 - Fire, Ice, Lightning Spells: upgrade each spell with five alterations
 
-Latest Version: 0.76 - Lightning + Balance!
+Latest Public Version: Sorcery v0.8 - Alchemy + Mastery Overhaul!
 HOME: http://www.SorceryMod.com
 DISCORD: http://discord.SorceryMod.com
 FORUM: http://forum.SorceryMod.com
 WIKI: http://wiki.SorceryMod.com
 
-**COMPATIBLE** DARKNESS FALLS (2.1+): Sorcery Modlet version is fully compatible with Darkness Falls (17.3 / latest). Under Darkness Falls Install: Manage Modlets &gt; Download Sorcery &gt; Ready to play!
-
-**COMPATIBLE** RAVENHEARST (5.1+): Sorcery Modlet version is fully compatible with Ravenhearst (5.1). Under Ravenhearst Install: Manage Modlets &gt; Download Sorcery &gt; Open and Copy Sorcery Localization.txt contents and paste the copied Localization text into the Ravenhearst Localization.txt (at the very end, new line) &gt; Ready to play!  More Info: https://7daystodie.com/forums/showthread.php?109145-Sorcery&amp;p=963640&amp;viewfull=1#post963640
+COMPATIBLE: DARKNESS FALLS (2.2+): Sorcery Modlet version is fully compatible with Darkness Falls. Under Darkness Falls Install: Manage Modlets &gt; Download Sorcery &gt; Ready to play!
+COMPATIBLE: RAVENHEARST (5.4+): Sorcery Modlet version is fully compatible with Ravenhearst. Under Ravenhearst Install: Manage Modlets &gt; Download Sorcery &gt; Ready to play!
 
 **NOTE** This version of Sorcery is NOT EAC safe; You must play with EAC disabled. The pure XML Modlet version of Sorcery may be used with EAC enabled: https://7daystodie.com/forums/showthread.php?109145-Sorcery
 			</Description>

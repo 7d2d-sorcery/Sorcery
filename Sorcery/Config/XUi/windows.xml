@@ -30,8 +30,9 @@
 		
 
 	<!-- COMPATIBILITY -->
-	<!-- <set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='8']/@cols">9</set> -->
-	<set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='8' or @SAFE_TO_IGNORE='Compatibility Patch.']/@cols">9</set>
+	<!-- <set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='8' or @SAFE_TO_IGNORE='Compatibility Patch']/@cols">9</set> -->
+	<!-- <set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='11' or @SAFE_TO_IGNORE='Compatibility Patch: RH 5.4']/@cols">12</set> -->
+	<set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' or @SAFE_TO_IGNORE='Compatibility Patch: RH 5.4']/@cols">20</set>
 		
 	<append xpath="/windows">
 
@@ -48,6 +49,27 @@
 		<!-- <window name="SorceryTrackerRunes" pos="-255, -88" width="300" height="{trackerheight}" anchor="RightTop" visible="{showquest}" depth="-20" >
 			<texture name="SorceryTrackerRunes" pos="8, -67" width="240" height="27" texture="@modfolder:Textures/SorceryTrackerRunes.png" />
 		</window>	 -->
+
+    <!-- UI: Pause Menu - OVERRIDE -->
+    <window name="SorceryingameMenu" anchor="CenterCenter" pos="-125,200" width="250" height="200" controller="InGameMenuWindow" cursor_area="true">
+		<label name="SorceryVersion" pos="783, 288" depth="0" size="250,33" text="v0.804-Alchemy" font_size="30" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
+        <texture name="SorceryingameMenuLogo" depth="0" size="668,441" texture="@modfolder:Textures/SorceryLogoMenu.png" pos="-209,190" />
+		<texture name="SorceryingameMenuChestNoble" depth="0" size="240,243" texture="@modfolder:Textures/SorceryingameMenuChestNoble.png" pos="-295,-270" />
+		<texture name="SorceryingameMenuChestLord" depth="0" size="260,263" texture="@modfolder:Textures/SorceryingameMenuChestLord.png" pos="-780,-290" />
+		<texture name="SorceryingameMenuChestRoyal" depth="0" size="300,303" texture="@modfolder:Textures/SorceryingameMenuChestRoyal.png" pos="-543,-390" />
+		<texture name="SorceryingameMenuKeyNoble" depth="0" size="169,400" pos="855,-320" />
+		<texture name="SorceryingameMenuKeyLord" depth="0" size="169,400" pos="686,-320" />
+		<texture name="SorceryingameMenuKeyRoyal" depth="0" size="169,400" pos="517,-320" />
+        <grid name="buttons" pos="0, -290" cols="1" width="250" cell_width="250" cell_height="48" arrangement="vertical" repeat_content="false" >
+            <simplebutton name="btnInvite" depth="3" width="250" height="38" caption_key="xuiMenuInvite" font_size="32" />
+            <simplebutton name="btnOptions" depth="3" width="250" height="38" caption_key="xuiMenuOptions" font_size="32" />
+            <simplebutton name="btnHelp" depth="3" width="250" height="38" caption_key="xuiMenuHelp" font_size="32" />
+            <simplebutton name="btnSave" depth="3" width="250" height="38" caption_key="xuiMenuSave" font_size="32" />
+            <simplebutton name="btnExit" depth="3" width="250" height="38" caption_key="xuiMenuExit" font_size="32" />
+            <simplebutton name="btnExportPrefab" depth="3" width="250" height="38" caption_key="xuiMenuExportPrefab" font_size="32" />
+        </grid>
+		<texture name="SorceryingameMenuMessageSupport" depth="0" size="740,147" texture="@modfolder:Textures/SorceryingameMenuMessageSupport.png" pos="-245,-565" />
+    </window>
 		
 <!--___________________________ FIRE CONJURE ___________________________-->	
 		<!-- CRAFTING -->
@@ -166,8 +188,7 @@
 
 			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true" on_press="true">
 
-				<grid name="inventory" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false"
-				required_tools="toolFireCore,toolLoomFire,toolHammerFire" required_tools_only="true">
+				<grid name="inventory" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false" required_tools="toolFireCore,toolLoomFire,toolHammerFire" required_tools_only="true">
 					<required_item_stack name="0"/>
 				</grid>
 			</rect>
@@ -213,8 +234,7 @@
 	
 	
 		<!-- INPUT -->
-		<window name="windowConjureFireInput" width="228" height="204" panel="Right"
-			controller="WorkstationMaterialInputWindow" materials_accepted="fire,fire2,fire3,fire4,fire5" valid_materials_color="[green]" invalid_materials_color="[red]" cursor_area="true" >
+		<window name="windowConjureFireInput" width="228" height="204" panel="Right" controller="WorkstationMaterialInputWindow" materials_accepted="fire,fire2,fire3,fire4,fire5" valid_materials_color="[green]" invalid_materials_color="[red]" cursor_area="true" >
 
 			<panel style="header.panel">
 				<sprite style="header.icon" sprite="ui_game_symbol_fire"/>
@@ -630,6 +650,40 @@
 		</window>	
 
 
+<!--___________________________ ALCHEMY STATION ___________________________-->
+		<window name="windowToolsAlchemy" width="228" height="121" panel="Right" cursor_area="true" >
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_chemistry"/>
+				<label style="header.name" text="TOOLS" text_key="xuiTools" />
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true" on_press="true">
+
+				<grid name="inventory" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false"
+				required_tools="toolFireCore,toolIceCore,toolLightningCore" required_tools_only="true">
+					<required_item_stack name="0"/>
+				</grid>
+			</rect>
+
+		</window>
+
+
+<!--___________________________ LOOM SPINNING WHEEL ___________________________-->
+		<window name="windowToolsArcaneWheel" width="228" height="121" panel="Right" cursor_area="true" >
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_game_symbol_tailoring"/>
+				<label style="header.name" text="TOOLS" text_key="xuiTools" />
+			</panel>
+
+			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true" on_press="true">
+
+				<grid name="inventory" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false"
+				required_tools="toolLoomFire,toolLoomIce,toolLoomLightning" required_tools_only="true">
+					<required_item_stack name="0"/>
+				</grid>
+			</rect>
+
+		</window>
 
 		
 	</append>

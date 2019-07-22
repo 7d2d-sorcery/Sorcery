@@ -29,26 +29,192 @@
 		__________________________________________________________________________________-->
 	
 	<!-- PLAYER -->
-	<append xpath="/entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvival']/@value">,qs_SorceryIntro</append>
-	<append xpath="/entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvivalSP']/@value">,qs_SorceryIntro</append>
-	<append xpath="/entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvivalMP']/@value">,qs_SorceryIntro</append>
+	<append xpath="/entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvival']/@value">,qs_SorceryIntroNew</append>
+	<append xpath="/entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvivalSP']/@value">,qs_SorceryIntroNew</append>
+	<append xpath="/entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvivalMP']/@value">,qs_SorceryIntroNew</append>
 	
-	<!-- ANIMAL: STAG -->
-	<append xpath="/entity_classes/entity_class[@name='animalStag']">
-		<property name="Buffs" value="buffEntity_EssenceInfused"/>
-		<!-- <drop event="Harvest" name="resourceEssenceIce" count="3" prob="1" tag="essenceIceHarvest"/> -->
+	<!-- VEHICLES: Immunity -->
+	<append xpath="/entity_classes/entity_class[contains(@name, 'vehicle')]">
+		<property name="Buffs" value="buffSorceryImmunity_All"/>
 	</append> 
 
+	<!-- TRADERS: Immunity -->
+	<append xpath="/entity_classes/entity_class[@name='npcTraderTemplate']">
+		<property name="Buffs" value="buffSorceryImmunity_All"/>
+	</append>
+	
+	<!-- TIMID ANIMALS -->
+	<append xpath="/entity_classes/entity_class[@name='animalTemplateTimid']">
+		<property name="Buffs" value="buffEntity_SorceryManage"/>
+	</append> 	
+	
+	<!-- HOSTILE ANIMALS -->
+	<append xpath="/entity_classes/entity_class[@name='animalTemplateHostile']">
+		<property name="Buffs" value="buffEntity_SorceryManage"/>
+	</append> 	
+	
 	<!-- MALE ZOMBIE BASE -->
 	<append xpath="/entity_classes/entity_class[@name='zombieTemplateMale']">
-		<!-- <property name="HasDeathAnim" value="true"/>
-		<property name="CorpseBlock" value="goreBlockEssence"/>
-		<property name="CorpseBlockChance" value="1"/>
-		<property name="DeadBodyHitPoints" value="0"/>
-		<property name="TimeStayAfterDeath" value="15"/> -->
-		<property name="Buffs" value="buffEntity_EssenceInfused"/>
+		<property name="Buffs" value="buffEntity_SorceryManage"/>
 	</append> 
 	
+	
+<!-- ENTITIES -->
+	<append xpath="/entity_classes">
+		
+		<!-- AWAKENED -->
+		<!-- ZOMBIES -->
+		<entity_class name="sorcery_zombieBurnt_intro">
+			<property name="EntityType" value="Zombie"/> <!-- This one decides for scoring -->
+			<property name="Tags" value="entity,zombie,walker, feral"/>
+			<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
+			<property name="Mesh" value="Zombies/ZombieStandardBurntRagdoll"/>
 
+			<property name="AvatarController" value="AvatarZombie01Controller"/>
+			<property name="ModelType" value="Standard"/>
+			<property name="HasRagdoll" value="true"/>
+			<property name="Prefab" value="NPC"/>
+			<property name="Class" value="EntityZombie"/>
+			<property name="Parent" value="Enemies"/>
+			<property name="Mass" value="70"/>
+			<property name="Weight" value="30"/>
+			<property name="PhysicsBody" value="zombieStandard"/>
+			<property name="Faction" value="undead"/>
+			<property name="IsEnemyEntity" value="true"/>
+
+			<property name="AIPathCostScale" value=".15, .4"/>
+			<property name="AITask-1" value="BreakBlock"/>
+			<property name="AITask-2" value="DestroyArea"/>
+			<property name="AITask-3" value="Territorial"/>
+			<property name="AITask-4" value="ApproachDistraction"/>
+			<property name="AITask-5" value="ApproachAndAttackTarget" param1="EntityPlayer,0"/> <!-- class,maxChaseTime (return home) -->
+			<property name="AITask-6" value="ApproachSpot"/>
+			<property name="AITask-7" value="Look"/>
+			<property name="AITask-8" value="Wander"/>
+			<property name="AITarget-1" value="SetAsTargetIfHurt" param1="EntityPlayer"/>
+			<property name="AITarget-2" value="BlockingTargetTask"/>
+			<property name="AITarget-3" value="SetNearestCorpseAsTarget" param1="EntityPlayer"/>
+			<property name="AITarget-4" value="SetNearestEntityAsTarget" param1="EntityPlayer,0"/> <!-- class,distance (checked left to right, 0 dist uses entity default) -->
+
+			<property name="WalkType" value="7"/>
+			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
+			<property name="SoundRandomTime" value="60.0"/> <!-- It will play the roam every 60/30 seconds -->
+			<property name="SoundRandom" value="Enemies/Burnt_Zombie/zombieburntroam"/>
+			<property name="SoundAlertTime" value="25.0"/> <!-- It will play the roam every 25/12.5 seconds-->
+			<property name="SoundAlert" value="Enemies/Burnt_Zombie/zombieburntalert"/>
+			<property name="SoundSense" value="Enemies/Burnt_Zombie/zombieburntsense"/>
+			<property name="SoundHurt" value="Enemies/Burnt_Zombie/zombieburntpain"/>
+			<property name="SoundDeath" value="Enemies/Burnt_Zombie/zombieburntdeath"/>
+			<property name="SoundAttack" value="Enemies/Burnt_Zombie/zombieburntattack"/>
+			<property name="SoundSleeperSense" value="sleepersense"/>
+			<property name="SoundSleeperBackToSleep" value="sleeperbacktosleep"/>
+			<property name="SoundFootstepModifier" value="Enemies/Burnt_Zombie/zombieburntfootstep"/>
+
+			<property name="RootMotion" value="true"/>
+			<property name="HasDeathAnim" value="true"/>
+			<property name="ParticleOnDeath" value="blood_death"/>
+			<property name="SurfaceCategory" value="organic"/> <!-- determines the particle effect played on hit -->
+
+			<property name="DismemberMultiplierHead" value="1"/>
+			<property name="DismemberMultiplierArms" value="1"/>
+			<property name="DismemberMultiplierLegs" value="1"/>
+			<property name="LegCrawlerThreshold" value="0"/> <!-- at like .175 nearly every zombie knocked down from a leg hit turns into a crawler -->
+			<property name="LegCrippleThreshold" value="0.01"/>
+			<property name="KnockdownProneDamageThreshold" value="0.5"/>
+			<property name="KnockdownProneStunDuration" value="0.5,1.8"/>
+			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.4"/>
+			<property name="KnockdownKneelStunDuration" value="0.5,1.8"/>
+			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="LegsExplosionDamageMultiplier" value="1"/>
+			<property name="ArmsExplosionDamageMultiplier" value="1"/>
+			<property name="HeadExplosionDamageMultiplier" value="1"/>
+			<property name="ChestExplosionDamageMultiplier" value="1"/>
+			<property name="PainResistPerHit" value=".45"/>
+
+			<!-- Stealth -->
+			<property name="MaxViewAngle" value="360"/>
+			<property name="SightRange" value="60"/> <!-- distance in m -->
+			<property name="SightLightThreshold" value="-2,150"/> <!-- how well lit you have to be for the zombie to see you at min,max range -->
+
+			<property name="SleeperWakeupSightDetectionMin" value="-40,5"/> <!-- Indiv.Random. sight capability - "I see you" light value at point blank -->
+			<property name="SleeperWakeupSightDetectionMax" value="340,480"/> <!-- Indiv.Random. "I see you" light value at "SightRange" -->
+			<property name="SleeperSenseSightDetectionMin" value="-10,0"/> <!-- same for groaning, not waking -->
+			<property name="SleeperSenseSightDetectionMax" value="200,300"/>
+
+			<property name="SleeperNoiseSenseThreshold" value="3,8"/> <!-- Indiv.Random. hearing capability - "I hear something" noise value -->
+			<property name="SleeperNoiseWakeThreshold" value="9,12"/>
+
+			<property name="SleeperSmellSenseThreshold" value="20,50"/> <!-- Indiv.Random. smell capability - "I smell something" player smell value -->
+			<property name="SoundSleeperSenseChance" value=".5"/> <!-- the chance to play "SoundSleeperSense" when "SleeperSmellSenseThreshold" is triggered -->
+			<property name="SleeperSmellWakeThreshold" value="40,100"/>
+
+			<property name="NoiseAlertThreshold" value="30"/> <!-- DEPRECATED; an awake zombie triggers instantly if touched by the sound range/volume -->
+			<property name="SmellAlertThreshold" value="40"/> <!-- for awake zombies -->
+
+			<!-- Gameplay -->
+			<property name="MaxTurnSpeed" value="250"/>
+			<property name="MoveSpeed" value="2.0"/> <!-- just shambling around -->
+			<property name="MoveSpeedAggro" value="2.0, 2.0"/> <!-- chasing a target min/max (like day or night)-->
+			<property name="MoveSpeedPanic" value="0.55"/>
+			<property name="CanClimbLadders" value="true"/>
+			<property name="JumpMaxDistance" value="2.8, 3.9"/>
+
+			<property name="HandItem" value="meleeHandZombie01"/>
+			<property name="HandItemCrawler" value="meleeHandZombie02"/>
+			<property name="AttackTimeoutDay" value="60"/> <!-- in s -->
+			<property name="AttackTimeoutNight" value="60"/>
+
+			<property name="Buffs" value="buffSpellImpactTrigger_Special_FireMeteor"/>
+			<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
+
+			<property name="ExperienceGain" value="0"/>
+			<property name="LootDropProb" value="0"/>
+			
+			<property name="LootListOnDeath" value="254"/>
+			<property name="TimeStayAfterDeath" value="600"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+			<!-- <property name="LootDropEntityClass" value="EntityLootContainerRegular"/> -->
+
+			<!-- <property name="CorpseBlock" value="air"/><property name="CorpseBlockChance" value="0"/> -->
+			<!-- <property name="TimeStayAfterDeath" value="30"/> -->
+
+			<effect_group name="Base Effects"> <!-- sorcery_zombieTemplateMale -->
+				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
+				<passive_effect name="HealthMax" operation="base_set" value="800"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="100"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0" tags="buffInjuryBleeding"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0" tags="buffIllInfection0"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0" tags="buffInjuryStunned1"/>				
+			</effect_group>
+
+			<!-- <property name="MapIcon" value="ui_game_symbol_bullet_point"/> -->
+		</entity_class>	
+		
+		<!-- FIXED LOOT / BOSS -->
+		<!-- <entity_class name="sorcery_zombieBurnt_intro2" extends="sorcery_zombieBurnt_intro">
+			<property name="Tags" value="entity,zombie,walker, feral"/>
+			<property name="LootListOnDeath" value="202"/>
+			<property name="TimeStayAfterDeath" value="1200"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+		</entity_class>
+		<entity_class name="sorcery_zombieBurnt_intro3" extends="sorcery_zombieBurnt_intro">
+			<property name="Tags" value="entity,zombie,walker, feral"/>
+			<property name="LootListOnDeath" value="203"/>
+			<property name="TimeStayAfterDeath" value="1200"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+		</entity_class>
+		<entity_class name="sorcery_zombieBurnt_intro4" extends="sorcery_zombieBurnt_intro">
+			<property name="Tags" value="entity,zombie,walker, feral"/>
+			<property name="LootListOnDeath" value="204"/>
+			<property name="TimeStayAfterDeath" value="1200"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+		</entity_class> -->
+
+		
+		
+	</append>
 	
 </Sorcery>

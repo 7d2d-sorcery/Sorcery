@@ -34,26 +34,31 @@
 			<buff name="buffSorceryManage" hidden="true"> 
 				<stack_type value="ignore"/>	
 				<update_rate value="2"/>
-					<effect_group name="DEV">
-						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$eyes_essenceFireHarvest"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$face_essenceFireHarvest"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="CVarLogValue" target="self" cvar="$head_essenceFireHarvest"/> -->
-					</effect_group>
-					 
-					<effect_group name="ONE TIME INTRO HOOK BUFF">
+					<effect_group name="ONE TIME INTRO HOOK">
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffSorceryIntro"/>
 					</effect_group>
 					 
 					<effect_group name="MARK TARGETS">
 						<!-- THIS BUFF ENSURES KILL CREDIT FOR BUFF/SPELL/TRAP/PET/ALL KILLS -->
-						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="60" buff="buffSorceryMarkTarget" target_tags="enemy,animal" /> -->
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="60" buff="buffSorceryMarkTarget" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" /> -->
 						<!-- <requirement name="EntityTagCompare" tags="player" invert="true"/> -->
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="60" buff="buffSorceryMarkTarget" />
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="60" buff="buffSorceryMarkTarget" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" />
 					</effect_group>
 					 
-					 <effect_group name="SPELL IMMUNITY">	
-						<passive_effect name="BuffResistance" operation="base_set" value="2" tags="buffSorceryMarkTarget"/>
-						<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffSorceryMarkTarget"/>
+					 <effect_group name="POCKETS">
+						<passive_effect name="CarryCapacity" operation="base_add" value="9"/>
+					 </effect_group>
+					 
+					 <effect_group name="SPELL PROC">
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffSorceryMarkTarget, buffEntity_SorceryUpdate"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffPotionBomb_fire, buffPotionBomb_fire2, buffPotionBomb_fire3"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffPotionBomb_ice, buffPotionBomb_ice2, buffPotionBomb_ice3"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffPotionBomb_lightning, buffPotionBomb_lightning2, buffPotionBomb_lightning3"/>
+					 </effect_group>
+					 
+					 <effect_group name="SPELL IMMUNITY">
+						<passive_effect name="BuffResistance" operation="base_set" value="2" tags="buffSorceryMarkTarget,buffEntity_SorceryUpdate"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffSorceryMarkTarget,buffEntity_SorceryUpdate"/>
 					 
 						<passive_effect name="BuffResistance" operation="base_set" value="2" tags="buffSorceryFireStacks_Add,buffSpellImpactTrigger_Fire,buffSpellImpact_FireMeteor,buffSpell_Burn,buffSpellFirestorm,buffSpell_FireMeteor,debuffSpell_FireWildfire"/>
 						<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffSorceryFireStacks_Add,buffSpellImpactTrigger_Fire,buffSpellImpact_FireMeteor,buffSpell_Burn,buffSpellFirestorm,buffSpell_FireMeteor,debuffSpell_FireWildfire"/>
@@ -118,10 +123,31 @@
 
 					 
 					 <effect_group name="MONITOR">
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SorceryFireStack" operation="set" value="0" target="self"/>					 
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SorceryFireStack" operation="set" value="0" target="self"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SorceryIceStack" operation="set" value="0" target="self"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SorceryLightningStack" operation="set" value="0" target="self"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="SorceryLightningStack" operation="set" value="0" target="self"/> -->
 					</effect_group>
+					
+			</buff>			
+			
+			<!-- SORCERY IMMUNITY -->
+			<!-- TIP: This buff will make entities (ex. vehicle/trader/npc) immune to all Sorcery -->
+			<buff name="buffSorceryImmunity_All" hidden="true"> 
+				<stack_type value="ignore"/>	
+				<duration value="0"/>
+					 <effect_group name="SPELL IMMUNITY">	
+						<passive_effect name="BuffResistance" operation="base_set" value="2" tags="buffSorceryMarkTarget,buffEntity_SorceryUpdate"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffSorceryMarkTarget,buffEntity_SorceryUpdate"/>
+					 
+						<passive_effect name="BuffResistance" operation="base_set" value="2" tags="buffSorceryFireStacks_Add,buffSpellImpactTrigger_Fire,buffSpellImpact_FireMeteor,buffSpell_Burn,buffSpellFirestorm,buffSpell_FireMeteor,debuffSpell_FireWildfire"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffSorceryFireStacks_Add,buffSpellImpactTrigger_Fire,buffSpellImpact_FireMeteor,buffSpell_Burn,buffSpellFirestorm,buffSpell_FireMeteor,debuffSpell_FireWildfire"/>
+						
+						<passive_effect name="BuffResistance" operation="base_set" value="2" tags="buffSorceryIceStacks_Add,buffSpellImpactTrigger_Ice,buffSpell_Ice,buffSpell_IceSpike,buffSpell_IceStorm"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffSorceryIceStacks_Add,buffSpellImpactTrigger_Ice,buffSpell_Ice,buffSpell_IceSpike,buffSpell_IceStorm"/>
+
+						<passive_effect name="BuffResistance" operation="base_set" value="2" tags="buffSorceryLightningStacks_Add,buffSpellImpactTrigger_Lightning,buffSpellImpactTrigger_LightningNova,buffSpell_Lightning,buffSpell_LightningNova"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffSorceryLightningStacks_Add,buffSpellImpactTrigger_Lightning,buffSpellImpactTrigger_LightningNova,buffSpell_Lightning,buffSpell_LightningNova"/>
+					 </effect_group>
 			</buff>			
 			
 			<!-- SORCERY: BUFF KILL WORKAROUND -->
@@ -139,9 +165,8 @@
 			<!-- SORCERY: INTRO HOOK BUFF -->
 			<buff name="buffSorceryIntro" name_key="buffSorceryIntroName" description_key="buffSorceryIntroDesc" tooltip_key="buffSorceryIntroTooltip" icon="ui_game_symbol_block_upgrade" icon_color="102,0,204" remove_on_death="false">
 				<stack_type value="ignore"/>
-					<effect_group name="BOOST: FIRE ESSENCE">
-						<!-- <requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="1"/> -->
-						<passive_effect name="HarvestCount" operation="perc_add" value="3" tags="essenceFireHarvest"/>
+					<effect_group name="BOOST: ALL ESSENCE">
+						<passive_effect name="HarvestCount" operation="perc_add" value="3" tags="essenceFireHarvest,essenceIceHarvest,essenceLightningHarvest"/>
 					</effect_group>
 				
 					<effect_group name="CHECKPOINT">
@@ -149,7 +174,7 @@
 							<requirement name="PlayerLevel" target="self" operation="GTE" value="10"/>
 							<requirement name="ProgressionLevel" progression_name="attSorcery" operation="GT" value="3"/>
 							<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GT" value="2"/>
-						</requirements>					
+						</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffSorceryIntro" />
 					</effect_group>
 			</buff>
@@ -633,7 +658,7 @@
 				<effect_group name="RANK 3: Iceburn Nearby">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastIce" operation="GTE" value="3"/>
 					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpellLasting_IceAura" target="self" />
-					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="6" buff="buffSpell_IceSlow" target_tags="enemy,animal"/> 
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="6" buff="buffSpell_IceSlow" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/> 
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" target="self" operation="subtract" value="1"/>
 				</effect_group>
 
@@ -707,7 +732,7 @@
 				<effect_group name="RANK 5: Shockburn Nearby">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastLightning" operation="GTE" value="5"/>
 					<!-- <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpellLasting_IceAura" target="self" />
-					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="6" buff="buffSpell_IceSlow" target_tags="enemy,animal"/>  -->
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="6" buff="buffSpell_IceSlow" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>  -->
 					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Stamina" target="self" operation="subtract" value="1"/>
 				</effect_group>				
 				
@@ -784,7 +809,7 @@
 					<effect_group name="RANK 5: SHOCKBURN">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastLightning" target="self" operation="GTE" value="5"/>
 						<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Stamina" target="self" operation="subtract" value="1"/>
-						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="other" buff="debuffSpell_LightningEnergyShieldShockburn" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="other" buff="debuffSpell_LightningEnergyShieldShockburn" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
 					</effect_group>			
 					
 					<effect_group name="cleanup">
@@ -1206,8 +1231,7 @@
 					
 					<effect_group name="RANK 4: SHOWER">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFireMeteor" target="other" operation="GTE" value="5"/>
-							<!-- <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/> -->
-							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="70"/>
 							<requirement name="CVarCompare" cvar="SorceryFireStack" operation="GTE" value="1" target="self" />
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="SorceryFireStack" operation="subtract" value="1"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" target="self" cvar="SorceryFireStack" operation="subtract" value="1"/>
@@ -1292,7 +1316,7 @@
 					<effect_group name="FIRE RANK 5: Meteor Land">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" target="self" operation="subtract" value="5"/>
 						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryFireball_explode" />
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="3" buff="buffSpellImpactTrigger_Fire, debuffSpell_FireMeteorLand" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="3" buff="buffSpellImpactTrigger_Fire, debuffSpell_FireMeteorLand" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
 					</effect_group>
 					
 					<effect_group name="COOLDOWN">
@@ -3267,12 +3291,12 @@
 					<effect_group name="RANK 5: ICY DEATH">
 						<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastIce" target="self" operation="GTE" value="5"/>
 						<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Stamina" target="self" operation="subtract" value="1"/>
-						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="other" buff="buffSpellImpactTrigger_Ice" target_tags="enemy,animal"/>
-						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="other" buff="debuffSpell_IceSuffering" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="other" buff="buffSpellImpactTrigger_Ice" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
+						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="other" buff="debuffSpell_IceSuffering" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
 						<!-- RUNE ITEM: AOE Chance  --> 
 						<!-- <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="70"/>
-						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="selfAOE" range="2.5" buff="buffSpellImpactTrigger_Ice" target_tags="enemy,animal"/>
-						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="selfAOE" range="2.5" buff="debuffSpell_IceSuffering" target_tags="enemy,animal"/>	 -->			
+						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="selfAOE" range="2.5" buff="buffSpellImpactTrigger_Ice" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
+						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="selfAOE" range="2.5" buff="debuffSpell_IceSuffering" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>	 -->			
 					</effect_group>
 					
 					<effect_group name="RUNE: ICY DEATH AOE (DEV)">
@@ -3280,8 +3304,8 @@
 						<requirement name="HoldingItemHasTags" tags="iceShield_rune"/>
 						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
 						<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Stamina" target="self" operation="subtract" value="5"/>
-						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="selfAOE" range="2.5" buff="buffSpellImpactTrigger_Ice" target_tags="enemy,animal"/>
-						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="selfAOE" range="2.5" buff="debuffSpell_IceSuffering" target_tags="enemy,animal"/>	 -->
+						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="selfAOE" range="2.5" buff="buffSpellImpactTrigger_Ice" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
+						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="selfAOE" range="2.5" buff="debuffSpell_IceSuffering" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>	 -->
 					</effect_group>					
 					
 					<effect_group name="cleanup">
@@ -4930,7 +4954,7 @@
 							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
 					</effect_group>
 					<effect_group name="FIRE SKIN">
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_fireskin" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_fireskin" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
 					</effect_group>
 			</buff>
 
@@ -4980,7 +5004,7 @@
 							<requirement name="NotHasBuff" buff="buffInjuryBleeding"/>
 					</effect_group>				
 					<effect_group name="ICE SKIN">
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_iceskin" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_iceskin" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
 					</effect_group>
 			</buff>
 
@@ -5034,7 +5058,7 @@
 					</effect_group>				
 					<effect_group name="FIRE NOVA">
 						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryFireball_explode" target="self" />
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="4" buff="debuffRune_firenova" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="4" buff="debuffRune_firenova" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
 					</effect_group>
 			</buff>
 
@@ -5088,7 +5112,7 @@
 					</effect_group>				
 					<effect_group name="ICE NOVA">
 						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_explode" target="self" />
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="4" buff="debuffRune_icenova" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="4" buff="debuffRune_icenova" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
 					</effect_group>
 			</buff>
 
@@ -5149,7 +5173,7 @@
 							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
 					</effect_group>				
 					<effect_group name="RUNE">
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_firestorm" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_firestorm" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
 					</effect_group>
 			</buff>
 
@@ -5207,7 +5231,7 @@
 							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
 					</effect_group>				
 					<effect_group name="RUNE">
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_deepfreeze" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_deepfreeze" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
 					</effect_group>
 			</buff>
 
@@ -5261,7 +5285,7 @@
 							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
 					</effect_group>				
 					<effect_group name="RUNE">
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_lightningstrike" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_lightningstrike" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
 					</effect_group>
 			</buff>
 
@@ -5303,7 +5327,7 @@
 					</effect_group>				
 					<effect_group name="RUNE">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" target="self" operation="subtract" value="10"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRuneUnique_altinstouch" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRuneUnique_altinstouch" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
 					</effect_group>
 			</buff>
  
@@ -5492,7 +5516,7 @@
 			</buff>	
 			
 			
-		<!--___________________________ BLOCKS (DEV) ___________________________-->		
+		<!--___________________________ BLOCKS (DEV) ___________________________-->	
 			<buff name="buffFireAltar_trigger" hidden="true">
 				<stack_type value="effect"/>
 				<duration value="1"/>
@@ -5515,14 +5539,255 @@
 		</buff>		
 		
 		
+		
+		
+		
+		
+<!--___________________________ SPELLS: Intro / Special ___________________________-->
+			<buff name="buffSorceryIntro_spawn" hidden="false" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="15"/>
+					<effect_group name="PLAYER: Intro Protect">
+							<requirement name="EntityTagCompare" tags="player"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryHorn" /> <!-- drama -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="500"/> <!-- heal -->
+						<triggered_effect trigger="onSelfBuffRemove" action="ShowToolbeltMessage" message="I should check these bodies for answers..." /> <!-- hint -->
+						<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffIllInfection0,buffIllInfection1,buffInjuryBleeding,buffDrowning1,buffDrowning2,buffArmorShredding,buffLegSprained,buffLegBroken,buffArmSprained"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffArmBroken,buffInjuryStunned1,buffInjuryStunned2,buffInjuryCrippled1,buffInjuryKnockdown1,buffInjuryKnockdown1,buffInjuryUnconscious,buffStayDownKO"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryConcussion,buffShocked,buffBurningElement,buffBurningEnvironment,buffBurningFlamingArrow,buffBurningMolotov,buffBurning"/>					
+					</effect_group>
+			</buff>
+
+			<buff name="debuffSorceryIntro_spawn" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/> 
+				<duration value="1"/>
+					<effect_group name="BUFF PLAYER">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="300" buff="buffSorceryIntro_spawn" target_tags="enemy"/>
+					</effect_group>
+			</buff>
+
+			<buff name="buffSpellImpactTrigger_Special_FireMeteor" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="ignore"/> 
+				<duration value="6"/>
+					<effect_group>
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireMeteorShower"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="debuffSorceryIntro_spawn"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSpellImpact_Special_FireMeteor"/>
+					</effect_group>
+			</buff>	
+
+			<buff name="buffSpellImpact_Special_FireMeteor" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="effect"/>
+				<duration value="1.5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteorShower.unity3d?fireMeteorShower"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSpell_Special_FireMeteor"/>
+						<!-- <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="selfAOE" range="4" buff="buffSpell_Special_FireMeteor" target_tags="ally,party">
+							<requirement name="IsLookingAtEntity" tags="player" />
+						</triggered_effect> -->
+						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryFireMeteorShower_impact" target="self"/>
+					</effect_group>
+			</buff>
+
+			<!-- SPELL SPECIAL: FIRE METEOR -->
+			<buff name="buffSpell_Special_FireMeteor" hidden="true">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="8"/>
+				<update_rate value="1"/>
+					<effect_group name="Initial">
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireBurning-finish" /> -->
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="Hips" />
+					</effect_group>
+
+					<effect_group name="IMPACT: Stagger">			
+						<passive_effect name="RunSpeed" operation="perc_subtract" value="1" duration="0,4"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value="1" duration="0,4"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="1" duration="0,4"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="100"/>
+					</effect_group>
+					
+					<effect_group name="CRATER IMPACT">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" target="self" stat="Health" operation="subtract" value="200"/>
+						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="8"/>
+					</effect_group>					
+					
+					<effect_group name="cleanup">
+						<!-- <triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning-finish.unity3d?fireBurning-finish" parent_transform="Hips" />
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireBurning" /> -->
+					</effect_group>
+			</buff>			
+		
+		
+		
+		
 		<!--___________________________ ENTITY: SPAWN (DEV) ___________________________-->
+			<!-- ENTITY: CVARS -->
+			<!-- TIP: This buff applies cvars of the player's perk levels, along with power multipliers. -->
+			<buff name="buffEntity_SorceryUpdate">
+				<stack_type value="ignore"/>
+				<duration value="1"/>
+				<!-- <update_rate value="2"/> -->
+					<effect_group name="ALCHEMY MASTERY: Level">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="1">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" target="other" operation="Equals" value="1"/>
+							<requirement name="CVarCompare" cvar="$sorceryAlchemyMastery" operation="LT" value="1"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="2">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" target="other" operation="Equals" value="2"/>
+							<requirement name="CVarCompare" cvar="$sorceryAlchemyMastery" operation="LT" value="2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="3">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" target="other" operation="Equals" value="3"/>
+							<requirement name="CVarCompare" cvar="$sorceryAlchemyMastery" operation="LT" value="3"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="4">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" target="other" operation="Equals" value="4"/>
+							<requirement name="CVarCompare" cvar="$sorceryAlchemyMastery" operation="LT" value="4"/>
+						</triggered_effect>	
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="5">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" target="other" operation="GTE" value="5"/>
+							<requirement name="CVarCompare" cvar="$sorceryAlchemyMastery" operation="LT" value="5"/>
+						</triggered_effect>
+						<!-- +20% Per Level (Potion Potency) -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="set" value="@$sorceryAlchemyMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="multiply" value=".2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="add" value="1"/>
+					</effect_group>
+				
+					<effect_group name="FIRE MASTERY: Level">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="1">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" target="other" operation="Equals" value="1"/>
+							<requirement name="CVarCompare" cvar="$sorceryFireMastery" operation="LT" value="1"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="2">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" target="other" operation="Equals" value="2"/>
+							<requirement name="CVarCompare" cvar="$sorceryFireMastery" operation="LT" value="2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="3">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" target="other" operation="Equals" value="3"/>
+							<requirement name="CVarCompare" cvar="$sorceryFireMastery" operation="LT" value="3"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="4">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" target="other" operation="Equals" value="4"/>
+							<requirement name="CVarCompare" cvar="$sorceryFireMastery" operation="LT" value="4"/>
+						</triggered_effect>	
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="5">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" target="other" operation="GTE" value="5"/>
+							<requirement name="CVarCompare" cvar="$sorceryFireMastery" operation="LT" value="5"/>
+						</triggered_effect>
+						<!-- +20% Per Level (Power) -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFireMastery_power" operation="set" value="@$sorceryFireMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFireMastery_power" operation="multiply" value=".2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFireMastery_power" operation="add" value="1"/>
+					</effect_group>
+				
+					<effect_group name="ICE MASTERY: Level">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryIceMastery" operation="set" value="1">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" target="other" operation="Equals" value="1"/>
+							<requirement name="CVarCompare" cvar="$sorceryIceMastery" operation="LT" value="1"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryIceMastery" operation="set" value="2">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" target="other" operation="Equals" value="2"/>
+							<requirement name="CVarCompare" cvar="$sorceryIceMastery" operation="LT" value="2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryIceMastery" operation="set" value="3">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" target="other" operation="Equals" value="3"/>
+							<requirement name="CVarCompare" cvar="$sorceryIceMastery" operation="LT" value="3"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryIceMastery" operation="set" value="4">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" target="other" operation="Equals" value="4"/>
+							<requirement name="CVarCompare" cvar="$sorceryIceMastery" operation="LT" value="4"/>
+						</triggered_effect>	
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryIceMastery" operation="set" value="5">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" target="other" operation="GTE" value="5"/>
+							<requirement name="CVarCompare" cvar="$sorceryIceMastery" operation="LT" value="5"/>
+						</triggered_effect>
+						<!-- +20% Per Level (Power) -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryIceMastery_power" operation="set" value="@$sorceryIceMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryIceMastery_power" operation="multiply" value=".2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryIceMastery_power" operation="add" value="1"/>
+					</effect_group>
+
+					<effect_group name="LIGHTNING MASTERY: Level">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="1">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" target="other" operation="Equals" value="1"/>
+							<requirement name="CVarCompare" cvar="$sorceryLightningMastery" operation="LT" value="1"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="2">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" target="other" operation="Equals" value="2"/>
+							<requirement name="CVarCompare" cvar="$sorceryLightningMastery" operation="LT" value="2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="3">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" target="other" operation="Equals" value="3"/>
+							<requirement name="CVarCompare" cvar="$sorceryLightningMastery" operation="LT" value="3"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="4">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" target="other" operation="Equals" value="4"/>
+							<requirement name="CVarCompare" cvar="$sorceryLightningMastery" operation="LT" value="4"/>
+						</triggered_effect>	
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="5">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" target="other" operation="GTE" value="5"/>
+							<requirement name="CVarCompare" cvar="$sorceryLightningMastery" operation="LT" value="5"/>
+						</triggered_effect>
+						<!-- +20% Per Level (Power) -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery_power" operation="set" value="@$sorceryLightningMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery_power" operation="multiply" value=".2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery_power" operation="add" value="1"/>
+					</effect_group>
+
+					<effect_group name="RUNE MASTERY: Level">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="1">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" target="other" operation="Equals" value="1"/>
+							<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="LT" value="1"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="2">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" target="other" operation="Equals" value="2"/>
+							<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="LT" value="2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="3">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" target="other" operation="Equals" value="3"/>
+							<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="LT" value="3"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="4">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" target="other" operation="Equals" value="4"/>
+							<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="LT" value="4"/>
+						</triggered_effect>	
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="5">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" target="other" operation="GTE" value="5"/>
+							<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="LT" value="5"/>
+						</triggered_effect>
+						<!-- +20% Per Level (Power) -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="set" value="@$sorceryRuneMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="multiply" value=".2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="add" value="1"/>
+					</effect_group>					
+			</buff>
+			
+		
+			<!-- ENTITY: SORCERY MANAGE -->
+			<buff name="buffEntity_SorceryManage">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+				<!-- <update_rate value="2"/> -->
+				
+					<effect_group name="INITIAL">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffEntity_EssenceInfused" />
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFireMastery_power" operation="set" value="1"/> -->
+					</effect_group>
+
+			</buff>
+			
 		<!--___________________________ ENTITY: THE AWAKENED ___________________________-->
 			<!-- ENTITY: ESSENCE INFUSED-->
 			<buff name="buffEntity_EssenceInfused">
 				<stack_type value="ignore"/>
 				<duration value="0"/>
 				<update_rate value="10"/>
-				
+
 				<effect_group name="FIRE">
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,2000" operation="LTE" value="30" target="self"/>
 					<requirement name="CVarCompare" cvar="SorceryFireStack" operation="LT" value="1"/>
@@ -5555,9 +5820,812 @@
 				
 			</buff>
 			
+			
+			
+			
+			
+		<!--___________________________ ALCHEMY ___________________________-->
+			<!-- MORTAR PESTLE -->
+			<buff name="buffCrafting_MortarPestle" hidden="true" remove_on_death="false">
+				<stack_type value="replace"/>
+				<duration value="0"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryAlchemy_grinding"/> 
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotion_health,sorceryPotion_health2"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotion_stamina"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotion_spirit"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotion_travel"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotion_haste"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotion_taunt"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotion_essence,sorceryPotion_essence2"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotionBomb_grass,sorceryPotionBomb_grass2"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotionBomb_fire"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotionBomb_ice"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotionBomb_lightning"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderArcane,resourcePowderArcane2,resourcePowderArcane3,resourcePowderArcane4,resourcePowderArcane5"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderFire,resourcePowderFire2,resourcePowderFire3,resourcePowderFire4,resourcePowderFire5"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderIce,resourcePowderIce2,resourcePowderIce3,resourcePowderIce4,resourcePowderIce5"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderLightning,resourcePowderLightning2,resourcePowderLightning3,resourcePowderLightning4,resourcePowderLightning5"/>
+					</effect_group>
+					
+					<effect_group name="cleanup">
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffCrafting_MortarPestle">
+							<requirement name="HoldingItemHasTags" tags="enchantedmortar" invert="true"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffCrafting_MortarPestle"/>
+					</effect_group>					
+			</buff>		
+		
+			<!-- ALCHEMY: POTIONS -->
+			<!-- POTION: Health -->
+			<buff name="buffPotion_health" name_key="sorceryPotion_health" description_key="sorceryPotion_healthDesc" icon="ui_game_symbol_chemistry"  icon_color="150,0,0" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="10"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_health" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_health" operation="multiply" value="20"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="@$buffPotion_health"/>
+						<passive_effect name="HealthMaxModifierOT" operation="base_add" value="0.5" duration="0,10"/>
+						<passive_effect name="HealthChangeOT" operation="base_add" value="1" duration="0,10"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_health" operation="set" value="0"/>
+					</effect_group>
+			</buff>
+			<buff name="buffPotion_health2" name_key="sorceryPotion_health2" description_key="sorceryPotion_health2Desc" icon="ui_game_symbol_chemistry"  icon_color="170,0,0" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="10"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_health2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_health2" operation="multiply" value="60"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="@$buffPotion_health2"/>
+						<passive_effect name="HealthMaxModifierOT" operation="base_add" value="1" duration="0,10" />
+						<passive_effect name="HealthChangeOT" operation="base_add" value="2" duration="0,10"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_health2" operation="set" value="0"/>
+					</effect_group>
+			</buff>
+			<buff name="buffPotion_health3" name_key="sorceryPotion_health3" description_key="sorceryPotion_health3Desc" icon="ui_game_symbol_chemistry"  icon_color="190,0,0" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="10"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_health3" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_health3" operation="multiply" value="100"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="@$buffPotion_health3"/>
+						<passive_effect name="HealthMaxModifierOT" operation="base_add" value="2" duration="0,10" />
+						<passive_effect name="HealthChangeOT" operation="base_add" value="3" duration="0,10"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_health3" operation="set" value="0"/>
+					</effect_group>
+			</buff>
+			
+			<!-- POTION: Stamina -->
+			<buff name="buffPotion_stamina" name_key="sorceryPotion_stamina" description_key="sorceryPotion_staminaDesc" icon="ui_game_symbol_chemistry"  icon_color="0,0,150" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="120"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_stamina" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_stamina" operation="multiply" value="20"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_stamina" operation="set" value="0"/>
+					</effect_group>
+					<effect_group>
+							<requirement name="HoldingItemHasTags" tags="spellcast" invert="true"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="add" value="@$buffPotion_stamina"/>
+						<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="0.15"/>
+						<passive_effect name="StaminaChangeOT" operation="perc_add" value=".5"/>
+					</effect_group>
+			</buff>
+			<buff name="buffPotion_stamina2" name_key="sorceryPotion_stamina2" description_key="sorceryPotion_stamina2Desc" icon="ui_game_symbol_chemistry"  icon_color="0,0,170" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="120"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_stamina2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_stamina2" operation="multiply" value="60"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_stamina2" operation="set" value="0"/>
+					</effect_group>
+					<effect_group>
+							<requirement name="HoldingItemHasTags" tags="spellcast" invert="true"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="add" value="@$buffPotion_stamina2"/>
+						<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="0.3"/>
+						<passive_effect name="StaminaChangeOT" operation="perc_add" value=".75"/>
+					</effect_group>
+			</buff>			
+			<buff name="buffPotion_stamina3" name_key="sorceryPotion_stamina3" description_key="sorceryPotion_stamina3Desc" icon="ui_game_symbol_chemistry"  icon_color="0,0,190" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="120"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_stamina3" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_stamina3" operation="multiply" value="100"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_stamina3" operation="set" value="0"/>
+					</effect_group>
+					<effect_group>
+							<requirement name="HoldingItemHasTags" tags="spellcast" invert="true"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="add" value="@$buffPotion_stamina3"/>
+						<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="0.5"/>
+						<passive_effect name="StaminaChangeOT" operation="perc_add" value="1"/>
+					</effect_group>
+			</buff>
+			<!-- POTION: Spirit -->
+			<buff name="buffPotion_spirit" name_key="sorceryPotion_spirit" description_key="sorceryPotion_spiritDesc" icon="ui_game_symbol_chemistry"  icon_color="174,146,213" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="120"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_spirit" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_spirit" operation="multiply" value="20"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_spirit" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Spirit" operation="add" value="@$buffPotion_spirit"/>
+					</effect_group>
+					<effect_group>
+							<requirement name="HoldingItemHasTags" tags="spellcast"/>
+						<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="0.15"/>
+						<passive_effect name="StaminaChangeOT" operation="perc_add" value=".5"/>
+					</effect_group>
+			</buff>
+			<buff name="buffPotion_spirit2" name_key="sorceryPotion_spirit2" description_key="sorceryPotion_spirit2Desc" icon="ui_game_symbol_chemistry"  icon_color="190,160,230" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="120"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_spirit2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_spirit2" operation="multiply" value="60"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_spirit2" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Spirit" operation="add" value="@$buffPotion_spirit2"/>
+					</effect_group>
+					<effect_group>
+							<requirement name="HoldingItemHasTags" tags="spellcast"/>
+						<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="0.3"/>
+						<passive_effect name="StaminaChangeOT" operation="perc_add" value=".75"/>
+					</effect_group>
+			</buff>			
+			<buff name="buffPotion_spirit3" name_key="sorceryPotion_spirit3" description_key="sorceryPotion_spirit3Desc" icon="ui_game_symbol_chemistry"  icon_color="210,170,255" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="120"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_spirit3" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_spirit3" operation="multiply" value="100"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_spirit3" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Spirit" operation="add" value="@$buffPotion_spirit3"/>
+					</effect_group>
+					<effect_group>
+							<requirement name="HoldingItemHasTags" tags="spellcast"/>
+						<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="0.5"/>
+						<passive_effect name="StaminaChangeOT" operation="perc_add" value="1"/>
+					</effect_group>
+			</buff>
+			<!-- POTION: Travel -->
+			<buff name="buffPotion_travel" name_key="sorceryPotion_travel" description_key="sorceryPotion_travelDesc" icon="ui_game_symbol_chemistry"  icon_color="174,146,213" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="60"/>
+				<update_rate value=".5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel" operation="multiply" value="2"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_travel" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffPotion_travel">
+							<requirement name="HasBuff" buff="buffLegBroken"/>
+						</triggered_effect>						
+						<passive_effect name="WalkSpeed" operation="perc_add" value="@$buffPotion_travel"/>
+						<passive_effect name="RunSpeed" operation="perc_add" value="@$buffPotion_travel"/>
+						<triggered_effect trigger="onSelfDamagedSelf" action="RemoveBuff" target="self" buff="buffPotion_travel" />
+						<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" target="self" buff="buffPotion_travel" />
+						<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" target="self" buff="buffPotion_travel" />
+						<triggered_effect trigger="onOtherDamagedSelf" action="RemoveBuff" target="self" buff="buffPotion_travel" />
+						<triggered_effect trigger="onOtherAttackedSelf" action="RemoveBuff" target="self" buff="buffPotion_travel" />
+					</effect_group>
+			</buff>
+			<buff name="buffPotion_travel2" name_key="sorceryPotion_travel2" description_key="sorceryPotion_travel2Desc" icon="ui_game_symbol_chemistry"  icon_color="174,146,213" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="60"/>
+				<update_rate value=".5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel2" operation="multiply" value="3"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_travel2" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffPotion_travel2">
+							<requirement name="HasBuff" buff="buffLegBroken"/>
+						</triggered_effect>
+						<passive_effect name="WalkSpeed" operation="perc_add" value="@$buffPotion_travel2"/>
+						<passive_effect name="RunSpeed" operation="perc_add" value="@$buffPotion_travel2"/>
+						<triggered_effect trigger="onSelfDamagedSelf" action="RemoveBuff" target="self" buff="buffPotion_travel2" />
+						<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" target="self" buff="buffPotion_travel2" />
+						<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" target="self" buff="buffPotion_travel2" />
+						<triggered_effect trigger="onOtherDamagedSelf" action="RemoveBuff" target="self" buff="buffPotion_travel2" />
+						<triggered_effect trigger="onOtherAttackedSelf" action="RemoveBuff" target="self" buff="buffPotion_travel2" />
+					</effect_group>
+			</buff>
+			<buff name="buffPotion_travel3" name_key="sorceryPotion_travel3" description_key="sorceryPotion_travel3Desc" icon="ui_game_symbol_chemistry"  icon_color="174,146,213" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="60"/>
+				<update_rate value=".5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel3" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel3" operation="multiply" value="4"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_travel3" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffPotion_travel3">
+							<requirement name="HasBuff" buff="buffLegBroken"/>
+						</triggered_effect>						
+						<passive_effect name="WalkSpeed" operation="perc_add" value="@$buffPotion_travel3"/>
+						<passive_effect name="RunSpeed" operation="perc_add" value="@$buffPotion_travel3"/>
+						<triggered_effect trigger="onSelfDamagedSelf" action="RemoveBuff" target="self" buff="buffPotion_travel3" />
+						<triggered_effect trigger="onSelfDamagedOther" action="RemoveBuff" target="self" buff="buffPotion_travel3" />
+						<triggered_effect trigger="onSelfAttackedOther" action="RemoveBuff" target="self" buff="buffPotion_travel3" />
+						<triggered_effect trigger="onOtherDamagedSelf" action="RemoveBuff" target="self" buff="buffPotion_travel3" />
+						<triggered_effect trigger="onOtherAttackedSelf" action="RemoveBuff" target="self" buff="buffPotion_travel3" />
+					</effect_group>
+			</buff>			
+			<!-- POTION: Haste -->
+			<buff name="buffPotion_haste" name_key="sorceryPotion_haste" description_key="sorceryPotion_hasteDesc" icon="ui_game_symbol_chemistry"  icon_color="174,146,213" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="60"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_haste" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_haste" operation="multiply" value=".5"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_haste" operation="set" value="0"/>
+						<passive_effect name="WalkSpeed" operation="perc_add" value="@$buffPotion_haste"/>
+						<passive_effect name="RunSpeed" operation="perc_add" value="@$buffPotion_haste"/>
+						<passive_effect name="CrouchSpeed" operation="perc_add" value="@$buffPotion_haste"/>
+						<passive_effect name="AttacksPerMinute" operation="perc_add" value="@$buffPotion_haste"/>
+						<passive_effect name="RoundsPerMinute" operation="perc_add" value="@$buffPotion_haste"/>
+						<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".25"/>
+					</effect_group>
+			</buff>			
+			<buff name="buffPotion_haste2" name_key="sorceryPotion_haste2" description_key="sorceryPotion_haste2Desc" icon="ui_game_symbol_chemistry"  icon_color="174,146,213" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="60"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_haste2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_haste2" operation="multiply" value="1"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_haste2" operation="set" value="0"/>
+						<passive_effect name="WalkSpeed" operation="perc_add" value="@$buffPotion_haste2"/>
+						<passive_effect name="RunSpeed" operation="perc_add" value="@$buffPotion_haste2"/>
+						<passive_effect name="CrouchSpeed" operation="perc_add" value="@$buffPotion_haste2"/>
+						<passive_effect name="AttacksPerMinute" operation="perc_add" value="@$buffPotion_haste2"/>
+						<passive_effect name="RoundsPerMinute" operation="perc_add" value="@$buffPotion_haste2"/>
+						<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".5"/>
+					</effect_group>
+			</buff>
+			<buff name="buffPotion_haste3" name_key="sorceryPotion_haste3" description_key="sorceryPotion_haste3Desc" icon="ui_game_symbol_chemistry"  icon_color="174,146,213" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="60"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_haste3" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_haste3" operation="multiply" value="1.5"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_haste3" operation="set" value="0"/>
+						<passive_effect name="WalkSpeed" operation="perc_add" value="@$buffPotion_haste3"/>
+						<passive_effect name="RunSpeed" operation="perc_add" value="@$buffPotion_haste3"/>
+						<passive_effect name="CrouchSpeed" operation="perc_add" value="@$buffPotion_haste3"/>
+						<passive_effect name="AttacksPerMinute" operation="perc_add" value="@$buffPotion_haste3"/>
+						<passive_effect name="RoundsPerMinute" operation="perc_add" value="@$buffPotion_haste3"/>
+						<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".75"/>
+					</effect_group>
+			</buff>			
+			<!-- POTION: Taunt -->
+			<buff name="buffPotion_taunt" name_key="sorceryPotion_taunt" description_key="sorceryPotion_tauntDesc" icon="ui_game_symbol_chemistry"  icon_color="120,120,120" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="60"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryPotion_taunt"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" target="self" sound="sorceryPotion_taunt"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryPotion_taunt"/>
+						<passive_effect name="NoiseMultiplier" operation="perc_set" value="3" />
+					</effect_group>
+			</buff>			
+			<buff name="buffPotion_taunt2" name_key="sorceryPotion_taunt2" description_key="sorceryPotion_taunt2Desc" icon="ui_game_symbol_chemistry"  icon_color="120,120,120" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="60"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryPotion_taunt2"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" target="self" sound="sorceryPotion_taunt2"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryPotion_taunt2"/>
+						<passive_effect name="NoiseMultiplier" operation="perc_set" value="3" />
+					</effect_group>
+			</buff>			
+			<buff name="buffPotion_taunt3" name_key="sorceryPotion_taunt3" description_key="sorceryPotion_taunt3Desc" icon="ui_game_symbol_chemistry"  icon_color="120,120,120" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="60"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryPotion_taunt3"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" target="self" sound="sorceryPotion_taunt3"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryPotion_taunt3"/>
+						<passive_effect name="NoiseMultiplier" operation="perc_set" value="3" />
+					</effect_group>
+			</buff>
+			<!-- POTION: Essence -->
+			<buff name="buffPotion_essence" name_key="sorceryPotion_essence" description_key="sorceryPotion_essenceDesc" icon="ui_game_symbol_chemistry"  icon_color="200,100,200" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="300"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_essence" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_essence" operation="multiply" value=".5"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_essence" operation="set" value="0"/>
+						<passive_effect name="HarvestCount" operation="perc_add" value="@$buffPotion_essence" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest,essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest,essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+					</effect_group>
+			</buff>
+			<buff name="buffPotion_essence2" name_key="sorceryPotion_essence2" description_key="sorceryPotion_essence2Desc" icon="ui_game_symbol_chemistry"  icon_color="200,100,200" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="300"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_essence2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_essence2" operation="multiply" value="1"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_essence2" operation="set" value="0"/>
+						<passive_effect name="HarvestCount" operation="perc_add" value="@$buffPotion_essence2" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest,essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest,essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+					</effect_group>
+			</buff>			
+			<buff name="buffPotion_essence3" name_key="sorceryPotion_essence3" description_key="sorceryPotion_essence3Desc" icon="ui_game_symbol_chemistry"  icon_color="200,100,200" hidden="false" tags="potion">
+				<stack_type value="ignore"/>
+				<duration value="300"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_essence3" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_essence3" operation="multiply" value="2"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_essence3" operation="set" value="0"/>
+						<passive_effect name="HarvestCount" operation="perc_add" value="@$buffPotion_essence3" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest,essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest,essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+					</effect_group>
+			</buff>			
+			
+			
+			
+			
+
+			<!-- ALCHEMY: POTION BOMBS -->
+			<!-- POTION BOMB IMPACT: Fire -->
+			<buff name="buffPotionBombImpactTrigger_fire" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="0.1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireImpact"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryFireball_explode" />
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireBurning-finish"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPotionBombImpact_fire, buffPotionBombFinish_fire"/>
+					</effect_group>
+			</buff>
+			<buff name="buffPotionBombImpact_fire" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="0.1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireImpact.unity3d?fireImpact" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="Hips" />
+					</effect_group>
+			</buff>
+			<!-- POTION BOMB FINISH: Fire -->
+			<buff name="buffPotionBombFinish_fire" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/>
+				<duration value="5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireBurning" />
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning-finish.unity3d?fireBurning-finish" parent_transform="Hips" />					
+					</effect_group>
+			</buff>
+			<!-- POTION BOMB: Fire -->
+			<buff name="buffPotionBomb_fire" hidden="true" tags="potionbomb">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire" operation="add" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire" operation="multiply" value="20"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire_C2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire_C2" operation="add" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire_C2" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire_C2" operation="multiply" value="5"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_fire" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_fire_C2" duration="1,5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="1">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+			<buff name="buffPotionBomb_fire2" hidden="true" tags="potionbomb">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire2" operation="add" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire2" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire2" operation="multiply" value="40"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire2_C2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire2_C2" operation="add" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire2_C2" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire2_C2" operation="multiply" value="10"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_fire2" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_fire2_C2" duration="1,5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="1">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
+						</triggered_effect>						
+					</effect_group>
+			</buff>
+			<buff name="buffPotionBomb_fire3" hidden="true" tags="potionbomb">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire3" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire3" operation="add" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire3" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire3" operation="multiply" value="60"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire3_C2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire3_C2" operation="add" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire3_C2" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_fire3_C2" operation="multiply" value="15"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_fire3" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_fire3_C2" duration="1,5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="1">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="90"/>
+						</triggered_effect>						
+					</effect_group>
+			</buff>
+
+			<!-- POTION BOMB IMPACT: Ice -->
+			<buff name="buffPotionBombImpactTrigger_ice" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="0.1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceImpact"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryIce_impacted" />
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceFinish"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPotionBombImpact_ice, buffPotionBombFinish_ice"/>
+					</effect_group>
+			</buff>
+			<buff name="buffPotionBombImpact_ice" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="0.1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceImpact.unity3d?iceImpact" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceLasting.unity3d?iceLasting" parent_transform="Hips" />
+					</effect_group>
+			</buff>
+			<!-- POTION BOMB FINISH: Ice -->
+			<buff name="buffPotionBombFinish_ice" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/>
+				<duration value="5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffSpell_Frozen"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceLasting" />
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceFinish.unity3d?iceFinish" parent_transform="Hips" />
+						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryIce_freeze" target="self" />
+					</effect_group>
+			</buff>
+			<!-- POTION BOMB: Ice -->
+			<buff name="buffPotionBomb_ice" hidden="true" tags="potionbomb">
+				<damage_type value="cold"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice" operation="add" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice" operation="multiply" value="10"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice_C2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice_C2" operation="add" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice_C2" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice_C2" operation="multiply" value="2.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_ice" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_ice_C2" duration="1,5"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpellImpactTrigger_Frozen">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+			<buff name="buffPotionBomb_ice2" hidden="true" tags="potionbomb">
+				<damage_type value="cold"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice2" operation="add" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice2" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice2" operation="multiply" value="20"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice2_C2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice2_C2" operation="add" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice2_C2" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice2_C2" operation="multiply" value="5"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_ice2" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_ice2_C2" duration="1,5"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpellImpactTrigger_Frozen">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+			<buff name="buffPotionBomb_ice3" hidden="true" tags="potionbomb">
+				<damage_type value="cold"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice3" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice3" operation="add" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice3" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice3" operation="multiply" value="30"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice3_C2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice3_C2" operation="add" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice3_C2" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_ice3_C2" operation="multiply" value="7.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_ice3" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_ice3_C2" duration="1,5"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpellImpactTrigger_Frozen">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="90"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+
+			<!-- POTION BOMB IMPACT: Lightning -->
+			<buff name="buffPotionBombImpactTrigger_lightning" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="0.1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="lightningImpact"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryPotionBomb_lightningImpact" />
+						<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningArc-finish"/> -->
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffPotionBombImpact_lightning, buffPotionBombFinish_lightning"/>
+					</effect_group>
+			</buff>
+			<buff name="buffPotionBombImpact_lightning" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="0.1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningImpact.unity3d?lightningImpact" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningArc.unity3d?lightningArc" parent_transform="Hips" />
+					</effect_group>
+			</buff>
+			<!-- POTION BOMB FINISH: Lightning -->
+			<buff name="buffPotionBombFinish_lightning" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/>
+				<duration value="5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningArc" />
+						<!-- <triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningArc-finish.unity3d?lightningArc-finish" parent_transform="Hips" />					 -->
+					</effect_group>
+			</buff>
+			<!-- POTION BOMB: Lightning -->
+			<buff name="buffPotionBomb_lightning" hidden="true" tags="potionbomb">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning" operation="add" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning" operation="multiply" value="15"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning_C2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning_C2" operation="add" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning_C2" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning_C2" operation="multiply" value="4"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_lightning" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_lightning_C2" duration="1,5"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".10" />						
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="debuffPotionBomb_lightningElectrocute">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+			<buff name="buffPotionBomb_lightning2" hidden="true" tags="potionbomb">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning2" operation="add" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning2" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning2" operation="multiply" value="45"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning2_C2" operation="set" value="@$sorceryAlchemyMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning2_C2" operation="add" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning2_C2" operation="subtract" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotionBomb_lightning2_C2" operation="multiply" value="12"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_lightning2" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffPotionBomb_lightning2_C2" duration="1,5"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".10" />						
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="debuffPotionBomb_lightningElectrocute">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="60"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+			<!-- POTION BOMB DEBUFF: LIGHTNING ELECTROCUTE -->
+			<buff name="debuffPotionBomb_lightningElectrocute" hidden="true" remove_on_death="true">
+				<damage_type value="electrical"/>
+				<stack_type value="ignore"/>
+				<duration value="3"/>
+				<update_rate value="1"/>
+
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningElectrocute.unity3d?lightningElectrocute" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="electric_fence_impact" />
+					</effect_group>
+
+					<effect_group name="ELECTROCUTE: Shockburn">
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5" duration="0,2"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,0" duration="0,2"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,0" duration="0,2"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,0" duration="0,2"/>
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,0" duration="0,2"/>
+					</effect_group>
+
+					<effect_group name="cleanup">
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningElectrocute"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" target="self" sound="electric_fence_impact" />
+						<triggered_effect trigger="onSelfLeaveGame" action="StopSound" target="self" sound="electric_fence_impact" />
+					</effect_group>
+			</buff>
+
+
+
+
+
+
+
+		<!--___________________________ SPELL AMMO ___________________________-->
+			<!-- SPELL AMMO: ARROWS-->
+			<!-- FIRE ARROW -->
+			<buff name="buffAmmoArrow_fire" hidden="true" tags="spellammo">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_fire" operation="set" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_fire" operation="multiply" value="30"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_fire_C2" operation="set" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_fire_C2" operation="multiply" value="6"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffAmmoArrow_fire" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffAmmoArrow_fire_C2" duration="1,5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="1">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" target="self" stat="Health" operation="subtract" value="30">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+						</triggered_effect>						
+					</effect_group>
+			</buff>		
+			<!-- ICE ARROW -->
+			<buff name="buffAmmoArrow_ice" hidden="true" tags="spellammo">
+				<damage_type value="cold"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_ice" operation="set" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_ice" operation="multiply" value="25"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_ice_C2" operation="set" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_ice_C2" operation="multiply" value="4"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffAmmoArrow_ice" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffAmmoArrow_ice_C2" duration="1,5"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpellImpactTrigger_Frozen">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" target="self" stat="Health" operation="subtract" value="10">
+							<requirement name="HasBuff" buff="buffSpell_Frozen" target="self"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+			<!-- LIGHTNING ARROW -->
+			<buff name="buffAmmoArrow_lightning" hidden="true" tags="spellammo">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_lightning" operation="set" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_lightning" operation="multiply" value="20"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_lightning_C2" operation="set" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_lightning_C2" operation="multiply" value="3"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffAmmoArrow_lightning" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffAmmoArrow_lightning_C2" duration="1,5"/>
+							<passive_effect name="HealthMax" operation="perc_subtract" value="0.10"/>
+							<passive_effect name="HealthGain" operation="perc_subtract" value="0.10"/>
+							<passive_effect name="HealthLoss" operation="perc_add" value="0.10"/>						
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".10" />
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="debuffAmmo_LightningStrike">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+			<!-- OMNI ARROW -->
+			<buff name="buffAmmoArrow_omni" hidden="true" tags="spellammo">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_omni" operation="set" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_omni" operation="add" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_omni" operation="add" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_omni" operation="subtract" value="2"/> <!-- remove base -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_omni" operation="multiply" value="75"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_omni_C2" operation="set" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_omni_C2" operation="add" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_omni_C2" operation="add" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_omni_C2" operation="subtract" value="2"/> <!-- remove base -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_omni_C2" operation="multiply" value="13"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffAmmoArrow_omni" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffAmmoArrow_omni_C2" duration="1,5"/>
+							<passive_effect name="HealthMax" operation="perc_subtract" value="0.10"/>
+							<passive_effect name="HealthGain" operation="perc_subtract" value="0.10"/>
+							<passive_effect name="HealthLoss" operation="perc_add" value="0.10"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value=".8,.8,0" duration="0,1,5" />
+					</effect_group>
+					<effect_group name="FIRE">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="GTE" value="85"/>
+						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" target="self" stat="Health" operation="subtract" value="30"/>
+					</effect_group>
+					<effect_group name="ICE">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpellImpactTrigger_Frozen">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" target="self" stat="Health" operation="subtract" value="10">
+							<requirement name="HasBuff" buff="buffSpell_Frozen" target="self"/>
+						</triggered_effect>	
+					</effect_group>
+					<effect_group name="LIGHTNING">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="debuffAmmo_LightningStrike"/>
+					</effect_group>					
+			</buff>
+
+		<!--___________________________ SPELL AMMO: DEBUFFS & SPELLS ___________________________-->
+			<!-- DEBUFF: LIGHTNING STRIKE -->
+			<buff name="debuffAmmo_LightningStrike" hidden="true" remove_on_death="true">
+				<damage_type value="electrical"/>
+				<stack_type value="ignore"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group name="IMPACT">
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningStrike.unity3d?lightningStrike"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryLightning_strike" />
+					</effect_group>
+					<effect_group name="ELECTROCUTE">
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="50" duration="0.1,1.1"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,0" duration="0,1"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,0" duration="0,1"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,0" duration="0,1"/>
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,0" duration="0,1"/>
+					</effect_group>					
+					<effect_group name="cleanup">
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningStrike"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" target="self" sound="sorceryLightning_strike" />
+					</effect_group>
+			</buff>
 
 		</append>
-		
 		
 		
 		

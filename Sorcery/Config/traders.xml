@@ -37,14 +37,14 @@
 			<item name="runeGeneral_fireessenceboon"/>
 			<item name="runeGeneral_iceessenceboon"/>
 			<item name="runeGeneral_lightningessenceboon" prob=".5"/>
-			<item name="runeGeneral_lockshatter" prob=".1"/>
-			<item name="runeGeneral_fireessenceboon2" prob=".3"/>
-			<item name="runeGeneral_iceessenceboon2" prob=".3"/>
+			<item name="runeGeneral_lockshatter" prob=".2"/>
+			<item name="runeGeneral_fireessenceboon2" prob=".1"/>
+			<item name="runeGeneral_iceessenceboon2" prob=".1"/>
 			<item name="runeGeneral_lightningessenceboon2" prob=".1"/>		
 			<item name="runeGeneral_lockshatter2" prob=".05"/>
 		</trader_item_group>
 		<trader_item_group name="sorceryModMeleeT2" count="1">
-			<item name="runeGeneral_lockshatter" prob=".2"/>
+			<item name="runeGeneral_lockshatter" prob=".3"/>
 			<item name="runeGeneral_lockshatter2" prob=".05"/>
 			<item name="runeGeneral_fireessenceboon2"/>
 			<item name="runeGeneral_iceessenceboon2"/>
@@ -56,12 +56,12 @@
 		<trader_item_group name="sorceryModMeleeT3" count="1">
 			<item name="runeGeneral_lockshatter" prob=".3"/>
 			<item name="runeGeneral_lockshatter2" prob=".1"/>		
-			<item name="runeGeneral_fireessenceboon3"/>
-			<item name="runeGeneral_iceessenceboon3"/>
-			<item name="runeGeneral_lightningessenceboon3" prob=".5"/>
-			<item name="runeGeneral_fireessenceboon4" prob=".1"/>
-			<item name="runeGeneral_iceessenceboon4" prob=".1"/>
-			<item name="runeGeneral_lightningessenceboon4" prob=".05"/>			
+			<item name="runeGeneral_fireessenceboon2"/>
+			<item name="runeGeneral_iceessenceboon2"/>
+			<item name="runeGeneral_lightningessenceboon2"/>			
+			<item name="runeGeneral_fireessenceboon3" prob=".1"/>
+			<item name="runeGeneral_iceessenceboon3" prob=".1"/>
+			<item name="runeGeneral_lightningessenceboon3" prob=".1"/>	
 		</trader_item_group>		
 	
 		<!-- SORCERY RUNES: Guns -->
@@ -69,25 +69,28 @@
 			<item name="runeSpellcast_firestorm"/>
 			<item name="runeSpellcast_deepfreeze"/>
 			<item name="runeGeneral_spiritboon" prob=".5"/>
-			<item name="runeSpellcast_firestorm2" prob=".3"/>
-			<item name="runeSpellcast_deepfreeze2" prob=".3"/>
-			<item name="runeGeneral_spiritboon2" prob=".1"/>	
+			<item name="runeSpellcast_firestorm2" prob=".01"/>
+			<item name="runeSpellcast_deepfreeze2" prob=".01"/>
+			<item name="runeGeneral_spiritboon2" prob=".02"/>
 		</trader_item_group>
 		<trader_item_group name="sorceryModGunsT2" count="1">
-			<item name="runeSpellcast_firestorm2"/>
-			<item name="runeSpellcast_deepfreeze2"/>
-			<item name="runeGeneral_spiritboon2" prob=".5"/>
-			<item name="runeSpellcast_firestorm3" prob=".3"/>
-			<item name="runeSpellcast_deepfreeze3" prob=".3"/>
-			<item name="runeGeneral_spiritboon3" prob=".1"/>	
+			<item name="runeSpellcast_firestorm"/>
+			<item name="runeSpellcast_deepfreeze"/>
+			<item name="runeGeneral_spiritboon" prob=".5"/>
+			<item name="runeSpellcast_firestorm2" prob=".1"/>
+			<item name="runeSpellcast_deepfreeze2" prob=".1"/>
+			<item name="runeGeneral_spiritboon2" prob=".15"/>	
 		</trader_item_group>
 		<trader_item_group name="sorceryModGunsT3" count="1">
-			<item name="runeSpellcast_firestorm3"/>
-			<item name="runeSpellcast_deepfreeze3"/>
-			<item name="runeGeneral_spiritboon3" prob=".5"/>
-			<item name="runeSpellcast_firestorm4" prob=".3"/>
-			<item name="runeSpellcast_deepfreeze4" prob=".3"/>
-			<item name="runeGeneral_spiritboon4" prob=".05"/>
+			<item name="runeSpellcast_firestorm"/>
+			<item name="runeSpellcast_deepfreeze"/>
+			<item name="runeGeneral_spiritboon"/>
+			<item name="runeSpellcast_firestorm2" prob=".2"/>
+			<item name="runeSpellcast_deepfreeze2" prob=".2"/>
+			<item name="runeGeneral_spiritboon2" prob=".25"/>
+			<item name="runeSpellcast_firestorm3" prob=".01"/>
+			<item name="runeSpellcast_deepfreeze3" prob=".01"/>
+			<item name="runeGeneral_spiritboon3" prob=".02"/>			
 		</trader_item_group>
 		
 		<!-- SORCERY RUNES: Armor -->
@@ -104,28 +107,31 @@
 			<item name="runeGeneral_spiritboon2" prob=".25"/>
 		</trader_item_group>		
 		<trader_item_group name="sorceryModArmorT2" count="1">
-			<item name="runeArmor_fireskin2"/>
-			<item name="runeArmor_iceskin2"/>
-			<item name="runeArmor_firenova2" prob=".5"/>
-			<item name="runeArmor_icenova2" prob=".5"/>			
-			<item name="runeGeneral_spiritboon2" prob=".5"/>
-			<item name="runeArmor_fireskin3" prob=".35"/>
-			<item name="runeArmor_iceskin3" prob=".35"/>
-			<item name="runeArmor_firenova3" prob=".25"/>
-			<item name="runeArmor_icenova3" prob=".25"/>			
-			<item name="runeGeneral_spiritboon3" prob=".25"/>
+			<item name="runeArmor_fireskin"/>
+			<item name="runeArmor_iceskin"/>
+			<item name="runeArmor_firenova"/>
+			<item name="runeArmor_icenova" />		
+			<item name="runeArmor_fireskin2" prob=".1"/>
+			<item name="runeArmor_iceskin2" prob=".1"/>
+			<item name="runeArmor_firenova2" prob=".1"/>
+			<item name="runeArmor_icenova2" prob=".1"/>			
+			<item name="runeGeneral_spiritboon2" prob=".2"/>
 		</trader_item_group>
 		<trader_item_group name="sorceryModArmorT3" count="1">
-			<item name="runeArmor_fireskin3"/>
-			<item name="runeArmor_iceskin3"/>
-			<item name="runeArmor_firenova3" prob=".5"/>
-			<item name="runeArmor_icenova3" prob=".5"/>			
-			<item name="runeGeneral_spiritboon3" prob=".5"/>
-			<item name="runeArmor_fireskin4" prob=".35"/>
-			<item name="runeArmor_iceskin4" prob=".35"/>
-			<item name="runeArmor_firenova4" prob=".25"/>
-			<item name="runeArmor_icenova4" prob=".25"/>			
-			<item name="runeGeneral_spiritboon4" prob=".25"/>
+			<item name="runeArmor_fireskin"/>
+			<item name="runeArmor_iceskin"/>
+			<item name="runeArmor_firenova"/>
+			<item name="runeArmor_icenova" />		
+			<item name="runeArmor_fireskin2" prob=".2"/>
+			<item name="runeArmor_iceskin2" prob=".2"/>
+			<item name="runeArmor_firenova2" prob=".2"/>
+			<item name="runeArmor_icenova2" prob=".2"/>			
+			<item name="runeGeneral_spiritboon2" prob=".3"/>			
+			<item name="runeArmor_fireskin3" prob=".05"/>
+			<item name="runeArmor_iceskin3" prob=".05"/>
+			<item name="runeArmor_firenova3" prob=".05"/>
+			<item name="runeArmor_icenova3" prob=".05"/>			
+			<item name="runeGeneral_spiritboon3" prob=".1"/>
 		</trader_item_group>			
 	
 		<!--CREATE: sorceryModT1/5 -->
@@ -171,32 +177,32 @@
 			<item name="runeArmor_icenova3"/>
 			<item name="runeGeneral_lockshatter3" prob=".1"/>
 		</trader_item_group>	
-		<trader_item_group name="sorceryModT4" count="1">
-			<item name="runeArmor_fireskin4"/>
-			<item name="runeArmor_iceskin4"/>
-			<item name="runeGeneral_spiritboon4"/>
-			<item name="runeGeneral_fireessenceboon4"/>
-			<item name="runeGeneral_iceessenceboon4"/>
-			<item name="runeGeneral_lightningessenceboon4"/>
-			<item name="runeSpellcast_firestorm4"/>
-			<item name="runeSpellcast_deepfreeze4"/>
-			<item name="runeArmor_firenova4"/>
-			<item name="runeArmor_icenova4"/>
-			<item name="runeGeneral_lockshatter4" prob=".1"/>
-		</trader_item_group>	
-		<trader_item_group name="sorceryModT5" count="1">
-			<item name="runeArmor_fireskin5"/>
-			<item name="runeArmor_iceskin5"/>
-			<item name="runeGeneral_spiritboon5"/>
-			<item name="runeGeneral_fireessenceboon5"/>
-			<item name="runeGeneral_iceessenceboon5"/>
-			<item name="runeGeneral_lightningessenceboon5"/>
-			<item name="runeSpellcast_firestorm5"/>
-			<item name="runeSpellcast_deepfreeze5"/>
-			<item name="runeArmor_firenova5"/>
-			<item name="runeArmor_icenova5"/>
-			<item name="runeGeneral_lockshatter5" prob=".1"/>
-		</trader_item_group>			
+		<!-- <trader_item_group name="sorceryModT4" count="1"> -->
+			<!-- <item name="runeArmor_fireskin4"/> -->
+			<!-- <item name="runeArmor_iceskin4"/> -->
+			<!-- <item name="runeGeneral_spiritboon4"/> -->
+			<!-- <item name="runeGeneral_fireessenceboon4"/> -->
+			<!-- <item name="runeGeneral_iceessenceboon4"/> -->
+			<!-- <item name="runeGeneral_lightningessenceboon4"/> -->
+			<!-- <item name="runeSpellcast_firestorm4"/> -->
+			<!-- <item name="runeSpellcast_deepfreeze4"/> -->
+			<!-- <item name="runeArmor_firenova4"/> -->
+			<!-- <item name="runeArmor_icenova4"/> -->
+			<!-- <item name="runeGeneral_lockshatter4" prob=".1"/> -->
+		<!-- </trader_item_group>	 -->
+		<!-- <trader_item_group name="sorceryModT5" count="1"> -->
+			<!-- <item name="runeArmor_fireskin5"/> -->
+			<!-- <item name="runeArmor_iceskin5"/> -->
+			<!-- <item name="runeGeneral_spiritboon5"/> -->
+			<!-- <item name="runeGeneral_fireessenceboon5"/> -->
+			<!-- <item name="runeGeneral_iceessenceboon5"/> -->
+			<!-- <item name="runeGeneral_lightningessenceboon5"/> -->
+			<!-- <item name="runeSpellcast_firestorm5"/> -->
+			<!-- <item name="runeSpellcast_deepfreeze5"/> -->
+			<!-- <item name="runeArmor_firenova5"/> -->
+			<!-- <item name="runeArmor_icenova5"/> -->
+			<!-- <item name="runeGeneral_lockshatter5" prob=".1"/> -->
+		<!-- </trader_item_group>			 -->
 		
 
 	
@@ -237,33 +243,7 @@
 			<item name="sorceryArmor_Boots3"/>
 			<item name="sorceryArmor_Bandana3"/>
 			<item name="sorceryAccessory_Shades3"/>
-		</trader_item_group>		
-		<trader_item_group name="sorceryArmorT4" count="1"> 
-			<item name="sorceryArmor_Hood4"/>
-			<item name="sorceryArmor_Robe4"/>
-			<item name="sorceryArmor_Chest4"/>
-			<item name="sorceryArmor_Shirt4"/>
-			<item name="sorceryArmor_Gloves4"/>
-			<item name="sorceryArmor_Leg4"/>
-			<item name="sorceryArmor_Pants4"/>
-			<item name="sorceryArmor_Boots4"/>
-			<item name="sorceryArmor_Bandana4"/>
-			<item name="sorceryAccessory_Shades4"/>
-		</trader_item_group>	
-		<trader_item_group name="sorceryArmorT5" count="1"> 
-			<item name="sorceryArmor_Hood5"/>
-			<item name="sorceryArmor_Robe5"/>
-			<item name="sorceryArmor_Chest5"/>
-			<item name="sorceryArmor_Shirt5"/>
-			<item name="sorceryArmor_Gloves5"/>
-			<item name="sorceryArmor_Leg5"/>
-			<item name="sorceryArmor_Pants5"/>
-			<item name="sorceryArmor_Boots5"/>
-			<item name="sorceryArmor_Bandana5"/>
-			<item name="sorceryAccessory_Shades5"/>
-		</trader_item_group>			
-		
-			
+		</trader_item_group>
 
 		
 		
@@ -313,72 +293,69 @@
 	<!-- CLOTHES -->
 	<!-- LIGHT ARMOR -->
 	<append xpath="/traders/trader_item_groups/trader_item_group[@name='lightArmor']">
-		<item group="sorceryArmorT1" prob="1"/>
-		<item group="sorceryArmorT2" prob=".3"/>
-		<item group="sorceryArmorT3" prob=".1"/>
-		<item group="sorceryArmorT4" prob=".01"/>
+		<item group="sorceryArmorT1" prob=".5"/>
+		<item group="sorceryArmorT2" prob=".1"/>
+		<item group="sorceryArmorT3" prob=".01"/>
 	</append>
 	<append xpath="/traders/trader_item_groups/trader_item_group[@name='clothes']">
-		<item group="sorceryArmorT1" prob="1"/>
-		<item group="sorceryArmorT2" prob=".3"/>
-		<item group="sorceryArmorT3" prob=".1"/>
-		<item group="sorceryArmorT4" prob=".01"/>
+		<item group="sorceryArmorT1" prob=".5"/>
+		<item group="sorceryArmorT2" prob=".1"/>
+		<item group="sorceryArmorT3" prob=".01"/>
 	</append>		
 		
 	<!-- WEAPONS -->
 	<!-- GUNS -->
 	<append xpath="/traders/trader_item_groups/trader_item_group[@name='weaponsGunsCommon']">
-		<item name="spellcastFire" prob=".2"/>
-		<item name="spellcastIce" prob=".2"/>
+		<item name="spellcastFire" prob=".1"/>
+		<item name="spellcastIce" prob=".1"/>
 	</append>
 	<append xpath="/traders/trader_item_groups/trader_item_group[@name='weaponsGunsMilitary']">
-		<item name="spellcastFire" prob=".3"/>
-		<item name="spellcastIce" prob=".3"/>
+		<item name="spellcastFire" prob=".2"/>
+		<item name="spellcastIce" prob=".2"/>
 	</append>
 		
 	<!-- AMMO -->
 	<append xpath="/traders/trader_item_groups/trader_item_group[@name='ammo']">
 		<item name="spellFireball" count="5,10" prob=".6"/>
 		<item name="spellIceBall" count="5,10" prob=".6"/>
+		<item name="spellLightning" count="5,10" prob=".6"/>
 		<item name="spellFirestorm" count="2,5" prob=".3"/>
 		<item name="spellIceSpike" count="2,5" prob=".3"/>
+		<item name="spellLightningNova" count="2,5" prob=".3"/>
 		<item name="spellIceStorm" count="1,5" prob=".15"/>
+		<item name="spellLightningStorm" count="1,5" prob=".15"/>
 	</append>
 	
 		
 	<!-- SECRET STASH: MOD ALL -->	
 	<append xpath="/traders/trader_item_groups/trader_item_group[@name='modAllT1SecretStash']">
 		<item group="sorceryModT1" prob="1"/>
-		<item group="sorceryModT2" prob=".3"/>
-		<item group="sorceryModT3" prob=".1"/>
-		<item group="sorceryModT4" prob=".01"/>
+		<item group="sorceryModT2" prob=".1"/>
+		<item group="sorceryModT3" prob=".01"/>
 	</append>
 	
 	<append xpath="/traders/trader_item_groups/trader_item_group[@name='modAllT2SecretStash']">
 		<item group="sorceryModT1" prob="1"/>
-		<item group="sorceryModT2" prob=".5"/>
-		<item group="sorceryModT3" prob=".2"/>
-		<item group="sorceryModT4" prob=".02"/>
+		<item group="sorceryModT2" prob=".14"/>
+		<item group="sorceryModT3" prob=".02"/>
 	</append>
 
 	<append xpath="/traders/trader_item_groups/trader_item_group[@name='modAllT3SecretStash']">
 		<item group="sorceryModT1" prob="1"/>
-		<item group="sorceryModT2" prob=".7"/>
-		<item group="sorceryModT3" prob=".3"/>
-		<item group="sorceryModT4" prob=".03"/>
+		<item group="sorceryModT2" prob=".16"/>
+		<item group="sorceryModT3" prob=".03"/>
 	</append>
 	
 	<append xpath="/traders/trader_item_groups/trader_item_group[@name='modAllT4SecretStash']">
 		<item group="sorceryModT1" prob="1"/>
-		<item group="sorceryModT2" prob=".9"/>
-		<item group="sorceryModT3" prob=".4"/>
-		<item group="sorceryModT4" prob=".04"/>
+		<item group="sorceryModT2" prob=".18"/>
+		<item group="sorceryModT3" prob=".04"/>
 	</append>
 	
 	<append xpath="/traders/trader_item_groups/trader_item_group[@name='modAllT5SecretStash']">
-		<item group="sorceryModT2" prob="1"/>
-		<item group="sorceryModT3" prob=".5"/>
-		<item group="sorceryModT4" prob=".05"/>
+		<item group="sorceryModT1" prob="1"/>
+		<item group="sorceryModT2" prob=".2"/>
+		<item group="sorceryModT3" prob=".05"/>
 	</append>			
 		
 		

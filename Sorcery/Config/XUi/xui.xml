@@ -28,7 +28,7 @@
 		drives the creation of this mod.
 		__________________________________________________________________________________-->
 		
-	<!-- SORCERY LOGO -->
+	<!-- UI TR: SORCERY LOGO -->
 	<append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
 		<window name="SorceryLogo" anchor="RightTop" />
 	</append>
@@ -36,45 +36,74 @@
 	<!-- <append xpath="/xui/ruleset[@name='default']/window_group[@name='toolbelt']">
 		<window name="SorceryTrackerRunes" anchor="RightTop" />
 	</append> -->
+
+	<!-- UI Menu: SORCERY LOGO -->
+	<!-- REMOVE: <window name="ingameMenu" /> -->
+	<remove xpath="/xui/ruleset/window_group[@name='ingameMenu']"/>
+	<insertAfter xpath="/xui/ruleset/window_group[@name='spawnMenu']">
+		<window_group name="ingameMenu">
+			<!-- <window name="ingameMenu" /> -->
+			<window name="SorceryingameMenu" />
+		</window_group>
+	</insertAfter>
 	
 	<!-- XUI -->	
 	<append xpath="/xui/ruleset">
-
-<!--___________________________ FIRE CONJURE ___________________________-->
+	<!--___________________________ FIRE CONJURE ___________________________-->
 		<window_group name="workstation_conjureFire" controller="XUiC_WorkstationWindowGroup">
-			<window name="windowCraftingListConjureFire"/>
-			<window name="craftingInfoPanelConjureFire"/>
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
 			<window name="windowToolsConjureFire" />
-			<window name="windowFuelConjureFire" />
+			<window name="windowFuel" />
 			<window name="windowConjureFireInput" />
 			<window name="windowOutput" />
 			<window name="windowNonPagingHeader" />
 		</window_group>
 
-<!--___________________________ ICE CONJURE ___________________________-->	
+	<!--___________________________ ICE CONJURE ___________________________-->	
 		<window_group name="workstation_conjureIce" controller="XUiC_WorkstationWindowGroup">
-			<window name="windowCraftingListConjureIce"/>
-			<window name="craftingInfoPanelConjureIce"/>
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
 			<window name="windowToolsConjureIce" />
-			<window name="windowFuelConjureIce" />
+			<window name="windowFuel" />
 			<window name="windowConjureIceInput" />
 			<window name="windowOutput" />
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		
-<!--___________________________ LIGHTNING CONJURE ___________________________-->	
+	<!--___________________________ LIGHTNING CONJURE ___________________________-->
 		<window_group name="workstation_conjureLightning" controller="XUiC_WorkstationWindowGroup">
-			<window name="windowCraftingListConjureLightning"/>
-			<window name="craftingInfoPanelConjureLightning"/>
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
 			<window name="windowToolsConjureLightning" />
-			<window name="windowFuelConjureLightning" />
+			<window name="windowFuel" />
 			<window name="windowConjureLightningInput" />
 			<window name="windowOutput" />
 			<window name="windowNonPagingHeader" />
-		</window_group>		
+		</window_group>
+		
+		<!--___________________________ ALCHEMY STATION ___________________________-->
+		<window_group name="workstation_sorceryAlchemyStation" controller="XUiC_WorkstationWindowGroup">
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueue"/>
+			<window name="windowToolsAlchemy" />
+			<window name="windowOutput" />
+			<window name="windowNonPagingHeader" />
+		</window_group>
+
+		<!--___________________________ LOOM STATION ___________________________-->
+		<window_group name="workstation_sorceryArcaneWheel" controller="XUiC_WorkstationWindowGroup">
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueue"/>
+			<window name="windowToolsArcaneWheel" />
+			<window name="windowOutput" />
+			<window name="windowNonPagingHeader" />
+		</window_group>
 		
 	</append>
 </Sorcery>

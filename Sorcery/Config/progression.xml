@@ -49,17 +49,29 @@
 				<passive_effect name="RoundsPerMinute" operation="base_add" value="0,50" level="1,10"/> 
 				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="16,20" level="9,10"/> <!-- anim -->
 				<passive_effect name="StaminaMax" operation="base_add" value="10,100" level="1,10"/> <!-- spirit -->
-				<!-- <passive_effect name="EntityDamage" operation="perc_add" value="0,1" level="1,10"/> -->
 			</effect_group>
 			
-			<effect_group name="ARMORCRAFTING: RECIPES">
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,10" tags="sorceryAccessory_Shades2,sorceryArmor_Bandana2,sorceryArmor_Hood2,sorceryArmor_Robe2,sorceryArmor_Chest2,sorceryArmor_Shirt2,sorceryArmor_Gloves2,sorceryArmor_Leg2,sorceryArmor_Pants2,sorceryArmor_Boots2"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="6,10" tags="sorceryAccessory_Shades3,sorceryArmor_Bandana3,sorceryArmor_Hood3,sorceryArmor_Robe3,sorceryArmor_Chest3,sorceryArmor_Shirt3,sorceryArmor_Gloves3,sorceryArmor_Leg3,sorceryArmor_Pants3,sorceryArmor_Boots3"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="8,10" tags="sorceryAccessory_Shades4,sorceryArmor_Bandana4,sorceryArmor_Hood4,sorceryArmor_Robe4,sorceryArmor_Chest4,sorceryArmor_Shirt4,sorceryArmor_Gloves4,sorceryArmor_Leg4,sorceryArmor_Pants4,sorceryArmor_Boots4"/>
+			<effect_group name="ARMOR CRAFTING: Tiers">
+				<passive_effect name="CraftingTier" operation="base_set" level="1,2,4,6,8,10" value="1,2,3,4,5,6" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3"/>
+				<passive_effect name="CraftingTier" operation="base_set" level="11,20" value="6" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3"/>			
+			</effect_group>
+			
+			<!-- COMPATIBILITY PATCH -->
+			<!-- RAVENHEARST -->
+			<effect_group name="COMPATIBILITY PATCH - ARMOR CRAFTING: Tiers">
+					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/>
+				<passive_effect name="CraftingTier" operation="base_set" level="1,2,4,6,8,10" value="20,40,60,80,100,120" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3"/>
+				<passive_effect name="CraftingTier" operation="base_set" level="11,20" value="120" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3"/>			
+			</effect_group>			
+			
+			<effect_group name="ARMOR CRAFTING: Recipes">
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="sorceryAccessory_Shades,sorceryArmor_Bandana,sorceryArmor_Hood,sorceryArmor_Robe,sorceryArmor_Chest,sorceryArmor_Shirt,sorceryArmor_Gloves,sorceryArmor_Leg,sorceryArmor_Pants,sorceryArmor_Boots"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="6,10" tags="sorceryAccessory_Shades2,sorceryArmor_Bandana2,sorceryArmor_Hood2,sorceryArmor_Robe2,sorceryArmor_Chest2,sorceryArmor_Shirt2,sorceryArmor_Gloves2,sorceryArmor_Leg2,sorceryArmor_Pants2,sorceryArmor_Boots2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="10" tags="sorceryAccessory_Shades3,sorceryArmor_Bandana3,sorceryArmor_Hood3,sorceryArmor_Robe3,sorceryArmor_Chest3,sorceryArmor_Shirt3,sorceryArmor_Gloves3,sorceryArmor_Leg3,sorceryArmor_Pants3,sorceryArmor_Boots3"/>
 			</effect_group>			
 			
 			<effect_group>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="toolLoomFire,toolLoomIce,toolLoomLightning"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="sorceryArcaneWheel"/>
 				<effect_description level="1" desc_key="attSorceryRank1Desc"/>
 				<effect_description level="2" desc_key="attSorceryRank2Desc"/>
 				<effect_description level="3" desc_key="attSorceryRank3Desc"/>
@@ -86,8 +98,9 @@
 	</append>
 	
 	<!-- COMPATIBILITY PATCH: RAVENHEARST -->
+	<!-- NOTE: RH removes <skills> -->
 	<!-- Sorcery Skills -->
-	<insertAfter xpath="/progression/attributes[//attribute[@name='attArcher' or @SAFE_TO_IGNORE='Ravenhearst Compatibility Patch.']]">
+	<insertBefore  xpath="/progression/attributes[//attribute[@name='attArcher' or @SAFE_TO_IGNORE='Ravenhearst Compatibility Patch.']]">
 		<skills min_level="1" max_level="1">
 			<skill name="skillSorceryMastery" parent="attSorcery" name_key="skillSorceryMasteryName" desc_key="skillSorceryMasteryDesc" icon="ui_game_symbol_player"><effect_group/></skill>
 			<skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
@@ -95,11 +108,62 @@
 			<skill name="skillSorceryLightningCrafting" parent="attSorcery" name_key="skillSorceryLightningCraftingName" desc_key="skillSorceryLightningCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
 			<skill name="skillSorcerySupport" parent="attSorcery" name_key="skillSorcerySupportName" desc_key="skillSorcerySupportDesc" icon="ui_game_symbol_treasure"><effect_group/></skill>			
 		</skills>	
-	</insertAfter>	
+	</insertBefore >	
 	
 <!--___________________ SORCERY PERKS ___________________-->
 	<append xpath="/progression/perks[1]">
 	<!--___________________ SORCERY PERKS ___________________-->
+		<!-- ALCHEMY MASTERY -->
+		<perk name="perkSorceryAlchemyMastery" parent="skillSorceryMastery" name_key="perkSorceryAlchemyMasteryName" desc_key="perkSorceryAlchemyMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+
+			<effect_group name="ALCHEMY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Potion Potency) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="set" value="@$sorceryAlchemyMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="add" value="1"/>
+			</effect_group>
+			
+			<effect_group name="ALCHEMY: General Recipes">
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryAlchemyMortar,sorceryPotion_health,sorceryPotion_stamina,sorceryPotion_spirit,sorceryPotion_travel,sorceryPotion_haste,sorceryPotion_taunt,sorceryPotion_essence"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sorceryAlchemyStation,sorceryPotion_health2,sorceryPotion_stamina2,sorceryPotion_spirit2,sorceryPotion_travel2,sorceryPotion_haste2,sorceryPotion_taunt2,sorceryPotion_essence2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="sorceryPotion_health3,sorceryPotion_stamina3,sorceryPotion_spirit3,sorceryPotion_travel3,sorceryPotion_haste3,sorceryPotion_taunt3,sorceryPotion_essence3"/>
+			</effect_group>
+			
+			<effect_group name="ALCHEMY: Bomb Recipes">
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryPotionBomb_fire,sorceryPotionBomb_ice,sorceryPotionBomb_lightning,sorceryPotionBomb_grass"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sorceryPotionBomb_fire2,sorceryPotionBomb_ice2,sorceryPotionBomb_lightning2,sorceryPotionBomb_grass2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="sorceryPotionBomb_fire3,sorceryPotionBomb_ice3,sorceryPotionBomb_lightning3,sorceryPotionBomb_grass3"/>
+			</effect_group>			
+			
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorceryAlchemyMasteryRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorceryAlchemyMasteryRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorceryAlchemyMasteryRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorceryAlchemyMasteryRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorceryAlchemyMasteryRank5Desc"/>
+			</effect_group>			
+		</perk>	
+	
 		<!-- ESSENCE MASTERY -->
 		<perk name="perkSorceryEssenceMastery" parent="skillSorceryMastery" name_key="perkSorceryEssenceMasteryName" desc_key="perkSorceryEssenceMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
@@ -108,29 +172,13 @@
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
 
-			<effect_group name="All Essence">
-				<passive_effect name="HarvestCount" operation="perc_add" value="1,2,3,3" level="2,3,4,5" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>			
-				<passive_effect name="HarvestCount" operation="perc_add" value="1,2,3,3" level="2,3,4,5" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
-				<passive_effect name="HarvestCount" operation="perc_add" value="1,2,3,3" level="2,3,4,5" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
-			</effect_group>			
-			
-			<effect_group name="Fire Essence">
-				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceFireHarvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="1,5" tags="essenceFireHarvest"/>
-			</effect_group>
-
-			<effect_group name="Ice Essence">
-				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceIceHarvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,5" tags="essenceIceHarvest"/>
-			</effect_group>
-			
-			<effect_group name="Lightning Essence">
-				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceLightningHarvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="3,5" tags="essenceLightningHarvest"/>
+			<effect_group name="Essence Harvest Multipliers">
+				<passive_effect name="HarvestCount" operation="perc_add" value="1,5" level="1,5" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value="1,5" level="1,5" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+				<passive_effect name="HarvestCount" operation="perc_add" value="1,5" level="1,5" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
 			</effect_group>
 			
 			<effect_group>
-				<passive_effect name="CarryCapacity" operation="base_add" value="1,3" level="1,3"/>
 				<effect_description level="1" desc_key="perkSorceryEssenceMasteryRank1Desc"/>
 				<effect_description level="2" desc_key="perkSorceryEssenceMasteryRank2Desc"/>
 				<effect_description level="3" desc_key="perkSorceryEssenceMasteryRank3Desc"/>
@@ -159,11 +207,33 @@
 	
 		<!-- FIRE MASTERY -->
 		<perk name="perkSorceryFireMastery" parent="skillSorceryMastery" name_key="perkSorceryFireMasteryName" desc_key="perkSorceryFireMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key="reqSorceryFireMasteryElixirUnlock"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+
+			<effect_group name="FIRE MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_power" operation="set" value="@$sorceryFireMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_power" operation="add" value="1"/>
+			</effect_group>
 
 			<effect_group name="Spellcast Speed">
 				<requirement name="HoldingItemHasTags" tags="spellcastFire"/>
@@ -172,17 +242,25 @@
 			</effect_group>		
 
 			<effect_group name="Fire Essence">
-				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0,1" tags="essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="1,5" tags="essenceFireHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,5" tags="essenceFire2Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="3,5" tags="essenceFire3Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,5" tags="essenceFire4Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="5" tags="essenceFire5Harvest"/>
 			</effect_group>
+			
+			<effect_group name="Essence Mastery: Double">
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="1,5" tags="essenceFireHarvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="1"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="2,5" tags="essenceFire2Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="2"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="3,5" tags="essenceFire3Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="3"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="4,5" tags="essenceFire4Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="4"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="5" tags="essenceFire5Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="5"/></passive_effect>
+			</effect_group>
 						
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="conjureFire"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolFireCore"/>
-				<passive_effect name="CarryCapacity" operation="base_add" value="1,4" level="2,5"/>
 				<effect_description level="1" desc_key="perkSorceryFireMasteryRank1Desc"/>
 				<effect_description level="2" desc_key="perkSorceryFireMasteryRank2Desc"/>
 				<effect_description level="3" desc_key="perkSorceryFireMasteryRank3Desc"/>
@@ -326,106 +404,39 @@
 						<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
 					</passive_effect>
 			</effect_group>			
-			
-			<!-- SORCERY CRAFTING -->
-			<!-- All Sorcery Crafting Managed Here -->			
-			<!-- RAVENHEARST: COMPATIBILITY PATCH: Higher Crafting Tiers -->
-			
-			<!-- CRAFTING: ALL CONJURES / ELEMENTS -->
-			<effect_group name="CRAFTING 1: All Elements">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="1"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="1"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="1"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="1" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="20" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
-				</passive_effect>
-			</effect_group>
-			
-			<effect_group name="CRAFTING 2: All Elements">
-					<requirements compare_type="or">
-						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="1"/>
-						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="1"/>
-						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="1"/>
-					</requirements>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="2"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="2"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="2"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="2" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="40" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
-				</passive_effect>
-			</effect_group>
 
-			<effect_group name="CRAFTING 3: All Elements">
-					<requirements compare_type="or">
-						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="2"/>
-						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="2"/>
-						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="2"/>
-					</requirements>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="3"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="3"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="3"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="3" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="60" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
-				</passive_effect>
-			</effect_group>			
-			
-			<effect_group name="CRAFTING 4: All Elements">
-					<requirements compare_type="or">
-						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="3"/>
-						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="3"/>
-						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="3"/>
-					</requirements>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="4"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="4"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="4"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="4" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="80" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
-				</passive_effect>
-			</effect_group>			
-			
-			<effect_group name="CRAFTING 5: All Elements">
-					<requirements compare_type="or">
-						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="4"/>
-						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="4"/>
-						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="4"/>
-					</requirements>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="LT" value="5"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="LT" value="5"/>
-					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="LT" value="5"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="5" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="100" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
-				</passive_effect>
-			</effect_group>			
-
-			<effect_group name="CRAFTING 6: All Elements">
-					<requirements compare_type="or">
-						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="5"/>
-						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="5"/>
-						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="5"/>
-					</requirements>
-				<passive_effect name="CraftingTier" operation="base_set" value="6" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5"/>
-				<passive_effect name="CraftingTier" operation="base_set" value="120" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Hood4,sorceryArmor_Hood5,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Robe4,sorceryArmor_Robe5,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Chest4,sorceryArmor_Chest5,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Shirt4,sorceryArmor_Shirt5,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Gloves4,sorceryArmor_Gloves5,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Leg4,sorceryArmor_Leg5,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Pants4,sorceryArmor_Pants5,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Boots4,sorceryArmor_Boots5,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryArmor_Bandana4,sorceryArmor_Bandana5,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3,sorceryAccessory_Shades4,sorceryAccessory_Shades5">
-					<requirement name="ProgressionLevel" progression_name="attTradesman" operation="GTE" value="1"/> <!-- RAVENHEARST -->
-				</passive_effect>
-			</effect_group>
-			
-						
-			
 		</perk>
 		
 		
 		<!-- ICE MASTERY -->
 		<perk name="perkSorceryIceMastery" parent="skillSorceryMastery" name_key="perkSorceryIceMasteryName" desc_key="perkSorceryIceMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key="reqSorceryIceMasteryElixirUnlock"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+
+			<effect_group name="ICE MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryIceMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryIceMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryIceMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryIceMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryIceMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryIceMastery_power" operation="set" value="@$sorceryIceMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryIceMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryIceMastery_power" operation="add" value="1"/>
+			</effect_group>
 
 			<effect_group name="Spellcast Speed">
 				<requirement name="HoldingItemHasTags" tags="spellcastIce"/>
@@ -434,17 +445,25 @@
 			</effect_group>		
 
 			<effect_group name="Ice Essence">
-				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0,1" tags="essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="1,5" tags="essenceIceHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,5" tags="essenceIce2Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="3,5" tags="essenceIce3Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,5" tags="essenceIce4Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="5" tags="essenceIce5Harvest"/>
 			</effect_group>			
 
+			<effect_group name="Essence Mastery: Double">
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="1,5" tags="essenceIceHarvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="1"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="2,5" tags="essenceIce2Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="2"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="3,5" tags="essenceIce3Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="3"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="4,5" tags="essenceIce4Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="4"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="5" tags="essenceIce5Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="5"/></passive_effect>
+			</effect_group>
+
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="conjureIce"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolIceCore"/>
-				<passive_effect name="CarryCapacity" operation="base_add" value="1,4" level="2,5"/>
 				<effect_description level="1" desc_key="perkSorceryIceMasteryRank1Desc"/>
 				<effect_description level="2" desc_key="perkSorceryIceMasteryRank2Desc"/>
 				<effect_description level="3" desc_key="perkSorceryIceMasteryRank3Desc"/>
@@ -456,11 +475,33 @@
 		
 		<!-- LIGHTNING MASTERY -->
 		<perk name="perkSorceryLightningMastery" parent="skillSorceryMastery" name_key="perkSorceryLightningMasteryName" desc_key="perkSorceryLightningMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLightningMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key="reqSorceryLightningMasteryElixirUnlock"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+
+			<effect_group name="LIGHTNING MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryLightningMastery_power" operation="set" value="@$sorceryLightningMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryLightningMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryLightningMastery_power" operation="add" value="1"/>
+			</effect_group>			
 			
 			<effect_group name="Spellcast Speed">
 				<requirement name="HoldingItemHasTags" tags="spellcastLightning"/>
@@ -469,17 +510,25 @@
 			</effect_group>			
 			
 			<effect_group name="Lightning Essence">
-				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0,1" tags="essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="1,5" tags="essenceLightningHarvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,5" tags="essenceLightning2Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="3,5" tags="essenceLightning3Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,5" tags="essenceLightning4Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="5" tags="essenceLightning5Harvest"/>
 			</effect_group>
 			
+			<effect_group name="Essence Mastery: Double">
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="1,5" tags="essenceLightningHarvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="1"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="2,5" tags="essenceLightning2Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="2"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="3,5" tags="essenceLightning3Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="3"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="4,5" tags="essenceLightning4Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="4"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_add" value="1" level="5" tags="essenceLightning5Harvest"><requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="5"/></passive_effect>
+			</effect_group>			
+			
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="conjureLightning"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolLightningCore"/>	
-				<passive_effect name="CarryCapacity" operation="base_add" value="1,4" level="2,5"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolLightningCore"/>
 				<effect_description level="1" desc_key="perkSorceryLightningMasteryRank1Desc"/>
 				<effect_description level="2" desc_key="perkSorceryLightningMasteryRank2Desc"/>
 				<effect_description level="3" desc_key="perkSorceryLightningMasteryRank3Desc"/>
@@ -491,20 +540,41 @@
 		
 		<!-- RUNE MASTERY -->
 		<perk name="perkSorceryRuneMastery" parent="skillSorceryMastery" name_key="perkSorceryRuneMasteryName" desc_key="perkSorceryRuneMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLevel01"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
 			
+			<effect_group name="RUNE MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="set" value="@$sorceryRuneMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="add" value="1"/>
+			</effect_group>			
+			
 			<effect_group name="RUNECRAFTING: RECIPES">
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeGeneral_spiritboon2,runeGeneral_fireessenceboon2,runeGeneral_iceessenceboon2,runeGeneral_lightningessenceboon2,runeArmor_fireskin2,runeArmor_iceskin2"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="runeGeneral_spiritboon3,runeGeneral_fireessenceboon3,runeGeneral_iceessenceboon3,runeGeneral_lightningessenceboon3,runeArmor_fireskin3,runeArmor_iceskin3"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="runeGeneral_spiritboon4,runeGeneral_fireessenceboon4,runeGeneral_iceessenceboon4,runeGeneral_lightningessenceboon4,runeArmor_fireskin4,runeArmor_iceskin4"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeGeneral_spiritboon2,runeGeneral_fireessenceboon2,runeGeneral_iceessenceboon2,runeGeneral_lightningessenceboon2,runeArmor_fireskin2,runeArmor_iceskin2,runeSpellcast_lightningstrike2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="runeGeneral_spiritboon3,runeGeneral_fireessenceboon3,runeGeneral_iceessenceboon3,runeGeneral_lightningessenceboon3,runeArmor_fireskin3,runeArmor_iceskin3,runeSpellcast_lightningstrike3"/>
 			</effect_group>
 			
 			<effect_group>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="toolHammerFire,toolHammerIce,toolHammerLightning"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="toolHammerFire,toolHammerIce,toolHammerLightning"/>
 				<effect_description level="1" desc_key="perkSorceryRuneMasteryRank1Desc"/>
 				<effect_description level="2" desc_key="perkSorceryRuneMasteryRank2Desc"/>
 				<effect_description level="3" desc_key="perkSorceryRuneMasteryRank3Desc"/>
@@ -517,7 +587,7 @@
 <!--___________________ FIRE SORCERY ___________________-->
 		<!-- Fire Spellcast-->
 		<perk name="perkSorcerySpellcastFire" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellcastFireName" desc_key="perkSorcerySpellcastFireDesc" icon="ui_game_symbol_fire" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryLevel01"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key="reqSorceryFireMasteryElixirUnlock"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/></level_requirements>
@@ -534,7 +604,7 @@
 		
 		<!-- Fire Spell: FIREBALL -->
 		<perk name="perkSorcerySpellFireball" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellFireballName" desc_key="perkSorcerySpellFireballDesc" icon="ui_game_symbol_fire" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryLevel01"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key="reqSorceryFireMasteryElixirUnlock"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="2" desc_key="reqSorceryFireMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="3" desc_key="reqSorceryFireMasteryLevel03"/></level_requirements>
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="4" desc_key="reqSorceryFireMasteryLevel04"/></level_requirements>
@@ -588,7 +658,7 @@
 <!--___________________ ICE SORCERY ___________________-->
 		<!-- Ice Spellcast -->
 		<perk name="perkSorcerySpellcastIce" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellcastIceName" desc_key="perkSorcerySpellcastIceDesc" icon="ui_game_symbol_cold" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryLevel01"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key="reqSorceryIceMasteryElixirUnlock"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/></level_requirements>
@@ -605,7 +675,7 @@
 		
 		<!-- Ice Spell: ICE -->
 		<perk name="perkSorcerySpellIceball" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellIceballName" desc_key="perkSorcerySpellIceballDesc" icon="ui_game_symbol_cold" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryLevel01"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key="reqSorceryIceMasteryElixirUnlock"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="2" desc_key="reqSorceryIceMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="4" desc_key="reqSorceryIceMasteryLevel04"/></level_requirements>
@@ -659,7 +729,7 @@
 <!--___________________ LIGHTNING SORCERY ___________________-->
 		<!-- Lightning Spellcast -->
 		<perk name="perkSorcerySpellcastLightning" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellcastLightningName" desc_key="perkSorcerySpellcastLightningDesc" icon="ui_game_symbol_electric_power" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="1" desc_key="reqSorceryLightningMasteryLevel01"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="1" desc_key="reqSorceryLightningMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key="reqSorceryLightningMasteryElixirUnlock"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/></level_requirements>
@@ -676,7 +746,7 @@
 		
 		<!-- Lightning Spell: LIGHTNING -->
 		<perk name="perkSorcerySpellLightning" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellLightningName" desc_key="perkSorcerySpellLightningDesc" icon="ui_game_symbol_electric_power" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="1" desc_key="reqSorceryLightningMasteryLevel01"/></level_requirements>
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="1" desc_key="reqSorceryLightningMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key="reqSorceryLightningMasteryElixirUnlock"/></level_requirements>
 			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="2" desc_key="reqSorceryLightningMasteryLevel02"/></level_requirements>
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="3" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="4" desc_key="reqSorceryLightningMasteryLevel04"/></level_requirements>
@@ -734,7 +804,9 @@
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorcerySupportLevel03"/></level_requirements>
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorcerySupportLevel04"/></level_requirements>
 			<effect_group>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="runeUnique_altinstouch"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="sorceryPerkSupportBronze, runeUnique_altinstouch"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sorceryPerkSupportSilver"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="sorceryPerkSupportGold"/>
 				<effect_description level="1" desc_key="perkSorcerySupportRank1Desc"/>
 				<effect_description level="2" desc_key="perkSorcerySupportRank2Desc"/>
 				<effect_description level="3" desc_key="perkSorcerySupportRank3Desc"/>
