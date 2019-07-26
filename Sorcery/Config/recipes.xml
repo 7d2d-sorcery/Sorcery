@@ -521,6 +521,9 @@
 		
 	<!--___________________ RUNES: GENERAL ___________________-->
 		<!-- fire -->
+		<recipe name="runeGeneral_spelllight" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire">
+			<ingredient name="unit_fire" count="40"/>
+		</recipe>
 		<recipe name="runeGeneral_spiritboon" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire">
 			<ingredient name="unit_fire" count="30"/>
 		</recipe>	
@@ -537,6 +540,9 @@
 			<ingredient name="unit_fire" count="30"/>
 		</recipe>
 		<!-- ice -->
+		<recipe name="runeGeneral_spelllight" count="1" craft_area="conjureIce" material_based="true" craft_tool="toolHammerIce">
+			<ingredient name="unit_ice" count="40"/>
+		</recipe>		
 		<recipe name="runeGeneral_spiritboon" count="1" craft_area="conjureIce" material_based="true" craft_tool="toolHammerIce">
 			<ingredient name="unit_ice" count="30"/>
 		</recipe>	
@@ -553,6 +559,9 @@
 			<ingredient name="unit_ice" count="30"/>
 		</recipe>			
 		<!-- lightning -->
+		<recipe name="runeGeneral_spelllight" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+			<ingredient name="unit_lightning" count="40"/>
+		</recipe>		
 		<recipe name="runeGeneral_spiritboon" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
 			<ingredient name="unit_lightning" count="30"/>
 		</recipe>	
@@ -786,6 +795,22 @@
 		</recipe>	
 	
 	<!--___________________ RUNES: UNIQUE / SUPPORTER ___________________-->
+		<!-- SPELL LIGHT -->
+		<recipe name="runeGeneral_spelllight2" count="1" tags="learnable">
+			<ingredient name="candle" count="5"/>
+			<ingredient name="resourceExtractOmni3" count="10"/>
+			<ingredient name="resourceExtractOmni2" count="30"/>
+			<ingredient name="resourceExtractOmni" count="50"/>
+		</recipe>
+		<recipe name="runeGeneral_spelllight3" count="1" tags="learnable">
+			<ingredient name="candle" count="10"/>
+			<ingredient name="resourceExtractOmni5" count="10"/>
+			<ingredient name="resourceExtractOmni4" count="25"/>
+			<ingredient name="resourceExtractOmni3" count="50"/>
+			<ingredient name="resourceExtractOmni2" count="75"/>
+			<ingredient name="resourceExtractOmni" count="100"/>
+		</recipe>
+	
 		<!-- ALTIN'S TOUCH -->
 		<recipe name="runeUnique_altinstouch" count="1" tags="learnable">
 			<ingredient name="casinoCoin" count="20"/>

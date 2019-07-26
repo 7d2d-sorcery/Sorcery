@@ -388,175 +388,218 @@
 	<!-- 300, 600, 900, 1200 -->
 	<!--___________________ WILD, snow: ICE ___________________-->
 	<append xpath="/blocks/block[@name='treeWinterEverGreen']"> <!-- 300 -->
-		<drop event="Harvest" name="resourceEssenceIce" count="1" prob=".7" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce2" count="1" prob=".05" tag="essenceIce2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce" count="1" tag="essenceIceHarvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeWinterPine13m']"> <!-- 600 -->
 		<drop event="Harvest" name="resourceEssenceIce" count="1" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce" count="1" prob=".25" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce2" count="1" prob=".25" tag="essenceIce2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce3" count="1" prob=".05" tag="essenceIce3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce2" count="0,1" prob=".7" tag="essenceIce2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce3" count="0,1" prob=".4" tag="essenceIce3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce4" count="0,1" prob=".1" tag="essenceIce4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce5" count="0,1" prob=".01" tag="essenceIce5Harvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeWinterPine19m']"> <!-- 900 -->
 		<drop event="Harvest" name="resourceEssenceIce" count="1" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce" count="1" prob=".5" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce2" count="1" prob=".4" tag="essenceIce2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce3" count="1" prob=".07" tag="essenceIce3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce4" count="1" prob=".0075" tag="essenceIce4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce2" count="1" prob=".7" tag="essenceIce2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce3" count="1" prob=".4" tag="essenceIce3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce4" count="1" prob=".1" tag="essenceIce4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce5" count="1" prob=".01" tag="essenceIce5Harvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeWinterPine28m']"> <!-- 1200 -->
-		<drop event="Harvest" name="resourceEssenceIce" count="2" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce" count="1" prob=".5" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce2" count="1,2" prob=".5" tag="essenceIce2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce3" count="1" prob=".1" tag="essenceIce3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce4" count="1" prob=".01" tag="essenceIce4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce5" count="1" prob=".001" tag="essenceIce5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce" count="1,2" tag="essenceIceHarvest"/>
+		<drop event="Harvest" name="resourceEssenceIce2" count="1,2" prob=".7" tag="essenceIce2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce3" count="1,2" prob=".4" tag="essenceIce3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce4" count="1,2" prob=".1" tag="essenceIce4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce5" count="1,2" prob=".01" tag="essenceIce5Harvest"/>
 	</append>
 	
 	<!--___________________ WILD, pine_forest: LIGHTNING ___________________-->
 	<append xpath="/blocks/block[@name='treeMountainPine12m']"> <!-- 300 -->
-		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".7" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".05" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning" count="1" tag="essenceLightningHarvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeMountainPine19m']"> <!-- 600 -->
 		<drop event="Harvest" name="resourceEssenceLightning" count="1" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".25" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".25" tag="essenceLightning2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".05" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="0,1" prob=".7" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning3" count="0,1" prob=".4" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning4" count="0,1" prob=".1" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="0,1" prob=".01" tag="essenceLightning5Harvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeMountainPineDry21m']"> <!-- 900 -->
 		<drop event="Harvest" name="resourceEssenceLightning" count="1" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".5" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".4" tag="essenceLightning2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".07" tag="essenceLightning3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".0075" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".7" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".4" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".1" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".01" tag="essenceLightning5Harvest"/>
 	</append>	
 	<append xpath="/blocks/block[@name='treeMountainPine27m']"> <!-- 900 -->
 		<drop event="Harvest" name="resourceEssenceLightning" count="1" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".5" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".4" tag="essenceLightning2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".07" tag="essenceLightning3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".0075" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".7" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".4" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".1" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".01" tag="essenceLightning5Harvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeMountainPine31m']"> <!-- 900 -->
 		<drop event="Harvest" name="resourceEssenceLightning" count="1" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".5" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".4" tag="essenceLightning2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".07" tag="essenceLightning3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".0075" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".7" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".4" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".1" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".01" tag="essenceLightning5Harvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeMountainPine41m']"> <!-- 1200 -->
-		<drop event="Harvest" name="resourceEssenceLightning" count="2" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".5" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1,2" prob=".5" tag="essenceLightning2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".1" tag="essenceLightning3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".01" tag="essenceLightning4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".001" tag="essenceLightning5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning" count="1,2" tag="essenceLightningHarvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="1,2" prob=".7" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning3" count="1,2" prob=".4" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning4" count="1,2" prob=".1" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="1,2" prob=".01" tag="essenceLightning5Harvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeMountainPine48m']"> <!-- 1200 -->
-		<drop event="Harvest" name="resourceEssenceLightning" count="2" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".5" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1,2" prob=".5" tag="essenceLightning2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".1" tag="essenceLightning3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".01" tag="essenceLightning4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".001" tag="essenceLightning5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning" count="1,2" tag="essenceLightningHarvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="1,2" prob=".7" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning3" count="1,2" prob=".4" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning4" count="1,2" prob=".1" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="1,2" prob=".01" tag="essenceLightning5Harvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeFirLrg01']"> <!-- 1200 -->
-		<drop event="Harvest" name="resourceEssenceLightning" count="2" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".5" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1,2" prob=".5" tag="essenceLightning2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".1" tag="essenceLightning3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".01" tag="essenceLightning4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".001" tag="essenceLightning5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning" count="1,2" tag="essenceLightningHarvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="1,2" prob=".7" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning3" count="1,2" prob=".4" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning4" count="1,2" prob=".1" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="1,2" prob=".01" tag="essenceLightning5Harvest"/>
 	</append>
 	
 	<!--___________________ WILD, burnt_forest & wasteland: FIRE ___________________-->
 	<append xpath="/blocks/block[@name='treeBurntMaple01']"> <!-- 300 -->
 		<drop event="Harvest" name="resourceEssenceFire" count="1" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".05" tag="essenceFire2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".02" tag="essenceFire3Harvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeBurntMaple02']"> <!-- 900 -->
 		<drop event="Harvest" name="resourceEssenceFire" count="1" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".5" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".4" tag="essenceFire2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".07" tag="essenceFire3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".0075" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".7" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".4" tag="essenceFire3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".1" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".01" tag="essenceFire5Harvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeBurntMaple03']"> <!-- 1200 -->
-		<drop event="Harvest" name="resourceEssenceFire" count="2" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".5" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1,2" prob=".5" tag="essenceFire2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".1" tag="essenceFire3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".01" tag="essenceFire4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".001" tag="essenceFire5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire" count="1,2" tag="essenceFireHarvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="1,2" prob=".7" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire3" count="1,2" prob=".4" tag="essenceFire3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire4" count="1,2" prob=".1" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire5" count="1,2" prob=".01" tag="essenceFire5Harvest"/>
 	</append>
 
 	<!--___________________ WILD, desert & pine_forest: FIRE ___________________-->
 	<append xpath="/blocks/block[@name='treeOakSml01']"> <!-- 300 -->
-		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".7" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".05" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire" count="1" tag="essenceFireHarvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeOakMed01']"> <!-- 600 -->
 		<drop event="Harvest" name="resourceEssenceFire" count="1" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".25" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".25" tag="essenceFire2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".05" tag="essenceFire3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="0,1" prob=".7" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire3" count="0,1" prob=".4" tag="essenceFire3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire4" count="0,1" prob=".1" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire5" count="0,1" prob=".01" tag="essenceFire5Harvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeOakMed02']"> <!-- 900 -->
 		<drop event="Harvest" name="resourceEssenceFire" count="1" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".5" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".4" tag="essenceFire2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".07" tag="essenceFire3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".0075" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".7" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".4" tag="essenceFire3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".1" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".01" tag="essenceFire5Harvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeOakLrg01']"> <!-- 1200 -->
-		<drop event="Harvest" name="resourceEssenceFire" count="2" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".5" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1,2" prob=".5" tag="essenceFire2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".1" tag="essenceFire3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".01" tag="essenceFire4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".001" tag="essenceFire5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire" count="1,2" tag="essenceFireHarvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="1,2" prob=".7" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire3" count="1,2" prob=".4" tag="essenceFire3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire4" count="1,2" prob=".1" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire5" count="1,2" prob=".01" tag="essenceFire5Harvest"/>
 	</append>
 
 	<!--___________________ WILD, wasteland & pine_forest: FIRE ___________________-->
 	<append xpath="/blocks/block[@name='treeDeadTree01']"> <!-- 300 -->
-		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".7" tag="essenceFireHarvest"/>
+		<drop event="Harvest" name="resourceEssenceFire" count="1" tag="essenceFireHarvest"/>
 	</append>
 	<append xpath="/blocks/block[@name='treeDeadTree02']"> <!-- 300 -->
-		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".7" tag="essenceFireHarvest"/>
+		<drop event="Harvest" name="resourceEssenceFire" count="1" tag="essenceFireHarvest"/>
 	</append>
 	
 	
 	
 <!--___________________ ESSENCE HARVEST ___________________-->
-<!--___________________ PLANTED TREES (fully mature) ___________________-->
+<!--___________________ PLANTED TREES ___________________-->
 	<!--___________________ PLANTED, snow: ICE ___________________-->
-	<append xpath="/blocks/block[@name='treePlantedWinterPine28m']">
-		<drop event="Harvest" name="resourceEssenceIce" count="1" prob=".8" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce2" count="1" prob=".2" tag="essenceIce2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce3" count="1" prob=".05" tag="essenceIce3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce4" count="1" prob=".005" tag="essenceIce4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce5" count="1" prob=".0005" tag="essenceIce5Harvest"/>
+	<append xpath="/blocks/block[@name='treePlantedWinterPine6m']"> <!-- 300 -->
+		<drop event="Harvest" name="resourceEssenceIce" count="0,1" prob=".5" tag="essenceIceHarvest"/>
 	</append>
+	<append xpath="/blocks/block[@name='treePlantedWinterPine13m']"> <!-- 600 -->
+		<drop event="Harvest" name="resourceEssenceIce" count="0,1" prob=".8" tag="essenceIceHarvest"/>
+		<drop event="Harvest" name="resourceEssenceIce2" count="0,1" prob=".7" tag="essenceIce2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce3" count="0,1" prob=".4" tag="essenceIce3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce4" count="0,1" prob=".1" tag="essenceIce4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce5" count="0,1" prob=".01" tag="essenceIce5Harvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='treePlantedWinterPine19m']"> <!-- 900 -->
+		<drop event="Harvest" name="resourceEssenceIce" count="0,1" tag="essenceIceHarvest"/>
+		<drop event="Harvest" name="resourceEssenceIce2" count="0,1" prob=".7" tag="essenceIce2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce3" count="0,1" prob=".4" tag="essenceIce3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce4" count="0,1" prob=".1" tag="essenceIce4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce5" count="0,1" prob=".01" tag="essenceIce5Harvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='treePlantedWinterPine28m']"> <!-- 1200 -->
+		<drop event="Harvest" name="resourceEssenceIce" count="1" tag="essenceIceHarvest"/>
+		<drop event="Harvest" name="resourceEssenceIce2" count="1" prob=".7" tag="essenceIce2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce3" count="1" prob=".4" tag="essenceIce3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce4" count="1" prob=".1" tag="essenceIce4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce5" count="1" prob=".01" tag="essenceIce5Harvest"/>	
+	</append>	
 
 	<!--___________________ PLANTED, pine_forest: LIGHTNING ___________________-->
-	<append xpath="/blocks/block[@name='treePlantedMountainPine41m']">
-		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".8" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".2" tag="essenceLightning2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".05" tag="essenceLightning3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".005" tag="essenceLightning4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".0005" tag="essenceLightning5Harvest"/>
+	<append xpath="/blocks/block[@name='treePlantedMountainPine12m']"> <!-- 300 -->
+		<drop event="Harvest" name="resourceEssenceLightning" count="0,1" prob=".5" tag="essenceLightningHarvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='treePlantedMountainPine19m']"> <!-- 600 -->
+		<drop event="Harvest" name="resourceEssenceLightning" count="0,1" prob=".8" tag="essenceLightningHarvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="0,1" prob=".7" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning3" count="0,1" prob=".4" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning4" count="0,1" prob=".1" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="0,1" prob=".01" tag="essenceLightning5Harvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='treePlantedMountainPine27m']"> <!-- 900 -->
+		<drop event="Harvest" name="resourceEssenceLightning" count="0,1" tag="essenceLightningHarvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="0,1" prob=".7" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning3" count="0,1" prob=".4" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning4" count="0,1" prob=".1" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="0,1" prob=".01" tag="essenceLightning5Harvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='treePlantedMountainPine41m']"> <!-- 1200 -->
+		<drop event="Harvest" name="resourceEssenceLightning" count="1" tag="essenceLightningHarvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".7" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".4" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".1" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".01" tag="essenceLightning5Harvest"/>	
 	</append>
 
 	<!--___________________ PLANTED, pine_forest & desert: FIRE ___________________-->
-	<append xpath="/blocks/block[@name='treePlantedOak41m']">
-		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".8" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".2" tag="essenceFire2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".05" tag="essenceFire3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".005" tag="essenceFire4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".0005" tag="essenceFire5Harvest"/>
+	<append xpath="/blocks/block[@name='treePlantedOak08m']"> <!-- 300 -->
+		<drop event="Harvest" name="resourceEssenceFire" count="0,1" prob=".5" tag="essenceFireHarvest"/>
 	</append>
+	<append xpath="/blocks/block[@name='treePlantedOak16m']"> <!-- 600 -->
+		<drop event="Harvest" name="resourceEssenceFire" count="0,1" prob=".8" tag="essenceFireHarvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="0,1" prob=".7" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire3" count="0,1" prob=".4" tag="essenceFire3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire4" count="0,1" prob=".1" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire5" count="0,1" prob=".01" tag="essenceFire5Harvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='treePlantedOak27m']"> <!-- 900 -->
+		<drop event="Harvest" name="resourceEssenceFire" count="0,1" tag="essenceFireHarvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="0,1" prob=".7" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire3" count="0,1" prob=".4" tag="essenceFire3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire4" count="0,1" prob=".1" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire5" count="0,1" prob=".01" tag="essenceFire5Harvest"/>
+	</append>
+	<append xpath="/blocks/block[@name='treePlantedOak41m']"> <!-- 1200 -->
+		<drop event="Harvest" name="resourceEssenceFire" count="1" tag="essenceFireHarvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".7" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".4" tag="essenceFire3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".1" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".01" tag="essenceFire5Harvest"/>
+	</append>	
 	
 	
 <!--___________________ ESSENCE HARVEST ___________________-->
@@ -565,40 +608,40 @@
 	  <append xpath="/blocks/block[@name='terrOrePotassiumNitrate']">
 		<!-- ice: ore -->
 		<drop event="Harvest" name="resourceEssenceIce" count="1,2" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce2" count="1" prob=".7" tag="essenceIce2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce3" count="1" prob=".3" tag="essenceIce3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce4" count="1" prob=".03" tag="essenceIce4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce5" count="1" prob=".003" tag="essenceIce5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce2" count="1,2" prob=".7" tag="essenceIce2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce3" count="1,2" prob=".4" tag="essenceIce3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce4" count="1,2" prob=".1" tag="essenceIce4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce5" count="1,2" prob=".01" tag="essenceIce5Harvest"/>
 	  </append>
 	
 	<!--___________________ ORE: Lead (pine_forest) ___________________-->
 	  <append xpath="/blocks/block[@name='terrOreLead']">
 		<!-- lightning: ore -->
 		<drop event="Harvest" name="resourceEssenceLightning" count="1,2" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".7" tag="essenceLightning2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".3" tag="essenceLightning3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".03" tag="essenceLightning4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".003" tag="essenceLightning5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="1,2" prob=".7" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning3" count="1,2" prob=".4" tag="essenceLightning3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning4" count="1,2" prob=".1" tag="essenceLightning4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="1,2" prob=".01" tag="essenceLightning5Harvest"/>	
 	  </append>
 	  
 	<!--___________________ ORE: Oil (desert) ___________________-->
 	<append xpath="/blocks/block[@name='terrOreCoal']">
 		<!-- fire: ore -->
 		<drop event="Harvest" name="resourceEssenceFire" count="1,2" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".7" tag="essenceFire2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".3" tag="essenceFire3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".03" tag="essenceFire4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".003" tag="essenceFire5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="1,2" prob=".7" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire3" count="1,2" prob=".4" tag="essenceFire3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire4" count="1,2" prob=".1" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire5" count="1,2" prob=".01" tag="essenceFire5Harvest"/>
 	</append>
 	  
 	<!--___________________ ORE: Coal (burnt_forest) ___________________-->
 	<append xpath="/blocks/block[@name='terrOreOilDeposit']">
 		<!-- fire: ore -->
 		<drop event="Harvest" name="resourceEssenceFire" count="1,2" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".7" tag="essenceFire2Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".3" tag="essenceFire3Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".03" tag="essenceFire4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".003" tag="essenceFire5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="1,2" prob=".7" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire3" count="1,2" prob=".4" tag="essenceFire3Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire4" count="1,2" prob=".1" tag="essenceFire4Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire5" count="1,2" prob=".01" tag="essenceFire5Harvest"/>
 	</append>
 	  
 	  
@@ -607,49 +650,45 @@
 	<!--___________________ BOULDER #1 (surface, all) ___________________-->
 	<append xpath="/blocks/block[@name='rockResource']">
 		<!-- fire: boulder -->
-		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".6" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".35" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".7" tag="essenceFireHarvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".4" tag="essenceFire2Harvest"/>
 		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".1" tag="essenceFire3Harvest"/>
 		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".01" tag="essenceFire4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".001" tag="essenceFire5Harvest"/>
-
+		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".005" tag="essenceFire5Harvest"/>
 		<!-- ice: boulder -->
-		<drop event="Harvest" name="resourceEssenceIce" count="1" prob=".6" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce2" count="1" prob=".35" tag="essenceIce2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce" count="1" prob=".7" tag="essenceIceHarvest"/>
+		<drop event="Harvest" name="resourceEssenceIce2" count="1" prob=".4" tag="essenceIce2Harvest"/>
 		<drop event="Harvest" name="resourceEssenceIce3" count="1" prob=".1" tag="essenceIce3Harvest"/>
 		<drop event="Harvest" name="resourceEssenceIce4" count="1" prob=".01" tag="essenceIce4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce5" count="1" prob=".001" tag="essenceIce5Harvest"/>
-		
+		<drop event="Harvest" name="resourceEssenceIce5" count="1" prob=".005" tag="essenceIce5Harvest"/>
 		<!-- lightning: boulder -->
-		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".6" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".35" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".7" tag="essenceLightningHarvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".4" tag="essenceLightning2Harvest"/>
 		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".1" tag="essenceLightning3Harvest"/>
 		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".01" tag="essenceLightning4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".001" tag="essenceLightning5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".005" tag="essenceLightning5Harvest"/>	
 	</append>	
 	
 	<!--___________________ BOULDER #2 (surface, all) ___________________-->	
 	<append xpath="/blocks/block[@name='rockResource02']">
 		<!-- fire: boulder -->
-		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".6" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".35" tag="essenceFire2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceFire" count="1" prob=".7" tag="essenceFireHarvest"/>
+		<drop event="Harvest" name="resourceEssenceFire2" count="1" prob=".4" tag="essenceFire2Harvest"/>
 		<drop event="Harvest" name="resourceEssenceFire3" count="1" prob=".1" tag="essenceFire3Harvest"/>
 		<drop event="Harvest" name="resourceEssenceFire4" count="1" prob=".01" tag="essenceFire4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".001" tag="essenceFire5Harvest"/>
-
+		<drop event="Harvest" name="resourceEssenceFire5" count="1" prob=".005" tag="essenceFire5Harvest"/>
 		<!-- ice: boulder -->
-		<drop event="Harvest" name="resourceEssenceIce" count="1" prob=".6" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce2" count="1" prob=".35" tag="essenceIce2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceIce" count="1" prob=".7" tag="essenceIceHarvest"/>
+		<drop event="Harvest" name="resourceEssenceIce2" count="1" prob=".4" tag="essenceIce2Harvest"/>
 		<drop event="Harvest" name="resourceEssenceIce3" count="1" prob=".1" tag="essenceIce3Harvest"/>
 		<drop event="Harvest" name="resourceEssenceIce4" count="1" prob=".01" tag="essenceIce4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceIce5" count="1" prob=".001" tag="essenceIce5Harvest"/>
-		
+		<drop event="Harvest" name="resourceEssenceIce5" count="1" prob=".005" tag="essenceIce5Harvest"/>
 		<!-- lightning: boulder -->
-		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".6" tag="essenceLightningHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".35" tag="essenceLightning2Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning" count="1" prob=".7" tag="essenceLightningHarvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning2" count="1" prob=".4" tag="essenceLightning2Harvest"/>
 		<drop event="Harvest" name="resourceEssenceLightning3" count="1" prob=".1" tag="essenceLightning3Harvest"/>
 		<drop event="Harvest" name="resourceEssenceLightning4" count="1" prob=".01" tag="essenceLightning4Harvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".001" tag="essenceLightning5Harvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning5" count="1" prob=".005" tag="essenceLightning5Harvest"/>	
 	</append>
 	
 	

@@ -30,7 +30,8 @@
 		
 	<!-- UI TR: SORCERY LOGO -->
 	<append xpath="/xui/ruleset[@name='default']/window_group[@name='mainMenuLogo']">
-		<window name="SorceryLogo" anchor="RightTop" />
+		<window name="SorceryLogo" anchor="LeftTop" />
+		<window name="SorceryCredits" anchor="LeftTop" />
 	</append>
 		
 	<!-- XUI -->	

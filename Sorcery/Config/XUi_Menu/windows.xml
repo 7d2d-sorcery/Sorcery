@@ -31,9 +31,12 @@
 	<append xpath="/windows">
 
 		<!-- UI: SORCERY LOGO -->
-		<window name="SorceryLogo" pos="0, 0" width="143" height="38" anchor="RightTop">
-			<texture name="SorceryLogo" pos="-153, -35" width="143" height="38" texture="@modfolder:Textures/SorceryLogo.png" />
+		<window name="SorceryLogo" pos="0, 0" width="200" height="53" anchor="LeftTop">
+			<texture name="SorceryLogo" pos="10, -10" width="200" height="53" texture="@modfolder:Textures/SorceryLogo.png" />
 		</window>
+		<window name="SorceryCredits" pos="0, 0" width="200" height="905" anchor="LeftTop">
+			<texture name="SorceryCredits" pos="10, -80" width="200" height="905" texture="@modfolder:Textures/SorceryCredits.png" />
+		</window>		
 	
 	</append>
 	

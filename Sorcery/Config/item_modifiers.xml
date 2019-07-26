@@ -1245,7 +1245,100 @@
 		</item_modifier>
 		
 		
-		
+		<!-- SPELL LIGHT -->
+		<item_modifier name="runeGeneral_spelllight" installable_tags="tool" modifier_tags="runeGeneral_spelllight" type="attachment" rarity="0.5">
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="MsorceryExtractOmni"/>
+			<property name="Weight" value="5"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1300"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+				<effect_group name="COST" tiered="false">
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: I" tiered="false">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="runeGeneral_spelllight"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="runeGeneral_spelllight"/>
+				</effect_group>
+		</item_modifier>
+		<item_modifier name="runeGeneral_spelllight2" installable_tags="tool" modifier_tags="runeGeneral_spelllight" type="attachment" rarity="0.1">
+			<property name="Extends" value="runeGeneral_spelllight"/>
+			<property name="Material" value="MsorceryExtractOmni3"/>
+			<property name="EconomicValue" value="1900"/>
+				<effect_group name="COST" tiered="false">
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".05">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".04">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".03">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".02">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="0">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>			
+				<effect_group name="RUNE: II" tiered="false">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="runeGeneral_spelllight2"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="runeGeneral_spelllight2"/>
+				</effect_group>
+		</item_modifier>
+		<item_modifier name="runeGeneral_spelllight3" installable_tags="tool" modifier_tags="runeGeneral_spelllight" type="attachment" rarity="0.01">
+			<property name="Extends" value="runeGeneral_spelllight"/>
+			<property name="Material" value="MsorceryExtractOmni5"/>
+			<property name="EconomicValue" value="2800"/>
+				<effect_group name="COST" tiered="false">
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".01">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="0"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".008">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".006">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".004">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".002">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+					</passive_effect>
+					<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".0008">
+						<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+					</passive_effect>
+				</effect_group>
+				<effect_group name="RUNE: III" tiered="false">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="runeGeneral_spelllight3"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="runeGeneral_spelllight3"/>
+				</effect_group>
+		</item_modifier>		
 		
 		
 	<!--____________ RUNES: GENERAL / SUPPORTER ____________-->

@@ -208,10 +208,10 @@
 		<!-- FIRE MASTERY -->
 		<perk name="perkSorceryFireMastery" parent="skillSorceryMastery" name_key="perkSorceryFireMasteryName" desc_key="perkSorceryFireMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key="reqSorceryFireMasteryElixirUnlock"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
 
 			<effect_group name="FIRE MASTERY: Level">
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="1">
@@ -411,10 +411,10 @@
 		<!-- ICE MASTERY -->
 		<perk name="perkSorceryIceMastery" parent="skillSorceryMastery" name_key="perkSorceryIceMasteryName" desc_key="perkSorceryIceMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key="reqSorceryIceMasteryElixirUnlock"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
 
 			<effect_group name="ICE MASTERY: Level">
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryIceMastery" operation="set" value="1">
@@ -476,10 +476,10 @@
 		<!-- LIGHTNING MASTERY -->
 		<perk name="perkSorceryLightningMastery" parent="skillSorceryMastery" name_key="perkSorceryLightningMasteryName" desc_key="perkSorceryLightningMasteryDesc" icon="ui_game_symbol_skills" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorceryLightningMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key="reqSorceryLightningMasteryElixirUnlock"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="3" desc_key="reqSorceryLevel03"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
 
 			<effect_group name="LIGHTNING MASTERY: Level">
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="1">
@@ -588,10 +588,10 @@
 		<!-- Fire Spellcast-->
 		<perk name="perkSorcerySpellcastFire" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellcastFireName" desc_key="perkSorcerySpellcastFireDesc" icon="ui_game_symbol_fire" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key="reqSorceryFireMasteryElixirUnlock"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="5" desc_key="reqSorcerySpellcastMasteryLevel05"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="5" desc_key="reqSorcerySpellcastMasteryLevel05"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellcastFire"/>
 				<effect_description level="1" desc_key="perkSorcerySpellcastFireRank1Desc"/>
@@ -605,10 +605,10 @@
 		<!-- Fire Spell: FIREBALL -->
 		<perk name="perkSorcerySpellFireball" parent="skillSorceryFireCrafting" name_key="perkSorcerySpellFireballName" desc_key="perkSorcerySpellFireballDesc" icon="ui_game_symbol_fire" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="1" desc_key="reqSorceryFireMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key="reqSorceryFireMasteryElixirUnlock"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="2" desc_key="reqSorceryFireMasteryLevel02"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="3" desc_key="reqSorceryFireMasteryLevel03"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="4" desc_key="reqSorceryFireMasteryLevel04"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="5" desc_key="reqSorceryFireMasteryLevel05"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="2" desc_key="reqSorceryFireMasteryLevel02"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="3" desc_key="reqSorceryFireMasteryLevel03"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="4" desc_key="reqSorceryFireMasteryLevel04"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="GTE" value="5" desc_key="reqSorceryFireMasteryLevel05"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryFire" operation="Equals" value="1" desc_key=""/></level_requirements>
 			
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellFireball"/>
@@ -659,10 +659,10 @@
 		<!-- Ice Spellcast -->
 		<perk name="perkSorcerySpellcastIce" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellcastIceName" desc_key="perkSorcerySpellcastIceDesc" icon="ui_game_symbol_cold" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key="reqSorceryIceMasteryElixirUnlock"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="5" desc_key="reqSorcerySpellcastMasteryLevel05"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="5" desc_key="reqSorcerySpellcastMasteryLevel05"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellcastIce"/>
 				<effect_description level="1" desc_key="perkSorcerySpellcastIceRank1Desc"/>
@@ -676,10 +676,10 @@
 		<!-- Ice Spell: ICE -->
 		<perk name="perkSorcerySpellIceball" parent="skillSorceryIceCrafting" name_key="perkSorcerySpellIceballName" desc_key="perkSorcerySpellIceballDesc" icon="ui_game_symbol_cold" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="1" desc_key="reqSorceryIceMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key="reqSorceryIceMasteryElixirUnlock"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="2" desc_key="reqSorceryIceMasteryLevel02"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="4" desc_key="reqSorceryIceMasteryLevel04"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="5" desc_key="reqSorceryIceMasteryLevel05"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="2" desc_key="reqSorceryIceMasteryLevel02"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="3" desc_key="reqSorceryIceMasteryLevel03"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="4" desc_key="reqSorceryIceMasteryLevel04"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="GTE" value="5" desc_key="reqSorceryIceMasteryLevel05"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryIce" operation="Equals" value="1" desc_key=""/></level_requirements>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellIceBall"/>
 				<effect_description level="1" desc_key="perkSorcerySpellIceballRank1Desc"/>
@@ -730,10 +730,10 @@
 		<!-- Lightning Spellcast -->
 		<perk name="perkSorcerySpellcastLightning" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellcastLightningName" desc_key="perkSorcerySpellcastLightningDesc" icon="ui_game_symbol_electric_power" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="1" desc_key="reqSorceryLightningMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key="reqSorceryLightningMasteryElixirUnlock"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="5" desc_key="reqSorcerySpellcastMasteryLevel05"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="2" desc_key="reqSorcerySpellcastMasteryLevel02"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="3" desc_key="reqSorcerySpellcastMasteryLevel03"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="4" desc_key="reqSorcerySpellcastMasteryLevel04"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="5" desc_key="reqSorcerySpellcastMasteryLevel05"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellcastLightning"/>
 				<effect_description level="1" desc_key="perkSorcerySpellcastLightningRank1Desc"/>
@@ -747,10 +747,10 @@
 		<!-- Lightning Spell: LIGHTNING -->
 		<perk name="perkSorcerySpellLightning" parent="skillSorceryLightningCrafting" name_key="perkSorcerySpellLightningName" desc_key="perkSorcerySpellLightningDesc" icon="ui_game_symbol_electric_power" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="1" desc_key="reqSorceryLightningMasteryUnlock"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key="reqSorceryLightningMasteryElixirUnlock"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="2" desc_key="reqSorceryLightningMasteryLevel02"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="3" desc_key="reqSorceryLightningMasteryLevel03"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="4" desc_key="reqSorceryLightningMasteryLevel04"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="5" desc_key="reqSorceryLightningMasteryLevel05"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="2" desc_key="reqSorceryLightningMasteryLevel02"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="3" desc_key="reqSorceryLightningMasteryLevel03"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="4" desc_key="reqSorceryLightningMasteryLevel04"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="GTE" value="5" desc_key="reqSorceryLightningMasteryLevel05"/><requirement name="CVarCompare" cvar="$sorceryElixir_masteryLightning" operation="Equals" value="1" desc_key=""/></level_requirements>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellLightning"/>
 				<effect_description level="1" desc_key="perkSorcerySpellLightningRank1Desc"/>
@@ -804,7 +804,7 @@
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorcerySupportLevel03"/></level_requirements>
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorcerySupportLevel04"/></level_requirements>
 			<effect_group>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="sorceryPerkSupportBronze, runeUnique_altinstouch"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="sorceryPerkSupportBronze, runeUnique_altinstouch, runeGeneral_spelllight2, runeGeneral_spelllight3"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sorceryPerkSupportSilver"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="sorceryPerkSupportGold"/>
 				<effect_description level="1" desc_key="perkSorcerySupportRank1Desc"/>

@@ -52,7 +52,7 @@
 
     <!-- UI: Pause Menu - OVERRIDE -->
     <window name="SorceryingameMenu" anchor="CenterCenter" pos="-125,200" width="250" height="200" controller="InGameMenuWindow" cursor_area="true">
-		<label name="SorceryVersion" pos="783, 288" depth="0" size="250,33" text="v0.804-Alchemy" font_size="30" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
+		<label name="SorceryVersion" pos="783, 288" depth="0" size="250,33" text="v0.805-Alchemy" font_size="30" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
         <texture name="SorceryingameMenuLogo" depth="0" size="668,441" texture="@modfolder:Textures/SorceryLogoMenu.png" pos="-209,190" />
 		<texture name="SorceryingameMenuChestNoble" depth="0" size="240,243" texture="@modfolder:Textures/SorceryingameMenuChestNoble.png" pos="-295,-270" />
 		<texture name="SorceryingameMenuChestLord" depth="0" size="260,263" texture="@modfolder:Textures/SorceryingameMenuChestLord.png" pos="-780,-290" />

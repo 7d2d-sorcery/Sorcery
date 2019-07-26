@@ -5315,6 +5315,51 @@
 			
 			
 	<!--___________________________ RUNES: UNIQUE / SUPPORTER ___________________________-->	
+			<!-- RUNE: SPELL LIGHT -->
+		<buff name="runeGeneral_spelllight" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fx_spelllight.unity3d?fx_spelllight"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T2"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T3"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="fx_spelllight/T1"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fx_spelllight">
+					<requirement name="NotHasBuff" buff="runeGeneral_spelllight2"/>
+					<requirement name="NotHasBuff" buff="runeGeneral_spelllight3"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		<buff name="runeGeneral_spelllight2" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fx_spelllight.unity3d?fx_spelllight"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T3"/>			
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="fx_spelllight/T2"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fx_spelllight">
+					<requirement name="NotHasBuff" buff="runeGeneral_spelllight"/>
+					<requirement name="NotHasBuff" buff="runeGeneral_spelllight3"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>		
+		<buff name="runeGeneral_spelllight3" hidden="true">
+			<stack_type value="ignore"/>
+			<duration value="0"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fx_spelllight.unity3d?fx_spelllight"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T1"/>
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T2"/>				
+				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="fx_spelllight/T3"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fx_spelllight">
+					<requirement name="NotHasBuff" buff="runeGeneral_spelllight"/>
+					<requirement name="NotHasBuff" buff="runeGeneral_spelllight2"/>
+				</triggered_effect>
+			</effect_group>
+		</buff>
+		
+	<!--___________________________ RUNES: UNIQUE / SUPPORTER ___________________________-->	
 			<!-- RUNE: ALTIN'S TOUCH -->
 			<buff name="buffRuneUnique_altinstouch" hidden="true"> 
 				<damage_type value="heat"/>
@@ -5994,7 +6039,7 @@
 				<update_rate value=".5"/>
 					<effect_group>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel" operation="set" value="@$sorceryAlchemyMastery_power"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel" operation="multiply" value="2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel" operation="multiply" value="1"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_travel" operation="set" value="0"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffPotion_travel">
 							<requirement name="HasBuff" buff="buffLegBroken"/>
@@ -6014,7 +6059,7 @@
 				<update_rate value=".5"/>
 					<effect_group>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel2" operation="set" value="@$sorceryAlchemyMastery_power"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel2" operation="multiply" value="3"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel2" operation="multiply" value="2"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_travel2" operation="set" value="0"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffPotion_travel2">
 							<requirement name="HasBuff" buff="buffLegBroken"/>
@@ -6034,7 +6079,7 @@
 				<update_rate value=".5"/>
 					<effect_group>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel3" operation="set" value="@$sorceryAlchemyMastery_power"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel3" operation="multiply" value="4"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffPotion_travel3" operation="multiply" value="3"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffPotion_travel3" operation="set" value="0"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffPotion_travel3">
 							<requirement name="HasBuff" buff="buffLegBroken"/>

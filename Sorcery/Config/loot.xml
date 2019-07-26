@@ -48,6 +48,7 @@
 			<item name="runeSpellcast_lightningstrike"/>
 			<item name="runeArmor_firenova"/>
 			<item name="runeArmor_firenova"/>
+			<item name="runeGeneral_spelllight"/>
 			<item name="runeGeneral_lockshatter" prob=".2"/>
 		</lootgroup>
 		<lootgroup name="sorceryModT2" count="1">
@@ -62,6 +63,7 @@
 			<item name="runeSpellcast_lightningstrike2"/>
 			<item name="runeArmor_firenova2"/>
 			<item name="runeArmor_icenova2"/>
+			<item name="runeGeneral_spelllight2"/>
 			<item name="runeGeneral_lockshatter2" prob=".1"/>
 		</lootgroup>	
 		<lootgroup name="sorceryModT3" count="1">
@@ -76,6 +78,7 @@
 			<item name="runeSpellcast_lightningstrike3"/>
 			<item name="runeArmor_firenova3"/>
 			<item name="runeArmor_icenova3"/>
+			<item name="runeGeneral_spelllight3"/>
 			<item name="runeGeneral_lockshatter3" prob=".1"/>
 		</lootgroup>	
 		<!-- <lootgroup name="sorceryModT4" count="1">
@@ -351,6 +354,9 @@
 		<item name="spellIceStorm" count="1,2" prob="0.01"/>
 		<item name="spellFireMeteor" count="1,2" prob="0.01"/>
 		<item name="spellLightningStorm" count="1,2" prob="0.01"/>
+		<item name="sorceryAmmoArrow_fire" count="1,8" prob=".3"/>
+		<item name="sorceryAmmoArrow_ice" count="1,8" prob=".3"/>
+		<item name="sorceryAmmoArrow_lightning" count="1,8" prob=".3"/>
 	</append> 
 
 	<append xpath="/lootcontainers/lootgroup[@name='ammoSteel']">
@@ -363,6 +369,9 @@
 		<item name="spellIceStorm" count="1,2" prob="0.03"/>
 		<item name="spellFireMeteor" count="1,2" prob="0.03"/>
 		<item name="spellLightningStorm" count="1,2" prob="0.03"/>
+		<item name="sorceryAmmoArrow_fire" count="2,8" prob=".3"/>
+		<item name="sorceryAmmoArrow_ice" count="2,8" prob=".3"/>
+		<item name="sorceryAmmoArrow_lightning" count="2,8" prob=".3"/>		
 	</append> 	
 
 	<append xpath="/lootcontainers/lootgroup[@name='militaryAmmo']">
@@ -375,6 +384,9 @@
 		<item name="spellIceStorm" count="1,2" prob="0.05"/>
 		<item name="spellFireMeteor" count="1,2" prob="0.05"/>
 		<item name="spellLightningStorm" count="1,2" prob="0.05"/>
+		<item name="sorceryAmmoArrow_fire" count="3,12" prob=".3"/>
+		<item name="sorceryAmmoArrow_ice" count="3,12" prob=".3"/>
+		<item name="sorceryAmmoArrow_lightning" count="3,12" prob=".3"/>		
 	</append> 
 
 	<append xpath="/lootcontainers/lootgroup[@name='treasureAmmo']">
@@ -387,9 +399,15 @@
 		<item name="spellIceStorm" count="2,8" prob="0.1"/>
 		<item name="spellFireMeteor" count="2,8" prob="0.1"/>
 		<item name="spellLightningStorm" count="2,8" prob="0.1"/>
+		<item name="sorceryAmmoArrow_fire" count="15,30" prob=".3"/>
+		<item name="sorceryAmmoArrow_ice" count="15,30" prob=".3"/>
+		<item name="sorceryAmmoArrow_lightning" count="15,30" prob=".3"/>
 	</append>  
 
 	<append xpath="/lootcontainers/lootgroup[@name='questAmmo']">
+		<item name="sorceryAmmoArrow_fire" count="15,30" loot_prob_template="GradeALoot"/>		
+		<item name="sorceryAmmoArrow_ice" count="15,30" loot_prob_template="GradeALoot"/>		
+		<item name="sorceryAmmoArrow_lightning" count="15,30" loot_prob_template="GradeALoot"/>	
 		<item name="spellFireball" count="15,30" loot_prob_template="GradeALoot"/>
 		<item name="spellIceBall" count="15,30" loot_prob_template="GradeALoot"/>
 		<item name="spellLightning" count="15,30" loot_prob_template="GradeALoot"/>
@@ -407,6 +425,9 @@
 		<item name="spellcastFire" prob=".1"/>
 		<item name="spellcastIce" prob=".1"/>
 		<item name="spellcastLightning" prob=".1"/>
+		<item name="sorceryAmmoArrow_fire" count="5,10" prob=".4"/>		
+		<item name="sorceryAmmoArrow_ice" count="5,10" prob=".4"/>		
+		<item name="sorceryAmmoArrow_lightning" count="5,10" prob=".4"/>
 		<item name="spellFireball" count="5,10" prob=".5"/>
 		<item name="spellIceBall" count="5,10" prob=".5"/>
 		<item name="spellLightning" count="5,10" prob=".5"/>
@@ -421,6 +442,9 @@
 		<item name="spellcastFire" prob=".05"/>
 		<item name="spellcastIce" prob=".05"/>
 		<item name="spellcastLightning" prob=".05"/>
+		<item name="sorceryAmmoArrow_fire" count="10,20" prob=".1"/>
+		<item name="sorceryAmmoArrow_ice" count="10,20" prob=".1"/>
+		<item name="sorceryAmmoArrow_lightning" count="10,20" prob=".1"/>
 		<item name="spellFirestorm" count="3,6" prob=".1"/>
 		<item name="spellIceSpike" count="3,6" prob=".1"/>
 		<item name="spellLightningNova" count="3,6" prob=".1"/>

@@ -736,6 +736,13 @@ runeGeneral_lockshatterDesc,item_modifiers,mod,New,"Invoke the Lock Shatter Rune
 runeGeneral_lockshatter2Desc,item_modifiers,mod,New,"Invoke the Lock Shatter Runeword to imbue a Tool with Safe Lock Breaking power. Only [ae92d5]Tools[-] can sustain the power of this Rune and will endure heavy burden (reduced by Rune Mastery).\n\n[6600cc]Lock Shatter[-]: Destroy Safe Locks with magical force on each swing.\n[ae92d5]Stamina Burden[-]: 20% (reduced by Rune Mastery).",,,,,
 runeGeneral_lockshatter3Desc,item_modifiers,mod,New,"Invoke the Lock Shatter Runeword to imbue a Tool with Safe Lock Breaking power. Only [ae92d5]Tools[-] can sustain the power of this Rune and will endure light burden (reduced by Rune Mastery).\n\n[6600cc]Lock Shatter[-]: Obliterate Safe Locks with magical force on each swing.\n[ae92d5]Stamina Burden[-]: 20% (reduced by Rune Mastery).",,,,,
 
+runeGeneral_spelllight,item_modifiers,mod,New,"[2f9970]RUNE[-]: Spell Light",,,,, 
+runeGeneral_spelllight2,item_modifiers,mod,New,"[407fff]RUNE[-]: Spell Light II",,,,,
+runeGeneral_spelllight3,item_modifiers,mod,New,"[e60000]RUNE[-]: Spell Light III",,,,,
+runeGeneral_spelllightDesc,item_modifiers,mod,New,"Invoke the Spell Light Runeword to Illuminate your surroundings by means of Spell Light... let the mundane keep their Torches! Only [ae92d5]Tools[-] can sustain the power of this Rune.\n\n[6600cc]Spell Light[-]: Illuminate your surroundings.\n[ae92d5]Stamina Burden[-]: 20% (reduced by Rune Mastery).",,,,,
+runeGeneral_spelllight2Desc,item_modifiers,mod,New,"Invoke the Spell Light Runeword to Illuminate your surroundings by means of Spell Light... let the mundane keep their Torches! Only [ae92d5]Tools[-] can sustain the power of this Rune.\n\n[6600cc]Spell Light[-]: Illuminate your surroundings within a large range.\n[ae92d5]Stamina Burden[-]: 20% (reduced by Rune Mastery).",,,,,
+runeGeneral_spelllight3Desc,item_modifiers,mod,New,"Invoke the Spell Light Runeword to Illuminate your surroundings by means of Spell Light... let the mundane keep their Torches! Only [ae92d5]Tools[-] can sustain the power of this Rune.\n\n[6600cc]Spell Light[-]: Illuminate your surroundings within a very large range.\n[ae92d5]Stamina Burden[-]: 20% (reduced by Rune Mastery).",,,,,
+
 runeUnique_altinstouch,item_modifiers,mod,New,"[9b874d]RUNE[-]: Altin's Touch",,,,, 
 runeUnique_altinstouchDesc,item_modifiers,mod,New,"Forged with the magical might of Altin himself, this Runeword possess the very power of elements. Imbued with Altin's will, all [ae92d5]Weapons[-] can sustain the power of this Rune.\n\n[9b874d]Altin's Touch[-]: Chance to cast a [970000]Fire[-], [02599c]Ice[-] or [5c009d]Lightning[-] Spell on hit.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
 

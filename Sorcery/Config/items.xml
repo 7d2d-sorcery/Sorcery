@@ -4292,8 +4292,8 @@
 			</property>
 			<property name="Group" value="Food/Cooking"/>
 			<effect_group tiered="false">
-				<display_value name="dsorcPotionTravel" value="2"/>
-				<display_value name="dsorcPotionTravel2" value="2"/>
+				<display_value name="dsorcPotionTravel" value="1"/>
+				<display_value name="dsorcPotionTravel2" value="1"/>
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
@@ -4308,8 +4308,8 @@
 					<requirement name="NotHasBuff" target="self" buff="buffPotion_travel3"/>
 			</property>
 			<effect_group tiered="false">
-				<display_value name="dsorcPotionTravel" value="3"/>
-				<display_value name="dsorcPotionTravel2" value="3"/>
+				<display_value name="dsorcPotionTravel" value="2"/>
+				<display_value name="dsorcPotionTravel2" value="2"/>
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
@@ -4324,8 +4324,8 @@
 					<requirement name="NotHasBuff" target="self" buff="buffPotion_travel3"/>
 			</property>			
 			<effect_group tiered="false">
-				<display_value name="dsorcPotionTravel" value="4"/>
-				<display_value name="dsorcPotionTravel2" value="4"/>
+				<display_value name="dsorcPotionTravel" value="3"/>
+				<display_value name="dsorcPotionTravel2" value="3"/>
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
