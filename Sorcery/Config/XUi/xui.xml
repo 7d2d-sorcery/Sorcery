@@ -42,7 +42,6 @@
 	<remove xpath="/xui/ruleset/window_group[@name='ingameMenu']"/>
 	<insertAfter xpath="/xui/ruleset/window_group[@name='spawnMenu']">
 		<window_group name="ingameMenu">
-			<!-- <window name="ingameMenu" /> -->
 			<window name="SorceryingameMenu" />
 		</window_group>
 	</insertAfter>

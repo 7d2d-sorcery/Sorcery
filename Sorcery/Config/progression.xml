@@ -100,7 +100,7 @@
 	<!-- COMPATIBILITY PATCH: RAVENHEARST -->
 	<!-- NOTE: RH removes <skills> -->
 	<!-- Sorcery Skills -->
-	<insertBefore  xpath="/progression/attributes[//attribute[@name='attArcher' or @SAFE_TO_IGNORE='Ravenhearst Compatibility Patch.']]">
+	<insertBefore  xpath="/progression/attributes[//attribute[@name='attArcher' or @SAFE_TO_IGNORE='Compatibility Patch: RH 5.5']]">
 		<skills min_level="1" max_level="1">
 			<skill name="skillSorceryMastery" parent="attSorcery" name_key="skillSorceryMasteryName" desc_key="skillSorceryMasteryDesc" icon="ui_game_symbol_player"><effect_group/></skill>
 			<skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
@@ -569,8 +569,8 @@
 			</effect_group>			
 			
 			<effect_group name="RUNECRAFTING: RECIPES">
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeGeneral_spiritboon2,runeGeneral_fireessenceboon2,runeGeneral_iceessenceboon2,runeGeneral_lightningessenceboon2,runeArmor_fireskin2,runeArmor_iceskin2,runeSpellcast_lightningstrike2"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="runeGeneral_spiritboon3,runeGeneral_fireessenceboon3,runeGeneral_iceessenceboon3,runeGeneral_lightningessenceboon3,runeArmor_fireskin3,runeArmor_iceskin3,runeSpellcast_lightningstrike3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeGeneral_lockshatter2,runeGeneral_spiritboon2,runeGeneral_fireessenceboon2,runeGeneral_iceessenceboon2,runeGeneral_lightningessenceboon2,runeArmor_fireskin2,runeArmor_iceskin2,runeSpellcast_lightningstrike2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="runeGeneral_lockshatter3,runeGeneral_spiritboon3,runeGeneral_fireessenceboon3,runeGeneral_iceessenceboon3,runeGeneral_lightningessenceboon3,runeArmor_fireskin3,runeArmor_iceskin3,runeSpellcast_lightningstrike3"/>
 			</effect_group>
 			
 			<effect_group>

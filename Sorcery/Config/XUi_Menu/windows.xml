@@ -31,10 +31,10 @@
 	<append xpath="/windows">
 
 		<!-- UI: SORCERY LOGO -->
-		<window name="SorceryLogo" pos="0, 0" width="200" height="53" anchor="LeftTop">
+		<window name="SorceryLogo" depth="99" pos="0, 0" width="200" height="53" anchor="LeftTop">
 			<texture name="SorceryLogo" pos="10, -10" width="200" height="53" texture="@modfolder:Textures/SorceryLogo.png" />
 		</window>
-		<window name="SorceryCredits" pos="0, 0" width="200" height="905" anchor="LeftTop">
+		<window name="SorceryCredits" depth="99" pos="0, 0" width="200" height="905" anchor="LeftTop">
 			<texture name="SorceryCredits" pos="10, -80" width="200" height="905" texture="@modfolder:Textures/SorceryCredits.png" />
 		</window>		
 	

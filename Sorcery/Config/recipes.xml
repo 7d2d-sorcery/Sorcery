@@ -669,12 +669,12 @@
 		<recipe name="runeGeneral_lockshatter" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
 			<ingredient name="unit_lightning" count="75"/>
 		</recipe>
-		<recipe name="runeGeneral_lockshatter2" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+		<recipe name="runeGeneral_lockshatter2" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning" tags="learnable">
 			<ingredient name="unit_lightning3" count="75"/>
 			<ingredient name="unit_lightning2" count="75"/>
 			<ingredient name="unit_lightning" count="75"/>
 		</recipe>
-		<recipe name="runeGeneral_lockshatter3" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning">
+		<recipe name="runeGeneral_lockshatter3" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolHammerLightning" tags="learnable">
 			<ingredient name="unit_lightning5" count="75"/>
 			<ingredient name="unit_lightning4" count="75"/>
 			<ingredient name="unit_lightning3" count="75"/>

@@ -1639,25 +1639,21 @@
 			<property name="Extends" value="resourceEssenceFire"/>
 			<property name="Material" value="fire2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>
 		</item>
 		<item name="resourceEssenceFire3">
 			<property name="Extends" value="resourceEssenceFire"/>
 			<property name="Material" value="fire3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
 		</item>
 		<item name="resourceEssenceFire4">
 			<property name="Extends" value="resourceEssenceFire"/>
 			<property name="Material" value="fire4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>
 		</item>
 		<item name="resourceEssenceFire5">
 			<property name="Extends" value="resourceEssenceFire"/>
 			<property name="Material" value="fire5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>
 		</item>
 		
 <!--___________________ ICE ESSENCE ___________________-->
@@ -1682,25 +1678,21 @@
 			<property name="Extends" value="resourceEssenceIce"/>
 			<property name="Material" value="ice2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>
 		</item>
 		<item name="resourceEssenceIce3">
 			<property name="Extends" value="resourceEssenceIce"/>
 			<property name="Material" value="ice3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
 		</item>
 		<item name="resourceEssenceIce4">
 			<property name="Extends" value="resourceEssenceIce"/>
 			<property name="Material" value="ice4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>
 		</item>
 		<item name="resourceEssenceIce5">
 			<property name="Extends" value="resourceEssenceIce"/>
 			<property name="Material" value="ice5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>
 		</item>
 		
 <!--___________________ LIGHTNING ESSENCE ___________________-->
@@ -1725,25 +1717,21 @@
 			<property name="Extends" value="resourceEssenceLightning"/>
 			<property name="Material" value="lightning2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>
 		</item>
 		<item name="resourceEssenceLightning3">
 			<property name="Extends" value="resourceEssenceLightning"/>
 			<property name="Material" value="lightning3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
 		</item>
 		<item name="resourceEssenceLightning4">
 			<property name="Extends" value="resourceEssenceLightning"/>
 			<property name="Material" value="lightning4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>
 		</item>
 		<item name="resourceEssenceLightning5">
 			<property name="Extends" value="resourceEssenceLightning"/>
 			<property name="Material" value="lightning5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>
 		</item>		
 		
 
@@ -1768,25 +1756,25 @@
 			<property name="Extends" value="resourceExtractOmni"/>
 			<property name="Material" value="MsorceryExtractOmni2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceExtractOmni3">
 			<property name="Extends" value="resourceExtractOmni"/>
 			<property name="Material" value="MsorceryExtractOmni3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceExtractOmni4">
 			<property name="Extends" value="resourceExtractOmni"/>
 			<property name="Material" value="MsorceryExtractOmni4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceExtractOmni5">
 			<property name="Extends" value="resourceExtractOmni"/>
 			<property name="Material" value="MsorceryExtractOmni5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>
 		
 		<!-- EXTRACT: FIRE -->
@@ -1808,25 +1796,25 @@
 			<property name="Extends" value="resourceExtractFire"/>
 			<property name="Material" value="MsorceryExtractFire2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceExtractFire3">
 			<property name="Extends" value="resourceExtractFire"/>
 			<property name="Material" value="MsorceryExtractFire3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceExtractFire4">
 			<property name="Extends" value="resourceExtractFire"/>
 			<property name="Material" value="MsorceryExtractFire4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceExtractFire5">
 			<property name="Extends" value="resourceExtractFire"/>
 			<property name="Material" value="MsorceryExtractFire5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>
 
 		<!-- EXTRACT: ICE -->
@@ -1848,25 +1836,25 @@
 			<property name="Extends" value="resourceExtractIce"/>
 			<property name="Material" value="MsorceryExtractIce2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourceExtractIce3">
 			<property name="Extends" value="resourceExtractIce"/>
 			<property name="Material" value="MsorceryExtractIce3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourceExtractIce4">
 			<property name="Extends" value="resourceExtractIce"/>
 			<property name="Material" value="MsorceryExtractIce4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourceExtractIce5">
 			<property name="Extends" value="resourceExtractIce"/>
 			<property name="Material" value="MsorceryExtractIce5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>
 
 		<!-- EXTRACT: LIGHTNING -->
@@ -1888,25 +1876,25 @@
 			<property name="Extends" value="resourceExtractLightning"/>
 			<property name="Material" value="MsorceryExtractLightning2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourceExtractLightning3">
 			<property name="Extends" value="resourceExtractLightning"/>
 			<property name="Material" value="MsorceryExtractLightning3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourceExtractLightning4">
 			<property name="Extends" value="resourceExtractLightning"/>
 			<property name="Material" value="MsorceryExtractLightning4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourceExtractLightning5">
 			<property name="Extends" value="resourceExtractLightning"/>
 			<property name="Material" value="MsorceryExtractLightning5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>
 
 		
@@ -1931,25 +1919,25 @@
 			<property name="Extends" value="resourcePowderArcane"/>
 			<property name="Material" value="MsorceryPowderArcane2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourcePowderArcane3">
 			<property name="Extends" value="resourcePowderArcane"/>
 			<property name="Material" value="MsorceryPowderArcane3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourcePowderArcane4">
 			<property name="Extends" value="resourcePowderArcane"/>
 			<property name="Material" value="MsorceryPowderArcane4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourcePowderArcane5">
 			<property name="Extends" value="resourcePowderArcane"/>
 			<property name="Material" value="MsorceryPowderArcane5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>
 		
 		<!-- POWDER: FIRE -->
@@ -1971,25 +1959,25 @@
 			<property name="Extends" value="resourcePowderFire"/>
 			<property name="Material" value="MsorceryPowderFire2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourcePowderFire3">
 			<property name="Extends" value="resourcePowderFire"/>
 			<property name="Material" value="MsorceryPowderFire3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourcePowderFire4">
 			<property name="Extends" value="resourcePowderFire"/>
 			<property name="Material" value="MsorceryPowderFire4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourcePowderFire5">
 			<property name="Extends" value="resourcePowderFire"/>
 			<property name="Material" value="MsorceryPowderFire5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>
 		
 		<!-- POWDER: ICE -->
@@ -2011,25 +1999,25 @@
 			<property name="Extends" value="resourcePowderIce"/>
 			<property name="Material" value="MsorceryPowderIce2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourcePowderIce3">
 			<property name="Extends" value="resourcePowderIce"/>
 			<property name="Material" value="MsorceryPowderIce3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourcePowderIce4">
 			<property name="Extends" value="resourcePowderIce"/>
 			<property name="Material" value="MsorceryPowderIce4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourcePowderIce5">
 			<property name="Extends" value="resourcePowderIce"/>
 			<property name="Material" value="MsorceryPowderIce5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>		
 		
 		<!-- POWDER: LIGHTNING -->
@@ -2051,25 +2039,25 @@
 			<property name="Extends" value="resourcePowderLightning"/>
 			<property name="Material" value="MsorceryPowderLightning2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourcePowderLightning3">
 			<property name="Extends" value="resourcePowderLightning"/>
 			<property name="Material" value="MsorceryPowderLightning3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourcePowderLightning4">
 			<property name="Extends" value="resourcePowderLightning"/>
 			<property name="Material" value="MsorceryPowderLightning4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourcePowderLightning5">
 			<property name="Extends" value="resourcePowderLightning"/>
 			<property name="Material" value="MsorceryPowderLightning5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>
 
 		
@@ -2095,25 +2083,25 @@
 			<property name="Extends" value="resourceThreadArcane"/>
 			<property name="Material" value="MsorceryClothArcane2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceThreadArcane3">
 			<property name="Extends" value="resourceThreadArcane"/>
 			<property name="Material" value="MsorceryClothArcane3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourceThreadArcane4">
 			<property name="Extends" value="resourceThreadArcane"/>
 			<property name="Material" value="MsorceryClothArcane4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceThreadArcane5">
 			<property name="Extends" value="resourceThreadArcane"/>
 			<property name="Material" value="MsorceryClothArcane5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>	
+			<property name="CraftingIngredientTime" value="5"/>	
 		</item>	
 		<!-- THREAD: FIRE -->
 		<item name="resourceThreadFire">
@@ -2134,25 +2122,25 @@
 			<property name="Extends" value="resourceThreadFire"/>
 			<property name="Material" value="MsorceryClothFire2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceThreadFire3">
 			<property name="Extends" value="resourceThreadFire"/>
 			<property name="Material" value="MsorceryClothFire3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourceThreadFire4">
 			<property name="Extends" value="resourceThreadFire"/>
 			<property name="Material" value="MsorceryClothFire4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceThreadFire5">
 			<property name="Extends" value="resourceThreadFire"/>
 			<property name="Material" value="MsorceryClothFire5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>	
+			<property name="CraftingIngredientTime" value="5"/>	
 		</item>	
 		<!-- THREAD: ICE -->
 		<item name="resourceThreadIce">
@@ -2173,25 +2161,25 @@
 			<property name="Extends" value="resourceThreadIce"/>
 			<property name="Material" value="MsorceryClothIce2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceThreadIce3">
 			<property name="Extends" value="resourceThreadIce"/>
 			<property name="Material" value="MsorceryClothIce3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourceThreadIce4">
 			<property name="Extends" value="resourceThreadIce"/>
 			<property name="Material" value="MsorceryClothIce4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceThreadIce5">
 			<property name="Extends" value="resourceThreadIce"/>
 			<property name="Material" value="MsorceryClothIce5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>	
+			<property name="CraftingIngredientTime" value="5"/>	
 		</item>	
 		<!-- THREAD: LIGHTNING -->
 		<item name="resourceThreadLightning">
@@ -2212,25 +2200,25 @@
 			<property name="Extends" value="resourceThreadLightning"/>
 			<property name="Material" value="MsorceryClothLightning2"/>
 			<property name="CraftingIngredientExp" value="10"/>
-			<property name="CraftingIngredientTime" value="10"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceThreadLightning3">
 			<property name="Extends" value="resourceThreadLightning"/>
 			<property name="Material" value="MsorceryClothLightning3"/>
 			<property name="CraftingIngredientExp" value="20"/>
-			<property name="CraftingIngredientTime" value="20"/>
+			<property name="CraftingIngredientTime" value="5"/>
 		</item>	
 		<item name="resourceThreadLightning4">
 			<property name="Extends" value="resourceThreadLightning"/>
 			<property name="Material" value="MsorceryClothLightning4"/>
 			<property name="CraftingIngredientExp" value="40"/>
-			<property name="CraftingIngredientTime" value="40"/>			
+			<property name="CraftingIngredientTime" value="5"/>			
 		</item>	
 		<item name="resourceThreadLightning5">
 			<property name="Extends" value="resourceThreadLightning"/>
 			<property name="Material" value="MsorceryClothLightning5"/>
 			<property name="CraftingIngredientExp" value="60"/>
-			<property name="CraftingIngredientTime" value="60"/>	
+			<property name="CraftingIngredientTime" value="5"/>	
 		</item>
 
 		
@@ -2258,28 +2246,24 @@
 			<property name="Extends" value="unit_fire"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceFire2"/>
 			<property name="Material" value="fire2"/>
-			<property name="CraftingIngredientTime" value="10"/>
 			<property name="CreativeMode" value="None"/>
 		</item>		
 		<item name="unit_fire3">
 			<property name="Extends" value="unit_fire"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceFire3"/>
 			<property name="Material" value="fire3"/>
-			<property name="CraftingIngredientTime" value="20"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 		<item name="unit_fire4">
 			<property name="Extends" value="unit_fire"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceFire4"/>
 			<property name="Material" value="fire4"/>
-			<property name="CraftingIngredientTime" value="40"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 		<item name="unit_fire5">
 			<property name="Extends" value="unit_fire"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceFire5"/>
 			<property name="Material" value="fire5"/>
-			<property name="CraftingIngredientTime" value="60"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 
@@ -2304,28 +2288,24 @@
 			<property name="Extends" value="unit_ice"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceIce2"/>
 			<property name="Material" value="ice2"/>
-			<property name="CraftingIngredientTime" value="10"/>
 			<property name="CreativeMode" value="None"/>
 		</item>		
 		<item name="unit_ice3">
 			<property name="Extends" value="unit_ice"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceIce3"/>
 			<property name="Material" value="ice3"/>
-			<property name="CraftingIngredientTime" value="20"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 		<item name="unit_ice4">
 			<property name="Extends" value="unit_ice"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceIce4"/>
 			<property name="Material" value="ice4"/>
-			<property name="CraftingIngredientTime" value="40"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 		<item name="unit_ice5">
 			<property name="Extends" value="unit_ice"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceIce5"/>
 			<property name="Material" value="ice5"/>
-			<property name="CraftingIngredientTime" value="60"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 
@@ -2350,28 +2330,24 @@
 			<property name="Extends" value="unit_lightning"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceLightning2"/>
 			<property name="Material" value="lightning2"/>
-			<property name="CraftingIngredientTime" value="10"/>
 			<property name="CreativeMode" value="None"/>
 		</item>		
 		<item name="unit_lightning3">
 			<property name="Extends" value="unit_lightning"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceLightning3"/>
 			<property name="Material" value="lightning3"/>
-			<property name="CraftingIngredientTime" value="20"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 		<item name="unit_lightning4">
 			<property name="Extends" value="unit_lightning"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceLightning4"/>
 			<property name="Material" value="lightning4"/>
-			<property name="CraftingIngredientTime" value="40"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 		<item name="unit_lightning5">
 			<property name="Extends" value="unit_lightning"/>
 			<property name="CustomIcon" value="#@modfolder:ItemIcons/resourceEssenceLightning5"/>
 			<property name="Material" value="lightning5"/>
-			<property name="CraftingIngredientTime" value="60"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 
@@ -2398,7 +2374,7 @@
 			<property name="Group" value="Special Items"/>
 			<property class="Action0">
 				<property name="Class" value="Quest"/>
-				<property name="QuestGiven" value="quest_SorceryIntro"/>
+				<property name="QuestGiven" value="quest_SorceryIntroNew"/>
 				<property name="Delay" value="0"/>
 			</property>
 		</item>
@@ -2410,10 +2386,15 @@
 			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
 			<property name="TintColor" value="102,0,204"/>
 			<property class="Action0">
+						<!-- LIMIT -->
+						<!-- PENDING: onQuestStart -->
+						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="0"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="0"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="0"/>
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_SorceryIntroNew"/>
 				<property name="Delay" value="0"/>
-			</property>
+			</property>		
 		</item>
 		
 		<!-- GUIDE: Letter -->
@@ -2422,18 +2403,27 @@
 			<property name="CustomIcon" value="questMaster"/>
 			<property name="CustomIconTint" value="660077"/>
 			<property name="TintColor" value="102,0,119"/>
+			<property name="Material" value="MsorceryExtractOmni"/> <property name="Weight" value="30"/>
 			<property class="Action0">
+						<!-- LIMIT -->
+						<!-- PENDING: onQuestStart -->
+						<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="0"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="0"/>
+						<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="0"/>
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_SorceryIntroGuide"/>
 				<property name="Delay" value="0"/>
-			</property>
+			</property>	
 		</item>
 		
 		<!-- MASTERY QUESTS -->
 		<item name="qs_SorceryMastery_FireMastery">
 			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
 			<property name="TintColor" value="151,0,0"/>
+			<property name="Material" value="MsorceryExtractFire"/> <property name="Weight" value="30"/>
 			<property class="Action0">
+					<!-- LIMIT -->
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFireMastery" operation="Equals" value="0"/>
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_SorceryMastery_FireMastery"/>
 				<property name="Delay" value="0"/>
@@ -2442,7 +2432,10 @@
 		<item name="qs_SorceryMastery_IceMastery">
 			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
 			<property name="TintColor" value="40,120,255"/>
+			<property name="Material" value="MsorceryExtractIce"/> <property name="Weight" value="30"/>
 			<property class="Action0">
+					<!-- LIMIT -->
+					<requirement name="ProgressionLevel" progression_name="perkSorceryIceMastery" operation="Equals" value="0"/>			
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_SorceryMastery_IceMastery"/>
 				<property name="Delay" value="0"/>
@@ -2451,7 +2444,10 @@
 		<item name="qs_SorceryMastery_LightningMastery">
 			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
 			<property name="TintColor" value="150,0,255"/>
+			<property name="Material" value="MsorceryExtractLightning"/> <property name="Weight" value="30"/>
 			<property class="Action0">
+					<!-- LIMIT -->
+					<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" operation="Equals" value="0"/>			
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_SorceryMastery_LightningMastery"/>
 				<property name="Delay" value="0"/>
@@ -4053,9 +4049,8 @@
 			<property name="Tags" value="enchantedmortar,sorceryAlchemy,sorcery"/>
 			<property name="HoldType" value="3"/>
 			<property name="Meshfile" value="#@modfolder:Resources/alchemyMortarPestle.unity3d?alchemyMortarPestle"/>
-			<property name="Material" value="Mwood"/>
+			<property name="Material" value="MsorceryPowderArcane"/> <property name="Weight" value="15"/>
 			<property name="Stacknumber" value="1"/>
-			<property name="Weight" value="0"/>
 			<property name="EconomicValue" value="0"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Tools/Traps"/>
