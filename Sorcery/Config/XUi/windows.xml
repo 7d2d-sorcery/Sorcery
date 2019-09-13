@@ -33,6 +33,7 @@
 	<!-- <set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='8' or @SAFE_TO_IGNORE='Compatibility Patch']/@cols">9</set> -->
 	<!-- <set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='11' or @SAFE_TO_IGNORE='Compatibility Patch: RH 5.4']/@cols">12</set> -->
 	<set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='11' or @SAFE_TO_IGNORE='Compatibility Patch: RH 5.5']/@cols">12</set>
+	<set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel/grid[@name='categories' and @cols='8' or @SAFE_TO_IGNORE='Compatibility Patch: WotW']/@cols">9</set>
 		
 	<append xpath="/windows">
 
@@ -52,7 +53,7 @@
 
     <!-- UI: Pause Menu - OVERRIDE -->
     <window name="SorceryingameMenu" anchor="CenterCenter" pos="-125,200" width="250" height="200" controller="InGameMenuWindow" cursor_area="true">
-		<label name="SorceryVersion" pos="783, 288" depth="0" size="250,33" text="v0.806-Alchemy" font_size="30" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
+		<label name="SorceryVersion" pos="783, 288" depth="0" size="250,33" text="v0.83 The Awakening" font_size="30" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
         <texture name="SorceryingameMenuLogo" depth="0" size="668,441" texture="@modfolder:Textures/SorceryLogoMenu.png" pos="-209,190" />
 		<texture name="SorceryingameMenuChestNoble" depth="0" size="240,243" texture="@modfolder:Textures/SorceryingameMenuChestNoble.png" pos="-295,-270" />
 		<texture name="SorceryingameMenuChestLord" depth="0" size="260,263" texture="@modfolder:Textures/SorceryingameMenuChestLord.png" pos="-780,-290" />

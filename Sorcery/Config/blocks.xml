@@ -63,7 +63,7 @@
 			<property name="CraftActionName" value="Conjure" />
 			<property name="OpenSound" value="sorceryFireball_draw" />
 			<property name="CloseSound" value="sorceryFireball_impact" />
-			<property name="CraftSound" value="sorceryRitualChant" />
+			<property name="CraftSound" value="sorceryChant" />
 			<property name="CraftCompleteSound" value="sorceryFireball_launch" />
 			<!-- <property name="WorkstationWindow" value="workstation_conjureFire" /> -->
 			<property class="RepairItems">
@@ -118,7 +118,7 @@
 			<property name="CraftActionName" value="Conjure" />
 			<property name="OpenSound" value="sorceryIce_draw" />
 			<property name="CloseSound" value="sorceryIce_impact" />
-			<property name="CraftSound" value="sorceryRitualChant" />
+			<property name="CraftSound" value="sorceryChant" />
 			<property name="CraftCompleteSound" value="sorceryIce_launch" />
 			<!-- <property name="WorkstationWindow" value="workstation_conjureIce" /> -->
 			<property class="RepairItems">
@@ -173,7 +173,7 @@
 			<property name="CraftActionName" value="Conjure" />
 			<property name="OpenSound" value="sorceryLightning_implodelow" />
 			<property name="CloseSound" value="sorceryLightning_impact" />
-			<property name="CraftSound" value="sorceryRitualChant" />
+			<property name="CraftSound" value="sorceryChant" />
 			<property name="CraftCompleteSound" value="sorceryLightning_launch" />
 			<!-- <property name="WorkstationWindow" value="workstation_conjureIce" /> -->
 			<property class="RepairItems">
@@ -337,6 +337,7 @@
 	
 	
 	<!-- CONTAINERS: LOOT -->
+		<!-- INTRO LOOT -->
 		<block name="cntSorceryCrateIntro">
 			<property name="DescriptionKey" value="cntSorceryCrateIntroDesc"/>
 			<property name="CreativeMode" value="Dev"/>
@@ -355,7 +356,6 @@
 			<property name="Stacknumber" value="1"/>
 			<!-- <property name="TintColor" value="102,0,204"/>	 -->	
 		</block>
-	
 		<block name="cntLootSorceryCrateIntro">
 			<property name="DescriptionKey" value="cntSorceryCrateIntroDesc"/>
 			<property name="Class" value="Loot"/>
@@ -376,6 +376,92 @@
 			</property>
 			<property name="FilterTags" value="floot"/>
 		</block>
+	
+		<!-- AWAKENED CHESTS -->
+		<!-- <block name="cntSorceryChestAwakenedMaster">
+			<property name="DescriptionKey" value="cntSorceryCrateIntroDesc"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/chestWoodenLarge.unity3d?chestWoodenLarge" />
+			<property name="Material" value="Mwood_regular"/>
+			<property name="MaxDamage" value="1"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>			
+			<drop event="Destroy" count="0"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" value="cntLootSorceryChestAwakenedMaster"/>
+				<property name="Item" value="sorceryKeyUnlock_bronze"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="5"/>
+			</property>		
+			<property name="FilterTags" value="floot"/>
+			<property name="CustomIcon" value="cntSorceryCrateIntro"/>
+			<property name="Stacknumber" value="1"/>
+		</block>
+		<block name="cntLootSorceryChestAwakenedMaster">
+			<property name="DescriptionKey" value="cntSorceryCrateIntroDesc"/>
+			<property name="Class" value="Loot"/>
+			<property name="Material" value="Mwood_regular"/>
+			<property name="Path" value="solid"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/chestWoodenLarge.unity3d?chestWoodenLarge" />
+			<property name="CustomIcon" value="cntSorceryCrateIntro"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Candrop" value="false"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="MaxDamage" value="777"/>
+			<property name="LootList" value="255"/>
+			<drop event="Destroy" count="0"/>
+			<property name="FilterTags" value="floot"/>
+		</block>		
+		
+		
+		<block name="cntSorceryChestAwakenedFire">
+			<property name="Extends" value="cntSorceryCrateIntro"/>
+			<property name="DescriptionKey" value="cntSorceryChestAwakenedFireDesc"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DowngradeBlock" value="cntLootSorceryChestAwakenedFire"/>
+		</block>
+		<block name="cntLootSorceryChestAwakenedFire">
+			<property name="Extends" value="cntLootSorceryCrateIntro"/>
+			<property name="DescriptionKey" value="cntLootSorceryChestAwakenedFireDesc"/>
+			<property name="LootList" value="253"/>
+		</block>
+		
+		<block name="cntSorceryChestAwakenedIce">
+			<property name="Extends" value="cntSorceryCrateIntro"/>
+			<property name="DescriptionKey" value="cntSorceryChestAwakenedIceDesc"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DowngradeBlock" value="cntLootSorceryChestAwakenedIce"/>
+		</block>
+		<block name="cntLootSorceryChestAwakenedIce">
+			<property name="Extends" value="cntLootSorceryCrateIntro"/>
+			<property name="DescriptionKey" value="cntLootSorceryChestAwakenedIceDesc"/>
+			<property name="LootList" value="252"/>
+		</block>
+		
+		<block name="cntSorceryChestAwakenedLightning">
+			<property name="Extends" value="cntSorceryChestAwakenedMaster"/>
+			<property name="DescriptionKey" value="cntSorceryChestAwakenedLightningDesc"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" value="cntLootSorceryChestAwakenedLightning"/>
+				<property name="Item" value="sorceryKeyUnlock_bronze"/>
+				<property name="ItemCount" value="1"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property>
+			
+		</block>
+		<block name="cntLootSorceryChestAwakenedLightning">
+			<property name="Extends" value="cntLootSorceryChestAwakenedMaster"/>
+			<property name="DescriptionKey" value="cntLootSorceryChestAwakenedLightningDesc"/>
+			<property name="LootList" value="251"/>
+		</block> -->
 	
 	</append>
 	<!-- END: /blocks -->

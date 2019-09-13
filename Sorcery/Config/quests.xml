@@ -366,6 +366,71 @@
 		</quest>	
 	
 
+	<!--_______________THE AWAKENED _______________-->
+		<!-- LIGHTNING -->
+		<quest id="challengeSorcery_awakenedLightning">
+			<property name="name_key" value="challengeSorcery_awakenedLightning" />
+			<property name="subtitle_key" value="challengeSorcery_awakenedLightning_subtitle" />
+			<property name="description_key" value="challengeSorcery_awakenedLightning_description" />
+			<property name="offer_key" value="challengeSorcery_awakenedLightning_description" />
+			<property name="icon" value="ui_game_symbol_electric_power" />
+			<property name="repeatable" value="true" />
+			<property name="category_key" value="challenge" />
+			<property name="difficulty" value="insane"/>
+			<property name="shareable" value="true" />
+
+			<!-- <action type="TrackQuest" /> -->
+			
+			<objective type="RandomGoto" value="700-1200" phase="1">
+				<property name="completion_distance" value="50" />
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create" />
+				<property name="phase" value="2" />
+			</objective>
+
+			<action type="SpawnEnemy" id="sorceryAwakenedLightning" value="1" phase="3" />
+			<action type="SpawnEnemy" id="sorceryFallenLightning" value="2" phase="3" />
+			
+			<objective type="ZombieKill" id="sorceryAwakenedLightning" value="1" phase="3" />
+			
+			<reward type="Exp" value="7666" />
+			<!-- <reward type="Item" id="resourceEssenceLightning4" value="0-2" />
+			<reward type="Item" id="resourceEssenceLightning5" value="0-1" /> -->
+			<!-- <reward type="Item" id="cntSorceryCrateIntro" value="1" /> -->
+			<!-- <reward type="SkillPoints" value="1" /> -->
+		</quest>		
+		
+		
+	<!--_______________THE FALLEN _______________-->
+		<!-- LIGHTNING -->
+		<quest id="challengeSorcery_fallenLightning">
+			<property name="name_key" value="challengeSorcery_fallenLightning" />
+			<property name="subtitle_key" value="challengeSorcery_fallenLightning_subtitle" />
+			<property name="description_key" value="challengeSorcery_fallenLightning_description" />
+			<property name="offer_key" value="challengeSorcery_fallenLightning_description" />
+			<property name="icon" value="ui_game_symbol_electric_power" />
+			<property name="repeatable" value="true" />
+			<property name="category_key" value="challenge" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="true" />
+			
+			<objective type="RandomGoto" value="500-1200" phase="1">
+				<property name="completion_distance" value="50" />
+			</objective>
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create" />
+				<property name="phase" value="2" />
+			</objective>
+
+			<action type="SpawnEnemy" id="sorceryFallenLightning" value="2" phase="3" />
+			
+			<objective type="ZombieKill" id="sorceryFallenLightning" value="1" phase="3" />
+			
+			<reward type="Exp" value="1666" />
+			<reward type="Item" id="resourceRitualShardLightning" value="1" />
+		</quest>		
+		
 		
 	</append> 	
 </Sorcery>

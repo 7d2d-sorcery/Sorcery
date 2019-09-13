@@ -1102,6 +1102,29 @@
 			<ingredient name="resourceExtractLightning" count="1"/>
 		</recipe>	
 		
+		<!-- ALCHEMY RESOURCES -->
+		<!-- RESOURCE: RITUAL -->
+		<recipe name="resourceRitualShardLightning" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore">
+			<ingredient name="resourceRockSmall" count="60"/>
+			<ingredient name="resourceEssenceLightning" count="60"/>
+			<ingredient name="resourceExtractLightning" count="60"/>
+			<ingredient name="resourcePowderLightning" count="60"/>
+		</recipe>		
+		<recipe name="resourceRitualStoneLightning" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore">
+			<ingredient name="resourceRitualShardLightning" count="4"/>
+		</recipe>
+		<!-- QUEST: SUMMONING RITUAL -->
+		<!-- Fallen Ritual: Lightning -->
+		<recipe name="cs_fallenLightning" count="1" craft_time="30" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore">
+			<ingredient name="resourceRitualStoneLightning" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- Awakened Ritual: Lightning -->
+		<recipe name="cs_awakenedLightning" count="1" craft_time="60" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore">
+			<ingredient name="resourceRitualStoneLightning" count="5"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="10"/>
+		</recipe>		
+		
 	<!-- POTION BOTTLE -->
 		<recipe name="sorceryPotionBottle" count="1" craft_time="10" craft_area="sorceryAlchemyStation">
 			<ingredient name="resourcePowderArcane" count="1"/>

@@ -137,6 +137,12 @@
 			<AudioClip ClipName="#@modfolder:Resources/audioChant.unity3d?ritualChant"/>
 			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.01"/>
 		</SoundDataNode>	
+		<SoundDataNode name="sorceryChant"> <AudioSource name="Sounds/AudioSource_UI"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioChant.unity3d?sorceryChant"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioChant.unity3d?sorceryChant2"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioChant.unity3d?sorceryChant3"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="0.01"/>
+		</SoundDataNode>	
 	
 		<!-- FIRE SORCERY -->
 		<!-- FIRE -->
@@ -354,6 +360,29 @@
 			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="6"/><MaxRepeatRate value="0.001"/>
 		</SoundDataNode>		
 		
+		
+		
+		<!-- ENTITY SOUNDS -->
+		<SoundDataNode name="sorceryAwakened_trumpet"> <AudioSource name="Sounds/AudioSource_Creatures"/>
+			<Noise ID="0" volume="400" time="3" heat_map_strength="1.0" heat_map_time="180"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioSorcery.unity3d?sorceryHorn"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxRepeatRate value="1"/>
+		</SoundDataNode>		
+		<SoundDataNode name="sorceryAwakened_lightningaura"> <AudioSource name="Sounds/AudioSource_Creatures"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?lightningAura" Loop="true"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxVoicesPerEntity value="6"/><MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
+		<SoundDataNode name="sorceryAwakenedLightning_rumble"> <AudioSource name="Sounds/AudioSource_Creatures"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?lightningRumble" Loop="true"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxVoicesPerEntity value="10"/><MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
+		
+		<!-- ENTITY PLAYER SOUNDS -->
+		<SoundDataNode name="sorceryAwakened_playerAggro"> <AudioSource name="Sounds/AudioSource_Explosion"/>
+			<Noise ID="0" volume="400" time="2" heat_map_strength="5.0" heat_map_time="60"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioSorcery.unity3d?sorceryAggroSilent"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="1"/> <MaxRepeatRate value="1"/>
+		</SoundDataNode>		
 		
 	</append>
 	

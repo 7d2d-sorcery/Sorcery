@@ -968,7 +968,7 @@
 					<effect_group name="RANK 3: EXPLODE">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFireball" target="other" operation="GTE" value="3"/>
 							<requirement name="CVarCompare" cvar="SorceryFireStack" operation="GTE" value="4"/>
-							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25" target="self"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20" target="self"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="SorceryFireStack" operation="subtract" value="2"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" target="self" cvar="SorceryFireStack" operation="subtract" value="2"/>
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffSpellImpactTrigger_Fire, debuffSpell_FireExplode"/>
@@ -1206,6 +1206,7 @@
 					
 					<effect_group name="IMPACT - RANK 0">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFireMeteor" target="other" operation="LT" value="3"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="70"/>
 						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="1"/>
 						<triggered_effect trigger="onSelfBuffStack" action="Ragdoll" target="self" duration="1"/>
 					</effect_group>
@@ -1223,6 +1224,7 @@
 					<effect_group name="RANK 3: CRATER IMPACT">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFireMeteor" target="other" operation="GTE" value="3"/>
 							<requirement name="CVarCompare" cvar="SorceryFireStack" operation="GTE" value="1" target="self" />
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="70"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" target="self" stat="Health" operation="subtract" value="100"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" target="self" stat="Health" operation="subtract" value="100"/>								
 						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="3"/>
@@ -1294,6 +1296,7 @@
 					</effect_group>
 					
 					<effect_group name="IMPACT: KNOCKDOWN">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="70"/>
 						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="1"/>
 						<triggered_effect trigger="onSelfBuffStack" action="Ragdoll" target="self" duration="1"/>
 					</effect_group>
@@ -4392,7 +4395,7 @@
 					<effect_group name="FX">
 						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningDebilitate.unity3d?lightningDebilitate"/>
 						<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningDischarge.unity3d?lightningDischarge"/> -->
-						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryChant" />
 					</effect_group>
 
 					<effect_group name="CVAR: Shockburn">
@@ -4434,7 +4437,7 @@
 					<effect_group name="cleanup">
 						<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningDischarge"/> -->
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningDebilitate"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" target="self" sound="sorceryRitualChant" />
+						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" target="self" sound="sorceryChant" />
 					</effect_group>
 			</buff>		
 	
@@ -4447,7 +4450,7 @@
 
 					<effect_group name="FX">
 						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningParalyze.unity3d?lightningParalyze"/>
-						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryChant" />
 					</effect_group>
 
 					<effect_group name="IMPACT: Stagger">
@@ -4472,7 +4475,7 @@
 
 					<effect_group name="cleanup">
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningParalyze"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" target="self" sound="sorceryRitualChant" />
+						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" target="self" sound="sorceryChant" />
 					</effect_group>
 			</buff>
 			
@@ -4950,8 +4953,8 @@
 					<effect_group name="SFX">
 							<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
 							<requirement name="NotHasBuff" buff="buffInjuryBleeding"/>
-							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryRitualChant" />
-							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryChant" />
 					</effect_group>
 					<effect_group name="FIRE SKIN">
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_fireskin" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
@@ -4999,8 +5002,8 @@
 				<duration value=".1"/>
 					<effect_group name="SFX">
 							<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
-							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryRitualChant" />
-							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryChant" />
 							<requirement name="NotHasBuff" buff="buffInjuryBleeding"/>
 					</effect_group>				
 					<effect_group name="ICE SKIN">
@@ -5053,8 +5056,8 @@
 				<duration value="3"/>
 					<effect_group name="SFX">
 							<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
-							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryRitualChant" />
-							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryChant" />
 					</effect_group>				
 					<effect_group name="FIRE NOVA">
 						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryFireball_explode" target="self" />
@@ -5107,8 +5110,8 @@
 				<duration value="3"/>
 					<effect_group name="SFX">
 							<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
-							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryRitualChant" />
-							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryChant" />
 					</effect_group>				
 					<effect_group name="ICE NOVA">
 						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_explode" target="self" />
@@ -5169,8 +5172,8 @@
 				<duration value="1"/>
 					<effect_group name="SFX">
 							<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
-							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryRitualChant" />
-							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryChant" />
 					</effect_group>				
 					<effect_group name="RUNE">
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_firestorm" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
@@ -5227,8 +5230,8 @@
 				<duration value="3"/>
 					<effect_group name="SFX">
 							<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
-							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryRitualChant" />
-							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryChant" />
 					</effect_group>				
 					<effect_group name="RUNE">
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_deepfreeze" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
@@ -5281,8 +5284,8 @@
 				<duration value="5"/>
 					<effect_group name="SFX">
 							<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
-							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryRitualChant" />
-							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryChant" />
 					</effect_group>				
 					<effect_group name="RUNE">
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="debuffRune_lightningstrike" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon"/>
@@ -5314,50 +5317,96 @@
 			</buff>			
 			
 			
-	<!--___________________________ RUNES: UNIQUE / SUPPORTER ___________________________-->	
+	<!--___________________________ RUNES: UNIQUE / SUPPORTER ___________________________-->
+			<!-- RUNE: TRANSMUTE ESSENCE FIRE --> 
+			<buff name="runeTransmute_essencefire" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essencefire" operation="set" value="@$sorceryFireMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essencefire" operation="add" value="@$sorceryIceMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essencefire" operation="add" value="@$sorceryLightningMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essencefire_C2" operation="set" value="@$runeTransmute_essencefire"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essencefire_C2" operation="multiply" value=".1"/>
+						<passive_effect name="HarvestCount" operation="base_add" value="-100" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+						<passive_effect name="HarvestCount" operation="base_add" value="-100" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+						<passive_effect name="HarvestCount" operation="perc_add" value="@$runeTransmute_essencefire_C2" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>						
+					</effect_group>
+			</buff>
+			<!-- RUNE: TRANSMUTE ESSENCE ICE --> 
+			<buff name="runeTransmute_essenceice" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essenceice" operation="set" value="@$sorceryIceMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essenceice" operation="add" value="@$sorceryFireMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essenceice" operation="add" value="@$sorceryLightningMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essenceice_C2" operation="set" value="@$runeTransmute_essenceice"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essenceice_C2" operation="multiply" value=".1"/>
+						<passive_effect name="HarvestCount" operation="base_add" value="-100" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+						<passive_effect name="HarvestCount" operation="base_add" value="-100" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+						<passive_effect name="HarvestCount" operation="perc_add" value="@$runeTransmute_essenceice_C2" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+					</effect_group>
+			</buff>	
+			<!-- RUNE: TRANSMUTE ESSENCE LIGHTNING --> 
+			<buff name="runeTransmute_essencelightning" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essencelightning" operation="set" value="@$sorceryLightningMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essencelightning" operation="add" value="@$sorceryFireMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essencelightning" operation="add" value="@$sorceryIceMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essencelightning_C2" operation="set" value="@$runeTransmute_essencelightning"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeTransmute_essencelightning_C2" operation="multiply" value=".1"/>
+						<passive_effect name="HarvestCount" operation="base_add" value="-100" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+						<passive_effect name="HarvestCount" operation="base_add" value="-100" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+						<passive_effect name="HarvestCount" operation="perc_add" value="@$runeTransmute_essencelightning_C2" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+					</effect_group>
+			</buff>		
+		
 			<!-- RUNE: SPELL LIGHT -->
-		<buff name="runeGeneral_spelllight" hidden="true">
-			<stack_type value="ignore"/>
-			<duration value="0"/>
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fx_spelllight.unity3d?fx_spelllight"/>
-				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T2"/>
-				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T3"/>				
-				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="fx_spelllight/T1"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fx_spelllight">
-					<requirement name="NotHasBuff" buff="runeGeneral_spelllight2"/>
-					<requirement name="NotHasBuff" buff="runeGeneral_spelllight3"/>
-				</triggered_effect>
-			</effect_group>
-		</buff>
-		<buff name="runeGeneral_spelllight2" hidden="true">
-			<stack_type value="ignore"/>
-			<duration value="0"/>
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fx_spelllight.unity3d?fx_spelllight"/>
-				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T1"/>
-				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T3"/>			
-				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="fx_spelllight/T2"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fx_spelllight">
-					<requirement name="NotHasBuff" buff="runeGeneral_spelllight"/>
-					<requirement name="NotHasBuff" buff="runeGeneral_spelllight3"/>
-				</triggered_effect>
-			</effect_group>
-		</buff>		
-		<buff name="runeGeneral_spelllight3" hidden="true">
-			<stack_type value="ignore"/>
-			<duration value="0"/>
-			<effect_group>
-				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fx_spelllight.unity3d?fx_spelllight"/>
-				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T1"/>
-				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T2"/>				
-				<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="fx_spelllight/T3"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fx_spelllight">
-					<requirement name="NotHasBuff" buff="runeGeneral_spelllight"/>
-					<requirement name="NotHasBuff" buff="runeGeneral_spelllight2"/>
-				</triggered_effect>
-			</effect_group>
-		</buff>
+			<buff name="runeGeneral_spelllight" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+				<effect_group>
+					<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fx_spelllight.unity3d?fx_spelllight"/>
+					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T2"/>
+					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T3"/>				
+					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="fx_spelllight/T1"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fx_spelllight">
+						<requirement name="NotHasBuff" buff="runeGeneral_spelllight2"/>
+						<requirement name="NotHasBuff" buff="runeGeneral_spelllight3"/>
+					</triggered_effect>
+				</effect_group>
+			</buff>
+			<buff name="runeGeneral_spelllight2" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+				<effect_group>
+					<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fx_spelllight.unity3d?fx_spelllight"/>
+					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T1"/>
+					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T3"/>			
+					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="fx_spelllight/T2"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fx_spelllight">
+						<requirement name="NotHasBuff" buff="runeGeneral_spelllight"/>
+						<requirement name="NotHasBuff" buff="runeGeneral_spelllight3"/>
+					</triggered_effect>
+				</effect_group>
+			</buff>		
+			<buff name="runeGeneral_spelllight3" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+				<effect_group>
+					<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fx_spelllight.unity3d?fx_spelllight"/>
+					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T1"/>
+					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="fx_spelllight/T2"/>				
+					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="fx_spelllight/T3"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fx_spelllight">
+						<requirement name="NotHasBuff" buff="runeGeneral_spelllight"/>
+						<requirement name="NotHasBuff" buff="runeGeneral_spelllight2"/>
+					</triggered_effect>
+				</effect_group>
+			</buff>
 		
 	<!--___________________________ RUNES: UNIQUE / SUPPORTER ___________________________-->	
 			<!-- RUNE: ALTIN'S TOUCH -->
@@ -5367,8 +5416,8 @@
 				<duration value="5"/>
 					<effect_group name="SFX">
 								<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
-							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryRitualChant" />
-							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryRitualChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="FadeOutSound" target="self" sound="sorceryChant" />
+							<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryChant" />
 					</effect_group>				
 					<effect_group name="RUNE">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" target="self" operation="subtract" value="10"/>
@@ -5523,9 +5572,288 @@
 					</effect_group>					
 			</buff>			
 			
+			<!-- RUNE: ALTIN'S BLESSING -->
+			<buff name="runeUnique_altinsblessing" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+				<update_rate value="1"/>
+					<effect_group>
+							<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="@$sorceryRuneMastery_cost50"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_altinsblessing" operation="set" value="@$sorceryMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_altinsblessing" operation="multiply" value="2"/>
+						<passive_effect name="StaminaMax" operation="base_add" value="@$runeUnique_altinsblessing"/>
+						<passive_effect name="StaminaMax" operation="base_add" value="@$runeUnique_altinsblessing">
+							<requirement name="HoldingItemHasTags" tags="spellcast"/>
+						</passive_effect>						
+						<passive_effect name="AttributeLevel" operation="base_add" value="1">
+							<requirement name="CVarCompare" cvar="$sorceryMastery" operation="GTE" value="10"/>
+						</passive_effect>				
+					</effect_group>
+					<effect_group name="Proc">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="self" buff="buffRuneUnique_altinsblessing"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="other" buff="buffEntity_SorceryUpdate, debuffRuneUnique_altinsblessing"/>					
+					</effect_group>
+			</buff>
+			<buff name="buffRuneUnique_altinsblessing" hidden="true">
+				<stack_type value="ignore"/>
+				<update_rate value="1"/>
+				<duration value="60"/>
+					<effect_group name="BLESSING: Cooldown">
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" target="self" buff="buffInjuryBleeding,buffInjuryStunned1,buffInjuryKnockdown1,buffInjuryUnconscious,buffInjuryConcussion,buffShocked,buffBurningElement,buffBurningEnvironment,buffBurningFlamingArrow,buffBurningMolotov,buffBurning"/>					
+						<passive_effect name="HealthChangeOT" operation="base_add" value="4" duration="0,5"/>
+						<passive_effect name="StaminaChangeOT" operation="base_add" value="4" duration="0,5"/>
+						<passive_effect name="HealthMaxModifierOT" operation="base_add" value="1" duration="0,5"/>
+						<passive_effect name="StaminaMaxModifierOT" operation="base_add" value="1" duration="0,5"/>
+					</effect_group>
+			</buff>				
+			<buff name="debuffRuneUnique_altinsblessing" hidden="true">
+				<damage_type value="heat"/>	
+				<stack_type value="ignore"/>
+				<update_rate value="1"/>
+				<duration value="60"/>
+					<effect_group name="METEOR: Cooldown">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpellImpactTrigger_FireMeteor_Proc"/>
+					</effect_group>
+			</buff>
+			<!-- SPELL: Fire Meteor Proc-->
+			<buff name="buffSpellImpactTrigger_FireMeteor_Proc" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="ignore"/>
+				<duration value="0.1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireMeteor"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSpellImpact_FireMeteor_Proc"/>
+					</effect_group>
+			</buff>				
+			<buff name="buffSpellImpact_FireMeteor_Proc" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="effect"/>
+				<duration value="1.5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteor.unity3d?fireMeteor"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSpell_FireMeteor_Proc"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="selfAOE" range="2.5" buff="buffEntity_SorceryUpdate, buffSpell_FireMeteor_Proc" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryFireMeteor_impact" target="self"/>
+					</effect_group>
+			</buff>			
+			<buff name="buffSpell_FireMeteor_Proc" hidden="true">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group name="Initial">
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireBurning-finish" />
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="Hips" />
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffSpell_FireMeteor_Proc" operation="set" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffSpell_FireMeteor_Proc" operation="multiply" value="75"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffSpell_FireMeteor_Proc_C2" operation="set" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffSpell_FireMeteor_Proc_C2" operation="multiply" value="6"/>			
+					</effect_group>
+					<effect_group name="CRATER IMPACT">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$buffSpell_FireMeteor_Proc"/>
+						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffSpell_FireMeteor_Proc_C2" duration="0,4"/>
+					</effect_group>
+					<effect_group name="cleanup">
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning-finish.unity3d?fireBurning-finish" parent_transform="Hips" />
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireBurning" />
+					</effect_group>
+			</buff>				
 			
+			<!-- RUNE: OTTO'S ENLIGHTENMENT -->
+			<buff name="runeUnique_ottosenlightenment" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+					<effect_group>
+							<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="@$sorceryRuneMastery_cost20"/>					
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fx_arcanelight.unity3d?fx_arcanelight"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fx_arcanelight"/>
+						<passive_effect name="NoiseMultiplier" operation="perc_subtract" value="0.2" />
+						<passive_effect name="LightMultiplier" operation="perc_subtract" value="0.2" />
+						<passive_effect name="StaminaLoss" operation="perc_add" value="-.1" tags="primary,secondary">
+							<requirement name="HoldingItemHasTags" tags="shovel,sorceryPickaxe"/>
+						</passive_effect>
+					</effect_group>
+			</buff>
+	
+			<!-- RUNE: FISTS OF IVANOS -->
+			<buff name="runeUnique_fistsofivanos" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+					<effect_group>
+							<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="@$sorceryRuneMastery_cost40"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/lightningHand.unity3d?lightningHand" parent_transform="LeftHand"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/lightningHand.unity3d?lightningHand" parent_transform="RightHand"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="lightningHand" parent_transform="LeftHand"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="lightningHand" parent_transform="RightHand"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="lightningHand"/>
+					</effect_group>
+			</buff>
+			<buff name="buffRuneUnique_fistsofivanos" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value=".5"/>
+					<effect_group name="Essence Drain: Sorcery Level +1">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="@$sorceryMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="add" value="@$sorceryMastery"/>
+					</effect_group>
+			</buff>			
+			<buff name="debuffRuneUnique_fistsofivanos" hidden="true">
+				<damage_type value="heat"/> 
+				<stack_type value="replace"/>
+				<duration value="3"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$debuffRuneUnique_fistsofivanos" operation="set" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$debuffRuneUnique_fistsofivanos" operation="multiply" value="20"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$debuffRuneUnique_fistsofivanos_C2" operation="set" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$debuffRuneUnique_fistsofivanos_C2" operation="multiply" value="4"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$debuffRuneUnique_fistsofivanos" operation="set" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$debuffRuneUnique_fistsofivanos" operation="multiply" value="20"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$debuffRuneUnique_fistsofivanos_C2" operation="set" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$debuffRuneUnique_fistsofivanos_C2" operation="multiply" value="4"/>						
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$debuffRuneUnique_fistsofivanos" duration="0.1,1.1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$debuffRuneUnique_fistsofivanos_C2" duration="1,3"/>
+							<passive_effect name="HealthMax" operation="perc_subtract" value="0.10"/>
+							<passive_effect name="HealthGain" operation="perc_subtract" value="0.10"/>
+							<passive_effect name="HealthLoss" operation="perc_add" value="0.10"/>						
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".10" />
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="debuffAmmo_LightningStrike">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="debuffAmmo_LightningStrike">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+						</triggered_effect>						
+					</effect_group>
+			</buff>	
 	
 	
+			<!-- RUNE: AVIOSE'S EGRESS --> 
+			<buff name="runeUnique_avioseegress" name_key="Aviose's Egress Cooldown" description_key="Aviose's Egress is currently Recharging." icon="ui_game_symbol_clock" icon_color="50,150,255" icon_blink="true" hidden="false" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="3"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceFinish"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_freeze"  play_in_head="true"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceLasting.unity3d?iceLasting" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceFinish.unity3d?iceFinish" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceLasting"/>					
+						<passive_effect name="JumpStrength" operation="perc_add" value="1"/>
+						<triggered_effect trigger="onSelfJump" action="PlaySound" sound="sorceryIce_launch" play_in_head="true"/>
+						<triggered_effect trigger="onSelfJump" action="AddBuff" target="other" buff="buffEntity_SorceryUpdate,debuffRuneUnique_avioseegress"/>
+					</effect_group>
+			</buff>
+			<buff name="debuffRuneUnique_avioseegress" hidden="true">
+				<damage_type value="cold"/> 
+				<stack_type value="ignore"/>
+				<duration value="5"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpellLasting_Ice"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$debuffRuneUnique_avioseegress" operation="set" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$debuffRuneUnique_avioseegress" operation="multiply" value="20"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$debuffRuneUnique_avioseegress_C2" operation="set" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$debuffRuneUnique_avioseegress_C2" operation="multiply" value=".45"/>
+						<triggered_effect trigger="onSelfBuffFinish" action="RemoveBuff" buff="buffSpellLasting_Ice" />
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$debuffRuneUnique_avioseegress" duration="0.1,1.1"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value="@$debuffRuneUnique_avioseegress_C2"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value="@$debuffRuneUnique_avioseegress_C2"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="@$debuffRuneUnique_avioseegress_C2"/>
+						<passive_effect name="JumpStrength" operation="perc_subtract" value="@$debuffRuneUnique_avioseegress_C2"/>
+						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="@$debuffRuneUnique_avioseegress_C2"/>
+					</effect_group>
+			</buff>	
+	
+			<!-- RUNE: KCOOLZ HASTE --> 
+			<buff name="runeUnique_kcoolzhaste" name_key="Kcoolz Haste Cooldown" description_key="Kcoolz Haste is currently Recharging." icon="ui_game_symbol_clock" icon_color="140,0,255" icon_blink="false" hidden="false" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="300"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffRuneUnique_kcoolzhaste"/>
+					</effect_group>
+			</buff>
+			<buff name="buffRuneUnique_kcoolzhaste" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="30"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryLightning_crackling" play_in_head="true"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_kcoolzhaste" operation="set" value="@$sorceryMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_kcoolzhaste" operation="multiply" value="10"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_kcoolzhaste_C2" operation="set" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_kcoolzhaste_C2" operation="multiply" value=".25"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Stamina" operation="add" value="@$runeUnique_kcoolzhaste"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="sorceryLightning_crackling" play_in_head="true"/>
+						<passive_effect name="WalkSpeed" operation="perc_add" value="@$runeUnique_kcoolzhaste_C2"/>
+						<passive_effect name="RunSpeed" operation="perc_add" value="@$runeUnique_kcoolzhaste_C2"/>
+						<passive_effect name="CrouchSpeed" operation="perc_add" value="@$runeUnique_kcoolzhaste_C2"/>
+						<passive_effect name="AttacksPerMinute" operation="perc_add" value="@$runeUnique_kcoolzhaste_C2"/>
+						<passive_effect name="RoundsPerMinute" operation="perc_add" value="@$runeUnique_kcoolzhaste_C2"/>
+						<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value=".25"/>
+					</effect_group>
+			</buff>	
+	
+			<!-- RUNE: NEKO'S RAGE -->
+			<buff name="runeUnique_nekosrage" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+				<update_rate value="1"/>
+					<effect_group>
+							<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="@$sorceryRuneMastery_cost30"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_nekosrage" operation="set" value="@$sorceryFireMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_nekosrage" operation="multiply" value=".04"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_nekosrage_C2" operation="set" value="@$sorceryFireMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_nekosrage_C2" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_nekosrage_C3" operation="set" value="@$sorceryFireMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_nekosrage_C3" operation="multiply" value="1"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="other" buff="buffEntity_SorceryUpdate, buffSpellImpactTrigger_Fire, debuffRuneUnique_nekosrage">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$runeUnique_nekosrage_C2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onOtherAttackedSelf" action="RemoveBuff" target="self" buff="buffInjuryBleeding">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$runeUnique_nekosrage_C3"/>
+						</triggered_effect>						
+						<passive_effect name="BuffResistance" operation="base_add" value="@$runeUnique_nekosrage" tags="buffInjuryBleeding"/>
+					</effect_group>
+			</buff>	
+			<buff name="debuffRuneUnique_nekosrage" hidden="true">
+				<damage_type value="heat"/>	
+				<stack_type value="ignore"/>
+				<update_rate value="1"/>
+				<duration value="5"/>
+					<effect_group name="Rage Explode">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$debuffRuneUnique_nekosrage" operation="set" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$debuffRuneUnique_nekosrage" operation="multiply" value="30"/>					
+						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="1"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$debuffRuneUnique_nekosrage" duration="0.1,1.1"/>
+					</effect_group>
+			</buff>
+
+			<!-- RUNE: KORMAI'S PICK -->
+			<buff name="runeUnique_kormaispick" hidden="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+					<effect_group>
+							<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="@$sorceryRuneMastery_cost40"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_kormaispick" operation="set" value="@$sorceryFireMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_kormaispick" operation="multiply" value=".1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_kormaispick_C2" operation="set" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_kormaispick_C2" operation="multiply" value=".2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_kormaispick_C3" operation="set" value="@$sorceryLightningMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeUnique_kormaispick_C3" operation="multiply" value=".05"/>
+						<passive_effect name="DamageModifier" operation="perc_add" value="@$runeUnique_kormaispick"/>
+						<passive_effect name="DegradationMax" operation="perc_add" value="@$runeUnique_kormaispick_C2"/>
+						<passive_effect name="AttacksPerMinute" operation="perc_add" value="@$runeUnique_kormaispick_C3"/>
+					</effect_group>
+			</buff>
+
+
+
+
+
+
+
 		<!--___________________________ ENVIRONMENT ___________________________-->	
 			<buff name="buffEssenceIceRitual" hidden="true">
 				<stack_type value="ignore"/>
@@ -5866,7 +6194,946 @@
 			</buff>
 			
 			
+			<!-- ENGAGED: Player -->
+			<buff name="buffAwakenedLightningCombat_player" hidden="true" remove_on_death="true">
+				<!-- <damage_type value="heat"/> -->
+				<stack_type value="replace"/>
+				<duration value="1"/>
+				<update_rate value=".5"/> 
+					<effect_group>
+							<requirement name="EntityTagCompare" tags="player"/>
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/awakenedLightningPentagram.unity3d?awakenedLightningPentagram"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="awakenedLightningPentagram"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="25" buff="buffAwakenedLightningCombat_enemy"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="25" buff="buffAwakenedLightningCombat_enemy"/>
+					</effect_group>
+			</buff>				
+
+			<!-- ENGAGED: Enemy --> 
+			<buff name="buffAwakenedLightningCombat_enemy" hidden="true" remove_on_death="true">
+				<!-- <damage_type value="heat"/> -->
+				<stack_type value="replace"/>
+				<duration value="1"/>
+				<update_rate value=".5"/> 
+					<effect_group>
+							<requirement name="EntityTagCompare" tags="sorceryAwakened"/>
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/awakenedLightningPentagram.unity3d?awakenedLightningPentagram"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="awakenedLightningPentagram" /> -->
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="25" buff="buffAwakenedLightningCombat_player"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="25" buff="buffAwakenedLightningCombat_player"/>
+					</effect_group>
+			</buff>
+
+		<!-- AWAKENED ABILITIES: Lightning -->
+			<!-- ENTITY SPELL: Lightning Aura -->
+			<buff name="buffAwakenedLightning_aura" hidden="true" remove_on_death="true">
+				<!-- <damage_type value="heat"/> -->
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+				<update_rate value="1"/> 
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningAura.unity3d?lightningAura"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryAwakened_lightningaura" />
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="lightningAura-finish" />
+<!-- 						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" target="self" parent_transform="Hips" particle="#@modfolder:Resources/awakenedLightningOrbsTest.unity3d?awakenedLightningOrbsTest"/> -->
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningAura" />
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningAura-finish.unity3d?lightningAura-finish"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryAwakened_lightningaura" />
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="debuffAwakenedLightning_aura" target_tags="enemy,animal"/>
+					</effect_group>
+			</buff>			
+			<buff name="debuffAwakenedLightning_aura" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="2"/>
+				<update_rate value="1"/>
+					<effect_group name="SHOCKBURN">
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".10" />
+					</effect_group>
+			</buff>			
 			
+			<!-- AWAKENED: Lightning Aura -->
+			<buff name="buffAwakenedLightning_aura2" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+				<update_rate value="1"/>
+					<effect_group>
+							<requirement name="HasBuff" buff="buffAwakenedLightning_aura"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryAwakenedLightning_rumble" />
+						<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" transform_path="lightningAura/lightningBolts"/>
+						<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" transform_path="lightningAura/lightningBolts-finish"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="4" buff="debuffAwakenedLightning_aura2" target_tags="enemy,animal"/>
+						<passive_effect name="MagazineSize" operation="base_add" value="20"/>
+						<passive_effect name="BurstRoundCount" operation="base_add" value="3"/>
+						<passive_effect name="SpreadDegreesVertical" operation="base_add" value="10"/>
+						<passive_effect name="SpreadDegreesHorizontal" operation="base_add" value="360"/>
+					</effect_group>
+					<effect_group name="cleanup">
+							<requirement name="HasBuff" buff="buffAwakenedLightning_aura"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="sorceryAwakenedLightning_rumble" />
+						<triggered_effect trigger="onSelfBuffRemove" action="SetTransformActive" active="false" transform_path="lightningAura/lightningBolts"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="SetTransformActive" active="true" transform_path="lightningAura/lightningBolts-finish"/>
+					</effect_group>
+			</buff>			
+			<buff name="debuffAwakenedLightning_aura2" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="2"/>
+				<update_rate value="1"/>
+					<effect_group name="SHOCKBURN">
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".10" />
+					</effect_group>
+			</buff>					
+			
+			
+			
+			<!-- AWAKENED: Lightning -->
+			<buff name="buffAwakenedLightning" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+				<update_rate value="1"/>
+					<effect_group name="Awaken">
+						<!-- CVar: _difficulty -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedPower" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedPower_multiplier" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="10"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAttacks_given" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAttacks_received" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedRun" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedRun_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility1" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility1_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility2" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility2_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility3" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility3_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility4" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility5" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility5_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility6" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility6_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedCounter" operation="set" value="0"/>
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery" operation="set" value="1">
+							<requirement name="ProgressionLevel" progression_name="perkSorceryLightningMastery" target="other" operation="Equals" value="1"/>
+							<requirement name="CVarCompare" cvar="$sorceryLightningMastery" operation="LT" value="1"/>
+						</triggered_effect> -->
+						<!-- +20% Per Level (Power) -->
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery_power" operation="set" value="@$sorceryLightningMastery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery_power" operation="multiply" value=".2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningMastery_power" operation="add" value="1"/> -->
+					</effect_group>
+					
+					<effect_group name="COUNTER">
+							<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedCounter" operation="add" value="1"/>
+					</effect_group>
+					
+					<effect_group name="COOLDOWN">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility1_cd" operation="GT" value="0"/>
+						</triggered_effect>							
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility2_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility2_cd" operation="GT" value="0"/>
+						</triggered_effect>							
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility3_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility3_cd" operation="GT" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility4_cd" operation="GT" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility5_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility5_cd" operation="GT" value="0"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="90"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility6_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility6_cd" operation="GT" value="0"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="90"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedRun_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedRun_cd" operation="GT" value="0"/>
+						</triggered_effect>								
+					</effect_group>
+					
+					<effect_group name="COMBAT">
+						<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar="awakenedAttacks_given" operation="add" value="1"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="ModifyCVar" cvar="awakenedAttacks_received" operation="add" value="1"/>					
+					</effect_group>					
+					
+					<effect_group name="COMBAT: PLAYER RANGE">
+							<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="0"/>
+						<requirement name="NotHasBuff" buff="buffAwakenedLightningCombat_enemy"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffAwakenedLightning_regenerate"/>
+					</effect_group>
+					
+					<effect_group name="HEALTH">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="10">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.99"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="9">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.99"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.9"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="8">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.9"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.8"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="7">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.8"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.7"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="6">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.7"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.6"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="5">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.6"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.5"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="4">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.5"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.4"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="3">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.4"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.3"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="2">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.3"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="1">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.2"/>
+						</triggered_effect>
+					</effect_group>
+					
+					<effect_group name="POWER">
+							<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedPower_multiplier" operation="add" value=".01">
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="Equals" value="9"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedPower_multiplier" operation="add" value=".02">
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="Equals" value="8"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedPower_multiplier" operation="add" value=".03">
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="Equals" value="7"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedPower_multiplier" operation="add" value=".04">
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="Equals" value="6"/>
+						</triggered_effect>	
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedPower_multiplier" operation="add" value=".05">
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="Equals" value="5"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedPower_multiplier" operation="add" value=".06">
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="Equals" value="4"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedPower_multiplier" operation="add" value=".07">
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="Equals" value="3"/>
+						</triggered_effect>	
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedPower_multiplier" operation="add" value=".08">
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="Equals" value="2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedPower_multiplier" operation="add" value="1">
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="Equals" value="1"/>
+						</triggered_effect>	
+
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedPower" operation="add" value="@awakenedPower_multiplier"/>
+					</effect_group>				
+					
+					<effect_group name="IMMUNITY">
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="buffAwakenedLightningImpactTrigger_lightning,buffFallenLightningSpell_lightning,buffAwakenedLightning_empowerMundane,debuffAwakenedLightning_aura,debuffAwakenedLightning_aura2"/>
+					</effect_group>
+					
+					<effect_group name="WALK">
+							<requirement name="CVarCompare" cvar="awakenedRun_cd" operation="Equals" value="0"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedRun_cd" operation="set" value="5"/>		
+					</effect_group>					
+					
+					<effect_group name="RUN">
+							<requirement name="CVarCompare" cvar="awakenedRun_cd" operation="Equals" value="0"/>
+						<passive_effect name="WalkSpeed" operation="base_add" value="15"/>
+						<passive_effect name="RunSpeed" operation="base_add" value=".2"/>
+					</effect_group>					
+					
+					<effect_group name="PASSIVE ABILITY">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffAwakenedLightning_aura"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffAwakenedLightning_aura"/>
+<!-- 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffAwakenedLightning_aura">
+							<requirement name="NotHasBuff" buff="buffAwakenedLightning_aura"/>
+						</triggered_effect> -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="25" buff="buffAwakenedLightning_empowerMundane" target_tags="ally,party"/>
+						<!-- <passive_effect name="RunSpeed" operation="perc_add" value=".25">
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="LTE" value="5"/>
+						</passive_effect>	
+						<passive_effect name="WalkSpeed" operation="perc_add" value=".25">
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="LTE" value="5"/>
+						</passive_effect> -->
+					</effect_group>
+					
+					<effect_group name="ABILITY1: Right Hand">
+							<requirement name="CVarCompare" cvar="awakenedAbility1" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility1_cd" operation="GTE" value="1"/>
+						<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value="1"/>
+						<passive_effect name="MagazineSize" operation="base_add" value="3"/>
+						<passive_effect name="BurstRoundCount" operation="base_add" value="1"/>
+						<passive_effect name="SpreadDegreesVertical" operation="base_add" value="3"/>
+						<passive_effect name="SpreadDegreesHorizontal" operation="base_add" value="60"/>
+					</effect_group>
+					<effect_group name="ABILITY2: Left Hand">
+							<requirement name="CVarCompare" cvar="awakenedAbility2" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility2_cd" operation="GTE" value="1"/>
+						<passive_effect name="EntityDamage" operation="perc_add" value=".5"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value="1"/>
+						<passive_effect name="MagazineSize" operation="base_add" value="3"/>
+						<passive_effect name="BurstRoundCount" operation="base_add" value="1"/>
+						<passive_effect name="SpreadDegreesVertical" operation="base_add" value="3"/>
+						<passive_effect name="SpreadDegreesHorizontal" operation="base_add" value="60"/>						
+					</effect_group>	
+					<effect_group name="ABILITY3: Aura Bolts">
+							<requirement name="CVarCompare" cvar="awakenedAbility3" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility3_cd" operation="GTE" value="1"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".5"/>
+					</effect_group>
+					
+					<effect_group name="ABILITY3: Activate Aura Bolts">
+<!-- 							<requirement name="HasBuff" buff="buffAwakenedLightning_aura"/> -->
+							<requirement name="CVarCompare" cvar="awakenedAbility3" operation="Equals" value="1"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility3_cd" operation="Equals" value="0"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffAwakenedLightning_aura2" />
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility3" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility3_cd" operation="set" value="5"/>
+					</effect_group>
+
+					<effect_group name="ABILITY3: Deactivate Aura Bolts">
+<!-- 							<requirement name="HasBuff" buff="buffAwakenedLightning_aura"/> -->
+							<requirement name="CVarCompare" cvar="awakenedAbility3" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility3_cd" operation="Equals" value="0"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+<!-- 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" transform_path="lightningAura/lightningBolts-finish"/> -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffAwakenedLightning_aura2" />
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility3" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility3_cd" operation="set" value="15"/>
+					</effect_group>					
+
+					<effect_group name="ABILITY1: Activate">
+							<requirement name="CVarCompare" cvar="awakenedAbility1" operation="Equals" value="1"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility1_cd" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="LTE" value="8"/>
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="sorceryAwakened_trumpet" /> -->
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="add" value="500"/> --> <!-- heal -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" parent_transform="RightHand" prefab="#@modfolder:Resources/awakenedHandLightning.unity3d?awakenedHandLightning" local_offset=".14,0.035,0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_cd" operation="set" value="10"/>
+					</effect_group>
+					
+					<effect_group name="ABILITY2: Activate">
+							<requirement name="CVarCompare" cvar="awakenedAbility2" operation="Equals" value="1"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility2_cd" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="LTE" value="4"/>
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="add" value="500"/> --> <!-- heal -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/awakenedHandLightning.unity3d?awakenedHandLightning" local_offset="-.14,-0.05,0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility2" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility2_cd" operation="set" value="10"/>
+					</effect_group>		
+
+					<effect_group name="ABILITY1: Deactivate">
+							<requirement name="CVarCompare" cvar="awakenedAbility1" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility1_cd" operation="Equals" value="0"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemovePrefabFromEntity" target="self" parent_transform="LeftHand" prefab="awakenedHandLightning"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_cd" operation="set" value="30"/>
+					</effect_group>
+
+					<effect_group name="ABILITY2: Deactivate">
+							<requirement name="CVarCompare" cvar="awakenedAbility2" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility2_cd" operation="Equals" value="0"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemovePrefabFromEntity" target="self" parent_transform="RightHand" prefab="awakenedHandLightning"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility2" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility2_cd" operation="set" value="30"/>
+					</effect_group>
+					
+					<effect_group name="ABILITY4: Summon Mundane DEV BUG">
+							<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility4_cd" operation="Equals" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="buffAwakenedLightning_summonMundane" target_tags="ally,party">
+							<requirement name="NotHasBuff" buff="buffAwakenedLightning_empowerMundane"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="60" buff="debuffAwakenedLightning_summonMundane" target_tags="enemy"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="set" value="2"/>
+					</effect_group>					
+					
+					<effect_group name="ABILITY5: Regenerate">
+							<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility5_cd" operation="Equals" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="sorceryAwakened_trumpet" />
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffAwakenedLightning_regenerate"/> -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="60" buff="buffAwakenedLightning_regenerateMundane" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility5_cd" operation="set" value="15"/>
+					</effect_group>
+					
+					<effect_group name="ABILITY6: Teleport">
+							<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility6_cd" operation="Equals" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffAwakenedLightning_teleport"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility6_cd" operation="set" value="10"/>
+					</effect_group>					
+					
+					<effect_group name="ABILITY: Sacrifice Mundane">
+							<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="0"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LTE" value="0.25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="buffAwakenedLightning_sacrificeMundane" target_tags="ally,party"/>
+					</effect_group>					
+					
+					<effect_group name="DEPARTURE">
+						<!-- <requirements compare_type="or">
+							<requirement name="HasBuff" buff="buffAwakenedLightning_empowerMundane"/>
+							<requirement name="HasBuff" buff="buffAwakenedLightning_summonMundane"/>
+						</requirements> -->	
+							<!-- <requirement name="HasBuff" buff="buffAwakenedLightning_summonMundane"/> -->
+						<!-- <triggered_effect trigger="onSelfDied" action="AddBuff" target="otherAOE" range="100" buff="buffAwakenedLightning_departure" target_tags="enemy"/> -->
+					</effect_group>
+			</buff>			
+			
+			<!-- AWAKENED: Lightning Projectile Impact -->
+			<buff name="buffAwakenedLightningImpactTrigger_lightning" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="ignore"/>
+				<duration value="0.1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="lightningImpact"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryLightning_impact" />
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffAwakenedLightningImpact_lightning"/>
+					</effect_group>
+			</buff>
+			<buff name="buffAwakenedLightningImpact_lightning" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>			
+				<stack_type value="ignore"/>
+				<duration value="0.1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningImpact.unity3d?lightningImpact" parent_transform="Hips"/>
+					</effect_group>
+			</buff>
+			
+			<!-- AWAKENED: Lightning Spell -->
+			<buff name="buffAwakenedLightningSpell_lightning" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="2"/>
+				<update_rate value="1"/>
+					<effect_group name="IMPACT: Stagger">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="5"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="5"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5" duration="0,.5"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5" duration="0,.5"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.5" duration="0,.5"/>						
+					</effect_group>
+					<!-- <effect_group name="LIGHTNING STRIKE">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10" target="self"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="debuffSpell_LightningStrike"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="self" buff="debuffSpell_LightningStrike"/>
+					</effect_group> -->
+					<effect_group name="RANK 1: SHOCKBURN">
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".10" />
+					</effect_group>
+					<!-- <effect_group name="RANK 2: ELECTROCUTE">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$Lightning_ElectrocuteChance" target="self"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="debuffSpell_LightningElectrocute"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="self" buff="debuffSpell_LightningElectrocute"/>
+					</effect_group> -->
+			</buff>			
+			
+			
+			<!-- AWAKENED: Lightning Empowered -->
+			<buff name="buffAwakenedLightning_empowered" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/>
+				<duration value="10"/>
+				<update_rate value="1"/>
+					<effect_group>
+							<requirement name="EntityTagCompare" tags="sorceryAwakened"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffAwakenedLightning_regenerate"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffAwakenedLightning_regenerate"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/awakenedLightningPentagram.unity3d?awakenedLightningPentagram"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="awakenedLightningPentagram"/>
+						<!-- <passive_effect name="BuffResistance" operation="base_add" value="100" tags="buffAwakenedLightning_summonMundane"/> -->
+						<passive_effect name="HealthMax" operation="perc_add" value=".1" />
+						<passive_effect name="EntityDamage" operation="perc_add" value=".2" />
+						<passive_effect name="BlockDamage" operation="perc_add" value=".2"/>
+						<passive_effect name="RunSpeed" operation="perc_add" value=".1"/>
+						<passive_effect name="WalkSpeed" operation="perc_add" value=".2"/>
+						<passive_effect name="CrouchSpeed" operation="perc_add" value=".2"/>
+						<passive_effect name="JumpStrength" operation="perc_add" value=".1"/>
+						<passive_effect name="MagazineSize" operation="base_add" value="10"/>
+						<passive_effect name="BurstRoundCount" operation="base_add" value="1"/>
+						<passive_effect name="SpreadDegreesHorizontal" operation="base_add" value="100"/>						
+					</effect_group>
+			</buff>				
+			
+			<!-- AWAKENED: Lightning Teleport -->
+			<buff name="buffAwakenedLightning_teleport" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="1"/>
+				<!-- <update_rate value="1"/> -->
+					<effect_group>
+							<requirement name="EntityTagCompare" tags="sorceryAwakened"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryLightning_portalin"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningElectrocute.unity3d?lightningElectrocute" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="lightningElectrocute"/>
+						<passive_effect name="WalkSpeed" operation="perc_add" value="10"/>
+						<passive_effect name="RunSpeed" operation="perc_add" value="10"/>
+					</effect_group>
+			</buff>				
+			
+			<!-- AWAKENED: Lightning Regenerate -->
+			<buff name="buffAwakenedLightning_regenerate" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="6"/>
+				<update_rate value="1"/>
+					<effect_group>
+							<requirement name="EntityTagCompare" tags="sorceryAwakened"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryAwakened_trumpet" />
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/awakenedRechargeLightning.unity3d?awakenedRechargeLightning"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="awakenedRechargeLightning"/>
+						<passive_effect name="HealthChangeOT" operation="base_add" value="200"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="RemoveBuff" buff="buffAwakenedLightning_regenerate">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+						</triggered_effect>
+					</effect_group>
+					<effect_group>
+							<requirement name="EntityTagCompare" tags="sorceryAwakened"/>
+							<requirement name="NotHasBuff" buff="buffAwakenedLightning_empowered"/>					
+						<!-- <passive_effect name="RunSpeed" operation="base_set" value="-100"/>
+						<passive_effect name="WalkSpeed" operation="base_set" value="-100"/>
+						<passive_effect name="CrouchSpeed" operation="base_set" value="-100"/>
+						<passive_effect name="JumpStrength" operation="base_set" value="-100"/> -->
+					</effect_group>
+			</buff>			
+			<!-- AWAKENED: Lightning Regenerate Mundane -->
+			<buff name="buffAwakenedLightning_regenerateMundane" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="6"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<!-- <requirements compare_type="or">
+							<requirement name="EntityTagCompare" tags="sorceryAwakened"/>
+							<requirement name="HasBuff" buff="buffAwakenedLightning_empowerMundane"/>			
+						</requirements> -->
+							<requirement name="HasBuff" buff="buffAwakenedLightning_empowerMundane"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeLightning.unity3d?fallenRechargeLightning"/>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fallenRechargeLightning-finish" />
+						<passive_effect name="HealthChangeOT" operation="base_add" value="50"/>
+						<passive_effect name="WalkSpeed" operation="perc_set" value="0" />
+						<passive_effect name="RunSpeed" operation="perc_set" value="0" />
+						<passive_effect name="JumpStrength" operation="perc_set" value="0"  />
+						<passive_effect name="WalkSpeed" operation="base_set" value="0" />
+						<passive_effect name="RunSpeed" operation="base_set" value="0" />
+						<passive_effect name="JumpStrength" operation="base_set" value="0" />
+						<triggered_effect trigger="onOtherAttackedSelf" action="RemoveBuff" buff="buffAwakenedLightning_regenerateMundane">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+						</triggered_effect>						
+					</effect_group>
+					<effect_group name="cleanup">
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fallenRechargeLightning"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeLightning-finish.unity3d?fallenRechargeLightning-finish"/>					
+					</effect_group>
+			</buff>
+			
+			<!-- AWAKENED: Lightning Sacrifice Mundane -->
+			<buff name="buffAwakenedLightning_sacrificeMundane" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="ignore"/>
+				<duration value="3"/>
+				<update_rate value="1"/>
+					<effect_group>
+							<requirement name="EntityTagCompare" tags="sorceryAwakened" invert="true"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningStrike.unity3d?lightningStrike"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryLightning_strike" />
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="100" buff="buffAwakenedLightning_empowered" target_tags="ally,party"/>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffAwakenedLightning_regenerateMundane"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningStrike"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="0,0,7777" duration="0,1,3"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="buffAwakenedLightning_regenerateMundane"/>
+					</effect_group>
+			</buff>			
+			
+			<!-- AWAKENED: Lightning Departure -->
+			<buff name="buffAwakenedLightning_departure" hidden="true" remove_on_death="false">
+				<damage_type value="heat"/>
+				<stack_type value="ignore"/>
+				<duration value="8"/>
+				<update_rate value="1"/>
+					<effect_group>
+							<requirement name="HasBuff" buff="buffAwakenedLightning_empowerMundane"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningStrike.unity3d?lightningStrike"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryLightning_strike" />
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningStrike"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="0,0,7777" duration="0,1,3"/>
+					</effect_group>
+			</buff>			
+			
+			<!-- AWAKENED: Lightning Count Mundane -->
+			<buff name="buffAwakenedLightning_counterMundane" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/>
+				<duration value="0"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedCounterMundane" operation="add" value="1"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="awakenedCounterMundane" operation="add" value="1"/>
+					</effect_group>
+					<effect_group name="cleanup">
+							<!-- <requirement name="HasBuff" buff="buffAwakenedLightning_empowerMundane"/> -->
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="awakenedCounterMundane" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffAwakenedLightning_counterMundane"/>
+					</effect_group>					
+			</buff>				
+			
+			<!-- AWAKENED: Lightning Summon Mundane -->
+			<buff name="buffAwakenedLightning_summonMundane" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/>
+				<duration value="10"/>
+				<update_rate value="1"/>
+					<effect_group>
+							<requirement name="EntityTagCompare" tags="sorceryAwakened" invert="true"/>
+							<requirement name="NotHasBuff" buff="buffAwakenedLightning_empowerMundane"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/awakenedLightningPentagram.unity3d?awakenedLightningPentagram"/>
+						<passive_effect name="EntityDamage" operation="perc_subtract" value=".9" />
+						<passive_effect name="WalkSpeed" operation="perc_add" value="10"/>
+						<passive_effect name="RunSpeed" operation="perc_add" value="10"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="buffAwakenedLightningImpactTrigger_lightning,buffAwakenedLightningSpell_lightning"/>						
+					</effect_group>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="awakenedLightningPentagram"/>					
+					</effect_group>
+			</buff>			
+			<buff name="debuffAwakenedLightning_summonMundane" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/>
+				<duration value="10"/>
+				<update_rate value="1"/>
+					<effect_group>
+							<requirement name="EntityTagCompare" tags="zombie,animal" invert="true"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryAwakened_playerAggro"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" target="self" sound="sorceryAwakened_playerAggro"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryAwakened_playerAggro"/>
+						<passive_effect name="NoiseMultiplier" operation="perc_set" value="10" />
+					</effect_group>					
+			</buff>			
+			
+			<!-- AWAKENED: Lightning Empower Mundane -->
+			<buff name="buffAwakenedLightning_empowerMundane" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/>
+				<duration value="2"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffAwakenedLightning_summonMundane">
+							<requirement name="HasBuff" buff="buffAwakenedLightning_summonMundane"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/awakenedHand0Lightning.unity3d?awakenedHand0Lightning" local_offset="-.14,-0.05,0"/>						
+						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" target="self" parent_transform="RightHand" prefab="#@modfolder:Resources/awakenedHand0Lightning.unity3d?awakenedHand0Lightning" local_offset=".14,0.035,0"/>						
+					</effect_group>
+					<effect_group name="PASSIVE ABILITY">
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffAwakenedLightning_empowerMundane" target_tags="ally,party"/> -->
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="buffAwakenedLightning_summonMundane,buffAwakenedLightningImpactTrigger_lightning,buffAwakenedLightningSpell_lightning"/>
+						<passive_effect name="HealthMax" operation="perc_add" value="3" />
+						<passive_effect name="EntityDamage" operation="perc_add" value="1" />
+						<passive_effect name="BlockDamage" operation="perc_add" value="1"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".3"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".5"/>
+						<!-- <passive_effect name="WalkSpeed" operation="base_add" value="10"/> -->
+					</effect_group>
+					<effect_group name="SACRIFICE">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffAwakenedLightning_sacrificeMundane"/>
+					</effect_group>					
+					<!-- <effect_group name="COUNTER">
+							<requirement name="NotHasBuff" buff="buffAwakenedLightning_counterMundane" target="self"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="other" buff="buffAwakenedLightning_counterMundane"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffAwakenedLightning_counterMundane"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="other" buff="buffAwakenedLightning_counterMundane"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffAwakenedLightning_counterMundane"/>
+					</effect_group> -->
+					<effect_group name="cleanup">
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="LeftHand" prefab="awakenedHand0Lightning"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="RightHand" prefab="awakenedHand0Lightning"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffAwakenedLightning_summonMundane">
+							<requirement name="HasBuff" buff="buffAwakenedLightning_summonMundane"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffAwakenedLightning_summonMundane">
+							<requirement name="HasBuff" buff="buffAwakenedLightning_summonMundane"/>
+						</triggered_effect>						
+						<!-- <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" target="other" cvar="awakenedCounterMundane" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedCounterMundane" operation="GTE" value="1"/>
+						</triggered_effect> -->
+						<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" target="self" buff="buffAwakenedLightning_counterMundane"/> -->
+					</effect_group>
+			</buff>			
+			
+	
+	
+	
+		<!--___________________________ FALLEN ___________________________-->
+			<!-- FALLEN: Lightning -->
+			<buff name="buffFallenLightning" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/>
+				<duration value="0"/>
+				<update_rate value="1"/>
+					<effect_group name="Fallen">
+						<!-- CVar: _difficulty -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="10"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility1" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility1_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility2" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility2_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility3" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility3_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility4" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility5" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility5_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility6" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="awakenedAbility6_cd" operation="set" value="0"/>
+					</effect_group>
+					
+					<effect_group name="COOLDOWN">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility1_cd" operation="GT" value="0"/>
+						</triggered_effect>							
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility2_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility2_cd" operation="GT" value="0"/>
+						</triggered_effect>							
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility3_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility3_cd" operation="GT" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility4_cd" operation="GT" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility5_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility5_cd" operation="GT" value="0"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="90"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility6_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedAbility6_cd" operation="GT" value="0"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="90"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedRun_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="awakenedRun_cd" operation="GT" value="0"/>
+						</triggered_effect>								
+					</effect_group>
+
+					<effect_group name="HEALTH">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="10">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.99"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="9">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.99"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.9"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="8">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.9"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.8"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="7">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.8"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.7"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="6">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.7"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.6"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="5">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.6"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.5"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="4">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.5"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.4"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="3">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.4"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.3"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="2">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.3"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedHealth_remain" operation="set" value="1">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.2"/>
+						</triggered_effect>
+					</effect_group>
+
+					<effect_group name="IMMUNITY">
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="buffAwakenedLightningImpactTrigger_lightning,buffFallenLightningSpell_lightning,buffAwakenedLightningSpell_lightning,buffAwakenedLightning_empowerMundane,debuffAwakenedLightning_aura,debuffAwakenedLightning_aura2"/>
+					</effect_group>
+
+					<!-- SCALE -->
+					<effect_group name="DAMAGE SCALE">
+						<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="awakenedAbility1_damage" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="awakenedAbility1_damage" operation="multiply" value=".2"/>				
+					</effect_group>
+
+					<effect_group name="ABILITY1: Right Hand">
+							<requirement name="CVarCompare" cvar="awakenedAbility1" operation="Equals" value="1"/>
+						<passive_effect name="EntityDamage" operation="perc_add" value="@awakenedAbility1_damage"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value="@awakenedAbility1_damage"/>
+						<passive_effect name="MagazineSize" operation="base_add" value="1">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="GTE" value="2"/>
+						</passive_effect>
+						<!-- <passive_effect name="BurstRoundCount" operation="base_add" value="1"/> -->
+						<passive_effect name="SpreadDegreesHorizontal" operation="base_add" value="1"/>
+					</effect_group>
+					<effect_group name="ABILITY2: Left Hand">
+							<requirement name="CVarCompare" cvar="awakenedAbility2" operation="Equals" value="1"/>
+						<passive_effect name="EntityDamage" operation="perc_add" value="@awakenedAbility1_damage"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value="@awakenedAbility1_damage"/>
+						<passive_effect name="MagazineSize" operation="base_add" value="1">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="GTE" value="4"/>
+						</passive_effect>
+						<passive_effect name="BurstRoundCount" operation="base_add" value="1">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="GTE" value="8"/>
+						</passive_effect>
+						<!-- <passive_effect name="SpreadDegreesVertical" operation="base_add" value="1"/> -->
+						<passive_effect name="SpreadDegreesHorizontal" operation="base_add" value="7"/>
+					</effect_group>			
+
+					<effect_group name="ABILITY1: Activate">
+							<requirement name="CVarCompare" cvar="awakenedAbility1" operation="Equals" value="0"/>
+							<!-- <requirement name="CVarCompare" cvar="awakenedAbility1_cd" operation="Equals" value="0"/> -->
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="LTE" value="9"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" parent_transform="RightHand" prefab="#@modfolder:Resources/awakenedHandLightning.unity3d?awakenedHandLightning" local_offset=".14,0.035,0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1" operation="set" value="1"/>
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_cd" operation="set" value="100"/> -->
+					</effect_group>
+					
+					<effect_group name="ABILITY2: Activate">
+							<requirement name="CVarCompare" cvar="awakenedAbility2" operation="Equals" value="0"/>
+							<!-- <requirement name="CVarCompare" cvar="awakenedAbility2_cd" operation="Equals" value="0"/> -->
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="LTE" value="7"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/awakenedHandLightning.unity3d?awakenedHandLightning" local_offset="-.14,-0.05,0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility2" operation="set" value="1"/>
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility2_cd" operation="set" value="100"/> -->
+					</effect_group>
+					
+					<effect_group name="ABILITY4: Summon Mundane DEV BUG">
+							<!-- <requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility4_cd" operation="Equals" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="buffAwakenedLightning_summonMundane" target_tags="ally,party">
+							<requirement name="NotHasBuff" buff="buffAwakenedLightning_empowerMundane"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="60" buff="debuffAwakenedLightning_summonMundane" target_tags="enemy"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="set" value="2"/> -->
+					</effect_group>					
+					
+					<effect_group name="ABILITY5: Regenerate">
+							<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility5_cd" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="LTE" value="8"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFallenLightningSpell_regenerate"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="20" buff="buffFallenLightningSpell_regenerate" target_tags="ally,party"/>
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility5_cd" operation="set" value="20"/> -->
+						<!-- SCALE -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility5_cd" operation="set" value="120">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="LTE" value="1"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility5_cd" operation="set" value="60">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility5_cd" operation="set" value="30">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="GTE" value="3"/>
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="LT" value="5"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility5_cd" operation="set" value="15">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="GTE" value="5"/>
+						</triggered_effect>
+					</effect_group>
+					
+					<effect_group name="ABILITY6">
+							<requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedAbility6_cd" operation="Equals" value="0"/>
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffAwakenedLightning_teleport"/> -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility6_cd" operation="set" value="10"/>
+					</effect_group>					
+					
+					<effect_group name="ABILITY: Sacrifice Mundane">
+							<!-- <requirement name="CVarCompare" cvar="_notAlerted" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="awakenedHealth_remain" operation="LTE" value="3"/> -->
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="100" buff="buffAwakenedLightning_sacrificeMundane" target_tags="ally,party"/> -->
+					</effect_group>
+			</buff>
+	
+	
+		<!--___________________________ FALLEN SPELLS ___________________________-->
+			<!-- FALLEN: Lightning Spell -->
+			<buff name="buffFallenLightningSpell_lightning" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/>
+				<stack_type value="replace"/>
+				<duration value="2"/>
+				<update_rate value="1"/>
+					<effect_group name="IMPACT: Stagger">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="5"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="5"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>						
+					</effect_group>
+					<!-- <effect_group name="LIGHTNING STRIKE">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10" target="self"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="debuffSpell_LightningStrike"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="self" buff="debuffSpell_LightningStrike"/>
+					</effect_group> -->
+					<effect_group name="RANK 1: SHOCKBURN">
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="10"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".10" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".10" />
+					</effect_group>
+					<!-- <effect_group name="RANK 2: ELECTROCUTE">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$Lightning_ElectrocuteChance" target="self"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="debuffSpell_LightningElectrocute"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="self" buff="debuffSpell_LightningElectrocute"/>
+					</effect_group> -->
+			</buff>	
+	
+			<!-- AWAKENED: Lightning Regenerate Mundane -->
+			<buff name="buffFallenLightningSpell_regenerate" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/>
+				<duration value="6"/>
+				<update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeLightning.unity3d?fallenRechargeLightning"/>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fallenRechargeLightning-finish" />
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fallenRechargeLightning"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeLightning-finish.unity3d?fallenRechargeLightning-finish"/>
+						<passive_effect name="HealthChangeOT" operation="base_add" value="50"/> 
+						<passive_effect name="WalkSpeed" operation="perc_set" value="0" />
+						<passive_effect name="RunSpeed" operation="perc_set" value="0" />
+						<passive_effect name="JumpStrength" operation="perc_set" value="0"  />
+						<passive_effect name="WalkSpeed" operation="base_set" value="0" />
+						<passive_effect name="RunSpeed" operation="base_set" value="0" />
+						<passive_effect name="JumpStrength" operation="base_set" value="0" />
+						<triggered_effect trigger="onOtherAttackedSelf" action="RemoveBuff" buff="buffFallenLightningSpell_regenerate">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+						</triggered_effect>						
+					</effect_group>
+			</buff>	
+	
 			
 			
 		<!--___________________________ ALCHEMY ___________________________-->
@@ -6581,9 +7848,9 @@
 				<duration value="5"/>
 				<update_rate value="1"/>
 					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_lightning" operation="set" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_lightning" operation="set" value="@$sorceryLightningMastery_power"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_lightning" operation="multiply" value="20"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_lightning_C2" operation="set" value="@$sorceryIceMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_lightning_C2" operation="set" value="@$sorceryLightningMastery_power"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffAmmoArrow_lightning_C2" operation="multiply" value="3"/>
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffAmmoArrow_lightning" duration="0.1,1.1"/>
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$buffAmmoArrow_lightning_C2" duration="1,5"/>

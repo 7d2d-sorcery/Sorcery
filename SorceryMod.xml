@@ -2,7 +2,7 @@
 <Servers>
 	<ServerGroup Name="Sorcery" Logo="https://i.postimg.cc/J4jwL4Ny/sorcery-logo-v08-splash.png" Description="Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.">
 			<Server Name="Sorcery" Logo="https://i.postimg.cc/J4jwL4Ny/sorcery-logo-v08-splash.png">
-			<Description>Sorcery v0.8 - Alchemy + Mastery Overhaul!
+			<Description>Sorcery v0.83 - The Awakening
 http://www.SorceryMod.com
 
 Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.
@@ -15,6 +15,7 @@ Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. T
 - Armor Crafting
 - Rune Crafting
 - Spell Weapon Abilities: primary, secondary, passive, charge
+- New Enemies: The Fallen and Awakened
 - New Attribute: Sorcery
 - New Dual Skill Tree and Perks
 - Fire, Ice, Lightning Mastery: learn how to craft and augment spells
@@ -30,8 +31,9 @@ DISCORD: http://discord.SorceryMod.com
 FORUM: http://forum.SorceryMod.com
 WIKI: http://wiki.SorceryMod.com
 
-COMPATIBLE: DARKNESS FALLS (2.2+): Sorcery Modlet version is fully compatible with Darkness Falls. Under Darkness Falls Install: Manage Modlets &gt; Download Sorcery &gt; Ready to play!
-COMPATIBLE: RAVENHEARST (5.5+): Sorcery Modlet version is fully compatible with Ravenhearst. Under Ravenhearst Install: Manage Modlets &gt; Download Sorcery &gt; Ready to play!
+COMPATIBLE: DARKNESS FALLS (v2.2+): Sorcery Modlet (manual) version is fully compatible with Darkness Falls!
+COMPATIBLE: RAVENHEARST (v5.5+): Sorcery Modlet (manual) version is fully compatible with Ravenhearst!
+COMPATIBLE: WAR OF THE WALKERS (v6+): Sorcery Modlet (manual) version is fully compatible with War of The Walkers!
 
 **NOTE** This version of Sorcery is NOT EAC safe; You must play with EAC disabled. The pure XML Modlet version of Sorcery may be used with EAC enabled: https://7daystodie.com/forums/showthread.php?109145-Sorcery
 			</Description>

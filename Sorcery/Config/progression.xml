@@ -64,6 +64,43 @@
 				<passive_effect name="CraftingTier" operation="base_set" level="11,20" value="120" tags="sorceryArmor_Hood,sorceryArmor_Hood2,sorceryArmor_Hood3,sorceryArmor_Robe,sorceryArmor_Robe2,sorceryArmor_Robe3,sorceryArmor_Chest,sorceryArmor_Chest2,sorceryArmor_Chest3,sorceryArmor_Shirt,sorceryArmor_Shirt2,sorceryArmor_Shirt3,sorceryArmor_Gloves,sorceryArmor_Gloves2,sorceryArmor_Gloves3,sorceryArmor_Leg,sorceryArmor_Leg2,sorceryArmor_Leg3,sorceryArmor_Pants,sorceryArmor_Pants2,sorceryArmor_Pants3,sorceryArmor_Boots,sorceryArmor_Boots2,sorceryArmor_Boots3,sorceryArmor_Bandana,sorceryArmor_Bandana2,sorceryArmor_Bandana3,sorceryAccessory_Shades,sorceryAccessory_Shades2,sorceryAccessory_Shades3"/>			
 			</effect_group>			
 			
+			<effect_group name="SORCERY MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="6">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="7">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="8">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="9">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="10">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10"/>
+				</triggered_effect>				
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_power" operation="set" value="@$sorceryMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_power" operation="add" value="1"/>
+			</effect_group>			
+			
 			<effect_group name="ARMOR CRAFTING: Recipes">
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="sorceryAccessory_Shades,sorceryArmor_Bandana,sorceryArmor_Hood,sorceryArmor_Robe,sorceryArmor_Chest,sorceryArmor_Shirt,sorceryArmor_Gloves,sorceryArmor_Leg,sorceryArmor_Pants,sorceryArmor_Boots"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="6,10" tags="sorceryAccessory_Shades2,sorceryArmor_Bandana2,sorceryArmor_Hood2,sorceryArmor_Robe2,sorceryArmor_Chest2,sorceryArmor_Shirt2,sorceryArmor_Gloves2,sorceryArmor_Leg2,sorceryArmor_Pants2,sorceryArmor_Boots2"/>
@@ -83,6 +120,48 @@
 				<effect_description level="9" desc_key="attSorceryRank9Desc"/>
 				<effect_description level="10" desc_key="attSorceryRank10Desc"/>
 			</effect_group>
+			
+			<effect_group name="PLAYER TIER: Level Scaling">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier" operation="set" value="1">
+					<requirement name="PlayerLevel" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier" operation="set" value="2">
+					<requirement name="PlayerLevel" operation="GTE" value="20"/>
+					<requirement name="PlayerLevel" operation="LT" value="40"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier" operation="set" value="3">
+					<requirement name="PlayerLevel" operation="GTE" value="40"/>
+					<requirement name="PlayerLevel" operation="LT" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier" operation="set" value="4">
+					<requirement name="PlayerLevel" operation="GTE" value="60"/>
+					<requirement name="PlayerLevel" operation="LT" value="80"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier" operation="set" value="5">
+					<requirement name="PlayerLevel" operation="GTE" value="80"/>
+					<requirement name="PlayerLevel" operation="LT" value="100"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier" operation="set" value="6">
+					<requirement name="PlayerLevel" operation="GTE" value="100"/>
+					<requirement name="PlayerLevel" operation="LT" value="150"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier" operation="set" value="7">
+					<requirement name="PlayerLevel" operation="GTE" value="150"/>
+					<requirement name="PlayerLevel" operation="LT" value="200"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier" operation="set" value="8">
+					<requirement name="PlayerLevel" operation="GTE" value="200"/>
+					<requirement name="PlayerLevel" operation="LT" value="250"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier" operation="set" value="9">
+					<requirement name="PlayerLevel" operation="GTE" value="250"/>
+					<requirement name="PlayerLevel" operation="LT" value="300"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier" operation="set" value="10">
+					<requirement name="PlayerLevel" operation="GTE" value="300"/>
+				</triggered_effect>
+			</effect_group>			
+			
 		</attribute>
 		
 	</append>
@@ -171,6 +250,28 @@
 			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="5" desc_key="reqSorceryLevel05"/></level_requirements>
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="7" desc_key="reqSorceryLevel07"/></level_requirements>
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+
+			<effect_group name="ESSENCE MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_power" operation="set" value="@$sorceryEssenceMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_power" operation="add" value="1"/>
+			</effect_group>
 
 			<effect_group name="Essence Harvest Multipliers">
 				<passive_effect name="HarvestCount" operation="perc_add" value="1,5" level="1,5" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
@@ -566,6 +667,32 @@
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="set" value="@$sorceryRuneMastery"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="multiply" value=".2"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="add" value="1"/>
+				<!-- 20% Cost Per Level (Base) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost" operation="set" value="@$sorceryRuneMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost" operation="set" value=".9">
+					<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- 10% Cost -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost10" operation="set" value="-.1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost10" operation="multiply" value="@$sorceryRuneMastery_cost"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost10" operation="add" value=".1"/>
+				<!-- 20% Cost -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost20" operation="set" value="-.2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost20" operation="multiply" value="@$sorceryRuneMastery_cost"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost20" operation="add" value=".2"/>
+				<!-- 30% Cost -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost30" operation="set" value="-.3"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost30" operation="multiply" value="@$sorceryRuneMastery_cost"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost30" operation="add" value=".3"/>
+				<!-- 40% Cost -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost40" operation="set" value="-.4"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost40" operation="multiply" value="@$sorceryRuneMastery_cost"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost40" operation="add" value=".4"/>
+				<!-- 50% Cost -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost50" operation="set" value="-.5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost50" operation="multiply" value="@$sorceryRuneMastery_cost"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_cost50" operation="add" value=".5"/>
 			</effect_group>			
 			
 			<effect_group name="RUNECRAFTING: RECIPES">

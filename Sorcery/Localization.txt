@@ -222,9 +222,31 @@ sorceryAlchemyStationDesc,blocks,Workstation,New,"The Alchemy Station is require
 sorceryArcaneWheel,blocks,Workstation,New,"[ae92d5]Arcane Wheel[-]",,,,,
 sorceryArcaneWheelDesc,blocks,Workstation,New,"The [ae92d5]Arcane Wheel[-] is required to craft [ae92d5]Threads[-] and [ae92d5]Sorcerer Armors[-].",,,,,
 
+resourceRitualShardLightning,items,Item,New,"[5c009d]Lightning[-] Ritual Shard",,,,,
+resourceRitualShardLightningDesc,items,Item,New,"Four [5c009d]Lightning[-] Ritual Shards can be transmuted into a single [ae92d5]Ritual Stone[-] to perform Lightning [ae92d5]Summoning Rituals[-]. Ritualistic items are typically possessed by [ae92d5]The Fallen and Awakened[-].",,,,,
+
+resourceRitualStoneLightning,items,Item,New,"[5c009d]Lightning[-] Ritual Stone",,,,,
+resourceRitualStoneLightningDesc,items,Item,New,"[5c009d]Lightning[-] Ritual Stones are crucial to performing Lightning [ae92d5]Summoning Rituals[-]. Five Ritual Stones are used to form a pentagram in which [ae92d5]The Awakened[-] can be summoned.",,,,,
+
+resourceRitualBloodFallenLightning,items,Item,New,"[5c009d]Fallen[-] Blood",,,,,
+resourceRitualBloodFallenLightningDesc,items,Item,New,"[5c009d]Fallen[-] Blood is a crucial ingredient in performing Lightning [ae92d5]Summoning Rituals[-]. This Blood is typically extracted from [ae92d5]Fallen Sorcerers[-] during combat, prior to vanquishing them.",,,,,
+
+resourceRitualBloodAwakenedLightning,items,Item,New,"[5c009d]Awakened[-] Blood",,,,,
+resourceRitualBloodAwakenedLightningDesc,items,Item,New,"[5c009d]Awakened[-] Blood is a crucial ingredient in performing Boss Level Lightning [ae92d5]Summoning Rituals[-]. This Blood is typically extracted from an [ae92d5]Awakened Incarnate[-] during combat, prior to vanquishing them.",,,,,
+
 cntSorceryCrateIntro,blocks,Container,New,"[ae92d5]Altin's Chest[-]",,,,,
 cntLootSorceryCrateIntro,blocks,Container,New,"[ae92d5]Altin's Chest[-]",,,,,
 cntSorceryCrateIntroDesc,blocks,Block,New,"Upon receiving this Chest, I was ambushed by what appears to be Fallen Sorcerers... it must contain something important!",,,,,
+
+cntSorceryChestAwakenedFire,blocks,Container,New,"[ae92d5]Fire Awakened Chest[-]",,,,,
+cntSorceryChestAwakenedIce,blocks,Container,New,"[ae92d5]Ice Awakened Chest[-]",,,,,
+cntSorceryChestAwakenedLightning,blocks,Container,New,"[ae92d5]Lightning Awakened Chest[-]",,,,,
+cntLootSorceryChestAwakenedFire,blocks,Container,New,"[ae92d5]Fire Awakened Treasure[-]",,,,,
+cntLootSorceryChestAwakenedIce,blocks,Container,New,"[ae92d5]Ice Awakened Treasure[-]",,,,,
+cntLootSorceryChestAwakenedLightning,blocks,Container,New,"[ae92d5]Lightning Awakened Treasure[-]",,,,,
+cntLootSorceryChestAwakenedFireDesc,blocks,Block,New,"This Treasure Chest was retrieved from the corpse of an [ae92d5]Awakened Fire Incarnate[-]... surely it must contain [9b874d]Extraordinary[-] Loot!",,,,,
+cntLootSorceryChestAwakenedIceDesc,blocks,Block,New,"This Treasure Chest was retrieved from the corpse of an [ae92d5]Awakened Ice Incarnate[-]... surely it must contain [9b874d]Extraordinary[-] Loot!",,,,,
+cntLootSorceryChestAwakenedLightningDesc,blocks,Block,New,"This Treasure Chest was retrieved from the corpse of an [ae92d5]Awakened Lightning Incarnate[-]... surely it must contain [9b874d]Extraordinary[-] Loot!",,,,,
 
 conjureFire,blocks,Workstation,New,"[970000]FIRE[-] Conjure",,,,,
 conjureFireDesc,blocks,Workstation,New,"A [970000]FIRE CONJURE[-] is capable of transmuting [970000]FIRE ESSENCE[-] into its raw elemental form of [970000]FIRE[-], Tiers 1-5. You can craft [970000]FIRE SPELLS[-] and other powerful [970000]FIRE SORCERIES[-] through this process of transmutation and conjuration.",,,,,
@@ -572,6 +594,12 @@ qs_SorceryMastery_IceMasteryDesc,items,"Sorcery Quest",New,"Knowing of the inevi
 qs_SorceryMastery_LightningMastery,items,"Sorcery Quest",New,"Altin's Journal of [5c009d]Lightning Mastery[-]",,,,,
 qs_SorceryMastery_LightningMasteryDesc,items,"Sorcery Quest",New,"Knowing of the inevitable dangers ahead, Altin constructed Journals of his [5c009d]Lightning[-] studies to aid a successor. He knew this would be necessary in the event of an untimely demise...\n\nYour path to becoming a [5c009d]Lightning Sorcerer[-] starts here.",,,,,
 
+cs_awakenedLightning,items,"Sorcery Quest",New,"Summon [5c009d]Awakened[-] Incarnate",,,,,
+cs_awakenedLightningDesc,items,"Sorcery Quest",New,"Perform this Summoning Ritual to call forth an ancient [5c009d]Lightning[-] Awakened Incarnate. The most evolved of Awakened can be... catastrophically deadly and should be approached with utmost caution and preparedness. Confronting an Awakened unversed in The Arcane will seal your mortal fate.\n\nSorcerer Ivanos",,,,,
+
+cs_fallenLightning,items,"Sorcery Quest",New,"Summon [5c009d]Fallen[-] Sorcerer",,,,,
+cs_fallenLightningDesc,items,"Sorcery Quest",New,"Perform this Summoning Ritual to call forth a Fallen [5c009d]Lightning[-] Sorcerer. Summoning a [5c009d]Fallen[-] Sorcerer is a dangerous feat that should never be attempted unprepared. Consumed by power and full of rage, [ae92d5]The Fallen[-] will stop at nothing to achieve total ascendancy.\n\nSorcerer Ivanos",,,,,
+
 qcs_SorcererInitiationFireDesc,items,Fire Sorcery Quest,KgNone,"Sorcery Trial of Fire Quest.",,,,,
 qcs_SorcererInitiationFire,items,Sorcery Quest,KgNone,"Sorcery, Trial of Fire",,,,,
 qcs_SorcererInitiationFire2,items,Sorcery Quest,KgNone,"Sorcery, Trial of Fire 2 (Core)",,,,,
@@ -729,6 +757,13 @@ runeGeneral_lightningessenceboonDesc,item_modifiers,mod,New,"Invoke the Lightnin
 runeGeneral_lightningessenceboon2Desc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [ae92d5]Tools[-] can sustain the power of this Rune.\n\n[5c009d]Essence Boon[-]: Discover and Harvest 20% more Lightning Essence from all sources.\n[ae92d5]Stamina Burden[-]: 1% (reduced by Rune Mastery).",,,,,
 runeGeneral_lightningessenceboon3Desc,item_modifiers,mod,New,"Invoke the Lightning Essence Boon Runeword to discover and harvest more Lightning Essence in the world. Only [ae92d5]Tools[-] can sustain the power of this Rune.\n\n[5c009d]Essence Boon[-]: Discover and Harvest 30% more Lightning Essence from all sources.\n[ae92d5]Stamina Burden[-]: 1% (reduced by Rune Mastery).",,,,,
 
+runeTransmute_essencefire,item_modifiers,mod,New,"[970000]RUNE[-]: Fire Essence Transmute",,,,, 
+runeTransmute_essencefireDesc,item_modifiers,mod,New,"Invoke Kormai's Fire Essence Transmute Runeword to gain a bonus to Fire Essence Harvests by consuming all other essence types. Only [ae92d5]Tools[-] can sustain the power of this Rune.\n\n[970000]Fire Mastery[-]: +10% Fire Essence Harvest /Lvl\n[02599c]Ice Mastery[-]: +10% Fire Essence Harvest /Lvl\n[5c009d]Lightning Mastery[-]: +10% Fire Essence Harvest /Lvl\n[ae92d5]Stamina Burden[-]: 20% (reduced by Rune Mastery)",,,,,
+runeTransmute_essenceice,item_modifiers,mod,New,"[02599c]RUNE[-]: Ice Essence Transmute",,,,, 
+runeTransmute_essenceiceDesc,item_modifiers,mod,New,"Invoke Kormai's Ice Essence Transmute Runeword to gain a bonus to Ice Essence Harvests by consuming all other essence types. Only [ae92d5]Tools[-] can sustain the power of this Rune.\n\n[02599c]Ice Mastery[-]: +10% Ice Essence Harvest /Lvl\n[970000]Fire Mastery[-]: +10% Ice Essence Harvest /Lvl\n[5c009d]Lightning Mastery[-]: +10% Ice Essence Harvest /Lvl\n[ae92d5]Stamina Burden[-]: 20% (reduced by Rune Mastery)",,,,,
+runeTransmute_essencelightning,item_modifiers,mod,New,"[5c009d]RUNE[-]: Lightning Essence Transmute",,,,, 
+runeTransmute_essencelightningDesc,item_modifiers,mod,New,"Invoke Kormai's Lightning Essence Transmute Runeword to gain a bonus to Lightning Essence Harvests by consuming all other essence types. Only [ae92d5]Tools[-] can sustain the power of this Rune.\n\n[5c009d]Lightning Mastery[-]: +10% Lightning Essence /Lvl\n[970000]Fire Mastery[-]: +10% Lightning Essence /Lvl\n[02599c]Ice Mastery[-]: +10% Lightning Essence /Lvl\n[ae92d5]Stamina Burden[-]: 20% (reduced by Rune Mastery)",,,,,
+
 runeGeneral_lockshatter,item_modifiers,mod,New,"[2f9970]RUNE[-]: Lock Shatter",,,,, 
 runeGeneral_lockshatter2,item_modifiers,mod,New,"[407fff]RUNE[-]: Lock Shatter II",,,,,
 runeGeneral_lockshatter3,item_modifiers,mod,New,"[e60000]RUNE[-]: Lock Shatter III",,,,,
@@ -744,7 +779,28 @@ runeGeneral_spelllight2Desc,item_modifiers,mod,New,"Invoke the Spell Light Runew
 runeGeneral_spelllight3Desc,item_modifiers,mod,New,"Invoke the Spell Light Runeword to Illuminate your surroundings by means of Spell Light... let the mundane keep their Torches! Only [ae92d5]Tools[-] can sustain the power of this Rune.\n\n[6600cc]Spell Light[-]: Illuminate your surroundings within a very large range.\n[ae92d5]Stamina Burden[-]: 20% (reduced by Rune Mastery).",,,,,
 
 runeUnique_altinstouch,item_modifiers,mod,New,"[9b874d]RUNE[-]: Altin's Touch",,,,, 
-runeUnique_altinstouchDesc,item_modifiers,mod,New,"Forged with the magical might of Altin himself, this Runeword possess the very power of elements. Imbued with Altin's will, all [ae92d5]Weapons[-] can sustain the power of this Rune.\n\n[9b874d]Altin's Touch[-]: Chance to cast a [970000]Fire[-], [02599c]Ice[-] or [5c009d]Lightning[-] Spell on hit.\nSpirit Burden: 20% (reduced by Rune Mastery).",,,,,
+runeUnique_altinstouchDesc,item_modifiers,mod,New,"Forged with the magical might of Altin himself, this Runeword possess the very power of elements. Imbued with Altin's will, all [ae92d5]Weapons[-] can sustain the power of this Rune.\n\n[9b874d]Altin's Touch[-]: Chance to cast a [970000]Fire[-], [02599c]Ice[-] or [5c009d]Lightning[-] Spell on hit.\n[ae92d5]Spirit Burden[-]: 20% (reduced by Rune Mastery)",,,,,
+
+runeUnique_kormaispick,item_modifiers,mod,New,"[9b874d]RUNE[-]: Kormai's Pick",,,,, 
+runeUnique_kormaispickDesc,item_modifiers,mod,New,"Brimming with Kormai's will, this Runeword will imbue a [ae92d5]Pickaxe[-] with Earth Digging properties.\n\n[9b874d]Kormai's Pick[-]: Imbue a Pickaxe with Earth Digging\n[970000]Fire Mastery[-]: +10% Effectiveness per Level\n[02599c]Ice Mastery[-]: +20% Durability per Level\n[5c009d]Lightning Mastery[-]: +5% Speed per Level\n[ae92d5]Spirit Burden[-]: 40% (reduced by Rune Mastery)",,,,,
+
+runeUnique_ottosenlightenment,item_modifiers,mod,New,"[b2b2b2]RUNE[-]: Otto's Enlightenment",,,,, 
+runeUnique_ottosenlightenmentDesc,item_modifiers,mod,New,"Shining of Otto's inner light, this Runeword will imbue a [ae92d5]Sorcerer Hood[-] with Arcane Spell Light shrouding its wearer with a blanket of stealth and enhanced mining endurance.\n\n[b2b2b2]Otto's Enlightenment[-]: Shroud in Arcane Spell Light increasing visibility and decreasing detection while raising mining endurance.\n[ae92d5]Spirit Burden[-]: 20% (reduced by Rune Mastery)",,,,,
+
+runeUnique_fistsofivanos,item_modifiers,mod,New,"[9b874d]RUNE[-]: Fists of Ivanos",,,,, 
+runeUnique_fistsofivanosDesc,item_modifiers,mod,New,"Infused with the might of Ivanos, this Runeword will imbue [ae92d5]Gloves[-] with the raw force of Lightning granting the Fists of its wearer unspeakable power.\n\n[9b874d]Fists of Ivanos[-]: Imbue Unarmed Fists with Lightning Sorcery shockburning and sapping the Essence of your foes with consecutive blows.\n[6600cc]Sorcery[-]: +1 Health and +1 Stamina on hit per Level\n[5c009d]Lightning Mastery[-]: +20% Damage per Level\n[ae92d5]Spirit Burden[-]: 40% (reduced by Rune Mastery)",,,,,
+
+runeUnique_avioseegress,item_modifiers,mod,New,"[b2b2b2]RUNE[-]: Aviose's Egress",,,,, 
+runeUnique_avioseegressDesc,item_modifiers,mod,New,"Glistening of Aviose's frigid will, this Runeword will imbue [ae92d5]Boots[-] with the Chilling power of Ice granting its wearer the ability to cripple their foes by means of an Icy Retreat on Jumping when attacked.\n\n[b2b2b2]Aviose's Egress[-]: Icy Retreat when attacked\n[02599c]Ice Mastery[-] +20% Damage and +10% Slow / Lvl\n[ae92d5]Spirit Burden[-]: 20% (reduced by Rune Mastery)",,,,,
+
+runeUnique_kcoolzhaste,item_modifiers,mod,New,"[b2b2b2]RUNE[-]: Kcoolz Haste",,,,, 
+runeUnique_kcoolzhasteDesc,item_modifiers,mod,New,"Infused with the speed of Kcoolz, this Runeword will imbue [ae92d5]Boots[-] with Lightning Speed granting its wearer faster Attack, Mining and Movement Speed while also granting a burst of energy.\n\n[b2b2b2]Kcoolz Haste[-]: +25% Speed and +10 Stamina\n[6600cc]Sorcery[-]: +10 Stamina / Lvl\n[5c009d]Lightning Mastery[-]: +5% Speed / Lvl\n[ae92d5]Spirit Burden[-]: 40% (reduced by Rune Mastery)\n[008e00]ACTIVATE[-]: Press F. Hold F for multiple items.",,,,,
+
+runeUnique_nekosrage,item_modifiers,mod,New,"[9b874d]RUNE[-]: Neko's Rage",,,,, 
+runeUnique_nekosrageDesc,item_modifiers,mod,New,"Boiling with Neko's Rage, this Runeword will imbue [ae92d5]Chest Armor[-] with the ability to sear shut the wounds of its wearer while retaliating against attackers.\n\n[9b874d]Neko's Rage[-]: Occasionally ignite your inner rage when attacked searing shut wounds and knocking your attacker on their ass with a fiery explosion.\n[970000]Fire Mastery[-]: +4% Bleed Resist /Lvl\n[970000]Fire Mastery[-]: +1% Close Wounds /Lvl\n[970000]Fire Mastery[-]: +5% Explode and +20% Damage /Lvl\n[ae92d5]Spirit Burden[-]: 30% (reduced by Rune Mastery)",,,,,
+
+runeUnique_altinsblessing,item_modifiers,mod,New,"[9b874d]RUNE[-]: Altin's Blessing",,,,, 
+runeUnique_altinsblessingDesc,item_modifiers,mod,New,"Blessed by Altin, this Runeword will imbue a [ae92d5]Sorcerer Robe[-] with Altin's mastery over the Arcane granting its wearer remarkable power.\n\n[9b874d]Altin's Blessing[-]: +1 All Attributes at Master Sorcery.\nOccasionally call down a Meteor when attacked dispelling ailments and restoring a portion of vitality and endurance.\n[6600cc]Sorcery[-]: +2 Spirit and +2 Stamina /Lvl\n[970000]Fire Mastery[-]: +20% Meteor Damage /Lvl\n[ae92d5]Spirit Burden[-]: 50% (reduced by Rune Mastery)",,,,,
 
 sorceryPotionBottle,items,Food,New,"[ae92d5]Potion Bottle[-]",,,,, 
 sorceryPotionBottle2,items,Food,New,"Potion [36dc2a]Bottle II[-]",,,,, 
@@ -854,8 +910,19 @@ sorceryPerkSupportGoldDesc,items,Book,New,"[6800ff]ROYAL[-]: You are a worthy Ro
 
 
 
-
+ 
 sorcery_zombieBurnt_intro,entityclasses,Entity,New,"Fallen Sorcerer",,,,,
+sorceryAwakenedMaster,entityclasses,Entity,New,"Sorcery Template DNR",,,,,
+sorceryFallenMaster,entityclasses,Entity,New,"Sorcery Template DNR",,,,,
+
+sorceryAwakenedFire,entityclasses,Entity,New,"[970000]Awakened[-] Altin Incarnate",,,,,
+sorceryAwakenedIce,entityclasses,Entity,New,"[02599c]Awakened[-] Ika Incarnate",,,,,
+sorceryAwakenedLightning,entityclasses,Entity,New,"[5c009d]Awakened[-] Ivanos Incarnate",,,,,
+
+sorceryFallenLightning,entityclasses,Entity,New,"[5c009d]Fallen[-] Sorcerer Priest",,,,,
+
+AwakenedLootContainerLightning,entityclasses,Entity,New,"[5c009d]Awakened[-] Incarnate Bounty",,,,,
+FallenLootContainerLightning,entityclasses,Entity,New,"[5c009d]Fallen[-] Sorcerer Remains",,,,,
 
 
 SORCERY_END,,LOCALIZATION,,END,,,,,

@@ -2223,7 +2223,44 @@
 
 		
 		
+	<!--___________________ RESOURCE: Rituals ___________________-->
+		<!-- RITUAL STONES -->
+		<item name="resourceRitualStoneLightning">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="MsorceryExtractLightning"/>
+			<property name="Stacknumber" value="5000"/>
+			<!-- <property name="RepairTime" value="1"/>
+			<property name="RepairAmount" value="300"/> -->
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="Weight" value="20"/>
+			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientTime" value="5"/>
+		</item>
+		<item name="resourceRitualShardLightning">
+			<property name="Extends" value="resourceRitualStoneLightning"/>
+			<property name="Weight" value="5"/>
+		</item>
 		
+		<!-- RITUAL BLOOD -->
+		<item name="resourceRitualBloodFallenLightning">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="MsorceryExtractLightning"/>
+			<property name="Stacknumber" value="5000"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="Weight" value="5"/>
+			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientTime" value="5"/>
+		</item>		
+		<item name="resourceRitualBloodAwakenedLightning">
+			<property name="Extends" value="resourceRitualBloodFallenLightning"/>
+			<property name="Weight" value="20"/>
+		</item>		
 		
 	<!--___________________ UNIT: Essence ___________________-->
 	<!--___________________ FIRE UNIT ___________________-->
@@ -2455,6 +2492,44 @@
 		</item>
 
 
+	<!--___________________ THE AWAKENED ___________________-->
+		<!-- LIGHTNING -->
+		<item name="cs_awakenedLightning">
+			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
+			<property name="CustomIcon" value="qs_SorceryIntroNew"/>
+			<property name="CustomIconTint" value="eb72ff"/>
+			<property name="TintColor" value="150,0,255"/>
+			<property name="Material" value="MsorceryExtractLightning"/> <property name="Weight" value="50"/>
+			<property class="Action0">
+						<!-- LIMIT -->
+						<!-- <requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10"/> -->
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="challengeSorcery_awakenedLightning"/>
+				<property name="Delay" value="0"/>
+			</property>		
+		</item>
+		
+	<!--___________________ THE FALLEN ___________________-->
+		<!-- LIGHTNING -->
+		<item name="cs_fallenLightning">
+			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
+			<property name="CustomIcon" value="qs_SorceryIntroNew"/>
+			<property name="CustomIconTint" value="b900d8"/>
+			<property name="TintColor" value="150,0,255"/>
+			<property name="Material" value="MsorceryExtractLightning"/> <property name="Weight" value="20"/>
+			<property class="Action0">
+						<!-- LIMIT -->
+						<!-- <requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10"/> -->
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="challengeSorcery_fallenLightning"/>
+				<property name="Delay" value="0"/>
+			</property>		
+		</item>		
+		
+
+
+
+
 		
 <!--___________________ SORCERY CLOTHING & ARMOR ___________________-->
 		<!-- SORCERY ARMOR -->
@@ -2606,7 +2681,7 @@
 		<!-- SORCERY ROBE -->
 		<item name="sorceryArmor_Robe">
 			<property name="Extends" value="sorceryArmorMaster" param1="CustomIcon"/>
-			<property name="Tags" value="upperbody,lowerbody,chest,clothing,sorceryArmor,sorceryArmorEpic"/>
+			<property name="Tags" value="upperbody,lowerbody,chest,clothing,sorceryArmor,sorceryArmorEpic,sorceryArmorRobe"/>
 			<property name="DisplayType" value="sorceryArmorRobe"/>
 			<property name="Waterproof" value="0.4"/>
 			<property name="EconomicValue" value="800"/>
@@ -2655,7 +2730,7 @@
 		
 		<item name="sorceryArmor_Robe2">
 			<property name="Extends" value="sorceryArmor_Robe" param1="CustomIcon"/>
-			<property name="Tags" value="upperbody,lowerbody,chest,sorceryArmor,sorceryArmorLegendary"/>
+			<property name="Tags" value="upperbody,lowerbody,chest,clothing,sorceryArmor,sorceryArmorLegendary,sorceryArmorRobe"/>
 			<property name="EconomicValue" value="1200"/>
 			<property name="Material" value="MsorceryClothArcane3"/>
 			<property name="RepairTools" value="resourceThreadArcane3"/>
@@ -2700,7 +2775,7 @@
 
 		<item name="sorceryArmor_Robe3">
 			<property name="Extends" value="sorceryArmor_Robe" param1="CustomIcon"/>
-			<property name="Tags" value="upperbody,lowerbody,chest,sorceryArmor,sorceryArmorTranscendent"/>
+			<property name="Tags" value="upperbody,lowerbody,chest,clothing,sorceryArmor,sorceryArmorTranscendent,sorceryArmorRobe"/>
 			<property name="EconomicValue" value="1600"/>
 			<property name="Material" value="MsorceryClothArcane5"/>
 			<property name="RepairTools" value="resourceThreadArcane5"/>
@@ -2747,7 +2822,7 @@
 		<!-- SORCERY CHEST -->
 		<item name="sorceryArmor_Chest">
 			<property name="Extends" value="sorceryArmorMaster" param1="CustomIcon"/>
-			<property name="Tags" value="upperbody,chest,armor,sorceryArmor,sorceryArmorEpic,armorRigging"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,sorceryArmor,sorceryArmorEpic,armorRigging"/>
 			<property name="DisplayType" value="sorceryArmor"/>
 			<property name="EquipSlot" value="Chest"/>
 			<property name="EconomicValue" value="800"/>
@@ -2793,7 +2868,7 @@
 		
 		<item name="sorceryArmor_Chest2">
 			<property name="Extends" value="sorceryArmor_Chest" param1="CustomIcon"/>
-			<property name="Tags" value="upperbody,chest,armor,sorceryArmor,sorceryArmorLegendary,armorRigging"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,sorceryArmor,sorceryArmorLegendary,armorRigging"/>
 			<property name="EconomicValue" value="1200"/>
 			<property name="Material" value="MsorceryClothArcane3"/>
 			<property name="RepairTools" value="resourceThreadArcane3"/>
@@ -2830,7 +2905,7 @@
 
 		<item name="sorceryArmor_Chest3">
 			<property name="Extends" value="sorceryArmor_Chest" param1="CustomIcon"/>
-			<property name="Tags" value="upperbody,chest,armor,sorceryArmor,sorceryArmorTranscendent,armorRigging"/>
+			<property name="Tags" value="upperbody,chest,armor,armorChest,sorceryArmor,sorceryArmorTranscendent,armorRigging"/>
 			<property name="EconomicValue" value="1600"/>
 			<property name="Material" value="MsorceryClothArcane5"/>
 			<property name="RepairTools" value="resourceThreadArcane5"/>
@@ -2994,7 +3069,7 @@
 		<!-- SORCERY GLOVES -->
 		<item name="sorceryArmor_Gloves">
 			<property name="Extends" value="sorceryArmorMaster" param1="CustomIcon"/>
-			<property name="Tags" value="upperbody,hands,armor,sorceryArmor,sorceryArmorEpic,armorRigging"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,sorceryArmor,sorceryArmorEpic,armorRigging"/>
 			<property name="DisplayType" value="sorceryArmorGloves"/>
 			<property name="EquipSlot" value="Hands"/>
 			<property name="EconomicValue" value="800"/>
@@ -3040,7 +3115,7 @@
 			
 		<item name="sorceryArmor_Gloves2">
 			<property name="Extends" value="sorceryArmor_Gloves" param1="CustomIcon"/>
-			<property name="Tags" value="upperbody,hands,armor,sorceryArmor,sorceryArmorLegendary,armorRigging"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,sorceryArmor,sorceryArmorLegendary,armorRigging"/>
 			<property name="EconomicValue" value="1200"/>
 			<property name="Material" value="MsorceryClothArcane3"/>
 			<property name="RepairTools" value="resourceThreadArcane3"/>
@@ -3078,7 +3153,7 @@
 
 		<item name="sorceryArmor_Gloves3">
 			<property name="Extends" value="sorceryArmor_Gloves" param1="CustomIcon"/>
-			<property name="Tags" value="upperbody,hands,armor,sorceryArmor,sorceryArmorTranscendent,armorRigging"/>
+			<property name="Tags" value="upperbody,hands,armor,armorHands,sorceryArmor,sorceryArmorTranscendent,armorRigging"/>
 			<property name="EconomicValue" value="1600"/>
 			<property name="Material" value="MsorceryClothArcane5"/>
 			<property name="RepairTools" value="resourceThreadArcane5"/>			
@@ -3363,7 +3438,7 @@
 		<!-- SORCERY BOOTS -->
 		<item name="sorceryArmor_Boots">
 			<property name="Extends" value="sorceryArmorMaster" param1="CustomIcon"/>
-			<property name="Tags" value="lowerbody,feet,armor,sorceryArmor,sorceryArmorEpic,armorRigging"/>
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,sorceryArmor,sorceryArmorEpic,armorRigging"/>
 			<property name="DisplayType" value="sorceryArmorBoots"/>
 			<property name="EquipSlot" value="Feet"/>
 			<property name="EconomicValue" value="800"/>
@@ -3412,7 +3487,7 @@
 
 		<item name="sorceryArmor_Boots2">
 			<property name="Extends" value="sorceryArmor_Boots" param1="CustomIcon"/>
-			<property name="Tags" value="lowerbody,feet,armor,sorceryArmor,sorceryArmorLegendary,armorRigging"/>
+			<property name="Tags" value="lowerbody,feet,armor,armorFeet,sorceryArmor,sorceryArmorLegendary,armorRigging"/>
 			<property name="EconomicValue" value="1200"/>
 			<property name="Material" value="MsorceryClothArcane3"/>
 			<property name="RepairTools" value="resourceThreadArcane3"/>			
@@ -3452,7 +3527,7 @@
 
 		<item name="sorceryArmor_Boots3">
 			<property name="Extends" value="sorceryArmor_Boots" param1="CustomIcon"/>
-			<property name="Tags" value="lowerbody,feet,armor,sorceryArmor,sorceryArmorTranscendent,armorRigging"/>
+			<property name="Tags" value="lowerbody,feet,armorFeet,armor,sorceryArmor,sorceryArmorTranscendent,armorRigging"/>
 			<property name="EconomicValue" value="1600"/>
 			<property name="Material" value="MsorceryClothArcane5"/>
 			<property name="RepairTools" value="resourceThreadArcane5"/>			
@@ -3535,7 +3610,7 @@
 				<property name="Overlay0Tint" value="102,0,204"/>
 				<property name="Layer" value="1"/>
 				<property name="UISlot" value="Face"/>
-				<property name="Mask0" value="Face" param1="base"/>
+				<!-- <property name="Mask0" value="Face" param1="base"/> -->
 			</property>
 		</item>
 
@@ -4850,6 +4925,175 @@
 			</effect_group>
 		</item>
 		
+		
+		
+		
+		
+		
+<!--___________________ SORCERY ENTITY ITEMS ___________________-->
+		<!-- HAND: Awakened -->		
+		<item name="meleeHandSorceryAwakenedLightning">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="DamageEntity" value="1"/>
+				<property name="DamageBlock" value="500"/>
+				<property name="Range" value="4"/>
+				<property name="Sphere" value="2"/>
+				<property name="Block_range" value="5"/>				
+				<property name="Buff" value="buffInjuryBleeding,buffIllInfection0,buffInjuryStunned1,buffAwakenedLightningImpactTrigger_lightning,buffAwakenedLightningSpell_lightning"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->
+				<property name="Class" value="Vomit"/>
+				<property name="Delay" value="0.4"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="200"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="ammoProjectileAwakenedLightning"/>
+				<property name="Sound_warning" value="sorceryLightning_electrocute"/>
+				<property name="Sound_start" value="sorceryLightning_launch"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+				<property name="Buff" value="buffIllInfection0"/>
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="3"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="4"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="40"/>
+				<!-- <passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/> -->
+				<passive_effect name="BuffProcChance" operation="base_set" value="0.20" tags="buffInjuryBleeding"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0.20" tags="buffIllInfection0"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0.25" tags="buffInjuryStunned1"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffAwakenedLightningImpactTrigger_lightning,buffAwakenedLightningSpell_lightning"/>
+			</effect_group>
+		</item>
+
+		<item name="ammoProjectileAwakenedLightning">
+			<property name="Meshfile" value="#@modfolder:Resources/fallenProjectileLightning.unity3d?fallenProjectileLightning"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="1"/>
+				<property name="DamageBlock" value="200"/>
+				<!-- <property name="Explosion.ParticleIndex" value="7"/> -->
+				<property name="Velocity" value="12"/>
+				<property name="FlyTime" value="2"/>
+				<property name="LifeTime" value="4"/>
+				<property name="CollisionRadius" value="0.5"/>
+				<property name="DamageBonus.earth" value="0"/>
+				<property name="Buff" value="buffAwakenedLightningImpactTrigger_lightning,buffAwakenedLightningSpell_lightning"/>
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffAwakenedLightningImpactTrigger_lightning,buffAwakenedLightningSpell_lightning"/>
+			</effect_group>
+		</item>
+		<item name="ammoProjectileAwakenedLightningNova">
+			<property name="Meshfile" value="#@modfolder:Resources/awakenedProjectileLightningNova.unity3d?awakenedProjectileLightningNova"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="1"/>
+				<property name="DamageBlock" value="120"/>
+				<!-- <property name="Explosion.ParticleIndex" value="7"/> -->
+				<property name="Velocity" value="18"/>
+				<property name="FlyTime" value="0"/>
+				<property name="LifeTime" value="2"/>
+				<property name="Gravity" value="-100"/>
+				<property name="CollisionRadius" value="0.5"/>
+				<property name="DamageBonus.earth" value="0"/>
+				<property name="Buff" value="buffIllInfection0"/>
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0.30" tags="buffIllInfection0"/>
+			</effect_group>
+		</item>			
+
+		
+		
+		<!-- HAND: Fallen -->		
+		<item name="meleeHandSorceryFallenLightning">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Range" value="1.75"/>
+				<property name="DamageEntity" value="1"/>
+				<property name="DamageBlock" value="200"/>
+				<property name="Buff" value="buffIllInfection0,buffInjuryStunned1,buffAwakenedLightningImpactTrigger_lightning,buffFallenLightningSpell_lightning"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->
+				<property name="Class" value="Vomit"/>
+				<property name="Delay" value="0.3"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="200"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="ammoProjectileFallenLightning"/>
+				<property name="Sound_warning" value="sorceryLightning_electrocute"/>
+				<property name="Sound_start" value="sorceryLightning_launch"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+				<property name="Buff" value="buffIllInfection0"/>
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="100"/>
+				<passive_effect name="MaxRange" operation="base_set" value="100"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="4"/>
+				<!-- <passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/> -->
+				<passive_effect name="BuffProcChance" operation="base_set" value="0" tags="buffInjuryBleeding"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0.20" tags="buffIllInfection0"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0.1" tags="buffInjuryStunned1"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffAwakenedLightningImpactTrigger_lightning,buffFallenLightningSpell_lightning"/>
+			</effect_group>
+		</item>
+
+		<item name="ammoProjectileFallenLightning">
+			<property name="Meshfile" value="#@modfolder:Resources/fallenProjectileLightning.unity3d?fallenProjectileLightning"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="1"/>
+				<property name="DamageBlock" value="120"/>
+				<!-- <property name="Explosion.ParticleIndex" value="7"/> -->
+				<property name="Velocity" value="16"/>
+				<!-- <property name="Gravity" value="-5"/> -->
+				<property name="FlyTime" value="3"/>
+				<property name="LifeTime" value="6"/>
+				<property name="CollisionRadius" value="0.5"/>
+				<property name="DamageBonus.earth" value="0"/>
+				<property name="Buff" value="buffAwakenedLightningImpactTrigger_lightning,buffFallenLightningSpell_lightning"/>
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffAwakenedLightningImpactTrigger_lightning,buffFallenLightningSpell_lightning"/>
+			</effect_group>
+		</item>		
+		
+		
+		
 	</append>
 
 
@@ -4861,9 +5105,9 @@
 	<append xpath="/items/item[@name='gunCompoundBow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,sorceryAmmoArrow_omni,sorceryAmmoArrow_lightning,sorceryAmmoArrow_ice,sorceryAmmoArrow_fire</append>
 	<append xpath="/items/item[@name='gunCrossbow']/property[@class='Action0']/property[@name='Magazine_items']/@value">,sorceryAmmoBolt_omni,sorceryAmmoBolt_lightning,sorceryAmmoBolt_ice,sorceryAmmoBolt_fire</append>
 	
-	
-	
-	
+<!--___________________ APPEND PICKAXES: Tag ___________________-->
+	<append xpath="/items/item[@name='meleeToolStoneAxe']/property[@name='Tags']/@value">,sorceryPickaxe</append>
+	<append xpath="/items/item[@name='meleeToolPickaxeIron']/property[@name='Tags']/@value">,sorceryPickaxe</append>	
 	
 
 

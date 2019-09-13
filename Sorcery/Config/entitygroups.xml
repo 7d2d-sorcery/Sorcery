@@ -27,6 +27,74 @@
 		work and ongoing dedication to building and improving an awesome game that fuels the passion and
 		drives the creation of this mod.
 		__________________________________________________________________________________-->	
-
+	
+	<!-- AWAKENED -->
+	<!-- BOSS -->
+	<!-- <append xpath="/entitygroups/entitygroup[@name='ZombiesBoss']">
+		<entity name="sorceryAwakenedMaster" prob="0.01"/>
+	</append> -->
+	
+	<!-- HORDE SPANWS -->
+	<!-- WANDERING -->
+	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'wanderingHordeStage')]">
+		<entity name="sorceryFallenLightning" prob="0.15"/>
+	</append>
+	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'FwanderingHordeStage')]">
+		<entity name="sorceryFallenLightning" prob="0.15"/>
+	</append>	
+	<!-- SLEEPER -->
+	<!-- <append xpath="/entitygroups/entitygroup[starts-with(@name, 'sleeperHordeStage')]">
+		<entity name="sorceryFallenLightning" prob="0.15"/>
+	</append> -->
+	<!-- BADASS -->
+	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'badassHordeStage')]">
+		<entity name="sorceryFallenLightning" prob="0.15"/>
+	</append>
+	<!-- BADASS ONLY -->
+	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'badassOnlyHordeStage')]">
+		<entity name="sorceryFallenLightning" prob="0.15"/>
+	</append>	
+	<!-- SCOUT -->
+	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'scoutHordeStage')]">
+		<entity name="sorceryFallenLightning" prob="0.15"/>
+	</append>	
+	<!-- FERAL -->
+	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'feralHordeStage')]">
+		<entity name="sorceryFallenLightning" prob="0.15"/>
+	</append>
+	
+	<!-- ZOMBIESALL -->
+	<!-- pine_forest -->
+	<!-- desert -->
+	<!-- wasteland -->
+	<append xpath="/entitygroups/entitygroup[@name='ZombiesAll']">
+		<!-- <entity name="sorceryFallenLightning" prob="0.15"/> -->
+	</append>	
+	
+	<!-- NIGHT -->
+	<append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
+		<!-- <entity name="sorceryFallenLightning" prob="0.15"/> -->
+	</append>	
+	
+	<!-- CAVES -->
+	<append xpath="/entitygroups/entitygroup[@name='ZombiesCave']">
+		<entity name="sorceryFallenLightning" prob="0.15"/>
+	</append>
+	
+	<!-- NEW GROUP -->
+	<append xpath="/entitygroups">
+		<!-- FALLEN -->
+		<entitygroup name="SorceryFallenLightning">
+			<entity name="invisibleSorceryEntity" prob="6"/>
+			<entity name="sorceryFallenLightning" prob="0.15"/>
+		</entitygroup>
+		
+		<!-- AWAKENED -->
+		<entitygroup name="SorceryAwakenedLightning">
+			<!-- <entity name="invisibleAnimalEnemy" prob="6"/> -->
+			<entity name="sorceryAwakenedMaster" prob="0.001"/>
+			<entity name="sorceryFallenLightning" prob="0.01"/>
+		</entitygroup>		
+	</append>
 	
 </Sorcery>
