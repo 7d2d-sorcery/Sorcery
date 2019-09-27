@@ -45,12 +45,12 @@
 	
 	<!-- TIMID ANIMALS -->
 	<append xpath="/entity_classes/entity_class[@name='animalTemplateTimid']">
-		<property name="Buffs" value="buffEntity_SorceryManage"/>
+		<!-- <property name="Buffs" value="buffEntity_SorceryManage"/> -->
 	</append> 	
 	
 	<!-- HOSTILE ANIMALS -->
 	<append xpath="/entity_classes/entity_class[@name='animalTemplateHostile']">
-		<property name="Buffs" value="buffEntity_SorceryManage"/>
+		<!-- <property name="Buffs" value="buffEntity_SorceryManage"/> -->
 	</append> 	
 	
 	<!-- MALE ZOMBIE BASE -->
@@ -77,11 +77,12 @@
 		
 		<!-- AWAKENED -->
 		<!-- ZOMBIES -->
-		<entity_class name="sorcery_zombieBurnt_intro">
+		<entity_class name="sorceryFallenIntroMaster">
 			<property name="EntityType" value="Zombie"/> <!-- This one decides for scoring -->
-			<property name="Tags" value="entity,zombie,walker, feral"/>
-			<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
-			<property name="Mesh" value="Zombies/ZombieStandardBurntRagdoll"/>
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,sorceryFallen,sorceryFallenLightning"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_fallenLightning.unity3d?mat_fallenLightning"/>
+			<property name="ReplaceMaterial1" value="#@modfolder:Resources/mat_awakenedEyeLightning.unity3d?mat_awakenedEyeLightning"/>
+			<property name="Mesh" value="Zombies/zombieStandardScreamerRagdoll"/>
 
 			<property name="AvatarController" value="AvatarZombie01Controller"/>
 			<property name="ModelType" value="Standard"/>
@@ -109,16 +110,15 @@
 			<property name="AITarget-3" value="SetNearestCorpseAsTarget" param1="EntityPlayer"/>
 			<property name="AITarget-4" value="SetNearestEntityAsTarget" param1="EntityPlayer,0"/> <!-- class,distance (checked left to right, 0 dist uses entity default) -->
 
-			<property name="WalkType" value="7"/>
-			<property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
+			<property name="WalkType" value="3"/>
 			<property name="SoundRandomTime" value="60.0"/> <!-- It will play the roam every 60/30 seconds -->
-			<property name="SoundRandom" value="Enemies/Burnt_Zombie/zombieburntroam"/>
 			<property name="SoundAlertTime" value="25.0"/> <!-- It will play the roam every 25/12.5 seconds-->
-			<property name="SoundAlert" value="Enemies/Burnt_Zombie/zombieburntalert"/>
-			<property name="SoundSense" value="Enemies/Burnt_Zombie/zombieburntsense"/>
-			<property name="SoundHurt" value="Enemies/Burnt_Zombie/zombieburntpain"/>
-			<property name="SoundDeath" value="Enemies/Burnt_Zombie/zombieburntdeath"/>
-			<property name="SoundAttack" value="Enemies/Burnt_Zombie/zombieburntattack"/>
+			<property name="SoundRandom" value="sorceryFallen_alert"/>
+			<property name="SoundAlert" value="sorceryFallen_alert"/>
+			<property name="SoundAttack" value="sorceryFallen_attack"/>
+			<property name="SoundHurt" value="sorceryFallen_hurt"/>
+			<property name="SoundDeath" value="sorceryFallen_death"/>
+			<property name="SoundSense" value="sorceryFallen_sense"/>
 			<property name="SoundSleeperSense" value="sleepersense"/>
 			<property name="SoundSleeperBackToSleep" value="sleeperbacktosleep"/>
 			<property name="SoundFootstepModifier" value="Enemies/Burnt_Zombie/zombieburntfootstep"/>
@@ -126,7 +126,7 @@
 			<property name="RootMotion" value="true"/>
 			<property name="HasDeathAnim" value="true"/>
 			<property name="ParticleOnDeath" value="blood_death"/>
-			<property name="SurfaceCategory" value="organic"/> <!-- determines the particle effect played on hit -->
+			<property name="SurfaceCategory" value="organic"/>
 
 			<property name="DismemberMultiplierHead" value="1"/>
 			<property name="DismemberMultiplierArms" value="1"/>
@@ -166,7 +166,7 @@
 			<property name="SmellAlertThreshold" value="40"/> <!-- for awake zombies -->
 
 			<!-- Gameplay -->
-			<property name="MaxTurnSpeed" value="250"/>
+			<property name="MaxTurnSpeed" value="360"/>
 			<property name="MoveSpeed" value="2.0"/> <!-- just shambling around -->
 			<property name="MoveSpeedAggro" value="2.0, 2.0"/> <!-- chasing a target min/max (like day or night)-->
 			<property name="MoveSpeedPanic" value="0.55"/>
@@ -186,45 +186,91 @@
 			
 			<property name="LootListOnDeath" value="254"/>
 			<property name="TimeStayAfterDeath" value="600"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
-			<!-- <property name="LootDropEntityClass" value="EntityLootContainerRegular"/> -->
+			<property name="DeadBodyHitPoints" value="666"/>
 
-			<!-- <property name="CorpseBlock" value="air"/><property name="CorpseBlockChance" value="0"/> -->
-			<!-- <property name="TimeStayAfterDeath" value="30"/> -->
-
-			<effect_group name="Base Effects"> <!-- sorcery_zombieTemplateMale -->
+			<effect_group name="Base Effects"> <!-- sorcery_zombieTemplateMale --> 
 				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
 				<passive_effect name="HealthMax" operation="base_set" value="800"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
 				<passive_effect name="StaminaMax" operation="base_set" value="100"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="0" tags="buffInjuryBleeding"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="0" tags="buffIllInfection0"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="0" tags="buffInjuryStunned1"/>				
+				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffInjuryBleeding,buffIllInfection0,buffInjuryStunned1"/>
 			</effect_group>
-
-			<!-- <property name="MapIcon" value="ui_game_symbol_bullet_point"/> -->
 		</entity_class>	
 		
-		<!-- FIXED LOOT / BOSS -->
-		<!-- <entity_class name="sorcery_zombieBurnt_intro2" extends="sorcery_zombieBurnt_intro">
-			<property name="Tags" value="entity,zombie,walker, feral"/>
-			<property name="LootListOnDeath" value="202"/>
-			<property name="TimeStayAfterDeath" value="1200"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
+		<!-- INTRO FALLEN -->
+		<!-- Intro: Fire Fallen -->
+		<entity_class name="sorceryFallenIntroFire" extends="sorceryFallenIntroMaster">
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,sorceryFallen,sorceryFallenFire"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_fallenFire.unity3d?mat_fallenFire"/>
+			<property name="ReplaceMaterial1" value="#@modfolder:Resources/mat_awakenedEyeFire.unity3d?mat_awakenedEyeFire"/>
+			<property name="SoundSpawn" value="sorceryFallenFire_spawn"/>
+			<property name="LootListOnDeath" value="241"/>
+			<property name="Buffs" value="buffSpellImpactTrigger_Special_FireMeteor"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="800"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="100"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffInjuryBleeding,buffIllInfection0,buffInjuryStunned1"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSpellImpactTrigger_Special_FireMeteor"/>
+			</effect_group>
+			<drop event="Harvest" name="resourceEssenceFire" count="1" prob="1" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="1,2" prob="1" tag="essenceFireHarvest" />
+			<drop event="Harvest" name="resourceEssenceFire2" count="1,2" prob=".7" tag="essenceFire2Harvest"/>
+			<drop event="Harvest" name="resourceEssenceFire3" count="1,2" prob=".4" tag="essenceFire3Harvest"/>
+			<drop event="Harvest" name="resourceEssenceFire4" count="1,2" prob=".1" tag="essenceFire4Harvest"/>
+			<drop event="Harvest" name="resourceEssenceFire5" count="1,2" prob=".01" tag="essenceFire5Harvest"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="3,6"/>
 		</entity_class>
-		<entity_class name="sorcery_zombieBurnt_intro3" extends="sorcery_zombieBurnt_intro">
-			<property name="Tags" value="entity,zombie,walker, feral"/>
-			<property name="LootListOnDeath" value="203"/>
-			<property name="TimeStayAfterDeath" value="1200"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
+		<!-- Intro: Ice Fallen -->
+		<entity_class name="sorceryFallenIntroIce" extends="sorceryFallenIntroMaster">
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,sorceryFallen,sorceryFallenIce"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_fallenIce.unity3d?mat_fallenIce"/>
+			<property name="ReplaceMaterial1" value="#@modfolder:Resources/mat_awakenedEyeIce.unity3d?mat_awakenedEyeIce"/>
+			<property name="SoundSpawn" value="sorceryFallenIce_spawn"/>
+			<property name="LootListOnDeath" value="240"/>
+			<property name="Buffs" value="buffSpellImpactTrigger_Special_FireMeteor"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="800"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="100"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffInjuryBleeding,buffIllInfection0,buffInjuryStunned1"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSpellImpactTrigger_Special_FireMeteor"/>
+			</effect_group>
+			<drop event="Harvest" name="resourceEssenceIce" count="1" prob="1" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="1,2" prob="1" tag="essenceIceHarvest" />
+			<drop event="Harvest" name="resourceEssenceIce2" count="1,2" prob=".7" tag="essenceIce2Harvest"/>
+			<drop event="Harvest" name="resourceEssenceIce3" count="1,2" prob=".4" tag="essenceIce3Harvest"/>
+			<drop event="Harvest" name="resourceEssenceIce4" count="1,2" prob=".1" tag="essenceIce4Harvest"/>
+			<drop event="Harvest" name="resourceEssenceIce5" count="1,2" prob=".01" tag="essenceIce5Harvest"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="3,6"/>
 		</entity_class>
-		<entity_class name="sorcery_zombieBurnt_intro4" extends="sorcery_zombieBurnt_intro">
-			<property name="Tags" value="entity,zombie,walker, feral"/>
-			<property name="LootListOnDeath" value="204"/>
-			<property name="TimeStayAfterDeath" value="1200"/>
-			<property name="DeadBodyHitPoints" value="1000"/>
-		</entity_class> -->
+		<!-- Intro: Lightning Fallen -->
+		<entity_class name="sorceryFallenIntroLightning" extends="sorceryFallenIntroMaster">
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,sorceryFallen,sorceryFallenLightning"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_fallenLightning.unity3d?mat_fallenLightning"/>
+			<property name="ReplaceMaterial1" value="#@modfolder:Resources/mat_awakenedEyeLightning.unity3d?mat_awakenedEyeLightning"/>
+			<property name="SoundSpawn" value="sorceryFallenLightning_spawn"/>
+			<property name="LootListOnDeath" value="239"/>
+			<property name="Buffs" value="buffSpellImpactTrigger_Special_FireMeteor"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="800"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="100"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffInjuryBleeding,buffIllInfection0,buffInjuryStunned1"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSpellImpactTrigger_Special_FireMeteor"/>
+			</effect_group>
+			<drop event="Harvest" name="resourceEssenceLightning" count="1" prob="1" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="1,2" prob="1" tag="essenceLightning2Harvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning2" count="1,2" prob=".7" tag="essenceLightning2Harvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning3" count="1,2" prob=".4" tag="essenceLightning3Harvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning4" count="1,2" prob=".1" tag="essenceLightning4Harvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning5" count="1,2" prob=".01" tag="essenceLightning5Harvest"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="3,6"/>
+		</entity_class>
 
 		
 		
@@ -273,14 +319,14 @@
 			<property name="AITarget-4" value="SetNearestEntityAsTarget" param1="EntityPlayer,0"/> <!-- class,distance (checked left to right, 0 dist uses entity default) -->
 
 			<property name="SoundRandomTime" value="60.0"/> <!-- It will play the roam every 60/30 seconds -->
-			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 			<property name="SoundAlertTime" value="25.0"/> <!-- It will play the roam every 25/12.5 seconds-->
-			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
-			<property name="SoundAttack" value="Enemies/Feral_Zombie/zombieferalattack"/>
-			<property name="SoundHurt" value="Enemies/Feral_Zombie/zombieferalpain"/>
-			<property name="SoundDeath" value="Enemies/Feral_Zombie/zombieferaldeath"/>
-			<property name="SoundSense" value="Enemies/Feral_Zombie/zombieferalsense"/>
-			<property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/>
+			<property name="SoundRandom" value="sorceryFallen_alert"/>
+			<property name="SoundAlert" value="sorceryFallen_alert"/>
+			<property name="SoundAttack" value="sorceryFallen_attack"/>
+			<property name="SoundHurt" value="sorceryFallen_hurt"/>
+			<property name="SoundDeath" value="sorceryFallen_death"/>
+			<property name="SoundSense" value="sorceryFallen_sense"/>
+			<!-- <property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/> -->
 			<property name="SoundSleeperSense" value="sleepersense"/>
 			<property name="SoundSleeperBackToSleep" value="sleeperbacktosleep"/>
 
@@ -292,12 +338,12 @@
 			<property name="DismemberMultiplierLegs" value="0"/>
 			<property name="LegCrawlerThreshold" value="0"/>
 			<property name="LegCrippleThreshold" value="0"/>
-			<property name="KnockdownProneDamageThreshold" value="0.45"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="KnockdownProneDamageThreshold" value="0"/>
+			<property name="KnockdownProneStunDuration" value="0"/>
+			<property name="KnockdownProneRefillRate" value="1,1"/>
+			<property name="KnockdownKneelDamageThreshold" value="0"/>
+			<property name="KnockdownKneelStunDuration" value="0"/>
+			<property name="KnockdownKneelRefillRate" value="1,1"/>
 			<property name="LegsExplosionDamageMultiplier" value="0"/>
 			<property name="ArmsExplosionDamageMultiplier" value="0"/>
 			<property name="HeadExplosionDamageMultiplier" value="0"/>
@@ -325,7 +371,7 @@
 			<property name="SmellAlertThreshold" value="40"/> <!-- for awake zombies -->
 
 			<!-- Gameplay -->
-			<property name="MaxTurnSpeed" value="280"/>
+			<property name="MaxTurnSpeed" value="360"/>
 			<property name="MoveSpeed" value="0.2"/> <!-- just shambling around -->
 			<property name="MoveSpeedAggro" value="0.6, .9"/> <!-- chasing a target min/max (like day or night)-->
 			<property name="MoveSpeedPanic" value="2.0"/>			
@@ -341,7 +387,7 @@
 			
 			<!-- <property name="Buffs" value="zombieRadiatedBuff80"/> -->
 			<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
-			<property name="ExperienceGain" value="2500"/>
+			<property name="ExperienceGain" value="10666"/>
 			<property name="LootDropProb" value="0"/>
 
 			<property name="TimeStayAfterDeath" value="4"/>
@@ -375,14 +421,56 @@
 				<passive_effect name="HealthMax" operation="base_set" value="5000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+				<passive_effect name="HealthChangeOT" operation="base_set" value="10"/>
 				
-				<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="other" buff="buffAwakenedLightningCombat_player"/>
+				<!-- <triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="other" buff="buffAwakenedLightningCombat_player"/>
 				<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffAwakenedLightningCombat_enemy"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffAwakenedLightningCombat_player"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffAwakenedLightningCombat_enemy"/>
-				<!-- <triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="8.1"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/> -->
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffAwakenedLightningCombat_enemy"/> -->
 			</effect_group>
+			
+			<!-- CVAR: SCALING -->
+			<effect_group name="PLAYER TIER: Level">
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="sorceryPlayerTier" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="1">
+					<requirement name="PlayerLevel" target="other" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="2">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="20"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="40"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="3">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="40"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="4">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="60"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="80"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="5">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="80"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="100"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="6">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="100"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="150"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="7">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="150"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="200"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="8">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="200"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="250"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="9">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="250"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="300"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="10">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="300"/>
+				</triggered_effect>
+			</effect_group>			
 			
 			<property name="MapIcon" value="ui_game_symbol_electric_power"/>
 			
@@ -399,8 +487,9 @@
 		
 		<!-- AWAKENED LOOT CONTAINERS -->
 		<entity_class name="AwakenedLootContainerLightning">
-			<property name="Mesh" value="#@modfolder:Resources/chestAwakenedLightning.unity3d?chestAwakenedLightning"/>
-			<property name="SurfaceCategory" value="wood"/>
+			<property name="Mesh" value="#@modfolder:Resources/chestAwakenedOrbLightning.unity3d?chestAwakenedOrbLightning"/>
+			<!-- <property name="Mesh" value="#@modfolder:Resources/chestAwakenedLightning.unity3d?chestAwakenedLightning"/> -->
+			<!-- <property name="SurfaceCategory" value="wood"/> -->
 			<property name="ModelType" value="Custom"/>
 			<property name="Prefab" value="Backpack"/>
 			<property name="Class" value="EntityLootContainer"/>
@@ -409,13 +498,14 @@
 			<property name="TimeStayAfterDeath" value="300"/>
 			<property name="LootListOnDeath" value="251"/>
 			<property name="Faction" value="none"/>	
-			<property name="RotateToGround" value="true"/>
+			<!-- <property name="RotateToGround" value="true"/> -->
 			<property name="MapIcon" value="ui_game_symbol_electric_power"/>
 		</entity_class>
 		
 		
 		<!-- FALLEN LOOT CONTAINERS -->
-		<!-- BUG: Custom EntityLootContainer falls through world on servers -->
+		<!-- BUG: Custom EntityLootContainer falls through world on sdx modded servers -->
+		
 		<!-- <entity_class name="FallenLootContainerLightning">
 			<property name="Mesh" value="#@modfolder:Resources/chestFallenLightning.unity3d?chestFallenLightning"/>
 			<property name="SurfaceCategory" value="wood"/>
@@ -429,6 +519,8 @@
 			<property name="Faction" value="none"/>	
 			<property name="RotateToGround" value="true"/>
 		</entity_class> -->
+		
+		<!-- Fallen Loot: LIGHTNING -->
 		<entity_class name="FallenLootContainerLightning">
 			<!-- <property name="Mesh" value="LootContainers/zpackPrefab"/> -->
 			<property name="Mesh" value="#@modfolder:Resources/chestFallenOrbLightning.unity3d?chestFallenOrbLightning"/>
@@ -437,13 +529,40 @@
 			<property name="Class" value="EntityLootContainer"/>
 			<property name="Parent" value="Backpack"/>
 			<property name="IsEnemyEntity" value="false"/>
-			<property name="TimeStayAfterDeath" value="600"/>
+			<property name="TimeStayAfterDeath" value="300"/>
 			<property name="LootListOnDeath" value="245"/>
 			<property name="Faction" value="none"/>	
+			<!-- <property name="SoundSpawn" value="sorceryFallen_death"/> -->
+			<property name="MapIcon" value="ui_game_symbol_electric_power"/>			
 		</entity_class>		
 		
+		<!-- Fallen Loot: FIRE -->
+		<entity_class name="FallenLootContainerFire">
+			<property name="Mesh" value="#@modfolder:Resources/chestFallenOrbFire.unity3d?chestFallenOrbFire"/>
+			<property name="ModelType" value="Custom"/>
+			<property name="Prefab" value="Backpack"/>
+			<property name="Class" value="EntityLootContainer"/>
+			<property name="Parent" value="Backpack"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="TimeStayAfterDeath" value="300"/>
+			<property name="LootListOnDeath" value="247"/>
+			<property name="Faction" value="none"/>	
+			<property name="MapIcon" value="ui_game_symbol_fire"/>
+		</entity_class>		
 		
-		
+		<!-- Fallen Loot: ICE -->
+		<entity_class name="FallenLootContainerIce">
+			<property name="Mesh" value="#@modfolder:Resources/chestFallenOrbIce.unity3d?chestFallenOrbIce"/>
+			<property name="ModelType" value="Custom"/>
+			<property name="Prefab" value="Backpack"/>
+			<property name="Class" value="EntityLootContainer"/>
+			<property name="Parent" value="Backpack"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="TimeStayAfterDeath" value="300"/>
+			<property name="LootListOnDeath" value="246"/>
+			<property name="Faction" value="none"/>	
+			<property name="MapIcon" value="ui_game_symbol_cold"/>
+		</entity_class>		
 		
 		
 		
@@ -470,19 +589,20 @@
 			<property name="Parent" value="Enemies"/>			
 			<!-- <property name="WalkType" value="2"/> -->
 			<property name="WalkType" value="3"/>
-			<property name="Mass" value="210"/>	
-			<property name="Weight" value="70"/>
+			<property name="Mass" value="300"/>
+			<property name="Weight" value="100"/>
 			<property name="PhysicsBody" value="zombieStandard"/>
 			<property name="Faction" value="undead"/>
 			<property name="IsEnemyEntity" value="true"/>
 			<property name="RootMotion" value="true"/>
-			<property name="HasDeathAnim" value="true"/>
-			<property name="PushFactor" value="10"/>
+			<property name="HasDeathAnim" value="false"/>
+			<property name="PushFactor" value="50"/>
 
 			<property name="RightHandJointName" value="Jaw"/>
 			<property name="AIPathCostScale" value=".15, .4"/>
 			<property name="AITask-1" value="BreakBlock"/>
-			<property name="AITask-2" value="RangedAttackTarget" param1="1,0,4"/><!-- type,cooldown,duration -->
+			<!-- <property name="AITask-2" value="RangedAttackTarget" param1="1,0,4"/> --><!-- type,cooldown,duration -->
+			<property name="AITask-2" value="RangedAttackTarget" param1="1,1,5"/><!-- type,cooldown,duration -->
 			<property name="AITask-3" value="ApproachAndAttackTarget" param1="EntityPlayer"/>
 			<property name="AITask-4" value="ApproachSpot"/>
 			<property name="AITask-5" value="Look"/>
@@ -494,13 +614,19 @@
 			<property name="AITarget-4" value="SetNearestEntityAsTarget" param1="EntityPlayer,0"/> <!-- class,distance (checked left to right, 0 dist uses entity default) -->
 
 			<property name="SoundRandomTime" value="60.0"/> <!-- It will play the roam every 60/30 seconds -->
-			<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
+			<!-- <property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/> -->
+			<property name="SoundRandom" value="sorceryFallen_alert"/>
 			<property name="SoundAlertTime" value="25.0"/> <!-- It will play the roam every 25/12.5 seconds-->
-			<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
-	<property name="SoundAttack" value="Enemies/Base_Zombie_Female/zombiefemalescoutattack"/>
-	<property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalescoutpain"/>
-	<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemalescoutdeath"/>
-	<property name="SoundSense" value="Enemies/Base_Zombie_Female/zombiefemalescoutsense"/>
+			<!-- <property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/> -->
+	<!-- <property name="SoundAttack" value="Enemies/Base_Zombie_Female/zombiefemalescoutattack"/> -->
+	<property name="SoundAlert" value="sorceryFallen_alert"/>
+	<property name="SoundAttack" value="sorceryFallen_attack"/>
+	<!-- <property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalescoutpain"/> -->
+	<property name="SoundHurt" value="sorceryFallen_hurt"/>
+	<!-- <property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemalescoutdeath"/> -->
+	<property name="SoundDeath" value="sorceryFallen_death"/>
+	<property name="SoundSense" value="sorceryFallen_sense"/>
+	<!-- <property name="SoundSense" value="Enemies/Base_Zombie_Female/zombiefemalescoutsense"/> -->
 			<!-- <property name="SoundFootstepModifier" value="Enemies/Feral_Zombie/zombieferalfootstep"/> -->
 			<property name="SoundSleeperSense" value="sleepersense"/>
 			<property name="SoundSleeperBackToSleep" value="sleeperbacktosleep"/>
@@ -513,12 +639,12 @@
 			<property name="DismemberMultiplierLegs" value="0"/>
 			<property name="LegCrawlerThreshold" value="0"/>
 			<property name="LegCrippleThreshold" value="0"/>
-			<property name="KnockdownProneDamageThreshold" value="0.45"/>
-			<property name="KnockdownProneStunDuration" value="0.5,1"/>
-			<property name="KnockdownProneRefillRate" value="0.045,0.045"/>
-			<property name="KnockdownKneelDamageThreshold" value="0.38"/>
-			<property name="KnockdownKneelStunDuration" value="0.5,1"/>
-			<property name="KnockdownKneelRefillRate" value="0.045,0.045"/>
+			<property name="KnockdownProneDamageThreshold" value="0.1"/>
+			<property name="KnockdownProneStunDuration" value="0.1,0.3"/>
+			<property name="KnockdownProneRefillRate" value="0.1,0.1"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.1"/>
+			<property name="KnockdownKneelStunDuration" value="0.1,0.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.1,0.1"/>
 			<property name="LegsExplosionDamageMultiplier" value="0"/>
 			<property name="ArmsExplosionDamageMultiplier" value="0"/>
 			<property name="HeadExplosionDamageMultiplier" value="0"/>
@@ -526,7 +652,7 @@
 			<property name="PainResistPerHit" value=".6"/><!-- Fallen -->		
 
 			<!-- Stealth -->
-			<property name="MaxViewAngle" value="360"/>
+			<property name="MaxViewAngle" value="280"/>
 			<property name="SightRange" value="60"/> <!-- distance in m -->
 			<property name="SightLightThreshold" value="-2,150"/> <!-- how well lit you have to be for the zombie to see you at min,max range -->
 
@@ -569,7 +695,7 @@
 		</entity_class>		
 		
 		
-		<!-- FALLEN: LIGHTNING-->
+		<!-- FALLEN PRIEST: LIGHTNING -->
 		<entity_class name="sorceryFallenLightning" extends="sorceryFallenMaster">
 			<property name="Tags" value="entity,zombie,walker,feral,radiated,sorceryFallen,sorceryFallenLightning"/>
 			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_fallenLightning.unity3d?mat_fallenLightning"/>
@@ -592,17 +718,12 @@
 				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-				
-				<!-- <triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="other" buff="buffAwakenedLightningCombat_player"/>
-				<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" buff="buffAwakenedLightningCombat_enemy"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffAwakenedLightningCombat_player"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="buffAwakenedLightningCombat_enemy"/> -->
-				<!-- <triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="8.1"/>
-				<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/> -->
+				<passive_effect name="HealthChangeOT" operation="base_set" value="5"/> <!-- Boss regen, 1% -->
 			</effect_group>
 			
-			<!-- CVAR -->
+			<!-- CVAR: SCALING -->
 			<effect_group name="PLAYER TIER: Level">
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="sorceryPlayerTier" operation="set" value="1"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="1">
 					<requirement name="PlayerLevel" target="other" operation="LT" value="20"/>
 				</triggered_effect>
@@ -658,10 +779,176 @@
 			<property name="TimeStayAfterDeath" value="-1"/>
 			<property name="DeadBodyHitPoints" value="0"/>
 			<property name="PassThroughDamage" value="true"/>
-			
-			<property name="SizeScale" value="1.2"/>
+			<!-- <property name="SizeScale" value="1.2"/> -->
 		</entity_class>			
 		
+		
+		
+		
+		<!-- FALLEN PRIEST: FIRE -->
+		<entity_class name="sorceryFallenFire" extends="sorceryFallenMaster">
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,sorceryFallen,sorceryFallenFire"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_fallenFire.unity3d?mat_fallenFire"/>
+			<property name="ReplaceMaterial1" value="#@modfolder:Resources/mat_awakenedEyeFire.unity3d?mat_awakenedEyeFire"/>
+		
+			<property name="HandItem" value="meleeHandSorceryFallenFire"/>	
+			<property name="Buffs" value="buffFallenFire"/>
+			<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
+
+			<effect_group name="Base Effects">
+				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffInjuryBleeding"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffFallenFire"/>
+				
+				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
+				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+				<passive_effect name="HealthChangeOT" operation="base_set" value="5"/> <!-- Boss regen, 1% -->
+			</effect_group>
+			
+			<!-- CVAR: SCALING -->
+			<effect_group name="PLAYER TIER: Level">
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="sorceryPlayerTier" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="1">
+					<requirement name="PlayerLevel" target="other" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="2">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="20"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="40"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="3">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="40"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="4">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="60"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="80"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="5">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="80"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="100"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="6">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="100"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="150"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="7">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="150"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="200"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="8">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="200"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="250"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="9">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="250"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="300"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="10">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="300"/>
+				</triggered_effect>
+			</effect_group>			
+			
+			<property name="MapIcon" value="ui_game_symbol_fire"/>
+			
+			<drop event="Harvest" name="resourceEssenceFire" count="1,2" tag="essenceFireHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire2" count="1,2" prob=".7" tag="essenceFire2Harvest"/>
+			<drop event="Harvest" name="resourceEssenceFire3" count="1,2" prob=".4" tag="essenceFire3Harvest"/>
+			<drop event="Harvest" name="resourceEssenceFire4" count="1,2" prob=".1" tag="essenceFire4Harvest"/>
+			<drop event="Harvest" name="resourceEssenceFire5" count="1,2" prob=".01" tag="essenceFire5Harvest"/>
+			
+			<property name="LootListAlive" value="244"/>
+			<property name="LootDropProb" value="1"/>
+			<property name="LootDropEntityClass" value="FallenLootContainerFire"/>
+			
+			<property name="TimeStayAfterDeath" value="-1"/>
+			<property name="DeadBodyHitPoints" value="0"/>
+			<property name="PassThroughDamage" value="true"/>
+			<!-- <property name="SizeScale" value="1.2"/> -->
+		</entity_class>		
+		
+		
+		
+		
+		<!-- FALLEN PRIEST: ICE -->
+		<entity_class name="sorceryFallenIce" extends="sorceryFallenMaster">
+			<property name="Tags" value="entity,zombie,walker,feral,radiated,sorceryFallen,sorceryFallenIce"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_fallenIce.unity3d?mat_fallenIce"/>
+			<property name="ReplaceMaterial1" value="#@modfolder:Resources/mat_awakenedEyeIce.unity3d?mat_awakenedEyeIce"/>
+		
+			<property name="HandItem" value="meleeHandSorceryFallenIce"/>	
+			<property name="Buffs" value="buffFallenIce"/>
+			<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
+
+			<effect_group name="Base Effects">
+				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffInjuryBleeding"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffFallenIce"/>
+				
+				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
+				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+				<passive_effect name="HealthChangeOT" operation="base_set" value="5"/> <!-- Boss regen, 1% -->
+			</effect_group>
+			
+			<!-- CVAR: SCALING -->
+			<effect_group name="PLAYER TIER: Level">
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="sorceryPlayerTier" operation="set" value="1"/>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="1">
+					<requirement name="PlayerLevel" target="other" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="2">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="20"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="40"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="3">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="40"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="4">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="60"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="80"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="5">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="80"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="100"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="6">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="100"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="150"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="7">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="150"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="200"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="8">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="200"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="250"/>
+				</triggered_effect>
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="9">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="250"/>
+					<requirement name="PlayerLevel" target="other" operation="LT" value="300"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="10">
+					<requirement name="PlayerLevel" target="other" operation="GTE" value="300"/>
+				</triggered_effect>
+			</effect_group>			
+			
+			<property name="MapIcon" value="ui_game_symbol_cold"/>
+			
+			<drop event="Harvest" name="resourceEssenceIce" count="1,2" tag="essenceIceHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce2" count="1,2" prob=".7" tag="essenceIce2Harvest"/>
+			<drop event="Harvest" name="resourceEssenceIce3" count="1,2" prob=".4" tag="essenceIce3Harvest"/>
+			<drop event="Harvest" name="resourceEssenceIce4" count="1,2" prob=".1" tag="essenceIce4Harvest"/>
+			<drop event="Harvest" name="resourceEssenceIce5" count="1,2" prob=".01" tag="essenceIce5Harvest"/>
+			
+			<property name="LootListAlive" value="243"/>
+			<property name="LootDropProb" value="1"/>
+			<property name="LootDropEntityClass" value="FallenLootContainerIce"/>
+			
+			<property name="TimeStayAfterDeath" value="-1"/>
+			<property name="DeadBodyHitPoints" value="0"/>
+			<property name="PassThroughDamage" value="true"/>
+			<!-- <property name="SizeScale" value="1.14"/> -->
+		</entity_class>		
 		
 		
 	</append>

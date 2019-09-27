@@ -224,15 +224,31 @@ sorceryArcaneWheelDesc,blocks,Workstation,New,"The [ae92d5]Arcane Wheel[-] is re
 
 resourceRitualShardLightning,items,Item,New,"[5c009d]Lightning[-] Ritual Shard",,,,,
 resourceRitualShardLightningDesc,items,Item,New,"Four [5c009d]Lightning[-] Ritual Shards can be transmuted into a single [ae92d5]Ritual Stone[-] to perform Lightning [ae92d5]Summoning Rituals[-]. Ritualistic items are typically possessed by [ae92d5]The Fallen and Awakened[-].",,,,,
+resourceRitualShardFire,items,Item,New,"[970000]Fire[-] Ritual Shard",,,,,
+resourceRitualShardFireDesc,items,Item,New,"Four [970000]Fire[-] Ritual Shards can be transmuted into a single [ae92d5]Ritual Stone[-] to perform Fire [ae92d5]Summoning Rituals[-]. Ritualistic items are typically possessed by [ae92d5]The Fallen and Awakened[-].",,,,,
+resourceRitualShardIce,items,Item,New,"[02599c]Ice[-] Ritual Shard",,,,,
+resourceRitualShardIceDesc,items,Item,New,"Four [02599c]Ice[-] Ritual Shards can be transmuted into a single [ae92d5]Ritual Stone[-] to perform Ice [ae92d5]Summoning Rituals[-]. Ritualistic items are typically possessed by [ae92d5]The Fallen and Awakened[-].",,,,,
 
 resourceRitualStoneLightning,items,Item,New,"[5c009d]Lightning[-] Ritual Stone",,,,,
 resourceRitualStoneLightningDesc,items,Item,New,"[5c009d]Lightning[-] Ritual Stones are crucial to performing Lightning [ae92d5]Summoning Rituals[-]. Five Ritual Stones are used to form a pentagram in which [ae92d5]The Awakened[-] can be summoned.",,,,,
+resourceRitualStoneFire,items,Item,New,"[970000]Fire[-] Ritual Stone",,,,,
+resourceRitualStoneFireDesc,items,Item,New,"[970000]Fire[-] Ritual Stones are crucial to performing Fire [ae92d5]Summoning Rituals[-]. Five Ritual Stones are used to form a pentagram in which [ae92d5]The Awakened[-] can be summoned.",,,,,
+resourceRitualStoneIce,items,Item,New,"[02599c]Ice[-] Ritual Stone",,,,,
+resourceRitualStoneIceDesc,items,Item,New,"[02599c]Ice[-] Ritual Stones are crucial to performing Ice [ae92d5]Summoning Rituals[-]. Five Ritual Stones are used to form a pentagram in which [ae92d5]The Awakened[-] can be summoned.",,,,,
 
 resourceRitualBloodFallenLightning,items,Item,New,"[5c009d]Fallen[-] Blood",,,,,
 resourceRitualBloodFallenLightningDesc,items,Item,New,"[5c009d]Fallen[-] Blood is a crucial ingredient in performing Lightning [ae92d5]Summoning Rituals[-]. This Blood is typically extracted from [ae92d5]Fallen Sorcerers[-] during combat, prior to vanquishing them.",,,,,
+resourceRitualBloodFallenFire,items,Item,New,"[970000]Fallen[-] Blood",,,,,
+resourceRitualBloodFallenFireDesc,items,Item,New,"[970000]Fallen[-] Blood is a crucial ingredient in performing Fire [ae92d5]Summoning Rituals[-]. This Blood is typically extracted from [ae92d5]Fallen Sorcerers[-] during combat, prior to vanquishing them.",,,,,
+resourceRitualBloodFallenIce,items,Item,New,"[02599c]Fallen[-] Blood",,,,,
+resourceRitualBloodFallenIceDesc,items,Item,New,"[02599c]Fallen[-] Blood is a crucial ingredient in performing Ice [ae92d5]Summoning Rituals[-]. This Blood is typically extracted from [ae92d5]Fallen Sorcerers[-] during combat, prior to vanquishing them.",,,,,
 
 resourceRitualBloodAwakenedLightning,items,Item,New,"[5c009d]Awakened[-] Blood",,,,,
 resourceRitualBloodAwakenedLightningDesc,items,Item,New,"[5c009d]Awakened[-] Blood is a crucial ingredient in performing Boss Level Lightning [ae92d5]Summoning Rituals[-]. This Blood is typically extracted from an [ae92d5]Awakened Incarnate[-] during combat, prior to vanquishing them.",,,,,
+resourceRitualBloodAwakenedFire,items,Item,New,"[970000]Awakened[-] Blood",,,,,
+resourceRitualBloodAwakenedFireDesc,items,Item,New,"[970000]Awakened[-] Blood is a crucial ingredient in performing Boss Level Fire [ae92d5]Summoning Rituals[-]. This Blood is typically extracted from an [ae92d5]Awakened Incarnate[-] during combat, prior to vanquishing them.",,,,,
+resourceRitualBloodAwakenedIce,items,Item,New,"[02599c]Awakened[-] Blood",,,,,
+resourceRitualBloodAwakenedIceDesc,items,Item,New,"[02599c]Awakened[-] Blood is a crucial ingredient in performing Boss Level Ice [ae92d5]Summoning Rituals[-]. This Blood is typically extracted from an [ae92d5]Awakened Incarnate[-] during combat, prior to vanquishing them.",,,,,
 
 cntSorceryCrateIntro,blocks,Container,New,"[ae92d5]Altin's Chest[-]",,,,,
 cntLootSorceryCrateIntro,blocks,Container,New,"[ae92d5]Altin's Chest[-]",,,,,
@@ -350,15 +366,15 @@ skillSorceryLightningCraftingDesc,progression,Perk,New,"Specialize in spell craf
 skillSorceryLightningCraftingName,progression,Perk,New,"[5c009d]LIGHTNING SORCERY[-]",,,,,
  
 skillSorcerySupportDesc,progression,Perk,New,"You can help to ensure the ongoing evolution and development of Sorcery by becoming an invaluable Patron! In exchange for your patronage, Sorcery will continue to evolve at a steady pace with frequent milestone updates. Additionally, you will gain [9b874d]Early Access[-] to milestone updates and be granted Sorcery-wide access, title, rank and reward based on your level of support. \n\nSee the Patron Reward Tiers for more exciting details: \n[U]www.SorceryMod.com[/U]",,,,,
-skillSorcerySupportName,progression,Perk,New,"[9b874d]SORCERY TREASURY[-]",,,,,
+skillSorcerySupportName,progression,Perk,New,"[9b874d]SUPPORTER TREASURY[-]",,,,,
  
 perkSorcerySupportDesc,progression,Perk,New,"You can help to ensure the ongoing evolution and development of Sorcery by becoming an invaluable Patron! In exchange for your patronage, Sorcery will continue to evolve at a steady pace with frequent milestone updates. Additionally, you will gain [9b874d]Early Access[-] to milestone updates and be granted Sorcery-wide access, title, rank and reward based on your level of support. \n\nSee the Patron Reward Tiers for more exciting details: \n[U]www.SorceryMod.com[/U]",,,,,
 perkSorcerySupportName,progression,Perk,New,"[9b874d]TREASURY REWARD TIERS[-]",,,,,
 perkSorcerySupportRank1Desc,progression,Perk,New,"Patrons of Sorcery are given early access, top priority, respect and other various perks for making the ongoing development and evolution of Sorcery possible!",,,,,
-perkSorcerySupportRank2Desc,progression,Perk,New,"[056900]NOBLE[-]: Noble Rank, Title, Access, x2 Voting Weight, Priority, Insight, Direction and [36dc2a]1 Week Early Access[-].",,,,,
-perkSorcerySupportRank3Desc,progression,Perk,New,"[0036b8]LORD[-]: Lord Rank, Title, Access, x3 Voting Weight, Priority, Insight, Direction, Name Immortalization, Unique Rune Design and [36dc2a]2 Week Early Access[-].",,,,,
-perkSorcerySupportRank4Desc,progression,Perk,New,"[6800ff]ROYALTY[-]: Royal Rank, Title, Crown, Access, x4 Voting Weight, Priority, Insight, Direction, Debrief, Name Immortalization, Unique Rune Design, Unique Spell Design, Unique Armor Design and [36dc2a]3 Week Earliest Access[-].",,,,,
-perkSorcerySupportRank5Desc,progression,Perk,New,"[c80000]HIGH COUNCIL[-]: High Council Rank, Title, Access, Voting, Priority, Insight, Direction, Debrief, Name Immortalization, Unique Rune Designs, Unique Spell Designs, Unique Armor Designs, Development Access, Official Lead Team Member, Choice of Reign and [36dc2a]1 Month Development Access[-].",,,,,
+perkSorcerySupportRank2Desc,progression,Perk,New,"[056900]EMISSARY[-]: Unlock [36dc2a]1[-] Week Early Access, [36dc2a]x2[-] Voting Weight, Lucky, Traveler",,,,,
+perkSorcerySupportRank3Desc,progression,Perk,New,"[0036b8]LORD SUPPORTER[-]: Unlock [36dc2a]2[-] Week Early Access, [36dc2a]x3[-] Voting Weight, Lucky [36dc2a]II[-], Traveler [36dc2a]II[-], Summon [970000]Fallen[-] Sorcerers, Summon [02599c]Fallen[-] Sorcerers, [ae92d5]Supporter Recipes[-]",,,,,
+perkSorcerySupportRank4Desc,progression,Perk,New,"[6800ff]ROYAL SUPPORTER[-]: Unlock [36dc2a]3[-] Week Early Access, [36dc2a]x4[-] Voting Weight, Lucky [36dc2a]III[-], Traveler [36dc2a]III[-], Summon The [ae92d5]Fallen Trio[-], Summon [970000]Fallen[-] Sorcerers, Summon [02599c]Fallen[-] Sorcerers, [ae92d5]Supporter Recipes[-]",,,,,
+perkSorcerySupportRank5Desc,progression,Perk,New,"[c80000]HIGH COUNCIL[-]: Unlock [36dc2a]3-4[-] Week Early Access, [36dc2a]x5[-] Voting Weight, Lucky [36dc2a]IV[-], Traveler [36dc2a]IV[-], Summon The [ae92d5]Fallen Trio[-], Summon [970000]Fallen[-] Sorcerers, Summon [02599c]Fallen[-] Sorcerers, [ae92d5]Supporter Recipes[-]",,,,,
  
 perkSorcerySpellcastMasteryDesc,progression,Perk,New,"Master Spellcast to invoke and cast your spells with maximum devastation and effect. Learning Spellcast Mastery teaches you how to unlock the deepest secrets to Spellcast crafting and alteration, granting you transcendent spellcasting abilities.\n\nSPELLCAST: Hold [36dc2a]PRIMARY[-] Action Button\nCHANNEL: Hold [407fff]SECONDARY[-] Action Button",,,,,
 perkSorcerySpellcastMasteryName,progression,Perk,New,"Spellcast Mastery",,,,,
@@ -596,9 +612,19 @@ qs_SorceryMastery_LightningMasteryDesc,items,"Sorcery Quest",New,"Knowing of the
 
 cs_awakenedLightning,items,"Sorcery Quest",New,"Summon [5c009d]Awakened[-] Incarnate",,,,,
 cs_awakenedLightningDesc,items,"Sorcery Quest",New,"Perform this Summoning Ritual to call forth an ancient [5c009d]Lightning[-] Awakened Incarnate. The most evolved of Awakened can be... catastrophically deadly and should be approached with utmost caution and preparedness. Confronting an Awakened unversed in The Arcane will seal your mortal fate.\n\nSorcerer Ivanos",,,,,
+cs_awakenedFire,items,"Sorcery Quest",New,"Summon [970000]Awakened[-] Incarnate",,,,,
+cs_awakenedFireDesc,items,"Sorcery Quest",New,"Perform this Summoning Ritual to call forth an ancient [970000]Fire[-] Awakened Incarnate. The most evolved of Awakened can be... catastrophically deadly and should be approached with utmost caution and preparedness. Confronting an Awakened unversed in The Arcane will seal your mortal fate.\n\n[36dc2a]SUPPORTER ITEM[-]: Craftable by Lord Supporter+",,,,,
+cs_awakenedIce,items,"Sorcery Quest",New,"Summon [02599c]Awakened[-] Incarnate",,,,,
+cs_awakenedIceDesc,items,"Sorcery Quest",New,"Perform this Summoning Ritual to call forth an ancient [02599c]Ice[-] Awakened Incarnate. The most evolved of Awakened can be... catastrophically deadly and should be approached with utmost caution and preparedness. Confronting an Awakened unversed in The Arcane will seal your mortal fate.\n\n[36dc2a]SUPPORTER ITEM[-]: Craftable by Lord Supporter+",,,,,
 
-cs_fallenLightning,items,"Sorcery Quest",New,"Summon [5c009d]Fallen[-] Sorcerer",,,,,
-cs_fallenLightningDesc,items,"Sorcery Quest",New,"Perform this Summoning Ritual to call forth a Fallen [5c009d]Lightning[-] Sorcerer. Summoning a [5c009d]Fallen[-] Sorcerer is a dangerous feat that should never be attempted unprepared. Consumed by power and full of rage, [ae92d5]The Fallen[-] will stop at nothing to achieve total ascendancy.\n\nSorcerer Ivanos",,,,,
+cs_fallenLightning,items,"Sorcery Quest",New,"Summon [5c009d]Fallen[-] Sorcerers",,,,,
+cs_fallenLightningDesc,items,"Sorcery Quest",New,"Perform this Summoning Ritual to call forth Fallen [5c009d]Lightning[-] Sorcerers. Summoning a [5c009d]Fallen[-] Sorcerer is a dangerous feat that should never be attempted unprepared. Consumed by power and full of rage, [ae92d5]The Fallen[-] will stop at nothing to achieve total ascendancy.\n\nSorcerer Ivanos",,,,,
+cs_fallenFire,items,"Sorcery Quest",New,"Summon [970000]Fallen[-] Sorcerers",,,,,
+cs_fallenFireDesc,items,"Sorcery Quest",New,"Perform this Summoning Ritual to call forth Fallen [970000]Fire[-] Sorcerers. Summoning a [970000]Fallen[-] Sorcerer is a dangerous feat that should never be attempted unprepared. Consumed by power and full of rage, [ae92d5]The Fallen[-] will stop at nothing to achieve total ascendancy.\n\n[36dc2a]SUPPORTER ITEM[-]: Craftable by Lord Supporter+",,,,,
+cs_fallenIce,items,"Sorcery Quest",New,"Summon [02599c]Fallen[-] Sorcerers",,,,,
+cs_fallenIceDesc,items,"Sorcery Quest",New,"Perform this Summoning Ritual to call forth Fallen [02599c]Ice[-] Sorcerers. Summoning a [02599c]Fallen[-] Sorcerer is a dangerous feat that should never be attempted unprepared. Consumed by power and full of rage, [ae92d5]The Fallen[-] will stop at nothing to achieve total ascendancy.\n\n[36dc2a]SUPPORTER ITEM[-]: Craftable by Lord Supporter+",,,,,
+cs_fallenTrio,items,"Sorcery Quest",New,"Summon The [ae92d5]Fallen Trio[-]",,,,,
+cs_fallenTrioDesc,items,"Sorcery Quest",New,"Perform this Summoning Ritual to call forth The [ae92d5]Fallen Trio[-]. Summoning forth The [ae92d5]Fallen Trio[-] is an extremely dangerous feat that should never be attempted unprepared. Consumed by power and full of rage, these [ae92d5]Fallen Sisters[-] will stop at nothing to achieve total ascendancy.\n\n[36dc2a]SUPPORTER ITEM[-]: Craftable by Royal Supporter+",,,,,
 
 qcs_SorcererInitiationFireDesc,items,Fire Sorcery Quest,KgNone,"Sorcery Trial of Fire Quest.",,,,,
 qcs_SorcererInitiationFire,items,Sorcery Quest,KgNone,"Sorcery, Trial of Fire",,,,,
@@ -779,7 +805,7 @@ runeGeneral_spelllight2Desc,item_modifiers,mod,New,"Invoke the Spell Light Runew
 runeGeneral_spelllight3Desc,item_modifiers,mod,New,"Invoke the Spell Light Runeword to Illuminate your surroundings by means of Spell Light... let the mundane keep their Torches! Only [ae92d5]Tools[-] can sustain the power of this Rune.\n\n[6600cc]Spell Light[-]: Illuminate your surroundings within a very large range.\n[ae92d5]Stamina Burden[-]: 20% (reduced by Rune Mastery).",,,,,
 
 runeUnique_altinstouch,item_modifiers,mod,New,"[9b874d]RUNE[-]: Altin's Touch",,,,, 
-runeUnique_altinstouchDesc,item_modifiers,mod,New,"Forged with the magical might of Altin himself, this Runeword possess the very power of elements. Imbued with Altin's will, all [ae92d5]Weapons[-] can sustain the power of this Rune.\n\n[9b874d]Altin's Touch[-]: Chance to cast a [970000]Fire[-], [02599c]Ice[-] or [5c009d]Lightning[-] Spell on hit.\n[ae92d5]Spirit Burden[-]: 20% (reduced by Rune Mastery)",,,,,
+runeUnique_altinstouchDesc,item_modifiers,mod,New,"Forged with the magical might of Altin himself, this Runeword possess the very power of elements. Imbued with Altin's will, all [ae92d5]Weapons[-] can sustain the power of this Rune.\n\n[9b874d]Altin's Touch[-]: Chance to cast a [970000]Fire[-], [02599c]Ice[-] or [5c009d]Lightning[-] Spell on hit.\n[ae92d5]Spirit Burden[-]: 20% (reduced by Rune Mastery)\n\n[36dc2a]SUPPORTER ITEM[-]: Craftable by Lord Supporter+",,,,,
 
 runeUnique_kormaispick,item_modifiers,mod,New,"[9b874d]RUNE[-]: Kormai's Pick",,,,, 
 runeUnique_kormaispickDesc,item_modifiers,mod,New,"Brimming with Kormai's will, this Runeword will imbue a [ae92d5]Pickaxe[-] with Earth Digging properties.\n\n[9b874d]Kormai's Pick[-]: Imbue a Pickaxe with Earth Digging\n[970000]Fire Mastery[-]: +10% Effectiveness per Level\n[02599c]Ice Mastery[-]: +20% Durability per Level\n[5c009d]Lightning Mastery[-]: +5% Speed per Level\n[ae92d5]Spirit Burden[-]: 40% (reduced by Rune Mastery)",,,,,
@@ -901,8 +927,28 @@ buffSorceryIntroName,buffs,Buff,New,"Blessed by The Elders",,,,,
 buffSorceryIntroTooltip,buffs,Buff,New,"[ae92d5]Essence[-] Harvesting is greatly increased",,,,,
 buffSorceryIntroDesc,buffs,Buff,New,"Chosen by The Elders to perform impossible feats, you've received their blessing to aid your Ascension. Make haste to prove yourself worthy, as this blessing won't last forever:\n[ae92d5]ESSENCE[-] Harvesting is greatly increased for a limited time.\n\n[970000]Fire[-] Essence: [U]Oak and Burnt Trees, Boulders, Coal and Oil[/U]\n[02599c]Ice[-] Essence: [U]Winter Trees, Boulders and Potassium Nitrate[/U]\n[5c009d]Lightning[-] Essence: [U]Pine Trees, Boulders and Lead[/U]\n\nYou must consume Altin's [ae92d5]Elixir[-] of Knowledge... only then will you sense and discover [ae92d5]Essence[-].\n\nGood luck, young Sorcerer... you're gonna need it to survive what's to come.  -Unknown",,,,,
 
-sorceryPerkSupportBronze,items,Book,New,"[9b874d]SORCERY KEY[-]: Noble Treasury Access",,,,,
-sorceryPerkSupportBronzeDesc,items,Book,New,"[056900]NOBLE[-]: You are a worthy Noble supporter and wish to claim that which is rightfully yours!\n\n[9b874d]BECOME A SUPPORTER[-]: [U]www.SorceryMod.com[/U]\nPatrons of Sorcery make ongoing development possible... thank you for your support!",,,,,
+buffSorceryCombatRingName,buffs,Buff,New,"Return to Combat",,,,,
+buffSorceryCombatRingTooltip,buffs,Buff,New,"Return to The Combat Ring",,,,,
+buffSorceryCombatRingDesc,buffs,Buff,New,"You left combat during a Boss Encounter and must return to the Combat Ring!\n\nYou'll continue taking fatal damage until returning to the Combat Ring.",,,,,
+
+buffEntityIce_playerName,buffs,Buff,New,"[02599c]Ice[-] Touched",,,,,
+buffEntityIce_playerDesc,buffs,Buff,New,"A recent encounter has left you Ice Touched, imbuing you with supernatural power for a limited time:\n\n[02599c]TOUCHED[-]: Attackers may become Touched\n[02599c]CHILLED[-]: Attackers are Iceburned\n[02599c]HARVEST[-]: +100% Ice Essence\n[ae92d5]HASTE[-]: +Attack, Harvest and Movement Speed\n[ae92d5]REGEN[-]: +Health, Stamina and Spirit Regen\n[ae92d5]FORTUNE[-]: +Loot Bonus and increased Luck",,,,,
+buffEntityLightning_playerName,buffs,Buff,New,"[5c009d]Lightning[-] Touched",,,,,
+buffEntityLightning_playerDesc,buffs,Buff,New,"A recent encounter has left you Lightning Touched, imbuing you with supernatural power for a limited time:\n\n[5c009d]TOUCHED[-]: Attackers may become Touched\n[5c009d]ELECTRIFIED[-]: Attackers are Shockburned\n[5c009d]HARVEST[-]: +100% Lightning Essence\n[ae92d5]HASTE[-]: +Attack, Harvest and Movement Speed\n[ae92d5]REGEN[-]: +Health, Stamina and Spirit Regen\n[ae92d5]FORTUNE[-]: +Loot Bonus and increased Luck",,,,,
+buffEntityFire_playerName,buffs,Buff,New,"[970000]Fire[-] Touched",,,,,
+buffEntityFire_playerDesc,buffs,Buff,New,"A recent encounter has left you Fire Touched, imbuing you with supernatural power for a limited time:\n\n[970000]TOUCHED[-]: Attackers may become Touched\n[970000]BLAZING[-]: Attackers are Incinerated\n[970000]HARVEST[-]: +100% Fire Essence\n[ae92d5]HASTE[-]: +Attack, Harvest and Movement Speed\n[ae92d5]REGEN[-]: +Health, Stamina and Spirit Regen\n[ae92d5]FORTUNE[-]: +Loot Bonus and increased Luck",,,,,
+
+buffSorcerySupportPerkNobleName,buffs,Buff,New,"[056900]Emissary[-] Supporter",,,,,
+buffSorcerySupportPerkNobleDesc,buffs,Buff,New,"You are blessed with the following perks for ensuring ongoing development:\n\n[ae92d5]EARLY ACCESS[-]: 1 Week Early Access\n[ae92d5]LUCKY[-]: +Loot, Treasure, Bartering\n[ae92d5]TRAVELER[-]: +Walking Speed\n[ae92d5]UNLOCK[-]: [9b874d]RUNE[-] Altin's Touch\n\nThe [9b874d]SUPPORTER TREASURY[-] perk contains upgrades to unlock more and further your support.",,,,,
+buffSorcerySupportPerkLordName,buffs,Buff,New,"[0036b8]Lord[-] Supporter",,,,,
+buffSorcerySupportPerkLordDesc,buffs,Buff,New,"You are blessed with the following perks for ensuring ongoing development:\n\n[ae92d5]EARLY ACCESS II[-]: 2 Weeks Early Access\n[ae92d5]LUCKY II[-]: ++Loot, Treasure, Bartering\n[ae92d5]TRAVELER II[-]: ++Walking Speed\n[ae92d5]UNLOCK II[-]: Summon [970000]Fallen[-] Sorcerers, Summon [02599c]Fallen[-] Sorcerers, Spell Light [407fff]II[-]+[e60000]III[-], [9b874d]Altin's Touch[-]\n\nThe [9b874d]SUPPORTER TREASURY[-] perk contains upgrades to unlock more and further your support.",,,,,
+buffSorcerySupportPerkRoyalName,buffs,Buff,New,"[6800ff]Royal[-] Supporter",,,,,
+buffSorcerySupportPerkRoyalDesc,buffs,Buff,New,"You are blessed with the following perks for ensuring ongoing development:\n\n[ae92d5]EARLY ACCESS III[-]: 3 Weeks Early Access\n[ae92d5]LUCKY III[-]: +++Loot, Treasure, Bartering\n[ae92d5]TRAVELER III[-]: +++Walking Speed\n[ae92d5]UNLOCK III[-]: Summon The [ae92d5]Fallen Trio[-], Summon [970000]Fallen[-] Sorcerers, Summon [02599c]Fallen[-] Sorcerers, Spell Light [407fff]II[-]+[e60000]III[-], [9b874d]Altin's Touch[-]\n\nThank you very much for ensuring ongoing development with your generous support!",,,,,
+buffSorcerySupportPerkCouncilName,buffs,Buff,New,"[e60000]Council[-] Supporter",,,,,
+buffSorcerySupportPerkCouncilDesc,buffs,Buff,New,"You are blessed with the following perks for ensuring ongoing development:\n\n[ae92d5]EARLY ACCESS IV[-]: 3-4 Weeks Early\n[ae92d5]LUCKY IV[-]: ++++Loot, Treasure, Bartering\n[ae92d5]TRAVELER IV[-]: ++++Walking Speed\n[ae92d5]UNLOCK IV[-]: Summon The [ae92d5]Fallen Trio[-], Summon [970000]Fallen[-] Sorcerers, Summon [02599c]Fallen[-] Sorcerers, Spell Light [407fff]II[-]+[e60000]III[-], [9b874d]Altin's Touch[-]\n\nThank you very much for ensuring ongoing development at the highest level!",,,,,
+
+sorceryPerkSupportBronze,items,Book,New,"[9b874d]SORCERY KEY[-]: Emissary Treasury Access",,,,,
+sorceryPerkSupportBronzeDesc,items,Book,New,"[056900]NOBLE[-]: You are a worthy Emissary and wish to claim that which is rightfully yours!\n\n[9b874d]BECOME A SUPPORTER[-]: [U]www.SorceryMod.com[/U]\nPatrons of Sorcery make ongoing development possible... thank you for your support!",,,,,
 sorceryPerkSupportSilver,items,Book,New,"[9b874d]SORCERY KEY[-]: Lord Treasury Access",,,,,
 sorceryPerkSupportSilverDesc,items,Book,New,"[0036b8]LORD[-]: You are a worthy Lord supporter and wish to claim that which is rightfully yours!\n\n[9b874d]BECOME A SUPPORTER[-]: [U]www.SorceryMod.com[/U]\nPatrons of Sorcery make ongoing development possible... thank you for your support!",,,,,
 sorceryPerkSupportGold,items,Book,New,"[9b874d]SORCERY KEY[-]: Royal Treasury Access",,,,,
@@ -910,19 +956,28 @@ sorceryPerkSupportGoldDesc,items,Book,New,"[6800ff]ROYAL[-]: You are a worthy Ro
 
 
 
- 
+
 sorcery_zombieBurnt_intro,entityclasses,Entity,New,"Fallen Sorcerer",,,,,
-sorceryAwakenedMaster,entityclasses,Entity,New,"Sorcery Template DNR",,,,,
-sorceryFallenMaster,entityclasses,Entity,New,"Sorcery Template DNR",,,,,
+sorceryFallenIntroFire,entityclasses,Entity,New,"[970000]Fallen[-] Sorcerer",,,,,
+sorceryFallenIntroIce,entityclasses,Entity,New,"[02599c]Fallen[-] Sorcerer",,,,,
+sorceryFallenIntroLightning,entityclasses,Entity,New,"[5c009d]Fallen[-] Sorcerer",,,,,
+
+sorceryFallenIntroMaster,entityclasses,Entity,New,"Template DNR Intro",,,,,
+sorceryAwakenedMaster,entityclasses,Entity,New,"Template DNR Awakened",,,,,
+sorceryFallenMaster,entityclasses,Entity,New,"Template DNR Fallen",,,,,
 
 sorceryAwakenedFire,entityclasses,Entity,New,"[970000]Awakened[-] Altin Incarnate",,,,,
 sorceryAwakenedIce,entityclasses,Entity,New,"[02599c]Awakened[-] Ika Incarnate",,,,,
 sorceryAwakenedLightning,entityclasses,Entity,New,"[5c009d]Awakened[-] Ivanos Incarnate",,,,,
 
 sorceryFallenLightning,entityclasses,Entity,New,"[5c009d]Fallen[-] Sorcerer Priest",,,,,
+sorceryFallenFire,entityclasses,Entity,New,"[970000]Fallen[-] Sorcerer Priest",,,,,
+sorceryFallenIce,entityclasses,Entity,New,"[02599c]Fallen[-] Sorcerer Priest",,,,,
 
-AwakenedLootContainerLightning,entityclasses,Entity,New,"[5c009d]Awakened[-] Incarnate Bounty",,,,,
-FallenLootContainerLightning,entityclasses,Entity,New,"[5c009d]Fallen[-] Sorcerer Remains",,,,,
+AwakenedLootContainerLightning,entityclasses,Entity,New,"[5c009d]Awakened[-] Incarnate Soul",,,,,
+FallenLootContainerLightning,entityclasses,Entity,New,"[5c009d]Fallen[-] Sorcerer Soul",,,,,
+FallenLootContainerFire,entityclasses,Entity,New,"[970000]Fallen[-] Sorcerer Soul",,,,,
+FallenLootContainerIce,entityclasses,Entity,New,"[02599c]Fallen[-] Sorcerer Soul",,,,,
 
 
 SORCERY_END,,LOCALIZATION,,END,,,,,

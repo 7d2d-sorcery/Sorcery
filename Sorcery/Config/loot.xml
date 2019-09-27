@@ -46,8 +46,6 @@
 			<item name="runeSpellcast_firestorm"/>
 			<item name="runeSpellcast_deepfreeze"/>
 			<item name="runeSpellcast_lightningstrike"/>
-			<item name="runeArmor_firenova"/>
-			<item name="runeArmor_firenova"/>
 			<item name="runeGeneral_spelllight"/>
 			<item name="runeGeneral_lockshatter" prob=".2"/>
 		</lootgroup>
@@ -93,6 +91,96 @@
 			<item name="runeUnique_nekosrage" prob=".05"/>
 			<item name="runeUnique_fistsofivanos" prob=".05"/>
 		</lootgroup>		
+		
+		<!-- FIRE RUNES -->
+		<lootgroup name="sorceryModFireT1" count="1">
+			<item name="runeArmor_fireskin"/>
+			<item name="runeGeneral_fireessenceboon"/>
+			<item name="runeArmor_firenova"/>
+			<item name="runeSpellcast_firestorm"/>
+		</lootgroup>
+		<lootgroup name="sorceryModFireT2" count="1">
+			<item name="runeArmor_fireskin2"/>
+			<item name="runeGeneral_fireessenceboon2"/>
+			<item name="runeArmor_firenova2"/>
+			<item name="runeSpellcast_firestorm2"/>
+		</lootgroup>	
+		<lootgroup name="sorceryModFireT3" count="1">
+			<item name="runeArmor_fireskin3"/>
+			<item name="runeGeneral_fireessenceboon3"/>
+			<item name="runeArmor_firenova3"/>
+			<item name="runeSpellcast_firestorm3"/>
+		</lootgroup>
+		<lootgroup name="sorceryModFireUnique" count="1">
+			<item name="runeTransmute_essencefire"/>
+			<item name="runeUnique_nekosrage"/>
+			<item name="runeUnique_altinsblessing"/>
+		</lootgroup>		
+		
+		<!-- ICE RUNES -->
+		<lootgroup name="sorceryModIceT1" count="1">
+			<item name="runeArmor_iceskin"/>
+			<item name="runeGeneral_iceessenceboon"/>
+			<item name="runeArmor_icenova"/>
+			<item name="runeSpellcast_deepfreeze"/>
+		</lootgroup>
+		<lootgroup name="sorceryModIceT2" count="1">
+			<item name="runeArmor_iceskin2"/>
+			<item name="runeGeneral_iceessenceboon2"/>
+			<item name="runeArmor_icenova2"/>
+			<item name="runeSpellcast_deepfreeze2"/>
+		</lootgroup>	
+		<lootgroup name="sorceryModIceT3" count="1">
+			<item name="runeArmor_iceskin3"/>
+			<item name="runeGeneral_iceessenceboon3"/>
+			<item name="runeArmor_icenova3"/>
+			<item name="runeSpellcast_deepfreeze3"/>
+		</lootgroup>
+		<lootgroup name="sorceryModIceUnique" count="1">
+			<item name="runeTransmute_essenceice"/>
+			<item name="runeUnique_avioseegress"/>
+		</lootgroup>		
+		
+		<!-- LIGHTNING RUNES -->
+		<lootgroup name="sorceryModLightningT1" count="1">
+			<item name="runeGeneral_lightningessenceboon"/>
+			<item name="runeSpellcast_lightningstrike"/>
+			<item name="runeGeneral_lockshatter"/>
+		</lootgroup>
+		<lootgroup name="sorceryModLightningT2" count="1">
+			<item name="runeGeneral_lightningessenceboon2"/>
+			<item name="runeSpellcast_lightningstrike2"/>
+			<item name="runeGeneral_lockshatter2"/>
+		</lootgroup>	
+		<lootgroup name="sorceryModLightningT3" count="1">
+			<item name="runeGeneral_lightningessenceboon3"/>
+			<item name="runeSpellcast_lightningstrike3"/>
+			<item name="runeGeneral_lockshatter3"/>
+		</lootgroup>
+		<lootgroup name="sorceryModLightningUnique" count="1">
+			<item name="runeTransmute_essencelightning"/>
+			<item name="runeUnique_kcoolzhaste"/>
+			<item name="runeUnique_fistsofivanos"/>
+		</lootgroup>		
+		
+		<!-- OMNI RUNES -->
+		<lootgroup name="sorceryModOmniT1" count="1">
+			<item name="runeGeneral_spiritboon"/>
+			<item name="runeGeneral_spelllight"/>
+		</lootgroup>
+		<lootgroup name="sorceryModOmniT2" count="1">
+			<item name="runeGeneral_spiritboon2"/>
+			<item name="runeGeneral_spelllight2"/>
+		</lootgroup>	
+		<lootgroup name="sorceryModOmniT3" count="1">
+			<item name="runeGeneral_spiritboon3"/>
+			<item name="runeGeneral_spelllight3"/>
+		</lootgroup>
+		<lootgroup name="sorceryModOmniUnique" count="1">
+			<item name="runeUnique_ottosenlightenment"/>
+			<item name="runeUnique_kormaispick"/>
+		</lootgroup>
+		
 		
 		<!-- SORCERY RUNES: INDIVIDUAL -->
 		<lootgroup name="sorceryModFireSkin" count="1"> 
@@ -290,7 +378,6 @@
 			<item name="sorceryPotion_essence2"/>
 		</lootgroup>
 		<lootgroup name="sorceryPotionT3" count="1"> 
-			<item name="sorceryPotionBottle" prob=".5"/>
 			<item name="sorceryPotion_health3"/>
 			<item name="sorceryPotion_stamina3"/>
 			<item name="sorceryPotion_spirit3"/>
@@ -326,6 +413,24 @@
 			<item name="spellFireball" count="0,3"/>
 			<item name="spellIceBall" count="0,3"/>
 			<item name="spellLightning" count="0,3"/>
+		</lootgroup>
+		<lootgroup name="sorceryIntroLoot_FallenFire" count="all">
+			<item name="sorceryPotion_health" count="0,1"/>
+			<item name="sorceryPotionBomb_fire" count="0,1"/>
+			<item name="sorceryAmmoArrow_fire" count="0,4"/>
+			<item name="spellFireball" count="1,3"/>
+		</lootgroup>
+		<lootgroup name="sorceryIntroLoot_FallenIce" count="all">
+			<item name="sorceryPotion_health" count="0,1"/>
+			<item name="sorceryPotionBomb_ice" count="0,1"/>
+			<item name="sorceryAmmoArrow_ice" count="0,4"/>
+			<item name="spellIceBall" count="1,3"/>
+		</lootgroup>
+		<lootgroup name="sorceryIntroLoot_FallenLightning" count="all">
+			<item name="sorceryPotion_health" count="0,1"/>
+			<item name="sorceryPotionBomb_lightning" count="0,1"/>
+			<item name="sorceryAmmoArrow_lightning" count="0,4"/>
+			<item name="spellLightning" count="1,3"/>
 		</lootgroup>		
 		<!-- <lootgroup name="sorceryIntroLoot_Fire" count="all">
 			<item name="spellcastFire" count="1"/>
@@ -339,6 +444,49 @@
 			<item name="spellcastLightning" count="1"/>
 			<item name="spellLightning" count="10"/>
 		</lootgroup> -->
+
+		<!-- AWAKENED LOOT POOLS -->
+		<!-- General / Omni -->
+		<lootgroup name="sorceryLootPoolAwakened">
+			<item group="sorceryArmorT2" count="1" />
+			<item group="sorceryArmorT3" count="1" prob="0.5" />
+			<item group="sorceryModOmniT2" count="1" />
+			<item group="sorceryModOmniT3" count="1" prob="0.6" />
+			<item group="sorceryModOmniUnique" count="1" prob="0.4" />
+			<item group="sorceryPotionT2" count="1" />
+			<item group="sorceryPotionT3" count="1" prob="0.4" />
+			<item name="sorceryAmmoArrow_omni" count="1,5" prob="0.1" />
+			<item name="sorceryAmmoBolt_omni" count="1,5" prob="0.1" />
+			<item name="resourceSilverNugget" count="2,4" /> <!-- 250 -->
+			<item name="resourceGoldNugget" count="1,4" prob="0.8" /> <!-- 700 -->
+			<item name="resourceRawDiamond" count="1,4" prob="0.4" /> <!-- 1500 -->
+		</lootgroup>
+		<!-- Lightning -->
+		<lootgroup name="sorceryLootPoolAwakened_Lightning">
+			<item name="cs_awakenedLightning" count="1" prob="0.01" />
+			<item name="cs_fallenLightning" count="1" prob="0.2" />	
+			<item name="cs_fallenTrio" count="1" prob="0.1" />		
+			<item name="resourceRitualStoneLightning" count="1" prob="0.6" />
+			<item name="resourceRitualShardLightning" count="1" />
+			<item name="resourceEssenceLightning" count="2,8" />
+			<item name="resourceEssenceLightning2" count="2,8" />
+			<item name="resourceEssenceLightning3" count="1,8" />
+			<item name="resourceEssenceLightning4" count="1,2" prob="0.6" />
+			<item name="resourceEssenceLightning5" count="1,2" prob="0.3" />
+			<item group="sorceryModLightningT2" count="1" prob="0.8" />
+			<item group="sorceryModLightningT3" count="1" prob="0.5" />
+			<item group="sorceryModLightningUnique" count="1" prob="0.5" />
+			<item name="sorceryPotionBomb_lightning2" count="2,3" />
+			<item name="sorceryPotionBomb_lightning3" count="1,3" prob="0.6" />
+			<item name="spellLightning" count="10,20" />
+			<item name="spellLightningNova" count="5,10" />
+			<item name="spellLightningStorm" count="3,5" />
+			<item name="sorceryAmmoArrow_lightning" count="10,20" />
+			<item name="sorceryAmmoBolt_lightning" count="10,20" />
+			<item name="sorceryAmmoArrow_omni" count="1,5" />
+			<item name="sorceryAmmoBolt_omni" count="1,5" />
+		</lootgroup>	
+
 
 	<!-- CHEST LOOT -->
 		<!-- AWAKENED CHESTS -->
@@ -376,61 +524,134 @@
 			<item name="sorceryAmmoArrow_omni" count="0,5"/>
 			<item name="sorceryAmmoBolt_omni" count="0,5"/>
 		</lootgroup>	
-		<lootgroup name="sorceryLootChestAwakened_Lightning" count="7,10">
-			<item group="sorceryModUnique" count="1" prob="0.4" />
-			<item name="resourceRitualStoneLightning" count="1" prob="0.01" />
-			<item name="resourceRitualShardLightning" count="2,4" />
-			<item name="resourceEssenceLightning3" count="10,20" />
-			<item name="resourceEssenceLightning4" count="2,4" prob="0.8" />
-			<item name="resourceEssenceLightning5" count="1,2" prob="0.6" />
+		<lootgroup name="sorceryLootChestAwakened_Lightning" count="all">
+			<item name="resourceRitualShardLightning" count="1" />
+			<item group="sorceryLootPoolAwakened_Lightning" count="4,5" />
+			<item group="sorceryLootPoolAwakened" count="2,3" />
+			<item group="sorceryPotionT3" count="1" />
 			<item group="sorceryArmorT3" count="1" />
-			<item group="sorceryModT2" count="1" />
-			<item group="sorceryModT3" count="1" prob="0.5" />
-			<item group="sorceryPotionT2" count="1"/>
-			<item group="sorceryPotionT3" count="1" prob="0.5" />
-			<item name="sorceryPotionBomb_lightning2" count="1,6" />
-			<item name="sorceryPotionBomb_lightning3" count="1,6" prob="0.5" />
-			<item name="spellLightningNova" count="6,12" />
-			<item name="spellLightningStorm" count="4,10" prob="0.5" />
-			<item name="sorceryAmmoArrow_omni" count="2,6" prob="0.4" />
-			<item name="sorceryAmmoBolt_omni" count="2,6" prob="0.4" />
-			<item name="resourceSilverNugget" count="6,12" /> <!-- 250 -->
-			<item name="resourceGoldNugget" count="4,8" /> <!-- 700 -->
-			<item name="resourceRawDiamond" count="2,6" prob="0.3" /> <!-- 1500 -->
+			<item group="sorceryModLightningT3" count="1" />
+			<item name="resourceEssenceLightning3" count="4,10"/>
+			<item name="resourceEssenceLightning4" count="3,6"/>
+			<item name="resourceEssenceLightning5" count="2,4"/>	
+			<item name="resourceSilverNugget" count="5,12" /> <!-- 250 -->
+			<item name="resourceGoldNugget" count="3,8" /> <!-- 700 -->
+			<item name="resourceRawDiamond" count="2,5" /> <!-- 1500 -->
 		</lootgroup>
 
-		<!-- FALLEN CHESTS -->
-		<lootgroup name="sorceryLootChestFallen_Fire" count="all">
-		</lootgroup>
-		<lootgroup name="sorceryLootChestFallen_Ice" count="all">
-		</lootgroup>
-		<lootgroup name="sorceryLootChestFallen_Lightning" count="2,5">
-			<item name="resourceRitualStoneLightning" count="1" prob="0.01" />
-			<item name="resourceRitualShardLightning" count="1" />
-			<item name="resourceEssenceLightning" count="2,8"/>
-			<item name="resourceEssenceLightning2" count="2,8" prob="0.3" />
-			<item name="resourceEssenceLightning3" count="1,8" prob="0.1" />
-			<item name="resourceEssenceLightning4" count="1,2" prob="0.05" />
-			<item name="resourceEssenceLightning5" count="0,1" prob="0.001" />
+		<!-- FALLEN LOOT POOLS -->
+		<!-- General -->
+		<lootgroup name="sorceryLootPoolFallen">
 			<item group="sorceryArmorT1" count="1" />
-			<item group="sorceryArmorT2" count="1" prob="0.2" />
-			<item group="sorceryModT1" count="1" prob="0.4" />
-			<item group="sorceryModT2" count="1" prob="0.06" />
-			<item group="sorceryModT3" count="1" prob="0.01" />
+			<item group="sorceryArmorT2" count="1" prob="0.3" />
+			<item group="sorceryArmorT3" count="1" prob="0.01" />
+			<item group="sorceryModOmniT1" count="1" prob="0.4" />
+			<item group="sorceryModOmniT2" count="1" prob="0.1" />
+			<item group="sorceryModOmniT3" count="1" prob="0.01" />
+			<item group="sorceryModOmniUnique" count="1" prob="0.005" />
 			<item group="sorceryPotionT1" count="1" />
 			<item group="sorceryPotionT2" count="1" prob="0.2" />
-			<item group="sorceryPotionT3" count="1" prob="0.01" />
-			<item name="sorceryPotionBomb_lightning" count="1,4" />
-			<item name="spellLightning" count="4,8" />
-			<item name="spellLightningNova" count="2,8" prob="0.2" />
-			<item name="spellLightningStorm" count="1,8" prob="0.05" />
-			<item name="sorceryAmmoArrow_lightning" count="2,10" prob="0.3" />
-			<item name="sorceryAmmoBolt_lightning" count="2,10" prob="0.3" />
+			<item group="sorceryPotionT3" count="1" prob="0.05" />
 			<item name="sorceryAmmoArrow_omni" count="1,5" prob="0.02" />
 			<item name="sorceryAmmoBolt_omni" count="1,5" prob="0.02" />
 			<item name="resourceSilverNugget" count="2,4" /> <!-- 250 -->
-			<item name="resourceGoldNugget" count="1,4" prob="0.25" /> <!-- 700 -->
+			<item name="resourceGoldNugget" count="1,4" prob="0.4" /> <!-- 700 -->
 			<item name="resourceRawDiamond" count="1,4" prob="0.05" /> <!-- 1500 -->
+		</lootgroup>
+		<!-- Fire -->
+		<lootgroup name="sorceryLootPoolFallen_Fire">
+			<item name="cs_awakenedFire" count="1" prob="0.001" />
+			<item name="cs_fallenFire" count="1" prob="0.01" />
+			<item name="resourceRitualStoneFire" count="1" prob="0.01" />
+			<item name="resourceRitualShardFire" count="1" />
+			<item name="resourceEssenceFire" count="2,8" />
+			<item name="resourceEssenceFire2" count="2,8" />
+			<item name="resourceEssenceFire3" count="1,8" prob="0.3" />
+			<item name="resourceEssenceFire4" count="1,2" prob="0.1" />
+			<item name="resourceEssenceFire5" count="1,2" prob="0.01" />
+			<item group="sorceryModFireT1" count="1" prob="0.6" />
+			<item group="sorceryModFireT2" count="1" prob="0.3" />
+			<item group="sorceryModFireT3" count="1" prob="0.1" />
+			<item group="sorceryModFireUnique" count="1" prob="0.01" />
+			<item name="sorceryPotionBomb_fire" count="1,3" />
+			<item name="sorceryPotionBomb_fire2" count="1,3" prob="0.3" />
+			<item name="sorceryPotionBomb_fire3" count="1,3" prob="0.05" />
+			<item name="spellFireball" count="4,8" />
+			<item name="spellFirestorm" count="2,7" />
+			<item name="spellFireMeteor" count="1,6" prob="0.3" />
+			<item name="sorceryAmmoArrow_fire" count="4,8" />
+			<item name="sorceryAmmoBolt_fire" count="4,8" />
+		</lootgroup>	
+		<!-- Lightning -->
+		<lootgroup name="sorceryLootPoolFallen_Lightning">
+			<item name="cs_awakenedLightning" count="1" prob="0.001" />
+			<item name="cs_fallenLightning" count="1" prob="0.01" />		
+			<item name="resourceRitualStoneLightning" count="1" prob="0.01" />
+			<item name="resourceRitualShardLightning" count="1" />
+			<item name="resourceEssenceLightning" count="2,8" />
+			<item name="resourceEssenceLightning2" count="2,8" />
+			<item name="resourceEssenceLightning3" count="1,8" prob="0.3" />
+			<item name="resourceEssenceLightning4" count="1,2" prob="0.1" />
+			<item name="resourceEssenceLightning5" count="1,2" prob="0.01" />
+			<item group="sorceryModLightningT1" count="1" prob="0.6" />
+			<item group="sorceryModLightningT2" count="1" prob="0.3" />
+			<item group="sorceryModLightningT3" count="1" prob="0.1" />
+			<item group="sorceryModLightningUnique" count="1" prob="0.01" />
+			<item name="sorceryPotionBomb_lightning" count="1,3" />
+			<item name="sorceryPotionBomb_lightning2" count="1,3" prob="0.3" />
+			<item name="sorceryPotionBomb_lightning3" count="1,3" prob="0.05" />
+			<item name="spellLightning" count="4,8" />
+			<item name="spellLightningNova" count="2,7" />
+			<item name="spellLightningStorm" count="1,6" prob="0.3" />
+			<item name="sorceryAmmoArrow_lightning" count="4,8" />
+			<item name="sorceryAmmoBolt_lightning" count="4,8" />
+		</lootgroup>
+		<!-- Ice -->
+		<lootgroup name="sorceryLootPoolFallen_Ice">
+			<item name="cs_awakenedIce" count="1" prob="0.001" />
+			<item name="cs_fallenIce" count="1" prob="0.01" />	
+			<item name="resourceRitualStoneIce" count="1" prob="0.01" />
+			<item name="resourceRitualShardIce" count="1" />
+			<item name="resourceEssenceIce" count="2,8" />
+			<item name="resourceEssenceIce2" count="2,8" />
+			<item name="resourceEssenceIce3" count="1,8" prob="0.3" />
+			<item name="resourceEssenceIce4" count="1,2" prob="0.1" />
+			<item name="resourceEssenceIce5" count="1,2" prob="0.01" />
+			<item group="sorceryModIceT1" count="1" prob="0.6" />
+			<item group="sorceryModIceT2" count="1" prob="0.3" />
+			<item group="sorceryModIceT3" count="1" prob="0.1" />
+			<item group="sorceryModIceUnique" count="1" prob="0.01" />
+			<item name="sorceryPotionBomb_ice" count="1,4" />
+			<item name="sorceryPotionBomb_ice2" count="1,4" prob="0.3" />
+			<item name="sorceryPotionBomb_ice3" count="1,4" prob="0.05" />
+			<item name="spellIceBall" count="4,8" />
+			<item name="spellIceSpike" count="2,7" />
+			<item name="spellIceStorm" count="1,6" prob="0.3" />
+			<item name="sorceryAmmoArrow_ice" count="4,8" />
+			<item name="sorceryAmmoBolt_ice" count="4,8" />
+		</lootgroup>		
+		
+		<!-- FALLEN CHESTS -->		
+		<lootgroup name="sorceryLootChestFallen_Fire" count="all">
+			<item name="resourceRitualShardFire" count="1" />
+			<item name="resourceEssenceFire" count="4,12"/>
+			<item group="sorceryLootPoolFallen_Fire" count="2,3" />
+			<item group="sorceryLootPoolFallen" count="1,2" />
+			<item name="resourceSilverNugget" count="2,4" /> <!-- 250 -->
+		</lootgroup>
+		<lootgroup name="sorceryLootChestFallen_Ice" count="all">
+			<item name="resourceRitualShardIce" count="1" />
+			<item name="resourceEssenceIce" count="4,12"/>
+			<item group="sorceryLootPoolFallen_Ice" count="2,3" />
+			<item group="sorceryLootPoolFallen" count="1,2" />
+			<item name="resourceSilverNugget" count="2,4" /> <!-- 250 -->		
+		</lootgroup>
+		<lootgroup name="sorceryLootChestFallen_Lightning" count="all">
+			<item name="resourceRitualShardLightning" count="1" />
+			<item name="resourceEssenceLightning" count="4,12"/>
+			<item group="sorceryLootPoolFallen_Lightning" count="2,3" />
+			<item group="sorceryLootPoolFallen" count="1,2" />
+			<item name="resourceSilverNugget" count="2,4" /> <!-- 250 -->
 		</lootgroup>
 
 	<!-- CORPSE LOOT -->
@@ -455,20 +676,35 @@
 		</lootgroup>		
 		<lootgroup name="sorceryLootAwakened_Lightning" count="all">
 			<item name="resourceRitualBloodAwakenedLightning" count="1" />
-			<item name="resourceRitualShardLightning" count="1" />			
-			<item group="sorceryPotionT2" count="0,1" />
-			<item group="sorceryPotionT3" count="0,1"/>
+			<item name="resourceRitualShardLightning" count="1,2" />			
+			<item name="resourceEssenceLightning3" count="4,10"/>
+			<item name="resourceEssenceLightning4" count="2,6"/>
+			<item name="resourceEssenceLightning5" count="0,4"/>
+			<item group="sorceryLootPoolAwakened" count="0,1" />
+			<item group="sorceryLootPoolAwakened_Lightning" count="0,1" />
 		</lootgroup>
 
 		<!-- FALLEN CORPSES -->
 		<lootgroup name="sorceryLootFallen_Fire" count="all">
+			<item name="resourceRitualBloodFallenFire" count="1" />
+			<item name="resourceRitualShardFire" count="0,1" />
+			<item name="resourceEssenceFire" count="4,10"/>
+			<item group="sorceryLootPoolFallen" count="0,1" />
+			<item group="sorceryLootPoolFallen_Fire" count="0,1" />
 		</lootgroup>
 		<lootgroup name="sorceryLootFallen_Ice" count="all">
+			<item name="resourceRitualBloodFallenIce" count="1" />
+			<item name="resourceRitualShardIce" count="0,1" />
+			<item name="resourceEssenceIce" count="4,10"/>
+			<item group="sorceryLootPoolFallen" count="0,1" />
+			<item group="sorceryLootPoolFallen_Ice" count="0,1" />		
 		</lootgroup>
 		<lootgroup name="sorceryLootFallen_Lightning" count="all">
 			<item name="resourceRitualBloodFallenLightning" count="1" />
 			<item name="resourceRitualShardLightning" count="0,1" />
-			<item group="sorceryPotionT1" count="0,1" />
+			<item name="resourceEssenceLightning" count="4,10"/>
+			<item group="sorceryLootPoolFallen" count="0,1" />
+			<item group="sorceryLootPoolFallen_Lightning" count="0,1" />
 		</lootgroup>		
 
 		
@@ -747,7 +983,7 @@
 		<lootcontainer id="252" count="1" size="7,4" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="baseTemplate" open_time="5" destroy_on_close="false">
 			<item group="sorceryLootChestAwakened_Ice" />
 		</lootcontainer>
-		<lootcontainer id="251" count="1" size="7,4" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="baseTemplate" open_time="5" destroy_on_close="false">
+		<lootcontainer id="251" count="1" size="7,4" sound_open="sorceryRitualChant" sound_close="sorceryLightning_implodelow" loot_quality_template="baseTemplate" open_time="4" destroy_on_close="false">
 			<item group="sorceryLootChestAwakened_Lightning" />
 		</lootcontainer>
 		<!-- Awakened: Corpses -->
@@ -762,26 +998,35 @@
 		</lootcontainer>
 
 		<!-- Fallen: Chests -->
-		<lootcontainer id="247" count="1" size="6,4" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="baseTemplate" open_time="5" destroy_on_close="false">
+		<lootcontainer id="247" count="1" size="6,4" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="baseTemplate" open_time="2" destroy_on_close="false">
 			<item group="sorceryLootChestFallen_Fire" />
 		</lootcontainer>
-		<lootcontainer id="246" count="1" size="6,4" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="baseTemplate" open_time="5" destroy_on_close="false">
+		<lootcontainer id="246" count="1" size="6,4" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="baseTemplate" open_time="2" destroy_on_close="false">
 			<item group="sorceryLootChestFallen_Ice" />
 		</lootcontainer>
 		<lootcontainer id="245" count="1" size="6,4" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="baseTemplate" open_time="2" destroy_on_close="false">
 			<item group="sorceryLootChestFallen_Lightning" />
 		</lootcontainer>
 		<!-- Fallen: Corpses -->
-		<lootcontainer id="244" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="baseTemplate" open_time="3" destroy_on_close="false">
+		<lootcontainer id="244" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="baseTemplate" open_time="2" destroy_on_close="false">
 			<item group="sorceryLootFallen_Fire" />
 		</lootcontainer>		
-		<lootcontainer id="243" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="baseTemplate" open_time="3" destroy_on_close="false">
+		<lootcontainer id="243" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="baseTemplate" open_time="2" destroy_on_close="false">
 			<item group="sorceryLootFallen_Ice" />
 		</lootcontainer>
-		<lootcontainer id="242" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="baseTemplate" open_time="3" destroy_on_close="false">
+		<lootcontainer id="242" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="baseTemplate" open_time="2" destroy_on_close="false">
 			<item group="sorceryLootFallen_Lightning" />
 		</lootcontainer>		
-
+		<!-- Intro Fallen: Corpses -->
+		<lootcontainer id="241" count="1" size="4,2" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
+			<item group="sorceryIntroLoot_FallenFire" />
+		</lootcontainer>
+		<lootcontainer id="240" count="1" size="4,2" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
+			<item group="sorceryIntroLoot_FallenIce" />
+		</lootcontainer>		
+		<lootcontainer id="239" count="1" size="4,2" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
+			<item group="sorceryIntroLoot_FallenLightning" />
+		</lootcontainer>
 		
 	</append> 
 	

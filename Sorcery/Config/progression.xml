@@ -931,9 +931,24 @@
 			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorcerySupportLevel03"/></level_requirements>
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="1" desc_key="reqSorcerySupportLevel04"/></level_requirements>
 			<effect_group>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="sorceryPerkSupportBronze, runeUnique_altinstouch, runeGeneral_spelllight2, runeGeneral_spelllight3"/>
+				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="sorceryPerkSupportBronze, runeUnique_altinstouch, runeGeneral_spelllight2, runeGeneral_spelllight3"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sorceryPerkSupportSilver"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="sorceryPerkSupportGold"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="sorceryPerkSupportGold"/> -->
+				
+				<!-- Supporter Tier -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffSorcerySupportPerkNoble" target="self">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySupport" target="self" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffSorcerySupportPerkLord" target="self">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySupport" target="self" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffSorcerySupportPerkRoyal" target="self">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySupport" target="self" operation="Equals" value="4"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffSorcerySupportPerkCouncil" target="self">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySupport" target="self" operation="Equals" value="5"/>
+				</triggered_effect>				
+				
 				<effect_description level="1" desc_key="perkSorcerySupportRank1Desc"/>
 				<effect_description level="2" desc_key="perkSorcerySupportRank2Desc"/>
 				<effect_description level="3" desc_key="perkSorcerySupportRank3Desc"/>

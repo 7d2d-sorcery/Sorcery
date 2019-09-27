@@ -384,6 +384,79 @@
 			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="1"/> <MaxRepeatRate value="1"/>
 		</SoundDataNode>		
 		
+		<!-- FALLEN SOUNDS -->
+		<SoundDataNode name="sorceryFallenFire_spawn"> <AudioSource name="Sounds/AudioSource_Creatures"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?FireLoop2" Loop="true"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxVoicesPerEntity value="10"/><MaxRepeatRate value="0.001"/>
+		</SoundDataNode>
+		<SoundDataNode name="sorceryFallenIce_spawn"> <AudioSource name="Sounds/AudioSource_Creatures"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?FreezeLoop" Loop="true"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxVoicesPerEntity value="10"/><MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
+		<SoundDataNode name="sorceryFallenLightning_spawn"> <AudioSource name="Sounds/AudioSource_Creatures"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioLightning.unity3d?LightningLoop" Loop="true"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxVoicesPerEntity value="10"/><MaxRepeatRate value="0.001"/>
+		</SoundDataNode>		
+		<SoundDataNode name="sorceryFallen_alert"> <AudioSource name="Sounds/AudioSource_Screamer"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-sorcerer"/>
+			<!-- <AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-essence"/> -->
+			<Channel name="Mouth"/>
+			<Priority name="2"/>
+			<maxVoicesPerEntity value="1"/>
+			<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.8"/>
+		</SoundDataNode>		
+		<SoundDataNode name="sorceryFallen_hurt"> <AudioSource name="Sounds/AudioSource_Screamer"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-enough"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-hurt"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-hurtLaugh"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-hurtLaugh2"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-hurtLaugh3"/>
+			<Channel name="Mouth"/>
+			<Priority name="1"/>
+			<maxVoicesPerEntity value="1"/>
+			<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.8"/>
+		</SoundDataNode>
+		<SoundDataNode name="sorceryFallen_attack"> <AudioSource name="Sounds/AudioSource_Screamer"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-awaken"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-blood"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-blood2"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-blood3"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-burn"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-die"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-drain"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-essence"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-everydrop"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-join"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-laugh"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-laugh2"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-laugh3"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-rise"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-sacrifice"/>
+			<Channel name="Mouth"/>
+			<Priority name="2"/>
+			<maxVoicesPerEntity value="1"/>
+			<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.8"/>
+		</SoundDataNode>
+		<SoundDataNode name="sorceryFallen_sense"> <AudioSource name="Sounds/AudioSource_Screamer"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-sense"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-everydrop"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-blood"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-blood2"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-blood3"/>
+			<Channel name="Mouth"/>
+			<Priority name="2"/>
+			<maxVoicesPerEntity value="1"/>
+			<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.8"/>
+		</SoundDataNode>	
+		<SoundDataNode name="sorceryFallen_death"> <AudioSource name="Sounds/AudioSource_Screamer"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-awaken"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-rise"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFallen.unity3d?fallen-sacrifice"/>
+			<Channel name="Mouth"/>
+			<Priority name="2"/>
+			<maxVoicesPerEntity value="1"/>
+			<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.8"/>
+		</SoundDataNode>	
 	</append>
 	
 	

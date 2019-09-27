@@ -32,22 +32,24 @@
 	<!-- FALLEN -->
 	<!-- Pine Forest -->
 	<append xpath="/spawning/biome[@name='pine_forest']">
-		<spawn maxcount="1" respawndelay="4" time="Any" entitygroup="SorceryFallenLightning" />
+		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="SorceryFallenLightning" />
 	</append>
 	
 	<!-- Wasteland -->
 	<append xpath="/spawning/biome[@name='wasteland']">
-		<spawn maxcount="1" respawndelay="4" time="Any" entitygroup="SorceryFallenLightning" />
+		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="SorceryFallenFire" />
+		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="SorceryFallenIce" />
+		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="SorceryFallenLightning" />
 	</append>
 	
 	<!-- Burnt Forest -->
 	<append xpath="/spawning/biome[@name='burnt_forest']">
-		<!-- <spawn maxcount="1" respawndelay="4" time="Any" entitygroup="SorceryFallenFire" /> -->
+		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="SorceryFallenFire" />
 	</append>
 	
 	<!-- Snow -->
 	<append xpath="/spawning/biome[@name='snow']">
-		<!-- <spawn maxcount="1" respawndelay="4" time="Any" entitygroup="SorceryFallenIce" /> -->
+		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="SorceryFallenIce" />
 	</append>
 	
 </Sorcery>

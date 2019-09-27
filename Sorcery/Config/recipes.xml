@@ -772,7 +772,7 @@
 		</recipe>		
 
 	<!--___________________ SUPPORTER RECIPES ___________________-->
-		<recipe name="sorceryPerkSupportBronze" count="1" craft_time="300" tags="learnable">
+		<!-- <recipe name="sorceryPerkSupportBronze" count="1" craft_time="300" tags="learnable">
 			<ingredient name="casinoCoin" count="5"/>
 			<ingredient name="oldCash" count="5"/>
 			<ingredient name="resourceEssenceFire" count="1"/>
@@ -792,7 +792,7 @@
 			<ingredient name="resourceEssenceFire" count="1"/>
 			<ingredient name="resourceEssenceIce" count="1"/>
 			<ingredient name="resourceEssenceLightning" count="1"/>
-		</recipe>	
+		</recipe> -->
 	
 	<!--___________________ RUNES: UNIQUE / SUPPORTER ___________________-->
 		<!-- SPELL LIGHT -->
@@ -1104,6 +1104,7 @@
 		
 		<!-- ALCHEMY RESOURCES -->
 		<!-- RESOURCE: RITUAL -->
+		<!-- Lightning -->
 		<recipe name="resourceRitualShardLightning" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore">
 			<ingredient name="resourceRockSmall" count="60"/>
 			<ingredient name="resourceEssenceLightning" count="60"/>
@@ -1113,16 +1114,66 @@
 		<recipe name="resourceRitualStoneLightning" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore">
 			<ingredient name="resourceRitualShardLightning" count="4"/>
 		</recipe>
+		<!-- Fire -->
+		<recipe name="resourceRitualShardFire" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolFireCore">
+			<ingredient name="resourceRockSmall" count="60"/>
+			<ingredient name="resourceEssenceFire" count="60"/>
+			<ingredient name="resourceExtractFire" count="60"/>
+			<ingredient name="resourcePowderFire" count="60"/>
+		</recipe>		
+		<recipe name="resourceRitualStoneFire" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolFireCore">
+			<ingredient name="resourceRitualShardFire" count="4"/>
+		</recipe>
+		<!-- Ice -->
+		<recipe name="resourceRitualShardIce" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolIceCore" tags="learnable"> <!-- DEV: LOCKED -->
+			<ingredient name="resourceRockSmall" count="60"/>
+			<ingredient name="resourceEssenceIce" count="60"/>
+			<ingredient name="resourceExtractIce" count="60"/>
+			<ingredient name="resourcePowderIce" count="60"/>
+		</recipe>		
+		<recipe name="resourceRitualStoneIce" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolIceCore" tags="learnable"> <!-- DEV: LOCKED -->
+			<ingredient name="resourceRitualShardIce" count="4"/>
+		</recipe>		
+		
 		<!-- QUEST: SUMMONING RITUAL -->
 		<!-- Fallen Ritual: Lightning -->
 		<recipe name="cs_fallenLightning" count="1" craft_time="30" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore">
 			<ingredient name="resourceRitualStoneLightning" count="1"/>
 			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
 		</recipe>
+		<!-- Fire -->
+		<recipe name="cs_fallenFire" count="1" craft_time="30" craft_area="sorceryAlchemyStation" craft_tool="toolFireCore" tags="learnable"> <!-- DEV: LOCKED -->
+			<ingredient name="resourceRitualStoneFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+		</recipe>
+		<!-- Ice -->
+		<recipe name="cs_fallenIce" count="1" craft_time="30" craft_area="sorceryAlchemyStation" craft_tool="toolIceCore" tags="learnable"> <!-- DEV: LOCKED -->
+			<ingredient name="resourceRitualStoneIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+		</recipe>
+		<!-- Trio -->
+		<recipe name="cs_fallenTrio" count="1" craft_time="30" craft_area="sorceryAlchemyStation" craft_tool="toolIceCore" tags="learnable"> <!-- DEV: LOCKED -->
+			<ingredient name="resourceRitualBloodFallenFire" count="2"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="2"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="2"/>
+			<ingredient name="resourceRitualStoneFire" count="1"/>
+			<ingredient name="resourceRitualStoneIce" count="1"/>
+			<ingredient name="resourceRitualStoneLightning" count="1"/>		
+		</recipe>		
 		<!-- Awakened Ritual: Lightning -->
 		<recipe name="cs_awakenedLightning" count="1" craft_time="60" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore">
 			<ingredient name="resourceRitualStoneLightning" count="5"/>
 			<ingredient name="resourceRitualBloodFallenLightning" count="10"/>
+		</recipe>
+		<!-- Fire -->
+		<recipe name="cs_awakenedFire" count="1" craft_time="60" craft_area="sorceryAlchemyStation" craft_tool="toolFireCore" tags="learnable"> <!-- DEV: LOCKED -->
+			<ingredient name="resourceRitualStoneFire" count="5"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="10"/>
+		</recipe>			
+		<!-- Ice -->
+		<recipe name="cs_awakenedIce" count="1" craft_time="60" craft_area="sorceryAlchemyStation" craft_tool="toolIceCore" tags="learnable"> <!-- DEV: LOCKED -->
+			<ingredient name="resourceRitualStoneIce" count="5"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="10"/>
 		</recipe>		
 		
 	<!-- POTION BOTTLE -->

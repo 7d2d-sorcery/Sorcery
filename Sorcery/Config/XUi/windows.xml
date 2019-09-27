@@ -53,14 +53,14 @@
 
     <!-- UI: Pause Menu - OVERRIDE -->
     <window name="SorceryingameMenu" anchor="CenterCenter" pos="-125,200" width="250" height="200" controller="InGameMenuWindow" cursor_area="true">
-		<label name="SorceryVersion" pos="783, 288" depth="0" size="250,33" text="v0.83 The Awakening" font_size="30" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
+		<label name="SorceryVersion" pos="783, 288" depth="0" size="250,33" text="v0.85 The Awakening" font_size="30" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
         <texture name="SorceryingameMenuLogo" depth="0" size="668,441" texture="@modfolder:Textures/SorceryLogoMenu.png" pos="-209,190" />
-		<texture name="SorceryingameMenuChestNoble" depth="0" size="240,243" texture="@modfolder:Textures/SorceryingameMenuChestNoble.png" pos="-295,-270" />
-		<texture name="SorceryingameMenuChestLord" depth="0" size="260,263" texture="@modfolder:Textures/SorceryingameMenuChestLord.png" pos="-780,-290" />
-		<texture name="SorceryingameMenuChestRoyal" depth="0" size="300,303" texture="@modfolder:Textures/SorceryingameMenuChestRoyal.png" pos="-543,-390" />
-		<texture name="SorceryingameMenuKeyNoble" depth="0" size="169,400" pos="855,-320" />
-		<texture name="SorceryingameMenuKeyLord" depth="0" size="169,400" pos="686,-320" />
-		<texture name="SorceryingameMenuKeyRoyal" depth="0" size="169,400" pos="517,-320" />
+		<texture name="SorceryingameMenuChestNoble" style="sorcery.window.ingame.support.chest.noble.texture" />
+		<texture name="SorceryingameMenuChestLord" style="sorcery.window.ingame.support.chest.lord.texture" />
+		<texture name="SorceryingameMenuChestRoyal" style="sorcery.window.ingame.support.chest.royal.texture" />
+		<texture name="SorceryingameMenuKeyNoble" style="sorcery.window.ingame.support.key.noble.texture" />
+		<texture name="SorceryingameMenuKeyLord" style="sorcery.window.ingame.support.key.lord.texture" />
+		<texture name="SorceryingameMenuKeyRoyal" style="sorcery.window.ingame.support.key.royal.texture" />
         <grid name="buttons" pos="0, -290" cols="1" width="250" cell_width="250" cell_height="48" arrangement="vertical" repeat_content="false" >
             <simplebutton name="btnInvite" depth="3" width="250" height="38" caption_key="xuiMenuInvite" font_size="32" />
             <simplebutton name="btnOptions" depth="3" width="250" height="38" caption_key="xuiMenuOptions" font_size="32" />
@@ -69,7 +69,7 @@
             <simplebutton name="btnExit" depth="3" width="250" height="38" caption_key="xuiMenuExit" font_size="32" />
             <simplebutton name="btnExportPrefab" depth="3" width="250" height="38" caption_key="xuiMenuExportPrefab" font_size="32" />
         </grid>
-		<texture name="SorceryingameMenuMessageSupport" depth="0" size="740,147" texture="@modfolder:Textures/SorceryingameMenuMessageSupport.png" pos="-245,-565" />
+		<texture name="SorceryingameMenuMessageSupport" style="sorcery.window.ingame.support.message.texture" />
     </window>
 		
 <!--___________________________ FIRE CONJURE ___________________________-->	

@@ -2225,6 +2225,7 @@
 		
 	<!--___________________ RESOURCE: Rituals ___________________-->
 		<!-- RITUAL STONES -->
+		<!-- Lightning -->
 		<item name="resourceRitualStoneLightning">
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
@@ -2243,8 +2244,43 @@
 			<property name="Extends" value="resourceRitualStoneLightning"/>
 			<property name="Weight" value="5"/>
 		</item>
+		<!-- Fire -->
+		<item name="resourceRitualStoneFire">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="MsorceryExtractFire"/>
+			<property name="Stacknumber" value="5000"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="Weight" value="20"/>
+			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientTime" value="5"/>
+		</item>
+		<item name="resourceRitualShardFire">
+			<property name="Extends" value="resourceRitualStoneFire"/>
+			<property name="Weight" value="5"/>
+		</item>
+		<!-- Ice -->
+		<item name="resourceRitualStoneIce">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="MsorceryExtractIce"/>
+			<property name="Stacknumber" value="5000"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="Weight" value="20"/>
+			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientTime" value="5"/>
+		</item>
+		<item name="resourceRitualShardIce">
+			<property name="Extends" value="resourceRitualStoneIce"/>
+			<property name="Weight" value="5"/>
+		</item>		
 		
 		<!-- RITUAL BLOOD -->
+		<!-- Lightning -->
 		<item name="resourceRitualBloodFallenLightning">
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
@@ -2259,6 +2295,40 @@
 		</item>		
 		<item name="resourceRitualBloodAwakenedLightning">
 			<property name="Extends" value="resourceRitualBloodFallenLightning"/>
+			<property name="Weight" value="20"/>
+		</item>
+		<!-- Fire -->
+		<item name="resourceRitualBloodFallenFire">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="MsorceryExtractFire"/>
+			<property name="Stacknumber" value="5000"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="Weight" value="5"/>
+			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientTime" value="5"/>
+		</item>		
+		<item name="resourceRitualBloodAwakenedFire">
+			<property name="Extends" value="resourceRitualBloodFallenFire"/>
+			<property name="Weight" value="20"/>
+		</item>
+		<!-- Ice -->
+		<item name="resourceRitualBloodFallenIce">
+			<property name="HoldType" value="45"/>
+			<property name="Meshfile" value="Items/Misc/sackPrefab"/>
+			<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
+			<property name="Material" value="MsorceryExtractIce"/>
+			<property name="Stacknumber" value="5000"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="Weight" value="5"/>
+			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientTime" value="5"/>
+		</item>		
+		<item name="resourceRitualBloodAwakenedIce">
+			<property name="Extends" value="resourceRitualBloodFallenIce"/>
 			<property name="Weight" value="20"/>
 		</item>		
 		
@@ -2480,7 +2550,7 @@
 		</item>
 		<item name="qs_SorceryMastery_LightningMastery">
 			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
-			<property name="TintColor" value="150,0,255"/>
+			<property name="TintColor" value="102,0,119"/>
 			<property name="Material" value="MsorceryExtractLightning"/> <property name="Weight" value="30"/>
 			<property class="Action0">
 					<!-- LIMIT -->
@@ -2496,9 +2566,7 @@
 		<!-- LIGHTNING -->
 		<item name="cs_awakenedLightning">
 			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
-			<property name="CustomIcon" value="qs_SorceryIntroNew"/>
-			<property name="CustomIconTint" value="eb72ff"/>
-			<property name="TintColor" value="150,0,255"/>
+			<property name="TintColor" value="102,0,119"/>
 			<property name="Material" value="MsorceryExtractLightning"/> <property name="Weight" value="50"/>
 			<property class="Action0">
 						<!-- LIMIT -->
@@ -2508,14 +2576,38 @@
 				<property name="Delay" value="0"/>
 			</property>		
 		</item>
+		<!-- FIRE -->
+		<item name="cs_awakenedFire">
+			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
+			<property name="TintColor" value="151,0,0"/>
+			<property name="Material" value="MsorceryExtractFire"/> <property name="Weight" value="50"/>
+			<property class="Action0">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySupport" operation="GTE" value="99"/>
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="challengeSorcery_awakenedFire"/>
+				<property name="Delay" value="0"/>
+			</property>		
+		</item>		
+		<!-- ICE -->
+		<item name="cs_awakenedIce">
+			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
+			<property name="TintColor" value="40,120,255"/>
+			<property name="Material" value="MsorceryExtractIce"/> <property name="Weight" value="50"/>
+			<property class="Action0">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySupport" operation="GTE" value="99"/>			
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="challengeSorcery_awakenedIce"/>
+				<property name="Delay" value="0"/>
+			</property>		
+		</item>		
 		
 	<!--___________________ THE FALLEN ___________________-->
 		<!-- LIGHTNING -->
 		<item name="cs_fallenLightning">
 			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
-			<property name="CustomIcon" value="qs_SorceryIntroNew"/>
-			<property name="CustomIconTint" value="b900d8"/>
-			<property name="TintColor" value="150,0,255"/>
+			<!-- <property name="CustomIcon" value="qs_SorceryIntroNew"/>
+			<property name="CustomIconTint" value="b900d8"/> -->
+			<property name="TintColor" value="102,0,119"/>
 			<property name="Material" value="MsorceryExtractLightning"/> <property name="Weight" value="20"/>
 			<property class="Action0">
 						<!-- LIMIT -->
@@ -2525,9 +2617,39 @@
 				<property name="Delay" value="0"/>
 			</property>		
 		</item>		
-		
-
-
+		<!-- FIRE -->
+		<item name="cs_fallenFire">
+			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
+			<property name="TintColor" value="151,0,0"/>
+			<property name="Material" value="MsorceryExtractFire"/> <property name="Weight" value="20"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="challengeSorcery_fallenFire"/>
+				<property name="Delay" value="0"/>
+			</property>		
+		</item>			
+		<!-- ICE -->
+		<item name="cs_fallenIce">
+			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
+			<property name="TintColor" value="40,120,255"/>
+			<property name="Material" value="MsorceryExtractIce"/> <property name="Weight" value="20"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="challengeSorcery_fallenIce"/>
+				<property name="Delay" value="0"/>
+			</property>		
+		</item>
+		<!-- TRIO -->
+		<item name="cs_fallenTrio">
+			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
+			<property name="TintColor" value="102,0,119"/>
+			<property name="Material" value="MsorceryExtractOmni"/> <property name="Weight" value="20"/>
+			<property class="Action0">
+				<property name="Class" value="Quest"/>
+				<property name="QuestGiven" value="challengeSorcery_fallenTrio"/>
+				<property name="Delay" value="0"/>
+			</property>		
+		</item>	
 
 
 		
@@ -4077,7 +4199,7 @@
 	<!--___________________ SUPPORTER ITEMS ___________________-->
 		<item name="sorceryPerkSupportBronze">
 			<property name="Extends" value="unlockBookMaster"/>
-			<property name="CreativeMode" value="Player"/>
+			<property name="CreativeMode" value="Dev"/>
 			<property name="CustomIcon" value="sorceryKey_bronze"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="Weight" value="0"/>
@@ -4218,7 +4340,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="10"/>
 				<display_value name="dsorcPotionCooldown" value="10"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_health"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_health"/>
 			</effect_group>
 		</item>
 		<item name="sorceryPotion_health2">
@@ -4231,7 +4353,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="10"/>
 				<display_value name="dsorcPotionCooldown" value="10"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_health2"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_health2"/>
 			</effect_group>
 		</item>
 		<item name="sorceryPotion_health3">
@@ -4244,7 +4366,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="10"/>
 				<display_value name="dsorcPotionCooldown" value="10"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_health3"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_health3"/>
 			</effect_group>
 		</item>			
 		<!-- POTION: Stamina -->
@@ -4267,7 +4389,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="120"/>
 				<display_value name="dsorcPotionCooldown" value="120"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_stamina"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_stamina"/>
 			</effect_group>
 		</item>
 		<item name="sorceryPotion_stamina2">
@@ -4280,7 +4402,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="120"/>
 				<display_value name="dsorcPotionCooldown" value="120"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_stamina2"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_stamina2"/>
 			</effect_group>
 		</item>
 		<item name="sorceryPotion_stamina3">
@@ -4293,7 +4415,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="120"/>
 				<display_value name="dsorcPotionCooldown" value="120"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_stamina3"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_stamina3"/>
 			</effect_group>
 		</item>		
 		<!-- POTION: Spirit -->
@@ -4316,7 +4438,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="120"/>
 				<display_value name="dsorcPotionCooldown" value="120"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_spirit"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_spirit"/>
 			</effect_group>
 		</item>
 		<item name="sorceryPotion_spirit2">
@@ -4329,7 +4451,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="120"/>
 				<display_value name="dsorcPotionCooldown" value="120"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_spirit2"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_spirit2"/>
 			</effect_group>
 		</item>
 		<item name="sorceryPotion_spirit3">
@@ -4342,7 +4464,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="120"/>
 				<display_value name="dsorcPotionCooldown" value="120"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_spirit3"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_spirit3"/>
 			</effect_group>
 		</item>
 		<!-- POTION: Travel -->
@@ -4367,7 +4489,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_travel"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_travel"/>
 			</effect_group>
 		</item>
 		<item name="sorceryPotion_travel2">
@@ -4383,7 +4505,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_travel2"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_travel2"/>
 			</effect_group>
 		</item>
 		<item name="sorceryPotion_travel3">
@@ -4399,7 +4521,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_travel3"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_travel3"/>
 			</effect_group>
 		</item>	
 		<!-- POTION: Haste -->
@@ -4423,7 +4545,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_haste"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_haste"/>
 			</effect_group>
 		</item>	
 		<item name="sorceryPotion_haste2">
@@ -4437,7 +4559,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_haste2"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_haste2"/>
 			</effect_group>
 		</item>
 		<item name="sorceryPotion_haste3">
@@ -4451,7 +4573,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_haste3"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_haste3"/>
 			</effect_group>
 		</item>
 		<!-- POTION: Taunt -->
@@ -4476,7 +4598,7 @@
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
 				<display_value name="dsorcPotionPotency" value="0"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_taunt"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_taunt"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="self" buff="buffPotion_taunt"/>
 			</effect_group>
 		</item>	
@@ -4498,7 +4620,7 @@
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
 				<display_value name="dsorcPotionPotency" value="0"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_taunt2"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_taunt2"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="self" buff="buffPotion_taunt2"/>
 			</effect_group>
 		</item>
@@ -4520,7 +4642,7 @@
 				<display_value name="dsorcPotionDuration" value="60"/>
 				<display_value name="dsorcPotionCooldown" value="60"/>
 				<display_value name="dsorcPotionPotency" value="0"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_taunt3"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_taunt3"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" target="self" buff="buffPotion_taunt3"/>
 			</effect_group>
 		</item>
@@ -4544,7 +4666,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="300"/>
 				<display_value name="dsorcPotionCooldown" value="300"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_essence"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_essence"/>
 			</effect_group>
 		</item>
 		<item name="sorceryPotion_essence2">
@@ -4563,7 +4685,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="300"/>
 				<display_value name="dsorcPotionCooldown" value="300"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_essence2"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_essence2"/>
 			</effect_group>
 		</item>
 		<item name="sorceryPotion_essence3">
@@ -4582,7 +4704,7 @@
 				<display_value name="dsorcPotionPotency" value=".2"/>
 				<display_value name="dsorcPotionDuration" value="300"/>
 				<display_value name="dsorcPotionCooldown" value="300"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotion_essence3"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume, buffPotion_essence3"/>
 			</effect_group>
 		</item>		
 
@@ -5021,11 +5143,155 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="0.30" tags="buffIllInfection0"/>
 			</effect_group>
-		</item>			
-
+		</item>
 		
 		
-		<!-- HAND: Fallen -->		
+		<!-- HAND: Fallen -->	
+		<!-- Hand Fallen: FIRE -->
+		<item name="meleeHandSorceryFallenFire">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Range" value="1.75"/>
+				<property name="DamageEntity" value="1"/>
+				<property name="DamageBlock" value="200"/>
+				<property name="Buff" value="buffIllInfection0,buffInjuryStunned1,buffAwakenedFireImpactTrigger_fire,buffFallenFireSpell_fire"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->
+				<property name="Class" value="Vomit"/>
+				<property name="Delay" value="0.3"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="200"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="ammoProjectileFallenFire"/>
+				<property name="Sound_warning" value="sorceryFallen_attack"/>
+				<property name="Sound_start" value="sorceryFireball_launch"/>
+				<property name="Sound_repeat" value="sorceryFireball_cast"/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+				<property name="Buff" value="buffIllInfection0,buffAwakenedFireImpactTrigger_fire,buffFallenFireSpell_fire"/>
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="200"/>
+				<passive_effect name="MaxRange" operation="base_set" value="200"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1"/>
+				<!-- <passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/> -->
+				<passive_effect name="BuffProcChance" operation="base_set" value="0" tags="buffInjuryBleeding"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0.20" tags="buffIllInfection0"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0.1" tags="buffInjuryStunned1"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffAwakenedFireImpactTrigger_fire,buffFallenFireSpell_fire"/>
+			</effect_group>
+		</item>
+		<!-- Fire -->
+		<item name="ammoProjectileFallenFire">
+			<property name="Meshfile" value="#@modfolder:Resources/fallenProjectileFire.unity3d?fallenProjectileFire"/>
+			<property name="Material" value="Mstone"/>
+			<property name="CreativeMode" value="None"/>
+			<!-- <property name="IsSticky" value="true"/>
+			<property name="StickyOffset" value="0"/> -->
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="1"/>
+				<property name="DamageBlock" value="180"/>
+				<property name="Velocity" value="22"/>
+				<property name="FlyTime" value="6"/>
+				<property name="LifeTime" value="6"/>
+				<property name="CollisionRadius" value="0.3"/>
+				<property name="DamageBonus.earth" value="0"/>
+				<property name="Buff" value="buffAwakenedFireImpactTrigger_fire,buffFallenFireSpell_fire"/>
+	
+	<property name="Explosion.ParticleIndex" value="1"/> <!-- 10 molotov -->
+	<property name="Explosion.RadiusBlocks" value="3"/>
+	<property name="Explosion.RadiusEntities" value="3"/>
+	<property name="Explosion.RadiusBuffs" value="3"/> <!-- int, default is same as RadiusBlocks -->
+	<property name="Explosion.BlastPower" value="35"/>
+	<property name="Explosion.BlockDamage" value="200"/>
+	<!-- <property name="Explosion.DamageBonus.stone" value="0.1"/>
+	<property name="Explosion.DamageBonus.metal" value="0"/>
+	<property name="Explosion.DamageBonus.earth" value="0"/>
+	<property name="Explosion.DamageBonus.water" value="0"/>
+	<property name="Explosion.DamageBonus.wood" value="6"/>	 -->
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!-- <passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/> -->
+				<!-- <passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/> -->
+				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffAwakenedFireImpactTrigger_fire,buffFallenFireSpell_fire"/>
+			</effect_group>
+		</item>		
+		
+		<!-- Hand Fallen: ICE -->
+		<item name="meleeHandSorceryFallenIce">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Range" value="1.75"/>
+				<property name="DamageEntity" value="1"/>
+				<property name="DamageBlock" value="200"/>
+				<property name="Buff" value="buffIllInfection0,buffInjuryStunned1,buffAwakenedIceImpactTrigger_ice,buffFallenIceSpell_ice"/>
+			</property>
+			<property class="Action1"> <!-- UseAction -->
+				<property name="Class" value="Vomit"/>
+				<property name="Delay" value="0.3"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="200"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="ammoProjectileFallenIce"/>
+				<property name="Sound_warning" value="sorceryFallen_attack"/>
+				<property name="Sound_start" value="sorceryIce_launch"/>
+				<property name="Sound_repeat" value="sorceryIce_electrocute"/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+				<property name="Buff" value="buffIllInfection0"/>
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="200"/>
+				<passive_effect name="MaxRange" operation="base_set" value="200"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="2"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="0"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1"/>
+				<!-- <passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/> -->
+				<passive_effect name="BuffProcChance" operation="base_set" value="0" tags="buffInjuryBleeding"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0.20" tags="buffIllInfection0"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="0.1" tags="buffInjuryStunned1"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffAwakenedIceImpactTrigger_ice,buffFallenIceSpell_ice"/>
+			</effect_group>
+		</item>
+		<!-- Ice -->
+		<item name="ammoProjectileFallenIce">
+			<property name="Meshfile" value="#@modfolder:Resources/fallenProjectileIce.unity3d?fallenProjectileIce"/>
+			<property name="Material" value="Morganic"/>
+			<property name="CreativeMode" value="None"/>
+			<!-- <property name="IsSticky" value="true"/>
+			<property name="StickyOffset" value="0"/> -->		
+			<property class="Action1">
+				<property name="Class" value="Projectile"/>
+				<property name="DamageEntity" value="1"/>
+				<property name="DamageBlock" value="120"/>
+				<property name="Velocity" value="26"/>
+				<property name="FlyTime" value="6"/>
+				<property name="LifeTime" value="6"/>
+				<property name="CollisionRadius" value="0.25"/>
+				<property name="DamageBonus.earth" value="0"/>
+				<property name="Buff" value="buffAwakenedIceImpactTrigger_ice,buffFallenIceSpell_ice"/>
+			</property>
+			<effect_group name="Base Effects">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffAwakenedIceImpactTrigger_ice,buffFallenIceSpell_ice"/>
+			</effect_group>
+		</item>
+		
+		<!-- Hand Fallen: LIGHTNING -->
 		<item name="meleeHandSorceryFallenLightning">
 			<property name="Extends" value="meleeHandMaster"/>
 			<property name="CreativeMode" value="None"/>
@@ -5042,9 +5308,10 @@
 				<property name="Range" value="200"/>
 				<property name="Infinite_ammo" value="true"/>
 				<property name="Magazine_items" value="ammoProjectileFallenLightning"/>
-				<property name="Sound_warning" value="sorceryLightning_electrocute"/>
+				<!-- <property name="Sound_warning" value="sorceryLightning_electrocute"/> -->
+				<property name="Sound_warning" value="sorceryFallen_attack"/>
 				<property name="Sound_start" value="sorceryLightning_launch"/>
-				<property name="Sound_repeat" value=""/>
+				<property name="Sound_repeat" value="sorceryLightning_electrocute"/>
 				<property name="Sound_end" value=""/>
 				<property name="Sound_empty" value=""/>
 				<property name="Sound_reload" value=""/>
@@ -5066,7 +5333,7 @@
 				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffAwakenedLightningImpactTrigger_lightning,buffFallenLightningSpell_lightning"/>
 			</effect_group>
 		</item>
-
+		<!-- Lightning -->
 		<item name="ammoProjectileFallenLightning">
 			<property name="Meshfile" value="#@modfolder:Resources/fallenProjectileLightning.unity3d?fallenProjectileLightning"/>
 			<property name="Material" value="Morganic"/>
@@ -5080,7 +5347,7 @@
 				<!-- <property name="Gravity" value="-5"/> -->
 				<property name="FlyTime" value="3"/>
 				<property name="LifeTime" value="6"/>
-				<property name="CollisionRadius" value="0.5"/>
+				<property name="CollisionRadius" value="0.25"/>
 				<property name="DamageBonus.earth" value="0"/>
 				<property name="Buff" value="buffAwakenedLightningImpactTrigger_lightning,buffFallenLightningSpell_lightning"/>
 			</property>
@@ -5090,8 +5357,7 @@
 				<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="metal"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffAwakenedLightningImpactTrigger_lightning,buffFallenLightningSpell_lightning"/>
 			</effect_group>
-		</item>		
-		
+		</item>
 		
 		
 	</append>
