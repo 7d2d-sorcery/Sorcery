@@ -1,50 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Servers>
-	<ServerGroup Name="Sorcery" Logo="https://i.postimg.cc/J4jwL4Ny/sorcery-logo-v08-splash.png" Description="Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.">
-			<Server Name="Sorcery" Logo="https://i.postimg.cc/J4jwL4Ny/sorcery-logo-v08-splash.png">
-			<Description>Sorcery v0.85 - The Awakening
+	<ServerGroup Name="Sorcery" Logo="https://i.postimg.cc/fRBSLWsQ/sorcery-a19-logo-v09.png" Description="Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.">
+			<Server Name="Sorcery" Logo="https://i.postimg.cc/fRBSLWsQ/sorcery-a19-logo-v09.png">
+			<Description>Sorcery v0.9 (Fire) - Completely Redesigned for A19!
+** FIRE RELEASES TOMORROW 8/28, EARLY AM (GMT-4) **
 http://www.SorceryMod.com
 
 Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.
-- Unique animations, art, effects and sounds for spells and items
-- Pure Spellcaster playstyle
-- Spellcrafting: 5 unique abilities for each unique spell
-- Spell Arrows + Bolts
-- Spell Bombs
-- Alchemy + Potion Crafting
-- Armor Crafting
-- Rune Crafting
-- Spell Weapon Abilities: primary, secondary, passive, charge
-- New Enemies: The Fallen and Awakened
-- New Attribute: Sorcery
-- New Dual Skill Tree and Perks
-- Fire, Ice, Lightning Mastery: learn how to craft and augment spells
-- Spellcast Mastery: primary, secondary, passive and charge abilities
-- Rune Mastery: harness the power of Runes to augment your spells
-- Alchemy Mastery: craft potions, elixirs and bombs
-- Essence Mastery: demystify and awaken the elemental essence of the world to extract and craft spells and weapons with essence.
-- Fire, Ice, Lightning Spells: upgrade each spell with five alterations
+• Vanilla game 100% untouched, add-only policy!
+• Balanced around vanilla gameplay, you must train to gain and sustain your power!
+• Unique animations, art, effects and sounds for spells and items
+• New Spells: Craft, Master and Upgrade 5 Spells per element!
+• New Enemies: Touched, Fallen (Champion), Awakened (Boss), Ancient (Raid)
+• New Attributes: Sorcery, Fire, Ice, Lightning
+• New Resource: Spirit (mana required to perform all Sorcery)
+• New Dual Skill Tree and Perks: Arcane, Fire, Ice, Lightning
+• New Crafting: Armor, Weapons, Mods, Spells, Potions, Scrolls, Stations, Blocks, Resources
+• New Armor Sets: Arcane, Fire, Ice, Lightning
+• New Masteries: Alchemy, Runesmithing, Spirit, Essence, Arcane, Fire, Ice, Lightning
+• Play-style: Sorcerer (Spellcaster)
+• Play-style: Alchemist (Potions, Bombs)
+• Play-style: Archer Mage (Spell Arrows) 
+• Play-style: Gun Mage (Spell Ammo)
+• Play-style: Melee Mage (Spell Weapons)
+• Weapon Abilities: Primary, Secondary, Passive and Charge abilities
+• Rune Mods: Harness the power of Runes to augment your weapons, armor and gear!
+• Alchemy: Craft Potions, Elixirs and Bombs
+• Sexy Loot: Item Sets, Armor, Weapons, Mods, Spells, Potions, Scrolls and more!
 
-Latest Public Version: Sorcery v0.85
-Next Public Release: 3-4 Weeks, TBD
-EARLY ACCESS: Become a Supporter to gain full-feature Early Access, unlock the Treasury Perks and help to ensure ongoing development!
+Latest Public Version: Sorcery v0.9 (Fire)
+Next Public Release: 2-3 Weeks
+SUPPORTER ACCESS: Become a Supporter to gain full-feature testing access, unlock the Treasury Perks and help ensure ongoing development!
 
 HOME: http://www.SorceryMod.com
 DISCORD: http://discord.SorceryMod.com
 FORUM: http://forum.SorceryMod.com
 WIKI: http://wiki.SorceryMod.com
 
-COMPATIBLE: DARKNESS FALLS (v2.2+): Sorcery Modlet (manual) version is fully compatible with Darkness Falls!
-COMPATIBLE: RAVENHEARST (v5.5+): Sorcery Modlet (manual) version is fully compatible with Ravenhearst!
-COMPATIBLE: WAR OF THE WALKERS (v6+): Sorcery Modlet (manual) version is fully compatible with War of The Walkers!
-
-**NOTE** This version of Sorcery is NOT EAC safe; You must play with EAC disabled. The pure XML Modlet version of Sorcery may be used with EAC enabled: https://7daystodie.com/forums/showthread.php?109145-Sorcery
+FULLY COMPATIBLE: DARKNESS FALLS (v3.x): Sorcery is fully compatible with Darkness Falls! (must remove Deep Pockets from Mods)
 			</Description>
 			<DownloadMode>Clone</DownloadMode>
 			<Version>Latest</Version>
 			<ReleaseNotes>http://forum.SorceryMod.com</ReleaseNotes>
 			<Downloads>
-			<Download>https://raw.githubusercontent.com/7D2DMods/Profiles/master/LocalizationProfile.txt</Download>
+			<Download>https://github.com/7d2d-sorcery/Sorcery</Download>
 			</Downloads>
 		</Server>
 	</ServerGroup>

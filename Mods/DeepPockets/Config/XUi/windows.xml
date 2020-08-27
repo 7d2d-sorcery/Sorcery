@@ -1,0 +1,64 @@
+<DeepPockets>
+ <!--__________________________________________________________________________________
+		PROPRIETARY DISCLAIMER
+		__________________________________________________________________________________
+		2020 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://deeppockets.sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE:  All digital works, ideas, concepts and functionality contained herein, and made possible by the
+		"Sorcery Mod", is the sole digital proprietary property of mod author DEVRIX. Ownership and equal
+		rights are hereby, irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith. 
+		
+		USAGE:  This mod, and the digital works within, may be downloaded and used by players of 
+		the 7 Days to Die community with no required royalties. By doing so, users of the mod understand 
+		and accept full and sole responsibility and liability of using the mod. Author, nor The Fun Pimps, shall
+		be held responsible or liable for any possible conflict(s) as a direct or indirect result of using this mod.
+		
+		REDISTRIBUTION: The mod, and the digital works of, may be redistributed within the 7 Days to Die 
+		community. Conditions of redistribution require this notice to remain in full, unmodified, and a direct 
+		link, with credit stated, to the original mod and author. To redistribute this mod altered in any way, 
+		it is requested that your alterations to the mod are stated clearly and precisely from that of the original.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their hard
+		work and ongoing dedication to building and improving an awesome game that fuels the passion and
+		drives the creation of this mod.
+		__________________________________________________________________________________-->
+
+	<!-- BACKPACK: windowLooting -->
+    <set xpath="/windows/window[@name='windowLooting']/rect[@name='content']/grid[@name='queue']/@rows">10</set>
+    <set xpath="/windows/window[@name='windowLooting']/rect[@name='content']/grid[@name='queue']/@cols">10</set>	
+	<!-- BACKPACK: windowBackpack -->
+	<set xpath="/windows/window[@name='windowBackpack']/@width">874</set>
+	<set xpath="/windows/window[@name='windowBackpack']/@height">416</set>
+	<remove xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/sprite[@name='windowIcon']"/>
+	<remove xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/label[@name='windowName']"/>
+	<setattribute xpath="/windows/window[@name='windowBackpack']/panel[@name='header']" name="width">100%</setattribute>
+	<setattribute xpath="/windows/window[@name='windowBackpack']/panel[@name='header']" name="pos">0,8</setattribute>
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/rect[@controller='ContainerStandardControls']/button[@name='btnSort']/@sprite">ui_game_symbol_backpack</set>
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/rect[@controller='ContainerStandardControls']/@pos">24,0</set>
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/label[@width='100']/@pos">740,-8</set>
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/sprite[@name='costIcon']/@pos">845,-10</set>
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/@height">370</set>
+	<set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/@pos">0,-34</set>
+    <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/grid[@name='inventory']/@rows">6</set>
+    <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/grid[@name='inventory']/@cols">13</set>	
+    <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/sprite[@name='backgroundMain']/@width">874</set>
+    <set xpath="/windows/window[@name='windowBackpack']/panel[@name='content']/sprite[@name='backgroundMain']/@height">403</set>
+	<append xpath="/windows/window[@name='windowBackpack']/panel[@name='header']/rect[@controller='ContainerStandardControls']/rect">
+		<combobox depth="3" name="cbxLockedSlots" pos="110,-7" width="100" height="30" tooltip_key="xuiStashLockedSlots" type="ComboBoxInt" value_min="0" value_max="45" value_wrap="true" value_increment="1" />
+	</append>
+	
+	<!-- UI: BACKPACK -->
+	<append xpath="/windows/window[@name='windowBackpack']/panel[@name='header']">
+		<sprite depth="3" name="backpackDeepPockets" sprite="" size="200,34" pos="337,-6" foregroundlayer="true" tooltip="78 Slot Backpack that must be earned through Pocket Mods, featuring full-size item icons, designed for Sorcery A19:\n• Pocket and Storage Mods doubled in size\n• Not compatible with other Backpack Mods\n• Not compatible with Mods that alter the Backpack" />
+	</append>
+
+</DeepPockets>

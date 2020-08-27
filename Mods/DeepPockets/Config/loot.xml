@@ -1,0 +1,39 @@
+<DeepPockets>
+ <!--__________________________________________________________________________________
+		PROPRIETARY DISCLAIMER
+		__________________________________________________________________________________
+		2020 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://deeppockets.sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE:  All digital works, ideas, concepts and functionality contained herein, and made possible by the
+		"Sorcery Mod", is the sole digital proprietary property of mod author DEVRIX. Ownership and equal
+		rights are hereby, irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith. 
+		
+		USAGE:  This mod, and the digital works within, may be downloaded and used by players of 
+		the 7 Days to Die community with no required royalties. By doing so, users of the mod understand 
+		and accept full and sole responsibility and liability of using the mod. Author, nor The Fun Pimps, shall
+		be held responsible or liable for any possible conflict(s) as a direct or indirect result of using this mod.
+		
+		REDISTRIBUTION: The mod, and the digital works of, may be redistributed within the 7 Days to Die 
+		community. Conditions of redistribution require this notice to remain in full, unmodified, and a direct 
+		link, with credit stated, to the original mod and author. To redistribute this mod altered in any way, 
+		it is requested that your alterations to the mod are stated clearly and precisely from that of the original.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their hard
+		work and ongoing dedication to building and improving an awesome game that fuels the passion and
+		drives the creation of this mod.
+		__________________________________________________________________________________-->
+
+	<!-- BACKPACK -->
+	<set xpath="/lootcontainers/lootcontainer[@id='2']/@size">10,10</set>
+
+	
+</DeepPockets> 
