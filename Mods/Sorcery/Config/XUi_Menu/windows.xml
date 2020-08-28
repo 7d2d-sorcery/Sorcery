@@ -1,0 +1,76 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+		__________________________________________________________________________________
+		2020 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+		
+		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+		of using this mod.
+		
+		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+		redistributed outside of its original distribution channels.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+		possible. Without their support, it is not possible to put in the enormous amount of time required to 
+		create the plethora of unique assets that make Sorcery.
+		
+		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+		__________________________________________________________________________________
+		
+		DISCLAIMER
+		__________________________________________________________________________________
+		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
+		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
+		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
+		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
+		__________________________________________________________________________________-->
+
+	<append xpath="/windows">
+		<!-- UI: SORCERY VERSION -->
+		<window name="SorceryVersion" depth="99" pos="0,0" width="200" height="22" anchor="RightTop">
+			<label name="SorceryVersion" pos="-215,-40" depth="0" text="Sorcery v0.907" font_size="26" effect="outline" color="102,0,204,255" justify="right" upper_case="false"/>
+		</window>
+
+		<!-- UI: SORCERY ELEMENTS -->		
+		<window name="SorceryLogo" depth="99" pos="0,-5" width="200" height="53" anchor="LeftTop">
+			<!-- <label name="SorceryVersion" pos="13,0" depth="0" text="v0.90" font_size="16" effect="outline" color="102,0,204,255" justify="center" upper_case="false" /> -->
+			<texture name="SorceryLogo" pos="10, -5" width="200" height="53" texture="@modfolder:Textures/SorceryLogo.png" />
+			<label name="SorceryWebsite" pos="10,-56" text="www.SorceryMod.com" font_size="20" effect="outline" color="102,0,204,255" justify="center" upper_case="false" />
+		</window>
+		<!-- <window name="SorceryCredits" depth="-1" pos="0, 0" width="220" height="941" anchor="LeftBottom">
+			<texture name="SorceryCredits" pos="0, 941" width="220" height="941" texture="@modfolder:Textures/SorceryCredits.png" />
+		</window> -->
+<!-- 		<window name="SorceryTeaser" depth="-1" pos="-598, 611" width="600" height="608" anchor="RightBottom">
+			<texture name="SorceryTeaser" width="600" height="608" texture="@modfolder:Textures/SorceryTeaser.png" />
+		</window> -->
+		<window name="SorceryTeaserLB" depth="-1" pos="-1,709" width="710" height="710" anchor="LeftBottom">
+			<texture name="SorceryTeaserLB" texture="@modfolder:Textures/SorceryTeaserLB.png"/>
+		</window>
+		<window name="SorceryTeaser" depth="-1" pos="-639,639" width="640" height="640" anchor="RightBottom">
+			<texture name="SorceryTeaser" texture="@modfolder:Textures/SorceryTeaser.png"/>
+		</window>
+	</append>
+	
+</Sorcery>

@@ -1,0 +1,341 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+		__________________________________________________________________________________
+		2020 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+		
+		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+		of using this mod.
+		
+		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+		redistributed outside of its original distribution channels.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+		possible. Without their support, it is not possible to put in the enormous amount of time required to 
+		create the plethora of unique assets that make Sorcery.
+		
+		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+		__________________________________________________________________________________
+		
+		DISCLAIMER
+		__________________________________________________________________________________
+		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
+		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
+		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
+		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
+		__________________________________________________________________________________-->
+		
+	<append xpath="/materials">
+
+	<!--___________________________ FIRE ___________________________-->	
+		<material id="fire">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="fire"/>
+			<property name="Experience" value="2"/>
+		</material>
+	<!--___________________________ ICE ___________________________-->	
+		<material id="ice">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="ice"/>
+			<property name="Experience" value="2"/>
+		</material>
+	<!--___________________________ LIGHTNING ___________________________-->	
+		<material id="lightning">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="lightning"/>
+			<property name="Experience" value="2"/>
+		</material>
+	<!--___________________________ UNHOLY ___________________________-->	
+		<material id="unholy">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="unholy"/>
+			<property name="Experience" value="2"/>
+		</material>
+	<!--___________________________ HOLY ___________________________-->	
+		<material id="holy">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="holy"/>
+			<property name="Experience" value="2"/>
+		</material>	
+	
+	<!--___________________________ SORCERY MATERIAL: EXTRACT ___________________________-->	
+		<!-- Extract: Omni -->
+		<material id="MsorceryExtractOmni">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractOmni"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="120"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<!-- Extract: Fire -->
+		<material id="MsorceryExtractFire">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractFire"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="120"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<!-- Extract: Ice -->
+		<material id="MsorceryExtractIce">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractIce"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="120"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<!-- Extract: Lightning -->
+		<material id="MsorceryExtractLightning">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractLightning"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="120"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<!-- Extract: Unholy -->
+		<material id="MsorceryExtractUnholy">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractUnholy"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="120"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<!-- Extract: Holy -->
+		<material id="MsorceryExtractHoly">
+		<property name="damage_category" value="stone"/>
+		<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractHoly"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="120"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="500"/>
+			<property name="Experience" value="4"/>
+		</material>	
+		
+	<!--___________________________ SORCERY MATERIAL: POWDER ___________________________-->	
+		<!-- Powder: Arcane -->
+		<material id="MsorceryPowderArcane">
+			<property name="damage_category" value="earth"/>
+			<property name="surface_category" value="earth"/>
+			<property name="forge_category" value="resourcePowderArcane"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="sand"/>
+			<property name="fertile_level" value="1"/>
+			<property name="stability_glue" value="4"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<!-- Powder: Fire -->
+		<material id="MsorceryPowderFire">
+			<property name="damage_category" value="earth"/>
+			<property name="surface_category" value="earth"/>
+			<property name="forge_category" value="resourcePowderFire"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="sand"/>
+			<property name="fertile_level" value="1"/>
+			<property name="stability_glue" value="4"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<!-- Powder: Ice -->
+		<material id="MsorceryPowderIce">
+			<property name="damage_category" value="earth"/>
+			<property name="surface_category" value="earth"/>
+			<property name="forge_category" value="resourcePowderIce"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="sand"/>
+			<property name="fertile_level" value="1"/>
+			<property name="stability_glue" value="4"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<!-- Powder: Lightning -->
+		<material id="MsorceryPowderLightning">
+			<property name="damage_category" value="earth"/>
+			<property name="surface_category" value="earth"/>
+			<property name="forge_category" value="resourcePowderLightning"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="sand"/>
+			<property name="fertile_level" value="1"/>
+			<property name="stability_glue" value="4"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<!-- Powder: Unholy -->
+		<material id="MsorceryPowderUnholy">
+			<property name="damage_category" value="earth"/>
+			<property name="surface_category" value="earth"/>
+			<property name="forge_category" value="resourcePowderUnholy"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="sand"/>
+			<property name="fertile_level" value="1"/>
+			<property name="stability_glue" value="4"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="Experience" value="2"/>
+		</material>	
+		<!-- Powder: Holy -->
+		<material id="MsorceryPowderHoly">
+			<property name="damage_category" value="earth"/>
+			<property name="surface_category" value="earth"/>
+			<property name="forge_category" value="resourcePowderHoly"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="sand"/>
+			<property name="fertile_level" value="1"/>
+			<property name="stability_glue" value="4"/>
+			<property name="Mass" type="int" value="10"/>
+			<property name="MaxDamage" value="100"/>
+			<property name="Experience" value="2"/>
+		</material>	
+		
+	<!--___________________________ SORCERY MATERIAL: CLOTH ___________________________-->	
+		<!-- Cloth: Arcane -->
+		<material id="MsorceryClothArcane">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="resourceThreadArcane"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.01"/>
+			<property name="stepsound" value="cloth"/>
+			<property name="lightopacity" value="4"/>
+			<property name="stability_glue" value="10"/>
+			<property name="Mass" type="int" value="5"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="MaxDamage" value="5"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<!-- Cloth: Fire -->
+		<material id="MsorceryClothFire">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="resourceThreadFire"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.01"/>
+			<property name="stepsound" value="cloth"/>
+			<property name="lightopacity" value="4"/>
+			<property name="stability_glue" value="10"/>
+			<property name="Mass" type="int" value="5"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="MaxDamage" value="5"/>
+			<property name="Experience" value="4"/>
+		</material>	
+		<!-- Cloth: Ice -->
+		<material id="MsorceryClothIce">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="resourceThreadIce"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.01"/>
+			<property name="stepsound" value="cloth"/>
+			<property name="lightopacity" value="4"/>
+			<property name="stability_glue" value="10"/>
+			<property name="Mass" type="int" value="5"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="MaxDamage" value="5"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<!-- Cloth: Lightning -->
+		<material id="MsorceryClothLightning">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="resourceThreadLightning"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.01"/>
+			<property name="stepsound" value="cloth"/>
+			<property name="lightopacity" value="4"/>
+			<property name="stability_glue" value="10"/>
+			<property name="Mass" type="int" value="5"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="MaxDamage" value="5"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<!-- Cloth: Unholy -->
+		<material id="MsorceryClothUnholy">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="resourceThreadUnholy"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.01"/>
+			<property name="stepsound" value="cloth"/>
+			<property name="lightopacity" value="4"/>
+			<property name="stability_glue" value="10"/>
+			<property name="Mass" type="int" value="5"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="MaxDamage" value="5"/>
+			<property name="Experience" value="4"/>
+		</material>
+		<!-- Cloth: Holy -->
+		<material id="MsorceryClothHoly">
+			<property name="damage_category" value="cloth"/>
+			<property name="surface_category" value="cloth"/>
+			<property name="forge_category" value="resourceThreadHoly"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="0.01"/>
+			<property name="stepsound" value="cloth"/>
+			<property name="lightopacity" value="4"/>
+			<property name="stability_glue" value="10"/>
+			<property name="Mass" type="int" value="5"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="MaxDamage" value="5"/>
+			<property name="Experience" value="4"/>
+		</material>
+
+	  </append>		
+</Sorcery>

@@ -1,0 +1,1024 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+		__________________________________________________________________________________
+		2020 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+		
+		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+		of using this mod.
+		
+		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+		redistributed outside of its original distribution channels.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+		possible. Without their support, it is not possible to put in the enormous amount of time required to 
+		create the plethora of unique assets that make Sorcery.
+		
+		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+		__________________________________________________________________________________
+		
+		DISCLAIMER
+		__________________________________________________________________________________
+		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
+		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
+		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
+		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
+		__________________________________________________________________________________-->
+		
+	<append xpath="/recipes">
+
+	<!-- SCRAPPING ______________________________________-->
+	<!-- <wildcard_forge_category /> -->
+	<!--  craft_time="1" -->
+		<!-- SCRAPPING: Essence -->
+		<!-- Scrap: Fire Essence -->
+		<recipe name="resourceEssenceFire" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>	
+		<!-- Scrap: Ice Essence -->
+		<recipe name="resourceEssenceIce" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<!-- Scrap: Lightning Essence -->
+		<recipe name="resourceEssenceLightning" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<!-- Scrap: Unholy Essence -->
+		<recipe name="resourceEssenceUnholy" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<!-- Scrap: Holy Essence -->
+		<recipe name="resourceEssenceHoly" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<!-- Scrap Extract -->
+		<recipe name="resourceExtractOmni" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourceExtractFire" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourceExtractIce" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourceExtractLightning" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourceExtractUnholy" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourceExtractHoly" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>	
+		<!-- Scrap: Powder -->
+		<recipe name="resourcePowderArcane" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourcePowderFire" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>	
+		<recipe name="resourcePowderIce" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>	
+		<recipe name="resourcePowderLightning" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourcePowderUnholy" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourcePowderHoly" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>	
+		<!-- Scrap Thread -->
+		<recipe name="resourceThreadArcane" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourceThreadFire" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourceThreadIce" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourceThreadLightning" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourceThreadUnholy" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+		<recipe name="resourceThreadHoly" count="1" craft_time="1" always_unlocked="true">
+			<wildcard_forge_category />
+		</recipe>
+	<!-- END - SCRAPPING ______________________________________-->
+		
+	<!-- RESOURCE: ESSENCE EXTRACT ______________________________________-->
+		<!-- Element Extract -->
+		<recipe name="resourceExtractFire" count="1" craft_area="conjureFire" material_based="true" tags="conjureFireCrafting" craft_tool="toolFireCore">
+			<ingredient name="unit_fire" count="1"/>
+		</recipe>
+		<recipe name="resourceExtractIce" count="1" craft_area="conjureIce" material_based="true" craft_tool="toolIceCore">
+			<ingredient name="unit_ice" count="1"/>
+		</recipe>
+		<recipe name="resourceExtractLightning" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolLightningCore">
+			<ingredient name="unit_lightning" count="1"/>
+		</recipe>	
+		<!-- Omni Extract -->
+		<recipe name="resourceExtractOmni" count="1" craft_area="conjureFire" material_based="true" tags="conjureFireCrafting">
+			<ingredient name="unit_fire" count="1"/>
+		</recipe>
+		<recipe name="resourceExtractOmni" count="1" craft_area="conjureIce" material_based="true">
+			<ingredient name="unit_ice" count="1"/>
+		</recipe>
+		<recipe name="resourceExtractOmni" count="1" craft_area="conjureLightning" material_based="true">
+			<ingredient name="unit_lightning" count="1"/>
+		</recipe>
+
+	<!-- RESOURCE: POWDER ______________________________________-->
+	<!-- ENCHANTED MORTAR -->
+		<!-- Arcane Powder -->
+		<recipe name="resourcePowderArcane" count="1" tags="learnable">
+			<ingredient name="resourceEssenceFire" count="2"/>
+		</recipe>
+		<recipe name="resourcePowderArcane" count="1" tags="learnable">
+			<ingredient name="resourceEssenceIce" count="2"/>
+		</recipe>
+		<recipe name="resourcePowderArcane" count="1" tags="learnable">
+			<ingredient name="resourceEssenceLightning" count="2"/>
+		</recipe>
+		<!-- Element Powder -->
+		<recipe name="resourcePowderFire" count="1" tags="learnable">
+			<ingredient name="resourceEssenceFire" count="2"/>
+		</recipe>
+		<recipe name="resourcePowderIce" count="1" tags="learnable">
+			<ingredient name="resourceEssenceIce" count="2"/>
+		</recipe>
+		<recipe name="resourcePowderLightning" count="1" tags="learnable">
+			<ingredient name="resourceEssenceLightning" count="2"/>
+		</recipe>
+	<!-- ALCHEMY STATION -->
+		<!-- Alchemy Station Powders -->
+		<recipe name="resourcePowderArcane" count="1" craft_area="sorceryAlchemyStation">
+			<ingredient name="resourceExtractOmni" count="1"/>
+		</recipe>
+		<recipe name="resourcePowderFire" count="1" craft_area="sorceryAlchemyStation" craft_tool="toolFireCore">
+			<ingredient name="resourceExtractFire" count="1"/>
+		</recipe>
+		<recipe name="resourcePowderIce" count="1" craft_area="sorceryAlchemyStation" craft_tool="toolIceCore">
+			<ingredient name="resourceExtractIce" count="1"/>
+		</recipe>
+		<recipe name="resourcePowderLightning" count="1" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore">
+			<ingredient name="resourceExtractLightning" count="1"/>
+		</recipe>
+
+	<!-- RESOURCE: THREAD ______________________________________-->
+		<!-- Arcane Wheel Threads -->
+		<recipe name="resourceThreadArcane" count="1" craft_area="sorceryArcaneWheel">
+			<ingredient name="resourceExtractOmni" count="5"/>
+		</recipe>
+		<recipe name="resourceThreadFire" count="1" craft_area="sorceryArcaneWheel" craft_tool="toolFireCore">
+			<ingredient name="resourceExtractFire" count="5"/>
+		</recipe>	
+		<recipe name="resourceThreadIce" count="1" craft_area="sorceryArcaneWheel" craft_tool="toolIceCore">
+			<ingredient name="resourceExtractIce" count="5"/>
+		</recipe>
+		<recipe name="resourceThreadLightning" count="1" craft_area="sorceryArcaneWheel" craft_tool="toolLightningCore">
+			<ingredient name="resourceExtractLightning" count="5"/>
+		</recipe>
+		
+		<!-- ALCHEMY RESOURCES -->
+		<!-- RESOURCE: RITUAL -->
+		<!-- Fire -->
+		<recipe name="resourceRitualShardFire" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolFireCore" tags="sorceryTier">
+			<ingredient name="resourceRockSmall" count="60"/>
+			<ingredient name="resourceEssenceFire" count="60"/>
+			<ingredient name="resourceExtractFire" count="60"/>
+			<ingredient name="resourcePowderFire" count="60"/>
+			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,10" value="1,5" tags="resourceEssenceFire,resourceExtractFire,resourcePowderFire"/></effect_group>	
+		</recipe>		
+		<recipe name="resourceRitualStoneFire" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolFireCore">
+			<ingredient name="resourceRitualShardFire" count="4"/>
+		</recipe>
+		<!-- Ice -->
+		<recipe name="resourceRitualShardIce" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolIceCore" tags="sorceryTier">
+			<ingredient name="resourceRockSmall" count="60"/>
+			<ingredient name="resourceEssenceIce" count="60"/>
+			<ingredient name="resourceExtractIce" count="60"/>
+			<ingredient name="resourcePowderIce" count="60"/>
+			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,10" value="1,5" tags="resourceEssenceIce,resourceExtractIce,resourcePowderIce"/></effect_group>	
+		</recipe>		
+		<recipe name="resourceRitualStoneIce" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolIceCore">
+			<ingredient name="resourceRitualShardIce" count="4"/>
+		</recipe>		
+		<!-- Lightning -->
+		<recipe name="resourceRitualShardLightning" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore" tags="sorceryTier">
+			<ingredient name="resourceRockSmall" count="60"/>
+			<ingredient name="resourceEssenceLightning" count="60"/>
+			<ingredient name="resourceExtractLightning" count="60"/>
+			<ingredient name="resourcePowderLightning" count="60"/>
+			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,10" value="1,5" tags="resourceEssenceLightning,resourceExtractLightning,resourcePowderLightning"/></effect_group>
+		</recipe>		
+		<recipe name="resourceRitualStoneLightning" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore">
+			<ingredient name="resourceRitualShardLightning" count="4"/>
+		</recipe>
+
+	<!-- ATTRIBUTE / SKILL __________________________________________________________________________________ -->
+		<!-- Elixir: FIRE -->
+		<recipe name="sorceryElixir_attFire" count="1" craft_time="1800" craft_area="sorceryAlchemyStation" craft_tool="toolFireCore" tags="sorceryFireTier,learnable">
+			<ingredient name="resourceRitualBloodFallenFire" count="6"/>
+			<ingredient name="resourcePowderFire" count="300"/>
+			<ingredient name="resourcePowderArcane" count="200"/>
+			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,10" value="1,10" tags="resourceRitualBloodFallenFire,resourcePowderFire,resourcePowderArcane"/></effect_group>
+		</recipe>
+	<!-- END - ATTRIBUTE / SKILL __________________________________________________________________________________ -->
+
+	<!-- QUESTS __________________________________________________________________________________ -->
+		<!-- <recipe name="q_sorceryIntroGuide_Fire" count="1" craft_area="sorceryDesk" craft_time="30" tags="sorceryFireTier,learnable">
+			<ingredient name="resourceExtractFire" count="50"/>
+			<ingredient name="resourcePaper" count="60"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="4,10" value="1,7" tags="resourceExtractFire"/>
+			</effect_group>
+		</recipe> -->
+		<!-- Fallen: FIRE -->
+		<recipe name="q_sorceryFallen_Fire" count="1" craft_time="30" craft_area="sorceryDesk" craft_tool="toolFireCore">
+			<ingredient name="resourceRitualStoneFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="2"/>
+			<ingredient name="resourcePaper" count="60"/>
+		</recipe>
+		<!-- Fallen: ICE -->
+		<recipe name="q_sorceryFallen_Ice" count="1" craft_time="30" craft_area="sorceryDesk" craft_tool="toolIceCore">
+			<ingredient name="resourceRitualStoneIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="2"/>
+			<ingredient name="resourcePaper" count="60"/>
+		</recipe>
+		<!-- Fallen: LIGHTNING -->
+		<recipe name="q_sorceryFallen_Lightning" count="1" craft_time="30" craft_area="sorceryDesk" craft_tool="toolLightningCore">
+			<ingredient name="resourceRitualStoneLightning" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="2"/>
+			<ingredient name="resourcePaper" count="60"/>
+		</recipe>
+		<!-- Fallen: TRIO -->
+		<!-- craft_tool="toolFireCore,toolIceCore,toolLightningCore" -->
+		<recipe name="q_sorceryFallen_Trio" count="1" craft_time="30" craft_area="sorceryDesk" craft_tool="toolLightningCore" tags="learnable">
+			<ingredient name="resourceRitualBloodFallenFire" count="2"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="2"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="2"/>
+			<ingredient name="resourceRitualStoneFire" count="1"/>
+			<ingredient name="resourceRitualStoneIce" count="1"/>
+			<ingredient name="resourceRitualStoneLightning" count="1"/>
+		</recipe>
+	<!-- END - QUESTS __________________________________________________________________________________ -->
+
+	<!-- SCROLLS __________________________________________________________________________________ -->
+		<!-- Arcane Vision -->
+		<recipe name="scroll_ArcaneVision" count="1" craft_area="sorceryDesk" craft_time="30" tags="sorceryTier,learnable">
+			<ingredient name="resourceExtractOmni" count="50"/>
+			<ingredient name="resourcePaper" count="20"/>
+			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="4,10" value="1,7" tags="resourceExtractOmni"/>
+			</effect_group>
+		</recipe>
+		<!-- Fire Weapon -->
+		<recipe name="scrollFire_Weapon" count="1" craft_area="sorceryDesk" craft_time="30" tags="sorceryFireTier,learnable">
+			<ingredient name="resourceExtractFire" count="50"/>
+			<ingredient name="resourcePaper" count="20"/>
+			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="4,10" value="1,7" tags="resourceExtractFire"/>
+			</effect_group>
+		</recipe>
+		<!-- Fire Ammo -->
+		<recipe name="scrollFire_Ammo" count="1" craft_area="sorceryDesk" craft_time="30" tags="sorceryFireTier,learnable">
+			<ingredient name="resourceExtractFire" count="100"/>
+			<ingredient name="resourcePaper" count="20"/>
+			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="4,10" value="1,7" tags="resourceExtractFire"/>
+			</effect_group>
+		</recipe>
+	<!-- END - SCROLLS __________________________________________________________________________________ -->
+
+
+	<!-- STATIONS ______________________________________-->
+	<!-- SORCERER DESK -->
+		<recipe name="sorceryDesk" count="1" craft_area="sorceryDesk" craft_time="30" tags="sorceryTier">
+			<ingredient name="candle" count="2"/>
+			<ingredient name="resourceExtractOmni" count="50"/>
+			<ingredient name="resourcePaper" count="150"/>
+			<ingredient name="resourceWood" count="200"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="4,10" value="1,7" tags="resourceExtractOmni"/>
+			</effect_group>
+		</recipe>
+	<!-- CONJURES -->
+		<!-- CONJURE: FIRE -->
+		<recipe name="conjureFire" count="1" craft_area="sorceryDesk" tags="sorceryFireTier,learnable" craft_time="120"> <!-- DEV: 120 -->
+			<ingredient name="resourceEssenceFire" count="50"/>
+			<ingredient name="resourceCoal" count="100"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+			<ingredient name="resourceClayLump" count="100"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="4,10" value="1,7" tags="resourceEssenceFire"/>
+			</effect_group>
+		</recipe>	
+		<!-- CONJURE: ICE -->
+		<recipe name="conjureIce" count="1" craft_area="sorceryDesk" tags="learnable" craft_time="120">
+			<ingredient name="resourceEssenceIce" count="50"/>
+			<ingredient name="resourcePotassiumNitratePowder" count="100"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+			<ingredient name="resourceClayLump" count="100"/>
+		</recipe>	
+		<!-- CONJURE: LIGHTNING -->
+		<recipe name="conjureLightning" count="1" craft_area="sorceryDesk" tags="learnable" craft_time="120">
+			<ingredient name="resourceEssenceLightning" count="50"/>
+			<ingredient name="resourceScrapLead" count="100"/>
+			<ingredient name="resourceRockSmall" count="100"/>
+			<ingredient name="resourceClayLump" count="100"/>
+		</recipe>
+	<!-- ALCHEMY -->
+		<!-- ENCHANTED MORTAR -->
+		<recipe name="sorceryAlchemyMortar" craft_area="sorceryDesk" count="1" tags="learnable" craft_time="120">
+			<ingredient name="resourceExtractOmni" count="30"/>
+			<ingredient name="resourceWood" count="40"/>
+			<ingredient name="resourceClayLump" count="40"/>
+		</recipe>
+		<!-- ALCHEMY STATION -->
+		<recipe name="sorceryAlchemyStation" craft_area="sorceryDesk" count="1" tags="learnable" craft_time="180">
+			<ingredient name="resourcePowderArcane" count="20"/>
+			<ingredient name="resourceExtractOmni" count="50"/>
+			<ingredient name="resourceForgedIron" count="10"/>
+			<ingredient name="resourceBrokenGlass" count="80"/>
+			<ingredient name="resourceWood" count="200"/>
+		</recipe>
+	<!-- TAILORING -->
+		<!-- ARCANE WHEEL -->
+		<recipe name="sorceryArcaneWheel" craft_area="sorceryDesk" count="1" tags="learnable" craft_time="100">
+			<ingredient name="resourceExtractOmni" count="40"/>
+			<ingredient name="resourceCropCottonPlant" count="20"/>
+			<ingredient name="resourceScrapIron" count="30"/>
+			<ingredient name="resourceWood" count="100"/>
+		</recipe>
+	<!-- END - STATIONS ______________________________________-->
+		
+	<!-- TOOLS ______________________________________-->
+		<!-- Tool: Core -->
+		<recipe name="toolFireCore" count="1" craft_area="conjureFire" material_based="true" tags="sorceryFireTier,conjureFireCrafting" craft_time="300">
+			<ingredient name="unit_fire" count="50"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="4,10" value="1,7" tags="unit_fire"/>
+			</effect_group>
+		</recipe>	
+		<recipe name="toolIceCore" count="1" craft_area="conjureIce" material_based="true" tags="conjureIceCrafting" craft_time="300">
+			<ingredient name="unit_ice" count="50"/>
+		</recipe>
+		<recipe name="toolLightningCore" count="1" craft_area="conjureLightning" material_based="true" tags="conjureLightningCrafting" craft_time="300">
+			<ingredient name="unit_lightning" count="50"/>
+		</recipe>
+		<!-- Tool: Hammer -->
+		<recipe name="toolHammerFire" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolFireCore" tags="sorceryFireTier,conjureFireCrafting,learnable" craft_time="300">
+			<ingredient name="unit_fire" count="50"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="4,10" value="1,7" tags="unit_fire"/>
+			</effect_group>
+		</recipe>	
+		<recipe name="toolHammerIce" count="1" craft_area="conjureIce" material_based="true" craft_tool="toolIceCore" tags="conjureIceCrafting,learnable" craft_time="300">
+			<ingredient name="unit_ice" count="50"/>
+		</recipe>
+		<recipe name="toolHammerLightning" count="1" craft_area="conjureLightning" material_based="true" craft_tool="toolLightningCore" tags="conjureLightningCrafting,learnable" craft_time="300">
+			<ingredient name="unit_lightning" count="50"/>
+		</recipe>
+	<!-- END - TOOLS ______________________________________-->
+		
+		
+	<!-- SPELLCASTS ______________________________________-->
+		<!-- FIRE SPELLCAST -->
+		<recipe name="spellcastFire" count="1" craft_area="conjureFire" material_based="true" craft_time="120" tags="conjureFireCrafting,perkSorcerySpellcastFire,learnable">
+			<ingredient name="unit_fire" count="50"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,12" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+	<!-- END - SPELLCASTS ______________________________________-->		
+
+
+	<!-- SPELLS ______________________________________-->
+		<!-- FIRE SPELLS -->
+		<!-- Spell: Fire -->
+		<recipe name="spellFire" count="1" craft_area="conjureFire" material_based="true" craft_time="2" tags="perkSorcerySpellFire,conjureFireCrafting,learnable">
+			<ingredient name="unit_fire" count="2"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<!-- Spell: Firenado -->
+		<recipe name="spellFire2" count="1" craft_area="conjureFire" material_based="true" craft_time="3" tags="perkSorcerySpellFire2,conjureFireCrafting,learnable">
+			<ingredient name="unit_fire" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<!-- Spell: Meteor -->
+		<recipe name="spellFire3" count="1" craft_area="conjureFire" material_based="true" craft_time="5" tags="perkSorcerySpellFire3,conjureFireCrafting,learnable">
+			<ingredient name="unit_fire" count="12"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+	<!-- END - SPELLS ______________________________________-->		
+		
+	<!-- SPELL AMMO ______________________________________-->
+		<!-- Arrows: Fire -->
+		<recipe name="spellArrowFire" count="1" craft_area="conjureFire" material_based="true" craft_time="2" tags="sorceryFireTier,conjureFireCrafting,learnable">
+			<ingredient name="unit_fire" count="1"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,15" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<recipe name="spellArrowFire2" count="1" craft_area="conjureFire" material_based="true" craft_time="3" tags="sorceryFireTier,conjureFireCrafting,learnable">
+			<ingredient name="unit_fire" count="4"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<recipe name="spellArrowFire3" count="1" craft_area="conjureFire" material_based="true" craft_time="5" tags="sorceryFireTier,conjureFireCrafting,learnable">
+			<ingredient name="unit_fire" count="11"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<!-- Bolts: Fire -->
+		<recipe name="spellBoltFire" count="1" craft_area="conjureFire" material_based="true" craft_time="2" tags="sorceryFireTier,conjureFireCrafting,learnable">
+			<ingredient name="unit_fire" count="1"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,16" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<recipe name="spellBoltFire2" count="1" craft_area="conjureFire" material_based="true" craft_time="3" tags="sorceryFireTier,conjureFireCrafting,learnable">
+			<ingredient name="unit_fire" count="4"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<recipe name="spellBoltFire3" count="1" craft_area="conjureFire" material_based="true" craft_time="5" tags="sorceryFireTier,conjureFireCrafting,learnable">
+			<ingredient name="unit_fire" count="11"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<!-- Arrow Bolt Convert -->
+		<recipe name="spellArrowFire" count="1" craft_area="sorceryDesk" craft_time="1">
+			<ingredient name="spellBoltFire" count="1"/>
+		</recipe>
+		<recipe name="spellArrowFire2" count="1" craft_area="sorceryDesk" craft_time="1">
+			<ingredient name="spellBoltFire2" count="1"/>
+		</recipe>
+		<recipe name="spellArrowFire3" count="1" craft_area="sorceryDesk" craft_time="1">
+			<ingredient name="spellBoltFire3" count="1"/>
+		</recipe>
+		<recipe name="spellBoltFire" count="1" craft_area="sorceryDesk" craft_time="1">
+			<ingredient name="spellArrowFire" count="1"/>
+		</recipe>
+		<recipe name="spellBoltFire2" count="1" craft_area="sorceryDesk" craft_time="1">
+			<ingredient name="spellArrowFire2" count="1"/>
+		</recipe>
+		<recipe name="spellBoltFire3" count="1" craft_area="sorceryDesk" craft_time="1">
+			<ingredient name="spellArrowFire3" count="1"/>
+		</recipe>
+	<!-- END - SPELL AMMO ______________________________________-->
+		
+	<!-- RUNES ______________________________________-->
+		<!-- ARCANE RUNES -->
+		<!-- Rune: Lock Shatter -->
+		<recipe name="rune_LockShatter" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="120">
+			<ingredient name="unit_fire" count="100"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune: Spell Light -->
+		<recipe name="rune_SpellLight" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="120">
+			<ingredient name="unit_fire" count="75"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+
+	<!-- END - RUNES ______________________________________-->
+		
+	<!-- ARMOR SETS / TAILORING ______________________________________-->
+	<!-- ARMOR: ARCANE -->
+		<recipe name="sorceryAccessory_Shades" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmor,learnable">
+			<ingredient name="resourceScrapIron" count="30"/>
+			<ingredient name="resourceThreadArcane" count="20"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadArcane"/>
+			</effect_group>			
+		</recipe>
+		<recipe name="sorceryArmor_Bandana" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmor,learnable">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadArcane" count="15"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadArcane"/>
+			</effect_group>		
+		</recipe>	
+		<recipe name="sorceryArmor_Hood" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmor,learnable">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadArcane" count="20"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadArcane"/>
+			</effect_group>		
+		</recipe>	
+		<recipe name="sorceryArmor_Robe" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmor,learnable">
+			<ingredient name="resourceCloth" count="15"/>
+			<ingredient name="resourceCropCottonPlant" count="15"/>
+			<ingredient name="resourceThreadArcane" count="30"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadArcane"/>
+			</effect_group>			
+		</recipe>			
+		<recipe name="sorceryArmor_Chest" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmor,learnable">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadArcane" count="18"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadArcane"/>
+			</effect_group>			
+		</recipe>	
+		<recipe name="sorceryArmor_Shirt" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmor,learnable">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadArcane" count="17"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadArcane"/>
+			</effect_group>		
+		</recipe>	
+		<recipe name="sorceryArmor_Gloves" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmor,learnable">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadArcane" count="16"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadArcane"/>
+			</effect_group>		
+		</recipe>
+		<recipe name="sorceryArmor_Leg" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmor,learnable">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadArcane" count="17"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadArcane"/>
+			</effect_group>		
+		</recipe>
+		<recipe name="sorceryArmor_Pants" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmor,learnable">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadArcane" count="16"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadArcane"/>
+			</effect_group>		
+		</recipe>
+		<recipe name="sorceryArmor_Boots" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmor,learnable">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadArcane" count="18"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadArcane"/>
+			</effect_group>		
+		</recipe>
+
+	<!-- ARMOR: FIRE -->
+		<recipe name="sorceryAccessoryFire_Shades" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorFire,learnable" craft_tool="toolFireCore">
+			<ingredient name="resourceScrapIron" count="30"/>
+			<ingredient name="resourceThreadFire" count="20"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadFire"/>
+			</effect_group>		
+		</recipe>
+		<recipe name="sorceryArmorFire_Bandana" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorFire,learnable" craft_tool="toolFireCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadFire" count="15"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadFire"/>
+			</effect_group>		
+		</recipe>	
+		<recipe name="sorceryArmorFire_Hood" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorFire,learnable" craft_tool="toolFireCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadFire" count="20"/>			
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadFire"/>
+			</effect_group>			
+		</recipe>	
+		<recipe name="sorceryArmorFire_Robe" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorFire,learnable" craft_tool="toolFireCore">
+			<ingredient name="resourceCloth" count="15"/>
+			<ingredient name="resourceCropCottonPlant" count="15"/>
+			<ingredient name="resourceThreadFire" count="30"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadFire"/>
+			</effect_group>			
+		</recipe>			
+		<recipe name="sorceryArmorFire_Chest" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorFire,learnable" craft_tool="toolFireCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadFire" count="18"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadFire"/>
+			</effect_group>		
+		</recipe>	
+		<recipe name="sorceryArmorFire_Shirt" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorFire,learnable" craft_tool="toolFireCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadFire" count="17"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadFire"/>
+			</effect_group>		
+		</recipe>	
+		<recipe name="sorceryArmorFire_Gloves" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorFire,learnable" craft_tool="toolFireCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadFire" count="16"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadFire"/>
+			</effect_group>			
+		</recipe>
+		<recipe name="sorceryArmorFire_Leg" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorFire,learnable" craft_tool="toolFireCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadFire" count="17"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadFire"/>
+			</effect_group>		
+		</recipe>
+		<recipe name="sorceryArmorFire_Pants" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorFire,learnable" craft_tool="toolFireCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadFire" count="16"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadFire"/>
+			</effect_group>			
+		</recipe>
+		<recipe name="sorceryArmorFire_Boots" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorFire,learnable" craft_tool="toolFireCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadFire" count="18"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadFire"/>
+			</effect_group>		
+		</recipe>			
+
+	<!-- ARMOR: ICE -->
+		<recipe name="sorceryAccessoryIce_Shades" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorIce,learnable" craft_tool="toolIceCore">
+			<ingredient name="resourceScrapIron" count="30"/>
+			<ingredient name="resourceThreadIce" count="20"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadIce"/>
+			</effect_group>		
+		</recipe>
+		<recipe name="sorceryArmorIce_Bandana" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorIce,learnable" craft_tool="toolIceCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadIce" count="15"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadIce"/>
+			</effect_group>		
+		</recipe>	
+		<recipe name="sorceryArmorIce_Hood" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorIce,learnable" craft_tool="toolIceCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadIce" count="20"/>			
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadIce"/>
+			</effect_group>		
+		</recipe>	
+		<recipe name="sorceryArmorIce_Robe" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorIce,learnable" craft_tool="toolIceCore">
+			<ingredient name="resourceCloth" count="15"/>
+			<ingredient name="resourceCropCottonPlant" count="15"/>
+			<ingredient name="resourceThreadIce" count="30"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadIce"/>
+			</effect_group>	
+		</recipe>			
+		<recipe name="sorceryArmorIce_Chest" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorIce,learnable" craft_tool="toolIceCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadIce" count="18"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadIce"/>
+			</effect_group>		
+		</recipe>	
+		<recipe name="sorceryArmorIce_Shirt" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorIce,learnable" craft_tool="toolIceCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadIce" count="17"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadIce"/>
+			</effect_group>			
+		</recipe>	
+		<recipe name="sorceryArmorIce_Gloves" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorIce,learnable" craft_tool="toolIceCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadIce" count="16"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadIce"/>
+			</effect_group>		
+		</recipe>
+		<recipe name="sorceryArmorIce_Leg" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorIce,learnable" craft_tool="toolIceCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadIce" count="17"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadIce"/>
+			</effect_group>		
+		</recipe>
+		<recipe name="sorceryArmorIce_Pants" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorIce,learnable" craft_tool="toolIceCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadIce" count="16"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadIce"/>
+			</effect_group>	
+		</recipe>
+		<recipe name="sorceryArmorIce_Boots" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorIce,learnable" craft_tool="toolIceCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadIce" count="18"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadIce"/>
+			</effect_group>
+		</recipe>
+		
+	<!-- ARMOR: LIGHTNING -->
+		<recipe name="sorceryAccessoryLightning_Shades" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorLightning,learnable" craft_tool="toolLightningCore">
+			<ingredient name="resourceScrapIron" count="30"/>
+			<ingredient name="resourceThreadLightning" count="20"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadLightning"/>
+			</effect_group>	
+		</recipe>
+		<recipe name="sorceryArmorLightning_Bandana" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorLightning,learnable" craft_tool="toolLightningCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadLightning" count="15"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadLightning"/>
+			</effect_group>		
+		</recipe>	
+		<recipe name="sorceryArmorLightning_Hood" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorLightning,learnable" craft_tool="toolLightningCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadLightning" count="20"/>			
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadLightning"/>
+			</effect_group>	
+		</recipe>	
+		<recipe name="sorceryArmorLightning_Robe" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorLightning,learnable" craft_tool="toolLightningCore">
+			<ingredient name="resourceCloth" count="15"/>
+			<ingredient name="resourceCropCottonPlant" count="15"/>
+			<ingredient name="resourceThreadLightning" count="30"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadLightning"/>
+			</effect_group>	
+		</recipe>			
+		<recipe name="sorceryArmorLightning_Chest" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorLightning,learnable" craft_tool="toolLightningCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadLightning" count="18"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadLightning"/>
+			</effect_group>
+		</recipe>	
+		<recipe name="sorceryArmorLightning_Shirt" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorLightning,learnable" craft_tool="toolLightningCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadLightning" count="17"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadLightning"/>
+			</effect_group>
+		</recipe>	
+		<recipe name="sorceryArmorLightning_Gloves" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorLightning,learnable" craft_tool="toolLightningCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadLightning" count="16"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadLightning"/>
+			</effect_group>
+		</recipe>
+		<recipe name="sorceryArmorLightning_Leg" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorLightning,learnable" craft_tool="toolLightningCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadLightning" count="17"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadLightning"/>
+			</effect_group>
+		</recipe>
+		<recipe name="sorceryArmorLightning_Pants" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorLightning,learnable" craft_tool="toolLightningCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadLightning" count="16"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadLightning"/>
+			</effect_group>
+		</recipe>
+		<recipe name="sorceryArmorLightning_Boots" count="1" craft_area="sorceryArcaneWheel" tags="perkSorceryArmorLightning,learnable" craft_tool="toolLightningCore">
+			<ingredient name="resourceCloth" count="10"/>
+			<ingredient name="resourceCropCottonPlant" count="10"/>
+			<ingredient name="resourceThreadLightning" count="18"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,16" tags="resourceThreadLightning"/>
+			</effect_group>
+		</recipe>
+	<!-- END - ARMOR SETS / TAILORING -->
+
+	<!-- ALCHEMY ______________________________________-->
+	<!-- ALCHEMY POTIONS -->
+		<recipe name="potionBottle" count="1" craft_time="10" craft_area="sorceryAlchemyStation" tags="perkSorceryAlchemyMastery">
+			<ingredient name="resourcePowderArcane" count="3"/>
+			<ingredient name="resourceBrokenGlass" count="5"/>
+			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,10" tags="resourcePowderArcane,resourceBrokenGlass"/></effect_group>
+		</recipe>
+		<recipe name="potionBottle" count="1" craft_time="10" tags="perkSorceryAlchemyMastery">
+			<ingredient name="resourcePowderArcane" count="6"/>
+			<ingredient name="resourceBrokenGlass" count="5"/>
+			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,10" tags="resourcePowderArcane,resourceBrokenGlass"/></effect_group>
+		</recipe>
+	<!-- ARCANE POTIONS -->
+		<!-- Potion: HEALTH -->
+		<recipe name="potion_Health" count="1" craft_time="10" craft_area="sorceryAlchemyStation" tags="perkSorceryAlchemyMastery,learnable">
+			<ingredient name="resourceCropChrysanthemumPlant" count="2"/>
+			<ingredient name="resourcePowderArcane" count="5"/>
+			<ingredient name="potionBottle" count="1"/>
+ 			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceCropChrysanthemumPlant,resourcePowderArcane"/></effect_group>	
+		</recipe>
+			<recipe name="potion_Health" count="1" craft_time="10" tags="perkSorceryAlchemyMastery,learnable">
+				<ingredient name="resourceCropChrysanthemumPlant" count="2"/>
+				<ingredient name="resourcePowderArcane" count="10"/>
+				<ingredient name="potionBottle" count="1"/>
+				<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceCropChrysanthemumPlant,resourcePowderArcane"/></effect_group>	
+			</recipe>
+		<!-- Potion: STAMINA -->
+		<recipe name="potion_Stamina" count="1" craft_time="10" craft_area="sorceryAlchemyStation" tags="perkSorceryAlchemyMastery,learnable">
+			<ingredient name="resourceCropGoldenrodPlant" count="2"/>
+			<ingredient name="resourcePowderArcane" count="5"/>
+			<ingredient name="potionBottle" count="1"/>
+ 			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceCropGoldenrodPlant,resourcePowderArcane"/></effect_group>
+		</recipe>
+			<recipe name="potion_Stamina" count="1" craft_time="10" tags="perkSorceryAlchemyMastery,learnable">
+				<ingredient name="resourceCropGoldenrodPlant" count="2"/>
+				<ingredient name="resourcePowderArcane" count="10"/>
+				<ingredient name="potionBottle" count="1"/>
+				<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceCropGoldenrodPlant,resourcePowderArcane"/></effect_group>
+			</recipe>
+		<!-- Potion: SPIRIT -->
+		<recipe name="potion_Spirit" count="1" craft_time="10" craft_area="sorceryAlchemyStation" tags="perkSorceryAlchemyMastery,learnable">
+			<ingredient name="resourceScrapBrass" count="15"/>
+			<ingredient name="resourcePowderArcane" count="5"/>
+			<ingredient name="potionBottle" count="1"/>
+ 			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceScrapBrass,resourcePowderArcane"/></effect_group>
+		</recipe>
+			<recipe name="potion_Spirit" count="1" craft_time="10" tags="perkSorceryAlchemyMastery,learnable">
+				<ingredient name="resourceScrapBrass" count="15"/>
+				<ingredient name="resourcePowderArcane" count="10"/>
+				<ingredient name="potionBottle" count="1"/>
+				<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceScrapBrass,resourcePowderArcane"/></effect_group>
+			</recipe>
+		<!-- Potion: REMEDY -->
+		<recipe name="potion_Remedy" count="1" craft_time="10" craft_area="sorceryAlchemyStation" tags="perkSorceryAlchemyMastery,learnable">
+			<ingredient name="drugAntibiotics" count="1"/>
+			<ingredient name="resourcePowderArcane" count="40"/>
+			<ingredient name="potionBottle" count="1"/>
+ 			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="drugAntibiotics,resourcePowderArcane"/></effect_group>	
+		</recipe>
+			<recipe name="potion_Remedy" count="1" craft_time="10" tags="perkSorceryAlchemyMastery,learnable">
+				<ingredient name="drugAntibiotics" count="1"/>
+				<ingredient name="resourcePowderArcane" count="80"/>
+				<ingredient name="potionBottle" count="1"/>
+				<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="drugAntibiotics,resourcePowderArcane"/></effect_group>	
+			</recipe>
+		<!-- Potion: DEVOUR -->
+		<recipe name="potion_Devour" count="1" craft_time="10" craft_area="sorceryAlchemyStation" tags="perkSorceryAlchemyMastery,learnable">
+			<ingredient name="foodRottingFlesh" count="1"/>
+			<ingredient name="resourcePowderArcane" count="50"/>
+			<ingredient name="potionBottle" count="1"/>
+ 			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="foodRottingFlesh,resourcePowderArcane"/></effect_group>	
+		</recipe>
+			<recipe name="potion_Devour" count="1" craft_time="10" tags="perkSorceryAlchemyMastery,learnable">
+				<ingredient name="foodRottingFlesh" count="1"/>
+				<ingredient name="resourcePowderArcane" count="100"/>
+				<ingredient name="potionBottle" count="1"/>
+				<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="foodRottingFlesh,resourcePowderArcane"/></effect_group>	
+			</recipe>
+		<!-- Potion: TRAVEL -->
+		<recipe name="potion_Travel" count="1" craft_time="10" craft_area="sorceryAlchemyStation" tags="perkSorceryAlchemyMastery,learnable">
+			<ingredient name="resourceFeather" count="10"/>
+			<ingredient name="resourcePowderArcane" count="10"/>
+			<ingredient name="potionBottle" count="1"/>
+ 			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceFeather,resourcePowderArcane"/></effect_group>	
+		</recipe>
+			<recipe name="potion_Travel" count="1" craft_time="10" tags="perkSorceryAlchemyMastery,learnable">
+				<ingredient name="resourceFeather" count="10"/>
+				<ingredient name="resourcePowderArcane" count="20"/>
+				<ingredient name="potionBottle" count="1"/>
+				<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceFeather,resourcePowderArcane"/></effect_group>	
+			</recipe>
+		<!-- Potion: HASTE -->
+		<recipe name="potion_Haste" count="1" craft_time="10" craft_area="sorceryAlchemyStation" tags="perkSorceryAlchemyMastery,learnable">
+			<ingredient name="plantedCoffee1" count="2"/>
+			<ingredient name="resourceScrapBrass" count="25"/>
+			<ingredient name="resourcePowderArcane" count="35"/>
+			<ingredient name="potionBottle" count="1"/>
+ 			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="plantedCoffee1,resourceScrapBrass,resourcePowderArcane"/></effect_group>	
+		</recipe>
+			<recipe name="potion_Haste" count="1" craft_time="10" tags="perkSorceryAlchemyMastery,learnable">
+				<ingredient name="plantedCoffee1" count="2"/>
+				<ingredient name="resourceScrapBrass" count="25"/>
+				<ingredient name="resourcePowderArcane" count="70"/>
+				<ingredient name="potionBottle" count="1"/>
+				<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="plantedCoffee1,resourceScrapBrass,resourcePowderArcane"/></effect_group>	
+			</recipe>
+		<!-- Potion: SLOW FALL -->
+		<recipe name="potion_SlowFall" count="1" craft_time="10" craft_area="sorceryAlchemyStation" tags="perkSorceryAlchemyMastery,learnable">
+			<ingredient name="resourceFeather" count="7"/>
+			<ingredient name="resourcePowderArcane" count="15"/>
+			<ingredient name="potionBottle" count="1"/>
+ 			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceFeather,resourcePowderArcane"/></effect_group>	
+		</recipe>
+			<recipe name="potion_SlowFall" count="1" craft_time="10" tags="perkSorceryAlchemyMastery,learnable">
+				<ingredient name="resourceFeather" count="7"/>
+				<ingredient name="resourcePowderArcane" count="30"/>
+				<ingredient name="potionBottle" count="1"/>
+				<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceFeather,resourcePowderArcane"/></effect_group>	
+			</recipe>
+	<!-- FIRE POTIONS -->
+		<!-- Potion: FIRE ESSENCE -->
+		<recipe name="potionFire_Essence" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolFireCore" tags="perkSorceryAlchemyMastery,learnable">
+			<ingredient name="resourceCoal" count="10"/>
+			<ingredient name="resourcePowderFire" count="20"/>
+			<ingredient name="resourcePowderArcane" count="5"/>
+			<ingredient name="potionBottle" count="1"/>
+			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceCoal,resourcePowderFire,resourcePowderArcane"/></effect_group>
+		</recipe>
+			<recipe name="potionFire_Essence" count="1" craft_time="10" tags="perkSorceryAlchemyMastery,learnable">
+				<ingredient name="resourceCoal" count="10"/>
+				<ingredient name="resourcePowderFire" count="40"/>
+				<ingredient name="resourcePowderArcane" count="10"/>
+				<ingredient name="potionBottle" count="1"/>
+				<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceCoal,resourcePowderFire,resourcePowderArcane"/></effect_group>
+			</recipe>
+		<!-- Potion: FIRE -->
+		<recipe name="potionFire_Sorcery" count="1" craft_time="10" craft_area="sorceryAlchemyStation" craft_tool="toolFireCore" tags="perkSorceryAlchemyMastery,learnable">
+			<ingredient name="resourceScrapBrass" count="30"/>
+			<ingredient name="resourceCoal" count="30"/>
+			<ingredient name="resourcePowderFire" count="60"/>
+			<ingredient name="resourcePowderArcane" count="10"/>
+			<ingredient name="potionBottle" count="1"/>
+			<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceScrapBrass,resourceCoal,resourcePowderFire,resourcePowderArcane"/></effect_group>
+		</recipe>
+			<recipe name="potionFire_Sorcery" count="1" craft_time="10" tags="perkSorceryAlchemyMastery,learnable">
+				<ingredient name="resourceScrapBrass" count="30"/>
+				<ingredient name="resourceCoal" count="30"/>
+				<ingredient name="resourcePowderFire" count="120"/>
+				<ingredient name="resourcePowderArcane" count="20"/>
+				<ingredient name="potionBottle" count="1"/>
+				<effect_group><passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="1,5" tags="resourceScrapBrass,resourceCoal,resourcePowderFire,resourcePowderArcane"/></effect_group>
+			</recipe>
+	<!-- END - ALCHEMY POTIONS -->	
+	<!-- END - ALCHEMY ______________________________________-->	
+		
+	</append>
+</Sorcery>

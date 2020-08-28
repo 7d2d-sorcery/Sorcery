@@ -1,0 +1,1215 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+		__________________________________________________________________________________
+		2020 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+		
+		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+		of using this mod.
+		
+		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+		redistributed outside of its original distribution channels.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+		possible. Without their support, it is not possible to put in the enormous amount of time required to 
+		create the plethora of unique assets that make Sorcery.
+		
+		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+		__________________________________________________________________________________
+		
+		DISCLAIMER
+		__________________________________________________________________________________
+		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
+		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
+		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
+		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
+		__________________________________________________________________________________-->
+		
+		
+	<!-- APPEND: Attributes -->
+	<append xpath="/progression/attributes[1]">
+	
+	<!--___________________ SORCERY ATTRIBUTE ___________________-->
+		<attribute name="attSorcery" name_key="attSorceryName" desc_key="attSorceryDesc" long_desc_key="attSorceryLongDesc" icon="uic_symbol_pentagram" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14">
+			<level_requirements level="1"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="2"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="3"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="4"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="5"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="6"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+			<level_requirements level="7"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+			<level_requirements level="8"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+			<level_requirements level="9"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+			<level_requirements level="10"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="attSorceryRank1Desc" long_desc_key="attSorceryRank1LongDesc"/>
+				<effect_description level="2" desc_key="attSorceryRank2Desc" long_desc_key="attSorceryRank2LongDesc"/>
+				<effect_description level="3" desc_key="attSorceryRank3Desc" long_desc_key="attSorceryRank3LongDesc"/>
+				<effect_description level="4" desc_key="attSorceryRank4Desc" long_desc_key="attSorceryRank4LongDesc"/>
+				<effect_description level="5" desc_key="attSorceryRank5Desc" long_desc_key="attSorceryRank5LongDesc"/>
+				<effect_description level="6" desc_key="attSorceryRank6Desc" long_desc_key="attSorceryRank6LongDesc"/>
+				<effect_description level="7" desc_key="attSorceryRank7Desc" long_desc_key="attSorceryRank7LongDesc"/>
+				<effect_description level="8" desc_key="attSorceryRank8Desc" long_desc_key="attSorceryRank8LongDesc"/>
+				<effect_description level="9" desc_key="attSorceryRank9Desc" long_desc_key="attSorceryRank9LongDesc"/>
+				<effect_description level="10" desc_key="attSorceryRank10Desc" long_desc_key="attSorceryRank10LongDesc"/>
+			</effect_group>
+			<effect_group name="SORCERY MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="6">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="7">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="8">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="9">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery" operation="set" value="10">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_power" operation="set" value="@$sorceryMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_power" operation="multiply" value="0">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_power" operation="add" value="1"/>
+				<!-- +10% Per Level (Damage) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_sorceryDamage" operation="set" value="@$sorceryMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_sorceryDamage" operation="multiply" value=".1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_sorceryDamage" operation="multiply" value="0">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="LTE" value="1"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Spirit Max) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_spiritMax" operation="set" value="@$sorceryMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_spiritMax" operation="multiply" value="0">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_spiritMax" operation="multiply" value="10">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="GT" value="1"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Spirit Regen) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_spiritRegen" operation="set" value="@$sorceryMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_spiritRegen" operation="multiply" value="0">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_spiritRegen" operation="multiply" value=".1">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="GT" value="1"/>
+				</triggered_effect>
+				<!-- +5% Per Level (Spellcasting Speed) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_spellSpeed" operation="set" value="@$sorceryMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_spellSpeed" operation="multiply" value=".05"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_spellSpeed" operation="multiply" value="0">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="Equals" value="1"/>
+				</triggered_effect>				
+				<!-- +5% Per Level (Spell Charge Speed) -->
+				<!-- <triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_spellCharge" operation="set" value="@$sorcerySpellcastFire"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryMastery_spellCharge" operation="multiply" value=".05"/> -->
+			</effect_group>
+			<effect_group name="PLAYER TIER: Level Scaling">
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="0.5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="1">
+					<requirement name="PlayerLevel" operation="GTE" value="10"/>
+					<requirement name="PlayerLevel" operation="LT" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="2">
+					<requirement name="PlayerLevel" operation="GTE" value="20"/>
+					<requirement name="PlayerLevel" operation="LT" value="40"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="3">
+					<requirement name="PlayerLevel" operation="GTE" value="40"/>
+					<requirement name="PlayerLevel" operation="LT" value="60"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="4">
+					<requirement name="PlayerLevel" operation="GTE" value="60"/>
+					<requirement name="PlayerLevel" operation="LT" value="80"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="5">
+					<requirement name="PlayerLevel" operation="GTE" value="80"/>
+					<requirement name="PlayerLevel" operation="LT" value="100"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="6">
+					<requirement name="PlayerLevel" operation="GTE" value="100"/>
+					<requirement name="PlayerLevel" operation="LT" value="150"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="7">
+					<requirement name="PlayerLevel" operation="GTE" value="150"/>
+					<requirement name="PlayerLevel" operation="LT" value="200"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="8">
+					<requirement name="PlayerLevel" operation="GTE" value="200"/>
+					<requirement name="PlayerLevel" operation="LT" value="250"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="9">
+					<requirement name="PlayerLevel" operation="GTE" value="250"/>
+					<requirement name="PlayerLevel" operation="LT" value="300"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="10">
+					<requirement name="PlayerLevel" operation="GTE" value="300"/>
+				</triggered_effect>
+			</effect_group>
+			<!-- ELEMENTS MAX -->
+			<!-- calc: 1,2 -->
+			<effect_group>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsMax" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="LTE" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsMax" operation="set" value="2">
+					<requirement name="CVarCompare" cvar="$sorceryElementsMax" operation="Equals" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10"/>
+				</triggered_effect>
+			</effect_group>
+			<!-- calc: 3 -->
+			<effect_group>
+				<requirements compare_type="or">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="attSorceryIce" operation="GTE" value="10"/>
+					<requirement name="ProgressionLevel" progression_name="attSorceryLightning" operation="GTE" value="10"/>
+				</requirements>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsMax" operation="set" value="3">
+					<requirement name="CVarCompare" cvar="$sorceryElementsMax" operation="Equals" value="2"/>
+					<requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group>
+				<!-- calc: available -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsAvailable" operation="set" value="@$sorceryElementsMax"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsAvailable" operation="subtract" value="@$sorceryElementsLearned"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsAvailable" operation="set" value="@$sorceryElementsAvailable"/>
+			</effect_group>
+			<!-- ELEMENTS AVAILABLE -->
+			<effect_group name="Available: Fire">
+						<requirement name="CVarCompare" cvar="$sorceryElixir_attFire" operation="LT" value="10"/>
+					<requirements compare_type="or">
+						<requirement name="CVarCompare" cvar="$sorceryElementsAvailable" operation="GTE" value="1"/>
+						<requirement name="CVarCompare" cvar="$sorceryElementsLearned_Fire" operation="Equals" value="1"/>
+					</requirements>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsAvailable_Fire" operation="set" value="1"/>
+			</effect_group>
+			<effect_group name="Available: Ice">
+						<requirement name="CVarCompare" cvar="$sorceryElixir_attIce" operation="LT" value="10"/>
+					<requirements compare_type="or">
+						<requirement name="CVarCompare" cvar="$sorceryElementsAvailable" operation="GTE" value="1"/>
+						<requirement name="CVarCompare" cvar="$sorceryElementsLearned_Ice" operation="Equals" value="1"/>
+					</requirements>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsAvailable_Ice" operation="set" value="1"/>
+			</effect_group>
+			<effect_group name="Available: Lightning">
+						<requirement name="CVarCompare" cvar="$sorceryElixir_attLightning" operation="LT" value="10"/>
+					<requirements compare_type="or">
+						<requirement name="CVarCompare" cvar="$sorceryElementsAvailable" operation="GTE" value="1"/>
+						<requirement name="CVarCompare" cvar="$sorceryElementsLearned_Lightning" operation="Equals" value="1"/>
+					</requirements>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsAvailable_Lightning" operation="set" value="1"/>
+			</effect_group>
+			<!-- locked -->
+			<effect_group name="Locked: Fire">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsAvailable_Fire" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$sorceryElementsAvailable" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$sorceryElementsLearned_Fire" operation="Equals" value="0"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="Locked: Ice">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsAvailable_Ice" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$sorceryElementsAvailable" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$sorceryElementsLearned_Ice" operation="Equals" value="0"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="Locked: Lightning">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryElementsAvailable_Lightning" operation="set" value="0">
+					<requirement name="CVarCompare" cvar="$sorceryElementsAvailable" operation="LT" value="1"/>
+					<requirement name="CVarCompare" cvar="$sorceryElementsLearned_Lightning" operation="Equals" value="0"/>
+				</triggered_effect>
+			</effect_group>
+			<!-- PERKS -->
+			<!-- RECIPES -->
+			<effect_group name="CRAFTING">
+				<passive_effect name="CraftingTier" operation="base_set" level="1,10" value="1,10" tags="sorceryTier"/><!-- used to scale resources -->
+			</effect_group>
+			<effect_group name="RECIPES">
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="sorceryArcaneWheel"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,10" tags="scroll_ArcaneVision,scrollFire_Weapon,scrollFire_Ammo"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="10" tags="q_sorceryFallen_Trio"/>
+			</effect_group>
+		</attribute>
+		
+	<!-- ATTRIBUTE: FIRE SORCERY ______________________________________-->
+		<!-- <attribute name="attSorceryFire" name_key="attSorceryFireName" desc_key="attSorceryFireDesc" icon="uic_symbol_fire"> -->
+		<!-- <attribute name="attSorceryFire" name_key="attSorceryFireName" desc_key="attSorceryFireDesc" icon="uic_symbol_fire" min_level="1" max_level="10" base_skill_point_cost="1" cost_multiplier_per_level="1.14"> -->
+		<!-- <requirement name="PerksUnlocked" skill_name="skillSorceryElixirs" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/><requirement name="ProgressionLevel" progression_name="perkSorceryElixirFireAtt" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/><requirement name="CVarCompare" target="self" cvar="$sorceryElixir_attFire" operation="Equals" value="1" desc_key="reqSorceryUnlockElixirAttFire"/> -->
+		<attribute name="attSorceryFire" name_key="attSorceryFireName" desc_key="attSorceryFireDesc" icon="uic_symbol_fire" min_level="0" max_level="10" base_skill_point_cost="0" cost_multiplier_per_level="0">
+			<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/></level_requirements>
+			<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/></level_requirements>
+			<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/></level_requirements>
+			<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/></level_requirements>
+			<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/></level_requirements>
+			<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/></level_requirements>
+			<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/></level_requirements>
+			<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/></level_requirements>
+			<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/></level_requirements>
+			<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttFire"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="attSorceryFireRank1Desc" long_desc_key="attSorceryFireRank1LongDesc"/>
+				<effect_description level="2" desc_key="attSorceryFireRank2Desc" long_desc_key="attSorceryFireRank2LongDesc"/>
+				<effect_description level="3" desc_key="attSorceryFireRank3Desc" long_desc_key="attSorceryFireRank3LongDesc"/>
+				<effect_description level="4" desc_key="attSorceryFireRank4Desc" long_desc_key="attSorceryFireRank4LongDesc"/>
+				<effect_description level="5" desc_key="attSorceryFireRank5Desc" long_desc_key="attSorceryFireRank5LongDesc"/>
+				<effect_description level="6" desc_key="attSorceryFireRank6Desc" long_desc_key="attSorceryFireRank6LongDesc"/>
+				<effect_description level="7" desc_key="attSorceryFireRank7Desc" long_desc_key="attSorceryFireRank7LongDesc"/>
+				<effect_description level="8" desc_key="attSorceryFireRank8Desc" long_desc_key="attSorceryFireRank8LongDesc"/>
+				<effect_description level="9" desc_key="attSorceryFireRank9Desc" long_desc_key="attSorceryFireRank9LongDesc"/>
+				<effect_description level="10" desc_key="attSorceryFireRank10Desc" long_desc_key="attSorceryFireRank10LongDesc"/>
+			</effect_group>
+			<effect_group name="SORCERY MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="LTE" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="Equals" value="5"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="6">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="Equals" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="7">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="Equals" value="7"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="8">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="Equals" value="8"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="9">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="Equals" value="9"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery" operation="set" value="10">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10"/>
+				</triggered_effect>				
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_power" operation="set" value="@$sorceryFireMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_power" operation="add" value="1"/>
+				<!-- +10% Per Level (Damage) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_sorceryFireDamage" operation="set" value="@$sorceryFireMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_sorceryFireDamage" operation="multiply" value=".1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_sorceryFireDamage" operation="multiply" value="0">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="LTE" value="1"/>
+				</triggered_effect>
+				<!-- +5% Per Level (Spellcasting Speed) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_spellSpeed" operation="set" value="@$sorceryFireMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_spellSpeed" operation="multiply" value=".05"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_spellSpeed" operation="multiply" value="0">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="LTE" value="1"/>
+				</triggered_effect>				
+			</effect_group>
+			<!-- PERKS -->
+				<!-- Handled: buffSorceryManage -->
+				<!-- <effect_group name="Spellcast Speed">
+					<requirement name="HoldingItemHasTags" tags="spellcastFire"/>
+					<passive_effect name="RoundsPerMinute" operation="perc_add" value="0.05,0.5" level="1,10"/>
+					<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0.025,0.25" level="1,10"/>
+				</effect_group> -->			
+			<effect_group name="RECIPES">
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="conjureFire,toolFireCore"/>
+			</effect_group>
+			<effect_group name="RECIPE: Intro Fire Quest">
+					<requirement name="CVarCompare" cvar="$sorceryElementsLearned_Fire" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="$sorceryElixir_attFire" operation="Equals" value="2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="q_sorceryIntroGuide_Fire"/>
+			</effect_group>
+			<effect_group name="CRAFTING">
+				<passive_effect name="CraftingTime" operation="perc_add" level="1,2,3,4,5,6,7,8,9,10" value="0,0,-0.1,-0.1,-0.2,-0.2,-0.3,-0.3,-0.4,-0.4" tags="conjureFireCrafting"/>
+				<passive_effect name="CraftingTier" operation="base_set" level="1,10" value="1,10" tags="sorceryFireTier"/><!-- used to scale resources -->
+			</effect_group>
+			<effect_group name="FIRE ESSENCE">
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceFireHarvest"><requirement name="!InBiome" biome="9"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="0" tags="essenceFireHarvest"><requirement name="InBiome" biome="9"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,10" tags="essenceFireHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,10" tags="essenceFire2Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="6,10" tags="essenceFire3Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="8,10" tags="essenceFire4Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="10" tags="essenceFire5Harvest"/>
+			</effect_group>			
+		</attribute>
+		
+	<!-- ATTRIBUTE: ICE SORCERY ______________________________________-->
+		<attribute name="attSorceryIce" name_key="attSorceryIceName" desc_key="attSorceryIceDesc" icon="uic_symbol_ice" min_level="0" max_level="0" base_skill_point_cost="0" cost_multiplier_per_level="0">
+			<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttIce"/></level_requirements>
+			<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttIce"/></level_requirements>
+			<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttIce"/></level_requirements>
+			<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttIce"/></level_requirements>
+			<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttIce"/></level_requirements>
+			<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttIce"/></level_requirements>
+			<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttIce"/></level_requirements>
+			<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttIce"/></level_requirements>
+			<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttIce"/></level_requirements>
+			<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttIce"/></level_requirements>
+			<effect_group>
+				<!-- <effect_description level="1" desc_key="attSorceryIceRank1Desc" long_desc_key="attSorceryIceRank1LongDesc"/>
+				<effect_description level="2" desc_key="attSorceryIceRank2Desc" long_desc_key="attSorceryIceRank2LongDesc"/>
+				<effect_description level="3" desc_key="attSorceryIceRank3Desc" long_desc_key="attSorceryIceRank3LongDesc"/>
+				<effect_description level="4" desc_key="attSorceryIceRank4Desc" long_desc_key="attSorceryIceRank4LongDesc"/>
+				<effect_description level="5" desc_key="attSorceryIceRank5Desc" long_desc_key="attSorceryIceRank5LongDesc"/>
+				<effect_description level="6" desc_key="attSorceryIceRank6Desc" long_desc_key="attSorceryIceRank6LongDesc"/>
+				<effect_description level="7" desc_key="attSorceryIceRank7Desc" long_desc_key="attSorceryIceRank7LongDesc"/>
+				<effect_description level="8" desc_key="attSorceryIceRank8Desc" long_desc_key="attSorceryIceRank8LongDesc"/>
+				<effect_description level="9" desc_key="attSorceryIceRank9Desc" long_desc_key="attSorceryIceRank9LongDesc"/>
+				<effect_description level="10" desc_key="attSorceryIceRank10Desc" long_desc_key="attSorceryIceRank10LongDesc"/> -->
+			</effect_group>
+			<effect_group name="ICE ESSENCE">
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceIceHarvest"><requirement name="!InBiome" biome="1"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="0" tags="essenceIceHarvest"><requirement name="InBiome" biome="1"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,10" tags="essenceIceHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,10" tags="essenceIce2Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="6,10" tags="essenceIce3Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="8,10" tags="essenceIce4Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="10" tags="essenceIce5Harvest"/>
+			</effect_group>
+		</attribute>		
+		
+	<!-- ATTRIBUTE: LIGHTNING SORCERY ______________________________________-->
+		<attribute name="attSorceryLightning" name_key="attSorceryLightningName" desc_key="attSorceryLightningDesc" icon="uic_symbol_lightning" min_level="0" max_level="0" base_skill_point_cost="0" cost_multiplier_per_level="0">
+			<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttLightning"/></level_requirements>
+			<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttLightning"/></level_requirements>
+			<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttLightning"/></level_requirements>
+			<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttLightning"/></level_requirements>
+			<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttLightning"/></level_requirements>
+			<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttLightning"/></level_requirements>
+			<level_requirements level="7"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttLightning"/></level_requirements>
+			<level_requirements level="8"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttLightning"/></level_requirements>
+			<level_requirements level="9"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttLightning"/></level_requirements>
+			<level_requirements level="10"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="reqSorceryUnlockElixirAttLightning"/></level_requirements>
+			<effect_group>
+				<!-- <effect_description level="1" desc_key="attSorceryLightningRank1Desc" long_desc_key="attSorceryLightningRank1LongDesc"/>
+				<effect_description level="2" desc_key="attSorceryLightningRank2Desc" long_desc_key="attSorceryLightningRank2LongDesc"/>
+				<effect_description level="3" desc_key="attSorceryLightningRank3Desc" long_desc_key="attSorceryLightningRank3LongDesc"/>
+				<effect_description level="4" desc_key="attSorceryLightningRank4Desc" long_desc_key="attSorceryLightningRank4LongDesc"/>
+				<effect_description level="5" desc_key="attSorceryLightningRank5Desc" long_desc_key="attSorceryLightningRank5LongDesc"/>
+				<effect_description level="6" desc_key="attSorceryLightningRank6Desc" long_desc_key="attSorceryLightningRank6LongDesc"/>
+				<effect_description level="7" desc_key="attSorceryLightningRank7Desc" long_desc_key="attSorceryLightningRank7LongDesc"/>
+				<effect_description level="8" desc_key="attSorceryLightningRank8Desc" long_desc_key="attSorceryLightningRank8LongDesc"/>
+				<effect_description level="9" desc_key="attSorceryLightningRank9Desc" long_desc_key="attSorceryLightningRank9LongDesc"/>
+				<effect_description level="10" desc_key="attSorceryLightningRank10Desc" long_desc_key="attSorceryLightningRank10LongDesc"/> -->
+			</effect_group>
+			<effect_group name="LIGHTNING ESSENCE">
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceLightningHarvest"><requirement name="!InBiome" biome="3"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="0" tags="essenceLightningHarvest"><requirement name="InBiome" biome="3"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,10" tags="essenceLightningHarvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,10" tags="essenceLightning2Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="6,10" tags="essenceLightning3Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="8,10" tags="essenceLightning4Harvest"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="10" tags="essenceLightning5Harvest"/>
+			</effect_group>
+		</attribute>		
+		
+	<!--___________________ ATTRIBUTE: UNHOLY SORCERY ___________________-->
+		<attribute name="attSorceryUnholy" name_key="attSorceryUnholyName" desc_key="attSorceryUnholyDesc" icon="uic_symbol_unholy" min_level="0" max_level="0" base_skill_point_cost="0" cost_multiplier_per_level="0">
+			<level_requirements level="1"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="2"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="3"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="4"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="5"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="6"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+			<level_requirements level="7"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+			<level_requirements level="8"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+			<level_requirements level="9"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+			<level_requirements level="10"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="attSorceryUnholyRank01Desc" long_desc_key="attSorceryUnholyRank01LongDesc"/>
+				<effect_description level="2" desc_key="attSorceryUnholyRank02Desc" long_desc_key="attSorceryUnholyRank02LongDesc"/>
+				<effect_description level="3" desc_key="attSorceryUnholyRank03Desc" long_desc_key="attSorceryUnholyRank03LongDesc"/>
+				<effect_description level="4" desc_key="attSorceryUnholyRank04Desc" long_desc_key="attSorceryUnholyRank04LongDesc"/>
+				<effect_description level="5" desc_key="attSorceryUnholyRank05Desc" long_desc_key="attSorceryUnholyRank05LongDesc"/>
+				<effect_description level="6" desc_key="attSorceryUnholyRank06Desc" long_desc_key="attSorceryUnholyRank06LongDesc"/>
+				<effect_description level="7" desc_key="attSorceryUnholyRank07Desc" long_desc_key="attSorceryUnholyRank07LongDesc"/>
+				<effect_description level="8" desc_key="attSorceryUnholyRank08Desc" long_desc_key="attSorceryUnholyRank08LongDesc"/>
+				<effect_description level="9" desc_key="attSorceryUnholyRank09Desc" long_desc_key="attSorceryUnholyRank09LongDesc"/>
+				<effect_description level="10" desc_key="attSorceryUnholyRank10Desc" long_desc_key="attSorceryUnholyRank10LongDesc"/>
+			</effect_group>
+		</attribute>		
+		
+	<!--___________________ ATTRIBUTE: HOLY SORCERY ___________________-->
+		<attribute name="attSorceryHoly" name_key="attSorceryHolyName" desc_key="attSorceryHolyDesc" icon="uic_symbol_holy" min_level="0" max_level="0" base_skill_point_cost="0" cost_multiplier_per_level="0">
+			<level_requirements level="1"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="2"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="3"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="4"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="5"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints01"/></level_requirements>
+			<level_requirements level="6"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+			<level_requirements level="7"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+			<level_requirements level="8"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints02"/></level_requirements>
+			<level_requirements level="9"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+			<level_requirements level="10"><requirement name="PlayerLevel" target="self" operation="GTE" value="1" desc_key="reqGenericPoints03"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="attSorceryHolyRank01Desc" long_desc_key="attSorceryHolyRank01LongDesc"/>
+				<effect_description level="2" desc_key="attSorceryHolyRank02Desc" long_desc_key="attSorceryHolyRank02LongDesc"/>
+				<effect_description level="3" desc_key="attSorceryHolyRank03Desc" long_desc_key="attSorceryHolyRank03LongDesc"/>
+				<effect_description level="4" desc_key="attSorceryHolyRank04Desc" long_desc_key="attSorceryHolyRank04LongDesc"/>
+				<effect_description level="5" desc_key="attSorceryHolyRank05Desc" long_desc_key="attSorceryHolyRank05LongDesc"/>
+				<effect_description level="6" desc_key="attSorceryHolyRank06Desc" long_desc_key="attSorceryHolyRank06LongDesc"/>
+				<effect_description level="7" desc_key="attSorceryHolyRank07Desc" long_desc_key="attSorceryHolyRank07LongDesc"/>
+				<effect_description level="8" desc_key="attSorceryHolyRank08Desc" long_desc_key="attSorceryHolyRank08LongDesc"/>
+				<effect_description level="9" desc_key="attSorceryHolyRank09Desc" long_desc_key="attSorceryHolyRank09LongDesc"/>
+				<effect_description level="10" desc_key="attSorceryHolyRank10Desc" long_desc_key="attSorceryHolyRank10LongDesc"/>
+			</effect_group>
+		</attribute>		
+		
+	</append>
+	
+<!--___________________ SORCERY SKILLS ___________________-->
+	<!-- Sorcery Skills -->
+	<append xpath="/progression/skills[1]">
+		<skill name="skillSorceryMastery" parent="attSorcery" name_key="skillSorceryMasteryName" desc_key="skillSorceryMasteryDesc" icon="ui_symbol_pentagram"><effect_group/></skill>
+		<!-- <skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill> -->
+		<!-- <skill name="skillSorceryIceCrafting" parent="attSorcery" name_key="skillSorceryIceCraftingName" desc_key="skillSorceryIceCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill> -->
+		<!-- <skill name="skillSorceryLightningCrafting" parent="attSorcery" name_key="skillSorceryLightningCraftingName" desc_key="skillSorceryLightningCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill> -->
+		<skill name="skillSorceryArmor" parent="attSorcery" name_key="skillSorceryArmorName" desc_key="skillSorceryArmorDesc" icon="ui_symbol_armor_sorcery"><effect_group/></skill>
+		<skill name="skillSorcerySupport" parent="attSorcery" name_key="skillSorcerySupportName" desc_key="skillSorcerySupportDesc" icon="ui_game_symbol_treasure"><effect_group/></skill>
+		
+		<skill name="skillSorceryFireSpells" parent="attSorceryFire" name_key="skillSorceryFireSpellsName" desc_key="skillSorceryFireSpellsDesc" icon="ui_symbol_spell_fire_sorcery"><effect_group/></skill>
+		<skill name="skillSorceryFireWeapons" parent="attSorceryFire" name_key="skillSorceryFireWeaponsName" desc_key="skillSorceryFireWeaponsDesc" icon="ui_symbol_weapon_fire_sorcery"><effect_group/></skill>
+		<skill name="skillSorceryFireArmor" parent="attSorceryFire" name_key="skillSorceryFireArmorName" desc_key="skillSorceryFireArmorDesc" icon="ui_symbol_armor_sorcery"><effect_group/></skill>
+		<skill name="skillSorceryFireTraps" parent="attSorceryFire" name_key="skillSorceryFireTrapsName" desc_key="skillSorceryFireTrapsDesc" icon="ui_symbol_trap_fire_sorcery"><effect_group/></skill>
+		<!-- <skill name="skillSorceryFireAmmo" parent="attSorceryFire" name_key="skillSorceryFireAmmoName" desc_key="skillSorceryFireAmmoDesc" icon="uic_symbol_fire"><effect_group/></skill> -->
+		
+		<!-- <skill name="skillSorceryIceSpells" parent="attSorceryIce" name_key="skillSorceryIceSpellsName" desc_key="skillSorceryIceSpellsDesc" icon="ui_symbol_spell_ice_sorcery"><effect_group/></skill>
+		<skill name="skillSorceryIceWeapons" parent="attSorceryIce" name_key="skillSorceryIceWeaponsName" desc_key="skillSorceryIceWeaponsDesc" icon="ui_symbol_weapon_ice_sorcery"><effect_group/></skill>
+		<skill name="skillSorceryIceArmor" parent="attSorceryIce" name_key="skillSorceryIceArmorName" desc_key="skillSorceryIceArmorDesc" icon="ui_symbol_armor_sorcery"><effect_group/></skill> -->
+		
+		<!-- <skill name="skillSorceryLightningSpells" parent="attSorceryLightning" name_key="skillSorceryLightningSpellsName" desc_key="skillSorceryLightningSpellsDesc" icon="ui_symbol_spell_lightning_sorcery"><effect_group/></skill>
+		<skill name="skillSorceryLightningWeapons" parent="attSorceryLightning" name_key="skillSorceryLightningWeaponsName" desc_key="skillSorceryLightningWeaponsDesc" icon="ui_symbol_weapon_lightning_sorcery"><effect_group/></skill>
+		<skill name="skillSorceryLightningArmor" parent="attSorceryLightning" name_key="skillSorceryLightningArmorName" desc_key="skillSorceryLightningArmorDesc" icon="ui_symbol_armor_sorcery"><effect_group/></skill> -->
+		<!-- Elixirs, Books -->
+	</append>
+	
+	<!-- COMPATIBILITY PATCH: RAVENHEARST -->
+	<!-- NOTE: RH removes <skills> -->
+	<!-- Sorcery Skills -->
+	<!-- <insertBefore  xpath="/progression/attributes[//attribute[@name='attArcher' or @SAFE_TO_IGNORE='Compatibility Patch: RH 5.5']]">
+		<skills min_level="1" max_level="1">
+			<skill name="skillSorceryMastery" parent="attSorcery" name_key="skillSorceryMasteryName" desc_key="skillSorceryMasteryDesc" icon="ui_game_symbol_player"><effect_group/></skill>
+			<skill name="skillSorceryFireCrafting" parent="attSorcery" name_key="skillSorceryFireCraftingName" desc_key="skillSorceryFireCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+			<skill name="skillSorceryIceCrafting" parent="attSorcery" name_key="skillSorceryIceCraftingName" desc_key="skillSorceryIceCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+			<skill name="skillSorceryLightningCrafting" parent="attSorcery" name_key="skillSorceryLightningCraftingName" desc_key="skillSorceryLightningCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill>
+			<skill name="skillSorcerySupport" parent="attSorcery" name_key="skillSorcerySupportName" desc_key="skillSorcerySupportDesc" icon="ui_game_symbol_treasure"><effect_group/></skill>			
+		</skills>	
+	</insertBefore > -->	
+	
+<!--___________________ SORCERY PERKS ___________________-->
+	<append xpath="/progression/perks[1]">
+	<!--___________________ ATT: SORCERY PERKS ___________________-->
+		<!-- SPIRIT MASTERY -->
+		<perk name="perkSorcerySpiritMastery" parent="skillSorceryMastery" name_key="skillSorcerySpiritMasteryName" desc_key="skillSorcerySpiritMasteryDesc" icon="uic_symbol_spirit_sorcery" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="4" desc_key="reqSorceryLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="6" desc_key="reqSorceryLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="8" desc_key="reqSorceryLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorcerySpiritMasteryRank1Desc" long_desc_key="perkSorcerySpiritMasteryRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorcerySpiritMasteryRank2Desc" long_desc_key="perkSorcerySpiritMasteryRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorcerySpiritMasteryRank3Desc" long_desc_key="perkSorcerySpiritMasteryRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorcerySpiritMasteryRank4Desc" long_desc_key="perkSorcerySpiritMasteryRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorcerySpiritMasteryRank5Desc" long_desc_key="perkSorcerySpiritMasteryRank5LongDesc"/>
+			</effect_group>
+			<effect_group name="SORCERY MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpiritMastery" operation="LT" value="1"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpiritMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpiritMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpiritMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpiritMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpiritMastery" operation="GTE" value="5"/>
+				</triggered_effect>				
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery_power" operation="set" value="@$sorcerySpiritMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery_power" operation="add" value="1"/>
+				<!-- +20% Per Level (Spirit Max) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery_spiritMax" operation="set" value="@$sorcerySpiritMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery_spiritMax" operation="multiply" value=".1"/>
+				<!-- +20% Per Level (Spirit Regen) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery_spiritRegen" operation="set" value="@$sorcerySpiritMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpiritMastery_spiritRegen" operation="multiply" value=".1"/>
+				<!-- PERK: Boost Allies -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffSorceryPerk_SpiritMastery_Ally" target="selfAOE" target_tags="ally,party" range="15">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpiritMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		</perk>	
+	
+		<!-- ALCHEMY MASTERY -->
+		<perk name="perkSorceryAlchemyMastery" parent="skillSorceryMastery" name_key="perkSorceryAlchemyMasteryName" desc_key="perkSorceryAlchemyMasteryDesc" icon="uic_symbol_potion" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="4" desc_key="reqSorceryLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="6" desc_key="reqSorceryLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="8" desc_key="reqSorceryLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorceryAlchemyMasteryRank1Desc" long_desc_key="perkSorceryAlchemyMasteryRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorceryAlchemyMasteryRank2Desc" long_desc_key="perkSorceryAlchemyMasteryRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorceryAlchemyMasteryRank3Desc" long_desc_key="perkSorceryAlchemyMasteryRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorceryAlchemyMasteryRank4Desc" long_desc_key="perkSorceryAlchemyMasteryRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorceryAlchemyMasteryRank5Desc" long_desc_key="perkSorceryAlchemyMasteryRank5LongDesc"/>
+			</effect_group>
+			<effect_group name="ALCHEMY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="LT" value="1"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Potion Potency) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="set" value="@$sorceryAlchemyMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="add" value="1"/>
+				<!-- +20% Per Level (Damage) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_damage" operation="set" value="@$sorceryAlchemyMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_damage" operation="multiply" value=".2"/>				
+			</effect_group>
+			<effect_group name="CRAFTING">
+				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorceryAlchemyMastery"/><!-- used to scale resources -->
+			</effect_group>
+			<effect_group name="ALCHEMY: General Recipes">
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryAlchemyMortar,potion_Health,potion_Stamina,potion_Spirit,potion_Remedy,potion_Devour,potion_SlowFall,potion_Travel,potionFire_Essence,potionFire_Sorcery,potion_Haste,potion_Taunt"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags=""/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sorceryAlchemyStation"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags=""/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="sorceryElixir_attFire"/>
+			</effect_group>
+			
+			<effect_group name="ALCHEMY: Bomb Recipes">
+				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryPotionBomb_fire,sorceryPotionBomb_ice,sorceryPotionBomb_lightning,sorceryPotionBomb_grass"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sorceryPotionBomb_fire2,sorceryPotionBomb_ice2,sorceryPotionBomb_lightning2,sorceryPotionBomb_grass2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="sorceryPotionBomb_fire3,sorceryPotionBomb_ice3,sorceryPotionBomb_lightning3,sorceryPotionBomb_grass3"/> -->
+			</effect_group>
+		</perk>	
+	
+		<!-- ESSENCE MASTERY -->
+		<perk name="perkSorceryEssenceMastery" parent="skillSorceryMastery" name_key="perkSorceryEssenceMasteryName" desc_key="perkSorceryEssenceMasteryDesc" icon="uic_symbol_essence_sorcery" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="4" desc_key="reqSorceryLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="6" desc_key="reqSorceryLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="8" desc_key="reqSorceryLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorceryEssenceMasteryRank1Desc" long_desc_key="perkSorceryEssenceMasteryRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorceryEssenceMasteryRank2Desc" long_desc_key="perkSorceryEssenceMasteryRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorceryEssenceMasteryRank3Desc" long_desc_key="perkSorceryEssenceMasteryRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorceryEssenceMasteryRank4Desc" long_desc_key="perkSorceryEssenceMasteryRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorceryEssenceMasteryRank5Desc" long_desc_key="perkSorceryEssenceMasteryRank5LongDesc"/>
+			</effect_group>			
+			<effect_group name="ESSENCE MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="LT" value="1"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_power" operation="set" value="@$sorceryEssenceMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_power" operation="add" value="1"/>
+				<!-- PERK: Boost Allies -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffSorceryPerk_EssenceMastery_Ally" target="selfAOE" target_tags="ally,party" range="15">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+			<!-- PERK: Essence Harvest -->
+			<!-- PERK: Essence Hidden -->
+			<effect_group name="Essence Harvest: RESET">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="LT" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestFire" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestIce" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestLightning" operation="set" value="0"/>
+			</effect_group>
+			<effect_group name="Essence Harvest: 1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestFire" operation="set" value=".5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestIce" operation="set" value=".5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestLightning" operation="set" value=".5"/>
+			</effect_group>
+			<effect_group name="Essence Harvest: 2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestFire" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestIce" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestLightning" operation="set" value="1"/>
+				<passive_effect name="HarvestCount" operation="base_set" level="1" value="1" tags="essenceHarvestHidden"/>
+			</effect_group>
+			<effect_group name="Essence Harvest: 3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="3"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestFire" operation="set" value="1.5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestIce" operation="set" value="1.5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestLightning" operation="set" value="1.5"/>
+				<passive_effect name="HarvestCount" operation="base_set" level="1" value="1.5" tags="essenceHarvestHidden"/>
+			</effect_group>
+			<effect_group name="Essence Harvest: 4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="Equals" value="4"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestFire" operation="set" value="2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestIce" operation="set" value="2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestLightning" operation="set" value="2"/>
+				<passive_effect name="HarvestCount" operation="base_set" level="1" value="2" tags="essenceHarvestHidden"/>
+			</effect_group>
+			<effect_group name="Essence Harvest: 5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryEssenceMastery" operation="GTE" value="5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestFire" operation="set" value="2.5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestIce" operation="set" value="2.5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery_essenceHarvestLightning" operation="set" value="2.5"/>
+				<passive_effect name="HarvestCount" operation="base_set" level="1" value="2.5" tags="essenceHarvestHidden"/>
+			</effect_group>		
+		</perk>		
+		
+		<!-- RUNE MASTERY -->
+		<perk name="perkSorceryRuneMastery" parent="skillSorceryMastery" name_key="perkSorceryRuneMasteryName" desc_key="perkSorceryRuneMasteryDesc" icon="uic_symbol_rune_sorcery" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="4" desc_key="reqSorceryLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="6" desc_key="reqSorceryLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="8" desc_key="reqSorceryLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<effect_group name="RUNE MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="set" value="@$sorceryRuneMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="add" value="1"/>
+			</effect_group>
+			<effect_group name="LEVEL 0">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="LT" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeBurdenCost" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeDegradeCost" operation="set" value="1"/>
+			</effect_group>
+			<effect_group name="LEVEL 1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeBurdenCost" operation="set" value=".85"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeDegradeCost" operation="set" value=".9"/>
+			</effect_group>
+			<effect_group name="LEVEL 2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeBurdenCost" operation="set" value=".7"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeDegradeCost" operation="set" value=".8"/>
+			</effect_group>
+			<effect_group name="LEVEL 3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="3"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeBurdenCost" operation="set" value=".55"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeDegradeCost" operation="set" value=".7"/>
+			</effect_group>
+			<effect_group name="LEVEL 4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="Equals" value="4"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeBurdenCost" operation="set" value=".4"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeDegradeCost" operation="set" value=".6"/>
+			</effect_group>
+			<effect_group name="LEVEL 5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeBurdenCost" operation="set" value=".25"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeDegradeCost" operation="set" value=".5"/>
+			</effect_group>
+			<effect_group name="RUNECRAFTING: RECIPES">
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeGeneral_lockshatter2,runeGeneral_spiritboon2,runeGeneral_fireessenceboon2,runeGeneral_iceessenceboon2,runeGeneral_lightningessenceboon2,runeArmor_fireskin2,runeArmor_iceskin2,runeSpellcast_lightningstrike2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="runeGeneral_lockshatter3,runeGeneral_spiritboon3,runeGeneral_fireessenceboon3,runeGeneral_iceessenceboon3,runeGeneral_lightningessenceboon3,runeArmor_fireskin3,runeArmor_iceskin3,runeSpellcast_lightningstrike3"/>
+			</effect_group>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="toolHammerFire,toolHammerIce,toolHammerLightning"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="rune_SpellLight"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_LockShatter"/>
+				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorceryRuneMastery"/><!-- used to scale resources -->
+				<effect_description level="1" desc_key="perkSorceryRuneMasteryRank1Desc" long_desc_key="perkSorceryRuneMasteryRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorceryRuneMasteryRank2Desc" long_desc_key="perkSorceryRuneMasteryRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorceryRuneMasteryRank3Desc" long_desc_key="perkSorceryRuneMasteryRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorceryRuneMasteryRank4Desc" long_desc_key="perkSorceryRuneMasteryRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorceryRuneMasteryRank5Desc" long_desc_key="perkSorceryRuneMasteryRank5LongDesc"/>
+			</effect_group>			
+		</perk>		
+		
+		<!-- ARMOR MASTERY -->
+		<perk name="perkSorceryArmor" parent="skillSorceryArmor" name_key="perkSorceryArmorName" desc_key="perkSorceryArmorDesc" icon="uic_symbol_armor_sorcery" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="4" desc_key="reqSorceryLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="6" desc_key="reqSorceryLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="8" desc_key="reqSorceryLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorceryArmorRank1Desc" long_desc_key="perkSorceryArmorRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorceryArmorRank2Desc" long_desc_key="perkSorceryArmorRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorceryArmorRank3Desc" long_desc_key="perkSorceryArmorRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorceryArmorRank4Desc" long_desc_key="perkSorceryArmorRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorceryArmorRank5Desc" long_desc_key="perkSorceryArmorRank5LongDesc"/>
+			</effect_group>
+			<effect_group name="ARCANE ARMOR"> 
+				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="1,6" tags="perkSorceryArmor,sorceryArmor_Hood,sorceryArmor_Robe,sorceryArmor_Chest,sorceryArmor_Shirt,sorceryArmor_Gloves,sorceryArmor_Leg,sorceryArmor_Pants,sorceryArmor_Boots,sorceryArmor_Bandana,sorceryAccessory_Shades"/><!-- used to scale resources -->
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryArcaneWheel,sorceryAccessory_Shades,sorceryArmor_Bandana,sorceryArmor_Hood,sorceryArmor_Robe,sorceryArmor_Chest,sorceryArmor_Shirt,sorceryArmor_Gloves,sorceryArmor_Leg,sorceryArmor_Pants,sorceryArmor_Boots"/>
+			</effect_group>
+			<effect_group name="ARCANE ARMOR: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmor" operation="LT" value="1"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmor" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmor" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmor" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmor" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmor" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Armor) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_power" operation="set" value="@$sorceryArmor"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_power" operation="add" value="1"/>
+			</effect_group>
+			<effect_group name="PERKS">
+			<!-- buffSorceryPerks_ArmorSetArcane -->
+				<!-- Perk: 1% Damage -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_damage" operation="set" value="0.01"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_damage" operation="multiply" value="@$sorceryArmor"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_damage" operation="multiply" value="@.ArcaneArmorSetPieces"/>
+				<!-- Perk: .3 Spirit -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_spirit" operation="set" value="0.3"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_spirit" operation="multiply" value="@$sorceryArmor"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_spirit" operation="multiply" value="@.ArcaneArmorSetPieces"/>
+				<!-- Perk: .5% Movement -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_movement" operation="set" value="0.005"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_movement" operation="multiply" value="@$sorceryArmor"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor_movement" operation="multiply" value="@.ArcaneArmorSetPieces"/>
+					<passive_effect name="WalkSpeed" operation="perc_add" value="@sorceryArmor_movement"/>
+					<passive_effect name="RunSpeed" operation="perc_add" value="@sorceryArmor_movement"/>
+			</effect_group>
+			<effect_group name="PERK: Attacks to Spirit">
+					<requirement name="CVarCompare" cvar=".ArcaneArmorSetPieces" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmor" operation="GTE" value="1"/>
+				<triggered_effect trigger="onOtherAttackedSelf" action="ModifyCVar" cvar=".spiritAdd" operation="add" value="@$sorceryArmor_spirit"/>
+			</effect_group>
+		</perk>		
+		
+	
+<!--___________________ FIRE SORCERY ___________________-->
+	<!-- FIRE WEAPONS -->
+		<!-- Fire Spellcast-->
+		<perk name="perkSorcerySpellcastFire" parent="skillSorceryFireWeapons" name_key="perkSorcerySpellcastFireName" desc_key="perkSorcerySpellcastFireDesc" icon="uic_symbol_weapon_fire_sorcery" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="2" desc_key="reqSorceryFireUnlock"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="4" desc_key="reqSorceryFireLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="6" desc_key="reqSorceryFireLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="8" desc_key="reqSorceryFireLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10" desc_key="reqSorceryFireLevel10"/></level_requirements>
+			<effect_group>
+				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="1,6" tags="perkSorcerySpellcastFire"/><!-- used to scale resources -->
+				<!-- <passive_effect name="CraftingTime" operation="perc_add" level="1,5" value="-.1,-.5" tags="perkSorcerySpellcastFire"/> -->
+			
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellcastFire"/>
+				<effect_description level="1" desc_key="perkSorcerySpellcastFireRank1Desc" long_desc_key="perkSorcerySpellcastFireRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellcastFireRank2Desc" long_desc_key="perkSorcerySpellcastFireRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellcastFireRank3Desc" long_desc_key="perkSorcerySpellcastFireRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellcastFireRank4Desc" long_desc_key="perkSorcerySpellcastFireRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellcastFireRank5Desc" long_desc_key="perkSorcerySpellcastFireRank5LongDesc"/>
+			</effect_group>
+			<effect_group name="FIRE SPELLCAST: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="LT" value="1"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +10% Per Level (Spellcasting Speed) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire_spellSpeed" operation="set" value="@$sorcerySpellcastFire"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire_spellSpeed" operation="multiply" value=".1"/>
+				<!-- +5% Per Level (Spellcasting Speed) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFireAll_spellSpeed" operation="set" value="@$sorcerySpellcastFire"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFireAll_spellSpeed" operation="multiply" value=".05"/>
+				<!-- +5% Per Level (Spell Charge Speed) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire_spellCharge" operation="set" value="@$sorcerySpellcastFire"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire_spellCharge" operation="multiply" value=".05"/>				
+			</effect_group>			
+		</perk>
+	<!-- FIRE SPELLS -->
+		<!-- Fire Spell: FIRE -->
+		<perk name="perkSorcerySpellFire" parent="skillSorceryFireSpells" name_key="perkSorcerySpellFireName" desc_key="perkSorcerySpellFireDesc" icon="uic_symbol_spell_fire_sorcery" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="2" desc_key="reqSorceryFireLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="4" desc_key="reqSorceryFireLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="6" desc_key="reqSorceryFireLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="8" desc_key="reqSorceryFireLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10" desc_key="reqSorceryFireLevel10"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellFire"/>
+				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorcerySpellFire,spellFire"/><!-- used to scale resources -->
+				<effect_description level="1" desc_key="perkSorcerySpellFireRank1Desc" long_desc_key="perkSorcerySpellFireRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellFireRank2Desc" long_desc_key="perkSorcerySpellFireRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellFireRank3Desc" long_desc_key="perkSorcerySpellFireRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellFireRank4Desc" long_desc_key="perkSorcerySpellFireRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellFireRank5Desc" long_desc_key="perkSorcerySpellFireRank5LongDesc"/>
+			</effect_group>
+			<effect_group name="FIRE SPELL: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="LT" value="1"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +5% Per Level (Fire Damage) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFireAll_damage" operation="set" value="@$sorcerySpellFire"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFireAll_damage" operation="multiply" value=".05"/>
+			</effect_group>
+			<effect_group name="PERKS: Reset">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="LT" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire_BurnDuration" operation="set" value="1"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 1">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire_BurnDuration" operation="set" value="1"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 2">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire_BurnDuration" operation="set" value="1"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 3">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="3"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire_BurnDuration" operation="set" value="2"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 4">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="4"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire_BurnDuration" operation="set" value="2"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 5">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire_BurnDuration" operation="set" value="3"/>
+			</effect_group>
+		</perk>
+		<!-- Fire Spell: FIRENADO -->
+		<perk name="perkSorcerySpellFire2" parent="skillSorceryFireSpells" name_key="perkSorcerySpellFire2Name" desc_key="perkSorcerySpellFire2Desc" icon="uic_symbol_spell_fire_sorcery" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="4" desc_key="reqSorceryFireLevel04"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="6" desc_key="reqSorceryFireLevel06"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="6" desc_key="reqSorceryFireLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="8" desc_key="reqSorceryFireLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10" desc_key="reqSorceryFireLevel10"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellFire2"/>
+				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorcerySpellFire2,spellFire2"/><!-- used to scale resources -->
+				<effect_description level="1" desc_key="perkSorcerySpellFire2Rank1Desc" long_desc_key="perkSorcerySpellFire2Rank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellFire2Rank2Desc" long_desc_key="perkSorcerySpellFire2Rank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellFire2Rank3Desc" long_desc_key="perkSorcerySpellFire2Rank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellFire2Rank4Desc" long_desc_key="perkSorcerySpellFire2Rank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellFire2Rank5Desc" long_desc_key="perkSorcerySpellFire2Rank5LongDesc"/>
+			</effect_group>
+			<effect_group name="SPELL: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire2" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="LT" value="1"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire2" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire2" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire2" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire2" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire2" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +5% Per Level (Fire Damage) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire2All_damage" operation="set" value="@$sorcerySpellFire2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire2All_damage" operation="multiply" value=".05"/>
+			</effect_group>
+			<effect_group name="PERKS: Reset">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="LT" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire2Duration" operation="set" value="1"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 1">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire2Duration" operation="set" value="1"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 2">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="Equals" value="2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire2Duration" operation="set" value="1"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 3">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="Equals" value="3"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire2Duration" operation="set" value="2"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 4">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="Equals" value="4"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire2Duration" operation="set" value="2"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 5">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="Equals" value="5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="spellFire2Duration" operation="set" value="3"/>
+			</effect_group>
+		</perk>
+		<!-- Fire Spell: METEOR -->
+		<perk name="perkSorcerySpellFire3" parent="skillSorceryFireSpells" name_key="perkSorcerySpellFire3Name" desc_key="perkSorcerySpellFire3Desc" icon="uic_symbol_spell_fire_sorcery" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="6" desc_key="reqSorceryFireLevel06"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="6" desc_key="reqSorceryFireLevel06"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="8" desc_key="reqSorceryFireLevel08"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="8" desc_key="reqSorceryFireLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10" desc_key="reqSorceryFireLevel10"/></level_requirements>
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellFire3"/>
+				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorcerySpellFire3,spellFire3"/><!-- used to scale resources -->
+				<effect_description level="1" desc_key="perkSorcerySpellFire3Rank1Desc" long_desc_key="perkSorcerySpellFire3Rank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorcerySpellFire3Rank2Desc" long_desc_key="perkSorcerySpellFire3Rank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorcerySpellFire3Rank3Desc" long_desc_key="perkSorcerySpellFire3Rank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorcerySpellFire3Rank4Desc" long_desc_key="perkSorcerySpellFire3Rank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorcerySpellFire3Rank5Desc" long_desc_key="perkSorcerySpellFire3Rank5LongDesc"/>
+			</effect_group>
+			<effect_group name="SPELL: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire3" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire3" operation="LT" value="1"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire3" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire3" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire3" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire3" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire3" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire3" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire3" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire3" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire3" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire3" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +5% Per Level (Fire Damage) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire3All_damage" operation="set" value="@$sorcerySpellFire3"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellFire3All_damage" operation="multiply" value=".05"/>
+			</effect_group>
+		</perk>
+	<!-- FIRE TRAPS -->		
+		<!-- Fire Trap 1-->
+		<perk name="perkSorceryTrap1Fire" parent="skillSorceryFireTraps" name_key="perkSorceryTrap1FireName" desc_key="perkSorceryTrap1FireDesc" icon="uic_symbol_trap_fire_sorcery" min_level="0" max_level="0" base_skill_point_cost="0" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="2" desc_key="reqSorceryFireUnlock"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="4" desc_key="reqSorceryFireLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="6" desc_key="reqSorceryFireLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="8" desc_key="reqSorceryFireLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10" desc_key="reqSorceryFireLevel10"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorceryTrap1FireRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorceryTrap1FireRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorceryTrap1FireRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorceryTrap1FireRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorceryTrap1FireRank5Desc"/>
+			</effect_group>
+		</perk>
+		<!-- Fire Trap 2-->
+		<perk name="perkSorceryTrap2Fire" parent="skillSorceryFireTraps" name_key="perkSorceryTrap2FireName" desc_key="perkSorceryTrap2FireDesc" icon="uic_symbol_trap_fire_sorcery" min_level="0" max_level="0" base_skill_point_cost="0" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="2" desc_key="reqSorceryFireUnlock"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="4" desc_key="reqSorceryFireLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="6" desc_key="reqSorceryFireLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="8" desc_key="reqSorceryFireLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10" desc_key="reqSorceryFireLevel10"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorceryTrap2FireRank1Desc"/>
+				<effect_description level="2" desc_key="perkSorceryTrap2FireRank2Desc"/>
+				<effect_description level="3" desc_key="perkSorceryTrap2FireRank3Desc"/>
+				<effect_description level="4" desc_key="perkSorceryTrap2FireRank4Desc"/>
+				<effect_description level="5" desc_key="perkSorceryTrap2FireRank5Desc"/>
+			</effect_group>
+		</perk>
+		
+	<!-- FIRE ARMOR -->
+		<!-- ARMOR: FIRE -->
+		<perk name="perkSorceryArmorFire" parent="skillSorceryFireArmor" name_key="perkSorceryArmorFireName" desc_key="perkSorceryArmorFireDesc" icon="uic_symbol_armor_fire_sorcery" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="2" desc_key="reqSorceryFireUnlock"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="4" desc_key="reqSorceryFireLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="6" desc_key="reqSorceryFireLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="8" desc_key="reqSorceryFireLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10" desc_key="reqSorceryFireLevel10"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorceryArmorFireRank1Desc" long_desc_key="perkSorceryArmorFireRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorceryArmorFireRank2Desc" long_desc_key="perkSorceryArmorFireRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorceryArmorFireRank3Desc" long_desc_key="perkSorceryArmorFireRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorceryArmorFireRank4Desc" long_desc_key="perkSorceryArmorFireRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorceryArmorFireRank5Desc" long_desc_key="perkSorceryArmorFireRank5LongDesc"/>
+			</effect_group>
+			<effect_group name="FIRE ARMOR"> 
+				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="1,6" tags="perkSorceryArmorFire,sorceryArmorFire_Hood,sorceryArmorFire_Robe,sorceryArmorFire_Chest,sorceryArmorFire_Shirt,sorceryArmorFire_Gloves,sorceryArmorFire_Leg,sorceryArmorFire_Pants,sorceryArmorFire_Boots,sorceryArmorFire_Bandana,sorceryAccessoryFire_Shades"/><!-- used to scale resources -->
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryArcaneWheel,sorceryAccessoryFire_Shades,sorceryArmorFire_Bandana,sorceryArmorFire_Hood,sorceryArmorFire_Robe,sorceryArmorFire_Chest,sorceryArmorFire_Shirt,sorceryArmorFire_Gloves,sorceryArmorFire_Leg,sorceryArmorFire_Pants,sorceryArmorFire_Boots"/>
+			</effect_group>
+			<effect_group name="FIRE ARMOR: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmorFire" operation="LT" value="1"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmorFire" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmorFire" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmorFire" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmorFire" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmorFire" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Armor) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_power" operation="set" value="@$sorceryArmorFire"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_power" operation="add" value="1"/>
+			</effect_group>
+			<effect_group name="PERKS">
+			<!-- buffSorceryPerks_ArmorSetFire -->
+				<!-- Perk: 1% Damage -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_damage" operation="set" value="0.02"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_damage" operation="multiply" value="@$sorceryArmorFire"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_damage" operation="multiply" value="@.FireArmorSetPieces"/>
+				<!-- Perk: .3 Spirit -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_spirit" operation="set" value="0.3"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_spirit" operation="multiply" value="@$sorceryArmorFire"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_spirit" operation="multiply" value="@.FireArmorSetPieces"/>
+				<!-- Perk: .5% Movement -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_movement" operation="set" value="0.005"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_movement" operation="multiply" value="@$sorceryArmorFire"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire_movement" operation="multiply" value="@.FireArmorSetPieces"/>
+					<passive_effect name="WalkSpeed" operation="perc_add" value="@sorceryArmorFire_movement"/>
+					<passive_effect name="RunSpeed" operation="perc_add" value="@sorceryArmorFire_movement"/>
+			</effect_group>
+			<effect_group name="PERK: Attacks to Spirit">
+					<requirement name="CVarCompare" cvar=".FireArmorSetPieces" operation="GTE" value="1"/>
+					<requirement name="ProgressionLevel" progression_name="perkSorceryArmorFire" operation="GTE" value="1"/>
+				<triggered_effect trigger="onOtherAttackedSelf" action="ModifyCVar" cvar=".spiritAdd" operation="add" value="@$sorceryArmorFire_spirit"/>
+			</effect_group>
+		</perk>	
+
+		<!-- ELEMENTS -->
+		
+		<!-- SORCERY SUPPORT -->			
+		
+		<!-- ELIXIR, BOOK PERKS -->
+				
+	</append>	
+
+</Sorcery>

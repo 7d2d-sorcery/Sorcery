@@ -1,0 +1,122 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+		__________________________________________________________________________________
+		2020 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+		
+		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+		of using this mod.
+		
+		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+		redistributed outside of its original distribution channels.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+		possible. Without their support, it is not possible to put in the enormous amount of time required to 
+		create the plethora of unique assets that make Sorcery.
+		
+		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+		__________________________________________________________________________________
+		
+		DISCLAIMER
+		__________________________________________________________________________________
+		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
+		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
+		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
+		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
+		__________________________________________________________________________________-->
+		
+	<append xpath="/item_modifiers" >
+		<!-- NOTE: onSelfEquipStart Bug, Mods must NOT attempt to perform CVar math, individually, as onSelfEquipStart double and triple fires per mod. Resort to Unique Buffs and perform CVar math there instead. -->
+	
+		<!-- RUNE MASTER -->
+		<item_modifier name="runeMaster" installable_tags="armor" modifier_tags="runeMaster" type="attachment">
+			<property name="CreativeMode" value="None"/>
+			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<!-- <property name="CustomIcon" value="rune_lockshatter"/> -->
+			<property name="Stacknumber" value="1"/>
+			<property name="Material" value="MsorceryExtractOmni"/>
+			<property name="Weight" value="40"/>
+			<property name="SellableToTrader" value="true"/>				
+			<property name="EconomicValue" value="1000"/>
+			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="Group" value="Mods"/>
+			<property name="UnlockedBy" value="perkSorceryRuneMastery"/>
+			<!-- <property name="ShowQuality" value="true"/> -->
+		</item_modifier>		
+		
+		<!-- LOCK SHATTER -->
+		<item_modifier name="rune_LockShatter" installable_tags="tool" modifier_tags="rune_LockShatter" blocked_tags="noMods" type="mod">
+			<property name="Extends" value="runeMaster"/>
+				<effect_group tiered="false" name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter" operation="set" value="@$sorceryRuneMastery_power"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter" operation="multiply" value="100"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter_degrade" operation="multiply" value="8"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter_burden" operation="set" value="@$runeBurdenCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter_burden" operation="multiply" value="30"/>
+					<!-- clear -->
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLockShatter" operation="set" value="0" />
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLockShatter_degrade" operation="set" value="0" />
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLockShatter_burden" operation="set" value="0" />
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+						<!-- <requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="LTE" value="0"/> -->
+						<requirement name="HoldingItemHasTags" tags="tool"/>
+						<requirement name="TriggerHasTags" tags="safes"/>
+						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLockShatter_burden"/>
+					<triggered_effect trigger="onSelfDamagedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLockShatter_burden"/>
+					<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLockShatter_burden"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="@.runeLockShatter" tags="safes"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeLockShatter_degrade"/>
+				</effect_group>
+		</item_modifier>
+		
+		<!-- SPELL LIGHT -->
+		<item_modifier name="rune_SpellLight" installable_tags="armor" modifier_tags="rune_SpellLight" blocked_tags="noMods" type="mod">
+			<property name="Extends" value="runeMaster"/>
+				<effect_group tiered="false" name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight" operation="set" value="@$sorceryRuneMastery_power"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight" operation="multiply" value="75"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight" operation="set" value="60">
+						<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="LT" value="1"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight_degrade" operation="multiply" value="2"/>
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_SpellLight"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeSpellLight_degrade"/>
+				</effect_group>
+				<effect_group tiered="false" name="RESET">
+					<!-- <triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffRune_SpellLight"/> --> <!-- BUGGED: Not Working -->
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRune_SpellLight"/>
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeSpellLight" operation="set" value="0" />
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeSpellLight_degrade" operation="set" value="0" />
+				</effect_group>
+		</item_modifier>
+		
+	</append>
+</Sorcery>

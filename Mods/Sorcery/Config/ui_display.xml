@@ -1,0 +1,410 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+		__________________________________________________________________________________
+		2020 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+		
+		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+		of using this mod.
+		
+		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+		redistributed outside of its original distribution channels.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+		possible. Without their support, it is not possible to put in the enormous amount of time required to 
+		create the plethora of unique assets that make Sorcery.
+		
+		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+		__________________________________________________________________________________
+		
+		DISCLAIMER
+		__________________________________________________________________________________
+		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
+		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
+		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
+		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
+		__________________________________________________________________________________-->
+		
+	<!-- item_display -->
+	<append xpath="/ui_display_info/item_display">
+
+		<!-- FIRE -->
+		<item_display_info display_type="sorcerySpellcastFire" display_group="groupWeapons" >
+			<display_entry name="@$spiritAmount" title_key="[ff2000]Fire Spellcast[-]" display_leading_plus="true"/>
+			<display_entry name="dsorcDamageFire" title_key="[ff2000]Fire[-] Damage" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
+		</item_display_info>
+
+		<!-- SORCERY ARMOR -->
+		<item_display_info display_type="sorceryArmor" display_group="groupAttire" >
+			<display_entry name="dsorcSetArcane" title_key="[c2b2ff]Arcane Armor Set[-]" display_leading_plus="true"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
+			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+		<!-- FIRE -->
+		<item_display_info display_type="sorceryArmorFire" display_group="groupAttire" >
+			<display_entry name="dsorcSetFire" title_key="[ff2000]Fire Armor Set[-]" display_leading_plus="true"/>
+			<display_entry name="dsorcDamageFire" title_key="[ff2000]Fire[-] Damage" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dsorcEssenceFire" title_key="[ff2000]Fire[-] Essence Harvest" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>	
+	
+		<!-- SORCERY HOOD -->
+		<item_display_info display_type="sorceryArmorHood" display_group="groupAttire" >
+			<display_entry name="dsorcSetArcane" title_key="[c2b2ff]Arcane Armor Set[-]" display_leading_plus="true"/>
+			<display_entry name="AttributeLevel" tags="attSorcery" title_key="Sorcery Level" display_leading_plus="true"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+			<!-- FIRE -->
+			<item_display_info display_type="sorceryArmorFireHood" display_group="groupAttire" >
+				<display_entry name="dsorcSetFire" title_key="[ff2000]Fire Armor Set[-]" display_leading_plus="true"/>
+				<display_entry name="dsorcDamageFire" title_key="[ff2000]Fire[-] Damage" display_type="Percent" display_leading_plus="true"/>
+				<display_entry name="dsorcEssenceFire" title_key="[ff2000]Fire[-] Essence Harvest" display_type="Percent" display_leading_plus="true"/>
+				<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
+				<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
+				<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+				<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+			</item_display_info>
+	
+		<!-- SORCERY ROBE -->
+		<item_display_info display_type="sorceryArmorRobe" display_group="groupAttire" >
+			<display_entry name="dsorcSetArcane" title_key="[c2b2ff]Arcane Armor Set[-]" display_leading_plus="true"/>
+			<display_entry name="dsorcMasteryAll" title_key="Sorcery Mastery All+"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+	
+		<!-- SORCERY GLOVES -->
+		<item_display_info display_type="sorceryArmorGloves" display_group="groupAttire" >
+			<display_entry name="dsorcSetArcane" title_key="[c2b2ff]Arcane Armor Set[-]" display_leading_plus="true"/>
+			<display_entry name="PerkLevel" tags="perkSorcerySpellcastMastery" title_key="Spellcast Mastery+"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+	
+		<!-- SORCERY BOOTS -->
+		<item_display_info display_type="sorceryArmorBoots" display_group="groupAttire" >
+			<display_entry name="dsorcSetArcane" title_key="[c2b2ff]Arcane Armor Set[-]" display_leading_plus="true"/>
+			<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
+			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+		</item_display_info>
+			<!-- FIRE -->
+			<item_display_info display_type="sorceryArmorFireBoots" display_group="groupAttire" >
+				<display_entry name="dsorcSetFire" title_key="[ff2000]Fire Armor Set[-]" display_leading_plus="true"/>
+				<display_entry name="dsorcDamageFire" title_key="[ff2000]Fire[-] Damage" display_type="Percent" display_leading_plus="true"/>
+				<display_entry name="dsorcEssenceFire" title_key="[ff2000]Fire[-] Essence Harvest" display_type="Percent" display_leading_plus="true"/>
+				<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
+				<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
+				<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
+				<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
+				<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+			</item_display_info>
+	
+		<!-- SORCERY ACCESSORY -->
+		<item_display_info display_type="sorceryAccessory" display_group="groupAttire" >
+			<display_entry name="dsorcSetArcane" title_key="[c2b2ff]Arcane Armor Set[-]" display_leading_plus="true"/>
+			<display_entry name="PerkLevel" tags="perkSorceryEssenceMastery" title_key="Essence Mastery+"/>
+			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
+			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
+			<display_entry name="dsorcEssenceFire" title_key="Essence Harvest: [ff2000]Fire[-]" display_type="Percent"/>
+			<display_entry name="dsorcEssenceIce" title_key="Essence Harvest: [448aff]Ice[-]" display_type="Percent"/>
+			<display_entry name="dsorcEssenceLightning" title_key="Essence Harvest: [9a57ff]Lightning[-]" display_type="Percent"/>
+		</item_display_info>
+	
+
+
+
+		<!-- ALCHEMY -->
+		<!-- POTIONS -->
+		<item_display_info display_type="potion_Health" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionHealth" title_key="Health"/>
+			<display_entry name="dsorcPotionHealthRegen" title_key="Health Regen /s" display_type="Decimal"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<item_display_info display_type="potion_Stamina" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionStamina" title_key="Stamina"/>
+			<display_entry name="dsorcPotionStaminaRegen" title_key="Stamina Regen" display_type="Decimal"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<item_display_info display_type="potion_Spirit" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionSpirit" title_key="Spirit"/>
+			<display_entry name="dsorcPotionSpiritRegen" title_key="Spirit Regen" display_type="Decimal"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<item_display_info display_type="potion_Remedy" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionRemedy" title_key="Remedy Critical Ailments" display_type="Bool"/>
+			<display_entry name="dsorcPotionRemedy2" title_key="Chance to Remedy" display_type="Percent"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<item_display_info display_type="potion_Travel" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionTravel" title_key="Walk Speed" display_type="Percent"/>
+			<display_entry name="dsorcPotionTravel2" title_key="Run Speed" display_type="Percent"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<item_display_info display_type="potion_SlowFall" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionSlowFall" title_key="Immune to Fall Damage" display_type="Bool"/>
+			<display_entry name="dsorcPotionSlowFall2" title_key="Falling Heal / Second"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<item_display_info display_type="potion_Haste" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionHaste" title_key="Attack Speed" display_type="Percent"/>
+			<display_entry name="dsorcPotionHaste2" title_key="Cast Speed" display_type="Percent"/>
+			<display_entry name="dsorcPotionHaste3" title_key="Charge Speed" display_type="Percent"/>
+			<display_entry name="dsorcPotionHaste4" title_key="Harvest Speed" display_type="Percent"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>		
+		<item_display_info display_type="potion_Devour" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionDevour" title_key="Satiate Hunger" display_type="Bool"/>
+			<display_entry name="dsorcPotionDevour" title_key="Hunger to Satiate" display_type="Percent"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+			<display_entry name="dsorcPotionDebuff" title_key="-10% Health, Stamina, Spirit" display_type="Bool"/>
+			<display_entry name="dsorcPotionDebuffDuration" title_key="Debuff Duration"/>
+		</item_display_info>
+		<item_display_info display_type="potion_Taunt" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionTaunt" title_key="Taunt Nearby Foes" display_type="Bool"/>
+			<display_entry name="dsorcPotionTaunt2" title_key="Taunt Strength" display_type="Percent"/>
+			<display_entry name="dsorcPotionRemove" title_key="Remove With Secondary" display_type="Bool"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<item_display_info display_type="potion_EssenceFire" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionEssence" title_key="Essence Harvest" display_type="Percent"/>
+			<display_entry name="dsorcPotionEssence2" title_key="Fire Essence: I, II, III, IV, V" display_type="Bool"/>
+			<display_entry name="dsorcPotionPotency" title_key="Alchemy Potency" display_type="Bool"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>	
+		<item_display_info display_type="potion_Fire" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionFire" title_key="Fire Sorcery" display_type="Percent"/>
+			<display_entry name="dsorcPotionPotency" title_key="Alchemy Potency" display_type="Bool"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>	
+		
+		<!-- ELIXIRS -->
+		<item_display_info display_type="sorceryElixir_masteryFire" display_group="groupConsumables" >
+			<display_entry name="dsorcMasteryFire" title_key="Fire Mastery Level"/>
+			<display_entry name="dsorcSpellcastFire" title_key="Fire Spellcast Level"/>
+			<display_entry name="dsorcSpellFire" title_key="Fire Spell Level"/>
+			<display_entry name="dsorcElixirDuration" title_key="Permanent" display_type="Bool"/>
+			<display_entry name="dsorcExplain" title_key="PLACE IN TOOLBELT TO DRINK" display_type="Bool"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryElixir_masteryIce" display_group="groupConsumables" >
+			<display_entry name="dsorcMasteryIce" title_key="Ice Mastery Level"/>
+			<display_entry name="dsorcSpellcastIce" title_key="Ice Spellcast Level"/>
+			<display_entry name="dsorcSpellIce" title_key="Ice Spell Level"/>
+			<display_entry name="dsorcElixirDuration" title_key="Permanent" display_type="Bool"/>
+			<display_entry name="dsorcExplain" title_key="PLACE IN TOOLBELT TO DRINK" display_type="Bool"/>
+		</item_display_info>		
+		<item_display_info display_type="sorceryElixir_masteryLightning" display_group="groupConsumables" >
+			<display_entry name="dsorcMasteryLightning" title_key="Lightning Mastery Level"/>
+			<display_entry name="dsorcSpellcastLightning" title_key="Lightning Spellcast Level"/>
+			<display_entry name="dsorcSpellLightning" title_key="Lightning Spell Level"/>
+			<display_entry name="dsorcElixirDuration" title_key="Permanent" display_type="Bool"/>
+			<display_entry name="dsorcExplain" title_key="PLACE IN TOOLBELT TO DRINK" display_type="Bool"/>
+		</item_display_info>		
+		<!-- POTION BOMB -->
+		<item_display_info display_type="sorceryPotionBomb" display_group="groupAmmo" >
+			<display_entry name="dExDamageEntity" title_key="AOE Damage"/>
+			<display_entry name="dExDamageBlock" title_key="Block Damage"/>
+			<display_entry name="dExRadius" title_key="statExRadius"/>
+			<display_entry name="dsorcPotionPotency" title_key="Potency+ /Lvl" display_type="Percent"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>		
+		<item_display_info display_type="sorceryPotionBomb_fire" display_group="groupAmmo" >
+			<display_entry name="dsorcPotionDamage" title_key="AOE Damage"/>
+			<display_entry name="dsorcPotionRange" title_key="AOE Range"/>
+			<display_entry name="dsorcPotionEffect" title_key="Burn Chance" display_type="Percent"/>
+			<display_entry name="dsorcPotionEffect2" title_key="Explode Chance" display_type="Percent"/>
+			<display_entry name="dsorcPotionPotency" title_key="Potency+ Alchemy Mastery" display_type="Percent"/>
+			<display_entry name="dsorcPotionPotency2" title_key="Potency+ Fire Mastery" display_type="Percent"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryPotionBomb_ice" display_group="groupAmmo" >
+			<display_entry name="dsorcPotionDamage" title_key="AOE Damage"/>
+			<display_entry name="dsorcPotionRange" title_key="AOE Range"/>
+			<display_entry name="dsorcPotionEffect" title_key="Iceburn Chance" display_type="Percent"/>
+			<display_entry name="dsorcPotionEffect2" title_key="Freeze Chance" display_type="Percent"/>
+			<display_entry name="dsorcPotionPotency" title_key="Potency+ Alchemy Mastery" display_type="Percent"/>
+			<display_entry name="dsorcPotionPotency2" title_key="Potency+ Ice Mastery" display_type="Percent"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryPotionBomb_lightning" display_group="groupAmmo" >
+			<display_entry name="dsorcPotionDamage" title_key="AOE Damage"/>
+			<display_entry name="dsorcPotionRange" title_key="AOE Range"/>
+			<display_entry name="dsorcPotionEffect" title_key="Shockburn Chance" display_type="Percent"/>
+			<display_entry name="dsorcPotionEffect2" title_key="Electrocute Chance" display_type="Percent"/>
+			<display_entry name="dsorcPotionPotency" title_key="Potency+ Alchemy Mastery" display_type="Percent"/>
+			<display_entry name="dsorcPotionPotency2" title_key="Potency+ Lightning Mastery" display_type="Percent"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryPotionBomb_grass" display_group="groupAmmo" >
+			<display_entry name="dsorcPotionRange" title_key="AOE Range"/>
+			<display_entry name="dsorcPotionEffect" title_key="Clear Grass" display_type="Bool"/>
+			<display_entry name="dsorcPotionEffect2" title_key="Clear Shrubs" display_type="Bool"/>
+			<display_entry name="dsorcPotionPotency" title_key="Potency+ /Lvl" display_type="Bool"/>
+		</item_display_info>
+		
+		
+		<!-- SPELL AMMO -->
+		<!-- AMMO ARROW -->
+		<item_display_info display_type="spellArrowFire" display_group="groupAmmo" >
+			<display_entry name="EntityDamage" title_key="statEntityDamageRanged"/>
+			<display_entry name="dsorcAmmoDOT" title_key="Incinerate" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect" title_key="Spread" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect2" title_key="Explode" display_type="Percent"/>
+			<display_entry name="dsorcAmmoScale" title_key="Fire Sorcery Scaling" display_type="Percent"/>
+		</item_display_info>
+		<item_display_info display_type="spellArrowFire2" display_group="groupAmmo" >
+			<display_entry name="EntityDamage" title_key="statEntityDamageRanged"/>
+			<display_entry name="dsorcAmmoDOT" title_key="Incinerate" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect" title_key="Spread" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect2" title_key="Clone" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect3" title_key="Explode" display_type="Percent"/>
+			<display_entry name="dsorcAmmoScale" title_key="Fire Sorcery Scaling" display_type="Percent"/>
+		</item_display_info>
+		<item_display_info display_type="spellArrowFire3" display_group="groupAmmo" >
+			<display_entry name="EntityDamage" title_key="statEntityDamageRanged"/>
+			<display_entry name="dsorcAmmoDOT" title_key="Incinerate" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect" title_key="Molten Core" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect2" title_key="Meteor Shower" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect3" title_key="Crater Impact" display_type="Percent"/>
+			<display_entry name="dsorcAmmoScale" title_key="Fire Sorcery Scaling" display_type="Percent"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryAmmoArrow_ice" display_group="groupAmmo" >
+			<display_entry name="EntityDamage" title_key="statEntityDamageRanged"/>
+			<display_entry name="dsorcAmmoDamage" title_key="Ice Damage"/>
+			<display_entry name="dsorcAmmoDOT" title_key="Iceburn Damage"/>
+			<display_entry name="dsorcAmmoEffect" title_key="Slow" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect2" title_key="Deep Freeze" display_type="Percent"/>
+			<display_entry name="dsorcAmmoScale" title_key="Damage+ Ice Mastery" display_type="Percent"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryAmmoArrow_lightning" display_group="groupAmmo" >
+			<display_entry name="EntityDamage" title_key="statEntityDamageRanged"/>
+			<display_entry name="dsorcAmmoDamage" title_key="Lightning Damage"/>
+			<display_entry name="dsorcAmmoDOT" title_key="Shockburn Damage"/>
+			<display_entry name="dsorcAmmoEffect" title_key="Weaken" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect2" title_key="Lightning Strike" display_type="Percent"/>
+			<display_entry name="dsorcAmmoScale" title_key="Damage+ Lightning Mastery" display_type="Percent"/>
+		</item_display_info>		
+		<item_display_info display_type="sorceryAmmoArrow_omni" display_group="groupAmmo" >
+			<display_entry name="EntityDamage" title_key="statEntityDamageRanged"/>
+			<display_entry name="dsorcAmmoDamage" title_key="Fire, Ice, Lightning Damage"/>
+			<display_entry name="dsorcAmmoDOT" title_key="Burn, Iceburn, Shockburn Damage"/>
+			<display_entry name="dsorcAmmoEffect" title_key="Incinerate, Slow, Weaken" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect2" title_key="Explode, Freeze, Lightning Strike" display_type="Percent"/>
+			<display_entry name="dsorcAmmoScale" title_key="Damage+ Fire, Ice, Lightning Mastery" display_type="Percent"/>
+		</item_display_info>		
+	</append>
+
+
+
+	<!-- CHARACTER STATS -->
+	<!-- <append xpath="/ui_display_info/character_stat_display">	
+		<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
+		<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
+		<display_entry name="dsorcEssenceFire" title_key="Essence Harvest: Fire" display_type="Percent"/>
+		<display_entry name="dsorcEssenceIce" title_key="Essence Harvest: Ice" display_type="Percent"/>
+		<display_entry name="dsorcEssenceLightning" title_key="Essence Harvest: Lightning" display_type="Percent"/>
+		<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
+	</append> -->
+
+
+	
+	
+	<!-- crafting_category_display -->
+	<append xpath="/ui_display_info/crafting_category_display">
+		<crafting_category_list display_type="conjureFire">
+			<crafting_category name="Ammo/Weapons" icon="ui_symbol_spell_fire_sorcery" display_name="Fire [ae92d5]Spellcrafting[-]" />
+			<crafting_category name="Mods" icon="ui_symbol_rune_sorcery" display_name="Fire [ae92d5]Runesmithing[-]" />
+			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="Fire [ae92d5]Resources[-]" />
+			<!-- <crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Fire [ae92d5]Quests[-]" /> -->
+		</crafting_category_list>
+		<crafting_category_list display_type="conjureIce">
+			<crafting_category name="Ammo/Weapons" icon="ui_symbol_spell_ice_sorcery" display_name="[02599c]Ice[-] Sorcery" />
+			<crafting_category name="Mods" icon="ui_symbol_rune_sorcery" display_name="[02599c]Ice[-] Runesmithing" />
+			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="[02599c]Ice[-] Transmute" />
+			<!-- <crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Ice Quests" /> -->
+		</crafting_category_list>
+		<crafting_category_list display_type="conjureLightning">
+			<crafting_category name="Ammo/Weapons" icon="ui_symbol_spell_lightning_sorcery" display_name="[5c009d]Lightning[-] Sorcery" />
+			<crafting_category name="Mods" icon="ui_symbol_rune_sorcery" display_name="[5c009d]Lightning[-] Runesmithing" />
+			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="[5c009d]Lightning[-] Transmute" />
+			<!-- <crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Lightning Quests" /> -->
+		</crafting_category_list>
+		<crafting_category_list display_type="sorceryAlchemyStation">
+			<crafting_category name="Food/Cooking" icon="ui_symbol_potion" display_name="Potions" />
+			<crafting_category name="Ammo/Weapons" icon="ui_symbol_potion_bomb" display_name="Potion [ae92d5]Bombs[-]" />
+			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="Resources" />
+			<!-- <crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Quests" /> -->
+		</crafting_category_list>
+		<crafting_category_list display_type="sorceryArcaneWheel">
+			<crafting_category name="Clothing" icon="ui_game_symbol_light_armor" display_name="Armor Tailoring" />
+			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="Resources" />
+		</crafting_category_list>
+		<crafting_category_list display_type="sorceryDesk">
+			<crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Quests" />
+			<crafting_category name="Books" icon="ui_sorcery_scroll" display_name="Scrolls" />
+			<crafting_category name="Building" icon="ui_symbol_pentagram" display_name="Stations" />
+			<crafting_category name="Tools/Traps" icon="ui_symbol_trap_sorcery" display_name="Traps" />
+		</crafting_category_list>
+	</append>
+	
+	
+
+	
+	
+</Sorcery>

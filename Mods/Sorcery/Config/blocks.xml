@@ -1,0 +1,534 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+		__________________________________________________________________________________
+		2020 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+		
+		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+		of using this mod.
+		
+		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+		redistributed outside of its original distribution channels.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+		possible. Without their support, it is not possible to put in the enormous amount of time required to 
+		create the plethora of unique assets that make Sorcery.
+		
+		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+		__________________________________________________________________________________
+		
+		DISCLAIMER
+		__________________________________________________________________________________
+		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
+		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
+		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
+		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
+		__________________________________________________________________________________-->
+		
+	<append xpath="/blocks">
+	
+<!-- STATIONS ______________________________________-->
+	<!-- STATION: CONJURE ______________________________________-->
+		<!-- STATION: FIRE CONJURE -->
+		<block name="conjureFire">
+			<property name="Class" value="Forge"/>
+			<property name="Material" value="Mstone_scrap"/>
+			<property name="MaxDamage" value="800"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/conjureFire.unity3d?conjureFire"/>
+			<!-- <property name="ModelOffset" value="0,0.5,0"/> -->
+			<property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="HeatMapStrength" value="3"/>
+			<property name="HeatMapTime" value="1200"/>
+			<property name="HeatMapFrequency" value="300"/>
+			<!-- <property name="BuffsWhenWalkedOn" value="buffFireAltar_trigger"/>
+			<property name="ActiveRadiusEffects" value="buffCampfireAOE(5)"/> -->
+<!-- <property name="ParticleName" value="#@modfolder:Resources/fireEmpower.unity3d?fireEmpower"/> -->
+			<property class="Workstation">
+				<property name="CraftingAreaRecipes" value="conjureFire"/>
+				<property name="Modules" value="tools,output,fuel,material_input"/>
+				<property name="InputMaterials" value="fire"/>
+			</property>
+			<property name="WorkstationIcon" value="ui_symbol_fire" />
+			<property name="CraftActionName" value="Conjure" />
+			<property name="OpenSound" value="sorceryFireball_draw" />
+			<property name="CloseSound" value="sorceryFireball_impact" />
+			<property name="CraftSound" value="sorceryChant" />
+			<property name="CraftCompleteSound" value="sorceryFireball_launch" />
+			<!-- <property name="WorkstationWindow" value="workstation_conjureFire" /> -->
+			<property class="RepairItems">
+				<property name="resourceExtractFire" value="40"/>
+				<property name="resourceCoal" value="10"/>
+				<property name="resourceRockSmall" value="50"/>
+				<property name="resourceClayLump" value="30"/>
+			</property>
+			<drop event="Harvest" name="resourceExtractFire" count="10"/>
+			<drop event="Harvest" name="resourceRockSmall" count="20" tag="allHarvest"/>			
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.75" stick_chance="1"/>
+			<property name="TakeDelay" value="15"/>
+			<property name="Group" value="Building,FireSorcery"/>
+			<property name="DescriptionKey" value="conjureFireDesc"/>
+			<property name="EconomicValue" value="214"/>
+			<property name="UnlockedBy" value="attSorceryFire,sorceryDesk"/>
+			<!-- <property name="FilterTags" value="fother"/> -->
+			<!-- <property name="SortOrder1" value="70i0"/> -->
+		</block>
+		
+		<!-- STATION: ICE CONJURE -->
+		<block name="conjureIce">
+			<property name="Class" value="Forge"/>
+			<property name="Material" value="Mstone_scrap"/>
+			<property name="MaxDamage" value="800"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/conjureIce.unity3d?conjureIce"/>
+			<!-- <property name="ModelOffset" value="0,0.5,0"/> -->
+			<property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<!-- <property name="BigDecorationRadius" value="4"/> -->
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="HeatMapStrength" value="2"/>
+			<property name="HeatMapTime" value="1200"/>
+			<property name="HeatMapFrequency" value="25"/>
+			<!-- <property name="BuffsWhenWalkedOn" value="buffFireAltar_trigger"/>
+			<property name="ActiveRadiusEffects" value="buffCampfireAOE(5)"/> -->
+			<property class="Workstation">
+				<property name="CraftingAreaRecipes" value="conjureIce"/>
+				<property name="Modules" value="tools,output,fuel,material_input"/>
+				<property name="InputMaterials" value="ice,ice2,ice3,ice4,ice5"/>
+			</property>
+			<property name="WorkstationIcon" value="ui_game_symbol_cold" />
+			<property name="CraftActionName" value="Conjure" />
+			<property name="OpenSound" value="sorceryIce_draw" />
+			<property name="CloseSound" value="sorceryIce_impact" />
+			<property name="CraftSound" value="sorceryChant" />
+			<property name="CraftCompleteSound" value="sorceryIce_launch" />
+			<!-- <property name="WorkstationWindow" value="workstation_conjureIce" /> -->
+			<property class="RepairItems">
+				<property name="resourceExtractIce" value="20"/>
+				<property name="resourcePotassiumNitratePowder" value="10"/>
+				<property name="resourceRockSmall" value="50"/>
+				<property name="resourceClayLump" value="30"/>
+			</property>
+			<drop event="Harvest" name="resourceExtractIce" count="10"/>
+			<drop event="Harvest" name="resourceRockSmall" count="20" tag="allHarvest"/>			
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.75" stick_chance="1"/>
+			<property name="TakeDelay" value="15"/>
+			<property name="Group" value="Building,IceSorcery"/>
+			<property name="DescriptionKey" value="conjureIceDesc"/>
+			<property name="EconomicValue" value="214"/>
+			<property name="UnlockedBy" value="attSorceryIce"/>
+			<!-- <property name="FilterTags" value="fother"/>
+			<property name="SortOrder1" value="70i0"/> -->
+		</block>
+		
+		<!-- STATION: LIGHTNING CONJURE -->
+		<block name="conjureLightning">
+			<property name="Class" value="Forge"/>
+			<property name="Material" value="Mstone_scrap"/>
+			<property name="MaxDamage" value="800"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/conjureLightning.unity3d?conjureLightning"/>
+			<!-- <property name="ModelOffset" value="0,0.5,0"/> -->
+			<property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<!-- <property name="BigDecorationRadius" value="4"/> -->
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="HeatMapStrength" value="2"/>
+			<property name="HeatMapTime" value="1200"/>
+			<property name="HeatMapFrequency" value="25"/>
+			<!-- <property name="BuffsWhenWalkedOn" value="buffFireAltar_trigger"/>
+			<property name="ActiveRadiusEffects" value="buffCampfireAOE(5)"/> -->
+			<property class="Workstation">
+				<property name="CraftingAreaRecipes" value="conjureLightning"/>
+				<property name="Modules" value="tools,output,fuel,material_input"/>
+				<property name="InputMaterials" value="lightning,lightning2,lightning3,lightning4,lightning5"/>
+			</property>
+			<property name="WorkstationIcon" value="ui_game_symbol_electric_power" />
+			<property name="CraftActionName" value="Conjure" />
+			<property name="OpenSound" value="sorceryLightning_implodelow" />
+			<property name="CloseSound" value="sorceryLightning_impact" />
+			<property name="CraftSound" value="sorceryChant" />
+			<property name="CraftCompleteSound" value="sorceryLightning_launch" />
+			<!-- <property name="WorkstationWindow" value="workstation_conjureIce" /> -->
+			<property class="RepairItems">
+				<property name="resourceExtractLightning" value="20"/>
+				<property name="resourceScrapLead" value="10"/>
+				<property name="resourceRockSmall" value="50"/>
+				<property name="resourceClayLump" value="30"/>
+			</property>
+			<drop event="Harvest" name="resourceExtractLightning" count="10"/>
+			<drop event="Harvest" name="resourceRockSmall" count="20" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.75" stick_chance="1"/>
+			<property name="TakeDelay" value="15"/>
+			<property name="Group" value="Building,LightningSorcery"/>
+			<property name="DescriptionKey" value="conjureLightningDesc"/>
+			<property name="EconomicValue" value="214"/>
+			<property name="UnlockedBy" value="attSorceryLightning"/>
+			<!-- <property name="FilterTags" value="fother"/>
+			<property name="SortOrder1" value="70i0"/> -->
+		</block>		
+		
+	<!-- STATION: ALCHEMY ______________________________________-->
+		<!-- STATION: ALCHEMY STATION -->
+		<block name="sorceryAlchemyStation">
+			<property name="Class" value="Campfire"/>
+			<property name="Material" value="Miron_scrap"/>
+			<property name="MaxDamage" value="1200"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="ParticleName" value="chemistryStation"/>
+			<property name="ParticleOffset" value="0,0,0"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryAlchemyStation.unity3d?sorceryAlchemyStation"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="3,2,3"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="HeatMapStrength" value="2"/>
+			<property name="HeatMapTime" value="5000"/>
+			<property name="HeatMapFrequency" value="1000"/>
+			<!-- <property name="ActiveRadiusEffects" value="buffCampfireAOE(3)"/> -->
+			<property class="Workstation">
+				<!-- <property name="Modules" value="output,fuel,input"/> -->
+				<property name="Modules" value="tools,output"/>
+				<property name="CraftingAreaRecipes" value="sorceryAlchemyStation"/>
+			</property>
+			<property name="WorkstationIcon" value="ui_symbol_potion" />
+			<property name="CraftActionName" value="Concoct" />
+			<property name="CraftIcon" value="ui_symbol_potion" />
+			<property name="OpenSound" value="sorceryAlchemy_grinding" />
+			<property name="CloseSound" value="cement_mixer_close" />
+			<property name="CraftSound" value="chem_station_mix_click" />
+			<property name="CraftCompleteSound" value="sorceryPotion_bottle" />
+			<property name="WorkstationJournalTip" value="chemistryStationTip" />
+			<property class="RepairItems">
+				<property name="resourceExtractOmni" value="30"/>
+				<property name="resourceWood" value="200"/>
+			</property>
+			<drop event="Harvest" name="resourceExtractOmni" count="20"/>
+			<drop event="Harvest" name="resourceWood" count="16" tag="allHarvest"/>		
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+			<property name="TakeDelay" value="15"/>
+			<property name="Group" value="Food/Cooking,Building,AlchemySorcery"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="UnlockedBy" value="perkSorceryAlchemyMastery"/>
+			<!-- <property name="FilterTags" value="fdecor,fother,ffurniture"/>
+			<property name="SortOrder1" value="70i0"/> -->
+		</block>	
+
+	<!-- STATION: TAILORING ______________________________________-->
+		<!-- STATION: ARCANE WHEEL -->
+		<block name="sorceryArcaneWheel">
+			<property name="Class" value="Workstation"/>
+			<property name="Material" value="Mwood"/>
+			<property name="MaxDamage" value="400"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryArcaneWheel.unity3d?sorceryArcaneWheel"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<!-- <property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="3,2,3"/> -->
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="HeatMapStrength" value="2"/>
+			<property name="HeatMapTime" value="5000"/>
+			<property name="HeatMapFrequency" value="1000"/>
+			<!-- <property name="ActiveRadiusEffects" value="buffCampfireAOE(3)"/> -->
+			<property class="Workstation">
+				<property name="Modules" value="tools,output"/>
+				<property name="CraftingAreaRecipes" value="sorceryArcaneWheel"/>
+			</property>
+			<property name="WorkstationIcon" value="ui_game_symbol_tailoring" />
+			<property name="CraftActionName" value="lblContextActionCraft" />
+			<property name="CraftIcon" value="ui_game_symbol_tailoring" />
+			<property name="OpenSound" value="sorceryArcaneWheel_open" />
+			<property name="CloseSound" value="sorceryArcaneWheel_close" />
+			<property name="CraftSound" value="sorceryArcaneWheel_craft" />
+			<property name="CraftCompleteSound" value="sorceryArcaneWheel_craftdone" />
+			<!-- <property name="WorkstationJournalTip" value="chemistryStationTip" /> -->
+			<property class="RepairItems">
+				<property name="resourceExtractOmni" value="10"/>
+				<property name="resourceWood" value="40"/>
+			</property>
+			<drop event="Harvest" name="resourceExtractOmni" count="10"/>
+			<drop event="Harvest" name="resourceWood" count="16" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
+			<property name="TakeDelay" value="15"/>
+			<property name="Group" value="Clothing,Building"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="UnlockedBy" value="attSorcery"/>
+			<!-- <property name="FilterTags" value="fdecor,fother,ffurniture"/>
+			<property name="SortOrder1" value="70i0"/> -->
+		</block>
+		
+	<!-- STATION: DESK ______________________________________-->
+		<!-- STATION: ARCANE DESK -->
+		<block name="sorceryDesk">
+			<property name="Class" value="Workstation"/>
+			<property name="Material" value="Mwood"/>
+			<property name="MaxDamage" value="1200"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryDesk.unity3d?sorceryDesk"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<!-- <property name="DisplayType" value="" /> -->
+			<property name="MultiBlockDim" value="2,2,1"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<!-- <property name="Place" value="TowardsPlacerInverted"/> -->
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="HeatMapStrength" value="1.5"/>
+			<property name="HeatMapTime" value="1200"/>
+			<property name="HeatMapFrequency" value="25"/>
+			<!-- <property name="ActiveRadiusEffects" value="buffCampfireAOE(3)"/> -->
+			<property class="Workstation">
+				<property name="Modules" value="tools,output"/>
+				<property name="CraftingAreaRecipes" value="sorceryDesk"/>
+			</property>
+			<property name="WorkstationIcon" value="ui_symbol_pentagram" />
+			<property name="CraftActionName" value="lblContextActionCraft" />
+			<property name="CraftIcon" value="ui_symbol_pentagram" />
+			<property name="OpenSound" value="sorceryChant" />
+			<property name="CloseSound" value="close_workbench" />
+			<property name="CraftSound" value="sorceryChant" />
+			<property name="CraftCompleteSound" value="sorceryOrbWhoosh" />
+			<!-- <property name="WorkstationJournalTip" value="chemistryStationTip" /> -->
+			<property class="RepairItems">
+				<property name="resourceExtractOmni" value="10"/>
+				<property name="resourceWood" value="40"/>
+			</property>
+			<drop event="Harvest" name="resourceExtractOmni" count="10"/>
+			<drop event="Harvest" name="resourceWood" count="16" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
+			<property name="TakeDelay" value="15"/>
+			<property name="Group" value="Building"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="UnlockedBy" value="attSorcery"/>
+		</block>
+	
+<!-- CONTAINERS ______________________________________-->
+	<!-- CONTAINER: INTRO QUEST ______________________________________-->
+		<!-- Intro Loot Chest -->
+		<!-- CONTAINER: INTRO CHEST -->	
+		<block name="cnt_SorceryCrateIntro">
+			<property name="DescriptionKey" value="cnt_SorceryCrateIntroDesc"/>
+			<property name="CreativeMode" value="Dev"/>
+			<!-- <property name="ItemTypeIcon" value="all_blocks"/> -->
+				<property name="Class" value="PlantGrowing"/>
+				<property name="PlantGrowing.Next" value="cntLoot_SorceryCrateIntro"/>
+				<property name="PlantGrowing.GrowthRate" value="0"/>
+				<property name="PlantGrowing.IsRandom" value="false"/>
+				<property name="PlantGrowing.LightLevelGrow" value="0"/>
+				<property name="PlantGrowing.LightLevelStay" value="0"/>
+				<property name="PlantGrowing.FertileLevel" value="0"/>
+				<!-- <property name="PlantGrowing.IsGrowOnTopEnabled" value="false"/> -->
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/chestWooden.unity3d?chestWooden" />
+			<property name="Material" value="MwoodReinforced"/>
+			<property name="MaxDamage" value="7777"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>			
+			<drop event="Destroy" count="0"/>
+			<!-- <property name="DowngradeBlock" value="cntLoot_SorceryCrateIntro"/> -->
+			<property name="FilterTags" value="floot"/>
+			<property name="CustomIcon" value="cntSorceryCrateIntro"/>
+			<property name="Stacknumber" value="1"/>
+			<!-- <property name="TintColor" value="102,0,204"/>	 -->	
+		</block>
+		<!-- CONTAINER: INTRO CHEST LOOT -->	
+		<block name="cntLoot_SorceryCrateIntro">
+			<property name="DescriptionKey" value="cnt_SorceryCrateIntroDesc"/>
+			<property name="Class" value="Loot"/>
+			<property name="Material" value="MwoodReinforced"/>
+			<property name="Path" value="solid"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/chestWoodenEnchanted.unity3d?chestWoodenEnchanted" />
+			<property name="CustomIcon" value="cntSorceryCrateIntro"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="Candrop" value="false"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="MaxDamage" value="777"/>
+			<drop event="Destroy" count="0"/>
+			<property name="LootList" value="700"/>
+			<property name="FilterTags" value="floot"/>
+		</block>	
+	
+	</append>
+	<!-- END: /blocks -->
+
+	
+<!-- ESSENCE HARVESTS ______________________________________-->
+	<!-- FIRE, ICE, LIGHTNING: WILD ESSENCE ______________________________________-->
+	<!-- Boulders: FIRE, ICE, LIGHTNING -->
+	<append xpath="/blocks/block[@name='rockResourceBroke1' or @name='rockResourceBroke2' or @name='rockResource02Broke1' or @name='rockResource02Broke2']"> <!-- T1 -->
+		<drop event="Harvest" name="resourceEssenceFire" count="5,10" tag="essenceFireHarvest"/>
+		<drop event="Harvest" name="resourceEssenceIce" count="5,10" tag="essenceIceHarvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning" count="5,10" tag="essenceLightningHarvest"/>
+			<!-- perk: essenceMastery, hidden -->
+			<drop event="Harvest" name="resourceEssenceFire" count="5" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="5" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="5" prob=".5" tag="essenceHarvestHidden"/>
+	</append>
+	<!-- FIRE: WILD ESSENCE ______________________________________-->
+	<!-- Ore: FIRE -->
+	<append xpath="/blocks/block[@name='terrOreCoal' or @name='oreCoalBoulder']"> <!-- T3 -->
+		<drop event="Harvest" name="resourceEssenceFire" count="15,20" tag="essenceFireHarvest"/>
+			<!-- perk: essenceMastery (hidden) -->
+			<drop event="Harvest" name="resourceEssenceFire" count="5" prob=".5" tag="essenceHarvestHidden"/>
+	</append>
+	<!-- Trees, Wild & Planted: FIRE -->
+		<!-- T0: FIRE -->
+		<append xpath="/blocks/block[@name='treePlantedOak16m']">
+			<drop event="Harvest" name="resourceEssenceFire" count="1,2" tag="essenceFireHarvest"/>
+		</append>
+		<!-- T1 Tree: FIRE -->
+		<append xpath="/blocks/block[@name='treeBurntMaple01' or @name='treePlantedOak27m']"> 
+			<drop event="Harvest" name="resourceEssenceFire" count="5,10" tag="essenceFireHarvest"/>
+		</append>
+		<!-- T2 Tree: FIRE -->
+		<append xpath="/blocks/block[@name='treePineBurntMed' or @name='treePineBurntFullMed' or @name='treeBurntMaple02' or @name='treePlantedOak41m']">
+			<drop event="Harvest" name="resourceEssenceFire" count="10,15" tag="essenceFireHarvest"/>
+		</append>
+		<!-- T3 Tree: FIRE -->
+		<append xpath="/blocks/block[@name='treePineBurntLrg' or @name='treeBurntMaple03']">
+			<drop event="Harvest" name="resourceEssenceFire" count="15,20" tag="essenceFireHarvest"/>
+			<!-- perk: essenceMastery (hidden) -->
+			<drop event="Harvest" name="resourceEssenceFire" count="5" prob=".5" tag="essenceHarvestHidden"/>
+		</append>
+	<!-- ICE: WILD ESSENCE ______________________________________-->
+	<!-- Ore: ICE -->
+	<append xpath="/blocks/block[@name='terrOrePotassiumNitrate' or @name='orePotassiumNitrateBoulder']"> <!-- T3 -->
+		<drop event="Harvest" name="resourceEssenceIce" count="15,20" tag="essenceIceHarvest"/>
+			<!-- perk: essenceMastery (hidden) -->
+			<drop event="Harvest" name="resourceEssenceIce" count="5" prob=".5" tag="essenceHarvestHidden"/>
+	</append>
+	<!-- Trees, Wild & Planted: ICE -->
+		<!-- T0: ICE -->
+		<append xpath="/blocks/block[@name='treeWinterEverGreen' or @name='treePlantedWinterPine13m']">
+			<drop event="Harvest" name="resourceEssenceIce" count="1,2" tag="essenceIceHarvest"/>
+		</append>
+		<!-- T1 Tree: ICE -->
+		<append xpath="/blocks/block[@name='treeWinterPine13m' or @name='treePlantedWinterPine19m']"> 
+			<drop event="Harvest" name="resourceEssenceIce" count="5,10" tag="essenceIceHarvest"/>
+		</append>
+		<!-- T2 Tree: ICE -->
+		<append xpath="/blocks/block[@name='treeWinterPine19m' or @name='treePlantedWinterPine28m']">
+			<drop event="Harvest" name="resourceEssenceIce" count="10,15" tag="essenceIceHarvest"/>
+		</append>
+		<!-- T3 Tree: ICE -->
+		<append xpath="/blocks/block[@name='treeWinterPine28m']">
+			<drop event="Harvest" name="resourceEssenceIce" count="15,20" tag="essenceIceHarvest"/>
+			<!-- perk: essenceMastery (hidden) -->
+			<drop event="Harvest" name="resourceEssenceIce" count="5" prob=".5" tag="essenceHarvestHidden"/>
+		</append>
+	<!-- LIGHTNING: ESSENCE ______________________________________-->
+	<!-- Ore: LIGHTNING -->
+	<append xpath="/blocks/block[@name='terrOreLead' or @name='oreLeadBoulder']"> <!-- T3 -->
+		<drop event="Harvest" name="resourceEssenceLightning" count="15,20" tag="essenceLightningHarvest"/>
+	</append>
+	<!-- Trees, Wild & Planted: LIGHTNING -->
+		<!-- T0: LIGHTNING -->
+		<append xpath="/blocks/block[@name='treeJuniper4m' or @name='treeMountainPine12m' or @name='treePlantedMountainPine19m']">
+			<drop event="Harvest" name="resourceEssenceLightning" count="1,2" tag="essenceLightningHarvest"/>
+		</append>
+		<!-- T1 Tree: LIGHTNING -->
+		<append xpath="/blocks/block[@name='treeMountainPine19m' or @name='treePlantedMountainPine27m']"> 
+			<drop event="Harvest" name="resourceEssenceLightning" count="5,10" tag="essenceLightningHarvest"/>
+		</append>
+		<!-- T2 Tree: LIGHTNING -->
+		<append xpath="/blocks/block[@name='treeMountainPineDry21m' or @name='treeMountainPine27m' or name='treeMountainPine31m' or name='treePlantedMountainPine41m']">
+			<drop event="Harvest" name="resourceEssenceLightning" count="10,15" tag="essenceLightningHarvest"/>
+		</append>
+		<!-- T3 Tree: LIGHTNING -->
+		<append xpath="/blocks/block[@name='treeMountainPine41m' or @name='treeMountainPine48m']">
+			<drop event="Harvest" name="resourceEssenceLightning" count="15,20" tag="essenceLightningHarvest"/>
+			<!-- perk: essenceMastery (hidden) -->
+			<drop event="Harvest" name="resourceEssenceLightning" count="5" prob=".5" tag="essenceHarvestHidden"/>
+		</append>
+
+	
+	<!--___________________ SORCERY LOCK MATERIALS ___________________-->
+	<!-- Average Locks -->
+	<!-- Deprecated by Block Tags -->
+	<!-- <append xpath="/blocks/block[@name='cntDeskSafe']"><property name="Material" value="Mmetal_hard_locked_sorcery"/></append>
+	<append xpath="/blocks/block[@name='cntWallSafe']"><property name="Material" value="Mmetal_hard_locked_sorcery"/></append>
+	<append xpath="/blocks/block[@name='cntLootChestHero']"><property name="Material" value="Mmetal_hard_locked_sorcery"/></append>
+	<append xpath="/blocks/block[@name='cntGreenDrawerSecure']"><property name="Material" value="Mmetal_hard_locked_sorcery"/></append> -->
+	
+	<!-- Hard Locks -->
+	<!-- <set xpath="/blocks/block[@name='cntGunSafe']/property[@name='Material']/@value">Mmetal_hard_locked2_sorcery</set>
+	<set xpath="/blocks/block[@name='cntHardenedChestSecure']/property[@name='Material']/@value">Mmetal_hard_locked2_sorcery</set> -->
+	
+	
+	
+</Sorcery>
