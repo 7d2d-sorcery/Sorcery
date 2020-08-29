@@ -946,6 +946,7 @@
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10" desc_key="reqSorceryFireLevel10"/></level_requirements>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellFire"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellArrowFire,spellBoltFire"/>
 				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorcerySpellFire,spellFire"/><!-- used to scale resources -->
 				<effect_description level="1" desc_key="perkSorcerySpellFireRank1Desc" long_desc_key="perkSorcerySpellFireRank1LongDesc"/>
 				<effect_description level="2" desc_key="perkSorcerySpellFireRank2Desc" long_desc_key="perkSorcerySpellFireRank2LongDesc"/>
@@ -1010,6 +1011,7 @@
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10" desc_key="reqSorceryFireLevel10"/></level_requirements>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellFire2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellArrowFire2,spellBoltFire2"/>
 				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorcerySpellFire2,spellFire2"/><!-- used to scale resources -->
 				<effect_description level="1" desc_key="perkSorcerySpellFire2Rank1Desc" long_desc_key="perkSorcerySpellFire2Rank1LongDesc"/>
 				<effect_description level="2" desc_key="perkSorcerySpellFire2Rank2Desc" long_desc_key="perkSorcerySpellFire2Rank2LongDesc"/>
@@ -1074,6 +1076,7 @@
 			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10" desc_key="reqSorceryFireLevel10"/></level_requirements>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellFire3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="spellArrowFire3,spellBoltFire3"/>
 				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorcerySpellFire3,spellFire3"/><!-- used to scale resources -->
 				<effect_description level="1" desc_key="perkSorcerySpellFire3Rank1Desc" long_desc_key="perkSorcerySpellFire3Rank1LongDesc"/>
 				<effect_description level="2" desc_key="perkSorcerySpellFire3Rank2Desc" long_desc_key="perkSorcerySpellFire3Rank2LongDesc"/>

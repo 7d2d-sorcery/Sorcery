@@ -266,6 +266,7 @@
 			<!-- End - Sticky Hack -->
 			<property class="Action1">
 				<property name="Class" value="Projectile"/>
+				<property name="Explosion.ParticleIndex" value="0"/> <!-- no expl. -->
 				<!-- <property name="CollisionRadius" value="0.3"/> -->
 				<!-- <property name="Collide" value="earth,wood,glass,cloth,stone,metal"/> -->
 				<property name="FlyTime" value="0.2"/>
@@ -301,11 +302,13 @@
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
 				<passive_effect name="BlockDamage" operation="base_set" value="15"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="20"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn"/>
 				<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 				<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
 				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal"/> -->
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireball_impact" />
+				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/> -->
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn"/>
 			</effect_group>
 			<effect_group tiered="false" name="CALC">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spellFire_c1" operation="set" value="7.5"/> <!-- 0,30% -->
@@ -313,37 +316,37 @@
 			</effect_group>
 			<effect_group tiered="false" name="RANK 0">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="0"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 			<effect_group tiered="false" name="RANK 1">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="1"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.2" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.2" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="1" />
 			</effect_group>
 			<effect_group tiered="false" name="RANK 2">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="2"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.4" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.4" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="2" />
 			</effect_group>
 			<effect_group tiered="false" name="RANK 3">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="3"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.6" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.6" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="3" />
 			</effect_group>
 			<effect_group tiered="false" name="RANK 4">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="4"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.8" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.8" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="4" />
 			</effect_group>
 			<effect_group tiered="false" name="RANK 5">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="5"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="2" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="2" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="5" />
 			</effect_group>
 			<effect_group tiered="false" name="RANK 5: Cremation">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@.spellFire_c1"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="4" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="4" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: Wield">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSpiritRegenStop,spellCharge_Fire,spellcastAmmo_Fire">
@@ -488,7 +491,8 @@
 				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2,spellFire2_Clone"/>
 				<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 				<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2" target_tags="enemy,animal"/>
+				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2" target_tags="enemy,animal"/> -->
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireball_impact" />
 			</effect_group>
 			<effect_group tiered="false" name="CALC">
@@ -518,7 +522,7 @@
 			<effect_group tiered="false" name="RANK 5: Category 5">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="GTE" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@.spellFire2_c1"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="6" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2_Clone" target_tags="enemy,animal"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="6" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2_Clone" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: Wield">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSpiritRegenStop,spellCharge_Fire2,spellcastAmmo_Fire2">
@@ -666,7 +670,8 @@
 				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_Fire3,spellTriggerImpact_Fire3,spellFire3,spellFire3_Crater,spellFire3_Shower"/>
 				<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 				<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_Fire3" target_tags="enemy,animal"/>
+				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_Fire3" target_tags="enemy,animal"/> -->
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_Fire3"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireball_impact" />
 			</effect_group>
 			<effect_group tiered="false" name="CALC">
@@ -696,7 +701,7 @@
 			<effect_group tiered="false" name="RANK 5: HELLSTORM">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire3" operation="GTE" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@.spellFire3_c1"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="5" buff="buffEntity_FireSorcery,spellTrigger_Fire3_Shower" target_tags="enemy,animal"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="5" buff="buffEntity_FireSorcery,spellTrigger_Fire3_Shower" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: Wield">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSpiritRegenStop,spellCharge_Fire3,spellcastAmmo_Fire3">
@@ -916,7 +921,7 @@
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
-				<display_value name="dsorcAmmoDOT" value="30" />
+				<display_value name="dsorcAmmoDOT" value="1" />
 				<display_value name="dsorcAmmoEffect" value=".36" />
 				<display_value name="dsorcAmmoEffect2" value=".1" />
 				<display_value name="dsorcAmmoScale" value="1"/>
@@ -1965,7 +1970,7 @@
 			<property name="Group" value="Clothing"/>
 			<property name="ActionSkillGroup" value="Clothing/Armor"/>
 			<property name="ShowQuality" value="true"/>
-			<property name="UnlockedBy" value="perkSorceryArmor"/>
+			<!-- <property name="UnlockedBy" value="perkSorceryArmor"/> -->
 			<property class="UMA">
 				<property name="Mesh" value="gear_shades"/>
 				<property name="Overlay0" value="gear_shades"/>
@@ -2978,7 +2983,7 @@
 			<property name="EconomicValue" value="400"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="ShowQuality" value="true"/>
-			<property name="UnlockedBy" value="perkSorceryArmorIce"/>
+			<!-- <property name="UnlockedBy" value="perkSorceryArmorIce"/> -->
 		</item>
 		<!-- ARMOR: ICE HOOD -->
 		<item name="sorceryArmorIce_Hood">
@@ -3776,7 +3781,7 @@
 			<property name="Group" value="Clothing"/>
 			<property name="ActionSkillGroup" value="Clothing/Armor"/>
 			<property name="ShowQuality" value="true"/>
-			<property name="UnlockedBy" value="perkSorceryArmorIce"/>
+			<!-- <property name="UnlockedBy" value="perkSorceryArmorIce"/> -->
 			<property class="UMA">
 				<property name="Mesh" value="gear_shades"/>
 				<property name="Overlay0" value="gear_shades"/>
@@ -3876,7 +3881,7 @@
 			<property name="EconomicValue" value="400"/>
 			<property name="SellableToTrader" value="true"/>
 			<property name="ShowQuality" value="true"/>
-			<property name="UnlockedBy" value="perkSorceryArmorLightning"/>
+			<!-- <property name="UnlockedBy" value="perkSorceryArmorLightning"/> -->
 		</item>
 		<!-- ARMOR: LIGHTNING HOOD -->
 		<item name="sorceryArmorLightning_Hood">
@@ -5047,7 +5052,7 @@
 				<property name="Sound_start" value="sorceryPotion_consume"/>
 				<property name="Sound_end" value="recipe_unlocked"/>
 			</property>
-			<property class="Action1">
+			<!-- <property class="Action1">
 					<requirement name="CVarCompare" cvar="$sorceryElixir_attFire" operation="GTE" value="10"/>
 					<requirement name="CVarCompare" cvar="$sorceryElementsLearned_Fire" operation="Equals" value="1"/>
 				<property name="Class" value="Quest"/>
@@ -5057,7 +5062,7 @@
 				<property name="Use_time" value="..."/>
 				<property name="Sound_start" value="sorceryPotion_consume"/>
 				<property name="Sound_end" value="sorceryChant"/>
-			</property>
+			</property> -->
 			<effect_group tiered="false">
 				<!-- Transform -->
 				<triggered_effect trigger="onSelfEquipStart" action="SetTransformActive" active="true" parent_transform="potionFire" transform_path="Elixir"/>
@@ -5490,7 +5495,7 @@
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="1"/>
 			<property name="MeltTimePerUnit" value="2"/>
-			<property name="UnlockedBy" value="attSorceryIce"/>
+			<!-- <property name="UnlockedBy" value="attSorceryIce"/> -->
 		</item>
 	<!-- ESSENCE: LIGHTNING ______________________________________-->
 		<item name="resourceEssenceLightning">
@@ -5509,7 +5514,7 @@
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="1"/>
 			<property name="MeltTimePerUnit" value="2"/>
-			<property name="UnlockedBy" value="attSorceryLightning"/>
+			<!-- <property name="UnlockedBy" value="attSorceryLightning"/> -->
 		</item>		
 	<!-- ESSENCE: UNHOLY ______________________________________-->
 		<item name="resourceEssenceUnholy">
@@ -5528,7 +5533,7 @@
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="1"/>
 			<property name="MeltTimePerUnit" value="2"/>
-			<property name="UnlockedBy" value="attSorceryUnholy"/>
+			<!-- <property name="UnlockedBy" value="attSorceryUnholy"/> -->
 		</item>
 	<!-- ESSENCE: HOLY ______________________________________-->
 		<item name="resourceEssenceHoly">
@@ -5547,7 +5552,7 @@
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="1"/>
 			<property name="MeltTimePerUnit" value="2"/>
-			<property name="UnlockedBy" value="attSorceryHoly"/>
+			<!-- <property name="UnlockedBy" value="attSorceryHoly"/> -->
 		</item>
 
 	<!-- RESOURCE: EXTRACT ______________________________________-->
@@ -6246,6 +6251,20 @@
 	<!-- END - FALLEN __________________________________________________________________________________ -->
 	
 	
+	<!-- SKILL QUESTS __________________________________________________________________________________ -->
+		<!-- Quest: Gain +1 Skill Point -->
+		<item name="q_sorcerySkillGrimoire">
+			<property name="Extends" value="questMasterSorcery"/>
+			<property name="TintColor" value="170,144,89"/>
+			<property name="Material" value="MsorceryExtractOmni"/><property name="Weight" value="0"/>
+			<property name="Candrop" value="false"/>
+			<property class="Action0"> 
+				<property name="QuestGiven" value="quest_skillGrimoire"/>
+			</property>
+		</item>
+	<!-- END - SKILL QUESTS __________________________________________________________________________________ -->
+		
+		
 		<!-- DEV: TEST QUESTS -->
 		<!-- <item name="qtest_BiomeTrader">
 			<property name="Extends" value="questMaster"/>

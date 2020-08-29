@@ -50,7 +50,7 @@
 	<append xpath="/windows">
 		<!-- UI: SORCERY VERSION -->
 		<window name="SorceryVersion" depth="99" pos="0,0" width="200" height="22" anchor="RightTop">
-			<label name="SorceryVersion" pos="-215,-40" depth="0" text="Sorcery v0.907" font_size="26" effect="outline" color="102,0,204,255" justify="right" upper_case="false"/>
+			<label name="SorceryVersion" pos="-215,-40" depth="0" text="Sorcery v0.908" font_size="26" effect="outline" color="102,0,204,255" justify="right" upper_case="false"/>
 		</window>
 
 		<!-- UI: SORCERY ELEMENTS -->		

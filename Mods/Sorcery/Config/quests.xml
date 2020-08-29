@@ -49,13 +49,13 @@
 		
 	<append xpath="/quests">
 	<!-- SKILL QUESTS -->
-		<!-- Skill Elixir: Trade Elixir for +1 Skill Point -->
-		<quest id="quest_skillElixir">
-			<property name="name_key" value="quest_skillElixir_title" />
-			<property name="subtitle_key" value="quest_skillElixir_subtitle" />
-			<property name="description_key" value="quest_skillElixir" />
-			<property name="offer_key" value="quest_skillElixir" />
-			<property name="category_key" value="challenge" />
+		<!-- Skill Grimoire: Gain +1 Skill Point -->
+		<quest id="quest_skillGrimoire">
+			<property name="name_key" value="quest_skillGrimoire_title" />
+			<property name="subtitle_key" value="quest_skillGrimoire_subtitle" />
+			<property name="description_key" value="quest_skillGrimoire" />
+			<property name="offer_key" value="quest_skillGrimoire" />
+			<property name="category_key" value="quest" />
 			<property name="icon" value="ui_symbol_pentagram_add" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
@@ -104,11 +104,11 @@
 				<property name="delay" value="3"/>
 			</action>
 				<objective type="BlockPlace" id="cnt_SorceryCrateIntro" value="1" phase="1" />
-				<objective type="FetchKeep" id="sorceryDesk" value="1" phase="2" />
 				<objective type="FetchKeep" id="scrollQuest_ConjureFireItems" value="1" phase="2" />
 				<objective type="FetchKeep" id="sorceryAlchemyMortar" value="1" phase="2" />
 				<objective type="Wear" id="sorceryArmor_Hood" phase="2" />
 				<objective type="Wear" id="sorceryArmor_Boots" phase="2" />
+			<reward type="Item" id="sorceryDesk" value="1" />
 			<reward type="Exp" value="777" />
 			<reward type="Quest" id="quest_sorceryIntro3"/>
 		</quest>
@@ -128,8 +128,11 @@
 			<action type="ShowTip" value="quest_sorceryIntro3">
 				<property name="delay" value="3"/>
 			</action>
-				<objective type="BlockPlace" id="sorceryDesk" value="1" phase="1" />
+				<objective type="BlockPlace" id="sorceryDesk" value="1" />
 			<!-- Start: Intro Quests -->
+			<reward type="Quest" id="quest_sorceryIntroPotions">
+				<property name="chainquest" value="false"/>
+			</reward>
 			<reward type="Quest" id="quest_sorceryIntroTailoring">
 				<property name="chainquest" value="false"/>
 			</reward>
@@ -146,13 +149,30 @@
 				<property name="chainquest" value="false"/>
 			</reward>
 			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1" chainreward="true"/>
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
+			<!-- <reward type="SkillPoints" value="1" chainreward="true"/> -->
 		</quest>
 		<!-- END - INTRO CHAIN -->
 		
 		
 		
 	<!-- ARCANE INTRO QUESTS -->
+		<!-- Intro: Potions / Enchanted Mortar -->
+		<quest id="quest_sorceryIntroPotions">
+			<property name="name_key" value="quest_sorceryIntroPotions_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroPotions_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroPotions" />
+			<property name="offer_key" value="quest_sorceryIntroPotions" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="ui_symbol_potion" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="potion_Travel" value="1"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<!-- <reward type="SkillPoints" value="1"/> -->
+		</quest>
 		<!-- Intro: Scrolls -->
 		<quest id="quest_sorceryIntroScrolls">
 			<property name="name_key" value="quest_sorceryIntroScrolls_title" />
@@ -165,9 +185,9 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<objective type="Craft" id="scroll_ArcaneVision" value="1" phase="1"/>
-				<objective type="FetchKeep" id="scroll_ArcaneVision" value="1" phase="1" />
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1"/>
+				<objective type="FetchKeep" id="scroll_ArcaneVision" value="1" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		<!-- Intro: Arcane Wheel -->
 		<quest id="quest_sorceryIntroTailoring">
@@ -182,8 +202,8 @@
 			<property name="repeatable" value="false"/>
 				<objective type="FetchKeep" id="sorceryArcaneWheel" value="1" phase="1" />
 				<objective type="BlockPlace" id="sorceryArcaneWheel" value="1" phase="2" />
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		<!-- Intro: Alchemy Station -->
 		<quest id="quest_sorceryIntroAlchemy">
@@ -198,8 +218,8 @@
 			<property name="repeatable" value="false"/>
 				<objective type="FetchKeep" id="sorceryAlchemyStation" value="1" phase="1" />
 				<objective type="BlockPlace" id="sorceryAlchemyStation" value="1" phase="2" />
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		<!-- Intro: Runesmithing -->
 		<quest id="quest_sorceryIntroRunesmithing">
@@ -213,9 +233,9 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<objective type="Craft" id="rune_SpellLight" value="1" phase="1"/>
-				<objective type="FetchKeep" id="rune_SpellLight" value="1" phase="1" />
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1"/>
+				<objective type="FetchKeep" id="rune_SpellLight" value="1" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		<!-- Intro: Arcane Armor Set -->
 		<quest id="quest_sorceryIntroArcaneArmor">
@@ -228,18 +248,21 @@
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
-				<objective type="Wear" id="sorceryArmor_Hood" phase="1" />
-				<objective type="Wear" id="sorceryAccessory_Shades" phase="1" />
-				<objective type="Wear" id="sorceryArmor_Bandana" phase="1" />
-				<objective type="Wear" id="sorceryArmor_Robe" phase="1" />
-				<objective type="Wear" id="sorceryArmor_Chest" phase="1" />
-				<objective type="Wear" id="sorceryArmor_Shirt" phase="1" />
-				<objective type="Wear" id="sorceryArmor_Gloves" phase="1" />
-				<objective type="Wear" id="sorceryArmor_Leg" phase="1" />
-				<objective type="Wear" id="sorceryArmor_Pants" phase="1" />
-				<objective type="Wear" id="sorceryArmor_Boots" phase="1" />
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="2"/>
+				<!-- NOTE: NRE if too many; alternative method. -->
+				<objective type="FetchKeep" id="resourceThreadArcane" value="1" phase="1"/>
+				<requirement type="Buff" id="buffSorceryArmorSet_Arcane" phase="1"/>
+				<!-- <objective type="Wear" id="sorceryArmor_Hood" />
+				<objective type="Wear" id="sorceryAccessory_Shades" />
+				<objective type="Wear" id="sorceryArmor_Bandana" />
+				<objective type="Wear" id="sorceryArmor_Robe" />
+				<objective type="Wear" id="sorceryArmor_Chest" />
+				<objective type="Wear" id="sorceryArmor_Shirt" />
+				<objective type="Wear" id="sorceryArmor_Gloves" />
+				<objective type="Wear" id="sorceryArmor_Leg" />
+				<objective type="Wear" id="sorceryArmor_Pants" />
+				<objective type="Wear" id="sorceryArmor_Boots" /> -->
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		
 	<!-- FIRE INTRO QUESTS -->
@@ -255,9 +278,9 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<objective type="Craft" id="spellFire2" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellFire2" value="10" phase="1" />
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1"/>
+				<objective type="FetchKeep" id="spellFire2" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		<!-- Intro: Fire3 Craft:  -->
 		<quest id="quest_sorceryIntroFireCraftFire3">
@@ -271,9 +294,9 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<objective type="Craft" id="spellFire3" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellFire3" value="10" phase="1" />
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1"/>
+				<objective type="FetchKeep" id="spellFire3" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		<!-- Intro: spellArrowFire Craft:  -->
 		<quest id="quest_sorceryIntroFireCraftArrowFire">
@@ -287,9 +310,9 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<objective type="Craft" id="spellArrowFire" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellArrowFire" value="10" phase="1" />
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1"/>
+				<objective type="FetchKeep" id="spellArrowFire" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		<!-- Intro: spellArrowFire2 Craft:  -->
 		<quest id="quest_sorceryIntroFireCraftArrowFire2">
@@ -303,9 +326,9 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<objective type="Craft" id="spellArrowFire2" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellArrowFire2" value="10" phase="1" />
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1"/>
+				<objective type="FetchKeep" id="spellArrowFire2" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		<!-- Intro: spellArrowFire3 Craft:  -->
 		<quest id="quest_sorceryIntroFireCraftArrowFire3">
@@ -319,9 +342,9 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<objective type="Craft" id="spellArrowFire3" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellArrowFire3" value="10" phase="1" />
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="1"/>
+				<objective type="FetchKeep" id="spellArrowFire3" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		<!-- Intro: Fire Armor Set -->
 		<quest id="quest_sorceryIntroFireArmor">
@@ -334,18 +357,21 @@
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
-				<objective type="Wear" id="sorceryArmorFire_Hood" phase="1" />
-				<objective type="Wear" id="sorceryAccessoryFire_Shades" phase="1" />
-				<objective type="Wear" id="sorceryArmorFire_Bandana" phase="1" />
-				<objective type="Wear" id="sorceryArmorFire_Robe" phase="1" />
-				<objective type="Wear" id="sorceryArmorFire_Chest" phase="1" />
-				<objective type="Wear" id="sorceryArmorFire_Shirt" phase="1" />
-				<objective type="Wear" id="sorceryArmorFire_Gloves" phase="1" />
-				<objective type="Wear" id="sorceryArmorFire_Leg" phase="1" />
-				<objective type="Wear" id="sorceryArmorFire_Pants" phase="1" />
-				<objective type="Wear" id="sorceryArmorFire_Boots" phase="1" />
-			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="2"/>
+				<!-- NOTE: NRE if too many; alternative method. -->
+				<objective type="FetchKeep" id="resourceThreadFire" value="1" phase="1"/>
+				<requirement type="Buff" id="buffSorceryArmorSet_Fire" phase="1"/>
+				<!-- <objective type="Wear" id="sorceryArmorFire_Hood" />
+				<objective type="Wear" id="sorceryAccessoryFire_Shades" />
+				<objective type="Wear" id="sorceryArmorFire_Bandana" />
+				<objective type="Wear" id="sorceryArmorFire_Robe" />
+				<objective type="Wear" id="sorceryArmorFire_Chest" />
+				<objective type="Wear" id="sorceryArmorFire_Shirt" />
+				<objective type="Wear" id="sorceryArmorFire_Gloves" />
+				<objective type="Wear" id="sorceryArmorFire_Leg" />
+				<objective type="Wear" id="sorceryArmorFire_Pants" />
+				<objective type="Wear" id="sorceryArmorFire_Boots" /> -->
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		
 
@@ -390,7 +416,8 @@
 				<objective type="FetchKeep" id="resourceClayLump" value="100" phase="1" />
 				<objective type="FetchKeep" id="conjureFire" value="1" phase="2" />
 				<objective type="BlockPlace" id="conjureFire" value="1" phase="2" />
-			<reward type="SkillPoints" value="1"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 			<reward type="Quest" id="quest_sorceryIntroGuide_Fire3" />
 		</quest>
 		<quest id="quest_sorceryIntroGuide_Fire3">
@@ -504,7 +531,7 @@
 			<reward type="Item" id="scrollFire_Ammo" value="1" />
 			<reward type="Item" id="resourceRitualShardFire" value="1" />
 			<reward type="Item" id="sorceryElixir_attFire" value="1" chainreward="true" />
-			<reward type="SkillPoints" value="1" chainreward="true" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
 			<!-- Start: Fire Intro Quests -->
 			<reward type="Quest" id="quest_sorceryIntroFallen_Fire">
 				<property name="chainquest" value="false"/>

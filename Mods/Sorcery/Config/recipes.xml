@@ -260,6 +260,14 @@
 				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="4,10" value="1,7" tags="resourceExtractFire"/>
 			</effect_group>
 		</recipe> -->
+		<!-- Skill Grimoire: Elixir to Skill Point -->
+		<recipe name="q_sorcerySkillGrimoire" count="1" craft_time="30" craft_area="sorceryDesk">
+			<ingredient name="sorceryElixir_attFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+			<ingredient name="resourcePaper" count="60"/>
+		</recipe>
 		<!-- Fallen: FIRE -->
 		<recipe name="q_sorceryFallen_Fire" count="1" craft_time="30" craft_area="sorceryDesk" craft_tool="toolFireCore">
 			<ingredient name="resourceRitualStoneFire" count="1"/>
@@ -452,51 +460,39 @@
 		<!-- Arrows: Fire -->
 		<recipe name="spellArrowFire" count="1" craft_area="conjureFire" material_based="true" craft_time="2" tags="sorceryFireTier,conjureFireCrafting,learnable">
 			<ingredient name="unit_fire" count="1"/>
-			<ingredient name="resourceWood" count="1"/>
-			<ingredient name="resourceFeather" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,15" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,10" value="1,15" tags="unit_fire"/>
 			</effect_group>
 		</recipe>
 		<recipe name="spellArrowFire2" count="1" craft_area="conjureFire" material_based="true" craft_time="3" tags="sorceryFireTier,conjureFireCrafting,learnable">
 			<ingredient name="unit_fire" count="4"/>
-			<ingredient name="resourceWood" count="1"/>
-			<ingredient name="resourceFeather" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,10" value="1,15" tags="unit_fire"/>
 			</effect_group>
 		</recipe>
 		<recipe name="spellArrowFire3" count="1" craft_area="conjureFire" material_based="true" craft_time="5" tags="sorceryFireTier,conjureFireCrafting,learnable">
 			<ingredient name="unit_fire" count="11"/>
-			<ingredient name="resourceWood" count="1"/>
-			<ingredient name="resourceFeather" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,10" value="1,15" tags="unit_fire"/>
 			</effect_group>
 		</recipe>
 		<!-- Bolts: Fire -->
 		<recipe name="spellBoltFire" count="1" craft_area="conjureFire" material_based="true" craft_time="2" tags="sorceryFireTier,conjureFireCrafting,learnable">
 			<ingredient name="unit_fire" count="1"/>
-			<ingredient name="resourceWood" count="1"/>
-			<ingredient name="resourceFeather" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,16" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,10" value="1,15" tags="unit_fire"/>
 			</effect_group>
 		</recipe>
 		<recipe name="spellBoltFire2" count="1" craft_area="conjureFire" material_based="true" craft_time="3" tags="sorceryFireTier,conjureFireCrafting,learnable">
 			<ingredient name="unit_fire" count="4"/>
-			<ingredient name="resourceWood" count="1"/>
-			<ingredient name="resourceFeather" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,10" value="1,15" tags="unit_fire"/>
 			</effect_group>
 		</recipe>
 		<recipe name="spellBoltFire3" count="1" craft_area="conjureFire" material_based="true" craft_time="5" tags="sorceryFireTier,conjureFireCrafting,learnable">
 			<ingredient name="unit_fire" count="11"/>
-			<ingredient name="resourceWood" count="1"/>
-			<ingredient name="resourceFeather" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="1,8" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,10" value="1,15" tags="unit_fire"/>
 			</effect_group>
 		</recipe>
 		<!-- Arrow Bolt Convert -->

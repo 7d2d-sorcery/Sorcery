@@ -1000,7 +1000,7 @@
 					</effect_group>
 			</buff>			
 			<!-- ARCANE ARMOR SET: COMPLETE -->
-			<buff name="buffSorceryArmorSet_Arcane" name_key="Complete Set: Arcane Armor" description_key="Complete Set Bonuses" icon="uic_symbol_armor_sorcery" showonhud="false" hidden="true" remove_on_death="false">
+			<buff name="buffSorceryArmorSet_Arcane" name_key="buffSorceryArmorSet_ArcaneName" description_key="buffSorceryArmorSet_ArcaneDesc" icon="uic_symbol_armor_sorcery" showonhud="false" hidden="true" remove_on_death="false">
 				<stack_type value="ignore"/>
 					<effect_group name="ARCANE ARMOR SET: BONUSES">
 						<!-- remove -->
@@ -1585,9 +1585,9 @@
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="GTE" value="3"/>
 							<requirement name="EntityHasMovementTag" tags="running"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="2"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal"/>
-						<triggered_effect trigger="onSelfRun" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal,hostile"/>
+						<triggered_effect trigger="onSelfRun" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal,hostile"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal,hostile"/>
 					</effect_group>
 					<effect_group name="RANK 4: Fire Flight">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="GTE" value="4"/>
@@ -1598,7 +1598,7 @@
 					<effect_group name="RANK 5: Meteor Land">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="GTE" value="5"/>
 							<requirement name="CVarCompare" cvar="_fallSpeed" operation="GTE" value=".1"/>
-						<triggered_effect trigger="onSelfFallImpact" action="AddBuff" target="selfAOE" range="2.5" buff="buffEntity_FireSorcery,spellcastFire_MeteorLand" target_tags="enemy,animal"/>
+						<triggered_effect trigger="onSelfFallImpact" action="AddBuff" target="selfAOE" range="2.5" buff="buffEntity_FireSorcery,spellcastFire_MeteorLand" target_tags="enemy,animal,hostile"/>
 						<triggered_effect trigger="onSelfFallImpact" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="20"/>
 					</effect_group>
 					<effect_group name="COST">
@@ -3784,12 +3784,12 @@
 					<effect_group name="Scroll">
 							<requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/>
 							<requirement name="!HoldingItemHasTags" tags="spellcast,thrownWeapon"/>
-						<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire"/> 
-						<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire"/> 
+						<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire"/> 
+						<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire"/> 
 					</effect_group>
 					<effect_group name="Scroll: Thrown">
 							<requirement name="ItemHasTags" tags="thrownWeapon"/>
-						<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire"/> 
+						<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire"/> 
 					</effect_group>
 			</buff>
 				<!-- Scroll Debuff: Weapon Fire -->
@@ -3866,9 +3866,9 @@
 					<effect_group name="Scroll">
 							<requirement name="HoldingItemHasTags" tags="weapon,ranged" has_all_tags="true"/>
 							<requirement name="!HoldingItemHasTags" tags="spellcast"/>
-						<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire"/> 
-						<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire"/> 
-						<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire"/> 
+						<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire"/> 
+						<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire"/> 
+						<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire"/> 
 					</effect_group>
 			</buff>
 				<!-- Scroll Debuff: Ammo Fire -->

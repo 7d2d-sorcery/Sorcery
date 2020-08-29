@@ -260,7 +260,7 @@
 	<!-- FIXED LOOT __________________________________________________________________________________ -->
 		<!-- INTRO -->
 		<lootgroup name="sorceryIntroLoot_Chest" count="all">
-			<item name="sorceryDesk" count="1"/>
+			<!-- <item name="sorceryDesk" count="1"/> -->
 			<item name="scrollQuest_ConjureFireItems" count="1"/>
 			<item name="sorceryAlchemyMortar" count="1"/>
 			<item name="sorceryArmor_Hood" count="1"/>
@@ -295,20 +295,20 @@
 		<lootgroup name="sorceryLootFallen_Fire" count="all">
 			<item name="resourceRitualBloodFallenFire" count="1" />
 			<item name="resourceRitualShardFire" count="0,1" />
-			<item group="sorceryFallen_All" count="0,1" />
-			<item group="sorceryFallen_Fire" count="0,1" />
+			<!-- <item group="sorceryFallen_All" count="0,1" />
+			<item group="sorceryFallen_Fire" count="0,1" /> -->
 		</lootgroup>
 		<lootgroup name="sorceryLootFallen_Ice" count="all">
 			<item name="resourceRitualBloodFallenIce" count="1" />
 			<item name="resourceRitualShardIce" count="0,1" />
-			<item group="sorceryFallen_All" count="0,1" />
-			<item group="sorceryFallen_Ice" count="0,1" />
+			<!-- <item group="sorceryFallen_All" count="0,1" />
+			<item group="sorceryFallen_Ice" count="0,1" /> -->
 		</lootgroup>
 		<lootgroup name="sorceryLootFallen_Lightning" count="all">
 			<item name="resourceRitualBloodFallenLightning" count="1" />
 			<item name="resourceRitualShardLightning" count="0,1" />
-			<item group="sorceryFallen_All" count="0,1" />
-			<item group="sorceryFallen_Lightning" count="0,1" />
+			<!-- <item group="sorceryFallen_All" count="0,1" />
+			<item group="sorceryFallen_Lightning" count="0,1" /> -->
 		</lootgroup>
 		<!-- CHEST -->
 		<lootgroup name="sorceryLootChestFallen_Fire">
