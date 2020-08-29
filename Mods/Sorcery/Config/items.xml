@@ -5760,7 +5760,7 @@
 			<property name="Material" value="MsorceryClothArcane"/>
 			<property name="Stacknumber" value="500"/>
 			<property name="RepairTime" value=".2"/>
-			<property name="RepairAmount" value="20"/>
+			<property name="RepairAmount" value="100"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -5775,7 +5775,7 @@
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothFire"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="RepairAmount" value="20"/>
+			<property name="RepairAmount" value="100"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
@@ -5791,7 +5791,7 @@
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothIce"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="RepairAmount" value="20"/>
+			<property name="RepairAmount" value="100"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
@@ -5807,7 +5807,7 @@
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothLightning"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="RepairAmount" value="20"/>
+			<property name="RepairAmount" value="100"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
@@ -5823,7 +5823,7 @@
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothUnholy"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="RepairAmount" value="20"/>
+			<property name="RepairAmount" value="100"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
@@ -5838,7 +5838,7 @@
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothHoly"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="RepairAmount" value="20"/>
+			<property name="RepairAmount" value="100"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>

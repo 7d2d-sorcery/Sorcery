@@ -422,10 +422,10 @@
 		
 	<!-- SPELLCASTS ______________________________________-->
 		<!-- FIRE SPELLCAST -->
-		<recipe name="spellcastFire" count="1" craft_area="conjureFire" material_based="true" craft_time="120" tags="conjureFireCrafting,perkSorcerySpellcastFire,learnable">
+		<recipe name="spellcastFire" count="1" craft_area="conjureFire" material_based="true" craft_time="120" tags="perkSorcerySpellcastFire,conjureFireCrafting,learnable">
 			<ingredient name="unit_fire" count="50"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="3,6" value="2,12" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,6" value="1,12" tags="unit_fire"/>
 			</effect_group>
 		</recipe>
 	<!-- END - SPELLCASTS ______________________________________-->		
