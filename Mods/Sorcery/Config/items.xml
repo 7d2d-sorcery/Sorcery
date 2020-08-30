@@ -4679,7 +4679,7 @@
 			<property name="Group" value="Clothing"/>
 			<property name="ActionSkillGroup" value="Clothing/Armor"/>
 			<property name="ShowQuality" value="true"/>
-			<property name="UnlockedBy" value="perkSorceryArmorLightning"/>
+			<!-- <property name="UnlockedBy" value="perkSorceryArmorLightning"/> -->
 			<property class="UMA">
 				<property name="Mesh" value="gear_shades"/>
 				<property name="Overlay0" value="gear_shades"/>
