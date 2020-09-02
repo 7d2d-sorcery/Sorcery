@@ -808,7 +808,7 @@
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="20"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="3"/>
-				<passive_effect name="ProjectileVelocity" operation="base_set" value="40"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="45"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
@@ -843,7 +843,7 @@
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="25"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
-				<passive_effect name="ProjectileVelocity" operation="base_set" value="40"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="50"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire2"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
@@ -879,7 +879,7 @@
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="30"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="10"/>
-				<passive_effect name="ProjectileVelocity" operation="base_set" value="40"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="60"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_ArrowFire3"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
@@ -917,7 +917,7 @@
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="20"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="3"/>
-				<passive_effect name="ProjectileVelocity" operation="base_set" value="40"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="70"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
@@ -953,7 +953,7 @@
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="25"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
-				<passive_effect name="ProjectileVelocity" operation="base_set" value="40"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="75"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire2"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
@@ -990,7 +990,7 @@
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="30"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="10"/>
-				<passive_effect name="ProjectileVelocity" operation="base_set" value="40"/>
+				<passive_effect name="ProjectileVelocity" operation="base_set" value="80"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_ArrowFire3"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
@@ -1039,7 +1039,7 @@
 			<!-- <property name="DisplayType" value=""/> -->
 			<!-- <property name="DisplayType" value="sorceryArmorHood"/> -->
 			<property name="EquipSlot" value="Head"/>
-			<property name="Tags" value="head,armor,sorceryArmorHead,sorceryArmor,sorceryArmorSetArcane,armorRigging"/>
+			<property name="Tags" value="head,armor,armorHead,sorceryArmorHead,sorceryArmor,sorceryArmorSetArcane,armorRigging"/>
 			<property name="EconomicValue" value="800"/>
 			<property name="Material" value="MsorceryClothArcane"/>
 			<property name="RepairTools" value="resourceThreadArcane"/>
@@ -1651,7 +1651,7 @@
 		<!-- ARCANE ARMOR: LEG -->
 		<item name="sorceryArmor_Leg">
 			<property name="Extends" value="sorceryArmorMaster" param1="CustomIcon"/>
-			<property name="Tags" value="lowerbody,legs,armor,sorceryArmor,armorRigging,sorceryArmorSetArcane"/>
+			<property name="Tags" value="lowerbody,legs,armor,armorLegs,sorceryArmor,armorRigging,sorceryArmorSetArcane"/>
 			<property name="DescriptionKey" value="sorceryArmor_LegDesc"/>
 			<property name="EquipSlot" value="Legs"/>
 			<property name="EconomicValue" value="800"/>
@@ -2092,7 +2092,7 @@
 			<property name="Extends" value="sorceryArmorFireMaster" param1="CustomIcon"/>
 			<property name="DescriptionKey" value="sorceryArmorFire_HoodDesc"/>
 			<property name="EquipSlot" value="Head"/>
-			<property name="Tags" value="head,armor,sorceryArmorHead,sorceryArmor,sorceryArmorSetFire,armorRigging"/>
+			<property name="Tags" value="head,armor,armorHead,sorceryArmorHead,sorceryArmor,sorceryArmorSetFire,armorRigging"/>
 			<property name="EconomicValue" value="800"/>
 			<property name="Material" value="MsorceryClothFire"/>
 			<property name="RepairTools" value="resourceThreadFire"/>
@@ -2609,7 +2609,7 @@
 		<!-- FIRE ARMOR: LEG -->
 		<item name="sorceryArmorFire_Leg">
 			<property name="Extends" value="sorceryArmorFireMaster" param1="CustomIcon"/>
-			<property name="Tags" value="lowerbody,legs,armor,sorceryArmor,armorRigging,sorceryArmorSetFire"/>
+			<property name="Tags" value="lowerbody,legs,armor,armorLegs,sorceryArmor,armorRigging,sorceryArmorSetFire"/>
 			<property name="DescriptionKey" value="sorceryArmorFire_LegDesc"/>
 			<property name="EquipSlot" value="Legs"/>
 			<property name="EconomicValue" value="800"/>
@@ -2990,7 +2990,7 @@
 			<property name="Extends" value="sorceryArmorIceMaster" param1="CustomIcon"/>
 			<property name="DescriptionKey" value="sorceryArmorIce_HoodDesc"/>
 			<property name="EquipSlot" value="Head"/>
-			<property name="Tags" value="head,armor,sorceryArmorHead,sorceryArmor,sorceryArmorSetIce,armorRigging"/>
+			<property name="Tags" value="head,armor,armorHead,sorceryArmorHead,sorceryArmor,sorceryArmorSetIce,armorRigging"/>
 			<property name="EconomicValue" value="800"/>
 			<property name="Material" value="MsorceryClothIce"/>
 			<property name="RepairTools" value="resourceThreadIce"/>
@@ -3507,7 +3507,7 @@
 		<!-- ICE ARMOR: LEG -->
 		<item name="sorceryArmorIce_Leg">
 			<property name="Extends" value="sorceryArmorIceMaster" param1="CustomIcon"/>
-			<property name="Tags" value="lowerbody,legs,armor,sorceryArmor,armorRigging,sorceryArmorSetIce"/>
+			<property name="Tags" value="lowerbody,legs,armor,armorLegs,sorceryArmor,armorRigging,sorceryArmorSetIce"/>
 			<property name="DescriptionKey" value="sorceryArmorIce_LegDesc"/>
 			<property name="EquipSlot" value="Legs"/>
 			<property name="EconomicValue" value="800"/>
@@ -3888,7 +3888,7 @@
 			<property name="Extends" value="sorceryArmorLightningMaster" param1="CustomIcon"/>
 			<property name="DescriptionKey" value="sorceryArmorLightning_HoodDesc"/>
 			<property name="EquipSlot" value="Head"/>
-			<property name="Tags" value="head,armor,sorceryArmorHead,sorceryArmor,sorceryArmorSetLightning,armorRigging"/>
+			<property name="Tags" value="head,armor,armorHead,sorceryArmorHead,sorceryArmor,sorceryArmorSetLightning,armorRigging"/>
 			<property name="EconomicValue" value="800"/>
 			<property name="Material" value="MsorceryClothLightning"/>
 			<property name="RepairTools" value="resourceThreadLightning"/>
@@ -4405,7 +4405,7 @@
 		<!-- LIGHTNING ARMOR: LEG -->
 		<item name="sorceryArmorLightning_Leg">
 			<property name="Extends" value="sorceryArmorLightningMaster" param1="CustomIcon"/>
-			<property name="Tags" value="lowerbody,legs,armor,sorceryArmor,armorRigging,sorceryArmorSetLightning"/>
+			<property name="Tags" value="lowerbody,legs,armor,armorLegs,sorceryArmor,armorRigging,sorceryArmorSetLightning"/>
 			<property name="DescriptionKey" value="sorceryArmorLightning_LegDesc"/>
 			<property name="EquipSlot" value="Legs"/>
 			<property name="EconomicValue" value="800"/>
@@ -5473,8 +5473,8 @@
 			<property name="Group" value="Resources,FireSorcery"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
-			<property name="MeltTimePerUnit" value="2"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="MeltTimePerUnit" value=".5"/>
 			<property name="UnlockedBy" value="attSorceryFire"/>
 		</item>
 
@@ -5493,8 +5493,8 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,IceSorcery"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
-			<property name="MeltTimePerUnit" value="2"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="MeltTimePerUnit" value=".5"/>
 			<!-- <property name="UnlockedBy" value="attSorceryIce"/> -->
 		</item>
 	<!-- ESSENCE: LIGHTNING ______________________________________-->
@@ -5512,8 +5512,8 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,LightningSorcery"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
-			<property name="MeltTimePerUnit" value="2"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="MeltTimePerUnit" value=".5"/>
 			<!-- <property name="UnlockedBy" value="attSorceryLightning"/> -->
 		</item>		
 	<!-- ESSENCE: UNHOLY ______________________________________-->
@@ -5531,8 +5531,8 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,UnholySorcery"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
-			<property name="MeltTimePerUnit" value="2"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="MeltTimePerUnit" value=".5"/>
 			<!-- <property name="UnlockedBy" value="attSorceryUnholy"/> -->
 		</item>
 	<!-- ESSENCE: HOLY ______________________________________-->
@@ -5550,8 +5550,8 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,HolySorcery"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
-			<property name="MeltTimePerUnit" value="2"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="MeltTimePerUnit" value=".5"/>
 			<!-- <property name="UnlockedBy" value="attSorceryHoly"/> -->
 		</item>
 
@@ -5569,7 +5569,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="conjureFire,conjureIce,conjureLightning"/>
 		</item>	
 		<!-- EXTRACT: FIRE -->
@@ -5585,7 +5585,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="conjureFire"/>
 		</item>	
 		<!-- EXTRACT: ICE -->
@@ -5601,7 +5601,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="conjureIce"/>
 		</item>	
 		<!-- EXTRACT: LIGHTNING -->
@@ -5617,7 +5617,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="conjureLightning"/>
 		</item>	
 		<!-- EXTRACT: UNHOLY -->
@@ -5633,7 +5633,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 		</item>	
 		<!-- EXTRACT: HOLY -->
 		<item name="resourceExtractHoly">
@@ -5648,7 +5648,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 		</item>	
 		
 	<!--___________________ RESOURCE: Alchemy ___________________-->
@@ -5665,7 +5665,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		<!-- POWDER: FIRE -->
@@ -5681,7 +5681,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		<!-- POWDER: ICE -->
@@ -5697,7 +5697,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		<!-- POWDER: LIGHTNING -->
@@ -5713,7 +5713,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		<!-- POWDER: UNHOLY -->
@@ -5729,7 +5729,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		<!-- POWDER: HOLY -->
@@ -5745,7 +5745,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		
@@ -5765,7 +5765,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="sorceryArcaneWheel"/>
 		</item>	
 		<!-- THREAD: FIRE -->
@@ -5781,7 +5781,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="sorceryArcaneWheel"/>
 		</item>	
 		<!-- THREAD: ICE -->
@@ -5797,7 +5797,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="sorceryArcaneWheel"/>
 		</item>	
 		<!-- THREAD: LIGHTNING -->
@@ -5813,7 +5813,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 			<property name="UnlockedBy" value="sorceryArcaneWheel"/>
 		</item>	
 		<!-- THREAD: UNHOLY -->
@@ -5829,7 +5829,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 		</item>	
 		<!-- THREAD: HOLY -->
 		<item name="resourceThreadHoly">
@@ -5844,7 +5844,7 @@
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="1"/>
+			<property name="CraftingIngredientTime" value="0.5"/>
 		</item>	
 		
 		
@@ -6036,7 +6036,7 @@
 			<property name="Group" value="Resources,FireSorcery"/>
 			<property name="ResourceUnit" value="true"/>
 			<property name="UserHidden" value="true"/>
-			<property name="MeltTimePerUnit" value="2"/>
+			<property name="MeltTimePerUnit" value=".5"/>
 			<property name="CraftingIngredientTime" value="3"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
@@ -6052,7 +6052,7 @@
 			<property name="Group" value="Resources,IceSorcery"/>
 			<property name="ResourceUnit" value="true"/>
 			<property name="UserHidden" value="true"/>
-			<property name="MeltTimePerUnit" value="2"/>	
+			<property name="MeltTimePerUnit" value=".5"/>	
 			<property name="CraftingIngredientTime" value="3"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
@@ -6067,7 +6067,7 @@
 			<property name="Weight" value="1"/>
 			<property name="Group" value="Resources,LightningSorcery"/>
 			<property name="ResourceUnit" value="true"/>
-			<property name="MeltTimePerUnit" value="2"/>
+			<property name="MeltTimePerUnit" value=".5"/>
 			<property name="UserHidden" value="true"/>
 			<property name="CraftingIngredientTime" value="3"/>
 			<property name="CreativeMode" value="None"/>
@@ -6083,7 +6083,7 @@
 			<property name="Weight" value="1"/>
 			<property name="Group" value="Resources,UnholySorcery"/>
 			<property name="ResourceUnit" value="true"/>
-			<property name="MeltTimePerUnit" value="2"/>
+			<property name="MeltTimePerUnit" value=".5"/>
 			<property name="UserHidden" value="true"/>
 			<property name="CraftingIngredientTime" value="3"/>
 			<property name="CreativeMode" value="None"/>
@@ -6099,7 +6099,7 @@
 			<property name="Weight" value="1"/>
 			<property name="Group" value="Resources,HolySorcery"/>
 			<property name="ResourceUnit" value="true"/>
-			<property name="MeltTimePerUnit" value="2"/>
+			<property name="MeltTimePerUnit" value=".5"/>
 			<property name="UserHidden" value="true"/>
 			<property name="CraftingIngredientTime" value="3"/>
 			<property name="CreativeMode" value="None"/>

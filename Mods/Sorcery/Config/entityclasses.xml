@@ -450,7 +450,7 @@
 				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffFallenFire"/>
 				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
-				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
+				<!-- <passive_effect name="HealthMax" operation="perc_set" value="1"/> --> <!-- Zombie HP scale -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 			</effect_group>
 			<!-- CVAR: SCALING -->

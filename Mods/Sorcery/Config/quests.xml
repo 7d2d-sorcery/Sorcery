@@ -81,8 +81,8 @@
 				<action type="SpawnEnemy" id="sorceryFallenIntroFire" value="2" phase="1" />
 				<action type="SpawnEnemy" id="sorceryFallenIntroIce" value="2" phase="1" />
 				<action type="SpawnEnemy" id="sorceryFallenIntroLightning" value="2" phase="1" />
-				<objective type="FetchKeep" id="spellFire" value="2" phase="2" />
-				<objective type="FetchKeep" id="resourceEssenceFire" value="10" phase="2" />
+				<objective type="FetchKeep" id="spellFire" value="1" phase="2" />
+				<objective type="FetchKeep" id="resourceEssenceFire" value="5" phase="2" />
 			<reward type="Exp" value="777" />
 			<reward type="Item" id="cnt_SorceryCrateIntro" value="1" />
 			<reward type="Quest" id="quest_sorceryIntro2"/>
@@ -249,7 +249,7 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<!-- NOTE: NRE if too many; alternative method. -->
-				<objective type="FetchKeep" id="resourceThreadArcane" value="1" phase="1"/>
+				<objective type="FetchKeep" id="resourceThreadArcane" value="1" phase="1"/> <!-- change to kill with set buff later -->
 				<requirement type="Buff" id="buffSorceryArmorSet_Arcane" phase="1"/>
 				<!-- <objective type="Wear" id="sorceryArmor_Hood" />
 				<objective type="Wear" id="sorceryAccessory_Shades" />
@@ -389,7 +389,7 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 			<action type="TrackQuest" />
-			<reward type="Item" id="resourceEssenceFire" value="40" />
+			<reward type="Item" id="resourceEssenceFire" value="100" />
 			<reward type="Item" id="resourceCoal" value="80" />
 			<reward type="Item" id="resourceRockSmall" value="80" />
 			<reward type="Item" id="resourceClayLump" value="80" />
@@ -410,7 +410,7 @@
 			<action type="ShowTip" value="quest_sorceryIntroGuide_Fire2">
 				<property name="delay" value="3"/>
 			</action>
-				<objective type="FetchKeep" id="resourceEssenceFire" value="50" phase="1" />
+				<objective type="FetchKeep" id="resourceEssenceFire" value="125" phase="1" />
 				<objective type="FetchKeep" id="resourceCoal" value="100" phase="1" />
 				<objective type="FetchKeep" id="resourceRockSmall" value="100" phase="1" />
 				<objective type="FetchKeep" id="resourceClayLump" value="100" phase="1" />
@@ -573,7 +573,7 @@
 			<property name="category_key" value="challenge" />
 			<property name="icon" value="ui_symbol_fire" />
 			<property name="difficulty" value="hard"/>
-			<property name="shareable" value="true" />
+			<property name="shareable" value="false" />
 				<objective type="RandomGoto" value="500-800" phase="1">
 					<property name="completion_distance" value="50"/>
 					<property name="nav_object" value="quest" />
@@ -599,7 +599,7 @@
 			<property name="category_key" value="challenge" />
 			<property name="icon" value="ui_symbol_ice" />
 			<property name="difficulty" value="hard"/>
-			<property name="shareable" value="true" />
+			<property name="shareable" value="false" />
 				<objective type="RandomGoto" value="500-800" phase="1">
 					<property name="completion_distance" value="50"/>
 					<property name="nav_object" value="quest" />
@@ -625,7 +625,7 @@
 			<property name="category_key" value="challenge" />
 			<property name="icon" value="ui_symbol_lightning" />
 			<property name="difficulty" value="hard"/>
-			<property name="shareable" value="true" />
+			<property name="shareable" value="false" />
 				<objective type="RandomGoto" value="500-800" phase="1">
 					<property name="completion_distance" value="50"/>
 					<property name="nav_object" value="quest" />

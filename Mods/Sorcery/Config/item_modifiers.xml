@@ -68,34 +68,65 @@
 		</item_modifier>		
 		
 		<!-- LOCK SHATTER -->
-		<item_modifier name="rune_LockShatter" installable_tags="tool" modifier_tags="rune_LockShatter" blocked_tags="noMods" type="mod">
+		<item_modifier name="rune_LockShatter" installable_tags="spellcast,weapon,tool" modifier_tags="rune_LockShatter" type="mod">
 			<property name="Extends" value="runeMaster"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter" operation="set" value="@$sorceryRuneMastery_power"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter" operation="multiply" value="100"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter" operation="multiply" value="30"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter_degrade" operation="set" value="@$runeDegradeCost"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter_degrade" operation="multiply" value="8"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter_burden" operation="set" value="@$runeBurdenCost"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter_burden" operation="multiply" value="30"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter_burden" operation="multiply" value="20"/>
 					<!-- clear -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLockShatter" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLockShatter_degrade" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLockShatter_burden" operation="set" value="0" />
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-						<!-- <requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="LTE" value="0"/> -->
-						<requirement name="HoldingItemHasTags" tags="tool"/>
-						<requirement name="TriggerHasTags" tags="safes"/>
+						<requirement name="HoldingItemHasTags" tags="spellcast,weapon,tool"/>
+						<requirement name="TriggerHasTags" tags="safes,lockedChest"/>
 						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLockShatter_burden"/>
 					<triggered_effect trigger="onSelfDamagedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLockShatter_burden"/>
 					<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLockShatter_burden"/>
-					<passive_effect name="DamageModifier" operation="perc_add" value="@.runeLockShatter" tags="safes"/>
+					<passive_effect name="DamageModifier" operation="base_add" value="50" tags="safes,lockedChest">
+						<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					</passive_effect>
+					<passive_effect name="DamageModifier" operation="perc_add" value="@.runeLockShatter" tags="safes,lockedChest"/>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeLockShatter_degrade"/>
 				</effect_group>
 		</item_modifier>
 		
+		<!-- DOOR SHATTER -->
+		<item_modifier name="rune_DoorShatter" installable_tags="spellcast,weapon,tool" modifier_tags="rune_DoorShatter" type="mod">
+			<property name="Extends" value="runeMaster"/>
+				<effect_group tiered="false" name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeDoorShatter" operation="set" value="@$sorceryRuneMastery_power"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeDoorShatter" operation="multiply" value="10"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeDoorShatter_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeDoorShatter_degrade" operation="multiply" value="8"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeDoorShatter_burden" operation="set" value="@$runeBurdenCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeDoorShatter_burden" operation="multiply" value="20"/>
+					<!-- clear -->
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeDoorShatter" operation="set" value="0" />
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeDoorShatter_degrade" operation="set" value="0" />
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeDoorShatter_burden" operation="set" value="0" />
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+						<requirement name="HoldingItemHasTags" tags="spellcast,weapon,tool"/>
+						<requirement name="TriggerHasTags" tags="lockedDoor"/>
+						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeDoorShatter_burden"/>
+					<triggered_effect trigger="onSelfDamagedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeDoorShatter_burden"/>
+					<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeDoorShatter_burden"/>
+					<passive_effect name="BlockDamage" operation="base_add" value="50" tags="lockedDoor">
+						<requirement name="HoldingItemHasTags" tags="spellcast"/>
+					</passive_effect>
+					<passive_effect name="DamageModifier" operation="perc_add" value="@.runeDoorShatter" tags="lockedDoor"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeDoorShatter_degrade"/>
+				</effect_group>
+		</item_modifier>
+		
 		<!-- SPELL LIGHT -->
-		<item_modifier name="rune_SpellLight" installable_tags="armor" modifier_tags="rune_SpellLight" blocked_tags="noMods" type="mod">
+		<item_modifier name="rune_SpellLight" installable_tags="armor" modifier_tags="rune_SpellLight" type="mod">
 			<property name="Extends" value="runeMaster"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight" operation="set" value="@$sorceryRuneMastery_power"/>
@@ -105,16 +136,15 @@
 					</triggered_effect>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight_degrade" operation="set" value="@$runeDegradeCost"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight_degrade" operation="multiply" value="2"/>
-				</effect_group>
-				<effect_group tiered="false" name="RUNE">
-					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_SpellLight"/>
-					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeSpellLight_degrade"/>
-				</effect_group>
-				<effect_group tiered="false" name="RESET">
+					<!-- clear -->
 					<!-- <triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffRune_SpellLight"/> --> <!-- BUGGED: Not Working -->
 					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRune_SpellLight"/>
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeSpellLight" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeSpellLight_degrade" operation="set" value="0" />
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_SpellLight"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeSpellLight_degrade"/>
 				</effect_group>
 		</item_modifier>
 		

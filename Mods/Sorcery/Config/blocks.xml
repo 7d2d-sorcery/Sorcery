@@ -517,17 +517,19 @@
 		</append>
 
 	
-	<!--___________________ SORCERY LOCK MATERIALS ___________________-->
-	<!-- Average Locks -->
-	<!-- Deprecated by Block Tags -->
-	<!-- <append xpath="/blocks/block[@name='cntDeskSafe']"><property name="Material" value="Mmetal_hard_locked_sorcery"/></append>
-	<append xpath="/blocks/block[@name='cntWallSafe']"><property name="Material" value="Mmetal_hard_locked_sorcery"/></append>
-	<append xpath="/blocks/block[@name='cntLootChestHero']"><property name="Material" value="Mmetal_hard_locked_sorcery"/></append>
-	<append xpath="/blocks/block[@name='cntGreenDrawerSecure']"><property name="Material" value="Mmetal_hard_locked_sorcery"/></append> -->
-	
-	<!-- Hard Locks -->
-	<!-- <set xpath="/blocks/block[@name='cntGunSafe']/property[@name='Material']/@value">Mmetal_hard_locked2_sorcery</set>
-	<set xpath="/blocks/block[@name='cntHardenedChestSecure']/property[@name='Material']/@value">Mmetal_hard_locked2_sorcery</set> -->
+	<!--___________________ SORCERY APPEND VANILLA ___________________-->
+	<!-- Lock Shatter Rune: Tags for Chests -->
+	<append xpath="/blocks/block[@name='cntHardenedChestSecure' or @name='cntLootChestHero' or @name='cntSecureStorageChest']/property[@name='Tags']/@value">,lockedChest</append>
+	<!-- Door Shatter Rune: Tags for Doors -->
+	<append xpath="/blocks/block[@name='jailDoorStatic' or @name='jailDoorStaticCentered']">
+		<property name="Tags" value="lockedDoor"/>
+	</append>
+	<!-- Contains: <property name="Class" value="DoorSecure"/> -->
+	<append xpath="/blocks/block[@name='woodHatch1_v1' or @name='scrapHatch_v1']/property[@name='Tags']/@value">,lockedDoor</append>
+	<append xpath="/blocks/block[@name='secureDoorWooden' or @name='secureReinforcedDoorWooden' or @name='metalReinforcedDoorWooden']/property[@name='Tags']/@value">,lockedDoor</append>
+	<append xpath="/blocks/block[@name='ironDoor1_v1' or @name='vaultDoor01' or @name='vaultDoor03']/property[@name='Tags']/@value">,lockedDoor</append>
+	<append xpath="/blocks/block[@name='commercialDoor1_v1' or @name='commercialDoor1_v3' or @name='houseFrontDoor1_v1']/property[@name='Tags']/@value">,lockedDoor</append>
+	<append xpath="/blocks/block[@name='garageDoorMetal_v1' or @name='garageDoorMetal_v3' or @name='garageDoorHousePlayer' or @name='garageDoorHouseBrown' or @name='garageDoorIndustrial']/property[@name='Tags']/@value">,lockedDoor</append>
 	
 	
 	

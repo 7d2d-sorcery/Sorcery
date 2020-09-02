@@ -262,8 +262,11 @@
 			</effect_group>
 			<!-- PERKS -->
 			<!-- RECIPES -->
-			<effect_group name="CRAFTING">
+			<effect_group name="CRAFTING: TIER">
 				<passive_effect name="CraftingTier" operation="base_set" level="1,10" value="1,10" tags="sorceryTier"/><!-- used to scale resources -->
+			</effect_group>
+			<effect_group name="CRAFTING: ARCANE">
+				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,2,10" value="0,2,9" tags="resourcePowderArcane,resourceExtractOmni"/> -->
 			</effect_group>
 			<effect_group name="RECIPES">
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="sorceryArcaneWheel"/>
@@ -366,16 +369,35 @@
 				<passive_effect name="CraftingTime" operation="perc_add" level="1,2,3,4,5,6,7,8,9,10" value="0,0,-0.1,-0.1,-0.2,-0.2,-0.3,-0.3,-0.4,-0.4" tags="conjureFireCrafting"/>
 				<passive_effect name="CraftingTier" operation="base_set" level="1,10" value="1,10" tags="sorceryFireTier"/><!-- used to scale resources -->
 			</effect_group>
+			<effect_group name="SCALE CRAFTING: FIRE">
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,2,10" value="4,4,2" tags="unit_fire,resourceEssenceFire"/>
+			</effect_group>
 			<effect_group name="FIRE ESSENCE">
-				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
 				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceFireHarvest"><requirement name="!InBiome" biome="9"/></passive_effect>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="0" tags="essenceFireHarvest"><requirement name="InBiome" biome="9"/></passive_effect>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,10" tags="essenceFireHarvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,10" tags="essenceFire2Harvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="6,10" tags="essenceFire3Harvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="8,10" tags="essenceFire4Harvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="10" tags="essenceFire5Harvest"/>
-			</effect_group>			
+			</effect_group>
+			<!-- PERK: Essence Harvest -->
+			<effect_group name="Essence Harvest: RESET">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="LT" value="2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_essenceHarvestFire" operation="set" value="0"/>
+			</effect_group>
+			<effect_group name="Essence Harvest: Novice">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="Equals" value="4"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_essenceHarvestFire" operation="set" value=".5"/>
+			</effect_group>
+			<effect_group name="Essence Harvest: Adept">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="Equals" value="6"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_essenceHarvestFire" operation="set" value="1"/>
+			</effect_group>
+			<effect_group name="Essence Harvest: Expert">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="Equals" value="8"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_essenceHarvestFire" operation="set" value="1.5"/>
+			</effect_group>
+			<effect_group name="Essence Harvest: Master">
+					<requirement name="ProgressionLevel" progression_name="attSorceryFire" operation="GTE" value="10"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFireMastery_essenceHarvestFire" operation="set" value="2"/>
+			</effect_group>
 		</attribute>
 		
 	<!-- ATTRIBUTE: ICE SORCERY ______________________________________-->
@@ -407,10 +429,9 @@
 				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceIceHarvest"><requirement name="!InBiome" biome="1"/></passive_effect>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="0" tags="essenceIceHarvest"><requirement name="InBiome" biome="1"/></passive_effect>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,10" tags="essenceIceHarvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,10" tags="essenceIce2Harvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="6,10" tags="essenceIce3Harvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="8,10" tags="essenceIce4Harvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="10" tags="essenceIce5Harvest"/>
+			</effect_group>
+			<effect_group name="SCALE CRAFTING: ICE">
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,2,10" value="4,4,2" tags="unit_ice,resourceEssenceIce"/>
 			</effect_group>
 		</attribute>		
 		
@@ -443,10 +464,9 @@
 				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceLightningHarvest"><requirement name="!InBiome" biome="3"/></passive_effect>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="0" tags="essenceLightningHarvest"><requirement name="InBiome" biome="3"/></passive_effect>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,10" tags="essenceLightningHarvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="4,10" tags="essenceLightning2Harvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="6,10" tags="essenceLightning3Harvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="8,10" tags="essenceLightning4Harvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="10" tags="essenceLightning5Harvest"/>
+			</effect_group>
+			<effect_group name="SCALE CRAFTING: LIGHTNING">
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,2,10" value="4,4,2" tags="unit_lightning,resourceEssenceLightning"/>
 			</effect_group>
 		</attribute>		
 		
@@ -639,6 +659,7 @@
 			</effect_group>
 			<effect_group name="CRAFTING">
 				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorceryAlchemyMastery"/><!-- used to scale resources -->
+				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-1,-5" tags="resourcePowderArcane,resourcePowderFire,resourcePowderIce,resourcePowderLightning"/> -->
 			</effect_group>
 			<effect_group name="ALCHEMY: General Recipes">
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryAlchemyMortar,potion_Health,potion_Stamina,potion_Spirit,potion_Remedy,potion_Devour,potion_SlowFall,potion_Travel,potionFire_Essence,potionFire_Sorcery,potion_Haste,potion_Taunt"/>
@@ -809,7 +830,7 @@
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="toolHammerFire,toolHammerIce,toolHammerLightning"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="rune_SpellLight"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_LockShatter"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_LockShatter,rune_DoorShatter"/>
 				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorceryRuneMastery"/><!-- used to scale resources -->
 				<effect_description level="1" desc_key="perkSorceryRuneMasteryRank1Desc" long_desc_key="perkSorceryRuneMasteryRank1LongDesc"/>
 				<effect_description level="2" desc_key="perkSorceryRuneMasteryRank2Desc" long_desc_key="perkSorceryRuneMasteryRank2LongDesc"/>
@@ -835,7 +856,7 @@
 			</effect_group>
 			<effect_group name="ARCANE ARMOR"> 
 				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="1,6" tags="perkSorceryArmor,sorceryArmor_Hood,sorceryArmor_Robe,sorceryArmor_Chest,sorceryArmor_Shirt,sorceryArmor_Gloves,sorceryArmor_Leg,sorceryArmor_Pants,sorceryArmor_Boots,sorceryArmor_Bandana,sorceryAccessory_Shades"/><!-- used to scale resources -->
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryArcaneWheel,sorceryAccessory_Shades,sorceryArmor_Bandana,sorceryArmor_Hood,sorceryArmor_Robe,sorceryArmor_Chest,sorceryArmor_Shirt,sorceryArmor_Gloves,sorceryArmor_Leg,sorceryArmor_Pants,sorceryArmor_Boots"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="resourceThreadArcane,sorceryArcaneWheel,sorceryAccessory_Shades,sorceryArmor_Bandana,sorceryArmor_Hood,sorceryArmor_Robe,sorceryArmor_Chest,sorceryArmor_Shirt,sorceryArmor_Gloves,sorceryArmor_Leg,sorceryArmor_Pants,sorceryArmor_Boots"/>
 			</effect_group>
 			<effect_group name="ARCANE ARMOR: Level">
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmor" operation="set" value="0">
@@ -1157,7 +1178,7 @@
 			</effect_group>
 			<effect_group name="FIRE ARMOR"> 
 				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="1,6" tags="perkSorceryArmorFire,sorceryArmorFire_Hood,sorceryArmorFire_Robe,sorceryArmorFire_Chest,sorceryArmorFire_Shirt,sorceryArmorFire_Gloves,sorceryArmorFire_Leg,sorceryArmorFire_Pants,sorceryArmorFire_Boots,sorceryArmorFire_Bandana,sorceryAccessoryFire_Shades"/><!-- used to scale resources -->
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryArcaneWheel,sorceryAccessoryFire_Shades,sorceryArmorFire_Bandana,sorceryArmorFire_Hood,sorceryArmorFire_Robe,sorceryArmorFire_Chest,sorceryArmorFire_Shirt,sorceryArmorFire_Gloves,sorceryArmorFire_Leg,sorceryArmorFire_Pants,sorceryArmorFire_Boots"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="resourceThreadFire,sorceryArcaneWheel,sorceryAccessoryFire_Shades,sorceryArmorFire_Bandana,sorceryArmorFire_Hood,sorceryArmorFire_Robe,sorceryArmorFire_Chest,sorceryArmorFire_Shirt,sorceryArmorFire_Gloves,sorceryArmorFire_Leg,sorceryArmorFire_Pants,sorceryArmorFire_Boots"/>
 			</effect_group>
 			<effect_group name="FIRE ARMOR: Level">
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryArmorFire" operation="set" value="0">

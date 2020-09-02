@@ -78,6 +78,7 @@
 		<lootgroup name="sorceryRunes"> 
 			<item name="rune_SpellLight"/>
 			<item name="rune_LockShatter" prob=".2"/>
+			<item name="rune_DoorShatter" prob=".2"/>
 		</lootgroup>	
 	<!-- END - RUNES -->
 	

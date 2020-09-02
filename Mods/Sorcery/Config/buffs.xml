@@ -108,11 +108,12 @@
 						<!-- MAX SPIRIT: Set Calc -->
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="set" value="@$spiritMax_base"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@.spiritMax_amount"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax_multiplier" operation="set" value="1"/>
 							<!-- ADD: Perks -->
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$sorceryMastery_spiritMax"/>					
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$spiritMax_add"/>					
 							<!-- ADD: SpiritMax_multiplier -->
-							<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax_multiplier" operation="add" value="@$sorcerySpiritMastery_spiritMax"/>						 -->
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax_multiplier" operation="add" value="@$sorcerySpiritMastery_spiritMax"/>						
 							<!-- ADD: Gear -->
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$head_spiritMax"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$eyes_spiritMax"/>
@@ -125,6 +126,10 @@
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$pants_spiritMax"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$boots_spiritMax"/>
 							<!-- END: Gear Calc -->
+						<!-- MULTIPLY: Multiplier -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="multiply" value="@$spiritMax_multiplier">
+							<requirement name="CVarCompare" cvar="$spiritMax_multiplier" operation="GT" value="0"/>
+						</triggered_effect>
 						<!-- NEGATIVE MULTIPLIER -->
 						<!-- Add -->
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax_subtract" operation="set" value="0"/>
@@ -436,9 +441,7 @@
 					</effect_group>
 					<effect_group name="MARK TARGETS">
 						<!-- THIS BUFF ENSURES KILL CREDIT FOR BUFF/SPELL/TRAP/PET/ALL KILLS -->
-						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="60" buff="buffSorceryMarkTarget" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" /> -->
-						<!-- <requirement name="EntityTagCompare" tags="player" invert="true"/> -->
-						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="60" buff="buffSorceryMarkTarget" target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" /> -->
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="60" buff="buffSorceryMark" target_tags="enemy,animal,hostile" /> -->
 					</effect_group>
 					 <effect_group name="MANAGE: UI STAT BUFFS">
 							<requirement name="!IsLookingAtEntity"/>
@@ -453,8 +456,13 @@
 						<triggered_effect trigger="onSelfSecondaryActionStart" action="ModifyCVar" cvar=".holdingSecondary" operation="set" value="1"/>
 						<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".holdingSecondary" operation="set" value="0"/>						
 					 </effect_group>
+					<effect_group name="TRACKING">
+						<!-- NOTE: Handled by Arcane Vision and similar -->
+						<!-- <passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryFallen,sorceryAwakened,sorceryLootFallen"/> -->
+						<passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryLootFallen"/>
+					</effect_group>
 					 <effect_group name="SPELL PROC">
-						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffSorceryMarkTarget,buffSorceryFireStacks_Add,buffEntity_SorceryUpdate,buffEntity_FireSorcery"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffSorceryMark,buffSorceryFireStacks_Add,buffEntity_SorceryUpdate,buffEntity_FireSorcery"/>
 						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffPotionBomb_fire,buffPotionBomb_ice,buffPotionBomb_lightning"/>
 					 </effect_group>
 					<!-- CALCULATE: Sorcery Damage -->
@@ -671,9 +679,10 @@
 					</effect_group>
 					<!-- FIRE ESSENCE -->
 					<!-- CALC: Fire Harvest -->
-					<effect_group name="CVAR: FIRE ALL ESSENCE HARVEST">
+					<effect_group name="CVAR: FIRE ESSENCE HARVEST">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryFireHarvest" operation="set" value="0"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryFireHarvest" operation="add" value="@.sorceryFireHarvest"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryFireHarvest" operation="add" value="@$sorceryFireMastery_essenceHarvestFire"/>
 							<!-- Essence Mastery -->
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryFireHarvest" operation="add" value="@$sorceryEssenceMastery_essenceHarvestFire"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryFireHarvest" operation="add" value=".5">
@@ -717,7 +726,7 @@
 					</effect_group>
 					<!-- ICE ESSENCE -->
 					<!-- CALC: Ice Harvest -->
-					<effect_group name="CVAR: ICE ALL ESSENCE HARVEST">
+					<effect_group name="CVAR: ICE ESSENCE HARVEST">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryIceHarvest" operation="set" value="0"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryIceHarvest" operation="add" value="@.sorceryIceHarvest"/>
 							<!-- Essence Mastery -->
@@ -763,7 +772,7 @@
 					</effect_group>
 					<!-- LIGHTNING ESSENCE -->
 					<!-- CALC: Lightning Harvest -->
-					<effect_group name="CVAR: LIGHTNING ALL ESSENCE HARVEST">
+					<effect_group name="CVAR: LIGHTNING ESSENCE HARVEST">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryLightningHarvest" operation="set" value="0"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryLightningHarvest" operation="add" value="@.sorceryLightningHarvest"/>
 							<!-- Essence Mastery -->
@@ -845,6 +854,16 @@
 						</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffSorceryIntro" />
 					</effect_group>
+			</buff>
+
+			<!-- SORCERY: BUFF KILL CREDIT HACK -->
+			<buff name="buffSorceryMark">
+				<damage_type value="heat"/><stack_type value="replace"/><duration value="0"/>
+					<!-- THIS BUFF ENSURES KILL CREDIT FOR BUFF/SPELL/TRAP/PET/ALL KILLS -->
+					<!-- THIS WORKS THANKS TO THE DAMAGE_TYPE PROPERTY -->
+					<!-- WILL NOT ALERT TARGETS DUE TO ABSENCE OF DAMAGE EFFECTS -->
+					
+					<!-- CHECK FOR ACTIVE SPELLS LATER -->
 			</buff>
 
 	<!-- ARMOR SETS ______________________________________________________-->
@@ -2311,6 +2330,7 @@
 			<buff name="buffEntity_FireSorcery">
 				<damage_type value="heat"/><stack_type value="ignore"/><duration value="1"/>
 					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSorceryMark"/>
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="1,1" duration="0,1"/>
 					</effect_group>
 					<!-- SPELL CHARGING -->
@@ -3890,8 +3910,8 @@
 							<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$debuffScroll_AmmoFire" operation="multiply" value="@$sorceryFireDamage"/>
 						</effect_group>
 						<effect_group name="IMPACT">
-							<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$debuffScroll_AmmoFire"/>
-							<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="@$debuffScroll_AmmoFire"/>
+							<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$debuffScroll_AmmoFire"/>
+							<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="@$debuffScroll_AmmoFire"/> -->
 							<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire" target_tags="ally,party">
 								<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 							</triggered_effect>
@@ -3929,7 +3949,7 @@
 							<!-- <requirement name="IsNight"/> -->
 							<requirement name="TimeOfDay" operation="GTE" value="2000"/>
 							<requirement name="TimeOfDay" operation="LT" value="500"/>
-							<requirement name="CVarCompare" cvar="_sheltered" operation="GTE" value=".3"/>
+							<requirement name="CVarCompare" cvar="_shaded" operation="GTE" value=".1"/>
 						</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneVision.unity3d?arcaneVision"/>
 					</effect_group>
@@ -3937,12 +3957,13 @@
 						<!-- <requirement name="IsDay"/> -->
 							<requirement name="TimeOfDay" operation="LT" value="2000"/>
 							<requirement name="TimeOfDay" operation="GT" value="500"/>
-						<requirement name="CVarCompare" cvar="_sheltered" operation="LT" value=".3"/>
+						<requirement name="CVarCompare" cvar="_shaded" operation="LT" value=".1"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="arcaneVision"/>
 					</effect_group>
 					<effect_group name="Calc">
 					</effect_group>
-					<effect_group name="Scroll">
+					<effect_group name="SCROLL">
+						<passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryFallen,sorceryAwakened,sorceryLootFallen"/>
 					</effect_group>
 			</buff>
 	<!-- END - SCROLLS ______________________________________________________-->
@@ -3967,7 +3988,7 @@
 				<effect_group name="FX: DISABLE">
 						<requirement name="TimeOfDay" operation="LT" value="2000"/>
 						<requirement name="TimeOfDay" operation="GT" value="500"/>
-						<requirement name="CVarCompare" cvar="_sheltered" operation="LT" value=".3"/>
+						<requirement name="CVarCompare" cvar="_shaded" operation="LT" value=".1"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="arcaneSpellLight" transform_path="T0"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="arcaneSpellLight" transform_path="T1"/>
 					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="arcaneSpellLight" transform_path="T2"/>
@@ -3991,7 +4012,7 @@
 						<requirements compare_type="or">
 							<requirement name="TimeOfDay" operation="GTE" value="2000"/>
 							<requirement name="TimeOfDay" operation="LT" value="500"/>
-							<requirement name="CVarCompare" cvar="_sheltered" operation="GTE" value=".3"/>
+							<requirement name="CVarCompare" cvar="_shaded" operation="GTE" value=".1"/>
 						</requirements>
 					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="arcaneSpellLight" transform_path="T0">
 						<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="LTE" value="0"/></triggered_effect>
@@ -4004,7 +4025,7 @@
 						<requirements compare_type="or">
 							<requirement name="TimeOfDay" operation="GTE" value="2000"/>
 							<requirement name="TimeOfDay" operation="LT" value="500"/>
-							<requirement name="CVarCompare" cvar="_sheltered" operation="GTE" value=".3"/>
+							<requirement name="CVarCompare" cvar="_shaded" operation="GTE" value=".1"/>
 						</requirements>
 					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="arcaneSpellLight" transform_path="T1">
 						<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="Equals" value="1"/></triggered_effect>
@@ -4017,7 +4038,7 @@
 						<requirements compare_type="or">
 							<requirement name="TimeOfDay" operation="GTE" value="2000"/>
 							<requirement name="TimeOfDay" operation="LT" value="500"/>
-							<requirement name="CVarCompare" cvar="_sheltered" operation="GTE" value=".3"/>
+							<requirement name="CVarCompare" cvar="_shaded" operation="GTE" value=".1"/>
 						</requirements>
 					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="arcaneSpellLight" transform_path="T2">
 						<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="Equals" value="2"/></triggered_effect>
@@ -4030,7 +4051,7 @@
 						<requirements compare_type="or">
 							<requirement name="TimeOfDay" operation="GTE" value="2000"/>
 							<requirement name="TimeOfDay" operation="LT" value="500"/>
-							<requirement name="CVarCompare" cvar="_sheltered" operation="GTE" value=".3"/>
+							<requirement name="CVarCompare" cvar="_shaded" operation="GTE" value=".1"/>
 						</requirements>
 					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="arcaneSpellLight" transform_path="T3">
 						<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="Equals" value="3"/></triggered_effect>
@@ -4043,7 +4064,7 @@
 						<requirements compare_type="or">
 							<requirement name="TimeOfDay" operation="GTE" value="2000"/>
 							<requirement name="TimeOfDay" operation="LT" value="500"/>
-							<requirement name="CVarCompare" cvar="_sheltered" operation="GTE" value=".3"/>
+							<requirement name="CVarCompare" cvar="_shaded" operation="GTE" value=".1"/>
 						</requirements>
 					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="arcaneSpellLight" transform_path="T4">
 						<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="Equals" value="4"/></triggered_effect>
@@ -4056,7 +4077,7 @@
 						<requirements compare_type="or">
 							<requirement name="TimeOfDay" operation="GTE" value="2000"/>
 							<requirement name="TimeOfDay" operation="LT" value="500"/>
-							<requirement name="CVarCompare" cvar="_sheltered" operation="GTE" value=".3"/>
+							<requirement name="CVarCompare" cvar="_shaded" operation="GTE" value=".1"/>
 						</requirements>
 					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="arcaneSpellLight" transform_path="T5">
 						<requirement name="CVarCompare" cvar="$sorceryRuneMastery" operation="GTE" value="5"/></triggered_effect>
@@ -4340,6 +4361,7 @@
 						<passive_effect name="BuffProcChance" operation="base_set" value="-100" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="1"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".5"/>
+						<passive_effect name="LootDropProb" operation="perc_add" level="1" value=".15"/>
 					</effect_group>
 			</buff>
 			<!-- ICE TOUCHED: ENTITY -->
@@ -4363,6 +4385,7 @@
 						<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="1"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".5"/>
+						<passive_effect name="LootDropProb" operation="perc_add" level="1" value=".15"/>
 					</effect_group>
 			</buff>
 			<!-- LIGHTNING TOUCHED: ENTITY -->
@@ -4386,6 +4409,7 @@
 						<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="1"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".5"/>
+						<passive_effect name="LootDropProb" operation="perc_add" level="1" value=".15"/>
 					</effect_group>
 			</buff>
 			<!-- TOUCHED AURA: ENTITY -->
@@ -4449,7 +4473,7 @@
 		<!-- FIRE ENTITY SPELLS -->
 			<!-- FIRE: Burn -->
 			<buff name="spellEntityFire_Burn" hidden="true" remove_on_death="true">
-				<damage_type value="heat"/><stack_type value="replace"/><duration value="8"/><update_rate value="1"/>
+				<damage_type value="heat"/><stack_type value="replace"/><duration value="6"/><update_rate value="1"/>
 					<effect_group name="FX">
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireBurning2-finish"/>
 						<triggered_effect trigger="onSelfBuffStack" action="RemoveParticleEffectFromEntity" particle="fireBurning2-finish"/>
@@ -4459,16 +4483,16 @@
 					</effect_group>
 					<effect_group name="SCALE">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c1" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c1" operation="multiply" value="3"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c2" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c2" operation="multiply" value="4"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c3" operation="set" value="@sorceryPlayerTier"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c3" operation="multiply" value="2"/>
 						<!-- stack -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c1" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c1" operation="multiply" value="3"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c2" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c2" operation="multiply" value="4"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c3" operation="set" value="@sorceryPlayerTier"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c3" operation="multiply" value="2"/>						
 					</effect_group>
@@ -4512,18 +4536,18 @@
 					</effect_group>
 					<effect_group name="SCALE">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c1" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c1" operation="multiply" value="3"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c2" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c2" operation="multiply" value="4"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c3" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c3" operation="multiply" value="3"/>
 						<!-- stack -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c1" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c1" operation="multiply" value="3"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c2" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c2" operation="multiply" value="4"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c3" operation="multiply" value="5"/>						
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c3" operation="multiply" value="3"/>						
 					</effect_group>
 					<effect_group name="IMPACT">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityIce_Chill_c1"/>
@@ -4565,11 +4589,26 @@
 						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryLightning_crackling" />
 						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryLightning_crackling" />
 					</effect_group>
+					<effect_group name="SCALE">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c1" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c1" operation="multiply" value="3"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c2" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c2" operation="multiply" value="4"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c3" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c3" operation="multiply" value="2"/>
+						<!-- stack -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c1" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c1" operation="multiply" value="3"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c2" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c2" operation="multiply" value="4"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c3" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c3" operation="multiply" value="2"/>						
+					</effect_group>
 					<effect_group name="IMPACT">
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="5"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="5"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="5"/> <!-- spirit -->
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="5"/> <!-- spirit -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityLightning_Shock_c1"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityLightning_Shock_c1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityLightning_Shock_c2"/> <!-- spirit -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityLightning_Shock_c2"/> <!-- spirit -->
 						<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>
 						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>
@@ -4629,14 +4668,14 @@
 					</effect_group>
 					<effect_group name="SCALE">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenFire_Burn_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenFire_Burn_c1" operation="multiply" value="8"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenFire_Burn_c1" operation="multiply" value="4"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenFire_Burn_c2" operation="set" value="@sorceryPlayerTier"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenFire_Burn_c2" operation="multiply" value="5"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenFire_Burn_c3" operation="set" value="@sorceryPlayerTier"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenFire_Burn_c3" operation="multiply" value="3"/>
 						<!-- stack -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenFire_Burn_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenFire_Burn_c1" operation="multiply" value="8"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenFire_Burn_c1" operation="multiply" value="4"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenFire_Burn_c2" operation="set" value="@sorceryPlayerTier"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenFire_Burn_c2" operation="multiply" value="5"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenFire_Burn_c3" operation="set" value="@sorceryPlayerTier"/>
@@ -4738,18 +4777,18 @@
 					</effect_group>
 					<effect_group name="SCALE">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenIce_Chill_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenIce_Chill_c1" operation="multiply" value="8"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenIce_Chill_c1" operation="multiply" value="4"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenIce_Chill_c2" operation="set" value="@sorceryPlayerTier"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenIce_Chill_c2" operation="multiply" value="5"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenIce_Chill_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenIce_Chill_c3" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenIce_Chill_c3" operation="multiply" value="3"/>
 						<!-- stack -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenIce_Chill_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenIce_Chill_c1" operation="multiply" value="8"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenIce_Chill_c1" operation="multiply" value="4"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenIce_Chill_c2" operation="set" value="@sorceryPlayerTier"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenIce_Chill_c2" operation="multiply" value="5"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenIce_Chill_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenIce_Chill_c3" operation="multiply" value="5"/>	
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenIce_Chill_c3" operation="multiply" value="3"/>	
 						<!-- cleanup -->
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellFallenIce_Chill_c1" operation="set" value="0"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellFallenIce_Chill_c2" operation="set" value="0"/>
@@ -4858,18 +4897,18 @@
 					</effect_group>
 					<effect_group name="SCALE">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c1" operation="multiply" value="8"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c1" operation="multiply" value="4"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c2" operation="multiply" value="10"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c2" operation="multiply" value="5"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c3" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c3" operation="multiply" value="3"/>
 						<!-- stack -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c1" operation="multiply" value="8"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c1" operation="multiply" value="4"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c2" operation="multiply" value="10"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c2" operation="multiply" value="5"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c3" operation="multiply" value="5"/>						
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c3" operation="multiply" value="3"/>						
 						<!-- cleanup -->
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c1" operation="set" value="0"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c2" operation="set" value="0"/>
@@ -4908,7 +4947,7 @@
 					</effect_group>
 					<effect_group name="SCALE">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Electrocute_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Electrocute_c1" operation="multiply" value="5"/>					
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Electrocute_c1" operation="multiply" value="4"/>					
 						<!-- cleanup -->
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellFallenLightning_Electrocute_c1" operation="set" value="0"/>
 					</effect_group>
@@ -5032,7 +5071,7 @@
 					<!-- SCALE -->
 					<effect_group name="DAMAGE: SCALE">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_damage" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_damage" operation="multiply" value=".2"/>				
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_damage" operation="multiply" value=".1"/>				
 					</effect_group>
 					<effect_group name="AURA: Empower">
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffEntity_FireTouched" target_tags="ally,party"/>
@@ -5041,66 +5080,66 @@
 					<effect_group name="SCALING: Player Tier 0 (Level 1-10)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="LT" value="1"/>
 						<passive_effect name="HealthMax" operation="perc_subtract" value=".25"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="1"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value=".25"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="0"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 1 (Level 10-19)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="1"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="2"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value=".5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="0"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 2 (Level 20-39)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="2"/>
 						<passive_effect name="HealthMax" operation="perc_add" value=".25"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="2.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="1"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".2"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 3 (Level 40-59)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="3"/>
 						<passive_effect name="HealthMax" operation="perc_add" value=".50"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="3"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="1.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".4"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 4 (Level 60-79)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="4"/>
 						<passive_effect name="HealthMax" operation="perc_add" value=".75"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="3.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="2"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".6"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 5 (Level 80-99)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="5"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="1"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="4"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="2.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".8"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 6 (Level 100-149)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="6"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="2"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="4.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="3"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="1"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 7 (Level 150-199)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="7"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="3"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="3.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="1.5"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 8 (Level 200-249)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="8"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="4"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="5.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="4"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="2"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 9 (Level 250-299)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="9"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="5"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="6"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="4.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="2.5"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 10 (Level 300+)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="10"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="6"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="7"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="3"/>
 					</effect_group>
 					<!-- End - Player Scaling -->
@@ -5279,7 +5318,7 @@
 					<!-- SCALE -->
 					<effect_group name="DAMAGE SCALE">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_damage" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_damage" operation="multiply" value=".2"/>				
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_damage" operation="multiply" value=".1"/>				
 					</effect_group>
 					<effect_group name="AURA: Empower">
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffEntity_IceTouched" target_tags="ally,party"/>
@@ -5288,66 +5327,66 @@
 					<effect_group name="SCALING: Player Tier 0 (Level 1-10)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="LT" value="1"/>
 						<passive_effect name="HealthMax" operation="perc_subtract" value=".25"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="1"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value=".25"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="0"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 1 (Level 10-19)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="1"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="2"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value=".5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="0"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 2 (Level 20-39)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="2"/>
 						<passive_effect name="HealthMax" operation="perc_add" value=".25"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="2.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="1"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".2"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 3 (Level 40-59)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="3"/>
 						<passive_effect name="HealthMax" operation="perc_add" value=".50"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="3"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="1.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".4"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 4 (Level 60-79)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="4"/>
 						<passive_effect name="HealthMax" operation="perc_add" value=".75"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="3.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="2"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".6"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 5 (Level 80-99)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="5"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="1"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="4"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="2.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".8"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 6 (Level 100-149)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="6"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="2"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="4.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="3"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="1"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 7 (Level 150-199)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="7"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="3"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="3.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="1.5"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 8 (Level 200-249)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="8"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="4"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="5.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="4"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="2"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 9 (Level 250-299)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="9"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="5"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="6"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="4.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="2.5"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 10 (Level 300+)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="10"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="6"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="7"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="3"/>
 					</effect_group>
 					<!-- End - Player Scaling -->
@@ -5522,7 +5561,7 @@
 					<!-- SCALE -->
 					<effect_group name="DAMAGE SCALE">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_damage" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_damage" operation="multiply" value=".2"/>				
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility1_damage" operation="multiply" value=".1"/>				
 					</effect_group>
 					<effect_group name="AURA: Empower">
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffEntity_LightningTouched" target_tags="ally,party"/>
@@ -5531,66 +5570,66 @@
 					<effect_group name="SCALING: Player Tier 0 (Level 1-10)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="LT" value="1"/>
 						<passive_effect name="HealthMax" operation="perc_subtract" value=".25"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="1"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value=".25"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="0"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 1 (Level 10-19)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="1"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="2"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value=".5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="0"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 2 (Level 20-39)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="2"/>
 						<passive_effect name="HealthMax" operation="perc_add" value=".25"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="2.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="1"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".2"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 3 (Level 40-59)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="3"/>
 						<passive_effect name="HealthMax" operation="perc_add" value=".50"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="3"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="1.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".4"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 4 (Level 60-79)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="4"/>
 						<passive_effect name="HealthMax" operation="perc_add" value=".75"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="3.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="2"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".6"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 5 (Level 80-99)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="5"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="1"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="4"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="2.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".8"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 6 (Level 100-149)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="6"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="2"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="4.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="3"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="1"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 7 (Level 150-199)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="7"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="3"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="3.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="1.5"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 8 (Level 200-249)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="8"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="4"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="5.5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="4"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="2"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 9 (Level 250-299)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="9"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="5"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="6"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="4.5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="2.5"/>
 					</effect_group>
 					<effect_group name="SCALING: Player Tier 10 (Level 300+)">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="10"/>
 						<passive_effect name="HealthMax" operation="perc_add" value="6"/>
-						<passive_effect name="HealthChangeOT" operation="base_set" value="7"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="5"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value="3"/>
 					</effect_group>
 					<!-- End - Player Scaling -->
