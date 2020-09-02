@@ -518,6 +518,24 @@
 
 	
 	<!--___________________ SORCERY APPEND VANILLA ___________________-->
+	<!-- FIRE ESSENCE -->
+		<!-- Boulders -->
+		<append xpath="/blocks/block[@name='oreCoalBoulder' or @name='terrOreCoal']/property[@name='Tags']/@value">,hasFireEssence</append>
+		<append xpath="/blocks/block[@name='rockResourceBroke1' or @name='rockResourceBroke2' or @name='rockResource02Broke1' or @name='rockResource02Broke2']">
+			<property name="Tags" value="hasFireEssence"/>
+		</append>
+		<!-- Trees -->
+		<append xpath="/blocks/block[@name='treeBurntMaple01' or @name='treeBurntMaple02' or @name='treeBurntMaple03']/property[@name='Tags']/@value">,hasFireEssence</append>
+		<append xpath="/blocks/block[@name='treePineBurntMed' or @name='treePineBurntFullMed' or @name='treePineBurntLrg']">
+			<property name="Tags" value="hasFireEssence"/>
+		</append>
+		<!-- Planted Trees -->
+		<append xpath="/blocks/block[@name='treePlantedOak16m' or @name='treePlantedOak27m' or @name='treePlantedOak41m']">
+			<property name="Tags" value="hasFireEssence"/>
+		</append>
+	<!-- ICE ESSENCE -->
+	<!-- LIGHTNING ESSENCE -->
+	
 	<!-- Lock Shatter Rune: Tags for Chests -->
 	<append xpath="/blocks/block[@name='cntHardenedChestSecure' or @name='cntLootChestHero' or @name='cntSecureStorageChest']/property[@name='Tags']/@value">,lockedChest</append>
 	<!-- Door Shatter Rune: Tags for Doors -->

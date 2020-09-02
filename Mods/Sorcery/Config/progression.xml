@@ -829,8 +829,8 @@
 			</effect_group>
 			<effect_group>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="toolHammerFire,toolHammerIce,toolHammerLightning"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="rune_SpellLight"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_LockShatter,rune_DoorShatter"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="rune_SpellLight,rune_LuckyPotions,rune_LuckyAmmo,rune_LuckySpells"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_LockShatter,rune_DoorShatter,rune_LuckyDukes"/>
 				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorceryRuneMastery"/><!-- used to scale resources -->
 				<effect_description level="1" desc_key="perkSorceryRuneMasteryRank1Desc" long_desc_key="perkSorceryRuneMasteryRank1LongDesc"/>
 				<effect_description level="2" desc_key="perkSorceryRuneMasteryRank2Desc" long_desc_key="perkSorceryRuneMasteryRank2LongDesc"/>

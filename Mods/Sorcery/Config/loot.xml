@@ -76,9 +76,15 @@
 	<!-- RUNES __________________________________________________________________________________ -->
 		<!-- Runes: ARCANE  -->
 		<lootgroup name="sorceryRunes"> 
-			<item name="rune_SpellLight"/>
+			<item name="rune_LuckyDukes" prob=".4"/>
 			<item name="rune_LockShatter" prob=".2"/>
 			<item name="rune_DoorShatter" prob=".2"/>
+			<item name="rune_SpellLight"/>
+			<item name="rune_LuckyPotions"/>
+			<item name="rune_LuckySpells"/>
+			<item name="rune_LuckyAmmo"/>
+			<item name="rune_LuckyScrolls"/>
+			<item name="runeFire_LuckyEssence"/>
 		</lootgroup>	
 	<!-- END - RUNES -->
 	
@@ -216,9 +222,9 @@
 		<!-- Fallen: FIRE -->
 		<lootgroup name="sorceryFallen_Fire"> 
 			<!-- <item name="q_sorceryAwakened_Fire" count="1" prob="0.001" /> -->
-			<item name="sorceryElixir_attFire" count="1" prob="0.005" />
-			<item name="q_sorceryFallen_Fire" count="1" prob="0.02" />
-			<item name="resourceRitualStoneFire" count="1" prob="0.05" />
+			<item name="sorceryElixir_attFire" count="1" prob="0.05" />
+			<item name="q_sorceryFallen_Fire" count="1" prob="0.1" />
+			<item name="resourceRitualStoneFire" count="1" prob="0.1" />
 			<item name="toolFireCore" count="1" prob="0.1" />
 			<item name="resourceRitualShardFire" count="1"/>
 			<!-- <item group="sorceryResourcesFire" count="10,20"/> -->
@@ -232,9 +238,9 @@
 		</lootgroup>
 		<!-- Fallen: ICE -->
 		<lootgroup name="sorceryFallen_Ice"> 
-			<item name="sorceryElixir_attIce" count="1" prob="0.005" />
-			<item name="q_sorceryFallen_Ice" count="1" prob="0.02" />
-			<item name="resourceRitualStoneIce" count="1" prob="0.05" />
+			<item name="sorceryElixir_attIce" count="1" prob="0.05" />
+			<item name="q_sorceryFallen_Ice" count="1" prob="0.1" />
+			<item name="resourceRitualStoneIce" count="1" prob="0.1" />
 			<item name="resourceRitualShardIce" count="1"/>
 			<item name="toolIceCore" count="1" prob="0.1" />
 			<!-- <item group="sorceryResourcesIce" count="10,20"/> -->
@@ -245,9 +251,9 @@
 		</lootgroup>
 		<!-- Fallen: LIGHTNING -->
 		<lootgroup name="sorceryFallen_Lightning"> 
-			<item name="sorceryElixir_attLightning" count="1" prob="0.005" />
-			<item name="q_sorceryFallen_Lightning" count="1" prob="0.02" />
-			<item name="resourceRitualStoneLightning" count="1" prob="0.05" />
+			<item name="sorceryElixir_attLightning" count="1" prob="0.05" />
+			<item name="q_sorceryFallen_Lightning" count="1" prob="0.1" />
+			<item name="resourceRitualStoneLightning" count="1" prob="0.1" />
 			<item name="resourceRitualShardLightning" count="1"/>
 			<item name="toolLightningCore" count="1" prob="0.1" />
 			<!-- <item group="sorceryResourcesLightning" count="10,20"/> -->

@@ -541,6 +541,48 @@
 				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
 			</effect_group>
 		</recipe>
+		<!-- Rune: Lucky Dukes -->
+		<recipe name="rune_LuckyDukes" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
+			<ingredient name="unit_fire" count="30"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune: Lucky Potions -->
+		<recipe name="rune_LuckyPotions" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
+			<ingredient name="unit_fire" count="15"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune: Lucky Spells -->
+		<recipe name="rune_LuckySpells" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
+			<ingredient name="unit_fire" count="15"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune: Lucky Ammo -->
+		<recipe name="rune_LuckyAmmo" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
+			<ingredient name="unit_fire" count="15"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune: Lucky Scrolls -->
+		<recipe name="rune_LuckyScrolls" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
+			<ingredient name="unit_fire" count="15"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune Fire: Lucky Essence -->
+		<recipe name="runeFire_LuckyEssence" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
+			<ingredient name="unit_fire" count="25"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
 
 	<!-- END - RUNES ______________________________________-->
 		

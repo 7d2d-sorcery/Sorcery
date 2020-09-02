@@ -56,14 +56,14 @@
 	<!-- HORDE SPANWS -->
 	<!-- WANDERING -->
 	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'wanderingHordeStage')]">
+		<entity name="sorceryFallenFire" prob="0.06"/>
+		<entity name="sorceryFallenIce" prob="0.06"/>
+		<entity name="sorceryFallenLightning" prob="0.06"/>
+	</append>
+	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'FwanderingHordeStage')]">
 		<entity name="sorceryFallenFire" prob="0.08"/>
 		<entity name="sorceryFallenIce" prob="0.08"/>
 		<entity name="sorceryFallenLightning" prob="0.08"/>
-	</append>
-	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'FwanderingHordeStage')]">
-		<entity name="sorceryFallenFire" prob="0.1"/>
-		<entity name="sorceryFallenIce" prob="0.1"/>
-		<entity name="sorceryFallenLightning" prob="0.1"/>
 	</append>	
 	<!-- SLEEPER -->
 	<!-- <append xpath="/entitygroups/entitygroup[starts-with(@name, 'sleeperHordeStage')]">
@@ -71,15 +71,15 @@
 	</append> -->
 	<!-- BADASS -->
 	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'badassHordeStage')]">
-		<entity name="sorceryFallenFire" prob="0.08"/>
-		<entity name="sorceryFallenIce" prob="0.08"/>
-		<entity name="sorceryFallenLightning" prob="0.08"/>
+		<entity name="sorceryFallenFire" prob="0.06"/>
+		<entity name="sorceryFallenIce" prob="0.06"/>
+		<entity name="sorceryFallenLightning" prob="0.06"/>
 	</append>
 	<!-- BADASS ONLY -->
 	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'badassOnlyHordeStage')]">
-		<entity name="sorceryFallenFire" prob="0.1"/>
-		<entity name="sorceryFallenIce" prob="0.1"/>
-		<entity name="sorceryFallenLightning" prob="0.1"/>
+		<entity name="sorceryFallenFire" prob="0.08"/>
+		<entity name="sorceryFallenIce" prob="0.08"/>
+		<entity name="sorceryFallenLightning" prob="0.08"/>
 	</append>	
 	<!-- SCOUT -->
 	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'scoutHordeStage')]">
@@ -89,9 +89,9 @@
 	</append>	
 	<!-- FERAL -->
 	<append xpath="/entitygroups/entitygroup[starts-with(@name, 'feralHordeStage')]">
-		<entity name="sorceryFallenFire" prob="0.1"/>
-		<entity name="sorceryFallenIce" prob="0.1"/>
-		<entity name="sorceryFallenLightning" prob="0.1"/>
+		<entity name="sorceryFallenFire" prob="0.08"/>
+		<entity name="sorceryFallenIce" prob="0.08"/>
+		<entity name="sorceryFallenLightning" prob="0.08"/>
 	</append>
 	
 	<!-- ZOMBIESALL -->
@@ -107,9 +107,9 @@
 	
 	<!-- CAVES -->
 	<append xpath="/entitygroups/entitygroup[@name='ZombiesCave']">
-		<entity name="sorceryFallenFire" prob="0.15"/>
-		<entity name="sorceryFallenIce" prob="0.15"/>
-		<entity name="sorceryFallenLightning" prob="0.15"/>
+		<entity name="sorceryFallenFire" prob="0.2"/>
+		<entity name="sorceryFallenIce" prob="0.2"/>
+		<entity name="sorceryFallenLightning" prob="0.2"/>
 	</append>
 	
 	<!-- NEW GROUP -->
@@ -119,16 +119,22 @@
 		<entitygroup name="SorceryFallenFire">
 			<entity name="invisibleSorceryEntity" prob="28"/>
 			<entity name="sorceryFallenFire" prob="1"/>
+			<entity name="sorceryFallenIce" prob="0.3"/>
+			<entity name="sorceryFallenLightning" prob="0.3"/>
 		</entitygroup>
 		<!-- Ice Fallen -->
 		<entitygroup name="SorceryFallenIce">
 			<entity name="invisibleSorceryEntity" prob="28"/>
 			<entity name="sorceryFallenIce" prob="1"/>
+			<entity name="sorceryFallenFire" prob="0.3"/>
+			<entity name="sorceryFallenLightning" prob="0.3"/>
 		</entitygroup>		
 		<!-- Lightning Fallen -->
 		<entitygroup name="SorceryFallenLightning">
 			<entity name="invisibleSorceryEntity" prob="28"/>
 			<entity name="sorceryFallenLightning" prob="1"/>
+			<entity name="sorceryFallenFire" prob="0.3"/>
+			<entity name="sorceryFallenIce" prob="0.3"/>
 		</entitygroup>
 	</append>
 	

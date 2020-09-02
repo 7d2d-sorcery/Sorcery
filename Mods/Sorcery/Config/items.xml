@@ -4801,6 +4801,7 @@
 	<!-- ALCHEMY: POTIONS -->
 		<item name="sorceryPotionMaster">
 			<property name="CreativeMode" value="None"/>
+			<property name="Tags" value="potion"/>
 			<property name="HoldType" value="3"/>
 			<property name="DisplayType" value="potion_Health"/>
 			<property name="Meshfile" value="#@modfolder:Resources/potionArcane.unity3d?potionArcane"/>
@@ -5014,6 +5015,7 @@
 	<!-- ALCHEMY: ELIXIRS -->
 		<item name="sorceryElixirMaster">
 			<property name="CreativeMode" value="None"/>
+			<property name="Tags" value="elixir"/>
 			<property name="HoldType" value="3"/>
 			<property name="DisplayType" value="potion_Health"/>
 			<property name="Meshfile" value="#@modfolder:Resources/potionArcane.unity3d?potionArcane"/>
@@ -5939,6 +5941,7 @@
 		<!-- RITUAL BLOOD -->
 		<!-- Blood: Lightning -->
 		<item name="resourceRitualBloodFallenLightning">
+			<property name="Tags" value="blood"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -5956,6 +5959,7 @@
 		</item>
 		<!-- Blood: Fire -->
 		<item name="resourceRitualBloodFallenFire">
+			<property name="Tags" value="blood"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -5973,6 +5977,7 @@
 		</item>
 		<!-- Blood: Ice -->
 		<item name="resourceRitualBloodFallenIce">
+			<property name="Tags" value="blood"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -5990,6 +5995,7 @@
 		</item>
 		<!-- Blood: Unholy -->
 		<item name="resourceRitualBloodFallenUnholy">
+			<property name="Tags" value="blood"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -6007,6 +6013,7 @@
 		</item>	
 		<!-- Blood: Holy -->
 		<item name="resourceRitualBloodFallenHoly">
+			<property name="Tags" value="blood"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
