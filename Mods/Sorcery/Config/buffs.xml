@@ -1556,6 +1556,16 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="add" value=".5"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffInjuryBleeding"/>
 					</effect_group>
+					<effect_group name="RANK 3: Explosive Shield">
+						<requirements compare_type="or">
+							<requirement name="CVarCompare" cvar="FireStacksPlayer" operation="GTE" value="1"/>
+							<requirement name="CVarCompare" cvar="Fire2StacksPlayer" operation="GTE" value="1"/>
+							<requirement name="CVarCompare" cvar="Fire3StacksPlayer" operation="GTE" value="1"/>
+						</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellcastFire_ExplosiveShield">
+							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="GTE" value="3"/>
+						</triggered_effect>
+					</effect_group>
 					<effect_group name="RANK 5: CAST CHARGE">
 							<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="1"/>
 							<!-- <requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastMastery" operation="GTE" value="5"/> -->
@@ -1580,7 +1590,7 @@
 					</effect_group>
 			</buff>
 			<!-- SPELLCAST SECONDARY: FIRE -->
-			<buff name="spellcastSecondary_Fire" name_key="Fire Spellcast: Secondary" description_key="You are channeling the secondary power of your Fire Spellcast." icon="ui_game_symbol_fire"  icon_color="49,93,206" icon_blink="true" hidden="false" remove_on_death="true">
+			<buff name="spellcastSecondary_Fire" name_key="Fire Spellcast: Secondary" description_key="You are channeling the secondary power of your Fire Spellcast." icon="ui_game_symbol_fire"  icon_color="49,93,206" icon_blink="true" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
 					<effect_group name="SPIRIT: COST">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="2"/>
@@ -1595,18 +1605,12 @@
 						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" target="self" sound="sorceryFireball_cast" play_in_head="true"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireEmpower"/>
 					</effect_group>
-					<effect_group name="RANK 3: BLAZING Speed">
-							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="GTE" value="3"/>
+					<effect_group name="RANK 1: BLAZING Speed">
+							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="GTE" value="1"/>
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireBurningGround"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellcastFire_BlazingTrigger"/>
 						<passive_effect name="WalkSpeed" operation="perc_add" value="1"/>
 						<passive_effect name="RunSpeed" operation="perc_add" value="0.5"/>
-					</effect_group>
-					<effect_group name="RANK 3: BLAZING Burn">
-							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="GTE" value="3"/>
-							<requirement name="EntityHasMovementTag" tags="running"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="2"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal,hostile"/>
-						<triggered_effect trigger="onSelfRun" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal,hostile"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal,hostile"/>
 					</effect_group>
 					<effect_group name="RANK 4: Fire Flight">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="GTE" value="4"/>
@@ -1716,6 +1720,19 @@
 			<buff name="buffSorceryWieldFire" name_key="Fire Spellcast: Passive" description_key="The natural power of the Fire Spellcast flows through your veins. Those with Spellcast Mastery are empowered with enhanced mobility, great resistance to heat and good resistance to cold." icon="ui_game_symbol_fire"  icon_color="102,0,204" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/>
 				<duration value="0"/>
+					<effect_group name="CLEANUP, SECONDARY: Blazing">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spellcastFire_BlazingTrigger" operation="add" value="1">
+							<requirement name="CVarCompare" cvar=".spellcastFire_BlazingTrigger" operation="GT" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="fireBurningGround">
+							<requirement name="CVarCompare" cvar=".spellcastFire_BlazingTrigger" operation="GTE" value="5"/>
+							<requirement name="NotHasBuff" buff="spellcastFire_BlazingTrigger"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spellcastFire_BlazingTrigger" operation="set" value="0">
+							<requirement name="CVarCompare" cvar=".spellcastFire_BlazingTrigger" operation="GTE" value="5"/>
+							<requirement name="NotHasBuff" buff="spellcastFire_BlazingTrigger"/>
+						</triggered_effect>
+					</effect_group>
 					<effect_group name="FIRE SORCERY">
 						<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/fireHand.unity3d?fireHand" parent_transform="Attachments"/> -->
 					</effect_group>
@@ -2468,6 +2485,95 @@
 	
 	<!-- SPELLCAST ABILITIES ______________________________________________________ -->
 		<!-- FIRE SPELLCAST: ABILITIES ___________________________ -->
+			<!-- Explosive Shield -->
+			<buff name="spellcastFire_ExplosiveShield" name_key="spellcastFire_ExplosiveShieldName" description_key="spellcastFire_ExplosiveShieldDesc" icon="uic_sorcery_shield_fire" hidden="false">
+				<stack_type value="replace"/><duration value="0"/><update_rate value="1"/>
+				<display_value_key value="[970000]{0:0}%[-]"/><display_value value=".spellcastFire_ExplosiveShield_count"/>
+					<effect_group name="CALC">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield" operation="set" value="@FireStacksPlayer"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield" operation="add" value="@Fire2StacksPlayer"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield" operation="add" value="@Fire3StacksPlayer"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield_count" operation="set" value="@.spellcastFire_ExplosiveShield"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield_count" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield" operation="set" value="@FireStacksPlayer"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield" operation="add" value="@Fire2StacksPlayer"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield" operation="add" value="@Fire3StacksPlayer"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield_count" operation="set" value="@.spellcastFire_ExplosiveShield"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield_count" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield" operation="set" value="@FireStacksPlayer"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield" operation="add" value="@Fire2StacksPlayer"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield" operation="add" value="@Fire3StacksPlayer"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield_count" operation="set" value="@.spellcastFire_ExplosiveShield"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spellcastFire_ExplosiveShield_count" operation="multiply" value="5"/>
+					</effect_group>
+					<effect_group name="SHIELD">
+							<requirement name="CVarCompare" cvar=".spellcastFire_ExplosiveShield_count" operation="GTE" value="1"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="5"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="selfAOE" range="4" buff="buffEntity_FireSorcery,spellcastFire_ExplosiveShieldAOE,spellcastFire_ExplosiveShieldExplode" target_tags="enemy,animal,hostile"/>
+						<passive_effect name="PhysicalDamageResist" operation="base_add" value="10" tags="coredamageresist"/>
+						<passive_effect name="ElementalDamageResist" operation="base_add" value="10" tags="cold,heat,electrical"/>
+					</effect_group>
+					<effect_group name="cleanup">
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellcastFire_ExplosiveShield">
+							<requirement name="CVarCompare" cvar=".spellcastFire_ExplosiveShield_count" operation="LTE" value="0"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+			<!-- Explosive Shield AOE -->
+			<buff name="spellcastFire_ExplosiveShieldAOE" hidden="true">
+				<damage_type value="heat"/><stack_type value="replace"/><duration value="4"/>
+					<effect_group name="VFX">
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireBurning-finish"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="Hips" />
+						<triggered_effect trigger="onSelfBuffStack" action="RemoveParticleEffectFromEntity" particle="fireBurning-finish"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="Hips" />
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning-finish.unity3d?fireBurning-finish" parent_transform="Hips" />					
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireBurning" />
+					</effect_group>
+					<effect_group name="CALC: Base">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellcastFire_ExplosiveShieldAOE" operation="set" value="6" />
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellcastFire_ExplosiveShieldAOE" operation="multiply" value="@$sorceryFireDamage"/> <!-- 1,xx -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellcastFire_ExplosiveShieldAOE" operation="set" value="6" />
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellcastFire_ExplosiveShieldAOE" operation="multiply" value="@$sorceryFireDamage"/> <!-- 1,xx -->
+					</effect_group>
+					<effect_group name="BURN">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="@$spellcastFire_ExplosiveShieldAOE"/>
+					</effect_group>
+			</buff>
+			<buff name="spellcastFire_ExplosiveShieldExplode" hidden="true">
+				<damage_type value="heat"/><stack_type value="ignore"/><duration value="20"/>
+					<effect_group name="VFX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellTriggerImpact2_Fire"/>
+					</effect_group>
+					<effect_group name="EXPLODE">
+						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" target="self" duration="1"/>
+					</effect_group>
+			</buff>
+			<!-- Blazing: Trigger -->
+			<buff name="spellcastFire_BlazingTrigger" hidden="true">
+				<stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
+					<effect_group name="FX">
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="AnimatorSetInt" property="fireBurningGroundStop" value="0"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spellcastFire_BlazingTrigger" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurningGround.unity3d?fireBurningGround"/>
+					</effect_group>
+					<effect_group name="TRIGGER">
+							<requirement name="EntityHasMovementTag" tags="running,walking"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal,hostile"/>
+						<triggered_effect trigger="onSelfWalk" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal,hostile"/>
+						<triggered_effect trigger="onSelfRun" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal,hostile"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="buffEntity_FireSorcery,spellcastFire_Blazing" target_tags="enemy,animal,hostile"/>
+					</effect_group>
+					<effect_group name="CLEANUP">
+						<!-- <triggered_effect trigger="onSelfBuffRemove" action="AnimatorSetInt" property="fireBurningGroundStop" value="1"/> -->
+						<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireBurningGround" /> -->
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".spellcastFire_BlazingTrigger" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellcastFire_BlazingTrigger">
+							<requirement name="NotHasBuff" buff="spellcastSecondary_Fire"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
 			<!-- Blazing -->
 			<buff name="spellcastFire_Blazing" hidden="true">
 				<damage_type value="heat"/><stack_type value="replace"/><duration value="4"/>
@@ -2482,6 +2588,8 @@
 					<effect_group name="CALC: Base">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellcastFire_Blazing" operation="set" value="6" />
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellcastFire_Blazing" operation="multiply" value="@$sorceryFireDamage"/> <!-- 1,xx -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellcastFire_Blazing" operation="set" value="6" />
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellcastFire_Blazing" operation="multiply" value="@$sorceryFireDamage"/> <!-- 1,xx -->
 					</effect_group>
 					<effect_group name="BURN">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="@$spellcastFire_Blazing"/>
@@ -3768,10 +3876,10 @@
 				<display_value value="$buffScroll_WeaponFireDuration"/><display_value_format value="time"/>
 					<effect_group name="Duration">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_WeaponFireDuration" operation="set" value="@$sorceryMastery_power"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_WeaponFireDuration" operation="multiply" value="1800"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_WeaponFireDuration" operation="multiply" value="900"/>
 						<!-- stack -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_WeaponFireDuration" operation="set" value="@$sorceryMastery_power"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_WeaponFireDuration" operation="multiply" value="1800"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_WeaponFireDuration" operation="multiply" value="900"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffScroll_WeaponFireDuration" operation="add" value="-.5"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffScroll_WeaponFire">
 							<requirement name="CVarCompare" cvar="$buffScroll_WeaponFireDuration" operation="LTE" value="0"/>
@@ -3780,18 +3888,15 @@
 					<effect_group name="FX">
 						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/handFX_Fire.unity3d?handFX_Fire" parent_transform="RightHand">
 							<requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/>
-							<requirement name="!HoldingItemHasTags" tags="spellcast"/>
+							<!-- <requirement name="!HoldingItemHasTags" tags="spellcast"/> -->
 						</triggered_effect>
 						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/handFX_Fire.unity3d?handFX_Fire" parent_transform="RightHand">
 							<requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/>
-							<requirement name="!HoldingItemHasTags" tags="spellcast"/>
+							<!-- <requirement name="!HoldingItemHasTags" tags="spellcast"/> -->
 						</triggered_effect>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="handFX_Fire">
 							<requirement name="!HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/>
 							<requirement name="NotHasBuff" buff="buffScroll_AmmoFire"/>
-						</triggered_effect>
-						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="handFX_Fire">
-							<requirement name="HoldingItemHasTags" tags="spellcast"/>
 						</triggered_effect>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="handFX_Fire"/>
 					</effect_group>
@@ -3803,9 +3908,10 @@
 					</effect_group>
 					<effect_group name="Scroll">
 							<requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/>
-							<requirement name="!HoldingItemHasTags" tags="spellcast,thrownWeapon"/>
 						<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire"/> 
 						<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire"/> 
+						<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire"/> 
+						<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire"/> 
 					</effect_group>
 					<effect_group name="Scroll: Thrown">
 							<requirement name="ItemHasTags" tags="thrownWeapon"/>
@@ -3833,12 +3939,6 @@
 						<effect_group name="IMPACT">
 							<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$debuffScroll_WeaponFire"/>
 							<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="@$debuffScroll_WeaponFire"/>
-							<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire" target_tags="ally,party">
-								<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
-							</triggered_effect>
-							<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_FireSorcery,debuffScroll_WeaponFire" target_tags="ally,party">
-								<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
-							</triggered_effect>
 						</effect_group>
 						<effect_group name="DEBUFF">
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="@$debuffScroll_WeaponFire"/>
@@ -3850,10 +3950,9 @@
 				<display_value value="$buffScroll_AmmoFireDuration"/><display_value_format value="time"/>
 					<effect_group name="Duration">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_AmmoFireDuration" operation="set" value="@$sorceryMastery_power"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_AmmoFireDuration" operation="multiply" value="1800"/>
-						<!-- stack -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_AmmoFireDuration" operation="multiply" value="900"/>
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_AmmoFireDuration" operation="set" value="@$sorceryMastery_power"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_AmmoFireDuration" operation="multiply" value="1800"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_AmmoFireDuration" operation="multiply" value="900"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffScroll_AmmoFireDuration" operation="add" value="-.5"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffScroll_AmmoFire">
 							<requirement name="CVarCompare" cvar="$buffScroll_AmmoFireDuration" operation="LTE" value="0"/>
@@ -3862,18 +3961,13 @@
 					<effect_group name="FX">
 						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/handFX_Fire.unity3d?handFX_Fire" parent_transform="RightHand">
 							<requirement name="HoldingItemHasTags" tags="weapon,ranged" has_all_tags="true"/>
-							<requirement name="!HoldingItemHasTags" tags="spellcast"/>
 						</triggered_effect>
 						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/handFX_Fire.unity3d?handFX_Fire" parent_transform="RightHand">
 							<requirement name="HoldingItemHasTags" tags="weapon,ranged" has_all_tags="true"/>
-							<requirement name="!HoldingItemHasTags" tags="spellcast"/>
 						</triggered_effect>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="handFX_Fire">
 							<requirement name="!HoldingItemHasTags" tags="weapon,ranged" has_all_tags="true"/>
 							<requirement name="NotHasBuff" buff="buffScroll_WeaponFire"/>
-						</triggered_effect>
-						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="handFX_Fire">
-							<requirement name="HoldingItemHasTags" tags="spellcast"/>
 						</triggered_effect>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="handFX_Fire"/>
 					</effect_group>
@@ -3882,13 +3976,18 @@
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_AmmoFire" operation="multiply" value="5"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_AmmoFire_c1" operation="set" value="@$sorceryFireDamage"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_AmmoFire_c1" operation="multiply" value="2"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_AmmoFire" operation="set" value="@$sorceryFireDamage"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_AmmoFire" operation="multiply" value="5"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_AmmoFire_c1" operation="set" value="@$sorceryFireDamage"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_AmmoFire_c1" operation="multiply" value="2"/>
 					</effect_group>
 					<effect_group name="Scroll">
-							<requirement name="HoldingItemHasTags" tags="weapon,ranged" has_all_tags="true"/>
-							<requirement name="!HoldingItemHasTags" tags="spellcast"/>
-						<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire"/> 
-						<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire"/> 
-						<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire"/> 
+						<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire">
+							<requirement name="ItemHasTags" tags="bow,crossbow,launcher"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire">
+							<requirement name="ItemHasTags" tags="gun,turretRanged"/>
+						</triggered_effect> 
 					</effect_group>
 			</buff>
 				<!-- Scroll Debuff: Ammo Fire -->
@@ -3910,14 +4009,7 @@
 							<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$debuffScroll_AmmoFire" operation="multiply" value="@$sorceryFireDamage"/>
 						</effect_group>
 						<effect_group name="IMPACT">
-							<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$debuffScroll_AmmoFire"/>
-							<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="@$debuffScroll_AmmoFire"/> -->
-							<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire" target_tags="ally,party">
-								<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
-							</triggered_effect>
-							<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_FireSorcery,debuffScroll_AmmoFire" target_tags="ally,party">
-								<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
-							</triggered_effect>
+							<!-- NOTE: OP for ranged -->
 						</effect_group>
 						<effect_group name="DEBUFF">
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="@$debuffScroll_AmmoFire"/>
@@ -3929,10 +4021,10 @@
 				<display_value value="$buffScroll_ArcaneVisionDuration"/><display_value_format value="time"/>
 					<effect_group name="Duration">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_ArcaneVisionDuration" operation="set" value="@$sorceryMastery_power"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_ArcaneVisionDuration" operation="multiply" value="1800"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_ArcaneVisionDuration" operation="multiply" value="900"/>
 						<!-- stack -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_ArcaneVisionDuration" operation="set" value="@$sorceryMastery_power"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_ArcaneVisionDuration" operation="multiply" value="1800"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$buffScroll_ArcaneVisionDuration" operation="multiply" value="900"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffScroll_ArcaneVisionDuration" operation="add" value="-1"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffScroll_ArcaneVision">
 							<requirement name="CVarCompare" cvar="$buffScroll_ArcaneVisionDuration" operation="LTE" value="0"/>

@@ -538,6 +538,7 @@
 	
 	<!-- Lock Shatter Rune: Tags for Chests -->
 	<append xpath="/blocks/block[@name='cntHardenedChestSecure' or @name='cntLootChestHero' or @name='cntSecureStorageChest']/property[@name='Tags']/@value">,lockedChest</append>
+	<append xpath="/blocks/block[@name='cntBuriedFoodStashChest' or @name='cntBuriedWeaponChest' or @name='cntBuriedLootStashChest']/property[@name='Tags']/@value">,lockedChest</append>
 	<!-- Door Shatter Rune: Tags for Doors -->
 	<append xpath="/blocks/block[@name='jailDoorStatic' or @name='jailDoorStaticCentered']">
 		<property name="Tags" value="lockedDoor"/>

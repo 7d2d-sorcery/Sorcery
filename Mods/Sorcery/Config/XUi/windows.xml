@@ -99,7 +99,7 @@
 
 		<!-- UI: Pause Menu Splash -->
 		<window name="SorceryingameMenu" anchor="CenterCenter" pos="-125,200" width="250" height="200" controller="InGameMenuWindow" cursor_area="true">
-			<label name="SorceryVersion" pos="783, 288" depth="0" size="250,35" text="Sorcery v0.911" font_size="24" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
+			<label name="SorceryVersion" pos="783, 288" depth="0" size="250,35" text="Sorcery v0.912" font_size="24" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
 			<texture name="SorceryingameMenuLogo" depth="0" size="672,446" texture="@modfolder:Textures/SorceryLogoMenu.png" pos="-200,194" />
 			<!-- <texture name="SorceryingameMenuChestNoble" style="sorcery.window.ingame.support.chest.noble.texture" /> -->
 			<texture name="SorceryingameMenuChestLord" style="sorcery.window.ingame.support.chest.lord.texture" />

@@ -177,19 +177,19 @@
 	
 		<!-- FIRE SORCERY -->
 		<!-- FIRE -->
-		<SoundDataNode name="sorceryFire_burn"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+		<SoundDataNode name="sorceryFire_burn"> <AudioSource name="Sounds/AudioSource_Impact"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?FireLoop2" Loop="true"/>
 			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.001"/>
 		</SoundDataNode>
-		<SoundDataNode name="sorceryFireball_wield"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+		<SoundDataNode name="sorceryFireball_wield"> <AudioSource name="Sounds/AudioSource_Player"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?FireLoop2" Loop="true"/>
 			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.001"/>
 		</SoundDataNode>		
-		<SoundDataNode name="sorceryFireball_cast"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+		<SoundDataNode name="sorceryFireball_cast"> <AudioSource name="Sounds/AudioSource_Player"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?FireLoop2" Loop="true"/>
 			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.001"/>
 		</SoundDataNode>	
-		<SoundDataNode name="sorceryFireball_draw"> <AudioSource name="Sounds/AudioSource_Reloads"/>
+		<SoundDataNode name="sorceryFireball_draw"> <AudioSource name="Sounds/AudioSource_Player"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?draw"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?draw2"/>
 			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.001"/>

@@ -172,8 +172,8 @@
 				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="0"/>
 				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="10"/> <!-- Essence Repair: 20 -->
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/> <!-- Essence Repair: 20 -->
-				<passive_effect name="ModSlots" operation="base_set" value="0,5,5" tier="1,6,999"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/> <!-- Essence Repair: 20 -->
+				<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6"/>
 				<passive_effect name="ModPowerBonus" operation="perc_add" value="0.15" tags="EntityDamage"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 			</effect_group>
@@ -1067,17 +1067,17 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
 				<!-- <display_value name="dsorcSetArcane" value="0"/> -->
 				<!-- <requirement name="RequirementItemTier" tier="sorceryArmor_Hood" operation="Equals" value="1"/> -->
 				<!-- <display_value name="dsorcSpirit" value="10" />
 				<display_value name="dsorcSpiritRegen" value="0.10" />
 				<display_value name="dsorcEssenceAll" value=".15" /> -->
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -1173,12 +1173,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -1276,12 +1276,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -1376,12 +1376,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -1479,12 +1479,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -1579,12 +1579,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -1679,12 +1679,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -1780,12 +1780,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -1880,12 +1880,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
@@ -1993,12 +1993,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -2117,12 +2117,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -2203,12 +2203,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -2291,12 +2291,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -2376,12 +2376,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -2464,12 +2464,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -2549,12 +2549,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -2634,12 +2634,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -2720,12 +2720,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -2805,12 +2805,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
@@ -2903,12 +2903,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -3015,12 +3015,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -3101,12 +3101,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -3189,12 +3189,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -3274,12 +3274,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -3362,12 +3362,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -3447,12 +3447,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -3532,12 +3532,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -3618,12 +3618,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -3703,12 +3703,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
@@ -3801,12 +3801,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -3913,12 +3913,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -3999,12 +3999,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -4087,12 +4087,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -4172,12 +4172,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -4260,12 +4260,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -4345,12 +4345,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -4430,12 +4430,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -4516,12 +4516,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
@@ -4601,12 +4601,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 				<passive_effect name="WalkSpeed" operation="perc_add" value=".05"/>
 				<passive_effect name="RunSpeed" operation="perc_add" value=".05"/>
@@ -4699,12 +4699,12 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5,5" tier="1,6,999"/>
-				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5,5" tier="1,6,999" />
-				<passive_effect name="HypothermalResist" operation="base_add" value="2,8,8" tier="1,6,999" />
-				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8,8" tier="1,6,999"/>
-				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000,9000" tier="1,6,999"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30,30" tier="1,6,999"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
+				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="10,30" tier="1,6"/>
 				<passive_effect name="BuffResistance" operation="base_add" value=".045" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger"/>
 			</effect_group>			
 			<effect_group name="TIER 1">
