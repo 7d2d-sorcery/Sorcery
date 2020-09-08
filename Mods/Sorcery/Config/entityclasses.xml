@@ -669,9 +669,94 @@
 		</entity_class>
 		
 		<!-- FAMILIARS -->
-		<!-- <entity_class name="sorceryFamiliarArcane">
+		<entity_class name="sorceryFamiliarArcane">
 			<property name="HideInSpawnMenu" value="false"/>
-		</entity_class> -->
+			<property name="Tags" value="entity,animal,familiar"/>
+			<property name="Class" value="EntityEnemyAnimal"/>
+			<property name="Parent" value="Animals"/>
+			<property name="EntityType" value="Animal"/>
+			<property name="AvatarController" value="AvatarAnimalController"/>
+			<property name="ModelType" value="Standard"/>
+			<!-- <property name="AvatarController" value="GameObjectAnimalAnimation"/> -->
+			<property name="Prefab" value="/Entities/Animals/Wolf/animalStandardWolfRagdoll"/>
+			<property name="Mesh" value=""/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_familiarArcane.unity3d?mat_familiarArcane"/>
+			<!-- <property name="ReplaceMaterial1" value="#@modfolder:Resources/mat_awakenedEyeLightning.unity3d?mat_awakenedEyeLightning"/> -->
+			<property name="HasDeathAnim" value="true"/>
+			<property name="RootMotion" value="true"/>
+			<property name="HasRagdoll" value="true"/>
+			<property name="PhysicsBody" value="wolf"/>
+			<property name="Mass" value="95"/>
+			<property name="SizeScale" value="1"/>
+			<property name="IsAnimalEntity" value="true"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="Faction" value="animals"/>
+			<property name="Weight" value="300"/>
+			<property name="LookAtAngle" value="60"/>
+			<property name="RotateToGround" value="true"/>
+			<!-- <property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityZombie,20,EntityEnemyAnimal,20"/>
+			<property name="AITarget-1" value="SetNearestEntityAsTarget" data="class=EntityPlayer,20,15"/> -->
+			<property name="AIGroupCircle" value="1"/>
+			<property name="AINoiseSeekDist" value="100"/>
+			<property name="AIPathCostScale" value="0.1, 0.1"/>
+			<property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityEnemyAnimal,5,EntityZombie,5"/>
+			<property name="AITask-2" value="ApproachSpot" data="class=EntityPlayer"/>
+			<property name="AITask-3" value=""/>
+			<!-- <property name="AITask-3" value="Look" data="class=EntityPlayer"/>
+			<property name="AITask-4" value="Wander" data="class=EntityPlayer"/> -->
+			<!-- <property name="AITask-4" value="Wander"/> -->
+			<!-- <property name="AITarget-1" value="SetAsTargetIfHurt"/>
+			<property name="AITarget-2" value="BlockingTargetTask"/> -->
+			<property name="AITarget-1" value="SetNearestEntityAsTarget" data="class=EntityPlayer,100,100,EntityEnemyAnimal,20,20,EntityZombie,20,20"/>
+			<property name="AITarget-2" value=""/>
+			<!-- <property name="AITarget-4" value=""/> -->
+
+			<property name="SurfaceCategory" value="organic"/>
+			<property name="ParticleOnDeath" value="blood_death"/>
+			
+			<!-- Stealth settings -->
+			<property name="MaxViewAngle" value="360"/>
+			<property name="SightRange" value="100"/> 
+
+			<property name="SoundRandom" value="wolfroam"/>
+			<property name="SoundAlert" value="wolfalert"/>
+			<property name="SoundHurt" value="wolfpain"/>
+			<property name="SoundDeath" value="wolfdeath"/>
+			<property name="SoundAttack" value="wolfattack"/>
+			<property name="SoundSense" value="wolfsense"/>
+			<property name="SoundGiveUp" value="wolfgiveup"/>
+
+			<!-- Gameplay -->
+			<property name="PainResistPerHit" value=".6"/>
+			<property name="MaxTurnSpeed" value="420"/>
+			<property name="MoveSpeed" value="6"/>
+			<property name="MoveSpeedAggro" value="2, 2"/>
+			<property name="MoveSpeedRand" value="0"/>
+			<property name="MoveSpeedPanic" value="2.5"/>
+			<property name="SwimSpeed" value="6"/>
+			<property name="SwimStrokeRate" value="1.1,1.5"/>
+			<property name="AttackTimeoutDay" value="1.5"/>
+			<property name="AttackTimeoutNight" value="1.4"/>
+			<property name="CanClimbLadders" value="false"/>
+
+			<property name="HandItem" value="meleeHandAnimalWolf"/>
+			<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
+
+			<property name="DismemberMultiplierLegs" value="0"/>
+
+			<property name="TimeStayAfterDeath" value="10"/>
+			<property name="DeadBodyHitPoints" value="1000"/>
+
+			<effect_group name="Base Effects">
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="buffEntity_SorceryManage"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AttachPrefabToEntity" target="self" parent_transform="RightHand" prefab="#@modfolder:Resources/handLightning.unity3d?handLightning" local_offset=".14,0.035,0"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/handLightning.unity3d?handLightning" local_offset="-.14,-0.05,0"/>	
+				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="1000"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+			</effect_group>
+		</entity_class>
 		
 		<!-- LOOT ENTITIES -->
 		<!-- Fallen Loot: FIRE -->

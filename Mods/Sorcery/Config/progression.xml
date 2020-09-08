@@ -271,7 +271,7 @@
 			<effect_group name="RECIPES">
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="sorceryArcaneWheel"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,10" tags="scroll_ArcaneVision,scrollFire_Weapon,scrollFire_Ammo"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="10" tags="q_sorceryFallen_Trio"/>
+				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="10" tags=""/> -->
 			</effect_group>
 		</attribute>
 		
@@ -1230,7 +1230,40 @@
 
 		<!-- ELEMENTS -->
 		
-		<!-- SORCERY SUPPORT -->			
+		<!-- SORCERY SUPPORT -->
+		<perk name="perkSorcerySupport" parent="skillSorcerySupport" name_key="perkSorcerySupportName" desc_key="perkSorcerySupportDesc" icon="ui_sorcery_supporter_keys" min_level="0" max_level="2" base_skill_point_cost="0" cost_multiplier_per_level="0" max_level_ratio_to_parent="0">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="LT" value="1" desc_key="reqSorcerySupportLevel01"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="LT" value="1" desc_key="reqSorcerySupportLevel02"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorcerySupportRank1Desc" long_desc_key="perkSorcerySupportRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorcerySupportRank2Desc" long_desc_key="perkSorcerySupportRank2LongDesc"/>
+			</effect_group>
+			<effect_group name="SUPPORTER DISCLAIMER">
+			 <!--__________________________________________________________________________________
+					SUPPORTER DISCLAIMER
+					__________________________________________________________________________________
+					USAGE:  This mod is a Private Supporter Key of the primary Sorcery Mod, provided solely to supporters 
+					of the Sorcery Mod in order to recognize and reward supporters for making ongoing development possible.
+					In order to protect and ensure ongoing development of the Sorcery Mod, it is strictly forbidden for non-
+					supporters to use, redistribute, modify or reproduce the effects of this mod. Failure to heed this warning
+					will result in an immediate ban from all Sorcery Mod channels for all parties involved.
+					
+					REDISTRIBUTION: This mod works as a Private Supporter Key that should not be redistributed to non-
+					supporters of the primary Sorcery Mod. Without supporters, ongoing development would not be possible.
+					In order to protect and ensure ongoing development of the Sorcery Mod, it is strictly forbidden for non-
+					supporters to use, redistribute, modify or reproduce the effects of this mod. Failure to heed this warning
+					will result in an immediate ban from all Sorcery Mod channels for all parties involved.
+					__________________________________________________________________________________-->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySupporterMasterCompare" operation="set" value="@$sorcerySupporterMaster"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySupporterKeyCompare" operation="set" value="@$sorcerySupporterKey"/>
+			</effect_group>
+			<effect_group name="SUPPORTER DISCLAIMER">
+					<requirement name="CVarCompare" cvar="$sorcerySupporterKeyCompare" operation="NE" value="@$sorcerySupporterMasterCompare"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="RemoveBuff" buff="buffSorcerySupportPerkSilver" target="self"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="RemoveBuff" buff="buffSorcerySupportPerkGold" target="self"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="SetProgressionLevel" progression_name="perkSorcerySupport" level="0"/>
+			</effect_group>			
+		</perk>	
 		
 		<!-- ELIXIR, BOOK PERKS -->
 				

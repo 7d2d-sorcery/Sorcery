@@ -757,6 +757,19 @@
 		
 		
 		<!-- DEV: TEST QUESTS -->
+		<!-- Summon Familiar Arcane -->
+		<quest id="summonFamiliarArcane">
+			<!-- <property name="name_key" value="quest_sorceryFallen_Trio_title" /> -->
+			<!-- <property name="subtitle_key" value="quest_sorceryFallen_Trio_subtitle" /> -->
+			<!-- <property name="description_key" value="quest_sorceryFallen_Trio" /> -->
+			<!-- <property name="offer_key" value="quest_sorceryFallen_Trio" /> -->
+			<property name="category_key" value="challenge" />
+			<property name="icon" value="ui_symbol_pentagram" />
+			<!-- <property name="difficulty" value="hard"/> -->
+			<property name="shareable" value="false" />
+			<action type="SpawnEnemy" id="sorceryFamiliarArcane" value="1"/>
+			<!-- <reward type="Item" id="resourceRitualStoneLightning" value="1" /> -->
+		</quest>
 		<!-- END - TEST QUEST -->
 		
 	</append>

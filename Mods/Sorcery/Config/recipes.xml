@@ -285,9 +285,9 @@
 		<!-- Fallen: TRIO -->
 		<!-- craft_tool="toolFireCore,toolIceCore,toolLightningCore" -->
 		<recipe name="q_sorceryFallen_Trio" count="1" craft_time="30" craft_area="sorceryDesk" craft_tool="toolLightningCore" tags="learnable">
-			<ingredient name="resourceRitualBloodFallenFire" count="2"/>
-			<ingredient name="resourceRitualBloodFallenIce" count="2"/>
-			<ingredient name="resourceRitualBloodFallenLightning" count="2"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
 			<ingredient name="resourceRitualStoneFire" count="1"/>
 			<ingredient name="resourceRitualStoneIce" count="1"/>
 			<ingredient name="resourceRitualStoneLightning" count="1"/>
@@ -519,6 +519,14 @@
 	<!-- END - SPELL AMMO ______________________________________-->
 		
 	<!-- RUNES ______________________________________-->
+		<!-- SUPPORTER RUNES -->
+		<!-- Rune: Astryael’s Eternal Youth -->
+		<recipe name="rune_SupporterAstryael" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="30">
+			<ingredient name="unit_fire" count="100"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+			</effect_group>
+		</recipe>
 		<!-- ARCANE RUNES -->
 		<!-- Rune: Lock Shatter -->
 		<recipe name="rune_LockShatter" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="30">

@@ -79,6 +79,7 @@
 			<item name="rune_LuckyDukes" prob=".4"/>
 			<item name="rune_LockShatter" prob=".2"/>
 			<item name="rune_DoorShatter" prob=".2"/>
+			<item name="rune_SupporterAstryael" prob=".05"/>
 			<item name="rune_SpellLight"/>
 			<item name="rune_LuckyPotions"/>
 			<item name="rune_LuckySpells"/>

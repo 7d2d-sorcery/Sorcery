@@ -5761,8 +5761,8 @@
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothArcane"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="RepairTime" value=".2"/>
-			<property name="RepairAmount" value="100"/>
+			<property name="RepairTime" value=".02"/>
+			<property name="RepairAmount" value="250"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -5777,7 +5777,7 @@
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothFire"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="RepairAmount" value="100"/>
+			<property name="RepairAmount" value="250"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
@@ -5793,7 +5793,7 @@
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothIce"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="RepairAmount" value="100"/>
+			<property name="RepairAmount" value="250"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
@@ -5809,7 +5809,7 @@
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothLightning"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="RepairAmount" value="100"/>
+			<property name="RepairAmount" value="250"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
@@ -5825,7 +5825,7 @@
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothUnholy"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="RepairAmount" value="100"/>
+			<property name="RepairAmount" value="250"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
@@ -5840,7 +5840,7 @@
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothHoly"/>
 			<property name="Stacknumber" value="500"/>
-			<property name="RepairAmount" value="100"/>
+			<property name="RepairAmount" value="250"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
@@ -6495,6 +6495,43 @@
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="15" sound="sorceryLightning_impact" />
 			</effect_group>
 		</item>
+	
+	
+	
+	
+	
+	
+	<!-- FAMILIARS ______________________________________-->
+		<item name="sorceryFamiliarArcane">
+			<property name="Tags" value="turretRanged,weapon,ranged,reloadPenalty,drumMagazine,attIntellect,perkTurrets,canHaveCosmetic"/>
+			<property name="HoldType" value="67"/>
+			<property name="Meshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<!-- <property name="Meshfile" value="/Entities/Animals/Wolf/animalStandardWolfRagdoll"/> -->
+			<!-- <property name="Prefab" value="/Entities/Animals/Wolf/animalStandardWolfRagdoll"/> -->
+			<!-- <property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_familiarArcane.unity3d?mat_familiarArcane"/> -->
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="MJunkTurretParts"/> <property name="Weight" value="4"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<!-- <property name="SoundJammed" value="weapon_jam"/> -->
+			<property name="RepairTools" value="resourceRepairKit"/>
+			<property name="Group" value="Ammo/Weapons"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="EconomicValue" value="500"/>
+			<!-- <property name="SellableToTrader" value="true"/> -->
+			<!-- <property name="RequiredPower" value="15"/> -->
+			<!-- <property name="UnlockedBy" value="gunBotT2JunkTurretSchematic"/> -->
+			<property name="ShowQuality" value="false"/>
+			<property class="Action0">
+				<property name="Class" value="SpawnVehicle"/>
+				<property name="Vehicle" value="sorceryFamiliarArcane"/>
+				<!-- <property name="PreviewSize" value="1,1,1"/> -->
+				<property name="Consume" value="false"/>
+				<property name="Create_item" value="sorceryFamiliarArcane"/>
+			</property>
+		</item>
+	
+	
+	
 	
 	</append>
 

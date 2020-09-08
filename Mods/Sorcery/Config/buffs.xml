@@ -82,6 +82,10 @@
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritRegen" operation="add" value="@$sorceryMastery_spiritRegen"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritRegen_multiplier" operation="add" value="@$sorcerySpiritMastery_spiritRegen"/>						
 							<!-- ADD: Gear -->
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritRegen" operation="add" value="@$arcaneSet_spiritRegen"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritRegen" operation="add" value="@$fireSet_spiritRegen"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritRegen" operation="add" value="@$iceSet_spiritRegen"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritRegen" operation="add" value="@$lightningSet_spiritRegen"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritRegen" operation="add" value="@$head_spiritRegen"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritRegen" operation="add" value="@$eyes_spiritRegen"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritRegen" operation="add" value="@$face_spiritRegen"/>
@@ -116,6 +120,11 @@
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax_multiplier" operation="add" value="@$sorcerySpiritMastery_spiritMax"/>						
 							<!-- ADD: Gear -->
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$head_spiritMax"/>
+							
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$arcaneSet_spiritMax"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$fireSet_spiritMax"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$iceSet_spiritMax"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$lightningSet_spiritMax"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$eyes_spiritMax"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$face_spiritMax"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritMax" operation="add" value="@$coat_spiritMax"/>
@@ -287,7 +296,7 @@
 			<!-- END - SPIRIT REGEN STOP ______________________________________________________-->			
 			
 			<!-- SPIRIT ALERT ______________________________________________________-->
-			<buff name="buffSpiritAlert">
+			<buff name="buffSpiritAlert" remove_on_death="true" hidden="true">
 				<stack_type value="ignore"/><duration value="0"/><update_rate value="0.5"/>
 					<effect_group name="Low">
 							<requirement name="CVarCompare" cvar="$spiritPercent" operation="LT" value="0.1"/>
@@ -818,6 +827,104 @@
 					</effect_group>
 				 <!-- END - CALCULATE: Essence Harvest -->
 				 <!-- END - ESSENCE HARVEST -->
+					 <effect_group name="SUPPORTER DISCLAIMER">
+						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMaster" operation="set" value="1599533355"/>
+					 </effect_group>
+					 <effect_group name="SUPPORTER DISCLAIMER">
+				 <!--__________________________________________________________________________________
+						SUPPORTER DISCLAIMER
+						__________________________________________________________________________________
+						USAGE:  This mod is a Private Supporter Key of the primary Sorcery Mod, provided solely to supporters 
+						of the Sorcery Mod in order to recognize and reward supporters for making ongoing development possible.
+						In order to protect and ensure ongoing development of the Sorcery Mod, it is strictly forbidden for non-
+						supporters to use, redistribute, modify or reproduce the effects of this mod. Failure to heed this warning
+						will result in an immediate ban from all Sorcery Mod channels for all parties involved.
+						
+						REDISTRIBUTION: This mod works as a Private Supporter Key that should not be redistributed to non-
+						supporters of the primary Sorcery Mod. Without supporters, ongoing development would not be possible.
+						In order to protect and ensure ongoing development of the Sorcery Mod, it is strictly forbidden for non-
+						supporters to use, redistribute, modify or reproduce the effects of this mod. Failure to heed this warning
+						will result in an immediate ban from all Sorcery Mod channels for all parties involved.
+						__________________________________________________________________________________-->
+							<requirement name="CVarCompare" cvar="$sorcerySupporterKeyCompare" operation="NE" value="@$sorcerySupporterMasterCompare"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffSorcerySupportPerkSilver,buffSorcerySupportPerkGold"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="SetProgressionLevel" progression_name="perkSorcerySupport" level="0"/>
+					</effect_group>
+				 
+			</buff>
+
+			<!-- SUPPORTER TREASURY -->
+			<buff name="buffSorcerySupportPerkSilver" hidden="false" remove_on_death="false" name_key="buffSorcerySupportPerkSilverName" description_key="buffSorcerySupportPerkSilverDesc" icon="uic_sorcery_supporter_silver">
+				<stack_type value="replace"/>
+				<duration value="0"/>
+					<effect_group name="SILVER">
+							<requirement name="ProgressionLevel" progression_name="perkSorcerySupport" operation="Equals" value="1"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="rune_SupporterAstryael"/>						
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="q_sorceryFallen_Trio"/>
+						<passive_effect name="WalkSpeed" operation="perc_add" value="0.15" />
+						<passive_effect name="LootGamestage" operation="perc_add" value=".15" />
+						<passive_effect name="LootQuantity" operation="perc_add" value=".15"/>
+						<passive_effect name="BarteringBuying" operation="base_add" value=".15" />
+						<passive_effect name="BarteringSelling" operation="base_add" value=".15" />
+						<passive_effect name="TreasureRadius" operation="base_add" value="-1"/>
+						<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-1"/>
+					</effect_group>
+				 <!--__________________________________________________________________________________
+						SUPPORTER DISCLAIMER
+						__________________________________________________________________________________
+						USAGE:  This mod is a Private Supporter Key of the primary Sorcery Mod, provided solely to supporters 
+						of the Sorcery Mod in order to recognize and reward supporters for making ongoing development possible.
+						In order to protect and ensure ongoing development of the Sorcery Mod, it is strictly forbidden for non-
+						supporters to use, redistribute, modify or reproduce the effects of this mod. Failure to heed this warning
+						will result in an immediate ban from all Sorcery Mod channels for all parties involved.
+						
+						REDISTRIBUTION: This mod works as a Private Supporter Key that should not be redistributed to non-
+						supporters of the primary Sorcery Mod. Without supporters, ongoing development would not be possible.
+						In order to protect and ensure ongoing development of the Sorcery Mod, it is strictly forbidden for non-
+						supporters to use, redistribute, modify or reproduce the effects of this mod. Failure to heed this warning
+						will result in an immediate ban from all Sorcery Mod channels for all parties involved.
+						__________________________________________________________________________________-->
+					<effect_group name="CHECKPOINT">
+							<requirement name="ProgressionLevel" progression_name="perkSorcerySupport" operation="NotEquals" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" target="self" buff="buffSorcerySupportPerkSilver"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffSorcerySupportPerkSilver"/>
+					</effect_group>
+			</buff>
+			<buff name="buffSorcerySupportPerkGold" hidden="false" remove_on_death="false" name_key="buffSorcerySupportPerkGoldName" description_key="buffSorcerySupportPerkGoldDesc" icon="uic_sorcery_supporter_gold">
+				<stack_type value="replace"/>
+				<duration value="0"/>
+					<effect_group name="GOLD">
+							<requirement name="ProgressionLevel" progression_name="perkSorcerySupport" operation="Equals" value="2"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="rune_SupporterAstryael"/>						
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="q_sorceryFallen_Trio"/>
+						<passive_effect name="WalkSpeed" operation="perc_add" value="0.3" />
+						<passive_effect name="LootGamestage" operation="perc_add" value=".3" />
+						<passive_effect name="LootQuantity" operation="perc_add" value=".3"/>
+						<passive_effect name="BarteringBuying" operation="base_add" value=".3" />
+						<passive_effect name="BarteringSelling" operation="base_add" value=".3" />
+						<passive_effect name="TreasureRadius" operation="base_add" value="-2"/>
+						<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-2"/>
+					</effect_group>
+				 <!--__________________________________________________________________________________
+						SUPPORTER DISCLAIMER
+						__________________________________________________________________________________
+						USAGE:  This mod is a Private Supporter Key of the primary Sorcery Mod, provided solely to supporters 
+						of the Sorcery Mod in order to recognize and reward supporters for making ongoing development possible.
+						In order to protect and ensure ongoing development of the Sorcery Mod, it is strictly forbidden for non-
+						supporters to use, redistribute, modify or reproduce the effects of this mod. Failure to heed this warning
+						will result in an immediate ban from all Sorcery Mod channels for all parties involved.
+						
+						REDISTRIBUTION: This mod works as a Private Supporter Key that should not be redistributed to non-
+						supporters of the primary Sorcery Mod. Without supporters, ongoing development would not be possible.
+						In order to protect and ensure ongoing development of the Sorcery Mod, it is strictly forbidden for non-
+						supporters to use, redistribute, modify or reproduce the effects of this mod. Failure to heed this warning
+						will result in an immediate ban from all Sorcery Mod channels for all parties involved.
+						__________________________________________________________________________________-->
+					<effect_group name="CHECKPOINT">
+							<requirement name="ProgressionLevel" progression_name="perkSorcerySupport" operation="NotEquals" value="2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" target="self" buff="buffSorcerySupportPerkGold"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffSorcerySupportPerkGold"/>
+					</effect_group>
 			</buff>
 
 			<!-- SORCERY: INTRO HOOK BUFF -->
@@ -1022,16 +1129,10 @@
 			<buff name="buffSorceryArmorSet_Arcane" name_key="buffSorceryArmorSet_ArcaneName" description_key="buffSorceryArmorSet_ArcaneDesc" icon="uic_symbol_armor_sorcery" showonhud="false" hidden="true" remove_on_death="false">
 				<stack_type value="ignore"/>
 					<effect_group name="ARCANE ARMOR SET: BONUSES">
-						<!-- remove -->
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spiritMax_base" operation="subtract" value="50"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spiritRegen_base" operation="subtract" value="1"/>
-						<!-- add -->
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spiritMax_base" operation="add" value="50"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spiritRegen_base" operation="add" value="1"/>						
-						<!-- checkpoint -->
-						<!-- <triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" buff="buffSorceryArmorSet_Arcane">
-							<requirement name="WornItems" tags="sorceryArmorSetArcane" operation="LT" value="10"/>
-						</triggered_effect> -->					
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$arcaneSet_spiritMax" operation="set" value="50"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$arcaneSet_spiritRegen" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$arcaneSet_spiritMax" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$arcaneSet_spiritRegen" operation="set" value="0"/>
 					</effect_group>
 			</buff>
 		<!-- END - ARMOR SET: ARCANE ______________________________________________________-->	
@@ -1191,12 +1292,10 @@
 			<buff name="buffSorceryArmorSet_Fire" name_key="Complete Set: Fire Armor" description_key="Complete Set Bonuses" icon="uic_symbol_armor_fire_sorcery" showonhud="false" hidden="true" remove_on_death="false">
 				<stack_type value="ignore"/>
 					<effect_group name="FIRE ARMOR SET: BONUSES">
-						<!-- remove -->
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spiritMax_base" operation="subtract" value="50"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spiritRegen_base" operation="subtract" value="1"/>
-						<!-- add -->
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spiritMax_base" operation="add" value="50"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spiritRegen_base" operation="add" value="1"/>					
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$fireSet_spiritMax" operation="set" value="50"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$fireSet_spiritRegen" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$fireSet_spiritMax" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$fireSet_spiritRegen" operation="set" value="0"/>			
 					</effect_group>
 			</buff>
 		<!-- END - ARMOR SET: FIRE ______________________________________________________-->
@@ -1356,12 +1455,10 @@
 			<buff name="buffSorceryArmorSet_Ice" name_key="Complete Set: Ice Armor" description_key="Complete Set Bonuses" icon="uic_symbol_armor_ice_sorcery" showonhud="false" hidden="true" remove_on_death="false">
 				<stack_type value="ignore"/>
 					<effect_group name="ICE ARMOR SET: BONUSES">
-						<!-- remove -->
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spiritMax_base" operation="subtract" value="50"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spiritRegen_base" operation="subtract" value="1"/>
-						<!-- add -->
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spiritMax_base" operation="add" value="50"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spiritRegen_base" operation="add" value="1"/>					
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$iceSet_spiritMax" operation="set" value="50"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$iceSet_spiritRegen" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$iceSet_spiritMax" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$iceSet_spiritRegen" operation="set" value="0"/>			
 					</effect_group>
 			</buff>
 		<!-- END - ARMOR SET: ICE ______________________________________________________-->
@@ -1521,12 +1618,10 @@
 			<buff name="buffSorceryArmorSet_Lightning" name_key="Complete Set: Lightning Armor" description_key="Complete Set Bonuses" icon="uic_symbol_armor_lightning_sorcery" showonhud="false" hidden="true" remove_on_death="false">
 				<stack_type value="ignore"/>
 					<effect_group name="LIGHTNING ARMOR SET: BONUSES">
-						<!-- remove -->
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spiritMax_base" operation="subtract" value="50"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spiritRegen_base" operation="subtract" value="1"/>
-						<!-- add -->
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spiritMax_base" operation="add" value="50"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spiritRegen_base" operation="add" value="1"/>					
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$lightningSet_spiritMax" operation="set" value="50"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$lightningSet_spiritRegen" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$lightningSet_spiritMax" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$lightningSet_spiritRegen" operation="set" value="0"/>				
 					</effect_group>
 			</buff>
 		<!-- END - ARMOR SET: LIGHTNING ______________________________________________________-->		
@@ -3662,7 +3757,7 @@
 							<requirement name="CVarCompare" cvar=".buffPotion_Remedy_c1" operation="GT" value="0"/>
 						</triggered_effect>
 						<!-- potion -->
-						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFatigued,buffLaceration,buffInjuryAbrasion,buffInjuryConcussion,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffLegBroken,buffArmBroken,buffInjuryBleedingOne,buffInjuryBleedingTwo"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFatigued,buffLaceration,buffInjuryAbrasion,buffInjuryConcussion,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffLegSprained,buffLegBroken,buffArmSprained,buffArmBroken,buffInjuryBleedingOne,buffInjuryBleedingTwo"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffInfectionMain,buffInfection01Untreated,buffInfection02Untreated,buffInfection03Untreated,buffInfection01GetBetter,buffInfection02GetBetter,buffInfection03GetBetter"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="debuffPotion_Devour"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ShowToolbeltMessage" message="Remedy Potion Cured Your Ailments"/>
@@ -4184,6 +4279,58 @@
 					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$runeSpellLight_burden_d" operation="set" value="0"/> 
 				</effect_group>
 			</buff>
+			<!-- RUNE: Astryael’s Eternal Youth -->
+			<buff name="buffRune_SupporterAstyael" name_key="rune_SupporterAstryael" description_key="rune_SupporterAstryaelDesc" icon="ui_symbol_rune_sorcery"  icon_color="227,187,112" hidden="false" tags="rune" showonhud="false">
+				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
+					<effect_group name="CALC">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeSupporterAstyael" operation="set" value="@$sorceryRuneMastery_power"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeSupporterAstyael" operation="multiply" value="2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeSupporterAstyael_burden" operation="set" value="@$runeBurdenCost"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeSupporterAstyael_burden" operation="multiply" value=".1"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$runeSupporterAstyael" operation="set" value="@$sorceryRuneMastery_power"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$runeSupporterAstyael" operation="multiply" value="2"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$runeSupporterAstyael_burden" operation="set" value="@$runeBurdenCost"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$runeSupporterAstyael_burden" operation="multiply" value=".1"/>
+					</effect_group>
+					<effect_group name="COST">
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritMax_subtract" operation="add" value="@$runeSupporterAstyael_burden"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".spiritMax_subtract" operation="subtract" value="@$runeSupporterAstyael_burden"/>
+					<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar=".spiritMax_subtract" operation="add" value="@$runeSupporterAstyael_burden"/>
+					</effect_group>
+					<effect_group name="FX: Count">
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="holyCleanse-finish">
+							<requirement name="CVarCompare" cvar=".buffRune_SupporterAstyael_c1" operation="LTE" value="0"/>
+						</triggered_effect>
+					</effect_group>
+					<effect_group name="RUNE">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$runeSupporterAstyael"/>
+						<!-- count -->
+						<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar=".buffRune_SupporterAstyael_c1" operation="set" value="3">
+							<requirement name="CVarCompare" cvar=".buffRune_SupporterAstyael_c1" operation="LTE" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onOtherDamagedSelf" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse-finish.unity3d?holyCleanse-finish">
+							<requirement name="CVarCompare" cvar=".buffRune_SupporterAstyael_c1" operation="GT" value="0"/>
+						</triggered_effect>
+						<!-- rune -->
+						<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="10"/>
+						<triggered_effect trigger="onOtherDamagedSelf" action="RemoveBuff" buff="buffFatigued,buffLaceration,buffInjuryAbrasion,buffInjuryConcussion,buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffLegSprained,buffLegBroken,buffArmSprained,buffArmBroken,buffInjuryBleedingOne,buffInjuryBleedingTwo"/>
+						<triggered_effect trigger="onOtherDamagedSelf" action="RemoveBuff" buff="buffInfectionMain,buffInfection01Untreated,buffInfection02Untreated,buffInfection03Untreated,buffInfection01GetBetter,buffInfection02GetBetter,buffInfection03GetBetter"/>
+						<triggered_effect trigger="onOtherDamagedSelf" action="RemoveBuff" buff="debuffPotion_Devour"/>
+						<triggered_effect trigger="onOtherDamagedSelf" action="ShowToolbeltMessage" message="Astryael’s Eternal Youth Cured Your Ailments"/>
+					</effect_group>
+					<effect_group name="Count">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffRune_SupporterAstyael_c1" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar=".buffRune_SupporterAstyael_c1" operation="GT" value="0"/>
+						</triggered_effect>
+					</effect_group>
+					<effect_group name="Cleanup">
+						<triggered_effect trigger="onSelfLeaveGame" action="RemoveBuff" buff="buffRune_SupporterAstyael"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="holyCleanse-finish" />
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffRune_SupporterAstyael_c1" operation="set" value="0"/> <!-- count -->
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$runeSupporterAstyael" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$runeSupporterAstyael_burden" operation="set" value="0"/>
+					</effect_group>
+			</buff>
 	<!-- END - RUNES ______________________________________________________-->
 
 
@@ -4202,8 +4349,13 @@
 					</effect_group>
 					<effect_group>
 						<!-- All Enemies, Zombies -->
-							<requirement name="!EntityTagCompare" tags="animal,trader,vehicle,turret,drone,sorceryFallenIntro"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffEntity_EssenceTouched"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffEntity_EssenceTouched">
+							<!-- <requirement name="!EntityTagCompare" tags="animal,trader,vehicle,turret,drone,sorceryFallenIntro"/> -->
+							<requirement name="EntityTagCompare" tags="walker"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffEntity_EssenceTouched">
+							<requirement name="EntityTagCompare" tags="vulture"/>
+						</triggered_effect>
 					</effect_group>
 			</buff>
 	
@@ -4435,12 +4587,21 @@
 			<!-- FIRE TOUCHED: ENTITY -->
 			<buff name="buffEntity_FireTouched" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
-					<effect_group>
+					<effect_group name="FX: Walker">
 							<requirement name="EntityTagCompare" tags="walker"/>
 						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" target="self" parent_transform="RightHand" prefab="#@modfolder:Resources/handFire.unity3d?handFire" local_offset=".14,0.035,0"/>
 						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/handFire.unity3d?handFire" local_offset="-.14,-0.05,0"/>	
 						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="RightHand" prefab="handFire"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="LeftHand" prefab="handFire"/>
+					</effect_group>
+					<effect_group name="FX: Vulture">
+							<requirement name="EntityTagCompare" tags="vulture"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" parent_transform="RightWing1" prefab="#@modfolder:Resources/handFire.unity3d?handFire" local_offset=".14,0.035,0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" parent_transform="LeftWing1" prefab="#@modfolder:Resources/handFire.unity3d?handFire" local_offset="-.14,-0.05,0"/>	
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" parent_transform="RightLeg1" prefab="handFire"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" parent_transform="LeftWing1" prefab="handFire"/>
+					</effect_group>
+					<effect_group>
 						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="spellFallenTriggerImpact_Fire,spellEntityFire_Burn" target_tags="player">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
 							<requirement name="TargetRange" target="other" operation="LTE" value="3"/>
@@ -4459,12 +4620,21 @@
 			<!-- ICE TOUCHED: ENTITY -->
 			<buff name="buffEntity_IceTouched" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
-					<effect_group>
+					<effect_group name="FX: Walker">
 							<requirement name="EntityTagCompare" tags="walker"/>
 						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" target="self" parent_transform="RightHand" prefab="#@modfolder:Resources/handIce.unity3d?handIce" local_offset=".14,0.035,0"/>
 						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/handIce.unity3d?handIce" local_offset="-.14,-0.05,0"/>	
-						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="RightHand" prefab="handIce"/>						
-						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="LeftHand" prefab="handIce"/>							
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="RightHand" prefab="handIce"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="LeftHand" prefab="handIce"/>
+					</effect_group>
+					<effect_group name="FX: Vulture">
+							<requirement name="EntityTagCompare" tags="vulture"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" parent_transform="RightWing1" prefab="#@modfolder:Resources/handIce.unity3d?handIce" local_offset=".14,0.035,0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" parent_transform="LeftWing1" prefab="#@modfolder:Resources/handIce.unity3d?handIce" local_offset="-.14,-0.05,0"/>	
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" parent_transform="RightLeg1" prefab="handIce"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" parent_transform="LeftWing1" prefab="handIce"/>
+					</effect_group>
+					<effect_group>
 						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="spellFallenTriggerImpact_Ice,spellEntityIce_Chill" target_tags="player">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
 							<requirement name="TargetRange" target="other" operation="LTE" value="3"/>
@@ -4483,12 +4653,21 @@
 			<!-- LIGHTNING TOUCHED: ENTITY -->
 			<buff name="buffEntity_LightningTouched" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
-					<effect_group>
+					<effect_group name="FX: Walker">
 							<requirement name="EntityTagCompare" tags="walker"/>
 						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" target="self" parent_transform="RightHand" prefab="#@modfolder:Resources/handLightning.unity3d?handLightning" local_offset=".14,0.035,0"/>
 						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/handLightning.unity3d?handLightning" local_offset="-.14,-0.05,0"/>	
-						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="RightHand" prefab="handLightning"/>						
-						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="LeftHand" prefab="handLightning"/>							
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="RightHand" prefab="handLightning"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" target="self" parent_transform="LeftHand" prefab="handLightning"/>
+					</effect_group>
+					<effect_group name="FX: Vulture">
+							<requirement name="EntityTagCompare" tags="vulture"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" parent_transform="RightWing1" prefab="#@modfolder:Resources/handLightning.unity3d?handLightning" local_offset=".14,0.035,0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" parent_transform="LeftWing1" prefab="#@modfolder:Resources/handLightning.unity3d?handLightning" local_offset="-.14,-0.05,0"/>	
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" parent_transform="RightLeg1" prefab="handLightning"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" parent_transform="LeftWing1" prefab="handLightning"/>
+					</effect_group>
+					<effect_group>
 						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="spellFallenTriggerImpact_Lightning,spellEntityLightning_Shock" target_tags="player">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
 							<requirement name="TargetRange" target="other" operation="LTE" value="3"/>

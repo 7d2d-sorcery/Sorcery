@@ -90,7 +90,7 @@
 					<triggered_effect trigger="onSelfDamagedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLockShatter_burden"/>
 					<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLockShatter_burden"/>
 					<passive_effect name="DamageModifier" operation="base_add" value="50" tags="safes,lockedChest">
-						<requirement name="HoldingItemHasTags" tags="spellcast"/>
+						<requirement name="HoldingItemHasTags" tags="spellcast,bow,crossbow"/>
 					</passive_effect>
 					<passive_effect name="DamageModifier" operation="perc_add" value="@.runeLockShatter" tags="safes,lockedChest"/>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeLockShatter_degrade"/>
@@ -119,7 +119,7 @@
 					<triggered_effect trigger="onSelfDamagedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeDoorShatter_burden"/>
 					<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeDoorShatter_burden"/>
 					<passive_effect name="BlockDamage" operation="base_add" value="50" tags="lockedDoor">
-						<requirement name="HoldingItemHasTags" tags="spellcast"/>
+						<requirement name="HoldingItemHasTags" tags="spellcast,bow,crossbow"/>
 					</passive_effect>
 					<passive_effect name="DamageModifier" operation="perc_add" value="@.runeDoorShatter" tags="lockedDoor"/>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeDoorShatter_degrade"/>
@@ -321,6 +321,43 @@
 				</effect_group>
 		</item_modifier>
 	<!-- END - FIRE RUNES __________________________________________________________________________________ -->
+	
+	<!-- SUPPORTER RUNES __________________________________________________________________________________ -->
+		<!-- ARCANE SUPPORTER RUNES -->
+		<!-- SUPPORTER RUNE: Astryael’s Eternal Youth -->
+		<item_modifier name="rune_SupporterAstryael" modifier_tags="rune_SupporterAstryael" installable_tags="armor,clothing" type="mod">
+			<property name="Extends" value="runeMaster"/>
+				<effect_group tiered="false" name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael" operation="set" value="@$sorceryRuneMastery_power"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael" operation="multiply" value=".5"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_c1" operation="set" value="@$sorceryRuneMastery_power"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_c1" operation="multiply" value="0.5"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_degrade" operation="multiply" value=".2"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_burden" operation="set" value="@$runeBurdenCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_burden" operation="multiply" value="1"/>
+					<!-- display -->
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_c1Display" operation="set" value="@.runeSupporterAstryael_c1"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_c1Display" operation="multiply" value="100"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_degradeDisplay" operation="set" value="@.runeSupporterAstryael_degrade"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_degradeDisplay" operation="multiply" value="100"/>
+					<!-- cleanup -->
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRune_SupporterAstyael"/>
+					<!-- Remedy Chance -->
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_SupporterAstyael"/>
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+						<!-- <requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value="@.runeSupporterAstryael_c1"/> -->
+						<requirement name="StatComparePercCurrentToModMax" stat="health" operation="LT" value="@.runeSupporterAstryael_c1"/>
+						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeSupporterAstryael_burden"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeSupporterAstryael_degrade"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeSupporterAstryael_burden"/>
+					<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Health" operation="add" value="@.runeSupporterAstryael"/>
+				</effect_group>
+		</item_modifier>
+	<!-- END - SUPPORTER RUNES __________________________________________________________________________________ -->
+		
+		
 		
 	</append>
 </Sorcery>
