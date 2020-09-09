@@ -1257,12 +1257,12 @@
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySupporterMasterCompare" operation="set" value="@$sorcerySupporterMaster"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySupporterKeyCompare" operation="set" value="@$sorcerySupporterKey"/>
 			</effect_group>
-			<effect_group name="SUPPORTER DISCLAIMER">
+			<!-- <effect_group name="SUPPORTER DISCLAIMER">
 					<requirement name="CVarCompare" cvar="$sorcerySupporterKeyCompare" operation="NE" value="@$sorcerySupporterMasterCompare"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="RemoveBuff" buff="buffSorcerySupportPerkSilver" target="self"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="RemoveBuff" buff="buffSorcerySupportPerkGold" target="self"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="SetProgressionLevel" progression_name="perkSorcerySupport" level="0"/>
-			</effect_group>			
+			</effect_group> -->			
 		</perk>	
 		
 		<!-- ELIXIR, BOOK PERKS -->
