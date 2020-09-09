@@ -864,8 +864,8 @@
 						<passive_effect name="WalkSpeed" operation="perc_add" value="0.15" />
 						<passive_effect name="LootGamestage" operation="perc_add" value=".15" />
 						<passive_effect name="LootQuantity" operation="perc_add" value=".15"/>
-						<passive_effect name="BarteringBuying" operation="base_add" value=".15" />
-						<passive_effect name="BarteringSelling" operation="base_add" value=".15" />
+						<passive_effect name="BarteringBuying" operation="perc_add" value=".15" />
+						<passive_effect name="BarteringSelling" operation="perc_add" value=".15" />
 						<passive_effect name="TreasureRadius" operation="base_add" value="-1"/>
 						<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-1"/>
 					</effect_group>
@@ -900,8 +900,8 @@
 						<passive_effect name="WalkSpeed" operation="perc_add" value="0.3" />
 						<passive_effect name="LootGamestage" operation="perc_add" value=".3" />
 						<passive_effect name="LootQuantity" operation="perc_add" value=".3"/>
-						<passive_effect name="BarteringBuying" operation="base_add" value=".3" />
-						<passive_effect name="BarteringSelling" operation="base_add" value=".3" />
+						<passive_effect name="BarteringBuying" operation="perc_add" value=".3" />
+						<passive_effect name="BarteringSelling" operation="perc_add" value=".3" />
 						<passive_effect name="TreasureRadius" operation="base_add" value="-2"/>
 						<passive_effect name="TreasureBlocksPerReduction" operation="base_add" value="-2"/>
 					</effect_group>
