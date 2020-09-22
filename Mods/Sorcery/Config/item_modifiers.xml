@@ -129,7 +129,7 @@
 		<!-- SPELL LIGHT -->
 		<item_modifier name="rune_SpellLight" installable_tags="armor" modifier_tags="rune_SpellLight" type="mod">
 			<property name="Extends" value="runeMaster"/>
-				<effect_group tiered="false" name="CALC">
+				<effect_group name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight" operation="multiply" value="75"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight" operation="set" value="60">
@@ -329,13 +329,13 @@
 			<property name="Extends" value="runeMaster"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael" operation="set" value="@$sorceryRuneMastery_power"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael" operation="multiply" value=".5"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael" operation="multiply" value=".5"/> <!-- .5 -->
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_c1" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_c1" operation="multiply" value="0.5"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_degrade" operation="set" value="@$runeDegradeCost"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_degrade" operation="multiply" value=".2"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_burden" operation="set" value="@$runeBurdenCost"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_burden" operation="multiply" value="1"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_burden" operation="multiply" value="2"/>
 					<!-- display -->
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_c1Display" operation="set" value="@.runeSupporterAstryael_c1"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael_c1Display" operation="multiply" value="100"/>
@@ -347,12 +347,16 @@
 					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_SupporterAstyael"/>
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-						<!-- <requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value="@.runeSupporterAstryael_c1"/> -->
-						<requirement name="StatComparePercCurrentToModMax" stat="health" operation="LT" value="@.runeSupporterAstryael_c1"/>
+						<requirement name="!IsStatAtMax" stat="health"/>
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value="@.runeSupporterAstryael_c1"/>
 						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeSupporterAstryael_burden"/>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeSupporterAstryael_degrade"/>
 					<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeSupporterAstryael_burden"/>
-					<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Health" operation="add" value="@.runeSupporterAstryael"/>
+					<!-- NOTE: HealthChangeOT drains Food. Counter required: -->
+					<passive_effect name="HealthChangeOT" operation="base_add" value="@.runeSupporterAstryael"/>
+					<passive_effect name="FoodChangeOT" operation="base_add" value="@.runeSupporterAstryael">
+						<requirement name="StatComparePercCurrentToMax" stat="food" operation="LTE" value=".9"/>
+					</passive_effect>
 				</effect_group>
 		</item_modifier>
 	<!-- END - SUPPORTER RUNES __________________________________________________________________________________ -->

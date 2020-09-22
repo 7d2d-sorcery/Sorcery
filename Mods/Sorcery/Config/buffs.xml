@@ -176,13 +176,6 @@
 							<requirement name="NotHasBuff" buff="spellcastPrimary_Fire" />
 							<requirement name="NotHasBuff" buff="spellcastSecondary_Fire" />
 						</triggered_effect>
-						<!-- ADD TEMP SPIRIT: Regen -->
-						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritAmount" operation="add" value="@.spiritRegen">
-							<requirement name="CVarCompare" cvar=".spiritRegen" operation="GT" value="0"/>
-							<requirement name="CVarCompare" cvar="$spiritAmount" operation="LT" value="@$spiritMax"/>
-						</triggered_effect> -->
-						<!-- Reset Temp Spirit: Regen -->
-						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritRegen" operation="set" value="0"/> -->
 					<!-- END: REGENERATE SPIRIT -->
 
 						<!-- SET: SPIRIT PERCENTAGE -->
@@ -231,10 +224,12 @@
 							<requirement name="CVarCompare" cvar=".spiritAdd" operation="GT" value="0"/>
 							<requirement name="CVarCompare" cvar="$spiritAmount" operation="LT" value="@$spiritMax"/>
 						</triggered_effect> -->
+						
 						<!-- SUBTRACT SPIRIT -->
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritAmount" operation="add" value="@.spiritSubtract">
-							<requirement name="CVarCompare" cvar="$spiritAmount" operation="GT" value="@$spiritMax"/>
-						</triggered_effect>
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritAmount" operation="subtract" value="@.spiritSubtract">
+							<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@$spiritMax"/>
+						</triggered_effect> -->
+						
 						<!-- GOVERN: MAX -->
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritAmount" operation="set" value="@$spiritMax">
 							<requirement name="CVarCompare" cvar="$spiritAmount" operation="GT" value="@$spiritMax"/>
@@ -247,6 +242,7 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritAmountDisplay" operation="set" value="@$spiritAmount"/>
 						<passive_effect name="BuffBlink" operation="base_set" value="1" tags="buffSpiritResource">
 							<requirement name="CVarCompare" cvar="$spiritAmount" operation="LT" value="@$spiritMax"/>
+							<requirement name="NotHasBuff" buff="buffSpiritRegenStop"/>
 						</passive_effect>
 					</effect_group>
 					<!-- ADD SPIRIT -->
@@ -278,12 +274,14 @@
 							<requirement name="CVarCompare" cvar=".spiritSubCalc" operation="GT" value="0"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritAmount" operation="subtract" value="@.spiritSubtract"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSpiritRegenStop"/>
 					</effect_group>
 					<effect_group name="Subtract: Govern">
 							<requirement name="CVarCompare" cvar=".spiritSubtract" operation="GT" value="0"/>
-							<requirement name="CVarCompare" cvar=".spiritSubCalc" operation="LT" value="0"/>
+							<requirement name="CVarCompare" cvar=".spiritSubCalc" operation="LTE" value="0"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spiritAmount" operation="set" value="0"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSpiritRegenStop"/>
 					</effect_group>
 			</buff>
 			<!-- END - SPIRIT RESOURCE: UI / MANAGE ______________________________________________________-->
@@ -303,19 +301,20 @@
 						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="spiritLow" play_in_head="true"/>
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="spiritRegen-finish" />
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="spiritRegen-finish" />
-						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/spiritRegen.unity3d?spiritRegen"/>
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/spiritRegen.unity3d?spiritRegen"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/spiritRegen.unity3d?spiritRegen" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/spiritRegen.unity3d?spiritRegen" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips"/>
 					</effect_group>
 					<effect_group name="Full">
 							<requirement name="CVarCompare" cvar="$spiritPercent" operation="GT" value="0.1"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" sound="spiritFull" play_in_head="true"/>
-						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/spiritRegen-finish.unity3d?spiritRegen-finish"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/spiritRegen-finish.unity3d?spiritRegen-finish" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="spiritRegen" />
 					</effect_group>
 					<effect_group name="Cleanup">
-							<requirement name="CVarCompare" cvar="$spiritPercent" operation="GT" value="0.1"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="spiritRegen" />
-						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffSpiritAlert"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffSpiritAlert">
+							<requirement name="CVarCompare" cvar="$spiritPercent" operation="GT" value="0.1"/>
+						</triggered_effect>
 					</effect_group>				
 			</buff>			
 			
@@ -427,26 +426,33 @@
 			<buff name="buffSorceryManage" hidden="true" remove_on_death="false"> 
 				<stack_type value="ignore"/>
 				<update_rate value="2"/>
+					<effect_group name="INITIAL">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="sorceryPlayerID" operation="set" value="randomint(1000000,9999999)"/>
+					</effect_group>
 					<effect_group name="GENERAL">
 						<triggered_effect trigger="onSelfBuffStart" action="AddJournalEntry" journal="tip_sorceryIntro"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="PlaySound" sound="sorceryChant" play_in_head="true"/>
 						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".enteredgametime" operation="add" value="1">
 							<requirement name="CVarCompare" cvar=".enteredgametime" operation="LT" value="2"/>
 						</triggered_effect> -->
 					</effect_group>
+					<effect_group name="FAMILIARS">
+							<requirement name="HasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
+						<!-- <triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffFamiliarCount"/> -->
+						<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffFamiliarSummoned"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffFamiliarMark_Apply"/>
+					</effect_group>
 					<effect_group name="BIOME: Snow">
 							<requirement name="InBiome" biome="1"/>
 						<triggered_effect trigger="onSelfEnteredBiome" action="ShowToolbeltMessage" message="[ae92d5][I]Your Ice Sorcery grows...[/I][-]"/>
-						<triggered_effect trigger="onSelfEnteredBiome" action="PlaySound" sound="sorceryChant" play_in_head="true"/>
 					</effect_group>
 					<effect_group name="BIOME: Forest">
 							<requirement name="InBiome" biome="3"/>
 						<triggered_effect trigger="onSelfEnteredBiome" action="ShowToolbeltMessage" message="[ae92d5][I]Your Lightning Sorcery grows...[/I][-]"/>
-						<triggered_effect trigger="onSelfEnteredBiome" action="PlaySound" sound="sorceryChant" play_in_head="true"/>
 					</effect_group>
 					<effect_group name="BIOME: Burnt">
 							<requirement name="InBiome" biome="9"/>
 						<triggered_effect trigger="onSelfEnteredBiome" action="ShowToolbeltMessage" message="[ae92d5][I]Your Fire Sorcery grows...[/I][-]"/>
-						<triggered_effect trigger="onSelfEnteredBiome" action="PlaySound" sound="sorceryChant" play_in_head="true"/>
 					</effect_group>
 					<effect_group name="MARK TARGETS">
 						<!-- THIS BUFF ENSURES KILL CREDIT FOR BUFF/SPELL/TRAP/PET/ALL KILLS -->
@@ -468,11 +474,13 @@
 					<effect_group name="TRACKING">
 						<!-- NOTE: Handled by Arcane Vision and similar -->
 						<!-- <passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryFallen,sorceryAwakened,sorceryLootFallen"/> -->
+						<passive_effect name="TrackDistance" operation="base_set" value="100" tags="familiar"/>
 						<passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryLootFallen"/>
+						<passive_effect name="Tracking" operation="base_set" value="1" tags="familiar"/>
 					</effect_group>
 					 <effect_group name="SPELL PROC">
-						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffSorceryMark,buffSorceryFireStacks_Add,buffEntity_SorceryUpdate,buffEntity_FireSorcery"/>
-						<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffPotionBomb_fire,buffPotionBomb_ice,buffPotionBomb_lightning"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,buffFamiliarMark,buffFamiliarMark_Apply,buffFamiliarArcane_Active,buffFamiliarArcane_Heal,buffSorceryFireStacks_Add,buffEntity_SorceryUpdate,buffEntity_FireSorcery"/>
+						<!-- <passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffPotionBomb_fire,buffPotionBomb_ice,buffPotionBomb_lightning"/> -->
 					 </effect_group>
 					<!-- CALCULATE: Sorcery Damage -->
 					<effect_group name="CVAR: SORCERY DAMAGE - ALL">
@@ -603,21 +611,21 @@
 						<!-- set -->
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellSpeed" operation="set" value="@$sorceryMastery_spellSpeed"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".sorcerySpellSpeed_multiplier" operation="set" value="1"/>
-							<!-- add -->
-							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellSpeed" operation="add" value="@$sorcerySpellcastFireAll_spellSpeed"/>
-							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellSpeed" operation="add" value="@$sorcerySpellSpeed_add"/>
-							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellSpeed" operation="add" value="@.sorcerySpellSpeed_add"/>
+						<!-- add -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellSpeed" operation="add" value="@$sorcerySpellcastFireAll_spellSpeed"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellSpeed" operation="add" value="@$sorcerySpellSpeed_add"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellSpeed" operation="add" value="@.sorcerySpellSpeed_add"/>
 						<!-- multiply -->
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellSpeed" operation="multiply" value="@.sorcerySpellSpeed_multiplier">
 							<requirement name="CVarCompare" cvar=".sorcerySpellSpeed_multiplier" operation="GT" value="0"/>
 						</triggered_effect>
 					</effect_group>
-						<!-- Spellcasting Speed: ALL -->
-						<effect_group name="Spellcasting Speed: ALL">
-								<requirement name="HoldingItemHasTags" tags="spellcast"/>
-							<passive_effect name="RoundsPerMinute" operation="perc_add" value="@$sorcerySpellSpeed"/> <!-- charge -->
-							<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="@$sorcerySpellSpeed"/> <!-- cast, delay -->
-						</effect_group>
+					<!-- Spellcasting Speed: ALL -->
+					<effect_group name="Spellcasting Speed: ALL">
+							<requirement name="HoldingItemHasTags" tags="spellcast"/>
+						<passive_effect name="RoundsPerMinute" operation="perc_add" value="@$sorcerySpellSpeed"/> <!-- charge -->
+						<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="@$sorcerySpellSpeed"/> <!-- cast, delay -->
+					</effect_group>
 					<!-- CALCULATE: Fire Spellcasting Speed -->
 					<effect_group name="CVAR: FIRE SPELLCASTING SPEED">
 						<!-- set -->
@@ -632,12 +640,12 @@
 							<requirement name="CVarCompare" cvar=".sorceryFireSpellSpeed_multiplier" operation="GT" value="0"/>
 						</triggered_effect>
 					</effect_group>
-						<!-- Spellcasting Speed: FIRE -->
-						<effect_group name="Spellcasting Speed: FIRE">
-								<requirement name="HoldingItemHasTags" tags="spellcastFire"/>
-							<passive_effect name="RoundsPerMinute" operation="perc_add" value="@$sorceryFireSpellSpeed"/> <!-- charge -->
-							<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="@$sorceryFireSpellSpeed"/> <!-- cast, delay -->
-						</effect_group>
+					<!-- Spellcasting Speed: FIRE -->
+					<effect_group name="Spellcasting Speed: FIRE">
+							<requirement name="HoldingItemHasTags" tags="spellcastFire"/>
+						<passive_effect name="RoundsPerMinute" operation="perc_add" value="@$sorceryFireSpellSpeed"/> <!-- charge -->
+						<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="@$sorceryFireSpellSpeed"/> <!-- cast, delay -->
+					</effect_group>
 					<!-- CALCULATE: Spell Charging -->
 					<effect_group name="CVAR: SORCERY SPELL CHARGING - ALL">
 						<!-- set -->
@@ -1695,10 +1703,11 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSpiritRegenStop"/>
 					</effect_group>
 					<effect_group name="FX">
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireEmpower.unity3d?fireEmpower" local_rotation="-90,0,-90" local_position="0,0,0" />
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireEmpower.unity3d?fireEmpower" local_rotation="-90,0,-90" local_position="0,0,0" /> -->
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireChanneling.unity3d?fireChanneling" parent_transform="Hips"/> -->
 						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryFireball_cast" play_in_head="true"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" target="self" sound="sorceryFireball_cast" play_in_head="true"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireEmpower"/>
+						<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireChanneling"/> -->
 					</effect_group>
 					<effect_group name="RANK 1: BLAZING Speed">
 							<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="GTE" value="1"/>
@@ -1827,6 +1836,7 @@
 							<requirement name="CVarCompare" cvar=".spellcastFire_BlazingTrigger" operation="GTE" value="5"/>
 							<requirement name="NotHasBuff" buff="spellcastFire_BlazingTrigger"/>
 						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireBurningGround"/>
 					</effect_group>
 					<effect_group name="FIRE SORCERY">
 						<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/fireHand.unity3d?fireHand" parent_transform="Attachments"/> -->
@@ -2650,7 +2660,8 @@
 					<effect_group name="FX">
 						<!-- <triggered_effect trigger="onSelfBuffStart" action="AnimatorSetInt" property="fireBurningGroundStop" value="0"/> -->
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spellcastFire_BlazingTrigger" operation="set" value="0"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurningGround.unity3d?fireBurningGround"/>
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurningGround.unity3d?fireBurningGround"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurningGround.unity3d?fireBurningGround" local_offset="1.5,0,0" parent_transform="Hips"/>
 					</effect_group>
 					<effect_group name="TRIGGER">
 							<requirement name="EntityHasMovementTag" tags="running,walking"/>
@@ -2764,7 +2775,7 @@
 			<buff name="spellTriggerImpact_Fire3" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="1.5"/>
 					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteor.unity3d?fireMeteor"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteor.unity3d?fireMeteor" parent_transform="Hips" />
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="spellFire3"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="selfAOE" range="2.5" buff="buffEntity_FireSorcery,spellFire3" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryFireMeteor_impact"/>
@@ -2781,7 +2792,7 @@
 			<buff name="spellTriggerImpact_ArrowFire3" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="1.5"/>
 					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteor.unity3d?fireMeteor"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteor.unity3d?fireMeteor" parent_transform="Hips" />
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="spellArrowFire3"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="selfAOE" range="2.5" buff="buffEntity_FireSorcery,spellArrowFire3" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryFireMeteor_impact"/>
@@ -2798,7 +2809,7 @@
 			<buff name="spellTriggerImpact_ArrowFire3_Shower" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="1.5"/>
 					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteorShower.unity3d?fireMeteorShower"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteorShower.unity3d?fireMeteorShower" parent_transform="Hips" />
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="spellArrowFire3_Shower"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_FireSorcery,spellArrowFire3_Shower" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryFireMeteorShower_impact"/>
@@ -2816,7 +2827,7 @@
 			<buff name="spellTriggerImpact_Fire3_Shower" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="1.5"/>
 					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteorShower.unity3d?fireMeteorShower"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteorShower.unity3d?fireMeteorShower" parent_transform="Hips" />
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="spellFire3_Shower"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_FireSorcery,spellFire3_Shower" target_tags="ally,party"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryFireMeteorShower_impact"/>
@@ -2981,14 +2992,44 @@
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="spellFire2Duration" operation="set" value="0"/>
 					</effect_group>
 				<!-- /DURATION -->
-					<effect_group name="FX">
+					<effect_group name="FX: GENERAL">
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireTornado-finish"/>
 						<triggered_effect trigger="onSelfBuffStack" action="RemoveParticleEffectFromEntity" particle="fireTornado-finish"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado"/>
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado-finish.unity3d?fireTornado-finish"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireTornado" />
 					</effect_group>
+					<effect_group name="FX: Zeds">
+							<!-- <requirement name="!EntityTagCompare" tags="animal"/> -->
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" parent_transform="LOD0"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" parent_transform="LOD0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado-finish.unity3d?fireTornado-finish" parent_transform="LOD0"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" local_offset="0,-.8,0" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" local_offset="0,-.8,0" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado-finish.unity3d?fireTornado-finish" local_offset="0,-.8,0" parent_transform="Hips"/>
+					</effect_group>
+				<!-- FX: ANIMALS -->
+				<!-- NOTE: This workaround is necessary as of A19.1 -->
+					<effect_group name="FX: Deer">
+							<!-- <requirement name="EntityTagCompare" tags="deer"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" parent_transform="animalstag_LOD0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" parent_transform="animaldoe_LOD0"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" parent_transform="animalstag_LOD0"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" parent_transform="animaldoe_LOD0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado-finish.unity3d?fireTornado-finish" parent_transform="animalstag_LOD0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado-finish.unity3d?fireTornado-finish" parent_transform="animaldoe_LOD0"/> -->
+					</effect_group>
+					<effect_group name="FX: Bear">
+							<!-- <requirement name="EntityTagCompare" tags="bear"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" parent_transform="bear_LOD0"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" parent_transform="bear_LOD0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado-finish.unity3d?fireTornado-finish" parent_transform="bear_LOD0"/> -->
+					</effect_group>
+					<effect_group name="FX: Wolf">
+							<!-- <requirement name="EntityTagCompare" tags="wolf"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" parent_transform="animalStandardWolfRagdoll"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" parent_transform="animalStandardWolfRagdoll"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado-finish.unity3d?fireTornado-finish" parent_transform="animalwolf_LOD0"/> -->
+					</effect_group>
+				<!-- END - FX: ANIMALS -->
 					<effect_group name="CALC: Base">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFire2_base" operation="set" value="5" />
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFire2_base" operation="multiply" value="@.SorceryFire2Stack"/> <!-- 1.25,2 -->
@@ -3111,8 +3152,10 @@
 				<damage_type value="heat"/><stack_type value="ignore"/><duration value="6"/><update_rate value="1"/>
 					<effect_group name="FX">
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireTornadoClone-finish"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornadoClone.unity3d?fireTornadoClone"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornadoClone-finish.unity3d?fireTornadoClone-finish"/>					
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornadoClone.unity3d?fireTornadoClone" parent_transform="LOD0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornadoClone-finish.unity3d?fireTornadoClone-finish" parent_transform="LOD0"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornadoClone.unity3d?fireTornadoClone" local_offset="0,-.8,0" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornadoClone-finish.unity3d?fireTornadoClone-finish" local_offset="0,-.8,0" parent_transform="Hips"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireTornadoClone" />
 					</effect_group>
 					<effect_group name="CALC: Base">
@@ -3142,9 +3185,9 @@
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireBurning-finish"/>
 						<triggered_effect trigger="onSelfBuffStack" action="RemoveParticleEffectFromEntity" particle="fireBurning-finish"/>
 						<triggered_effect trigger="onSelfBuffStart" target="other" action="ShakeCamera" shake_speed=".65" shake_amplitude="50" shake_time="2"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="Hips"/>
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="Hips"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning-finish.unity3d?fireBurning-finish" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="LOD0"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="LOD0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning-finish.unity3d?fireBurning-finish" parent_transform="LOD0"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireBurning" />
 					</effect_group>
 					<effect_group name="CALC: Base">
@@ -3361,9 +3404,9 @@
 					<effect_group name="FX">
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireTornado-finish"/>
 						<triggered_effect trigger="onSelfBuffStack" action="RemoveParticleEffectFromEntity" particle="fireTornado-finish"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado"/>
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado-finish.unity3d?fireTornado-finish"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" local_offset="0,-.8,0" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado.unity3d?fireTornado" local_offset="0,-.8,0" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornado-finish.unity3d?fireTornado-finish" local_offset="0,-.8,0" parent_transform="Hips"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireTornado" />
 					</effect_group>
 					<effect_group name="CALC: Base">
@@ -3406,8 +3449,8 @@
 				<damage_type value="heat"/><stack_type value="ignore"/><duration value="6"/><update_rate value="1"/>
 					<effect_group name="FX">
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireTornadoClone-finish"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornadoClone.unity3d?fireTornadoClone"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornadoClone-finish.unity3d?fireTornadoClone-finish"/>					
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornadoClone.unity3d?fireTornadoClone" local_offset="0,-.8,0" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireTornadoClone-finish.unity3d?fireTornadoClone-finish" local_offset="0,-.8,0" parent_transform="Hips"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireTornadoClone" />
 					</effect_group>
 					<effect_group name="CALC: Base">
@@ -3434,9 +3477,9 @@
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireBurning-finish"/>
 						<triggered_effect trigger="onSelfBuffStack" action="RemoveParticleEffectFromEntity" particle="fireBurning-finish"/>
 						<triggered_effect trigger="onSelfBuffStart" target="other" action="ShakeCamera" shake_speed=".65" shake_amplitude="50" shake_time="2"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="Hips"/>
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="Hips"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning-finish.unity3d?fireBurning-finish" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="LOD0"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning.unity3d?fireBurning" parent_transform="LOD0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning-finish.unity3d?fireBurning-finish" parent_transform="LOD0"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireBurning" />
 					</effect_group>
 					<effect_group name="CALC: Base">
@@ -3476,9 +3519,9 @@
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireBurning2-finish"/>
 						<triggered_effect trigger="onSelfBuffStack" action="RemoveParticleEffectFromEntity" particle="fireBurning2-finish"/>
 						<triggered_effect trigger="onSelfBuffStart" target="other" action="ShakeCamera" shake_speed=".65" shake_amplitude="50" shake_time="1.5"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning2.unity3d?fireBurning2" parent_transform="Hips"/>
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning2.unity3d?fireBurning2" parent_transform="Hips"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning2-finish.unity3d?fireBurning2-finish" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning2.unity3d?fireBurning2" parent_transform="LOD0"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning2.unity3d?fireBurning2" parent_transform="LOD0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning2-finish.unity3d?fireBurning2-finish" parent_transform="LOD0"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireBurning2" />
 					</effect_group>
 					<effect_group name="CALC: Base">
@@ -3523,9 +3566,10 @@
 				<stack_type value="replace"/>
 				<duration value="5"/>
 					<effect_group name="Essence Harvest: ALL">
-						<passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="essenceFireHarvest,essenceFire2Harvest,essenceFire3Harvest,essenceFire4Harvest,essenceFire5Harvest"/>
-						<passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="essenceIceHarvest,essenceIce2Harvest,essenceIce3Harvest,essenceIce4Harvest,essenceIce5Harvest"/>
-						<passive_effect name="HarvestCount" operation="perc_add" value=".5" tags="essenceLightningHarvest,essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
+						<!-- start -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".sorceryAllEssenceHarvest" operation="add" value=".5"/>
+						<!-- remove -->
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".sorceryAllEssenceHarvest" operation="subtract" value=".5"/>
 					</effect_group>
 			</buff>			
 		<!-- END - PERK BUFFS ______________________________________________________-->
@@ -3544,14 +3588,10 @@
 						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="potion_Remedy,potion_Devour,potion_Travel"/>
 						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="potionFire_Essence,potionFire_Sorcery"/>
 						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="potion_Haste,potion_Taunt"/>
-						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotionBomb_grass"/>
-						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotionBomb_fire"/>
-						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotionBomb_ice"/>
-						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="sorceryPotionBomb_lightning"/>
-						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderArcane,resourcePowderArcane2,resourcePowderArcane3,resourcePowderArcane4,resourcePowderArcane5"/>
-						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderFire,resourcePowderFire2,resourcePowderFire3,resourcePowderFire4,resourcePowderFire5"/>
-						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderIce,resourcePowderIce2,resourcePowderIce3,resourcePowderIce4,resourcePowderIce5"/>
-						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderLightning,resourcePowderLightning2,resourcePowderLightning3,resourcePowderLightning4,resourcePowderLightning5"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderArcane"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderFire"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderIce"/>
+						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="resourcePowderLightning"/>
 					</effect_group>
 					<effect_group name="cleanup">
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffCrafting_MortarPestle">
@@ -3753,7 +3793,7 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffPotion_Remedy_c1" operation="set" value="3">
 							<requirement name="CVarCompare" cvar=".buffPotion_Remedy_c1" operation="LTE" value="0"/>
 						</triggered_effect>
-						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse-finish.unity3d?holyCleanse-finish">
+						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse-finish.unity3d?holyCleanse-finish" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips">
 							<requirement name="CVarCompare" cvar=".buffPotion_Remedy_c1" operation="GT" value="0"/>
 						</triggered_effect>
 						<!-- potion -->
@@ -3892,7 +3932,7 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="add" value="@.buffPotion_SlowFall"/>
 						<triggered_effect trigger="onSelfFallImpact" action="PlaySound" sound="PlayerLandThump"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="holyCleanse-finish" />
-						<triggered_effect trigger="onSelfFallImpact" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse-finish.unity3d?holyCleanse-finish"/>
+						<triggered_effect trigger="onSelfFallImpact" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse-finish.unity3d?holyCleanse-finish" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips"/>
 					</effect_group>
 					<effect_group name="Potion">
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPlayerFallingDamage"/>
@@ -3981,13 +4021,12 @@
 						</triggered_effect>
 					</effect_group>
 					<effect_group name="FX">
+						<!-- parent_transform="RightHand" -->
 						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/handFX_Fire.unity3d?handFX_Fire" parent_transform="RightHand">
 							<requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/>
-							<!-- <requirement name="!HoldingItemHasTags" tags="spellcast"/> -->
 						</triggered_effect>
 						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/handFX_Fire.unity3d?handFX_Fire" parent_transform="RightHand">
 							<requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/>
-							<!-- <requirement name="!HoldingItemHasTags" tags="spellcast"/> -->
 						</triggered_effect>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="handFX_Fire">
 							<requirement name="!HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/>
@@ -4126,8 +4165,8 @@
 						</triggered_effect>
 					</effect_group>
 					<effect_group name="FX">
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneVision.unity3d?arcaneVision"/>
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneVision.unity3d?arcaneVision"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneVision.unity3d?arcaneVision" local_offset="0,0,0" parent_transform="Camera"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneVision.unity3d?arcaneVision" local_offset="0,0,0" parent_transform="Camera"/>
 						<triggered_effect trigger="onSelfLeaveGame" action="RemoveParticleEffectFromEntity" particle="arcaneVision"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="arcaneVision"/>
 					</effect_group>
@@ -4138,7 +4177,7 @@
 							<requirement name="TimeOfDay" operation="LT" value="500"/>
 							<requirement name="CVarCompare" cvar="_shaded" operation="GTE" value=".1"/>
 						</requirements>
-						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneVision.unity3d?arcaneVision"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneVision.unity3d?arcaneVision" local_offset="0,0,0" parent_transform="Camera"/>
 					</effect_group>
 					<effect_group name="FX: Remove">
 						<!-- <requirement name="IsDay"/> -->
@@ -4150,9 +4189,64 @@
 					<effect_group name="Calc">
 					</effect_group>
 					<effect_group name="SCROLL">
-						<passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryFallen,sorceryAwakened,sorceryLootFallen"/>
+						<passive_effect name="TrackDistance" operation="base_set" value="200" tags="sorceryFallen"/>
+						<passive_effect name="TrackDistance" operation="base_set" value="200" tags="sorceryLootFallen"/>
+						<passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryFallen"/>
+						<passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryLootFallen"/>
+						<!-- <passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryAwakened"/> -->
 					</effect_group>
 			</buff>
+			<!-- SCROLL: Recall -->
+			<buff name="buffScroll_RecallTrigger" name_key="scroll_Recall" description_key="scroll_RecallDesc" icon="ui_sorcery_scroll"  icon_color="174,146,213" hidden="false" tags="scroll">
+				<stack_type value="ignore"/><duration value="1"/><update_rate value="1"/>
+				<display_value value="$buffScroll_RecallTrigger"/><display_value_format value="time"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryLightning_forcefield"/>
+					</effect_group>
+					<!-- <effect_group name="Duration">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffScroll_RecallTrigger" operation="set" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffScroll_RecallTrigger" operation="add" value="-1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffScroll_RecallTrigger">
+							<requirement name="CVarCompare" cvar="$buffScroll_RecallTrigger" operation="LTE" value="0"/>
+						</triggered_effect>
+					</effect_group> -->
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpiritRegenStop,buffScroll_Recall"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffScroll_Recall,buffScroll_RecallAOE"/>
+					</effect_group>
+			</buff>
+			<buff name="buffScroll_Recall" name_key="scroll_Recall" description_key="scroll_RecallDesc" icon="ui_sorcery_scroll" icon_color="255,0,0" hidden="true" tags="scroll" remove_on_death="false">
+				<stack_type value="ignore"/><duration value="15"/><update_rate value="1"/>
+					<effect_group name="SCROLL">
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryLightning_portalin"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpiritRegenStop"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSpiritRegenStop"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffHealFood,buffHealWaterMax,buffDeathFoodDrinkAdjust,buffProcessConsumables"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="sorceryLightning_forcefield"/>
+
+						<passive_effect name="ExpDeficitPerDeathPercentage" operation="base_set" value="0"/>
+						<passive_effect name="ExpDeficitMaxPercentage" operation="base_set" value="0"/>
+						<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffScroll_RecallAOE"/>
+						<passive_effect name="BuffResistance" operation="base_set" value="100" tags="buffHealHealth,buffHealFood,buffHealWaterMax,buffDeathFoodDrinkAdjust,buffProcessConsumables"/>
+						<triggered_effect trigger="onOtherDamagedSelf" action="ModifyStats" stat="Health" operation="add" value="9999"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="500" buff="buffScroll_RecallAOE" target_tags="enemy,animal"/>
+					</effect_group>
+			</buff>
+			<buff name="buffScroll_RecallAOE" hidden="true">
+				<stack_type value="ignore"/><duration value="1"/>
+					<effect_group name="SCROLL">
+						<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="debuffScroll_RecallAOE"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="500" buff="debuffScroll_RecallAOE" target_tags="player"/>
+					</effect_group>
+			</buff>
+			<buff name="debuffScroll_RecallAOE">
+				<damage_type value="bloodloss"/><stack_type value="ignore"/><duration value="1"/>
+					<effect_group name="SCROLL">
+							<requirement name="HasBuff" buff="buffScroll_Recall"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="9999"/>
+					</effect_group>
+			</buff>
+			
 	<!-- END - SCROLLS ______________________________________________________-->
 	
 	
@@ -4161,9 +4255,9 @@
 			<buff name="buffRune_SpellLight" name_key="rune_SpellLight" description_key="rune_SpellLightDesc" icon="ui_symbol_rune_sorcery"  icon_color="174,146,213" showonhud="false" tags="rune">
 				<stack_type value="ignore"/><duration value="0"/><update_rate value="3"/>
 				<effect_group name="FX">
-					<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneSpellLight.unity3d?arcaneSpellLight"/>
+					<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneSpellLight.unity3d?arcaneSpellLight" local_offset="0,0,0" parent_transform="Camera"/>
 						<!-- NOTE: Easier to re-apply buff; onSelfLeaveGame not working. Resort to onSelfEnteredGame. -->
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneSpellLight.unity3d?arcaneSpellLight"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneSpellLight.unity3d?arcaneSpellLight" local_offset="0,0,0" parent_transform="Camera"/>
 					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="arcaneSpellLight" transform_path="T0"/>
 					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="arcaneSpellLight" transform_path="T1"/>
 					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="false" parent_transform="arcaneSpellLight" transform_path="T2"/>
@@ -4302,13 +4396,13 @@
 							<requirement name="CVarCompare" cvar=".buffRune_SupporterAstyael_c1" operation="LTE" value="0"/>
 						</triggered_effect>
 					</effect_group>
-					<effect_group name="RUNE">
+					<effect_group name="RUNE: REMEDY">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@$runeSupporterAstyael"/>
 						<!-- count -->
 						<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar=".buffRune_SupporterAstyael_c1" operation="set" value="3">
 							<requirement name="CVarCompare" cvar=".buffRune_SupporterAstyael_c1" operation="LTE" value="0"/>
 						</triggered_effect>
-						<triggered_effect trigger="onOtherDamagedSelf" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse-finish.unity3d?holyCleanse-finish">
+						<triggered_effect trigger="onOtherDamagedSelf" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse-finish.unity3d?holyCleanse-finish" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips">
 							<requirement name="CVarCompare" cvar=".buffRune_SupporterAstyael_c1" operation="GT" value="0"/>
 						</triggered_effect>
 						<!-- rune -->
@@ -4374,13 +4468,23 @@
 				<stack_type value="ignore"/><duration value="0"/>
 					 <effect_group>
 						<!-- General -->
-						<!-- <passive_effect name="BuffResistance" operation="base_add" value="100" tags=""/> -->
-						<!-- Fire -->
-						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="buffEntity_FireSorcery,spellFire_Burn"/>
-						<!-- Ice -->
-						<!-- <passive_effect name="BuffResistance" operation="base_add" value="100" tags=""/> -->
-						<!-- Lightning -->
-						<!-- <passive_effect name="BuffResistance" operation="base_add" value="100" tags=""/> -->
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="buffEntity_FireSorcery"/>
+						<!-- Spells -->
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellImpact_Fire,spellTrigger_Fire3,spellTriggerImpact_Fire3,spellTriggerImpact_Fire,spellTriggerImpact2_Fire,spellTriggerImpact3_Fire"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellFire_Burn,spellFire_Explode,spellFire_Wildfire"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellFire2,spellFire2_Burn,spellFire2_Engulf,spellFire2_Unstable,spellFire2_Clone"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellFire3,spellFire3_Shower,spellFire3_Crater"/>
+						<!-- Arrows -->
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellTrigger_ArrowFire3,spellTriggerImpact_ArrowFire3,spellTrigger_ArrowFire3_Shower,spellTriggerImpact_ArrowFire3_Shower,spellTrigger_Fire3_Shower,spellTriggerImpact_Fire3_Shower"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellArrowFire,spellArrowFire_Burn,spellArrowFire_Explode"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellArrowFire2,spellArrowFire2_Clone"/>
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellArrowFire3,spellArrowFire3_Shower"/>
+						<!-- Scrolls -->
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="debuffScroll_WeaponFire,debuffScroll_AmmoFire"/>
+						<!-- Spellcasts -->
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellcastFire_Blazing,spellcastFire_ExplosiveShieldAOE,spellcastFire_ExplosiveShieldExplode,spellcastFire_MeteorLand"/>
+						<!-- Familiars -->
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellFamiliarFire_Burn"/>
 					 </effect_group>
 			</buff>
 	
@@ -4391,6 +4495,8 @@
 					<effect_group name="PLAYER: Intro Protect">
 							<requirement name="EntityTagCompare" tags="player"/>
 						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryHorn" /> <!-- drama -->
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryAggroFamiliar" /> <!-- drama -->
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffFamiliarArcaneTrigger_ActivePlayer" /> <!-- familiar -->
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="500"/> <!-- heal -->
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritAdd" operation="add" value="100"/> <!-- spirit -->
 						<triggered_effect trigger="onSelfBuffStart" action="ShakeCamera" shake_speed="0.5" shake_amplitude="40" shake_time="1"/>
@@ -4405,7 +4511,7 @@
 				<stack_type value="ignore"/> 
 				<duration value="1"/>
 					<effect_group name="BUFF PLAYER">
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="300" buff="buffSorceryIntro_spawn" target_tags="enemy"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="300" buff="buffSorceryIntro_spawn" target_tags="player"/>
 					</effect_group>
 			</buff>
 			<buff name="buffSpellImpactTrigger_Special_FireMeteor" hidden="true" remove_on_death="true">
@@ -4423,7 +4529,7 @@
 				<stack_type value="effect"/>
 				<duration value="1.5"/>
 					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteorShower.unity3d?fireMeteorShower"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireMeteorShower.unity3d?fireMeteorShower" parent_transform="Hips" />
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSpell_Special_FireMeteor"/>
 						<triggered_effect trigger="onSelfBuffRemove" target="other" action="ShakeCamera" shake_speed=".65" shake_amplitude="50" shake_time="3"/>
 						<!-- <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="selfAOE" range="4" buff="buffSpell_Special_FireMeteor" target_tags="ally,party">
@@ -4610,7 +4716,7 @@
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 							<requirement name="TargetRange" target="other" operation="LTE" value="3"/>
 						</triggered_effect>
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_TouchedAura" target_tags="player"/>
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_TouchedAura" target_tags="player"/> -->
 						<passive_effect name="BuffProcChance" operation="base_set" value="-100" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="1"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".5"/>
@@ -4643,7 +4749,7 @@
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 							<requirement name="TargetRange" target="other" operation="LTE" value="3"/>
 						</triggered_effect>
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_TouchedAura" target_tags="player"/>
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_TouchedAura" target_tags="player"/> -->
 						<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="1"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".5"/>
@@ -4676,7 +4782,7 @@
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 							<requirement name="TargetRange" target="other" operation="LTE" value="3"/>
 						</triggered_effect>
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_TouchedAura" target_tags="player"/>
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="3" buff="buffEntity_TouchedAura" target_tags="player"/> -->
 						<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="1"/>
 						<passive_effect name="BlockDamage" operation="perc_add" value=".5"/>
@@ -4772,9 +4878,9 @@
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityFire_Burn_c1"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityFire_Burn_c2"/> <!-- spirit -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityFire_Burn_c2"/> <!-- spirit -->
-						<passive_effect name="RunSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
+						<!-- <passive_effect name="RunSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/> -->
 					</effect_group>
 					<effect_group name="BURN">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityFire_Burn_c3"/> <!-- spirit -->
@@ -4825,18 +4931,16 @@
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityIce_Chill_c1"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityIce_Chill_c2"/> <!-- spirit -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityIce_Chill_c2"/> <!-- spirit -->
-						<passive_effect name="RunSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
+						<!-- <passive_effect name="RunSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/> -->
 					</effect_group>
 					<effect_group name="CHILL">
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$spellEntityIce_Chill_c3"/>
-						<passive_effect name="WalkSpeed" operation="perc_subtract" value="1,.9,0" duration="0,1,2"/>
-						<passive_effect name="RunSpeed" operation="perc_subtract" value="1,.9,0" duration="0,1,2"/>
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="1,.9,0" duration="0,1,2" />
-						<passive_effect name="JumpStrength" operation="perc_subtract" value="1,.9,0" duration="0,1,2" />
-						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="1,.9,0" duration="0,1,2" />
-						<passive_effect name="RoundsPerMinute" operation="perc_subtract" value="1,.9,0" duration="0,1,2" />
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,0" duration="0,2"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,0" duration="0,2"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,0" duration="0,2" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,0" duration="0,2" />
 					</effect_group>
 					<effect_group name="FREEZE">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
@@ -4880,9 +4984,9 @@
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityLightning_Shock_c1"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityLightning_Shock_c2"/> <!-- spirit -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityLightning_Shock_c2"/> <!-- spirit -->
-						<passive_effect name="RunSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>
+						<!-- <passive_effect name="RunSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/> -->
 					</effect_group>
 					<effect_group name="SHOCK">
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="4"/>
@@ -4989,7 +5093,6 @@
 						<passive_effect name="RunSpeed" operation="perc_add" value="-1" duration="0,1"/>
 						<passive_effect name="CrouchSpeed" operation="perc_add" value="-1" duration="0,1" />
 						<passive_effect name="JumpStrength" operation="perc_add" value="-1" duration="0,1" />
-						<passive_effect name="AttacksPerMinute" operation="perc_add" value="-1" duration="0,1" />
 					</effect_group>
 			</buff>
 			<!-- FIRE FALLEN: Fire Regenerate -->
@@ -5001,12 +5104,8 @@
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fallenRechargeFire"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeFire-finish.unity3d?fallenRechargeFire-finish"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="50"/>
-						<!-- <passive_effect name="WalkSpeed" operation="perc_set" value="0" />
-						<passive_effect name="RunSpeed" operation="perc_set" value="0" />
-						<passive_effect name="JumpStrength" operation="perc_set" value="0"  />
-						<passive_effect name="WalkSpeed" operation="base_set" value="0" />
-						<passive_effect name="RunSpeed" operation="base_set" value="0" />
-						<passive_effect name="JumpStrength" operation="base_set" value="0" /> -->
+						<passive_effect name="WalkSpeed" operation="perc_add" value="-.5" />
+						<passive_effect name="RunSpeed" operation="perc_add" value="-.5" />
 					</effect_group>
 			</buff>
 		<!-- END - FIRE FALLEN SPELLS -->
@@ -5079,12 +5178,10 @@
 					<effect_group name="CHILL">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellFallenIce_Chill_c2"/> <!-- spirit -->
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$spellFallenIce_Chill_c3"/>
-						<passive_effect name="WalkSpeed" operation="perc_subtract" value="1,.9,0" duration="0,1,2"/>
-						<passive_effect name="RunSpeed" operation="perc_subtract" value="1,.9,0" duration="0,1,2"/>
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="1,.9,0" duration="0,1,2" />
-						<passive_effect name="JumpStrength" operation="perc_subtract" value="1,.9,0" duration="0,1,2" />
-						<passive_effect name="AttacksPerMinute" operation="perc_subtract" value="1,.9,0" duration="0,1,2" />
-						<passive_effect name="RoundsPerMinute" operation="perc_subtract" value="1,.9,0" duration="0,1,2" />
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,0" duration="0,2"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,0" duration="0,2"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,0" duration="0,2" />
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,0" duration="0,2" />
 					</effect_group>
 					<effect_group name="FREEZE">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
@@ -5111,16 +5208,10 @@
 					<effect_group name="Ice: slow freeze">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$spellFallenIce_Frozen"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellFallenIce_Frozen"/> <!-- spirit -->
-						<passive_effect name="WalkSpeed" operation="perc_set" value="0" duration="0,2"/>
-						<passive_effect name="RunSpeed" operation="perc_set" value="0" duration="0,2"/>
-						<passive_effect name="CrouchSpeed" operation="perc_set" value="0" duration="0,2" />
-						<passive_effect name="JumpStrength" operation="perc_set" value="0" duration="0,2" />
-						<passive_effect name="AttacksPerMinute" operation="perc_set" value="0" duration="0,2" />
-						<passive_effect name="WalkSpeed" operation="base_set" value="0" duration="0,2"/>
-						<passive_effect name="RunSpeed" operation="base_set" value="0" duration="0,2"/>
-						<passive_effect name="CrouchSpeed" operation="base_set" value="0" duration="0,2" />
-						<passive_effect name="JumpStrength" operation="base_set" value="0" duration="0,2" />
-						<passive_effect name="AttacksPerMinute" operation="base_set" value="0" duration="0,2" />
+						<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.9"/>
+						<passive_effect name="JumpStrength" operation="perc_subtract" value="0.9"/>
 					</effect_group>
 			</buff>
 			<!-- ICE FALLEN: Regenerate -->
@@ -5132,12 +5223,8 @@
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fallenRechargeIce"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeIce-finish.unity3d?fallenRechargeIce-finish"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="50"/>
-						<!-- <passive_effect name="WalkSpeed" operation="perc_set" value="0" />
-						<passive_effect name="RunSpeed" operation="perc_set" value="0" />
-						<passive_effect name="JumpStrength" operation="perc_set" value="0"  />
-						<passive_effect name="WalkSpeed" operation="base_set" value="0" />
-						<passive_effect name="RunSpeed" operation="base_set" value="0" />
-						<passive_effect name="JumpStrength" operation="base_set" value="0" /> -->
+						<passive_effect name="WalkSpeed" operation="perc_add" value="-.5" />
+						<passive_effect name="RunSpeed" operation="perc_add" value="-.5" />
 					</effect_group>
 			</buff>
 		<!-- END - ICE FALLEN SPELLS -->
@@ -5225,10 +5312,10 @@
 					<effect_group name="ELECTROCUTE: Shockburn">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellFallenLightning_Electrocute_c1"/> <!-- spirit -->
 						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$spellFallenLightning_Electrocute_c1" duration="0,1"/>
-						<passive_effect name="RunSpeed" operation="perc_subtract" value="1"/>
-						<passive_effect name="WalkSpeed" operation="perc_subtract" value="1"/>
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="1"/>
-						<passive_effect name="JumpStrength" operation="perc_subtract" value="1"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.9"/>
+						<passive_effect name="JumpStrength" operation="perc_subtract" value="0.9"/>
 					</effect_group>
 			</buff>
 			<!-- LIGHTNING FALLEN: Regenerate -->
@@ -5240,12 +5327,8 @@
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fallenRechargeLightning"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeLightning-finish.unity3d?fallenRechargeLightning-finish"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="50"/>
-						<!-- <passive_effect name="WalkSpeed" operation="perc_set" value="0" />
-						<passive_effect name="RunSpeed" operation="perc_set" value="0" />
-						<passive_effect name="JumpStrength" operation="perc_set" value="0"  />
-						<passive_effect name="WalkSpeed" operation="base_set" value="0" />
-						<passive_effect name="RunSpeed" operation="base_set" value="0" />
-						<passive_effect name="JumpStrength" operation="base_set" value="0" /> -->
+						<passive_effect name="WalkSpeed" operation="perc_add" value="-.5" />
+						<passive_effect name="RunSpeed" operation="perc_add" value="-.5" />
 					</effect_group>
 			</buff>
 		
@@ -5994,8 +6077,717 @@
 	<!-- END - ENTITY BUFFS __________________________________________________________________________________ -->
 
 
-
-
+	<!-- FAMILIAR BUFFS __________________________________________________________________________________-->
+			<!-- Familiar: UI -->
+			<buff name="buffUIFamiliar_Arcane" name_key="buffUIFamiliar_ArcaneName" description_key="buffUIFamiliar_ArcaneDesc" icon="uic_familiar_sorcery" showonhud="true" remove_on_death="false">
+				<stack_type value="ignore"/><update_rate value="5"/>
+				<display_value value="familiarArcaneDuration"/><display_value_format value="time"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFamiliarCount_Update"/>
+					</effect_group>
+			</buff>
+			<!-- Familiar Count: UPDATE -->
+			<buff name="buffFamiliarCount_Update" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/><duration value="1"/>
+					<effect_group>
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffFamiliarCount"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffUIFamiliar_Arcane">
+							<requirement name="CVarCompare" cvar="sorceryFamiliarCount" operation="LTE" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffUIFamiliar_Arcane">
+							<requirement name="CVarCompare" cvar="sorceryFamiliarCount" operation="GT" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="sorceryFamiliarCount" operation="set" value="0">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliarActiveCount" operation="LT" value="1"/>
+						</triggered_effect>
+					</effect_group>
+					<effect_group name="Count: 1">
+							<requirement name="CVarCompare" cvar="sorceryFamiliarCount" operation="LTE" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="selfAOE" range="30" cvar="familiarCounter" operation="set" value="1" target_tags="familiar"/>
+					</effect_group>
+					<effect_group name="Count: 2">
+							<requirement name="CVarCompare" cvar="sorceryFamiliarCount" operation="Equals" value="2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="selfAOE" range="30" cvar="familiarCounter" operation="set" value="2" target_tags="familiar"/>
+					</effect_group>
+					<effect_group name="Count: 3">
+							<requirement name="CVarCompare" cvar="sorceryFamiliarCount" operation="Equals" value="3"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="selfAOE" range="30" cvar="familiarCounter" operation="set" value="3" target_tags="familiar"/>
+					</effect_group>
+					<effect_group name="Count: 4">
+							<requirement name="CVarCompare" cvar="sorceryFamiliarCount" operation="Equals" value="4"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="selfAOE" range="30" cvar="familiarCounter" operation="set" value="4" target_tags="familiar"/>
+					</effect_group>
+					<effect_group name="Count: 5+">
+							<requirement name="CVarCompare" cvar="sorceryFamiliarCount" operation="GTE" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="selfAOE" range="30" cvar="familiarCounter" operation="set" value="5" target_tags="familiar"/>
+					</effect_group>
+					<effect_group name="MAX">
+							<requirement name="CVarCompare" cvar="sorceryFamiliarCount" operation="GT" value="@$familiarMaxCount"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffDespawnFamiliarMax" target_tags="familiar"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="sorceryFamiliarCount" operation="set" value="1"/>
+					</effect_group>
+					<effect_group name="ABILITY: Despawn">
+							<requirement name="HasBuff" buff="buffDespawnFamiliar_Ability"/>
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritAdd" operation="add" value="15"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDespawnFamiliar_Ability,buffFamiliarCooldown"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffFamiliarCount"/>
+					</effect_group>
+			</buff>
+			<!-- Familiar Count: TRIGGER -->
+			<buff name="buffFamiliarCount" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/><duration value="1"/>
+					<effect_group>
+						<!-- count: owned -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliarActiveCount" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarCountActive" target_tags="familiar"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$sorceryFamiliarActiveCount" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarCountActive" target_tags="familiar"/>
+						<!-- finish -->
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffFamiliarCount_Update"/>
+					</effect_group>
+			</buff>
+			<!-- Familiar Count: ACTIVE -->
+			<buff name="buffFamiliarCountActive" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/><duration value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarCountActive_Calc" target_tags="player"/>
+					</effect_group>
+			</buff>
+			<!-- Familiar Count: ACTIVE CALC -->
+			<buff name="buffFamiliarCountActive_Calc" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/><duration value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliarActiveCount" operation="add" value="1"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$sorceryFamiliarActiveCount" operation="add" value="1"/>
+						<!-- set: familiar count -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="sorceryFamiliarCount" operation="set" value="@$sorceryFamiliarActiveCount"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="sorceryFamiliarCount" operation="set" value="@$sorceryFamiliarActiveCount"/>
+					</effect_group>
+			</buff>
+			
+			<!-- Familiar: SUMMONED -->
+			<buff name="buffFamiliarSummoned" name_key="Summoned" icon="uic_familiar_sorcery" showonhud="true">
+				<stack_type value="ignore"/><duration value="1"/>
+					<effect_group name="SET: Level 0">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="LTE" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="0" target="selfAOE" range="30" target_tags="familiar"/>
+					</effect_group>
+					<effect_group name="SET: Level 1">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="1" target="selfAOE" range="30" target_tags="familiar"/>
+					</effect_group>
+					<effect_group name="SET: Level 2">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="2" target="selfAOE" range="30" target_tags="familiar"/>
+					</effect_group>
+					<effect_group name="SET: Level 3">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="3"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="3" target="selfAOE" range="30" target_tags="familiar"/>
+					</effect_group>
+					<effect_group name="SET: Level 4">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="4"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="4" target="selfAOE" range="30" target_tags="familiar"/>
+					</effect_group>
+					<effect_group name="SET: Level 5">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="5" target="selfAOE" range="30" target_tags="familiar"/>
+					</effect_group>
+					<effect_group name="APPLY">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpiritRegenStop,buffFamiliarCooldown,buffFamiliarDuration,buffFamiliarArcane_ActivePlayer,buffFamiliarCount"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="30"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarDuration,buffFamiliarArcane,buffFamiliarArcane_Active" target_tags="familiar"/>
+					</effect_group>
+			</buff>
+			<!-- Familiar: DESPAWN -->
+			<buff name="buffDespawnFamiliar" hidden="true" remove_on_death="false">
+				<duration value="1"/>
+				<effect_group>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="-9999"/>
+					<!-- <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="selfAOE" range="200" buff="buffFamiliarCount" target_tags="player"/> -->
+					<!-- <triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryFireball_explode" />
+					<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireImpact2.unity3d?fireImpact2" parent_transform="Hips"/> -->
+				</effect_group>
+			</buff>
+			<!-- Familiar: DESPAWN MAX -->
+			<buff name="buffDespawnFamiliarMax" hidden="true">
+				<duration value="1"/>
+				<effect_group>
+						<requirement name="HasBuff" buff="buffFamiliarNewSpawn"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="familiarCounter" operation="set" value="1"/>
+				</effect_group>
+				<effect_group>
+						<requirement name="CVarCompare" cvar="familiarCounter" operation="GT" value="@$familiarMaxCount"/>
+						<requirement name="NotHasBuff" buff="buffFamiliarNewSpawn"/>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDespawnFamiliar"/>
+				</effect_group>
+			</buff>
+			<!-- Familiar: ABILITY DESPAWN -->
+			<buff name="buffDespawnFamiliar_AbilityTrigger" hidden="true">
+				<duration value="0"/><update_rate value="1"/>
+				<effect_group>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".despawnFamiliar_Ability" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".despawnFamiliar_Ability" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".despawnFamiliar_Ability" operation="set" value="0"/>
+					<!-- action -->
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespawnFamiliar_Ability">
+						<requirement name="CVarCompare" cvar=".despawnFamiliar_Ability" operation="GTE" value="1"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespawnFamiliar_AbilityTrigger">
+						<requirement name="CVarCompare" cvar=".despawnFamiliar_Ability" operation="GTE" value="1"/>
+					</triggered_effect>
+				</effect_group>
+			</buff>
+			<buff name="buffDespawnFamiliar_Ability" hidden="false" name_key="Despawn Familiars" description_key="Despawning Familiars" icon="ui_familiar_sorcery" icon_color="220,0,0" icon_blink="true">
+				<duration value="0"/><display_value_key value="Despawn"/><display_value value="xxx"/>
+				<effect_group>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffDespawnFamiliar" target_tags="familiar"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDespawnFamiliar_Ability">
+						<requirement name="CVarCompare" cvar="sorceryFamiliarCount" operation="LTE" value="0"/>
+					</triggered_effect>
+				</effect_group>
+			</buff>
+			<!-- Familiar: NEW SPAWN -->
+			<buff name="buffFamiliarNewSpawn" hidden="true">
+				<duration value="2"/>
+				<effect_group>
+					<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="1000"/> -->
+				</effect_group>
+			</buff>
+			<!-- Familiar: COOLDOWN -->
+			<buff name="buffFamiliarCooldown" hidden="false" name_key="Familiar Cooldown" description_key="Wait time before summoning another Familiar." icon="ui_game_symbol_clock" icon_color="174,146,213" icon_blink="true" remove_on_death="true">
+				<stack_type value="ignore"/><duration value="0"/>
+				<display_value value=".buffFamiliarCooldown"/><display_value_key value="{0:0}"/> 
+				<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".buffFamiliarCooldown" operation="set" value="5"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffFamiliarCooldown" operation="add" value="-1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFamiliarCooldown">
+							<requirement name="CVarCompare" cvar=".buffFamiliarCooldown" operation="LTE" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffFamiliarCooldown" operation="set" value="0"/>
+				</effect_group>
+			</buff>
+			<!-- Familiar: DURATION -->
+			<buff name="buffFamiliarDuration" hidden="true">
+				<stack_type value="replace"/><duration value="0"/><update_rate value="1"/>
+				<effect_group name="FAMILIAR CVAR: Duration">
+						<requirement name="EntityTagCompare" tags="familiar"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="30"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="60"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="1"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="90"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="2"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="120"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="3"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="150"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="4"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="3600"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/></triggered_effect>
+				</effect_group>
+				<effect_group>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="familiarArcaneDuration" operation="set" value="@$familiarDuration"/>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="familiarArcaneDuration" operation="set" value="@$familiarDuration"/>
+				</effect_group>
+				<effect_group name="PERK: Permanent">
+						<requirement name="CVarCompare" cvar="$familiarDuration" operation="LT" value="3600"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="familiarArcaneDuration" operation="add" value="-1"/>
+					<!-- <triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="familiarArcaneDuration" operation="set" value="0"/> -->
+					<!-- <triggered_effect trigger="onSelfLeaveGame" action="ModifyCVar" cvar="familiarArcaneDuration" operation="set" value="0"/> -->
+				</effect_group>
+				<effect_group name="Familiar">
+						<requirement name="EntityTagCompare" tags="familiar"/>
+						<requirement name="NotHasBuff" buff="buffFamiliarNewSpawn"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespawnFamiliar">
+						<requirement name="CVarCompare" cvar="familiarArcaneDuration" operation="LTE" value="0"/>
+					</triggered_effect>
+				</effect_group>
+				<effect_group name="Player">
+						<requirement name="EntityTagCompare" tags="player"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="familiarArcaneDuration" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffUIFamiliar_Arcane"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFamiliarDuration">
+						<requirement name="CVarCompare" cvar="familiarArcaneDuration" operation="LTE" value="0"/>
+					</triggered_effect>
+				</effect_group>
+				<!-- <effect_group name="Player - Ability: DESPAWN">
+						<requirement name="EntityTagCompare" tags="player"/>
+						<requirement name="NotHasBuff" buff="buffDespawnFamiliar_Ability"/>
+						<requirement name="HasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
+						<requirement name="HoldingItemHasTags" tags="familiarArcane"/>
+						<requirement name="CVarCompare" cvar=".holdingPrimary" operation="Equals" value="1"/>
+						<requirement name="CVarCompare" cvar=".holdingSecondary" operation="Equals" value="1"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespawnFamiliar_Ability"/>
+				</effect_group> -->
+			</buff>
+			
+			<!-- Familiar Apply Mark: KILL CREDIT XP -->
+			<buff name="buffFamiliarMark_Apply" hidden="true">
+				<stack_type value="replace"/><duration value="0"/><update_rate value="3"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarMark" target_tags="familiar"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarMark" target_tags="familiar"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarMark" target_tags="familiar"/>
+						<!-- remove -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFamiliarMark_Apply">
+							<requirement name="NotHasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+			<!-- Familiar: KILL CREDIT XP -->
+			<buff name="buffSorceryMarkFamiliar">
+				<damage_type value="heat"/><stack_type value="replace"/><duration value="0"/>
+					<!-- THIS BUFF ENSURES KILL CREDIT FOR BUFF/SPELL/TRAP/PET/ALL KILLS -->
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="1"/>
+					<!-- <passive_effect name="HealthChangeOT" operation="base_subtract" value="0.01"/> -->
+			</buff>
+			<buff name="buffFamiliarMark">
+				<damage_type value="heat"/><stack_type value="replace"/><duration value="0"/>
+					<!-- THIS BUFF ENSURES KILL CREDIT FOR BUFF/SPELL/TRAP/PET/ALL KILLS -->
+					<!-- THIS WORKS THANKS TO THE DAMAGE_TYPE PROPERTY -->
+					<!-- WILL NOT ALERT TARGETS DUE TO ABSENCE OF DAMAGE EFFECTS -->
+					<effect_group>
+						<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffSorceryMarkFamiliar" />
+					</effect_group>
+					<!-- CHECK FOR ACTIVE SPELLS LATER -->
+			</buff>
+			<!-- Familiar Trigger: Active Player -->
+			<!-- QUEST METHOD: Server -->
+			<buff name="buffFamiliarArcaneTrigger_ActivePlayer" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/><duration value="10"/><update_rate value="2"/>
+					<effect_group name="Cost/FX">
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffFamiliarCost"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="buffFamiliarCost"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpiritRegenStop"/> --> <!-- spirit -->
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryAggroFamiliar" />
+						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryAggroFamiliar" />
+					</effect_group>
+					<effect_group>
+							<requirement name="NotHasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffFamiliarCount"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffFamiliarCount"/> -->
+						<!-- Mark Familiar -->
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarArcane_Active" target_tags="familiar"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarArcane_Active" target_tags="familiar"/>
+					</effect_group>
+			</buff>
+			<!-- Familiar: ACTIVE PLAYER -->
+			<!-- REGULAR TURRET METHOD: Non-Server -->
+			<buff name="buffFamiliarArcane_ActivePlayer" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/><duration value="5"/><update_rate value="2"/>
+					<!-- <effect_group name="Ability: DESPAWN">
+							<requirement name="HasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
+							<requirement name="CVarCompare" cvar=".holdingPrimary" operation="Equals" value="1"/>
+							<requirement name="CVarCompare" cvar=".holdingSecondary" operation="Equals" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespawnFamiliar_Ability"/>
+					</effect_group> -->
+					<effect_group>
+						<!-- FOOD -->
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffFamiliarArcaneTrigger_ActivePlayer"/>
+<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffFamiliarCount"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffFamiliarCount"/>
+						<!-- Mark Familiar -->
+						<!-- <triggered_effect trigger="onSelfEnteredGame" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarArcane_Active" target_tags="familiar"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarArcane_Active" target_tags="familiar"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarArcane_Active" target_tags="familiar"/>
+					</effect_group>
+			</buff>
+			<!-- Familiar: ACTIVE -->
+			<buff name="buffFamiliarArcane_Active" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/><duration value="5"/><update_rate value="2"/>
+					<effect_group name="FOOD">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="FamiliarEntityFood" operation="subtract" value=".05"/>
+					</effect_group>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarCount,buffFamiliarArcane_ActivePlayer" target_tags="player"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarArcane_ActivePlayer" target_tags="player"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffDespawnFamiliar"/>
+					</effect_group>
+			</buff>
+			<!-- Familiar Manager -->
+			<buff name="buffFamiliarArcane" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
+				<effect_group name="FX">
+					<!-- Health -->
+					<!-- <triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/familiarHealth.unity3d?familiarHealth" local_offset="0,.23,0" parent_transform="Head"/> -->
+					<!-- <triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/familiarFood.unity3d?familiarFood" local_offset="0,.21,0" parent_transform="Head"/> -->
+					<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/familiarHealth.unity3d?familiarHealth" local_offset="0,.23,0" parent_transform="Head"/>
+					<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/familiarFood.unity3d?familiarFood" local_offset="0,.21,0" parent_transform="Head"/> -->
+					<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="familiarHealth"/>
+					<!-- <triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="familiarFood"/> -->
+					<!-- Spell Light -->
+					<!-- <triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneSpellLight.unity3d?arcaneSpellLight" parent_transform="Hips"/>
+					<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="arcaneSpellLight" transform_path="T0"/>
+					<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/arcaneSpellLight.unity3d?arcaneSpellLight" parent_transform="Hips"/>
+					<triggered_effect trigger="onSelfEnteredGame" action="SetTransformActive" active="true" parent_transform="arcaneSpellLight" transform_path="T0"/> -->
+				</effect_group>
+			<!-- CVARS -->
+				<effect_group name="CVAR: Max Count">
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="1"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="2"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="3"/><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="LT" value="5"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="3"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/></triggered_effect>
+				</effect_group>
+				<!-- <effect_group name="CVAR: Duration">
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="30"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="60"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="1"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="90"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="2"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="120"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="3"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="150"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="4"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="3600"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffFamiliarDuration"/>
+				</effect_group> -->
+				<effect_group name="CVAR: Max Health">
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxHealth" operation="set" value="50"/>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxHealth" operation="multiply" value="@$sorceryFamiliar"/>
+					<passive_effect name="HealthMax" operation="base_add" value="@$familiarMaxHealth"/>
+					<passive_effect name="HealthChangeOT" operation="base_add" value="1000,1000" duration="0,2"/>
+				</effect_group>
+			<!-- END - CVARS -->
+			<!-- HEALTH -->
+				<effect_group name="UI Health: 100">
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".99"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Health: 90">
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".99"/>
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".9"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Health: 75">
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".75"/>
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".9"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Health: 60">
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".6"/>
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Health: 50">
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".5"/>
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".6"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Health: 40">
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".4"/>
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".5"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Health: 25">
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".25"/>
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".4"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Health: 10">
+						<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="10"/>
+				</effect_group>
+			<!-- FOOD -->
+				<!-- <effect_group name="UI Food: 100">
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="GTE" value="95"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Food: 90">
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="LT" value="95"/>
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="GTE" value="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarFood" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Food: 75">
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="GTE" value="75"/>
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="LT" value="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarFood" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Food: 60">
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="GTE" value="60"/>
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="LT" value="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarFood" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Food: 50">
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="GTE" value="50"/>
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="LT" value="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarFood" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Food: 40">
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="GTE" value="40"/>
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="LT" value="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarFood" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Food: 25">
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="GTE" value="25"/>
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="LT" value="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarFood" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="10"/>
+				</effect_group>
+				<effect_group name="UI Food: 10">
+						<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="LT" value="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="100"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="90"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="75"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="60"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="50"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="40"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarFood" transform_path="25"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarFood" transform_path="10"/>
+				</effect_group> -->
+				
+				<effect_group name="DESPAWN">
+					<requirement name="NotHasBuff" buff="buffFamiliarNewSpawn"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespawnFamiliar">
+						<requirement name="NotHasBuff" buff="buffFamiliarArcane_Active"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffDespawnFamiliar">
+						<requirement name="NotHasBuff" buff="buffFamiliarDuration"/>
+					</triggered_effect>
+				</effect_group>
+			</buff>
+			
+			<!-- Familiar Ability: TAUNT -->
+			<buff name="buffFamiliarArcane_TauntCD" hidden="false" name_key="Cooldown: Familiar Taunt" description_key="Wait time before using Familiar Taunt." icon="uic_cooldown_familiar_heal" icon_blink="true" remove_on_death="true">
+				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
+				<display_value value="$buffFamiliarArcane_TauntCD"/><display_value_key value="{0:0}"/> 
+					<effect_group>
+						<!-- duration -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffFamiliarArcane_TauntCD" operation="set" value="5"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffFamiliarArcane_TauntCD" operation="add" value="-1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFamiliarArcane_TauntCD">
+							<requirement name="CVarCompare" cvar="$buffFamiliarArcane_TauntCD" operation="LTE" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffFamiliarArcane_TauntCD" operation="set" value="0"/>
+					</effect_group>
+			</buff>
+			<!-- Familiar Ability: TAUNT -->
+			<buff name="buffFamiliarArcane_Taunt" hidden="true">
+				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
+					<effect_group>
+						<!-- duration -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffFamiliarArcane_Taunt" operation="set" value="3"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffFamiliarArcane_Taunt" operation="add" value="-1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFamiliarArcane_Taunt">
+							<requirement name="CVarCompare" cvar="$buffFamiliarArcane_Taunt" operation="LTE" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffFamiliarArcane_Taunt" operation="set" value="0"/>
+						<!-- fx -->
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="holyCleanse-finish"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse.unity3d?holyCleanse" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse-finish.unity3d?holyCleanse-finish" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="holyCleanse"/> -->
+						<!-- ability -->
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryPotion_taunt"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="PlaySound" target="self" sound="sorceryPotion_taunt"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryPotion_taunt"/>
+						<passive_effect name="NoiseMultiplier" operation="perc_set" value="3" /> -->
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryAggroFamiliar" />
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="10" buff="buffFamiliarArcane_TauntAOE" target_tags="ally,animal"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="10" buff="buffFamiliarArcane_TauntAOE" target_tags="ally,animal"/> -->
+					</effect_group>
+			</buff>
+			<buff name="buffFamiliarArcane_TauntAOE" hidden="true">
+				<damage_type value="stun"/><stack_type value="ignore"/><duration value="1"/><update_rate value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="10"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value=".1"/>
+					</effect_group>
+			</buff>
+			
+			<!-- Familiar Ability: HEAL -->
+			<buff name="buffFamiliarArcane_HealCD" hidden="false" name_key="Cooldown: Heal Familiar" description_key="Wait time before Healing Familiar." icon="uic_cooldown_familiar_heal" icon_blink="true" remove_on_death="true">
+				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
+				<display_value value="$buffFamiliarArcane_HealCD"/><display_value_key value="{0:0}"/> 
+					<effect_group>
+						<!-- duration -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffFamiliarArcane_HealCD" operation="set" value="10"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffFamiliarArcane_HealCD" operation="add" value="-1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFamiliarArcane_HealCD">
+							<requirement name="CVarCompare" cvar="$buffFamiliarArcane_HealCD" operation="LTE" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffFamiliarArcane_HealCD" operation="set" value="0"/>
+					</effect_group>
+			</buff>
+			<!-- Familiar Ability: HEAL -->
+			<buff name="buffFamiliarArcane_Heal" hidden="true">
+				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
+					<effect_group>
+						<!-- duration -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffFamiliarArcane_Heal" operation="set" value="6"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffFamiliarArcane_Heal" operation="add" value="-1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffFamiliarArcane_Heal">
+							<requirement name="CVarCompare" cvar="$buffFamiliarArcane_Heal" operation="LTE" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$buffFamiliarArcane_Heal" operation="set" value="0"/>
+						<!-- fx -->
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="holyCleanse-finish"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse.unity3d?holyCleanse" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse-finish.unity3d?holyCleanse-finish" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="holyCleanse"/>
+						<!-- ability -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="200"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="add" value="50"/>
+					</effect_group>
+			</buff>
+	
+		<!-- FIRE FAMILIAR SPELLS -->
+			<buff name="spellFamiliarTriggerImpact_FireExplode" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/><duration value="0.01"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireImpact2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="sorceryFireball_explode" />
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireImpact2.unity3d?fireImpact2" parent_transform="Hips"/>
+					</effect_group>
+			</buff>
+			<!-- FIRE: Burn -->
+			<buff name="spellFamiliarFire_Burn" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/><stack_type value="replace"/><duration value="6"/><update_rate value="1"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fireBurning2-finish"/>
+						<triggered_effect trigger="onSelfBuffStack" action="RemoveParticleEffectFromEntity" particle="fireBurning2-finish"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning2.unity3d?fireBurning2" parent_transform="Hips" />
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireBurning2-finish.unity3d?fireBurning2-finish" parent_transform="Hips" />
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fireBurning2" />
+					</effect_group>
+					<effect_group name="SCALE">
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFamiliarFire_Burn_c1" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFamiliarFire_Burn_c1" operation="multiply" value="3"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFamiliarFire_Burn_c2" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFamiliarFire_Burn_c2" operation="multiply" value="4"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFamiliarFire_Burn_c1" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFamiliarFire_Burn_c1" operation="multiply" value="3"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFamiliarFire_Burn_c2" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellFamiliarFire_Burn_c2" operation="multiply" value="4"/>	 -->				
+					</effect_group>
+					<effect_group name="IMPACT">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="5"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="5"/>
+						<!-- <passive_effect name="RunSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
+						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/> -->
+					</effect_group>
+					<effect_group name="BURN">
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="5"/>
+					</effect_group>
+					<effect_group name="EXPLODE">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFamiliarFire_Explode"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="spellFamiliarFire_Explode"/>
+					</effect_group>
+					<effect_group name="cleanup">
+						<!-- <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellFamiliarFire_Burn_c1" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellFamiliarFire_Burn_c2" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellFamiliarFire_Burn_c3" operation="set" value="0"/> -->
+					</effect_group>
+			</buff>
+			<!-- FIRE FAMILIAR: Explode -->
+			<buff name="spellFamiliarFire_Explode" hidden="true">
+				<damage_type value="stun"/><stack_type value="ignore"/><duration value="10"/>
+					<effect_group name="SCALE">
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFamiliarFire_Explode" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFamiliarFire_Explode" operation="multiply" value="5"/>	
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellFamiliarFire_Explode" operation="set" value="0"/> -->						
+					</effect_group>
+					<effect_group name="EXPLODE">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFamiliarTriggerImpact_FireExplode" />
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="30"/>
+						<triggered_effect trigger="onSelfBuffStart" action="Ragdoll" duration="0.3"/>
+					</effect_group>
+			</buff>
+		<!-- END - FIRE FAMILIAR SPELLS -->
+	<!-- END - FAMILIAR BUFFS __________________________________________________________________________________-->
 
 
 

@@ -270,7 +270,7 @@
 			</effect_group>
 			<effect_group name="RECIPES">
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="sorceryArcaneWheel"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,10" tags="scroll_ArcaneVision,scrollFire_Weapon,scrollFire_Ammo"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,10" tags="scroll_Recall,scroll_ArcaneVision,scrollFire_Weapon,scrollFire_Ammo"/>
 				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="10" tags=""/> -->
 			</effect_group>
 		</attribute>
@@ -532,6 +532,7 @@
 		<!-- <skill name="skillSorceryIceCrafting" parent="attSorcery" name_key="skillSorceryIceCraftingName" desc_key="skillSorceryIceCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill> -->
 		<!-- <skill name="skillSorceryLightningCrafting" parent="attSorcery" name_key="skillSorceryLightningCraftingName" desc_key="skillSorceryLightningCraftingDesc" icon="ui_game_symbol_book"><effect_group/></skill> -->
 		<skill name="skillSorceryArmor" parent="attSorcery" name_key="skillSorceryArmorName" desc_key="skillSorceryArmorDesc" icon="ui_symbol_armor_sorcery"><effect_group/></skill>
+		<skill name="skillSorcerySummons" parent="attSorcery" name_key="skillSorcerySummonsName" desc_key="skillSorcerySummonsDesc" icon="ui_familiar_sorcery"><effect_group/></skill>
 		<skill name="skillSorcerySupport" parent="attSorcery" name_key="skillSorcerySupportName" desc_key="skillSorcerySupportDesc" icon="ui_game_symbol_treasure"><effect_group/></skill>
 		
 		<skill name="skillSorceryFireSpells" parent="attSorceryFire" name_key="skillSorceryFireSpellsName" desc_key="skillSorceryFireSpellsDesc" icon="ui_symbol_spell_fire_sorcery"><effect_group/></skill>
@@ -906,6 +907,89 @@
 			</effect_group>
 		</perk>		
 		
+		<!-- ARMOR MASTERY -->
+		<perk name="perkSorceryFamiliar" parent="skillSorcerySummons" name_key="perkSorceryFamiliarName" desc_key="perkSorceryFamiliarDesc" icon="uic_familiar_sorcery" min_level="0" max_level="0" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="0">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="4" desc_key="reqSorceryLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="6" desc_key="reqSorceryLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="8" desc_key="reqSorceryLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorceryFamiliarRank1Desc" long_desc_key="perkSorceryFamiliarRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorceryFamiliarRank2Desc" long_desc_key="perkSorceryFamiliarRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorceryFamiliarRank3Desc" long_desc_key="perkSorceryFamiliarRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorceryFamiliarRank4Desc" long_desc_key="perkSorceryFamiliarRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorceryFamiliarRank5Desc" long_desc_key="perkSorceryFamiliarRank5LongDesc"/>
+			</effect_group>
+			<effect_group name="ARCANE FAMILIAR"> 
+				<!-- used to scale resources -->
+				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="1,6" tags="perkSorceryFamiliar"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryFamiliarArcane"/>
+			</effect_group>
+			<effect_group name="ARCANE FAMILIAR: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="LTE" value="0"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Armor) -->
+				<!-- Perk: +50 Health -->
+			</effect_group>
+			<effect_group name="PERKS: Reset">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="30"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="Equals" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="60"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="Equals" value="2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="90"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="Equals" value="3"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="120"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="Equals" value="4"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="150"/>
+			</effect_group>
+			<effect_group name="PERKS: Level 5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryFamiliar" operation="GTE" value="5"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="3"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="3600"/>
+			</effect_group>
+			<effect_group name="FAMILIAR ID">
+				<!-- <triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="sorceryFamiliarID" operation="set" value="randomint(1000000,9999999)"/> -->
+				<!-- <triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="SorceryPlayerID" operation="set" value="100">
+					<requirement name="CVarCompare" cvar="SorceryPlayerID" operation="LTE" value="0"/>
+				</triggered_effect> -->
+			</effect_group>
+			<effect_group name="FOOD">
+				<!-- <triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="FamiliarEntityFood" operation="set" value="100">
+					<requirement name="CVarCompare" cvar="FamiliarEntityFood" operation="LTE" value="0"/>
+				</triggered_effect> -->
+			</effect_group>
+		</perk>	
 	
 <!--___________________ FIRE SORCERY ___________________-->
 	<!-- FIRE WEAPONS -->
@@ -1257,12 +1341,12 @@
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySupporterMasterCompare" operation="set" value="@$sorcerySupporterMaster"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySupporterKeyCompare" operation="set" value="@$sorcerySupporterKey"/>
 			</effect_group>
-			<effect_group name="SUPPORTER DISCLAIMER">
+			<!-- <effect_group name="SUPPORTER DISCLAIMER">
 					<requirement name="CVarCompare" cvar="$sorcerySupporterKeyCompare" operation="NE" value="@$sorcerySupporterMasterCompare"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="RemoveBuff" buff="buffSorcerySupportPerkSilver" target="self"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="RemoveBuff" buff="buffSorcerySupportPerkGold" target="self"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="SetProgressionLevel" progression_name="perkSorcerySupport" level="0"/>
-			</effect_group>			
+			</effect_group> -->			
 		</perk>	
 		
 		<!-- ELIXIR, BOOK PERKS -->

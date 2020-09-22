@@ -86,7 +86,18 @@
 			<Noise ID="5" noise="120" time="2" heat_map_strength="0.3" heat_map_time="60"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioSorcery.unity3d?sorceryAggroSilent"/>
 			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="1"/> <MaxRepeatRate value="1"/>
-		</SoundDataNode>		
+		</SoundDataNode>
+		<SoundDataNode name="sorceryAggroFamiliar"> <AudioSource name="Sounds/AudioSource_Explosion"/>
+			<Noise ID="5" noise="120" time="10" heat_map_strength="0" heat_map_time="0"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioSorcery.unity3d?sorceryAggroSilent"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="1"/> <MaxRepeatRate value="1"/>
+		</SoundDataNode>
+		<SoundDataNode name="familiarWhistle"> <AudioSource name="Sounds/AudioSource_Explosion"/>
+			<Noise ID="5" noise="120" time="1" heat_map_strength="0" heat_map_time="0"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFamiliar.unity3d?familiarWhistle"/>
+			<LowestPitch name="0.9"/><HighestPitch name="1.1"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="1"/> <MaxRepeatRate value="1"/>
+		</SoundDataNode>
 		
 		<!-- TAILORING: Arcane Wheel -->
 		<SoundDataNode name="sorceryArcaneWheel_open"> <AudioSource name="Sounds/AudioSource_UI"/>

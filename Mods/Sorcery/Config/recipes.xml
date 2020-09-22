@@ -295,6 +295,13 @@
 	<!-- END - QUESTS __________________________________________________________________________________ -->
 
 	<!-- SCROLLS __________________________________________________________________________________ -->
+		<!-- Recall -->
+		<recipe name="scroll_Recall" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+			<ingredient name="resourceExtractOmni" count="100"/>
+			<ingredient name="resourcePaper" count="20"/>
+			<ingredient name="resourceWood" count="5"/>
+			<ingredient name="bedroll" count="1"/>
+		</recipe>
 		<!-- Arcane Vision -->
 		<recipe name="scroll_ArcaneVision" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
 			<ingredient name="resourceExtractOmni" count="20"/>
@@ -305,8 +312,8 @@
 			</effect_group>
 		</recipe>
 		<!-- Fire Weapon -->
-		<recipe name="scrollFire_Weapon" count="1" craft_area="sorceryDesk" craft_time="30" tags="sorceryTier,learnable">
-			<ingredient name="resourceExtractFire" count="30"/>
+		<recipe name="scrollFire_Weapon" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+			<ingredient name="resourceExtractFire" count="40"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
 			<effect_group>
@@ -314,7 +321,7 @@
 			</effect_group>
 		</recipe>
 		<!-- Fire Ammo -->
-		<recipe name="scrollFire_Ammo" count="1" craft_area="sorceryDesk" craft_time="30" tags="sorceryTier,learnable">
+		<recipe name="scrollFire_Ammo" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
 			<ingredient name="resourceExtractFire" count="50"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
@@ -323,6 +330,15 @@
 			</effect_group>
 		</recipe>
 	<!-- END - SCROLLS __________________________________________________________________________________ -->
+	
+	<!-- FAMILIARS __________________________________________________________________________________ -->
+		<!-- Arcane Vision -->
+		<recipe name="sorceryFamiliarArcane" count="100" craft_area="sorceryDesk" craft_time="10" tags="learnable,sorceryTier">
+			<ingredient name="resourceExtractOmni" count="20"/>
+			<ingredient name="resourceBone" count="5"/>
+			<ingredient name="foodRawMeat" count="20"/>
+		</recipe>
+	<!-- END - FAMILIARS __________________________________________________________________________________ -->
 
 
 	<!-- STATIONS ______________________________________-->

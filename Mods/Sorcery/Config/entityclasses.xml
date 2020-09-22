@@ -332,8 +332,7 @@
 			<!-- <property name="LootListOnDeath" value="254"/> -->
 			<property name="TimeStayAfterDeath" value="4"/>
 			<property name="DeadBodyHitPoints" value="1000"/>
-			<property name="MapIcon" value="ui_game_symbol_bullet_point"/>
-			<property name="TrackerIcon" value="ui_game_symbol_bullet_point"/>
+			<property name="NavObject" value="animaltracking_hostile" />
 			<effect_group name="Base Effects"> <!-- zombieTemplateMale -->
 				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
 				<passive_effect name="StaminaMax" operation="base_set" value="100"/>
@@ -669,54 +668,58 @@
 		</entity_class>
 		
 		<!-- FAMILIARS -->
-		<entity_class name="sorceryFamiliarArcane">
-			<property name="HideInSpawnMenu" value="false"/>
+		<entity_class name="sorceryFamiliarMaster">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,familiar"/>
-			<property name="Class" value="EntityEnemyAnimal"/>
-			<property name="Parent" value="Animals"/>
-			<property name="EntityType" value="Animal"/>
+<!-- <property name="IgnoreTrigger" value="true"/> -->
+	<property name="Class" value="EntityEnemyAnimal"/>
+			<!-- <property name="Class" value="EntityEnemyAnimal"/> -->
+			<!-- <property name="MapIcon" value="ui_game_symbol_map_player_arrow"/> -->
+			<property name="MapIcon" value="ui_game_symbol_tracking_wolf"/>
+			<property name="TrackerIcon" value="ui_game_symbol_map_player_arrow"/>
+			<property name="NavObject" value="animaltracking_timid" />
+		<!-- <property name="Parent" value="NPC"/> -->
+		<property name="Parent" value="Animals"/>
+		<property name="EntityType" value="Animal"/>
 			<property name="AvatarController" value="AvatarAnimalController"/>
 			<property name="ModelType" value="Standard"/>
-			<!-- <property name="AvatarController" value="GameObjectAnimalAnimation"/> -->
 			<property name="Prefab" value="/Entities/Animals/Wolf/animalStandardWolfRagdoll"/>
-			<property name="Mesh" value=""/>
+			<!-- <property name="Prefab" value="#@modfolder:Resources/junkSledge_Prefab.unity3d?junkSledge_Prefab"/> -->
 			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_familiarArcane.unity3d?mat_familiarArcane"/>
 			<!-- <property name="ReplaceMaterial1" value="#@modfolder:Resources/mat_awakenedEyeLightning.unity3d?mat_awakenedEyeLightning"/> -->
+			<property name="SurfaceCategory" value="organic"/>
+			<property name="ParticleOnDeath" value="blood_death"/>
 			<property name="HasDeathAnim" value="true"/>
 			<property name="RootMotion" value="true"/>
 			<property name="HasRagdoll" value="true"/>
 			<property name="PhysicsBody" value="wolf"/>
 			<property name="Mass" value="95"/>
-			<property name="SizeScale" value="1"/>
-			<property name="IsAnimalEntity" value="true"/>
-			<property name="IsEnemyEntity" value="false"/>
-			<property name="Faction" value="animals"/>
 			<property name="Weight" value="300"/>
-			<property name="LookAtAngle" value="60"/>
+			<!-- <property name="PushFactor" value="100"/> -->
+			<property name="SizeScale" value=".5"/>
+		<property name="IsAnimalEntity" value="true"/>
+			<property name="IsEnemyEntity" value="false"/>
+		<property name="Faction" value="animals"/>
+			<property name="LookAtAngle" value="90"/>
 			<property name="RotateToGround" value="true"/>
-			<!-- <property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityZombie,20,EntityEnemyAnimal,20"/>
-			<property name="AITarget-1" value="SetNearestEntityAsTarget" data="class=EntityPlayer,20,15"/> -->
 			<property name="AIGroupCircle" value="1"/>
-			<property name="AINoiseSeekDist" value="100"/>
-			<property name="AIPathCostScale" value="0.1, 0.1"/>
-			<property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityEnemyAnimal,5,EntityZombie,5"/>
-			<property name="AITask-2" value="ApproachSpot" data="class=EntityPlayer"/>
+			<property name="AINoiseSeekDist" value="1000"/>
+			<property name="AIPathCostScale" value="100, 100"/>
+			<property name="AITask-1" value="ApproachSpot" data="class=EntityPlayer,1000,1000"/>
+			<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityZombie,10"/>
 			<property name="AITask-3" value=""/>
-			<!-- <property name="AITask-3" value="Look" data="class=EntityPlayer"/>
-			<property name="AITask-4" value="Wander" data="class=EntityPlayer"/> -->
-			<!-- <property name="AITask-4" value="Wander"/> -->
-			<!-- <property name="AITarget-1" value="SetAsTargetIfHurt"/>
-			<property name="AITarget-2" value="BlockingTargetTask"/> -->
-			<property name="AITarget-1" value="SetNearestEntityAsTarget" data="class=EntityPlayer,100,100,EntityEnemyAnimal,20,20,EntityZombie,20,20"/>
-			<property name="AITarget-2" value=""/>
-			<!-- <property name="AITarget-4" value=""/> -->
-
-			<property name="SurfaceCategory" value="organic"/>
-			<property name="ParticleOnDeath" value="blood_death"/>
+			<!-- <property name="AITask-3" value="Leap" data="legs=4"/> -->
+			<!-- <property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityEnemyAnimal,10,EntityZombie,10"/> -->
+			
+			
+			<property name="AITarget-1" value="SetNearestEntityAsTarget" data="class=EntityPlayer,1000,1000,EntityZombie,10,10"/>
+			<property name="AITarget-2" value="SetAsTargetIfHurt" data="class=EntityZombie"/>
+			<!-- <property name="AITarget-2" value=""/> -->
 			
 			<!-- Stealth settings -->
 			<property name="MaxViewAngle" value="360"/>
-			<property name="SightRange" value="100"/> 
+			<property name="SightRange" value="1000"/> 
+			<property name="SightLightThreshold" value="-2,-2"/>
 
 			<property name="SoundRandom" value="wolfroam"/>
 			<property name="SoundAlert" value="wolfalert"/>
@@ -727,38 +730,84 @@
 			<property name="SoundGiveUp" value="wolfgiveup"/>
 
 			<!-- Gameplay -->
-			<property name="PainResistPerHit" value=".6"/>
-			<property name="MaxTurnSpeed" value="420"/>
-			<property name="MoveSpeed" value="6"/>
-			<property name="MoveSpeedAggro" value="2, 2"/>
-			<property name="MoveSpeedRand" value="0"/>
-			<property name="MoveSpeedPanic" value="2.5"/>
-			<property name="SwimSpeed" value="6"/>
+			<property name="PainResistPerHit" value=".9"/> <!-- no pain -1 -->
+			<!-- <property name="PainResistPerHit" value="3"/> -->
+			<property name="MaxTurnSpeed" value="360"/>
+			<property name="MoveSpeed" value="1"/>
+			<property name="MoveSpeedAggro" value="4, 4"/>
+			<!-- <property name="MoveSpeedRand" value="0"/> -->
+			<property name="MoveSpeedPanic" value="5"/>
+			<property name="SwimSpeed" value="5"/>
 			<property name="SwimStrokeRate" value="1.1,1.5"/>
-			<property name="AttackTimeoutDay" value="1.5"/>
-			<property name="AttackTimeoutNight" value="1.4"/>
-			<property name="CanClimbLadders" value="false"/>
+			<property name="AttackTimeoutDay" value="2"/>
+			<property name="AttackTimeoutNight" value="2"/>
+			<property name="CanClimbLadders" value="true"/>
 
-			<property name="HandItem" value="meleeHandAnimalWolf"/>
 			<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
-
+			<property name="DismemberMultiplierHead" value="0"/>
+			<property name="DismemberMultiplierArms" value="0"/>
 			<property name="DismemberMultiplierLegs" value="0"/>
 
-			<property name="TimeStayAfterDeath" value="10"/>
+			<property name="TimeStayAfterDeath" value="6"/>
 			<property name="DeadBodyHitPoints" value="1000"/>
+			
+			<!-- LOOT DROP -->
+			<!-- <property name="TimeStayAfterDeath" value="-1"/>
+			<property name="DeadBodyHitPoints" value="0"/>
+			<property name="PassThroughDamage" value="true"/>
+			<property name="LootDropProb" value="1"/>
+			<property name="LootDropEntityClass" value="FamiliarLootContainerArcane"/> -->
 
-			<effect_group name="Base Effects">
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="buffEntity_SorceryManage"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AttachPrefabToEntity" target="self" parent_transform="RightHand" prefab="#@modfolder:Resources/handLightning.unity3d?handLightning" local_offset=".14,0.035,0"/>
-				<triggered_effect trigger="onSelfFirstSpawn" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/handLightning.unity3d?handLightning" local_offset="-.14,-0.05,0"/>	
-				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+			<!-- <property name="LootListAlive" value="690"/> -->
+			<!-- <property name="LootListOnDeath" value="139"/> -->
+			<!-- <property name="LootDropProb" value="0"/> -->
+			
+			<property name="HandItem" value="meleeHandFamiliarArcane"/>	
+			<property name="ExperienceGain" value="0"/>
+			<effect_group name="Base Effects" tiered="false">
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffFamiliarMark,buffSorceryMarkFamiliar,buffFamiliarCooldown,buffFamiliarSummoned"/>
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="FamiliarEntityOwner" operation="set" value="RND"/> -->
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="FamiliarEntityFood" operation="set" value="randomint(10,100)"/> -->
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="FamiliarEntityFood" operation="set" value="100"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="familiarCounter" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="buffFamiliarNewSpawn,buffSorceryImmunity_All,buffSorceryImmunity_Entities"/>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarSummoned" target_tags="player"/>
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="selfAOE" range="100" buff="buffDespawnFamiliar" target_tags="familiar"/> -->
+				<passive_effect name="HealthMax" operation="base_set" value="50"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
-				<passive_effect name="StaminaMax" operation="base_set" value="1000"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="10000"/>
+				<passive_effect name="StaminaChangeOT" operation="base_add" value="10"/>
 				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 			</effect_group>
 		</entity_class>
+		<!-- Familiar: ARCANE -->
+		<entity_class name="sorceryFamiliarArcane" extends="sorceryFamiliarMaster">
+			<property name="Tags" value="entity,animal,familiar,familiarArcane"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_familiarArcane.unity3d?mat_familiarArcane"/>
+			<!-- <property name="LootListAlive" value="139"/> -->
+			<!-- <property name="LootDropProb" value="1"/>
+			<property name="LootDropEntityClass" value="FamiliarLootContainerArcane"/>
+			<property name="TimeStayAfterDeath" value="-1"/>
+			<property name="DeadBodyHitPoints" value="0"/>
+			<property name="PassThroughDamage" value="true"/> -->
+		</entity_class>
+		
 		
 		<!-- LOOT ENTITIES -->
+		<!-- Familiar Loot: ARCANE -->
+		<entity_class name="FamiliarLootContainerArcane">
+			<property name="Tags" value="sorceryLootFamiliar"/>
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="Mesh" value="#@modfolder:Resources/chestFallenOrbLightning.unity3d?chestFallenOrbLightning"/>
+			<property name="ModelType" value="Custom"/>
+			<property name="Prefab" value="Backpack"/>
+			<property name="Class" value="EntityLootContainer"/>
+			<property name="Parent" value="Backpack"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="TimeStayAfterDeath" value="1"/>
+			<property name="LootListOnDeath" value="690"/>
+			<property name="Faction" value="none"/>	
+		</entity_class>
 		<!-- Fallen Loot: FIRE -->
 		<entity_class name="FallenLootContainerFire">
 			<property name="Tags" value="sorceryLootFallen"/>
@@ -772,8 +821,6 @@
 			<property name="TimeStayAfterDeath" value="300"/>
 			<property name="LootListOnDeath" value="693"/>
 			<property name="Faction" value="none"/>	
-			<property name="MapIcon" value="ui_game_symbol_treasure"/>
-			<property name="TrackerIcon" value="ui_game_symbol_treasure"/>
 		</entity_class>
 		<!-- Fallen Loot: ICE -->
 		<entity_class name="FallenLootContainerIce">
@@ -788,8 +835,6 @@
 			<property name="TimeStayAfterDeath" value="300"/>
 			<property name="LootListOnDeath" value="692"/>
 			<property name="Faction" value="none"/>	
-			<property name="MapIcon" value="ui_game_symbol_treasure"/>
-			<property name="TrackerIcon" value="ui_game_symbol_treasure"/>
 		</entity_class>
 		<!-- Fallen Loot: LIGHTNING -->
 		<entity_class name="FallenLootContainerLightning">
@@ -804,8 +849,6 @@
 			<property name="TimeStayAfterDeath" value="300"/>
 			<property name="LootListOnDeath" value="691"/>
 			<property name="Faction" value="none"/>	
-			<property name="MapIcon" value="ui_game_symbol_treasure"/>
-			<property name="TrackerIcon" value="ui_game_symbol_treasure"/>
 		</entity_class>
 		
 	</append>

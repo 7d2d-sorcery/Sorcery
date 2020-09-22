@@ -81,6 +81,9 @@
 				<action type="SpawnEnemy" id="sorceryFallenIntroFire" value="2" phase="1" />
 				<action type="SpawnEnemy" id="sorceryFallenIntroIce" value="2" phase="1" />
 				<action type="SpawnEnemy" id="sorceryFallenIntroLightning" value="2" phase="1" />
+				<action type="SpawnEnemy" id="sorceryFamiliarArcane" value="1" phase="1"/> <!-- familiar -->
+				<!-- Arcane Familiar -->
+				<!-- <action type="SpawnEnemy" id="sorceryFamiliarArcane" value="1" phase="2" /> -->
 				<objective type="FetchKeep" id="spellFire" value="1" phase="2" />
 				<objective type="FetchKeep" id="resourceEssenceFire" value="5" phase="2" />
 			<reward type="Exp" value="777" />
@@ -756,21 +759,43 @@
 	<!-- END - FALLEN QUESTS __________________________________________________________________________________ -->
 		
 		
-		<!-- DEV: TEST QUESTS -->
-		<!-- Summon Familiar Arcane -->
-		<quest id="summonFamiliarArcane">
-			<!-- <property name="name_key" value="quest_sorceryFallen_Trio_title" /> -->
-			<!-- <property name="subtitle_key" value="quest_sorceryFallen_Trio_subtitle" /> -->
-			<!-- <property name="description_key" value="quest_sorceryFallen_Trio" /> -->
-			<!-- <property name="offer_key" value="quest_sorceryFallen_Trio" /> -->
+<!-- DEV: TEST QUESTS -->
+		<!-- START: Summon Familiar Arcane -->
+		<quest id="quest_summonFamiliarArcane">
+			<property name="name_key" value="quest_summonFamiliarArcane_blank" />
+			<property name="subtitle_key" value="quest_summonFamiliarArcane_blank" />
+			<property name="description_key" value="quest_summonFamiliarArcane" />
+			<property name="offer_key" value="quest_summonFamiliarArcane" />
 			<property name="category_key" value="challenge" />
-			<property name="icon" value="ui_symbol_pentagram" />
-			<!-- <property name="difficulty" value="hard"/> -->
+			<property name="icon" value="uic_symbol_pentagram" />
+			<property name="repeatable" value="true"/>
+			<property name="difficulty" value="veryeasy"/>
 			<property name="shareable" value="false" />
 			<action type="SpawnEnemy" id="sorceryFamiliarArcane" value="1"/>
-			<!-- <reward type="Item" id="resourceRitualStoneLightning" value="1" /> -->
+			<!-- <reward type="Quest" id="quest_summonFamiliarArcane2" chainreward="false">
+				<property name="chainquest" value="false"/>
+			</reward> -->
 		</quest>
-		<!-- END - TEST QUEST -->
+		<!-- KILL: Summon Familiar Arcane -->
+		<quest id="quest_summonFamiliarArcane2">
+			<property name="name_key" value="quest_summonFamiliarArcane_blank" />
+			<property name="subtitle_key" value="quest_summonFamiliarArcane_blank" />
+			<property name="description_key" value="quest_summonFamiliarArcane" />
+			<property name="offer_key" value="quest_summonFamiliarArcane" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_pentagram" />
+			<property name="repeatable" value="true"/>
+			<property name="difficulty" value="veryeasy"/>
+			<property name="shareable" value="false" />
+			<objective type="AnimalKill" id="sorceryFamiliarArcane" value="1"/>
+			<!-- <objective type="ZombieKill" value="1"/> -->
+			<!-- <requirement type="Buff" id=""/> -->
+			<reward type="Quest" id="quest_summonFamiliarArcane" chainreward="false">
+				<property name="chainquest" value="false"/>
+			</reward>
+		</quest>
+	
+<!-- END - TEST QUEST -->
 		
 	</append>
 	

@@ -172,6 +172,7 @@
 		<!-- Scrolls: ACANE  -->
 		<lootgroup name="sorceryScrollsArcane"> 
 			<item name="scroll_ArcaneVision"/>
+			<item name="scroll_Recall" prob=".3"/>
 		</lootgroup>
 		<!-- Scrolls: FIRE  -->
 		<lootgroup name="sorceryScrollsFire"> 
@@ -179,6 +180,17 @@
 			<item name="scrollFire_Ammo"/>
 		</lootgroup>
 	<!-- END - SCROLLS __________________________________________________________________________________ -->
+		
+		<!-- BOOKS & SCROLLS -->
+		<lootgroup name="sorceryBooksScrolls" count="1"> 
+			<item group="sorceryScrollsArcane"/>
+			<item group="sorceryScrollsFire"/>
+			<item name="q_sorceryFallen_Fire" prob="0.3"/>
+			<item name="q_sorceryFallen_Ice" prob="0.3"/>
+			<item name="q_sorceryFallen_Lightning" prob="0.3"/>
+			<item name="q_sorceryFallen_Trio" prob="0.2"/>
+			<item name="q_sorcerySkillGrimoire" prob="0.05"/>
+		</lootgroup>	
 		
 	<!-- RESOURCES __________________________________________________________________________________ -->
 		<!-- FIRE -->
@@ -216,7 +228,8 @@
 			<item name="resourceRawDiamond" count="1,4" prob="0.05" /> <!-- 1500 -->
 			<!-- <item group="sorceryResourcesArcane" count="10,20"/> -->
 			<item group="sorceryPotions" count="1,2"/>
-			<item group="sorceryScrollsArcane" count="1"/>
+			<!-- <item group="sorceryScrollsArcane" count="1"/> -->
+			<item group="sorceryBooksScrolls" count="1"/>
 			<item group="sorceryArmor" count="1" prob=".3"/>
 			<item group="sorceryRunes" count="1" prob=".2"/>
 		</lootgroup>	
@@ -274,8 +287,7 @@
 			<item name="sorceryArmor_Hood" count="1"/>
 			<item name="sorceryArmor_Boots" count="1"/>
 			<item name="spellcastFire" count="1"/>
-			<item name="potion_Travel" count="1"/>
-			<item name="scroll_ArcaneVision" count="1"/>
+			<!-- <item name="sorceryFamiliarArcane" count="999"/> -->
 		</lootgroup>
 		<lootgroup name="sorceryIntroLootFallen_Fire" count="all">
 			<item name="potionBottle" count="0,1"/>
@@ -401,6 +413,9 @@
 		<lootcontainer id="691" count="1" size="6,4" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="2" destroy_on_close="false">
 			<item group="sorceryLootChestFallen_Lightning" />
 		</lootcontainer>
+		<!-- Familiar Inventory -->
+		<lootcontainer id="690" count="0" size="5,3" sound_open="sorceryChant" open_time="0" sound_close="sorceryLightning_implodelow" loot_quality_template="sorceryTemplate_lowest">
+		</lootcontainer>
 	</append> 
 <!-- END - SORCERY CONTAINERS __________________________________________________________________________________ -->
 
@@ -518,10 +533,7 @@
 	<!-- PERK BOOKS _______________________________________________________ -->
 	<!-- Perk Books: T0 All -->
 	<append xpath="/lootcontainers/lootgroup[@name='perkBooks']">
-		<item name="q_sorceryFallen_Fire"/>
-		<item name="q_sorceryFallen_Ice"/>
-		<item name="q_sorceryFallen_Lightning"/>
-		<item name="q_sorceryFallen_Trio"/>
+		<item group="sorceryBooksScrolls" count="1"/>
 	</append>
 	<!-- END - PERK BOOKS _______________________________________________________ -->
 	
@@ -529,8 +541,7 @@
 	<!-- BOOKS ALL _______________________________________________________ -->
 	<!-- Books All -->
 	<append xpath="/lootcontainers/lootgroup[@name='booksAllScaled']">
-		<item group="sorceryScrollsArcane" count="1"/>
-		<item group="sorceryScrollsFire" count="1"/>
+		<item group="sorceryBooksScrolls" count="1"/>
 	</append>
 	<!-- END - BOOKS ALL _______________________________________________________ -->
 	
@@ -558,9 +569,9 @@
 	<!-- MISCELLANEOUS _______________________________________________________ -->
 	<!-- Cupboard -->
 	<append xpath="/lootcontainers/lootgroup[@name='cupboard']">
-		<item group="sorceryPotions"/>
-		<item group="sorceryScrollsArcane" count="1"/>
-		<item group="sorceryScrollsFire" count="1"/>
+		<item group="sorceryPotions" prob="0.5"/>
+		<item group="sorceryScrollsArcane" count="1" prob="0.3"/>
+		<item group="sorceryScrollsFire" count="1" prob="0.3"/>
 	</append>
 	<!-- Rare Ores -->
 	<append xpath="/lootcontainers/lootgroup[@name='rareOres']">

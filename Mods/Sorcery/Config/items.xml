@@ -106,8 +106,15 @@
 			</property>
 			<property class="Action1">
 				<property name="Class" value="Activate"/>
+				<property name="Delay" value="0.1"/>
+				<property name="UsePowerAttackAnimation" value="false"/>
+				<!-- <property name="Class" value="OpenBundle"/>
 				<property name="Delay" value="0"/>
-				<!-- <property name="UsePowerAttackAnimation" value="false"/> -->
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value=".."/>
+				<property name="Create_item" value="sorceryFamiliarArcane"/>
+				<property name="Create_item_count" value="1"/>
+				<property name="Consume" value="false"/> -->
 			</property>
 			<!-- NOTE: .spellcastFire_spiritCost is determined by spells -->			
 			<effect_group name="PRIMARY: Start">
@@ -302,13 +309,14 @@
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
 				<passive_effect name="BlockDamage" operation="base_set" value="15"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="20"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn"/>
 				<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 				<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
 				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal"/> -->
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireball_impact" />
 				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/> -->
 				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn"/>
+<!-- <triggered_effect trigger="onSelfAttackedOther" action="Ragdoll" target="other" duration="0" force="200"/> -->
 			</effect_group>
 			<effect_group tiered="false" name="CALC">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spellFire_c1" operation="set" value="7.5"/> <!-- 0,30% -->
@@ -316,37 +324,37 @@
 			</effect_group>
 			<effect_group tiered="false" name="RANK 0">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="0"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1" buff="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 			<effect_group tiered="false" name="RANK 1">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="1"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.2" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.2" buff="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="1" />
 			</effect_group>
 			<effect_group tiered="false" name="RANK 2">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="2"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.4" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.4" buff="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="2" />
 			</effect_group>
 			<effect_group tiered="false" name="RANK 3">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="3"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.6" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.6" buff="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="3" />
 			</effect_group>
 			<effect_group tiered="false" name="RANK 4">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="4"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.8" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="1.8" buff="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="4" />
 			</effect_group>
 			<effect_group tiered="false" name="RANK 5">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="5"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="2" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="positionAOE" range="2" buff="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 				<passive_effect name="DegradationPerUse" operation="perc_add" value="5" />
 			</effect_group>
 			<effect_group tiered="false" name="RANK 5: Cremation">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@.spellFire_c1"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="4" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="4" buff="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: Wield">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSpiritRegenStop,spellCharge_Fire,spellcastAmmo_Fire">
@@ -488,11 +496,11 @@
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
 				<passive_effect name="BlockDamage" operation="base_set" value="15"/>
 				<passive_effect name="DegradationPerUse" operation="base_add" value="10" /> <!-- Essence Repair: 20 -->
-				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2,spellFire2_Clone"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2,spellFire2_Clone"/>
 				<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 				<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
 				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2" target_tags="enemy,animal"/> -->
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireball_impact" />
 			</effect_group>
 			<effect_group tiered="false" name="CALC">
@@ -522,7 +530,7 @@
 			<effect_group tiered="false" name="RANK 5: Category 5">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="GTE" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@.spellFire2_c1"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="6" buff="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2_Clone" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="6" buff="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellFire2_Clone" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: Wield">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSpiritRegenStop,spellCharge_Fire2,spellcastAmmo_Fire2">
@@ -667,11 +675,11 @@
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
 				<passive_effect name="BlockDamage" operation="base_set" value="15"/>
 				<passive_effect name="DegradationPerUse" operation="base_add" value="20" /> <!-- Essence Repair: 20 -->
-				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_Fire3,spellTriggerImpact_Fire3,spellFire3,spellFire3_Crater,spellFire3_Shower"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_Fire3,spellTriggerImpact_Fire3,spellFire3,spellFire3_Crater,spellFire3_Shower"/>
 				<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 				<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
 				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_Fire3" target_tags="enemy,animal"/> -->
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_Fire3"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_Fire3"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireball_impact" />
 			</effect_group>
 			<effect_group tiered="false" name="CALC">
@@ -701,7 +709,7 @@
 			<effect_group tiered="false" name="RANK 5: HELLSTORM">
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire3" operation="GTE" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@.spellFire3_c1"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="5" buff="buffEntity_FireSorcery,spellTrigger_Fire3_Shower" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="5" buff="buffSorceryMark,buffEntity_FireSorcery,spellTrigger_Fire3_Shower" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: Wield">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSpiritRegenStop,spellCharge_Fire3,spellcastAmmo_Fire3">
@@ -803,14 +811,14 @@
 			<property name="UnlockedBy" value="perkSorcerySpellFire"/>
 			<property class="Action1">
 				<property name="Gravity" value="-3"/>
-				<property name="Buff" value="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire"/>
+				<property name="Buff" value="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire"/>
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="20"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="3"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="45"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
 				<display_value name="dsorcAmmoDOT" value="1" />
 				<display_value name="dsorcAmmoEffect" value=".36" />
@@ -838,14 +846,14 @@
 			<property name="UnlockedBy" value="perkSorcerySpellFire2"/>
 			<property class="Action1">
 				<property name="Gravity" value="-3"/>
-				<property name="Buff" value="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire2"/>
+				<property name="Buff" value="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire2"/>
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="25"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="50"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire2"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire2"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
 				<display_value name="dsorcAmmoDOT" value="1" />
 				<display_value name="dsorcAmmoEffect" value="1" />
@@ -874,14 +882,14 @@
 			<property name="UnlockedBy" value="perkSorcerySpellFire3"/>
 			<property class="Action1">
 				<property name="Gravity" value="-3"/>
-				<property name="Buff" value="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_ArrowFire3"/>
+				<property name="Buff" value="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_ArrowFire3"/>
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="30"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="10"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="60"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_ArrowFire3"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_ArrowFire3"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
 				<display_value name="dsorcAmmoDOT" value="1" />
 				<display_value name="dsorcAmmoEffect" value="1" />
@@ -912,14 +920,14 @@
 			<property name="UnlockedBy" value="perkSorcerySpellFire"/>
 			<property class="Action1">
 				<property name="Gravity" value="-3"/>
-				<property name="Buff" value="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire"/>
+				<property name="Buff" value="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire"/>
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="20"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="3"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="70"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
 				<display_value name="dsorcAmmoDOT" value="1" />
 				<display_value name="dsorcAmmoEffect" value=".36" />
@@ -948,14 +956,14 @@
 			<property name="UnlockedBy" value="perkSorcerySpellFire2"/>
 			<property class="Action1">
 				<property name="Gravity" value="-3"/>
-				<property name="Buff" value="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire2"/>
+				<property name="Buff" value="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire2"/>
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="25"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="5"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="75"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire2"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact_Fire,spellArrowFire2"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
 				<display_value name="dsorcAmmoDOT" value="1" />
 				<display_value name="dsorcAmmoEffect" value="1" />
@@ -985,14 +993,14 @@
 			<property name="UnlockedBy" value="perkSorcerySpellFire3"/>
 			<property class="Action1">
 				<property name="Gravity" value="-3"/>
-				<property name="Buff" value="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_ArrowFire3"/>
+				<property name="Buff" value="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_ArrowFire3"/>
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="30"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="10"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="80"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_ArrowFire3"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="1" tags="buffSorceryMark,buffEntity_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_ArrowFire3"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
 				<display_value name="dsorcAmmoDOT" value="1" />
 				<display_value name="dsorcAmmoEffect" value="1" />
@@ -5345,6 +5353,22 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_ArcaneVision"/>
 			</effect_group>
 		</item>
+		<!-- Scroll: Recall -->
+		<item name="scroll_Recall">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
+			<property class="Action0">
+				<requirement name="NotHasBuff" buff="buffScroll_RecallTrigger"/>
+				<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="1"/>
+				<property name="UseAnimation" value="false"/>
+				<property name="Use_time" value="5"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="9999"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_RecallTrigger"/>
+			</effect_group>
+		</item>
 		
 		<!-- QUEST SCROLLS -->
 		<!-- Scroll: Conjure Fire Items  -->
@@ -6269,6 +6293,55 @@
 				<property name="QuestGiven" value="quest_skillGrimoire"/>
 			</property>
 		</item>
+		
+		<!-- <item name="q_summonFamiliar">
+			<property name="Extends" value="questMasterSorcery"/>
+			<property name="HoldType" value="67"/>
+	<property name="HoldingItemHidden" value="false"/>
+			<property name="Meshfile" value="#@modfolder:Resources/familiarArcane.unity3d?familiarArcane"/>
+			<property name="Material" value="MsorceryExtractOmni"/><property name="Weight" value="0"/>
+			<property name="Stacknumber" value="999"/>
+			<property name="Candrop" value="True"/>
+			<property class="Action0"> 
+				<property name="Class" value="Quest"/>
+				<property name="UseAnimation" value="false"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="QuestGiven" value="quest_summonFamiliarArcane"/>
+				<property name="Consume" value="false"/>
+			</property>
+			<property class="Action0">
+					<requirement name="NotHasBuff" buff="buffFamiliarCooldown"/>
+		<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="30000"/>
+				<property name="Class" value="Quest"/>
+				<property name="UseAnimation" value="false"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="QuestGiven" value="quest_summonFamiliarArcane"/>
+				<property name="Consume" value="false"/>
+			</property>
+			<property class="Action1">
+		<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="30000"/>
+				<property name="Class" value="Activate"/>
+				<property name="Delay" value="0.1"/>
+				<property name="UsePowerAttackAnimation" value="false"/>
+			</property>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="familiarWhistle">
+					<requirement name="HasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffFamiliarArcaneTrigger_ActivePlayer"/>
+			</effect_group>			
+			<effect_group tiered="false" name="Ability: HEAL">
+					<requirement name="NotHasBuff" buff="buffFamiliarArcane_HealCD"/>
+					<requirement name="HasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="10"/>
+		<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="30000"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarArcane_Heal" target_tags="familiar"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="buffFamiliarArcane_HealCD,buffSpiritRegenStop"/>
+			</effect_group>
+		</item> -->
 	<!-- END - SKILL QUESTS __________________________________________________________________________________ -->
 		
 		
@@ -6287,7 +6360,7 @@
 
 
 
-
+	<!-- FALLEN HAND ______________________________________-->
 		<!-- HAND: Fallen -->	
 		<!-- Hand Fallen: FIRE -->
 		<item name="meleeHandSorceryFallenFire">
@@ -6502,32 +6575,90 @@
 	
 	
 	<!-- FAMILIARS ______________________________________-->
-		<item name="sorceryFamiliarArcane">
-			<property name="Tags" value="turretRanged,weapon,ranged,reloadPenalty,drumMagazine,attIntellect,perkTurrets,canHaveCosmetic"/>
-			<property name="HoldType" value="67"/>
-			<property name="Meshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-			<!-- <property name="Meshfile" value="/Entities/Animals/Wolf/animalStandardWolfRagdoll"/> -->
-			<!-- <property name="Prefab" value="/Entities/Animals/Wolf/animalStandardWolfRagdoll"/> -->
-			<!-- <property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_familiarArcane.unity3d?mat_familiarArcane"/> -->
-			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="MJunkTurretParts"/> <property name="Weight" value="4"/>
-			<property name="DegradationBreaksAfter" value="false"/>
-			<!-- <property name="SoundJammed" value="weapon_jam"/> -->
-			<property name="RepairTools" value="resourceRepairKit"/>
-			<property name="Group" value="Ammo/Weapons"/>
-			<property name="Stacknumber" value="1"/>
-			<property name="EconomicValue" value="500"/>
-			<!-- <property name="SellableToTrader" value="true"/> -->
-			<!-- <property name="RequiredPower" value="15"/> -->
-			<!-- <property name="UnlockedBy" value="gunBotT2JunkTurretSchematic"/> -->
-			<property name="ShowQuality" value="false"/>
+		<!-- Hand Familiar: ARCANE -->
+		<item name="meleeHandFamiliarArcane">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Degradation" value="99999" param1="true"/>
 			<property class="Action0">
-				<property name="Class" value="SpawnVehicle"/>
-				<property name="Vehicle" value="sorceryFamiliarArcane"/>
-				<!-- <property name="PreviewSize" value="1,1,1"/> -->
-				<property name="Consume" value="false"/>
-				<property name="Create_item" value="sorceryFamiliarArcane"/>
+				<property name="Delay" value=".8"/>
+				<property name="Range" value="2"/>
+				<property name="Sphere" value="1"/>
+				<property name="DamageEntity" value="1"/>
+				<property name="DamageBlock" value="200"/>
+				<property name="Buff" value="spellTriggerImpact3_Fire,spellFamiliarFire_Burn"/>
 			</property>
+			<effect_group name="Base Effects" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="4" tags="earth,wood"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="Ragdoll" target="other" duration="0" force="30"/>
+				<!-- <triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/> -->
+				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="spellTriggerImpact3_Fire,spellFamiliarFire_Burn"/>
+			</effect_group>
+		</item>
+		<item name="sorceryFamiliarArcane">
+			<property name="Tags" value="familiarArcane"/>
+			<property name="HoldType" value="67"/>
+			<!-- <property name="HoldingItemHidden" value="true"/> -->
+			<property name="Meshfile" value="#Other/Items?Misc/snowballPrefab.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/familiarArcane.unity3d?familiarArcane"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Morganic"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="999"/>
+			<property name="SellableToTrader" value="false"/>
+			<!-- <property name="ShowQuality" value="false"/> -->
+			<property name="Group" value="Special Items"/>
+			<property class="Action0">
+<requirement name="NotHasBuff" buff="buffFamiliarCooldown"/>
+					<!-- <requirement name="CVarCompare" cvar="sorceryFamiliarCount" operation="LT" value="3"/> -->
+					<!-- <requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="30"/> --> <!-- spirit -->
+		<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="30000"/>
+				<property name="Class" value="SpawnTurret"/>
+				<property name="Turret" value="sorceryFamiliarArcane"/>
+				<!-- <property name="PreviewSize" value="1,1,1"/> -->
+				<property name="Sound_start" value="sorceryLightning_portalin"/>
+			</property>
+			<property class="Action1">
+		<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="30000"/>
+				<property name="Class" value="Activate"/>
+				<property name="Delay" value="0"/>
+				<property name="UsePowerAttackAnimation" value="false"/>
+				<!-- <property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="60"/>
+				<property name="Use_time" value="0"/>
+				<property name="Create_item" value="sorceryFamiliarArcane"/>
+				<property name="Create_item_count" value="5"/> -->
+			</property>
+			<effect_group tiered="false" name="General">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffFamiliarMark_Apply"/>
+			</effect_group>
+			<effect_group tiered="false" name="ABILITY: Despawn">
+					<requirement name="HasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="buffDespawnFamiliar_AbilityTrigger"/>
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" buff="buffDespawnFamiliar_AbilityTrigger"/>
+			</effect_group>
+			<!-- <effect_group tiered="false" name="Ability: TAUNT">
+					<requirement name="NotHasBuff" buff="buffFamiliarArcane_TauntCD"/>
+					<requirement name="NotHasBuff" buff="buffDespawnFamiliar_Ability"/>
+					<requirement name="HasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="10"/>
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarArcane_Taunt" target_tags="familiar"/>
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" buff="buffFamiliarArcane_TauntCD,buffFamiliarMark_Apply"/>
+			</effect_group> -->
+			<effect_group tiered="false" name="Ability: HEAL">
+					<requirement name="NotHasBuff" buff="buffFamiliarArcane_HealCD"/>
+					<requirement name="NotHasBuff" buff="buffDespawnFamiliar_Ability"/>
+					<requirement name="HasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="10"/> <!-- spirit -->
+		<!-- <requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="30000"/> -->
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="10"/> <!-- spirit -->
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarArcane_Heal" target_tags="familiar"/>
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" buff="buffFamiliarArcane_HealCD,buffFamiliarMark_Apply"/>
+			</effect_group>
 		</item>
 	
 	
