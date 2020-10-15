@@ -56,7 +56,7 @@
 			<property name="description_key" value="quest_skillGrimoire" />
 			<property name="offer_key" value="quest_skillGrimoire" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_pentagram_add" />
+			<property name="icon" value="uic_symbol_pentagram_add" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="true"/>
@@ -73,7 +73,7 @@
 			<property name="description_key" value="quest_sorceryIntro1" />
 			<property name="offer_key" value="quest_sorceryIntro1" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_pentagram" />
+			<property name="icon" value="uic_symbol_pentagram" />
 			<property name="difficulty" value="insane"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -98,7 +98,7 @@
 			<property name="description_key" value="quest_sorceryIntro2" />
 			<property name="offer_key" value="quest_sorceryIntro2" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_pentagram" />
+			<property name="icon" value="uic_symbol_pentagram" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -123,7 +123,7 @@
 			<property name="description_key" value="quest_sorceryIntro3" />
 			<property name="offer_key" value="quest_sorceryIntro3" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_pentagram" />
+			<property name="icon" value="uic_symbol_pentagram" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -145,10 +145,16 @@
 			<reward type="Quest" id="quest_sorceryIntroAlchemy">
 				<property name="chainquest" value="false"/>
 			</reward>
+			<reward type="Quest" id="quest_sorceryIntroEnchanting">
+				<property name="chainquest" value="false"/>
+			</reward>
 			<reward type="Quest" id="quest_sorceryIntroRunesmithing">
 				<property name="chainquest" value="false"/>
 			</reward>
 			<reward type="Quest" id="quest_sorceryIntroArcaneArmor">
+				<property name="chainquest" value="false"/>
+			</reward>
+			<reward type="Quest" id="quest_sorceryIntroFamiliar">
 				<property name="chainquest" value="false"/>
 			</reward>
 			<reward type="Exp" value="777" />
@@ -167,7 +173,7 @@
 			<property name="description_key" value="quest_sorceryIntroPotions" />
 			<property name="offer_key" value="quest_sorceryIntroPotions" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_potion" />
+			<property name="icon" value="uic_symbol_potion" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -183,7 +189,7 @@
 			<property name="description_key" value="quest_sorceryIntroScrolls" />
 			<property name="offer_key" value="quest_sorceryIntroScrolls" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_sorcery_scroll" />
+			<property name="icon" value="uic_sorcery_scroll" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -199,7 +205,7 @@
 			<property name="description_key" value="quest_sorceryIntroTailoring" />
 			<property name="offer_key" value="quest_sorceryIntroTailoring" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_armor_sorcery" />
+			<property name="icon" value="uic_symbol_armor_sorcery" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -215,12 +221,28 @@
 			<property name="description_key" value="quest_sorceryIntroAlchemy" />
 			<property name="offer_key" value="quest_sorceryIntroAlchemy" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_potion" />
+			<property name="icon" value="uic_symbol_potion" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<objective type="FetchKeep" id="sorceryAlchemyStation" value="1" phase="1" />
 				<objective type="BlockPlace" id="sorceryAlchemyStation" value="1" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Enchanting -->
+		<quest id="quest_sorceryIntroEnchanting">
+			<property name="name_key" value="quest_sorceryIntroEnchanting_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroEnchanting_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroEnchanting" />
+			<property name="offer_key" value="quest_sorceryIntroEnchanting" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_rune" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="sorceryEnchantingStation" value="1" phase="1" />
+				<objective type="BlockPlace" id="sorceryEnchantingStation" value="1" phase="2" />
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
@@ -231,12 +253,13 @@
 			<property name="description_key" value="quest_sorceryIntroRunesmithing" />
 			<property name="offer_key" value="quest_sorceryIntroRunesmithing" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_rune_sorcery" />
+			<property name="icon" value="uic_symbol_rune" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<objective type="Craft" id="rune_SpellLight" value="1" phase="1"/>
 				<objective type="FetchKeep" id="rune_SpellLight" value="1" phase="2" />
+				<!-- sorceryEnchantingStation -->
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
@@ -247,13 +270,15 @@
 			<property name="description_key" value="quest_sorceryIntroArcaneArmor" />
 			<property name="offer_key" value="quest_sorceryIntroArcaneArmor" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_armor_sorcery" />
+			<property name="icon" value="uic_symbol_armor_sorcery" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<!-- NOTE: NRE if too many; alternative method. -->
-				<objective type="FetchKeep" id="resourceThreadArcane" value="1" phase="1"/> <!-- change to kill with set buff later -->
-				<requirement type="Buff" id="buffSorceryArmorSet_Arcane" phase="1"/>
+				<!-- <objective type="FetchKeep" id="resourceThreadArcane" value="1" phase="1"/> -->
+				<objective type="Wear" id="sorceryArmor_Hood" phase="1"/>
+				<objective type="ZombieKill" value="1" phase="2"/>
+				<requirement type="Buff" id="buffSorceryArmorSet_Arcane" phase="2"/>
 				<!-- <objective type="Wear" id="sorceryArmor_Hood" />
 				<objective type="Wear" id="sorceryAccessory_Shades" />
 				<objective type="Wear" id="sorceryArmor_Bandana" />
@@ -267,6 +292,22 @@
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
+		<!-- Intro: Familiar -->
+		<quest id="quest_sorceryIntroFamiliar">
+			<property name="name_key" value="quest_sorceryIntroFamiliar_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFamiliar_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFamiliar" />
+			<property name="offer_key" value="quest_sorceryIntroFamiliar" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_familiar_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="sorceryFamiliarArcane" value="1" phase="1"/>
+				<objective type="FetchKeep" id="sorceryFamiliarArcane" value="1" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
 		
 	<!-- FIRE INTRO QUESTS -->
 		<!-- Intro: Fire2 Craft:  -->
@@ -276,7 +317,7 @@
 			<property name="description_key" value="quest_sorceryIntroFireCraftFire2" />
 			<property name="offer_key" value="quest_sorceryIntroFireCraftFire2" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_spell_fire_sorcery" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -292,7 +333,7 @@
 			<property name="description_key" value="quest_sorceryIntroFireCraftFire3" />
 			<property name="offer_key" value="quest_sorceryIntroFireCraftFire3" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_spell_fire_sorcery" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -308,7 +349,7 @@
 			<property name="description_key" value="quest_sorceryIntroFireCraftArrowFire" />
 			<property name="offer_key" value="quest_sorceryIntroFireCraftArrowFire" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_sorcery_ammo_fire" />
+			<property name="icon" value="uic_sorcery_ammo_fire" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -324,7 +365,7 @@
 			<property name="description_key" value="quest_sorceryIntroFireCraftArrowFire2" />
 			<property name="offer_key" value="quest_sorceryIntroFireCraftArrowFire2" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_sorcery_ammo_fire" />
+			<property name="icon" value="uic_sorcery_ammo_fire" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -340,7 +381,7 @@
 			<property name="description_key" value="quest_sorceryIntroFireCraftArrowFire3" />
 			<property name="offer_key" value="quest_sorceryIntroFireCraftArrowFire3" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_sorcery_ammo_fire" />
+			<property name="icon" value="uic_sorcery_ammo_fire" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -356,13 +397,15 @@
 			<property name="description_key" value="quest_sorceryIntroFireArmor" />
 			<property name="offer_key" value="quest_sorceryIntroFireArmor" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_armor_sorcery" />
+			<property name="icon" value="uic_symbol_armor_fire_sorcery" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<!-- NOTE: NRE if too many; alternative method. -->
-				<objective type="FetchKeep" id="resourceThreadFire" value="1" phase="1"/>
-				<requirement type="Buff" id="buffSorceryArmorSet_Fire" phase="1"/>
+				<!-- <objective type="FetchKeep" id="resourceThreadFire" value="1" phase="1"/> -->
+				<objective type="Wear" id="sorceryArmorFire_Hood" phase="1"/>
+				<objective type="ZombieKill" value="1" phase="2"/>
+				<requirement type="Buff" id="buffSorceryArmorSet_Fire" phase="2"/>
 				<!-- <objective type="Wear" id="sorceryArmorFire_Hood" />
 				<objective type="Wear" id="sorceryAccessoryFire_Shades" />
 				<objective type="Wear" id="sorceryArmorFire_Bandana" />
@@ -373,6 +416,22 @@
 				<objective type="Wear" id="sorceryArmorFire_Leg" />
 				<objective type="Wear" id="sorceryArmorFire_Pants" />
 				<objective type="Wear" id="sorceryArmorFire_Boots" /> -->
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Fire Spell Turret  -->
+		<quest id="quest_sorceryIntroFireSpellTurret">
+			<property name="name_key" value="quest_sorceryIntroFireSpellTurret_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireSpellTurret_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireSpellTurret" />
+			<property name="offer_key" value="quest_sorceryIntroFireSpellTurret" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_trap_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="spellTurretFire" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellTurretFire" value="1" phase="2" />
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
@@ -387,7 +446,7 @@
 			<property name="description_key" value="quest_sorceryIntroGuide_Fire" />
 			<property name="offer_key" value="quest_sorceryIntroGuide_Fire" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_spell_fire_sorcery" />
+			<property name="icon" value="uic_symbol_fire" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -405,7 +464,7 @@
 			<property name="description_key" value="quest_sorceryIntroGuide_Fire2" />
 			<property name="offer_key" value="quest_sorceryIntroGuide_Fire2" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_spell_fire_sorcery" />
+			<property name="icon" value="uic_symbol_fire" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -430,7 +489,7 @@
 			<property name="description_key" value="quest_sorceryIntroGuide_Fire3" />
 			<property name="offer_key" value="quest_sorceryIntroGuide_Fire3" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_spell_fire_sorcery" />
+			<property name="icon" value="uic_symbol_fire" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -450,7 +509,7 @@
 			<property name="description_key" value="quest_sorceryIntroGuide_Fire4" />
 			<property name="offer_key" value="quest_sorceryIntroGuide_Fire4" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
+			<property name="icon" value="uic_symbol_fire" />
 			<property name="difficulty" value="normal"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -499,7 +558,7 @@
 			<property name="description_key" value="quest_sorceryIntroGuide_Fire5" />
 			<property name="offer_key" value="quest_sorceryIntroGuide_Fire5" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="ui_symbol_spell_fire_sorcery" />
+			<property name="icon" value="uic_symbol_fire" />
 			<property name="difficulty" value="hard"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -563,6 +622,9 @@
 			<reward type="Quest" id="quest_sorceryIntroFireArmor">
 				<property name="chainquest" value="false"/>
 			</reward>
+			<reward type="Quest" id="quest_sorceryIntroFireSpellTurret">
+				<property name="chainquest" value="false"/>
+			</reward>
 		</quest>
 	<!-- END - INTRO FIRE __________________________________________________________________________________ -->
 
@@ -574,7 +636,7 @@
 			<property name="description_key" value="quest_sorceryFallen_Fire" />
 			<property name="offer_key" value="quest_sorceryFallen_Fire" />
 			<property name="category_key" value="challenge" />
-			<property name="icon" value="ui_symbol_fire" />
+			<property name="icon" value="uic_sorcery_fire" />
 			<property name="difficulty" value="hard"/>
 			<property name="shareable" value="false" />
 				<objective type="RandomGoto" value="500-800" phase="1">
@@ -600,7 +662,7 @@
 			<property name="description_key" value="quest_sorceryFallen_Ice" />
 			<property name="offer_key" value="quest_sorceryFallen_Ice" />
 			<property name="category_key" value="challenge" />
-			<property name="icon" value="ui_symbol_ice" />
+			<property name="icon" value="uic_sorcery_ice" />
 			<property name="difficulty" value="hard"/>
 			<property name="shareable" value="false" />
 				<objective type="RandomGoto" value="500-800" phase="1">
@@ -626,7 +688,7 @@
 			<property name="description_key" value="quest_sorceryFallen_Lightning" />
 			<property name="offer_key" value="quest_sorceryFallen_Lightning" />
 			<property name="category_key" value="challenge" />
-			<property name="icon" value="ui_symbol_lightning" />
+			<property name="icon" value="uic_sorcery_lightning" />
 			<property name="difficulty" value="hard"/>
 			<property name="shareable" value="false" />
 				<objective type="RandomGoto" value="500-800" phase="1">
@@ -655,7 +717,7 @@
 			<property name="description_key" value="quest_sorceryFallen_Fire" />
 			<property name="offer_key" value="quest_sorceryFallen_Fire" />
 			<property name="category_key" value="challenge" />
-			<property name="icon" value="ui_symbol_fire" />
+			<property name="icon" value="uic_sorcery_fire" />
 			<property name="difficulty" value="hard"/>
 			<property name="shareable" value="true" />
 				<objective type="RandomGoto" value="500-800" phase="1">
@@ -680,7 +742,7 @@
 			<property name="description_key" value="quest_sorceryFallen_Ice" />
 			<property name="offer_key" value="quest_sorceryFallen_Ice" />
 			<property name="category_key" value="challenge" />
-			<property name="icon" value="ui_symbol_ice" />
+			<property name="icon" value="uic_sorcery_ice" />
 			<property name="difficulty" value="hard"/>
 			<property name="shareable" value="true" />
 				<objective type="RandomGoto" value="500-800" phase="1">
@@ -705,7 +767,7 @@
 			<property name="description_key" value="quest_sorceryFallen_Lightning" />
 			<property name="offer_key" value="quest_sorceryFallen_Lightning" />
 			<property name="category_key" value="challenge" />
-			<property name="icon" value="ui_symbol_lightning" />
+			<property name="icon" value="uic_sorcery_lightning" />
 			<property name="difficulty" value="hard"/>
 			<property name="shareable" value="true" />
 				<objective type="RandomGoto" value="500-800" phase="1">
@@ -730,7 +792,7 @@
 			<property name="description_key" value="quest_sorceryFallen_Trio" />
 			<property name="offer_key" value="quest_sorceryFallen_Trio" />
 			<property name="category_key" value="challenge" />
-			<property name="icon" value="ui_symbol_pentagram" />
+			<property name="icon" value="uic_symbol_pentagram" />
 			<property name="difficulty" value="hard"/>
 			<property name="shareable" value="true" />
 				<objective type="RandomGoto" value="800-1200" phase="1">
@@ -767,7 +829,7 @@
 			<property name="description_key" value="quest_summonFamiliarArcane" />
 			<property name="offer_key" value="quest_summonFamiliarArcane" />
 			<property name="category_key" value="challenge" />
-			<property name="icon" value="uic_symbol_pentagram" />
+			<property name="icon" value="uic_familiar_sorcery" />
 			<property name="repeatable" value="true"/>
 			<property name="difficulty" value="veryeasy"/>
 			<property name="shareable" value="false" />
@@ -783,7 +845,7 @@
 			<property name="description_key" value="quest_summonFamiliarArcane" />
 			<property name="offer_key" value="quest_summonFamiliarArcane" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_pentagram" />
+			<property name="icon" value="uic_familiar_sorcery" />
 			<property name="repeatable" value="true"/>
 			<property name="difficulty" value="veryeasy"/>
 			<property name="shareable" value="false" />

@@ -73,22 +73,6 @@
 		</lootgroup>	
 	<!-- END - AMMO -->
 	
-	<!-- RUNES __________________________________________________________________________________ -->
-		<!-- Runes: ARCANE  -->
-		<lootgroup name="sorceryRunes"> 
-			<item name="rune_LuckyDukes" prob=".4"/>
-			<item name="rune_LockShatter" prob=".2"/>
-			<item name="rune_DoorShatter" prob=".2"/>
-			<item name="rune_SupporterAstryael" prob=".05"/>
-			<item name="rune_SpellLight"/>
-			<item name="rune_LuckyPotions"/>
-			<item name="rune_LuckySpells"/>
-			<item name="rune_LuckyAmmo"/>
-			<item name="rune_LuckyScrolls"/>
-			<item name="runeFire_LuckyEssence"/>
-		</lootgroup>	
-	<!-- END - RUNES -->
-	
 	<!-- ARMOR __________________________________________________________________________________ -->
 		<!-- Armor: ARCANE  -->
 		<lootgroup name="sorceryArmor" loot_quality_template="QLTemplateT0"> 
@@ -144,6 +128,29 @@
 		</lootgroup>		
 	<!-- END - ARMOR __________________________________________________________________________________ -->
 	
+	<!-- RUNES __________________________________________________________________________________ -->
+		<!-- Runes: ARCANE  -->
+		<lootgroup name="sorceryRunes"> 
+			<item name="rune_LockShatter" prob=".25"/>
+			<item name="rune_DoorShatter" prob=".25"/>
+			<item name="rune_SupporterAstryael" prob=".15"/>
+			<item name="rune_SupporterDragoness" prob=".15"/>
+			<item name="rune_SpellLight"/>
+			<item name="rune_LuckyPotions"/>
+			<item name="rune_LuckySpells"/>
+			<item name="rune_LuckyAmmo"/>
+			<item name="rune_LuckyScrolls"/>
+			<item name="rune_LuckyDukes"/>
+			<item name="rune_AugmentXP"/>
+			<item name="rune_AugmentHunger"/>
+			<item name="rune_AugmentMining"/>
+			<item name="rune_AugmentDigging"/>
+			<item name="rune_AugmentLogging"/>
+			<item name="runeFire_LuckyEssence"/>
+			<item name="runeFire_TurretMeteor" prob=".1"/>
+			<item name="runeFire_TurretAuraBurn" prob=".1"/>
+		</lootgroup>	
+	<!-- END - RUNES -->	
 		
 	<!-- POTIONS __________________________________________________________________________________ -->
 		<!-- Potions: ALL  -->
@@ -172,6 +179,12 @@
 		<!-- Scrolls: ACANE  -->
 		<lootgroup name="sorceryScrollsArcane"> 
 			<item name="scroll_ArcaneVision"/>
+			<item name="scroll_AugmentXP"/>
+			<item name="scroll_AugmentHunger"/>
+			<item name="scroll_AugmentMining"/>
+			<item name="scroll_AugmentDigging"/>
+			<item name="scroll_AugmentLogging"/>
+			<item name="scroll_EssenceHarvest"/>
 			<item name="scroll_Recall" prob=".3"/>
 		</lootgroup>
 		<!-- Scrolls: FIRE  -->
@@ -287,7 +300,6 @@
 			<item name="sorceryArmor_Hood" count="1"/>
 			<item name="sorceryArmor_Boots" count="1"/>
 			<item name="spellcastFire" count="1"/>
-			<!-- <item name="sorceryFamiliarArcane" count="999"/> -->
 		</lootgroup>
 		<lootgroup name="sorceryIntroLootFallen_Fire" count="all">
 			<item name="potionBottle" count="0,1"/>

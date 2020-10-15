@@ -229,7 +229,6 @@
 			<property name="CompassIcon" value="ui_game_symbol_enemy_dot" />
 			<property name="CompassUpIcon" value="ui_game_symbol_enemy_dot_up" />
 			<property name="CompassDownIcon" value="ui_game_symbol_enemy_dot_down" />
-			<property name="TrackerIcon" value="ui_game_symbol_run"/>
 			<!-- AI -->
 			<property name="AINoiseSeekDist" value="8"/>
 			<property name="RightHandJointName" value="Jaw"/>
@@ -332,7 +331,6 @@
 			<!-- <property name="LootListOnDeath" value="254"/> -->
 			<property name="TimeStayAfterDeath" value="4"/>
 			<property name="DeadBodyHitPoints" value="1000"/>
-			<property name="NavObject" value="animaltracking_hostile" />
 			<effect_group name="Base Effects"> <!-- zombieTemplateMale -->
 				<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
 				<passive_effect name="StaminaMax" operation="base_set" value="100"/>
@@ -495,8 +493,7 @@
 					<requirement name="PlayerLevel" target="other" operation="GTE" value="300"/>
 				</triggered_effect>
 			</effect_group>			
-			<property name="MapIcon" value="ui_symbol_fire"/>
-			<property name="TrackerIcon" value="ui_symbol_fire"/>
+			<property name="NavObject" value="sorceryFallenFire"/>
 			<drop event="Harvest" name="resourceEssenceFire" count="1,2" tag="essenceFireHarvest"/>
 			<drop event="Harvest" name="resourceEssenceFire2" count="1,2" prob=".7" tag="essenceFire2Harvest"/>
 			<drop event="Harvest" name="resourceEssenceFire3" count="1,2" prob=".4" tag="essenceFire3Harvest"/>
@@ -573,8 +570,7 @@
 					<requirement name="PlayerLevel" target="other" operation="GTE" value="300"/>
 				</triggered_effect>
 			</effect_group>			
-			<property name="MapIcon" value="ui_symbol_ice"/>
-			<property name="TrackerIcon" value="ui_symbol_ice"/>
+			<property name="NavObject" value="sorceryFallenIce"/>
 			<drop event="Harvest" name="resourceEssenceIce" count="1,2" tag="essenceIceHarvest"/>
 			<drop event="Harvest" name="resourceEssenceIce2" count="1,2" prob=".7" tag="essenceIce2Harvest"/>
 			<drop event="Harvest" name="resourceEssenceIce3" count="1,2" prob=".4" tag="essenceIce3Harvest"/>
@@ -651,8 +647,7 @@
 					<requirement name="PlayerLevel" target="other" operation="GTE" value="300"/>
 				</triggered_effect>
 			</effect_group>			
-			<property name="MapIcon" value="ui_symbol_lightning"/>
-			<property name="TrackerIcon" value="ui_symbol_lightning"/>
+			<property name="NavObject" value="sorceryFallenLightning"/>
 			<drop event="Harvest" name="resourceEssenceLightning" count="1,2" tag="essenceLightningHarvest"/>
 			<drop event="Harvest" name="resourceEssenceLightning2" count="1,2" prob=".7" tag="essenceLightning2Harvest"/>
 			<drop event="Harvest" name="resourceEssenceLightning3" count="1,2" prob=".4" tag="essenceLightning3Harvest"/>
@@ -670,14 +665,11 @@
 		<!-- FAMILIARS -->
 		<entity_class name="sorceryFamiliarMaster">
 			<property name="HideInSpawnMenu" value="true"/>
-			<property name="Tags" value="entity,animal,familiar"/>
+			<property name="Tags" value="entity,familiar"/>
 <!-- <property name="IgnoreTrigger" value="true"/> -->
-	<property name="Class" value="EntityEnemyAnimal"/>
+			<property name="Class" value="EntityEnemyAnimal"/>
 			<!-- <property name="Class" value="EntityEnemyAnimal"/> -->
-			<!-- <property name="MapIcon" value="ui_game_symbol_map_player_arrow"/> -->
-			<property name="MapIcon" value="ui_game_symbol_tracking_wolf"/>
-			<property name="TrackerIcon" value="ui_game_symbol_map_player_arrow"/>
-			<property name="NavObject" value="animaltracking_timid" />
+			<property name="NavObject" value="sorceryFamiliar" />
 		<!-- <property name="Parent" value="NPC"/> -->
 		<property name="Parent" value="Animals"/>
 		<property name="EntityType" value="Animal"/>
@@ -696,7 +688,7 @@
 			<property name="Mass" value="95"/>
 			<property name="Weight" value="300"/>
 			<!-- <property name="PushFactor" value="100"/> -->
-			<property name="SizeScale" value=".5"/>
+			<property name="SizeScale" value=".75"/>
 		<property name="IsAnimalEntity" value="true"/>
 			<property name="IsEnemyEntity" value="false"/>
 		<property name="Faction" value="animals"/>
@@ -706,13 +698,13 @@
 			<property name="AINoiseSeekDist" value="1000"/>
 			<property name="AIPathCostScale" value="100, 100"/>
 			<property name="AITask-1" value="ApproachSpot" data="class=EntityPlayer,1000,1000"/>
-			<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityZombie,10"/>
+			<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityZombie,20"/>
 			<property name="AITask-3" value=""/>
 			<!-- <property name="AITask-3" value="Leap" data="legs=4"/> -->
 			<!-- <property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityEnemyAnimal,10,EntityZombie,10"/> -->
 			
 			
-			<property name="AITarget-1" value="SetNearestEntityAsTarget" data="class=EntityPlayer,1000,1000,EntityZombie,10,10"/>
+			<property name="AITarget-1" value="SetNearestEntityAsTarget" data="class=EntityPlayer,1000,1000,EntityZombie,20,20"/>
 			<property name="AITarget-2" value="SetAsTargetIfHurt" data="class=EntityZombie"/>
 			<!-- <property name="AITarget-2" value=""/> -->
 			
@@ -765,14 +757,15 @@
 			<property name="HandItem" value="meleeHandFamiliarArcane"/>	
 			<property name="ExperienceGain" value="0"/>
 			<effect_group name="Base Effects" tiered="false">
-				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffFamiliarMark,buffSorceryMarkFamiliar,buffFamiliarCooldown,buffFamiliarSummoned"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMarked,buffFamiliarMark,buffSorceryMarkFamiliar,buffFamiliarCooldown,buffFamiliarSummoned"/>
 				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="FamiliarEntityOwner" operation="set" value="RND"/> -->
 				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="FamiliarEntityFood" operation="set" value="randomint(10,100)"/> -->
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="FamiliarEntityFood" operation="set" value="100"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="familiarCounter" operation="set" value="1"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="buffFamiliarNewSpawn,buffSorceryImmunity_All,buffSorceryImmunity_Entities"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarSummoned" target_tags="player"/>
-				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="selfAOE" range="100" buff="buffDespawnFamiliar" target_tags="familiar"/> -->
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffSorceryMarked"/>
 				<passive_effect name="HealthMax" operation="base_set" value="50"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
 				<passive_effect name="StaminaMax" operation="base_set" value="10000"/>
@@ -782,8 +775,9 @@
 		</entity_class>
 		<!-- Familiar: ARCANE -->
 		<entity_class name="sorceryFamiliarArcane" extends="sorceryFamiliarMaster">
-			<property name="Tags" value="entity,animal,familiar,familiarArcane"/>
+			<property name="Tags" value="entity,familiar,familiarArcane"/>
 			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_familiarArcane.unity3d?mat_familiarArcane"/>
+			<property name="HideInSpawnMenu" value="true"/>
 			<!-- <property name="LootListAlive" value="139"/> -->
 			<!-- <property name="LootDropProb" value="1"/>
 			<property name="LootDropEntityClass" value="FamiliarLootContainerArcane"/>
@@ -791,6 +785,57 @@
 			<property name="DeadBodyHitPoints" value="0"/>
 			<property name="PassThroughDamage" value="true"/> -->
 		</entity_class>
+		
+<!-- SPELL TURRET ______________________________________-->
+<entity_class name="spellTurretFire">
+	<property name="Tags" value="turret,turretRanged,deployed,spellTurret,spellTurretFire"/>
+	<property name="Class" value="EntityTurret"/>
+	<property name="Parent" value="NPC"/>
+	<property name="Prefab" value="#Other/Items?Weapons/Ranged/JunkTurret/junkTurret_Prefab.prefab"/>
+	<property name="ModelType" value="Standard"/>
+	<property name="SurfaceCategory" value="metal"/>
+	<property name="IgnoreTrigger" value="true"/>
+	<property name="LootListAlive" value="0"/>
+	<property name="IsEnemyEntity" value="false"/>
+
+	<property name="WakeUpTime" value="0.5"/>
+	<property name="FallAsleepTime" value="10"/>
+
+	<property name="YawRange" value="179"/> <!-- horizontal swivel range. Keep under 180. -->
+	<property name="PitchRange" value="70"/>
+	<property name="TurnSpeed" value="30"/>
+	<property name="MaxDistance" value="15"/>
+
+	<property name="RaySpread" value="5"/>
+	<property name="BurstRoundCount" value="1"/>
+	<property name="BurstFireRate" value="1"/>
+	<property name="CooldownTime" value="1"/>
+	<property name="OvershootTime" value="0"/>
+	<property name="MaxOwnerDistance" value="16"/>
+
+	<property name="TargetingSound" value="turret_retarget_lp"/>
+	<property name="OverheatSound" value="turret_overheat_lp"/>
+	<property name="WakeUpSound" value="turret_windup"/>
+	<property name="FireSound" value="junkturret_fire"/>
+
+	<property name="ParticlesMuzzleFire" value="gunfire_junkturret"/>
+
+	<property name="TimeStayAfterDeath" value="0"/>
+	<property name="Explosion.ParticleIndex" value="6"/>
+	<property name="Explosion.RadiusBlocks" value="1"/>
+	<property name="Explosion.RadiusEntities" value="1"/>
+	<property name="RotateToGround" value="true"/>
+	<property name="Faction" value="none"/>
+
+	<property name="NavObject" value="sorcerySpellTurret" />
+	<!-- <property name="Buffs" value="buffEntity_SorceryManage"/> -->
+	<effect_group>
+		<passive_effect name="BuffProcChance" operation="base_set" value="100"/>
+		<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="spellTurretFire_AOE_Trigger,buffSorceryImmunity_All,buffSorceryImmunity_Entities"/> -->
+		<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="buffSpellTurretFire_Active,buffSorceryImmunity_All,buffSorceryImmunity_Entities"/>
+		<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="selfAOE" range="10" buff="buffSpellTurretFire_Deploy" target_tags="player"/>
+	</effect_group>
+</entity_class>
 		
 		
 		<!-- LOOT ENTITIES -->

@@ -347,9 +347,18 @@
 			<display_entry name="dsorcAmmoEffect" title_key="Incinerate, Slow, Weaken" display_type="Percent"/>
 			<display_entry name="dsorcAmmoEffect2" title_key="Explode, Freeze, Lightning Strike" display_type="Percent"/>
 			<display_entry name="dsorcAmmoScale" title_key="Damage+ Fire, Ice, Lightning Mastery" display_type="Percent"/>
-		</item_display_info>		
+		</item_display_info>	
+		
+		<!-- SPELL TURRET -->
+		<item_display_info display_type="spellTurret" display_group="groupRanged">
+			<display_entry name="MagazineSize" title_key="statMagazineSize" tags="perkSorceryTrap1Fire"/>
+			<display_entry name="DegradationMax" title_key="statDegradationHPMax" tags="perkSorceryTrap1Fire"/>
+			<display_entry name="DegradationPerUse" title_key="statDegradationPerUse" tags="perkSorceryTrap1Fire"/>
+			<display_entry name="dSpellAmmoFire" title_key="Ammo Type: Fire Spell Turret Ammo" display_type="Bool"/>
+			<display_entry name="dScalesOffFireSorcery" title_key="Damage Scaling: Fire Sorcery" display_type="Bool"/>
+			<display_entry name="dSpiritCost" title_key="Spirit Cost" negative_preferred="true"/>
+		</item_display_info>
 	</append>
-
 
 
 	<!-- CHARACTER STATS -->
@@ -368,38 +377,47 @@
 	<!-- crafting_category_display -->
 	<append xpath="/ui_display_info/crafting_category_display">
 		<crafting_category_list display_type="conjureFire">
-			<crafting_category name="Ammo/Weapons" icon="ui_symbol_spell_fire_sorcery" display_name="Fire [ae92d5]Spellcrafting[-]" />
-			<crafting_category name="Mods" icon="ui_symbol_rune_sorcery" display_name="Fire [ae92d5]Runesmithing[-]" />
-			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="Fire [ae92d5]Resources[-]" />
-			<!-- <crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Fire [ae92d5]Quests[-]" /> -->
+			<crafting_category name="Ammo/Weapons" icon="ui_symbol_spell_fire_sorcery" display_name="Fire Spellcrafting" />
+			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="Fire Resources" />
 		</crafting_category_list>
 		<crafting_category_list display_type="conjureIce">
 			<crafting_category name="Ammo/Weapons" icon="ui_symbol_spell_ice_sorcery" display_name="[02599c]Ice[-] Sorcery" />
 			<crafting_category name="Mods" icon="ui_symbol_rune_sorcery" display_name="[02599c]Ice[-] Runesmithing" />
 			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="[02599c]Ice[-] Transmute" />
-			<!-- <crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Ice Quests" /> -->
 		</crafting_category_list>
 		<crafting_category_list display_type="conjureLightning">
 			<crafting_category name="Ammo/Weapons" icon="ui_symbol_spell_lightning_sorcery" display_name="[5c009d]Lightning[-] Sorcery" />
 			<crafting_category name="Mods" icon="ui_symbol_rune_sorcery" display_name="[5c009d]Lightning[-] Runesmithing" />
 			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="[5c009d]Lightning[-] Transmute" />
-			<!-- <crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Lightning Quests" /> -->
 		</crafting_category_list>
 		<crafting_category_list display_type="sorceryAlchemyStation">
 			<crafting_category name="Food/Cooking" icon="ui_symbol_potion" display_name="Potions" />
-			<crafting_category name="Ammo/Weapons" icon="ui_symbol_potion_bomb" display_name="Potion [ae92d5]Bombs[-]" />
+			<crafting_category name="Ammo/Weapons" icon="ui_symbol_potion_bomb" display_name="Potion Bombs" />
 			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="Resources" />
-			<!-- <crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Quests" /> -->
 		</crafting_category_list>
 		<crafting_category_list display_type="sorceryArcaneWheel">
-			<crafting_category name="Clothing" icon="ui_game_symbol_light_armor" display_name="Armor Tailoring" />
-			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="Resources" />
+			<crafting_category name="ClothingArcane" icon="uic_symbol_armor_sorcery" display_name="Arcane Tailoring" />
+			<crafting_category name="ClothingFire" icon="uic_symbol_armor_fire_sorcery" display_name="Fire Tailoring" />
+			<crafting_category name="ClothingIce" icon="uic_symbol_armor_ice_sorcery" display_name="Ice Tailoring" />
+			<crafting_category name="ClothingLightning" icon="uic_symbol_armor_lightning_sorcery" display_name="Lightning Tailoring" />
+			<crafting_category name="ClothingUnholy" icon="uic_symbol_armor_unholy_sorcery" display_name="Unholy Tailoring" />
+			<crafting_category name="ClothingHoly" icon="uic_symbol_armor_holy_sorcery" display_name="Holy Tailoring" />
 		</crafting_category_list>
 		<crafting_category_list display_type="sorceryDesk">
-			<crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Quests" />
-			<crafting_category name="Books" icon="ui_sorcery_scroll" display_name="Scrolls" />
 			<crafting_category name="Building" icon="ui_symbol_pentagram" display_name="Stations" />
-			<crafting_category name="Tools/Traps" icon="ui_symbol_trap_sorcery" display_name="Traps" />
+			<crafting_category name="SorceryTrap" icon="ui_symbol_trap_sorcery" display_name="Spell Traps" />
+			<crafting_category name="SorceryAmmo" icon="ui_sorcery_ammo" display_name="Spell Ammo" />
+			<crafting_category name="Books" icon="ui_sorcery_scroll" display_name="Scrolls" />
+			<crafting_category name="SorceryFamiliar" icon="ui_familiar_sorcery" display_name="Familiars" />
+			<crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Quests" />
+		</crafting_category_list>
+		<crafting_category_list display_type="sorceryEnchantingStation">
+			<crafting_category name="Rune" icon="uic_symbol_rune" display_name="Arcane Enchantments" />
+			<crafting_category name="RuneFire" icon="uic_symbol_rune_fire" display_name="Fire Enchantments" />
+			<crafting_category name="RuneIce" icon="uic_symbol_rune_ice" display_name="Ice Enchantments" />
+			<crafting_category name="RuneLightning" icon="uic_symbol_rune_lightning" display_name="Lightning Enchantments" />
+			<crafting_category name="RuneUnholy" icon="uic_symbol_rune_unholy" display_name="Unholy Enchantments" />
+			<crafting_category name="RuneHoly" icon="uic_symbol_rune_holy" display_name="Holy Enchantments" />
 		</crafting_category_list>
 	</append>
 	

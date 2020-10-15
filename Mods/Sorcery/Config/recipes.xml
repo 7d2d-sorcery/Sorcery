@@ -264,6 +264,20 @@
 			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
 			<ingredient name="resourcePaper" count="60"/>
 		</recipe>
+		<recipe name="q_sorcerySkillGrimoire" count="1" craft_time="30" craft_area="sorceryDesk">
+			<ingredient name="sorceryElixir_attIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+			<ingredient name="resourcePaper" count="60"/>
+		</recipe>
+		<recipe name="q_sorcerySkillGrimoire" count="1" craft_time="30" craft_area="sorceryDesk">
+			<ingredient name="sorceryElixir_attLightning" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourcePaper" count="60"/>
+		</recipe>
 		<!-- Fallen: FIRE -->
 		<recipe name="q_sorceryFallen_Fire" count="1" craft_time="30" craft_area="sorceryDesk" craft_tool="toolFireCore">
 			<ingredient name="resourceRitualStoneFire" count="1"/>
@@ -307,27 +321,56 @@
 			<ingredient name="resourceExtractOmni" count="20"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
-			<effect_group>
-				<!-- <passive_effect name="CraftingIngredientCount" operation="base_add" level="1,10" value="-3,-25" tags="resourceExtractOmni"/> -->
-			</effect_group>
+		</recipe>
+		<!-- Augment XP -->
+		<recipe name="scroll_AugmentXP" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+			<ingredient name="resourceExtractOmni" count="20"/>
+			<ingredient name="resourcePaper" count="20"/>
+			<ingredient name="resourceWood" count="5"/>
+		</recipe>
+		<!-- Augment Hunger -->
+		<recipe name="scroll_AugmentHunger" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+			<ingredient name="resourceExtractOmni" count="20"/>
+			<ingredient name="resourcePaper" count="20"/>
+			<ingredient name="resourceWood" count="5"/>
+		</recipe>
+		<!-- Augment Mining -->
+		<recipe name="scroll_AugmentMining" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+			<ingredient name="resourceExtractOmni" count="20"/>
+			<ingredient name="resourcePaper" count="20"/>
+			<ingredient name="resourceWood" count="5"/>
+		</recipe>
+		<!-- Augment Digging -->
+		<recipe name="scroll_AugmentDigging" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+			<ingredient name="resourceExtractOmni" count="20"/>
+			<ingredient name="resourcePaper" count="20"/>
+			<ingredient name="resourceWood" count="5"/>
+		</recipe>
+		<!-- Augment Logging -->
+		<recipe name="scroll_AugmentLogging" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+			<ingredient name="resourceExtractOmni" count="20"/>
+			<ingredient name="resourcePaper" count="20"/>
+			<ingredient name="resourceWood" count="5"/>
+		</recipe>
+		<!-- Essence Find -->
+		<recipe name="scroll_EssenceHarvest" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+			<ingredient name="resourceExtractOmni" count="50"/>
+			<ingredient name="resourcePaper" count="20"/>
+			<ingredient name="resourceWood" count="5"/>
 		</recipe>
 		<!-- Fire Weapon -->
 		<recipe name="scrollFire_Weapon" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
 			<ingredient name="resourceExtractFire" count="40"/>
+			<ingredient name="resourceCoal" count="10"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
-			<effect_group>
-				<!-- <passive_effect name="CraftingIngredientCount" operation="base_add" level="1,10" value="-3,-25" tags="resourceExtractFire"/> -->
-			</effect_group>
 		</recipe>
 		<!-- Fire Ammo -->
 		<recipe name="scrollFire_Ammo" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
 			<ingredient name="resourceExtractFire" count="50"/>
+			<ingredient name="resourceCoal" count="10"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
-			<effect_group>
-				<!-- <passive_effect name="CraftingIngredientCount" operation="base_add" level="1,10" value="-5,-50" tags="resourceExtractFire"/> -->
-			</effect_group>
 		</recipe>
 	<!-- END - SCROLLS __________________________________________________________________________________ -->
 	
@@ -347,6 +390,14 @@
 			<ingredient name="candle" count="2"/>
 			<ingredient name="resourceExtractOmni" count="25"/>
 			<ingredient name="resourcePaper" count="150"/>
+			<ingredient name="resourceWood" count="200"/>
+			<effect_group>
+				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,10" value="-1,-5" tags="resourceExtractOmni"/> -->
+			</effect_group>
+		</recipe>
+	<!-- ENCHANTING STATION -->
+		<recipe name="sorceryEnchantingStation" count="1" craft_area="sorceryDesk" craft_time="60" tags="sorceryTier,learnable">
+			<ingredient name="resourceExtractOmni" count="50"/>
 			<ingredient name="resourceWood" count="200"/>
 			<effect_group>
 				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,10" value="-1,-5" tags="resourceExtractOmni"/> -->
@@ -443,11 +494,24 @@
 		<recipe name="spellcastFire" count="1" craft_area="conjureFire" material_based="true" craft_time="60" tags="perkSorcerySpellcastFire,conjureFireCrafting,learnable">
 			<ingredient name="unit_fire" count="50"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,6" value="-.08,-.4" tags="unit_fire"/>
 			</effect_group>
 		</recipe>
 	<!-- END - SPELLCASTS ______________________________________-->		
 
+	<!-- SPELL TURRETS ______________________________________-->
+		<!-- FIRE SPELL TURRET -->
+		<recipe name="spellTurretFire" count="1" craft_area="sorceryDesk" craft_time="60" tags="perkSorceryTrap1Fire,learnable">
+			<ingredient name="resourceExtractFire" count="50"/>
+			<ingredient name="resourceForgedIron" count="40"/>
+			<ingredient name="resourceDuctTape" count="10"/>
+			<ingredient name="resourceScrapPolymers" count="10"/>
+			<ingredient name="resourceSpring" count="10"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,6" value=".2,1" tags="resourceExtractFire"/>
+			</effect_group>
+		</recipe>
+	<!-- END - SPELL TURRETS ______________________________________-->	
 
 	<!-- SPELLS ______________________________________-->
 		<!-- FIRE SPELLS -->
@@ -476,135 +540,229 @@
 		
 	<!-- SPELL AMMO ______________________________________-->
 		<!-- Arrows: Fire -->
-		<recipe name="spellArrowFire" count="1" craft_area="conjureFire" material_based="true" craft_time="1" tags="perkSorcerySpellFire,conjureFireCrafting,learnable">
-			<ingredient name="unit_fire" count="2"/>
-			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
-			</effect_group>
+		<recipe name="spellArrowFire" count="1" craft_area="sorceryDesk" craft_time="1" tags="learnable">
+			<ingredient name="resourceExtractFire" count="2"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
 		</recipe>
-		<recipe name="spellArrowFire2" count="1" craft_area="conjureFire" material_based="true" craft_time="1" tags="perkSorcerySpellFire2,conjureFireCrafting,learnable">
-			<ingredient name="unit_fire" count="8"/>
-			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
-			</effect_group>
+		<recipe name="spellArrowFire2" count="1" craft_area="sorceryDesk" craft_time="1" tags="learnable">
+			<ingredient name="resourceExtractFire" count="8"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
 		</recipe>
-		<recipe name="spellArrowFire3" count="1" craft_area="conjureFire" material_based="true" craft_time="1" tags="perkSorcerySpellFire3,conjureFireCrafting,learnable">
-			<ingredient name="unit_fire" count="12"/>
-			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
-			</effect_group>
+		<recipe name="spellArrowFire3" count="1" craft_area="sorceryDesk" craft_time="1" tags="learnable">
+			<ingredient name="resourceExtractFire" count="12"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
 		</recipe>
 		<!-- Bolts: Fire -->
-		<recipe name="spellBoltFire" count="1" craft_area="conjureFire" material_based="true" craft_time="1" tags="perkSorcerySpellFire,conjureFireCrafting,learnable">
-			<ingredient name="unit_fire" count="2"/>
-			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
-			</effect_group>
+		<recipe name="spellBoltFire" count="1" craft_area="sorceryDesk" craft_time="1" tags="learnable">
+			<ingredient name="resourceExtractFire" count="2"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
 		</recipe>
-		<recipe name="spellBoltFire2" count="1" craft_area="conjureFire" material_based="true" craft_time="1" tags="perkSorcerySpellFire2,conjureFireCrafting,learnable">
-			<ingredient name="unit_fire" count="8"/>
-			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
-			</effect_group>
+		<recipe name="spellBoltFire2" count="1" craft_area="sorceryDesk" craft_time="1" tags="learnable">
+			<ingredient name="resourceExtractFire" count="8"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
 		</recipe>
-		<recipe name="spellBoltFire3" count="1" craft_area="conjureFire" material_based="true" craft_time="1" tags="perkSorcerySpellFire3,conjureFireCrafting,learnable">
-			<ingredient name="unit_fire" count="12"/>
-			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
-			</effect_group>
+		<recipe name="spellBoltFire3" count="1" craft_area="sorceryDesk" craft_time="1" tags="learnable">
+			<ingredient name="resourceExtractFire" count="12"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="resourceFeather" count="1"/>
 		</recipe>
 		<!-- Arrow Bolt Convert -->
-		<recipe name="spellArrowFire" count="1" craft_area="sorceryDesk" craft_time="1">
+		<recipe name="spellArrowFire" count="1" craft_time="1">
 			<ingredient name="spellBoltFire" count="1"/>
 		</recipe>
-		<recipe name="spellArrowFire2" count="1" craft_area="sorceryDesk" craft_time="1">
+		<recipe name="spellArrowFire2" count="1" craft_time="1">
 			<ingredient name="spellBoltFire2" count="1"/>
 		</recipe>
-		<recipe name="spellArrowFire3" count="1" craft_area="sorceryDesk" craft_time="1">
+		<recipe name="spellArrowFire3" count="1" craft_time="1">
 			<ingredient name="spellBoltFire3" count="1"/>
 		</recipe>
-		<recipe name="spellBoltFire" count="1" craft_area="sorceryDesk" craft_time="1">
+		<recipe name="spellBoltFire" count="1" craft_time="1">
 			<ingredient name="spellArrowFire" count="1"/>
 		</recipe>
-		<recipe name="spellBoltFire2" count="1" craft_area="sorceryDesk" craft_time="1">
+		<recipe name="spellBoltFire2" count="1" craft_time="1">
 			<ingredient name="spellArrowFire2" count="1"/>
 		</recipe>
-		<recipe name="spellBoltFire3" count="1" craft_area="sorceryDesk" craft_time="1">
+		<recipe name="spellBoltFire3" count="1" craft_time="1">
 			<ingredient name="spellArrowFire3" count="1"/>
+		</recipe>
+		<!-- Spell Turret Ammo -->
+		<recipe name="ammoSpellTurretFire" count="1" craft_area="sorceryDesk" craft_time="0.3" tags="learnable">
+			<ingredient name="resourceExtractFire" count="1"/>
+		</recipe>
+		<recipe name="ammoSpellTurretFire" count="1" craft_time="0.3" tags="learnable">
+			<ingredient name="resourceExtractFire" count="1"/>
 		</recipe>
 	<!-- END - SPELL AMMO ______________________________________-->
 		
 	<!-- RUNES ______________________________________-->
 		<!-- SUPPORTER RUNES -->
-		<!-- Rune: Astryael’s Eternal Youth -->
-		<recipe name="rune_SupporterAstryael" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="30">
-			<ingredient name="unit_fire" count="100"/>
+		<!-- Rune: Astryael’s Eternal Youth (GOLD) -->
+		<recipe name="rune_SupporterAstryael" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="30">
+			<ingredient name="resourceExtractOmni" count="100"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
-		<!-- ARCANE RUNES -->
-		<!-- Rune: Lock Shatter -->
-		<recipe name="rune_LockShatter" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="30">
-			<ingredient name="unit_fire" count="40"/>
+		<!-- Rune: Dragoness Scale (GOLD) -->
+		<recipe name="rune_SupporterDragoness" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="30">
+			<ingredient name="resourceExtractOmni" count="50"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
-		<!-- Rune: Door Shatter -->
-		<recipe name="rune_DoorShatter" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="30">
-			<ingredient name="unit_fire" count="40"/>
+	<!-- ARCANE RUNES -->
+	<!-- RARE: SILVER -->
+		<!-- Rune: Augment Hunger (SILVER) -->
+		<recipe name="rune_AugmentHunger" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractOmni" count="50"/>
+			<ingredient name="foodCharredMeat" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune: Lock Shatter (SILVER) -->
+		<recipe name="rune_LockShatter" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="30">
+			<ingredient name="resourceExtractOmni" count="50"/>
+			<ingredient name="resourceLockPick" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune: Door Shatter (SILVER) -->
+		<recipe name="rune_DoorShatter" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="30">
+			<ingredient name="resourceExtractOmni" count="50"/>
+			<ingredient name="resourceDoorKnob" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+			</effect_group>
+		</recipe>
+	<!-- COMMON -->
+		<!-- Rune: Augment XP -->
+		<recipe name="rune_AugmentXP" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractOmni" count="30"/>
+			<ingredient name="resourceCropCoffeeBeans" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune: Augment Mining -->
+		<recipe name="rune_AugmentMining" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractOmni" count="30"/>
+			<ingredient name="resourceRockSmall" count="50"/>
+			<ingredient name="resourceCoal" count="50"/>
+			<ingredient name="resourcePotassiumNitratePowder" count="50"/>
+			<ingredient name="resourceScrapLead" count="50"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune: Augment Digging -->
+		<recipe name="rune_AugmentDigging" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractOmni" count="30"/>
+			<ingredient name="resourceClayLump" count="200"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune: Augment Logging -->
+		<recipe name="rune_AugmentLogging" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractOmni" count="30"/>
+			<ingredient name="resourceWood" count="200"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Spell Light -->
-		<recipe name="rune_SpellLight" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
-			<ingredient name="unit_fire" count="25"/>
+		<recipe name="rune_SpellLight" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractOmni" count="40"/>
+			<ingredient name="candle" count="1"/>
+			<ingredient name="meleeToolTorch" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Lucky Dukes -->
-		<recipe name="rune_LuckyDukes" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
-			<ingredient name="unit_fire" count="30"/>
+		<recipe name="rune_LuckyDukes" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractOmni" count="25"/>
+			<ingredient name="casinoCoin" count="200"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Lucky Potions -->
-		<recipe name="rune_LuckyPotions" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
-			<ingredient name="unit_fire" count="15"/>
+		<recipe name="rune_LuckyPotions" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractOmni" count="15"/>
+			<ingredient name="potionBottle" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Lucky Spells -->
-		<recipe name="rune_LuckySpells" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
-			<ingredient name="unit_fire" count="15"/>
+		<recipe name="rune_LuckySpells" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractOmni" count="10"/>
+			<ingredient name="resourceExtractFire" count="5"/>
+			<ingredient name="resourceExtractIce" count="5"/>
+			<ingredient name="resourceExtractLightning" count="5"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Lucky Ammo -->
-		<recipe name="rune_LuckyAmmo" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
-			<ingredient name="unit_fire" count="15"/>
+		<recipe name="rune_LuckyAmmo" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractOmni" count="15"/>
+			<ingredient name="resourceBulletTip" count="5"/>
+			<ingredient name="resourceBulletCasing" count="5"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Lucky Scrolls -->
-		<recipe name="rune_LuckyScrolls" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
-			<ingredient name="unit_fire" count="15"/>
+		<recipe name="rune_LuckyScrolls" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractOmni" count="15"/>
+			<ingredient name="resourcePaper" count="5"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
-		<!-- Rune Fire: Lucky Essence -->
-		<recipe name="runeFire_LuckyEssence" count="1" craft_area="conjureFire" material_based="true" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,conjureFireCrafting,learnable" craft_time="10">
-			<ingredient name="unit_fire" count="25"/>
+	<!-- FIRE RUNES -->
+	<!-- RARE: SILVER -->
+		<!-- Rune Fire: Starcaller (SILVER) -->
+		<recipe name="runeFire_TurretMeteor" count="1" craft_area="sorceryEnchantingStation" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractFire" count="100"/>
+			<ingredient name="resourceCoal" count="100"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="2"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="unit_fire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractFire"/>
+			</effect_group>
+		</recipe>
+		<!-- Rune Fire: Burning Aura (SILVER) -->
+		<recipe name="runeFire_TurretAuraBurn" count="1" craft_area="sorceryEnchantingStation" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractFire" count="100"/>
+			<ingredient name="resourceCoal" count="100"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="2"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractFire"/>
+			</effect_group>
+		</recipe>
+	<!-- COMMON -->
+		<!-- Rune Fire: Lucky Essence -->
+		<recipe name="runeFire_LuckyEssence" count="1" craft_area="sorceryEnchantingStation" craft_tool="toolHammerFire" tags="perkSorceryRuneMastery,learnable" craft_time="10">
+			<ingredient name="resourceExtractFire" count="20"/>
+			<ingredient name="resourceEssenceFire" count="10"/>
+			<ingredient name="resourceCoal" count="10"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractFire"/>
 			</effect_group>
 		</recipe>
 

@@ -130,6 +130,15 @@
 			<window name="windowOutput" />
 			<window name="windowNonPagingHeader" />
 		</window_group>
+		<!-- ENCHANTING STATION ______________________________________________________-->
+		<window_group name="workstation_sorceryEnchantingStation" controller="XUiC_WorkstationWindowGroup">
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueue"/>
+			<window name="windowToolsEnchanting" />
+			<window name="windowOutput" />
+			<window name="windowNonPagingHeader" />
+		</window_group>
 		
 	</append>
 </Sorcery>

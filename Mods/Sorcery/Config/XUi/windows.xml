@@ -99,7 +99,7 @@
 
 		<!-- UI: Pause Menu Splash -->
 		<window name="SorceryingameMenu" anchor="CenterCenter" pos="-125,200" width="250" height="200" controller="InGameMenuWindow" cursor_area="true">
-			<label name="SorceryVersion" pos="783, 288" depth="0" size="250,35" text="Sorcery v0.914" font_size="24" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
+			<label name="SorceryVersion" pos="783, 288" depth="0" size="250,35" text="Sorcery v0.922" font_size="24" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
 			<texture name="SorceryingameMenuLogo" depth="0" size="672,446" texture="@modfolder:Textures/SorceryLogoMenu.png" pos="-200,194" />
 			<!-- <texture name="SorceryingameMenuChestNoble" style="sorcery.window.ingame.support.chest.noble.texture" /> -->
 			<texture name="SorceryingameMenuChestLord" style="sorcery.window.ingame.support.chest.lord.texture" />
@@ -733,6 +733,19 @@
 			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true" on_press="true">
 				<grid name="inventory" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationToolGrid" repeat_content="true" allow_sort_order="false"
 				required_tools="toolFireCore,toolIceCore,toolLightningCore" required_tools_only="true">
+					<required_item_stack name="0"/>
+				</grid>
+			</rect>
+		</window>
+<!-- ENCHANTING STATION ______________________________________________________-->
+		<window name="windowToolsEnchanting" width="228" height="121" panel="Right" cursor_area="true" >
+			<panel style="header.panel">
+				<sprite style="header.icon" sprite="ui_symbol_rune_sorcery"/>
+				<label style="header.name" text="Tools" text_key="xuiTools" />
+			</panel>
+			<rect name="content" depth="0" pos="0,-46" height="75" disablefallthrough="true">
+				<grid name="inventory" rows="1" cols="3" pos="3,-3" cell_width="75" cell_height="75" controller="WorkstationToolGrid" repeat_content="true"
+				required_tools="toolHammerFire,toolHammerIce,toolHammerLightning" required_tools_only="true">
 					<required_item_stack name="0"/>
 				</grid>
 			</rect>

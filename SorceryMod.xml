@@ -2,7 +2,7 @@
 <Servers>
 	<ServerGroup Name="Sorcery" Logo="https://i.postimg.cc/fRBSLWsQ/sorcery-a19-logo-v09.png" Description="Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.">
 			<Server Name="Sorcery" Logo="https://i.postimg.cc/fRBSLWsQ/sorcery-a19-logo-v09.png">
-			<Description>Sorcery v0.914 - Completely Redesigned for A19 
+			<Description>Sorcery v0.922 - Completely Redesigned for A19 
 http://www.SorceryMod.com
 Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.
 • Vanilla game 100% untouched, add-only policy!
@@ -26,7 +26,7 @@ Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. T
 • Alchemy: Craft Potions, Elixirs and Bombs
 • Sexy Loot: Item Sets, Armor, Weapons, Mods, Spells, Potions, Scrolls and more!
 
-Next Public Release: 2-3 Weeks
+Next Public Release: ETA 3 Weeks
 SUPPORTER ACCESS: Become a Supporter to gain full-feature testing access, unlock the Treasury Perks and help ensure ongoing development!
 
 HOME: http://www.SorceryMod.com
@@ -35,6 +35,8 @@ FORUM: http://forum.SorceryMod.com
 WIKI: http://wiki.SorceryMod.com
 
 FULLY COMPATIBLE: DARKNESS FALLS (v3.x): Sorcery is fully compatible with Darkness Falls! (must remove Deep Pockets from Mods)
+DF + Sorcery Instructions: https://discord.gg/EnHrDDd
+DF Compatibility Patch: http://df-download.sorcerymod.com/
 			</Description>
 			<DownloadMode>Clone</DownloadMode>
 			<Version>Latest</Version>
