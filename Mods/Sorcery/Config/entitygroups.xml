@@ -117,31 +117,31 @@
 	<!-- FALLEN -->
 		<!-- Any Fallen -->
 		<entitygroup name="SorceryFallenOmni">
-			<entity name="invisibleSorceryEntity" prob="40"/>
+			<entity name="invisibleSorceryEntity" prob="60"/>
 			<entity name="sorceryFallenFire" prob="1"/>
 			<entity name="sorceryFallenIce" prob="1"/>
 			<entity name="sorceryFallenLightning" prob="1"/>
-			<entity name="sorceryWispFire" prob="3"/>
-			<entity name="sorceryWispIce" prob="3"/>
-			<entity name="sorceryWispLightning" prob="3"/>
+			<entity name="sorceryWispFire" prob="2"/>
+			<entity name="sorceryWispIce" prob="2"/>
+			<entity name="sorceryWispLightning" prob="2"/>
 		</entitygroup>
 	<!-- FIRE -->
 		<entitygroup name="SorceryFallenFire">
-			<entity name="invisibleSorceryEntity" prob="30"/>
+			<entity name="invisibleSorceryEntity" prob="50"/>
 			<entity name="sorceryFallenFire" prob="1"/>
-			<entity name="sorceryWispFire" prob="3"/>
+			<entity name="sorceryWispFire" prob="2"/>
 		</entitygroup>
 	<!-- ICE -->
 		<entitygroup name="SorceryFallenIce">
-			<entity name="invisibleSorceryEntity" prob="30"/>
+			<entity name="invisibleSorceryEntity" prob="50"/>
 			<entity name="sorceryFallenIce" prob="1"/>
-			<entity name="sorceryWispIce" prob="3"/>
+			<entity name="sorceryWispIce" prob="2"/>
 		</entitygroup>		
 	<!-- LIGHTNING -->
 		<entitygroup name="SorceryFallenLightning">
-			<entity name="invisibleSorceryEntity" prob="30"/>
+			<entity name="invisibleSorceryEntity" prob="50"/>
 			<entity name="sorceryFallenLightning" prob="1"/>
-			<entity name="sorceryWispLightning" prob="3"/>
+			<entity name="sorceryWispLightning" prob="2"/>
 		</entitygroup>
 		
 		
