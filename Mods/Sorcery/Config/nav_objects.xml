@@ -2,7 +2,7 @@
  <!--__________________________________________________________________________________
 		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
 		__________________________________________________________________________________
-		2020 "DEVRIX"
+		2021 "DEVRIX"
 		All Rights Reserved.
 		__________________________________________________________________________________
 		HOME: http://sorcerymod.com
@@ -109,6 +109,7 @@
 			</onscreen_settings>
 		</nav_object_class>
 		
+	<!-- FALLEN -->
 		<nav_object_class name="sorceryFallenFire">
 			<property name="requirement_type" value="Tracking" />
 			<map_settings>
@@ -162,6 +163,60 @@
 				<property name="color" value="92,0,157"/>
 			</onscreen_settings>
 		</nav_object_class>
+		
+	<!-- WISP -->
+		<nav_object_class name="sorceryWispFire">
+			<property name="requirement_type" value="Tracking" />
+			<map_settings>
+				<property name="sprite_name" value="ui_symbol_essence_sorcery"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="-1"/>
+				<property name="color" value="151,0,0,255"/>
+				<property name="has_pulse" value="true"/>
+			</map_settings>
+			<compass_settings>
+				<property name="sprite_name" value="ui_symbol_essence_sorcery"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="-1"/>
+				<property name="max_scale_distance" value="1024"/>
+				<property name="color" value="151,0,0,255"/>
+				<property name="has_pulse" value="true"/>
+				<property name="icon_clamped" value="false" />
+			</compass_settings>
+			<onscreen_settings>
+				<property name="sprite_name" value="ui_symbol_essence_sorcery"/>
+				<property name="min_distance" value="0"/>
+				<property name="max_distance" value="500"/>
+				<property name="color" value="151,0,0,255"/>
+				<property name="has_pulse" value="false"/>
+				<property name="show_distance" value="false"/>
+				<property name="offset" value="0,0,0" />
+			</onscreen_settings>
+		</nav_object_class>
+			<nav_object_class name="sorceryWispIce" extends="sorceryWispFire">
+				<property name="requirement_type" value="Tracking" />
+				<map_settings>
+					<property name="color" value="64,127,255"/>
+				</map_settings>
+				<compass_settings>
+					<property name="color" value="64,127,255"/>
+				</compass_settings>
+				<onscreen_settings>
+					<property name="color" value="64,127,255"/>
+				</onscreen_settings>
+			</nav_object_class>
+			<nav_object_class name="sorceryWispLightning" extends="sorceryWispFire">
+				<property name="requirement_type" value="Tracking" />
+				<map_settings>
+					<property name="color" value="92,0,157"/>
+				</map_settings>
+				<compass_settings>
+					<property name="color" value="92,0,1575"/>
+				</compass_settings>
+				<onscreen_settings>
+					<property name="color" value="92,0,157"/>
+				</onscreen_settings>
+			</nav_object_class>
 		
 	</append>
 	

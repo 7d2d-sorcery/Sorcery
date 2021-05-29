@@ -61,10 +61,10 @@
 			<!-- <property name="ItemTypeIcon" value="ui_symbol_rune_sorcery"/> -->
 			<property name="Stacknumber" value="1"/>
 			<property name="Material" value="MsorceryExtractOmni"/>
-			<property name="Weight" value="40"/>
+			<property name="Weight" value="10"/>
 			<property name="SellableToTrader" value="true"/>				
 			<property name="EconomicValue" value="300"/>
-			<property name="PickupJournalEntry" value="augmentGunsTip"/>
+			<property name="PickupJournalEntry" value="tip_sorcery_Runes"/>
 			<property name="Group" value="Mods,Rune"/>
 			<property name="UnlockedBy" value="perkSorceryRuneMastery"/>
 			<!-- <property name="ShowQuality" value="true"/> -->
@@ -73,7 +73,7 @@
 	<!-- ARCANE RUNES __________________________________________________________________________________ -->
 		<!-- LOCK SHATTER (SILVER) -->
 		<item_modifier name="rune_LockShatter" installable_tags="spellcast,weapon,tool" modifier_tags="rune_LockShatter" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="30"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLockShatter" operation="multiply" value="30"/>
@@ -102,7 +102,7 @@
 		
 		<!-- DOOR SHATTER (SILVER) -->
 		<item_modifier name="rune_DoorShatter" installable_tags="spellcast,weapon,tool" modifier_tags="rune_DoorShatter" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="30"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeDoorShatter" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeDoorShatter" operation="multiply" value="10"/>
@@ -131,7 +131,7 @@
 		
 		<!-- SPELL LIGHT -->
 		<item_modifier name="rune_SpellLight" installable_tags="armor" modifier_tags="rune_SpellLight" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="20"/>
 				<effect_group name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSpellLight" operation="multiply" value="75"/>
@@ -146,15 +146,20 @@
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeSpellLight" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeSpellLight_degrade" operation="set" value="0" />
 				</effect_group>
-				<effect_group tiered="false" name="RUNE">
+				<!-- <effect_group tiered="false" name="RUNE">
 					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_SpellLight"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeSpellLight_degrade"/>
+				</effect_group> -->
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffRune_SpellLight"/>
+					<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffRune_SpellLight"/>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeSpellLight_degrade"/>
 				</effect_group>
 		</item_modifier>
 		
 		<!-- LUCKY DUKES -->
 		<item_modifier name="rune_LuckyDukes" installable_tags="armor,clothing" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="8"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyDukes" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyDukes" operation="multiply" value="0.02"/>
@@ -182,7 +187,7 @@
 		
 		<!-- LUCKY AMMO -->
 		<item_modifier name="rune_LuckyAmmo" installable_tags="armor,clothing" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="8"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyAmmo" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyAmmo" operation="multiply" value="0.02"/>
@@ -210,7 +215,7 @@
 		
 		<!-- LUCKY SPELLS -->
 		<item_modifier name="rune_LuckySpells" installable_tags="armor,clothing" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="8"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckySpells" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckySpells" operation="multiply" value="0.02"/>
@@ -238,7 +243,7 @@
 		
 		<!-- LUCKY POTIONS -->
 		<item_modifier name="rune_LuckyPotions" installable_tags="armor,clothing" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="8"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyPotions" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyPotions" operation="multiply" value="0.02"/>
@@ -266,7 +271,7 @@
 		
 		<!-- LUCKY SCROLLS -->
 		<item_modifier name="rune_LuckyScrolls" installable_tags="armor,clothing" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="8"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyScrolls" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyScrolls" operation="multiply" value="0.02"/>
@@ -294,7 +299,7 @@
 	
 		<!-- AUGMENT XP -->
 		<item_modifier name="rune_AugmentXP" installable_tags="armor,clothing" modifier_tags="rune_AugmentXP" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="18"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAugmentXP" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAugmentXP" operation="multiply" value="0.05"/>
@@ -327,7 +332,7 @@
 		
 		<!-- AUGMENT HUNGER (SILVER) -->
 		<item_modifier name="rune_AugmentHunger" installable_tags="armor,clothing" modifier_tags="rune_AugmentHunger" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="30"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAugmentHunger" operation="set" value="-0.025"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAugmentHunger" operation="multiply" value="@$sorceryRuneMastery_power"/>
@@ -354,7 +359,7 @@
 		
 		<!-- AUGMENT MINING -->
 		<item_modifier name="rune_AugmentMining" installable_tags="tool" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="18"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAugmentMining" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAugmentMining" operation="multiply" value=".25"/>
@@ -383,7 +388,7 @@
 		</item_modifier>
 		<!-- AUGMENT DIGGING -->
 		<item_modifier name="rune_AugmentDigging" installable_tags="tool" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="18"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAugmentDigging" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAugmentDigging" operation="multiply" value=".25"/>
@@ -411,7 +416,7 @@
 		</item_modifier>
 		<!-- AUGMENT LOGGING -->
 		<item_modifier name="rune_AugmentLogging" installable_tags="tool" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="18"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAugmentLogging" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAugmentLogging" operation="multiply" value=".25"/>
@@ -442,8 +447,8 @@
 	<!-- FIRE RUNES __________________________________________________________________________________ -->
 		<!-- LUCKY FIRE ESSENCE -->
 		<item_modifier name="runeFire_LuckyEssence" installable_tags="armor,clothing,tool" type="mod">
-			<property name="Extends" value="runeMaster"/>
-			<property name="Group" value="Mods,RuneFire"/>
+			<property name="Extends" value="runeMaster"/><property name="Group" value="Mods,RuneFire"/>
+			<property name="Material" value="MsorceryExtractFire"/><property name="Weight" value="10"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeFireLuckyEssence" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeFireLuckyEssence" operation="multiply" value="0.1"/>
@@ -472,8 +477,8 @@
 		</item_modifier>
 		<!-- TURRET FIRE: STARCALLER (SILVER) -->
 		<item_modifier name="runeFire_TurretMeteor" installable_tags="spellTurret" modifier_tags="runeFire_TurretMeteor" type="mod">
-			<property name="Extends" value="runeMaster"/>
-			<property name="Group" value="Mods,RuneFire"/>
+			<property name="Extends" value="runeMaster"/><property name="Group" value="Mods,RuneFire"/>
+			<property name="Material" value="MsorceryExtractFire"/><property name="Weight" value="50"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor" operation="set" value="@$sorceryRuneMastery_power" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor" operation="multiply" value="0.1" target_tags="player"/>
@@ -483,24 +488,19 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_degrade" operation="multiply" value="2" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_degradeDisplay" operation="set" value="@$runeFireTurretMeteor_degrade" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_degradeDisplay" operation="multiply" value="100" target_tags="player"/>
-					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_burden" operation="set" value="@$runeBurdenCost" target_tags="player"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_burden" operation="multiply" value=".2" target_tags="player"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_burdenDisplay" operation="set" value="@$runeFireTurretMeteor_burden" target_tags="player"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_burdenDisplay" operation="multiply" value="100" target_tags="player"/> -->
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-					<!-- <triggered_effect trigger="onSelfEquipStart" action="RemoveBuff" buff="spellTurretFire_MeteorAOE_Player" target_tags="player"/> -->
-					<triggered_effect trigger="onSelfEquipStop" action="AddBuff" buff="spellTurretFire_MeteorAOE_PlayerTrigger" target_tags="player">
+					<triggered_effect trigger="onSelfEquipStop" action="AddBuff" buff="spellTurretFire_MeteorAOE_Trigger" target_tags="player">
 						<requirement name="!HoldingItemHasTags" tags="spellTurret"/>
-						<requirement name="HasBuff" buff="buffSpellTurretFire_Deployed"/>
+						<requirement name="HasBuff" buff="spellTurretFire_Deployed"/>
 					</triggered_effect>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@$runeFireTurretMeteor_degrade"/>
 				</effect_group>
 		</item_modifier>
 		<!-- FIRE TURRET: BURNING AURA (SILVER) -->
 		<item_modifier name="runeFire_TurretAuraBurn" installable_tags="spellTurret" modifier_tags="runeFire_TurretAuraBurn" type="mod">
-			<property name="Extends" value="runeMaster"/>
-			<property name="Group" value="Mods,RuneFire"/>
+			<property name="Extends" value="runeMaster"/><property name="Group" value="Mods,RuneFire"/>
+			<property name="Material" value="MsorceryExtractFire"/><property name="Weight" value="50"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretAuraBurn" operation="set" value="@$sorceryRuneMastery_power" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretAuraBurn" operation="multiply" value="0.1" target_tags="player"/>
@@ -512,20 +512,97 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretAuraBurn_degradeDisplay" operation="multiply" value="100" target_tags="player"/>
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-					<triggered_effect trigger="onSelfEquipStop" action="AddBuff" buff="spellTurretFire_AuraBurn_PlayerTrigger" target_tags="player">
+					<triggered_effect trigger="onSelfEquipStop" action="AddBuff" buff="spellTurretFire_AuraBurn_Trigger" target_tags="player">
 						<requirement name="!HoldingItemHasTags" tags="spellTurret"/>
-						<requirement name="HasBuff" buff="buffSpellTurretFire_Deployed"/>
+						<requirement name="HasBuff" buff="spellTurretFire_Deployed"/>
 					</triggered_effect>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@$runeFireTurretAuraBurn_degrade"/>
 				</effect_group>
 		</item_modifier>
 	<!-- END - FIRE RUNES __________________________________________________________________________________ -->
 	
+	<!-- ICE RUNES __________________________________________________________________________________ -->
+		<!-- LUCKY ICE ESSENCE -->
+		<item_modifier name="runeIce_LuckyEssence" installable_tags="armor,clothing,tool" type="mod">
+			<property name="Extends" value="runeMaster"/><property name="Group" value="Mods,RuneIce"/>
+			<property name="Material" value="MsorceryExtractIce"/><property name="Weight" value="10"/>
+				<effect_group tiered="false" name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence" operation="set" value="@$sorceryRuneMastery_power"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence" operation="multiply" value="0.1"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssenceDisplay" operation="set" value="@.runeIceLuckyEssence"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssenceDisplay" operation="multiply" value="100"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_degrade" operation="multiply" value=".1"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_degradeDisplay" operation="set" value="@.runeIceLuckyEssence_degrade"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_degradeDisplay" operation="multiply" value="100"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_burden" operation="set" value="@$runeBurdenCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_burden" operation="multiply" value="1"/>
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeIceLuckyEssence" operation="set" value="0" />
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeIceLuckyEssence_degrade" operation="set" value="0" />
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeIceLuckyEssence_burden" operation="set" value="0" />
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeIceLuckyEssenceDisplay" operation="set" value="0" />
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeIceLuckyEssence_degradeDisplay" operation="set" value="0" />
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+						<requirement name="TriggerHasTags" tags="hasIceEssence"/>
+						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeIceLuckyEssence_burden"/>
+					<triggered_effect trigger="onSelfDamagedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeIceLuckyEssence_burden"/>
+					<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeIceLuckyEssence_burden"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeIceLuckyEssence_degrade"/>
+					<passive_effect name="HarvestCount" operation="perc_add" value="@.runeIceLuckyEssence" tags="essenceIceHarvest"/>
+				</effect_group>
+		</item_modifier>
+		<!-- ICE TURRET: CHILLING AURA (SILVER) -->
+		<item_modifier name="runeIce_TurretAuraChill" installable_tags="spellTurret" modifier_tags="runeIce_TurretAuraChill" type="mod">
+			<property name="Extends" value="runeMaster"/><property name="Group" value="Mods,RuneIce"/>
+			<property name="Material" value="MsorceryExtractIce"/><property name="Weight" value="50"/>
+				<effect_group tiered="false" name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChill" operation="set" value="@$sorceryRuneMastery_power" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChill" operation="multiply" value="0.1" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChillDisplay" operation="set" value="@$runeIceTurretAuraChill" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChillDisplay" operation="multiply" value="100" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChill_degrade" operation="set" value="@$runeDegradeCost" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChill_degrade" operation="multiply" value="1" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChill_degradeDisplay" operation="set" value="@$runeIceTurretAuraChill_degrade" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChill_degradeDisplay" operation="multiply" value="100" target_tags="player"/>
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStop" action="AddBuff" buff="spellTurretIce_AuraChill_Trigger" target_tags="player">
+						<requirement name="!HoldingItemHasTags" tags="spellTurret"/>
+						<requirement name="HasBuff" buff="spellTurretIce_Deployed"/>
+					</triggered_effect>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@$runeIceTurretAuraChill_degrade"/>
+				</effect_group>
+		</item_modifier>
+		<!-- TURRET ICE: HAIL STORM (SILVER) -->
+		<item_modifier name="runeIce_TurretHailstorm" installable_tags="spellTurret" modifier_tags="runeIce_TurretHailstorm" type="mod">
+			<property name="Extends" value="runeMaster"/><property name="Group" value="Mods,RuneIce"/>
+			<property name="Material" value="MsorceryExtractIce"/><property name="Weight" value="50"/>
+				<effect_group tiered="false" name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstorm" operation="set" value="@$sorceryRuneMastery_power" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstorm" operation="multiply" value="0.1" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstormDisplay" operation="set" value="@$runeIceTurretHailstorm" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstormDisplay" operation="multiply" value="100" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstorm_degrade" operation="set" value="@$runeDegradeCost" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstorm_degrade" operation="multiply" value="2" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstorm_degradeDisplay" operation="set" value="@$runeIceTurretHailstorm_degrade" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstorm_degradeDisplay" operation="multiply" value="100" target_tags="player"/>
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStop" action="AddBuff" buff="spellTurretIce_Hailstorm_Trigger" target_tags="player">
+						<requirement name="!HoldingItemHasTags" tags="spellTurret"/>
+						<requirement name="HasBuff" buff="spellTurretIce_Deployed"/>
+					</triggered_effect>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@$runeIceTurretHailstorm_degrade"/>
+				</effect_group>
+		</item_modifier>
+	<!-- END - ICE RUNES __________________________________________________________________________________ -->
+	
 	<!-- SUPPORTER RUNES __________________________________________________________________________________ -->
 		<!-- ARCANE SUPPORTER RUNES -->
 		<!-- SUPPORTER RUNE: Astryael’s Eternal Youth -->
 		<item_modifier name="rune_SupporterAstryael" modifier_tags="rune_SupporterAstryael" installable_tags="armor,clothing" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="60"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterAstryael" operation="multiply" value=".5"/> <!-- .5 -->
@@ -549,6 +626,7 @@
 						<requirement name="!IsStatAtMax" stat="health"/>
 						<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value="@.runeSupporterAstryael_c1"/>
 						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeSupporterAstryael_burden"/>
+						<requirement name="CVarCompare" cvar="$runeSupporterAstyael_CD" operation="GTE" value="2"/>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeSupporterAstryael_degrade"/>
 					<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeSupporterAstryael_burden"/>
 					<!-- NOTE: HealthChangeOT drains Food. Counter required: -->
@@ -560,7 +638,7 @@
 		</item_modifier>
 		<!-- SUPPORTER RUNE: Dragoness Scale -->
 		<item_modifier name="rune_SupporterDragoness" modifier_tags="rune_SupporterDragoness" installable_tags="sorceryArmor" type="mod">
-			<property name="Extends" value="runeMaster"/>
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="60"/>
 				<effect_group tiered="false" name="CALC">
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterDragoness" operation="set" value="@$sorceryRuneMastery_power"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeSupporterDragoness" operation="multiply" value="2"/>
@@ -581,6 +659,128 @@
 	<!-- END - SUPPORTER RUNES __________________________________________________________________________________ -->
 		
 		
+	<!-- UNIQUE RUNES __________________________________________________________________________________ -->
+		<!-- ASPECT OF FIRE -->
+		<item_modifier name="rune_AspectOfFire" installable_tags="chest" blocked_tags="clothing" modifier_tags="rune_AspectOfFire" type="attachment">
+			<property name="Extends" value="runeMaster"/><property name="Group" value="Mods,RuneFire"/><property name="UnlockedBy" value="perkSorceryFireAspect"/>
+			<property name="Weight" value="0"/><property name="SellableToTrader" value="false"/>
+				<effect_group name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAspectOfFire_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAspectOfFire_degrade" operation="multiply" value="2"/>
+					<!-- clear -->
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRune_AspectOfFire,buffRune_AspectOfFire_Aura"/>
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeAspectOfFire_degrade" operation="set" value="0" />
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_AspectOfFire"/>
+					<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffRune_AspectOfFire_Aura"/>
+					<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffRune_AspectOfFire_Aura"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeAspectOfFire_degrade"/>
+				</effect_group>
+		</item_modifier>
+		<!-- ASPECT OF ICE -->
+		<item_modifier name="rune_AspectOfIce" installable_tags="chest" blocked_tags="clothing" modifier_tags="rune_AspectOfIce" type="attachment">
+			<property name="Extends" value="runeMaster"/><property name="Group" value="Mods,RuneIce"/><property name="UnlockedBy" value="perkSorceryIceAspect"/>
+			<property name="Weight" value="0"/><property name="SellableToTrader" value="false"/>
+				<effect_group name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAspectOfIce_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeAspectOfIce_degrade" operation="multiply" value="2"/>
+					<!-- clear -->
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRune_AspectOfIce,buffRune_AspectOfIce_Aura"/>
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeAspectOfIce_degrade" operation="set" value="0" />
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_AspectOfIce"/>
+					<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="buffRune_AspectOfIce_Aura"/>
+					<triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffRune_AspectOfIce_Aura"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeAspectOfIce_degrade"/>
+				</effect_group>
+		</item_modifier>
+	<!-- END - UNIQUE RUNES __________________________________________________________________________________ -->
+		
+		
+	<!-- CLASS RUNES __________________________________________________________________________________ -->
+		<!-- CLASS: SPELLCASTER -->
+		<item_modifier name="rune_ClassSpellcaster1" installable_tags="hands" modifier_tags="rune_ClassSpellcaster1" type="attachment">
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="100"/><property name="Group" value="Mods,Transmutation"/>
+				<effect_group name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassSpellcaster1_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassSpellcaster1_degrade" operation="multiply" value="2"/>
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeClassSpellcaster1_degrade" operation="set" value="0" />					
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_ClassSpellcaster1,buffRune_ClassSpellcaster1_equipped"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRune_ClassSpellcaster1,buffRune_ClassSpellcaster1_equipped"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeClassSpellcaster1_degrade"/>
+				</effect_group>
+		</item_modifier>
+		<item_modifier name="rune_ClassSpellcaster2" installable_tags="hands" modifier_tags="rune_ClassSpellcaster2" type="attachment">
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="100"/><property name="Group" value="Mods,Transmutation"/>
+				<effect_group name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassSpellcaster2_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassSpellcaster2_degrade" operation="multiply" value="2"/>
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeClassSpellcaster2_degrade" operation="set" value="0" />
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_ClassSpellcaster2,buffRune_ClassSpellcaster2_equipped"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRune_ClassSpellcaster2,buffRune_ClassSpellcaster2_equipped"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeClassSpellcaster2_degrade"/>
+				</effect_group>
+		</item_modifier>
+		<item_modifier name="rune_ClassSpellcaster3" installable_tags="hands" modifier_tags="rune_ClassSpellcaster3" type="attachment">
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="100"/><property name="Group" value="Mods,Transmutation"/>
+				<effect_group name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassSpellcaster3_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassSpellcaster3_degrade" operation="multiply" value="2"/>
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeClassSpellcaster3_degrade" operation="set" value="0" />
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_ClassSpellcaster3,buffRune_ClassSpellcaster3_equipped"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRune_ClassSpellcaster3,buffRune_ClassSpellcaster3_equipped"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeClassSpellcaster3_degrade"/>
+				</effect_group>
+		</item_modifier>
+		<!-- CLASS: ALCHEMIST -->
+		<item_modifier name="rune_ClassAlchemist1" installable_tags="sorceryBandana" modifier_tags="rune_ClassAlchemist1" type="attachment">
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="100"/><property name="Group" value="Mods,Transmutation"/>
+				<effect_group name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassAlchemist1_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassAlchemist1_degrade" operation="multiply" value="2"/>
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeClassAlchemist1_degrade" operation="set" value="0" />					
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_ClassAlchemist1,buffRune_ClassAlchemist1_equipped"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRune_ClassAlchemist1,buffRune_ClassAlchemist1_equipped"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeClassAlchemist1_degrade"/>
+				</effect_group>
+		</item_modifier>
+		<item_modifier name="rune_ClassAlchemist2" installable_tags="sorceryBandana" modifier_tags="rune_ClassAlchemist2" type="attachment">
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="100"/><property name="Group" value="Mods,Transmutation"/>
+				<effect_group name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassAlchemist2_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassAlchemist2_degrade" operation="multiply" value="2"/>
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeClassAlchemist2_degrade" operation="set" value="0" />
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_ClassAlchemist2,buffRune_ClassAlchemist2_equipped"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRune_ClassAlchemist2,buffRune_ClassAlchemist2_equipped"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeClassAlchemist2_degrade"/>
+				</effect_group>
+		</item_modifier>
+		<item_modifier name="rune_ClassAlchemist3" installable_tags="sorceryBandana" modifier_tags="rune_ClassAlchemist3" type="attachment">
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="100"/><property name="Group" value="Mods,Transmutation"/>
+				<effect_group name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassAlchemist3_degrade" operation="set" value="@$runeDegradeCost"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeClassAlchemist3_degrade" operation="multiply" value="2"/>
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeClassAlchemist3_degrade" operation="set" value="0" />
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffRune_ClassAlchemist3,buffRune_ClassAlchemist3_equipped"/>
+					<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffRune_ClassAlchemist3,buffRune_ClassAlchemist3_equipped"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeClassAlchemist3_degrade"/>
+				</effect_group>
+		</item_modifier>
+	<!-- END - CLASS RUNES __________________________________________________________________________________ -->
 		
 	</append>
 </Sorcery>

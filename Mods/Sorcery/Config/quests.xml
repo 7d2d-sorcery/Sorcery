@@ -2,7 +2,7 @@
  <!--__________________________________________________________________________________
 		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
 		__________________________________________________________________________________
-		2020 "DEVRIX"
+		2021 "DEVRIX"
 		All Rights Reserved.
 		__________________________________________________________________________________
 		HOME: http://sorcerymod.com
@@ -63,6 +63,20 @@
 			<reward type="Exp" value="777" />
 			<reward type="SkillPoints" value="1"/>
 		</quest>
+		<!-- DEV: Skill Grimoire: Gain +100 Skill Points -->
+		<quest id="questDEV_skillGrimoire">
+			<property name="name_key" value="quest_skillGrimoire_title" />
+			<property name="subtitle_key" value="quest_skillGrimoire_subtitle" />
+			<property name="description_key" value="quest_skillGrimoire" />
+			<property name="offer_key" value="quest_skillGrimoire" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_pentagram_add" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="true"/>
+			<reward type="Exp" value="777" />
+			<reward type="SkillPoints" value="100"/>
+		</quest>
 		
 	<!-- INTRO QUESTS __________________________________________________________________________________ -->
 		<!-- Intro 1: Summon Fallen, Loot Corpses, Receive Altin's Chest -->
@@ -78,14 +92,16 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 			<action type="TrackQuest" />
-				<action type="SpawnEnemy" id="sorceryFallenIntroFire" value="2" phase="1" />
-				<action type="SpawnEnemy" id="sorceryFallenIntroIce" value="2" phase="1" />
-				<action type="SpawnEnemy" id="sorceryFallenIntroLightning" value="2" phase="1" />
+				<action type="SpawnEnemy" id="sorceryFallenIntroItemsFire" value="1" phase="1" />
+				<action type="SpawnEnemy" id="sorceryFallenIntroItemsIce" value="1" phase="1" />
+				<action type="SpawnEnemy" id="sorceryFallenIntroItemsLightning" value="1" phase="1" />
+				<action type="SpawnEnemy" id="sorceryFallenIntroFire" value="1" phase="1" />
+				<action type="SpawnEnemy" id="sorceryFallenIntroIce" value="1" phase="1" />
+				<action type="SpawnEnemy" id="sorceryFallenIntroLightning" value="1" phase="1" />
 				<action type="SpawnEnemy" id="sorceryFamiliarArcane" value="1" phase="1"/> <!-- familiar -->
-				<!-- Arcane Familiar -->
-				<!-- <action type="SpawnEnemy" id="sorceryFamiliarArcane" value="1" phase="2" /> -->
-				<objective type="FetchKeep" id="spellFire" value="1" phase="2" />
-				<objective type="FetchKeep" id="resourceEssenceFire" value="5" phase="2" />
+				<objective type="FetchKeep" id="sorceryElixir_attFire" value="1" phase="2" />
+				<objective type="FetchKeep" id="sorceryElixir_attIce" value="1" phase="2" />
+				<objective type="FetchKeep" id="sorceryElixir_attLightning" value="1" phase="2" />
 			<reward type="Exp" value="777" />
 			<reward type="Item" id="cnt_SorceryCrateIntro" value="1" />
 			<reward type="Quest" id="quest_sorceryIntro2"/>
@@ -107,11 +123,13 @@
 				<property name="delay" value="3"/>
 			</action>
 				<objective type="BlockPlace" id="cnt_SorceryCrateIntro" value="1" phase="1" />
-				<objective type="FetchKeep" id="scrollQuest_ConjureFireItems" value="1" phase="2" />
+				<objective type="FetchKeep" id="sorceryDesk" value="1" phase="2" />
 				<objective type="FetchKeep" id="sorceryAlchemyMortar" value="1" phase="2" />
-				<objective type="Wear" id="sorceryArmor_Hood" phase="2" />
-				<objective type="Wear" id="sorceryArmor_Boots" phase="2" />
-			<reward type="Item" id="sorceryDesk" value="1" />
+				<objective type="FetchKeep" id="scrollQuest_ConjureFireItems" value="1" phase="2" />
+				<objective type="FetchKeep" id="scrollQuest_ConjureIceItems" value="1" phase="2" />
+				<objective type="FetchKeep" id="scrollQuest_ConjureLightningItems" value="1" phase="2" />
+				<objective type="FetchKeep" id="sorceryArmor_Hood" phase="2" />
+				<objective type="FetchKeep" id="sorceryArmor_Chest" phase="2" />
 			<reward type="Exp" value="777" />
 			<reward type="Quest" id="quest_sorceryIntro3"/>
 		</quest>
@@ -131,6 +149,8 @@
 			<action type="ShowTip" value="quest_sorceryIntro3">
 				<property name="delay" value="3"/>
 			</action>
+				<objective type="Wear" id="sorceryArmor_Hood" phase="1" />
+				<objective type="Wear" id="sorceryArmor_Chest" phase="1" />
 				<objective type="BlockPlace" id="sorceryDesk" value="1" />
 			<!-- Start: Intro Quests -->
 			<reward type="Quest" id="quest_sorceryIntroPotions">
@@ -159,7 +179,6 @@
 			</reward>
 			<reward type="Exp" value="777" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
-			<!-- <reward type="SkillPoints" value="1" chainreward="true"/> -->
 		</quest>
 		<!-- END - INTRO CHAIN -->
 		
@@ -193,8 +212,8 @@
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
-				<objective type="Craft" id="scroll_ArcaneVision" value="1" phase="1"/>
-				<objective type="FetchKeep" id="scroll_ArcaneVision" value="1" phase="2" />
+				<!-- <objective type="Craft" id="scroll_ArcaneVision" value="1" phase="1"/> -->
+				<objective type="FetchKeep" id="scroll_ArcaneVision" value="1" phase="1" />
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
@@ -257,9 +276,7 @@
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
-				<objective type="Craft" id="rune_SpellLight" value="1" phase="1"/>
-				<objective type="FetchKeep" id="rune_SpellLight" value="1" phase="2" />
-				<!-- sorceryEnchantingStation -->
+				<objective type="FetchKeep" id="rune_SpellLight" value="1" phase="1" />
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
@@ -275,20 +292,9 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<!-- NOTE: NRE if too many; alternative method. -->
-				<!-- <objective type="FetchKeep" id="resourceThreadArcane" value="1" phase="1"/> -->
 				<objective type="Wear" id="sorceryArmor_Hood" phase="1"/>
 				<objective type="ZombieKill" value="1" phase="2"/>
 				<requirement type="Buff" id="buffSorceryArmorSet_Arcane" phase="2"/>
-				<!-- <objective type="Wear" id="sorceryArmor_Hood" />
-				<objective type="Wear" id="sorceryAccessory_Shades" />
-				<objective type="Wear" id="sorceryArmor_Bandana" />
-				<objective type="Wear" id="sorceryArmor_Robe" />
-				<objective type="Wear" id="sorceryArmor_Chest" />
-				<objective type="Wear" id="sorceryArmor_Shirt" />
-				<objective type="Wear" id="sorceryArmor_Gloves" />
-				<objective type="Wear" id="sorceryArmor_Leg" />
-				<objective type="Wear" id="sorceryArmor_Pants" />
-				<objective type="Wear" id="sorceryArmor_Boots" /> -->
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
@@ -303,140 +309,15 @@
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
-				<objective type="Craft" id="sorceryFamiliarArcane" value="1" phase="1"/>
-				<objective type="FetchKeep" id="sorceryFamiliarArcane" value="1" phase="2" />
-			<reward type="Exp" value="100" />
-			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
-		</quest>
-		
-	<!-- FIRE INTRO QUESTS -->
-		<!-- Intro: Fire2 Craft:  -->
-		<quest id="quest_sorceryIntroFireCraftFire2">
-			<property name="name_key" value="quest_sorceryIntroFireCraftFire2_title" />
-			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFire2_subtitle" />
-			<property name="description_key" value="quest_sorceryIntroFireCraftFire2" />
-			<property name="offer_key" value="quest_sorceryIntroFireCraftFire2" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
-			<property name="difficulty" value="easy"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-				<objective type="Craft" id="spellFire2" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellFire2" value="10" phase="2" />
-			<reward type="Exp" value="100" />
-			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
-		</quest>
-		<!-- Intro: Fire3 Craft:  -->
-		<quest id="quest_sorceryIntroFireCraftFire3">
-			<property name="name_key" value="quest_sorceryIntroFireCraftFire3_title" />
-			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFire3_subtitle" />
-			<property name="description_key" value="quest_sorceryIntroFireCraftFire3" />
-			<property name="offer_key" value="quest_sorceryIntroFireCraftFire3" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
-			<property name="difficulty" value="easy"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-				<objective type="Craft" id="spellFire3" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellFire3" value="10" phase="2" />
-			<reward type="Exp" value="100" />
-			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
-		</quest>
-		<!-- Intro: spellArrowFire Craft:  -->
-		<quest id="quest_sorceryIntroFireCraftArrowFire">
-			<property name="name_key" value="quest_sorceryIntroFireCraftArrowFire_title" />
-			<property name="subtitle_key" value="quest_sorceryIntroFireCraftArrowFire_subtitle" />
-			<property name="description_key" value="quest_sorceryIntroFireCraftArrowFire" />
-			<property name="offer_key" value="quest_sorceryIntroFireCraftArrowFire" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_sorcery_ammo_fire" />
-			<property name="difficulty" value="easy"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-				<objective type="Craft" id="spellArrowFire" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellArrowFire" value="10" phase="2" />
-			<reward type="Exp" value="100" />
-			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
-		</quest>
-		<!-- Intro: spellArrowFire2 Craft:  -->
-		<quest id="quest_sorceryIntroFireCraftArrowFire2">
-			<property name="name_key" value="quest_sorceryIntroFireCraftArrowFire2_title" />
-			<property name="subtitle_key" value="quest_sorceryIntroFireCraftArrowFire2_subtitle" />
-			<property name="description_key" value="quest_sorceryIntroFireCraftArrowFire2" />
-			<property name="offer_key" value="quest_sorceryIntroFireCraftArrowFire2" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_sorcery_ammo_fire" />
-			<property name="difficulty" value="easy"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-				<objective type="Craft" id="spellArrowFire2" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellArrowFire2" value="10" phase="2" />
-			<reward type="Exp" value="100" />
-			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
-		</quest>
-		<!-- Intro: spellArrowFire3 Craft:  -->
-		<quest id="quest_sorceryIntroFireCraftArrowFire3">
-			<property name="name_key" value="quest_sorceryIntroFireCraftArrowFire3_title" />
-			<property name="subtitle_key" value="quest_sorceryIntroFireCraftArrowFire3_subtitle" />
-			<property name="description_key" value="quest_sorceryIntroFireCraftArrowFire3" />
-			<property name="offer_key" value="quest_sorceryIntroFireCraftArrowFire3" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_sorcery_ammo_fire" />
-			<property name="difficulty" value="easy"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-				<objective type="Craft" id="spellArrowFire3" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellArrowFire3" value="10" phase="2" />
-			<reward type="Exp" value="100" />
-			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
-		</quest>
-		<!-- Intro: Fire Armor Set -->
-		<quest id="quest_sorceryIntroFireArmor">
-			<property name="name_key" value="quest_sorceryIntroFireArmor_title" />
-			<property name="subtitle_key" value="quest_sorceryIntroFireArmor_subtitle" />
-			<property name="description_key" value="quest_sorceryIntroFireArmor" />
-			<property name="offer_key" value="quest_sorceryIntroFireArmor" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_armor_fire_sorcery" />
-			<property name="difficulty" value="easy"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-				<!-- NOTE: NRE if too many; alternative method. -->
-				<!-- <objective type="FetchKeep" id="resourceThreadFire" value="1" phase="1"/> -->
-				<objective type="Wear" id="sorceryArmorFire_Hood" phase="1"/>
-				<objective type="ZombieKill" value="1" phase="2"/>
-				<requirement type="Buff" id="buffSorceryArmorSet_Fire" phase="2"/>
-				<!-- <objective type="Wear" id="sorceryArmorFire_Hood" />
-				<objective type="Wear" id="sorceryAccessoryFire_Shades" />
-				<objective type="Wear" id="sorceryArmorFire_Bandana" />
-				<objective type="Wear" id="sorceryArmorFire_Robe" />
-				<objective type="Wear" id="sorceryArmorFire_Chest" />
-				<objective type="Wear" id="sorceryArmorFire_Shirt" />
-				<objective type="Wear" id="sorceryArmorFire_Gloves" />
-				<objective type="Wear" id="sorceryArmorFire_Leg" />
-				<objective type="Wear" id="sorceryArmorFire_Pants" />
-				<objective type="Wear" id="sorceryArmorFire_Boots" /> -->
-			<reward type="Exp" value="100" />
-			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
-		</quest>
-		<!-- Intro: Fire Spell Turret  -->
-		<quest id="quest_sorceryIntroFireSpellTurret">
-			<property name="name_key" value="quest_sorceryIntroFireSpellTurret_title" />
-			<property name="subtitle_key" value="quest_sorceryIntroFireSpellTurret_subtitle" />
-			<property name="description_key" value="quest_sorceryIntroFireSpellTurret" />
-			<property name="offer_key" value="quest_sorceryIntroFireSpellTurret" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_trap_fire_sorcery" />
-			<property name="difficulty" value="easy"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-				<objective type="Craft" id="spellTurretFire" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellTurretFire" value="1" phase="2" />
+				<!-- <objective type="Craft" id="sorceryFamiliarArcane" value="1" phase="1"/> -->
+				<objective type="FetchKeep" id="sorceryFamiliarArcane" value="1" phase="1" />
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		
 
+		
+		
 
 	<!-- INTRO FIRE QUESTS __________________________________________________________________________________ -->
 		<quest id="quest_sorceryIntroGuide_Fire">
@@ -529,26 +410,14 @@
 				<action type="SpawnEnemy" id="sorceryFallenIntroFire" value="4" phase="3" />
 				<action type="SpawnEnemy" id="zombieBurnt" value="4" phase="3" />
 				<objective type="ZombieKill" id="zombieBurnt" value="2" phase="3" />
-				<!-- <requirement type="Group" value="OR" phase="3" >
-					<requirement type="Buff" id="spellcastAmmo_Fire"/>
-					<requirement type="Buff" id="spellcastAmmo_Fire2"/>
-					<requirement type="Buff" id="spellcastAmmo_Fire3"/>
-				</requirement> -->
 				<action type="SpawnEnemy" id="sorceryFallenIntroFire" value="4" phase="4" />
 				<action type="SpawnEnemy" id="zombieBurnt" value="4" phase="4" />
 				<objective type="ZombieKill" id="zombieBurnt" value="2" phase="4" />
-				<!-- <requirement type="Group" value="OR" phase="4" >
-					<requirement type="Buff" id="spellcastAmmo_Fire"/>
-					<requirement type="Buff" id="spellcastAmmo_Fire2"/>
-					<requirement type="Buff" id="spellcastAmmo_Fire3"/>
-				</requirement> -->
 			<reward type="Exp" value="1000" />
-			<reward type="Item" id="potion_Health" value="5" />
-			<reward type="Item" id="potion_Spirit" value="5" />
-			<reward type="Item" id="spellFire2" value="10" />
-			<reward type="Item" id="spellFire3" value="10" />
-			<reward type="Item" id="sorceryElixir_attFire" value="1" />
-			<!-- <reward type="Item" id="runeUnique_altinstouch" value="1" chainreward="true" /> -->
+			<reward type="Item" id="potion_Health" value="3" />
+			<reward type="Item" id="potion_Spirit" value="3" />
+			<reward type="Item" id="spellFire2" value="5" />
+			<reward type="Item" id="spellFire3" value="5" />
 			<reward type="Quest" id="quest_sorceryIntroGuide_Fire5" />
 		</quest>
 		<quest id="quest_sorceryIntroGuide_Fire5">
@@ -581,27 +450,22 @@
 				<action type="SpawnEnemy" id="sorceryFallenIntroFire" value="4" phase="4" />
 				<action type="SpawnEnemy" id="sorceryFallenFire" value="1" phase="4" />
 				<objective type="ZombieKill" id="sorceryFallenFire" value="1" phase="4" />
-				<!-- <requirement type="Group" value="OR" phase="4" >
-					<requirement type="Buff" id="spellcastAmmo_Fire"/>
-					<requirement type="Buff" id="spellcastAmmo_Fire2"/>
-					<requirement type="Buff" id="spellcastAmmo_Fire3"/>
-				</requirement> -->
 			<reward type="Exp" value="1000" />
-			<reward type="Item" id="spellFire2" value="10" />
-			<reward type="Item" id="spellFire3" value="10" />
+			<reward type="Item" id="spellFire2" value="5" />
+			<reward type="Item" id="spellFire3" value="5" />
 			<reward type="Item" id="scrollFire_Weapon" value="1" />
 			<reward type="Item" id="scrollFire_Ammo" value="1" />
 			<reward type="Item" id="resourceRitualShardFire" value="1" />
 			<reward type="Item" id="sorceryElixir_attFire" value="1" chainreward="true" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
 			<!-- Start: Fire Intro Quests -->
-			<reward type="Quest" id="quest_sorceryIntroFallen_Fire">
+			<reward type="Quest" id="quest_sorceryIntroFireAspectAura">
 				<property name="chainquest" value="false"/>
 			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFallen_Ice">
+			<reward type="Quest" id="quest_sorceryFirePowder">
 				<property name="chainquest" value="false"/>
 			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFallen_Lightning">
+			<reward type="Quest" id="quest_sorceryIntroFireCraftArrowFire">
 				<property name="chainquest" value="false"/>
 			</reward>
 			<reward type="Quest" id="quest_sorceryIntroFireCraftFire2">
@@ -610,23 +474,905 @@
 			<reward type="Quest" id="quest_sorceryIntroFireCraftFire3">
 				<property name="chainquest" value="false"/>
 			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFireCraftArrowFire">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFireCraftArrowFire2">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFireCraftArrowFire3">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFireArmor">
+			<reward type="Quest" id="quest_sorceryIntroFireCraftFireTrap">
 				<property name="chainquest" value="false"/>
 			</reward>
 			<reward type="Quest" id="quest_sorceryIntroFireSpellTurret">
 				<property name="chainquest" value="false"/>
 			</reward>
+			<reward type="Quest" id="quest_sorceryIntroFireArmor">
+				<property name="chainquest" value="false"/>
+			</reward>
+			<reward type="Quest" id="quest_sorceryIntroFireWildFallen">
+				<property name="chainquest" value="false"/>
+			</reward>
+		</quest>
+	<!-- FIRE INTRO QUESTS -->
+		<!-- Intro: Aspect of Fire:  -->
+		<quest id="quest_sorceryIntroFireAspectAura">
+			<property name="name_key" value="quest_sorceryIntroFireAspectAura_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireAspectAura_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireAspectAura" />
+			<property name="offer_key" value="quest_sorceryIntroFireAspectAura" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_rune_fire" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<requirement type="Buff" id="buffRune_AspectOfFire_Aura" phase="1"/>
+				<objective type="ZombieKill" value="2" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Fire Powder / Enchanted Mortar -->
+		<quest id="quest_sorceryFirePowder">
+			<property name="name_key" value="quest_sorceryFirePowder_title" />
+			<property name="subtitle_key" value="quest_sorceryFirePowder_subtitle" />
+			<property name="description_key" value="quest_sorceryFirePowder" />
+			<property name="offer_key" value="quest_sorceryFirePowder" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_potion" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="resourcePowderFire" value="10"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: spellArrowFire Craft:  -->
+		<quest id="quest_sorceryIntroFireCraftArrowFire">
+			<property name="name_key" value="quest_sorceryIntroFireCraftArrowFire_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireCraftArrowFire_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireCraftArrowFire" />
+			<property name="offer_key" value="quest_sorceryIntroFireCraftArrowFire" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ammo_fire" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="spellArrowFire" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellArrowFire" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Fire2 Craft:  -->
+		<quest id="quest_sorceryIntroFireCraftFire2">
+			<property name="name_key" value="quest_sorceryIntroFireCraftFire2_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFire2_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireCraftFire2" />
+			<property name="offer_key" value="quest_sorceryIntroFireCraftFire2" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="spellFire2" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellFire2" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroFireCraftFire2_2"/>
+		</quest>
+		<quest id="quest_sorceryIntroFireCraftFire2_2">
+			<property name="name_key" value="quest_sorceryIntroFireCraftFire2_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFire2_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireCraftFire2" />
+			<property name="offer_key" value="quest_sorceryIntroFireCraftFire2" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="spellFire2" value="100" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
+		</quest>
+		<!-- Intro: Fire3 Craft:  -->
+		<quest id="quest_sorceryIntroFireCraftFire3">
+			<property name="name_key" value="quest_sorceryIntroFireCraftFire3_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFire3_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireCraftFire3" />
+			<property name="offer_key" value="quest_sorceryIntroFireCraftFire3" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="spellFire3" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellFire3" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroFireCraftFire3_2"/>
+		</quest>
+		<quest id="quest_sorceryIntroFireCraftFire3_2">
+			<property name="name_key" value="quest_sorceryIntroFireCraftFire3_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFire3_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireCraftFire3" />
+			<property name="offer_key" value="quest_sorceryIntroFireCraftFire3" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="spellFire3" value="100" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
+		</quest>
+		<!-- Intro: Fire Armor Set -->
+		<quest id="quest_sorceryIntroFireArmor">
+			<property name="name_key" value="quest_sorceryIntroFireArmor_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireArmor_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireArmor" />
+			<property name="offer_key" value="quest_sorceryIntroFireArmor" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_armor_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<!-- NOTE: NRE if too many; alternative method. -->
+				<objective type="Wear" id="sorceryArmorFire_Hood" phase="1"/>
+				<objective type="ZombieKill" value="1" phase="2"/>
+				<requirement type="Buff" id="buffSorceryArmorSet_Fire" phase="2"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Fire Trap Craft  -->
+		<quest id="quest_sorceryIntroFireCraftFireTrap">
+			<property name="name_key" value="quest_sorceryIntroFireCraftFireTrap_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFireTrap_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireCraftFireTrap" />
+			<property name="offer_key" value="quest_sorceryIntroFireCraftFireTrap" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="sorceryTrap_Fire" value="1" phase="1"/>
+				<objective type="FetchKeep" id="sorceryTrap_Fire" value="1" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroFireCraftFireTrap_2"/>
+		</quest>
+		<quest id="quest_sorceryIntroFireCraftFireTrap_2">
+			<property name="name_key" value="quest_sorceryIntroFireCraftFireTrap_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFireTrap_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireCraftFireTrap" />
+			<property name="offer_key" value="quest_sorceryIntroFireCraftFireTrap" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="sorceryTrap_Fire" value="100" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true" />
+		</quest>
+		<!-- Intro: Fire Spell Turret  -->
+		<quest id="quest_sorceryIntroFireSpellTurret">
+			<property name="name_key" value="quest_sorceryIntroFireSpellTurret_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireSpellTurret_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireSpellTurret" />
+			<property name="offer_key" value="quest_sorceryIntroFireSpellTurret" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_trap_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="spellTurretFire" value="1" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- FIRE CHAIN: Fire Fallen Wild:  -->
+		<quest id="quest_sorceryIntroFireWildFallen">
+			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenFire" value="1" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenFire" value="1" phase="1" />
+			<reward type="Exp" value="1000" />
+			<reward type="Item" id="sorceryElixir_attFire" value="1" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroFireWildFallen1"/> 
+		</quest>
+		<quest id="quest_sorceryIntroFireWildFallen1">
+			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title1" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenFire" value="2" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenFire" value="1" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroFireWildFallen2"/> 
+		</quest>
+		<quest id="quest_sorceryIntroFireWildFallen2">
+			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title2" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenFire" value="4" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenFire" value="2" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroFireWildFallen3"/> 
+		</quest>
+		<quest id="quest_sorceryIntroFireWildFallen3">
+			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title3" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenFire" value="6" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenFire" value="3" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroFireWildFallen4"/> 
+		</quest>
+		<quest id="quest_sorceryIntroFireWildFallen4">
+			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title4" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenFire" value="8" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenFire" value="4" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroFireWildFallen5"/> 
+		</quest>
+		<quest id="quest_sorceryIntroFireWildFallen5">
+			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title5" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenFire" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenFire" value="5" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroFireWildFallen6"/> 
+		</quest>
+		<quest id="quest_sorceryIntroFireWildFallen6">
+			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title6" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenFire" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenFire" value="6" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroFireWildFallen7"/> 
+		</quest>
+		<quest id="quest_sorceryIntroFireWildFallen7">
+			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title7" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenFire" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenFire" value="7" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroFireWildFallen8"/> 
+		</quest>
+		<quest id="quest_sorceryIntroFireWildFallen8">
+			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title8" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenFire" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenFire" value="8" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroFireWildFallen9"/> 
+		</quest>
+		<quest id="quest_sorceryIntroFireWildFallen9">
+			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title9" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenFire" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenFire" value="9" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroFireWildFallen10"/> 
+		</quest>
+		<quest id="quest_sorceryIntroFireWildFallen10">
+			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title10" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroFireWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenFire" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenFire" value="10" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="sorceryElixir_attFire" value="1" chainreward="true"/>
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
 		</quest>
 	<!-- END - INTRO FIRE __________________________________________________________________________________ -->
+
+	<!-- INTRO ICE QUESTS __________________________________________________________________________________ -->
+		<quest id="quest_sorceryIntroGuide_Ice">
+			<property name="group_name_key" value="quest_sorceryIntroGuide_Ice" />
+			<property name="name_key" value="quest_sorceryIntroGuide_Ice_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroGuide_Ice_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroGuide_Ice" />
+			<property name="offer_key" value="quest_sorceryIntroGuide_Ice" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_ice" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+			<reward type="Item" id="resourceEssenceIce" value="100" />
+			<reward type="Item" id="resourcePotassiumNitratePowder" value="80" />
+			<reward type="Item" id="resourceRockSmall" value="80" />
+			<reward type="Item" id="resourceClayLump" value="80" />
+			<reward type="Quest" id="quest_sorceryIntroGuide_Ice2" />
+		</quest>
+		<quest id="quest_sorceryIntroGuide_Ice2">
+			<property name="group_name_key" value="quest_sorceryIntroGuide_Ice" />
+			<property name="name_key" value="quest_sorceryIntroGuide_Ice2_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroGuide_Ice2_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroGuide_Ice2" />
+			<property name="offer_key" value="quest_sorceryIntroGuide_Ice2" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_ice" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+			<action type="ShowTip" value="quest_sorceryIntroGuide_Ice2">
+				<property name="delay" value="3"/>
+			</action>
+				<objective type="FetchKeep" id="resourceEssenceIce" value="250" phase="1" />
+				<objective type="FetchKeep" id="resourcePotassiumNitratePowder" value="100" phase="1" />
+				<objective type="FetchKeep" id="resourceRockSmall" value="100" phase="1" />
+				<objective type="FetchKeep" id="resourceClayLump" value="100" phase="1" />
+				<objective type="FetchKeep" id="conjureIce" value="1" phase="2" />
+				<objective type="BlockPlace" id="conjureIce" value="1" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroGuide_Ice3" />
+		</quest>
+		<quest id="quest_sorceryIntroGuide_Ice3">
+			<property name="group_name_key" value="quest_sorceryIntroGuide_Ice" />
+			<property name="name_key" value="quest_sorceryIntroGuide_Ice3_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroGuide_Ice3_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroGuide_Ice3" />
+			<property name="offer_key" value="quest_sorceryIntroGuide_Ice3" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_ice" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+			<action type="ShowTip" value="quest_sorceryIntroGuide_Ice3">
+				<property name="delay" value="3"/>
+			</action>
+				<objective type="Craft" id="spellIce" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellcastIce" value="1" phase="1" />
+				<objective type="FetchKeep" id="spellIce" value="40" phase="1" />
+			<reward type="Quest" id="quest_sorceryIntroGuide_Ice4" />
+		</quest>
+		<quest id="quest_sorceryIntroGuide_Ice4">
+			<property name="group_name_key" value="quest_sorceryIntroGuide_Ice" />
+			<property name="name_key" value="quest_sorceryIntroGuide_Ice4_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroGuide_Ice4_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroGuide_Ice4" />
+			<property name="offer_key" value="quest_sorceryIntroGuide_Ice4" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_ice" />
+			<property name="difficulty" value="normal"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+			<action type="ShowTip" value="quest_sorceryIntroGuide_Ice4">
+				<property name="delay" value="3"/>
+			</action>
+				<objective type="RandomGoto" value="500-800" phase="1">
+					<property name="completion_distance" value="50"/>
+					<property name="nav_object" value="quest" />
+				</objective>
+				<objective type="RallyPoint">
+					<property name="start_mode" value="Create"/>
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+				</objective>
+				<action type="SpawnEnemy" id="sorceryFallenIntroIce" value="4" phase="3" />
+				<action type="SpawnEnemy" id="zombieSnow" value="3" phase="3" />
+				<objective type="ZombieKill" id="zombieSnow" value="1" phase="3" />
+				<action type="SpawnEnemy" id="sorceryFallenIntroIce" value="4" phase="4" />
+				<action type="SpawnEnemy" id="zombieSnow" value="3" phase="4" />
+				<objective type="ZombieKill" id="zombieSnow" value="1" phase="4" />
+			<reward type="Exp" value="1000" />
+			<reward type="Item" id="potion_Health" value="3" />
+			<reward type="Item" id="potion_Spirit" value="3" />
+			<reward type="Item" id="spellIce2" value="5" />
+			<reward type="Item" id="spellIce3" value="5" />
+			<reward type="Quest" id="quest_sorceryIntroGuide_Ice5" />
+		</quest>
+		<quest id="quest_sorceryIntroGuide_Ice5">
+			<property name="group_name_key" value="quest_sorceryIntroGuide_Ice" />
+			<property name="name_key" value="quest_sorceryIntroGuide_Ice5_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroGuide_Ice5_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroGuide_Ice5" />
+			<property name="offer_key" value="quest_sorceryIntroGuide_Ice5" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+			<action type="ShowTip" value="quest_sorceryIntroIceWildFallen">
+				<property name="delay" value="10"/>
+			</action>
+				<objective type="FetchKeep" id="potion_Health" value="2" phase="1" />
+				<objective type="FetchKeep" id="spellcastIce" value="1" phase="1" />
+				<objective type="FetchKeep" id="spellIce" value="60" phase="1" />
+				<objective type="RandomGoto" value="500-800" phase="2">
+					<property name="completion_distance" value="50"/>
+					<property name="nav_object" value="quest" />
+				</objective>
+				<objective type="RallyPoint">
+					<property name="start_mode" value="Create"/>
+					<property name="phase" value="3"/>
+					<property name="nav_object" value="rally" />
+				</objective>
+				<action type="SpawnEnemy" id="sorceryFallenIntroIce" value="4" phase="4" />
+				<action type="SpawnEnemy" id="sorceryFallenIce" value="1" phase="4" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="1" phase="4" />
+			<reward type="Exp" value="1000" />
+			<reward type="Item" id="spellIce2" value="5" />
+			<reward type="Item" id="spellIce3" value="5" />
+			<reward type="Item" id="scrollIce_Weapon" value="1" />
+			<reward type="Item" id="scrollIce_Ammo" value="1" />
+			<reward type="Item" id="resourceRitualShardIce" value="1" />
+			<reward type="Item" id="sorceryElixir_attIce" value="1"/>
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen"/>
+			<!-- Start: Ice Intro Quests -->
+			<reward type="Quest" id="quest_sorceryIntroIceAspectAura">
+				<property name="chainquest" value="false"/>
+			</reward>
+			<reward type="Quest" id="quest_sorceryIcePowder">
+				<property name="chainquest" value="false"/>
+			</reward>
+			<reward type="Quest" id="quest_sorceryIntroIceCraftArrowIce">
+				<property name="chainquest" value="false"/>
+			</reward>
+			<reward type="Quest" id="quest_sorceryIntroIceCraftIce2">
+				<property name="chainquest" value="false"/>
+			</reward>
+			<reward type="Quest" id="quest_sorceryIntroIceCraftIce3">
+				<property name="chainquest" value="false"/>
+			</reward>
+			<reward type="Quest" id="quest_sorceryIntroIceCraftIceTrap">
+				<property name="chainquest" value="false"/>
+			</reward>
+			<reward type="Quest" id="quest_sorceryIntroIceSpellTurret">
+				<property name="chainquest" value="false"/>
+			</reward>
+			<reward type="Quest" id="quest_sorceryIntroIceArmor">
+				<property name="chainquest" value="false"/>
+			</reward>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen">
+				<property name="chainquest" value="false"/>
+			</reward>
+		</quest>
+	<!-- ICE INTRO QUESTS -->
+		<!-- Intro: Aspect of Ice:  -->
+		<quest id="quest_sorceryIntroIceAspectAura">
+			<property name="name_key" value="quest_sorceryIntroIceAspectAura_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceAspectAura_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceAspectAura" />
+			<property name="offer_key" value="quest_sorceryIntroIceAspectAura" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_rune_ice" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<requirement type="Buff" id="buffRune_AspectOfIce_Aura" phase="1"/>
+				<objective type="ZombieKill" value="2" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Ice2 Craft:  -->
+		<quest id="quest_sorceryIntroIceCraftIce2">
+			<property name="name_key" value="quest_sorceryIntroIceCraftIce2_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceCraftIce2_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceCraftIce2" />
+			<property name="offer_key" value="quest_sorceryIntroIceCraftIce2" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_ice_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="spellIce2" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellIce2" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroIceCraftIce2_2"/>
+		</quest>
+		<quest id="quest_sorceryIntroIceCraftIce2_2">
+			<property name="name_key" value="quest_sorceryIntroIceCraftIce2_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceCraftIce2_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceCraftIce2" />
+			<property name="offer_key" value="quest_sorceryIntroIceCraftIce2" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_ice_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="spellIce2" value="100" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
+		</quest>
+		<!-- Intro: Ice3 Craft:  -->
+		<quest id="quest_sorceryIntroIceCraftIce3">
+			<property name="name_key" value="quest_sorceryIntroIceCraftIce3_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceCraftIce3_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceCraftIce3" />
+			<property name="offer_key" value="quest_sorceryIntroIceCraftIce3" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_ice_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="spellIce3" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellIce3" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroIceCraftIce3_2"/>
+		</quest>
+		<quest id="quest_sorceryIntroIceCraftIce3_2">
+			<property name="name_key" value="quest_sorceryIntroIceCraftIce3_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceCraftIce3_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceCraftIce3" />
+			<property name="offer_key" value="quest_sorceryIntroIceCraftIce3" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_ice_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="spellIce3" value="100" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
+		</quest>
+		<!-- Intro: Ice Armor Set -->
+		<quest id="quest_sorceryIntroIceArmor">
+			<property name="name_key" value="quest_sorceryIntroIceArmor_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceArmor_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceArmor" />
+			<property name="offer_key" value="quest_sorceryIntroIceArmor" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_armor_ice_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<!-- NOTE: NRE if too many; alternative method. -->
+				<objective type="Wear" id="sorceryArmorIce_Hood" phase="1"/>
+				<objective type="ZombieKill" value="1" phase="2"/>
+				<requirement type="Buff" id="buffSorceryArmorSet_Ice" phase="2"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		
+		<!-- Intro: Ice Trap Craft  -->
+		<quest id="quest_sorceryIntroIceCraftIceTrap">
+			<property name="name_key" value="quest_sorceryIntroIceCraftIceTrap_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceCraftIceTrap_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceCraftIceTrap" />
+			<property name="offer_key" value="quest_sorceryIntroIceCraftIceTrap" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_ice_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="sorceryTrap_Ice" value="1" phase="1"/>
+				<objective type="FetchKeep" id="sorceryTrap_Ice" value="1" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroIceCraftIceTrap_2"/>
+		</quest>
+		<quest id="quest_sorceryIntroIceCraftIceTrap_2">
+			<property name="name_key" value="quest_sorceryIntroIceCraftIceTrap_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceCraftIceTrap_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceCraftIceTrap" />
+			<property name="offer_key" value="quest_sorceryIntroIceCraftIceTrap" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_ice_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="sorceryTrap_Ice" value="100" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true" />
+		</quest>
+		<!-- Intro: Ice Spell Turret  -->
+		<quest id="quest_sorceryIntroIceSpellTurret">
+			<property name="name_key" value="quest_sorceryIntroIceSpellTurret_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceSpellTurret_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceSpellTurret" />
+			<property name="offer_key" value="quest_sorceryIntroIceSpellTurret" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_trap_ice_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="spellTurretIce" value="1" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Ice Powder / Enchanted Mortar -->
+		<quest id="quest_sorceryIcePowder">
+			<property name="name_key" value="quest_sorceryIcePowder_title" />
+			<property name="subtitle_key" value="quest_sorceryIcePowder_subtitle" />
+			<property name="description_key" value="quest_sorceryIcePowder" />
+			<property name="offer_key" value="quest_sorceryIcePowder" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_potion" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="resourcePowderIce" value="10"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+	
+		<!-- ICE CHAIN: Ice Fallen Wild:  -->
+		<quest id="quest_sorceryIntroIceWildFallen">
+			<property name="name_key" value="quest_sorceryIntroIceWildFallen_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="1" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenIce" value="1" phase="1" />
+			<reward type="Exp" value="1000" />
+			<reward type="Item" id="sorceryElixir_attIce" value="1" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen1"/> 
+		</quest>
+		<quest id="quest_sorceryIntroIceWildFallen1">
+			<property name="name_key" value="quest_sorceryIntroIceWildFallen_title1" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="2" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenIce" value="1" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen2"/> 
+		</quest>
+		<quest id="quest_sorceryIntroIceWildFallen2">
+			<property name="name_key" value="quest_sorceryIntroIceWildFallen_title2" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="4" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenIce" value="2" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen3"/> 
+		</quest>
+		<quest id="quest_sorceryIntroIceWildFallen3">
+			<property name="name_key" value="quest_sorceryIntroIceWildFallen_title3" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="6" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenIce" value="3" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen4"/> 
+		</quest>
+		<quest id="quest_sorceryIntroIceWildFallen4">
+			<property name="name_key" value="quest_sorceryIntroIceWildFallen_title4" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="8" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenIce" value="4" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen5"/> 
+		</quest>
+		<quest id="quest_sorceryIntroIceWildFallen5">
+			<property name="name_key" value="quest_sorceryIntroIceWildFallen_title5" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenIce" value="5" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen6"/> 
+		</quest>
+		<quest id="quest_sorceryIntroIceWildFallen6">
+			<property name="name_key" value="quest_sorceryIntroIceWildFallen_title6" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenIce" value="6" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen7"/> 
+		</quest>
+		<quest id="quest_sorceryIntroIceWildFallen7">
+			<property name="name_key" value="quest_sorceryIntroIceWildFallen_title7" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenIce" value="7" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen8"/> 
+		</quest>
+		<quest id="quest_sorceryIntroIceWildFallen8">
+			<property name="name_key" value="quest_sorceryIntroIceWildFallen_title8" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenIce" value="8" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen9"/> 
+		</quest>
+		<quest id="quest_sorceryIntroIceWildFallen9">
+			<property name="name_key" value="quest_sorceryIntroIceWildFallen_title9" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenIce" value="9" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
+			<reward type="Quest" id="quest_sorceryIntroIceWildFallen10"/> 
+		</quest>
+		<quest id="quest_sorceryIntroIceWildFallen10">
+			<property name="name_key" value="quest_sorceryIntroIceWildFallen_title10" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceWildFallen_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="offer_key" value="quest_sorceryIntroIceWildFallen" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+				<objective type="ZombieKill" id="sorceryFallenIce" value="10" phase="1" />
+				<objective type="FetchKeep" id="resourceRitualBloodFallenIce" value="10" phase="1" />
+			<reward type="Exp" value="777" />
+			<reward type="Item" id="sorceryElixir_attIce" value="1" chainreward="true"/>
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
+		</quest>
+		
+<!-- END - INTRO ICE __________________________________________________________________________________ -->
+
 
 	<!-- INTRO FALLEN QUESTS __________________________________________________________________________________ -->
 		<!-- Fallen: FIRE -->

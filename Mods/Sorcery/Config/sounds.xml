@@ -2,7 +2,7 @@
  <!--__________________________________________________________________________________
 		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
 		__________________________________________________________________________________
-		2020 "DEVRIX"
+		2021 "DEVRIX"
 		All Rights Reserved.
 		__________________________________________________________________________________
 		HOME: http://sorcerymod.com
@@ -72,6 +72,11 @@
 		</SoundDataNode>
 		
 		<!-- AGGRO -->
+		<SoundDataNode name="sorceryAggroSm"> <AudioSource name="Sounds/AudioSource_Explosion"/>
+			<Noise ID="1" noise="10" time="2" muffled_when_crouched="0.8" heat_map_strength="0" heat_map_time="0"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioSorcery.unity3d?sorceryAggroSilent"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="1"/> <MaxRepeatRate value="1"/>
+		</SoundDataNode>
 		<SoundDataNode name="sorceryAggro"> <AudioSource name="Sounds/AudioSource_Explosion"/>
 			<Noise ID="3" noise="30" time="2" muffled_when_crouched="0.8" heat_map_strength="0.1" heat_map_time="30"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioSorcery.unity3d?sorceryAggroSilent"/>
@@ -248,7 +253,21 @@
 			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.001"/>
 		</SoundDataNode>				
 		
-		
+		<!-- FIRE: GENERAL -->
+		<SoundDataNode name="sorceryFireDrawFlame"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?draw"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?draw2"/>
+			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="1"/> <MaxRepeatRate value="0.01"/>
+		</SoundDataNode>
+		<SoundDataNode name="sorceryFireCastBurning"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?FireLoop2-v25" Loop="true"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="1"/> <MaxRepeatRate value="0.01"/>
+		</SoundDataNode>	
+		<SoundDataNode name="sorceryFireImpactFlame"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?impact" />
+			<AudioClip ClipName="#@modfolder:Resources/audioFire.unity3d?impact2" />
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="1"/> <MaxRepeatRate value="0.01"/>
+		</SoundDataNode>
 		
 		
 		<!-- ICE SORCERY -->
@@ -268,7 +287,7 @@
 			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/><MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/>
 		</SoundDataNode>
 		
-		<SoundDataNode name="sorceryIce_impact"> <AudioSource name="Sounds/AudioSource_Impact"/>
+		<SoundDataNode name="sorceryIce_impact"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
 			<Noise ID="4" noise="60" time="3" muffled_when_crouched="0.8" heat_map_strength="0.2" heat_map_time="30"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_impact1"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_impact2"/>
@@ -288,7 +307,7 @@
 			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/>
 		</SoundDataNode>
 		
-		<SoundDataNode name="sorceryIce_freeze"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
+		<!-- <SoundDataNode name="sorceryIce_freeze"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
 			<Noise ID="1" range="1" noise="5" time="3" muffled_when_crouched="0.5"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_01"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_02"/>
@@ -296,13 +315,53 @@
 			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_05"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_06"/>
 			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/>
-		</SoundDataNode>			
+		</SoundDataNode> -->		
 		
-		<SoundDataNode name="sorceryIce_icestorm"> <AudioSource name="Sounds/AudioSource_WeaponFire"/>
-			<Noise ID="4" noise="60" time="3" muffled_when_crouched="0.5" heat_map_strength="0.2" heat_map_time="30"/>
+		<SoundDataNode name="sorceryIce_icestorm"> <AudioSource name="Sounds/AudioSource_Amb_Med"/>
+			<Noise ID="5" noise="60" time="5" heat_map_strength="5" heat_map_time="60"/>
 			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_storm" Loop="true"/>
-			<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxVoicesPerEntity value="3"/> <MaxRepeatRate value="0.1"/>
 		</SoundDataNode>	
+		
+		<!-- NEW ICE -->
+		<SoundDataNode name="sorceryIce_chill"> <AudioSource name="Sounds/AudioSource_Impact"/>
+			<Noise ID="2" noise="10" time="3" heat_map_strength="0.1" heat_map_time="30"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_01"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_02"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_03"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_05"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_06"/>
+			<LowestPitch name="0.95"/><HighestPitch name="1.05"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxVoicesPerEntity value="3"/> <MaxRepeatRate value="0.1"/>
+		</SoundDataNode>
+		<SoundDataNode name="sorceryIce_freeze"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+			<Noise ID="2" noise="10" time="3" heat_map_strength="0.1" heat_map_time="30"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_01"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_02"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_03"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_05"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?ice_cracking_melting_06"/>
+			<LowestPitch name="0.95"/><HighestPitch name="1.05"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxVoicesPerEntity value="3"/> <MaxRepeatRate value="0.1"/>
+		</SoundDataNode>
+		<SoundDataNode name="sorceryIce_shatter"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+			<Noise ID="2" noise="10" time="3" heat_map_strength="0.1" heat_map_time="30"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?shout_frostbreath_006"/>
+			<LowestPitch name="0.95"/><HighestPitch name="1.05"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxVoicesPerEntity value="3"/> <MaxRepeatRate value="0.1"/>
+		</SoundDataNode>
+		<SoundDataNode name="sorceryIce_freezingLoop"> <AudioSource name="Sounds/AudioSource_Amb_Small"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?FreezeLoop" Loop="true"/>
+			<LowestPitch name="0.95"/><HighestPitch name="1.05"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxVoicesPerEntity value="3"/> <MaxRepeatRate value="0.1"/>
+		</SoundDataNode>
+		
+		<SoundDataNode name="sorceryIce_cometImpact"> <AudioSource name="Sounds/AudioSource_Explosion"/>
+			<Noise ID="5" noise="60" time="5" heat_map_strength="5" heat_map_time="60"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioIce.unity3d?iceCometImpact"/>
+			<LowestPitch name="0.9"/><HighestPitch name="1.0"/>
+			<LocalCrouchVolumeScale value="1"/><CrouchNoiseScale value="1"/><NoiseScale value="1"/><MaxVoices value="3"/><MaxVoicesPerEntity value="3"/><MaxRepeatRate value="0.1"/>
+		</SoundDataNode>
 		
 		
 		<!-- LIGHTNING SORCERY -->

@@ -54,35 +54,35 @@
 			<property name="damage_category" value="stone"/>
 			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="fire"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0"/>
 		</material>
 	<!--___________________________ ICE ___________________________-->	
 		<material id="ice">
 			<property name="damage_category" value="stone"/>
 			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="ice"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0"/>
 		</material>
 	<!--___________________________ LIGHTNING ___________________________-->	
 		<material id="lightning">
 			<property name="damage_category" value="stone"/>
 			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="lightning"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0"/>
 		</material>
 	<!--___________________________ UNHOLY ___________________________-->	
 		<material id="unholy">
 			<property name="damage_category" value="stone"/>
 			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="unholy"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0"/>
 		</material>
 	<!--___________________________ HOLY ___________________________-->	
 		<material id="holy">
 			<property name="damage_category" value="stone"/>
 			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="holy"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0"/>
 		</material>	
 	
 	<!--___________________________ SORCERY MATERIAL: EXTRACT ___________________________-->	
@@ -335,6 +335,43 @@
 			<property name="StabilitySupport" value="false"/>
 			<property name="MaxDamage" value="5"/>
 			<property name="Experience" value="4"/>
+		</material>
+
+
+
+	<!-- TRAPS -->
+		<!-- FIRE TRAP: T1 -->
+		<material id="MsorceryTrapFire">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractFire"/>
+			<property name="particle_category" value="stone"/>
+			<property name="particle_destroy_category" value="stone"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="20"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="explosionresistance" value="1.4"/>
+			<property name="MaxDamage" value="200"/>
+			<property name="movement_factor" value="0.5"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<!-- ICE TRAP: T1 -->
+		<material id="MsorceryTrapIce">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractIce"/>
+			<property name="particle_category" value="snow"/>
+			<property name="particle_destroy_category" value="snow"/>
+			<property name="Hardness" type="float" value="1"/>
+			<!-- <property name="stepsound" value="stone"/> -->
+			<property name="stepsound" value="snow"/>
+			<property name="stability_glue" value="20"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="explosionresistance" value="1.4"/>
+			<property name="MaxDamage" value="200"/>
+			<property name="movement_factor" value="0.7"/>
+			<property name="Experience" value="2"/>
 		</material>
 
 	  </append>		

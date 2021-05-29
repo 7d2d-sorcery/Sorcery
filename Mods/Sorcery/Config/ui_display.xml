@@ -63,7 +63,7 @@
 			<display_entry name="dsorcSetArcane" title_key="[c2b2ff]Arcane Armor Set[-]" display_leading_plus="true"/>
 			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
 			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
-			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Find: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
 			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
 			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
@@ -72,7 +72,7 @@
 		<item_display_info display_type="sorceryArmorFire" display_group="groupAttire" >
 			<display_entry name="dsorcSetFire" title_key="[ff2000]Fire Armor Set[-]" display_leading_plus="true"/>
 			<display_entry name="dsorcDamageFire" title_key="[ff2000]Fire[-] Damage" display_type="Percent" display_leading_plus="true"/>
-			<display_entry name="dsorcEssenceFire" title_key="[ff2000]Fire[-] Essence Harvest" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="dsorcEssenceFire" title_key="[ff2000]Fire[-] Essence Find" display_type="Percent" display_leading_plus="true"/>
 			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
 			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
 			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
@@ -85,7 +85,7 @@
 			<display_entry name="AttributeLevel" tags="attSorcery" title_key="Sorcery Level" display_leading_plus="true"/>
 			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
 			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
-			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Find: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
 			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
 		</item_display_info>
@@ -93,7 +93,7 @@
 			<item_display_info display_type="sorceryArmorFireHood" display_group="groupAttire" >
 				<display_entry name="dsorcSetFire" title_key="[ff2000]Fire Armor Set[-]" display_leading_plus="true"/>
 				<display_entry name="dsorcDamageFire" title_key="[ff2000]Fire[-] Damage" display_type="Percent" display_leading_plus="true"/>
-				<display_entry name="dsorcEssenceFire" title_key="[ff2000]Fire[-] Essence Harvest" display_type="Percent" display_leading_plus="true"/>
+				<display_entry name="dsorcEssenceFire" title_key="[ff2000]Fire[-] Essence Find" display_type="Percent" display_leading_plus="true"/>
 				<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
 				<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
 				<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
@@ -106,7 +106,7 @@
 			<display_entry name="dsorcMasteryAll" title_key="Sorcery Mastery All+"/>
 			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
 			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
-			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Find: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
 			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
 		</item_display_info>
@@ -117,7 +117,7 @@
 			<display_entry name="PerkLevel" tags="perkSorcerySpellcastMastery" title_key="Spellcast Mastery+"/>
 			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
 			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
-			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Find: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
 			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
 		</item_display_info>
@@ -128,7 +128,7 @@
 			<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
 			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
 			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
-			<display_entry name="dsorcEssenceAll" title_key="Essence Harvest: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
+			<display_entry name="dsorcEssenceAll" title_key="Essence Find: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
 			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
 		</item_display_info>
@@ -136,7 +136,7 @@
 			<item_display_info display_type="sorceryArmorFireBoots" display_group="groupAttire" >
 				<display_entry name="dsorcSetFire" title_key="[ff2000]Fire Armor Set[-]" display_leading_plus="true"/>
 				<display_entry name="dsorcDamageFire" title_key="[ff2000]Fire[-] Damage" display_type="Percent" display_leading_plus="true"/>
-				<display_entry name="dsorcEssenceFire" title_key="[ff2000]Fire[-] Essence Harvest" display_type="Percent" display_leading_plus="true"/>
+				<display_entry name="dsorcEssenceFire" title_key="[ff2000]Fire[-] Essence Find" display_type="Percent" display_leading_plus="true"/>
 				<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
 				<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
 				<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
@@ -150,9 +150,9 @@
 			<display_entry name="PerkLevel" tags="perkSorceryEssenceMastery" title_key="Essence Mastery+"/>
 			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
 			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
-			<display_entry name="dsorcEssenceFire" title_key="Essence Harvest: [ff2000]Fire[-]" display_type="Percent"/>
-			<display_entry name="dsorcEssenceIce" title_key="Essence Harvest: [448aff]Ice[-]" display_type="Percent"/>
-			<display_entry name="dsorcEssenceLightning" title_key="Essence Harvest: [9a57ff]Lightning[-]" display_type="Percent"/>
+			<display_entry name="dsorcEssenceFire" title_key="Essence Find: [ff2000]Fire[-]" display_type="Percent"/>
+			<display_entry name="dsorcEssenceIce" title_key="Essence Find: [448aff]Ice[-]" display_type="Percent"/>
+			<display_entry name="dsorcEssenceLightning" title_key="Essence Find: [9a57ff]Lightning[-]" display_type="Percent"/>
 		</item_display_info>
 	
 
@@ -163,6 +163,7 @@
 		<item_display_info display_type="potion_Health" display_group="groupConsumables" >
 			<display_entry name="dsorcPotionHealth" title_key="Health"/>
 			<display_entry name="dsorcPotionHealthRegen" title_key="Health Regen /s" display_type="Decimal"/>
+			<display_entry name="dsorcPotionHealthDesc" title_key="Cure: Bleeding, Laceration, Abrasion" display_type="Bool"/>
 			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
 			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
 		</item_display_info>
@@ -180,7 +181,6 @@
 		</item_display_info>
 		<item_display_info display_type="potion_Remedy" display_group="groupConsumables" >
 			<display_entry name="dsorcPotionRemedy" title_key="Remedy Critical Ailments" display_type="Bool"/>
-			<display_entry name="dsorcPotionRemedy2" title_key="Chance to Remedy" display_type="Percent"/>
 			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
 			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
 		</item_display_info>
@@ -219,15 +219,30 @@
 			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
 			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
 		</item_display_info>
+		<!-- Fire Potions -->
 		<item_display_info display_type="potion_EssenceFire" display_group="groupConsumables" >
-			<display_entry name="dsorcPotionEssence" title_key="Essence Harvest" display_type="Percent"/>
-			<display_entry name="dsorcPotionEssence2" title_key="Fire Essence: I, II, III, IV, V" display_type="Bool"/>
+			<display_entry name="dsorcPotionEssence" title_key="Essence Find" display_type="Percent"/>
+			<display_entry name="dsorcPotionEssence2" title_key="Fire Essence" display_type="Bool"/>
 			<display_entry name="dsorcPotionPotency" title_key="Alchemy Potency" display_type="Bool"/>
 			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
 			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
 		</item_display_info>	
 		<item_display_info display_type="potion_Fire" display_group="groupConsumables" >
 			<display_entry name="dsorcPotionFire" title_key="Fire Sorcery" display_type="Percent"/>
+			<display_entry name="dsorcPotionPotency" title_key="Alchemy Potency" display_type="Bool"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<!-- Ice Potions -->
+		<item_display_info display_type="potion_EssenceIce" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionEssence" title_key="Essence Find" display_type="Percent"/>
+			<display_entry name="dsorcPotionEssence2" title_key="Ice Essence" display_type="Bool"/>
+			<display_entry name="dsorcPotionPotency" title_key="Alchemy Potency" display_type="Bool"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>	
+		<item_display_info display_type="potion_Ice" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionIce" title_key="Ice Sorcery" display_type="Percent"/>
 			<display_entry name="dsorcPotionPotency" title_key="Alchemy Potency" display_type="Bool"/>
 			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
 			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
@@ -303,27 +318,23 @@
 		<!-- AMMO ARROW -->
 		<item_display_info display_type="spellArrowFire" display_group="groupAmmo" >
 			<display_entry name="EntityDamage" title_key="statEntityDamageRanged"/>
-			<display_entry name="dsorcAmmoDOT" title_key="Incinerate" display_type="Percent"/>
-			<display_entry name="dsorcAmmoEffect" title_key="Spread" display_type="Percent"/>
-			<display_entry name="dsorcAmmoEffect2" title_key="Explode" display_type="Percent"/>
-			<display_entry name="dsorcAmmoScale" title_key="Fire Sorcery Scaling" display_type="Percent"/>
+			<display_entry name="dsorcAmmoScale" title_key="Fire Sorcery Damage" display_type="Percent"/>
+			<display_entry name="dsorcAmmoDOT" title_key="Burn" display_type="Bool"/>
+			<display_entry name="dsorcAmmoDOT2" title_key="Incinerate" display_type="Bool"/>
+			<display_entry name="dsorcAmmoEffect" title_key="Explode" display_type="Bool"/>
+			<display_entry name="dsorcAmmoEffect2" title_key="Firenado chance per Spell Level" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect3" title_key="Meteor chance per Spell Level" display_type="Percent"/>
 		</item_display_info>
-		<item_display_info display_type="spellArrowFire2" display_group="groupAmmo" >
+		<item_display_info display_type="spellArrowIce" display_group="groupAmmo" >
 			<display_entry name="EntityDamage" title_key="statEntityDamageRanged"/>
-			<display_entry name="dsorcAmmoDOT" title_key="Incinerate" display_type="Percent"/>
-			<display_entry name="dsorcAmmoEffect" title_key="Spread" display_type="Percent"/>
-			<display_entry name="dsorcAmmoEffect2" title_key="Clone" display_type="Percent"/>
-			<display_entry name="dsorcAmmoEffect3" title_key="Explode" display_type="Percent"/>
-			<display_entry name="dsorcAmmoScale" title_key="Fire Sorcery Scaling" display_type="Percent"/>
+			<display_entry name="dsorcAmmoScale" title_key="Ice Sorcery Damage" display_type="Percent"/>
+			<display_entry name="dsorcAmmoDOT" title_key="Chill" display_type="Bool"/>
+			<display_entry name="dsorcAmmoDOT2" title_key="Freeze" display_type="Bool"/>
+			<display_entry name="dsorcAmmoEffect" title_key="Shatter" display_type="Bool"/>
+			<display_entry name="dsorcAmmoEffect2" title_key="Comet chance per Spell Level" display_type="Percent"/>
+			<display_entry name="dsorcAmmoEffect3" title_key="Ice Storm chance per Spell Level" display_type="Percent"/>
 		</item_display_info>
-		<item_display_info display_type="spellArrowFire3" display_group="groupAmmo" >
-			<display_entry name="EntityDamage" title_key="statEntityDamageRanged"/>
-			<display_entry name="dsorcAmmoDOT" title_key="Incinerate" display_type="Percent"/>
-			<display_entry name="dsorcAmmoEffect" title_key="Molten Core" display_type="Percent"/>
-			<display_entry name="dsorcAmmoEffect2" title_key="Meteor Shower" display_type="Percent"/>
-			<display_entry name="dsorcAmmoEffect3" title_key="Crater Impact" display_type="Percent"/>
-			<display_entry name="dsorcAmmoScale" title_key="Fire Sorcery Scaling" display_type="Percent"/>
-		</item_display_info>
+		
 		<item_display_info display_type="sorceryAmmoArrow_ice" display_group="groupAmmo" >
 			<display_entry name="EntityDamage" title_key="statEntityDamageRanged"/>
 			<display_entry name="dsorcAmmoDamage" title_key="Ice Damage"/>
@@ -350,12 +361,22 @@
 		</item_display_info>	
 		
 		<!-- SPELL TURRET -->
-		<item_display_info display_type="spellTurret" display_group="groupRanged">
+		<item_display_info display_type="spellTurretFire" display_group="groupRanged">
+			<display_entry name="dSpellAmmoFire" title_key="Spell Ammo: Fire, Firenado, Meteor" display_type="Bool"/>
 			<display_entry name="MagazineSize" title_key="statMagazineSize" tags="perkSorceryTrap1Fire"/>
+			<display_entry name="RoundsPerMinute" title_key="statRoundsPerMinute" tags="perkSorceryTrap1Fire"/>
 			<display_entry name="DegradationMax" title_key="statDegradationHPMax" tags="perkSorceryTrap1Fire"/>
 			<display_entry name="DegradationPerUse" title_key="statDegradationPerUse" tags="perkSorceryTrap1Fire"/>
-			<display_entry name="dSpellAmmoFire" title_key="Ammo Type: Fire Spell Turret Ammo" display_type="Bool"/>
-			<display_entry name="dScalesOffFireSorcery" title_key="Damage Scaling: Fire Sorcery" display_type="Bool"/>
+			<display_entry name="dMaxSpiritReductionPerLevel" title_key="Max Spirit Penalty Reduction per Level" display_type="Percent"/>
+			<display_entry name="dSpiritCost" title_key="Spirit Cost" negative_preferred="true"/>
+		</item_display_info>
+		<item_display_info display_type="spellTurretIce" display_group="groupRanged">
+			<display_entry name="dSpellAmmoIce" title_key="Spell Ammo: Ice, Comet, Ice Storm" display_type="Bool"/>
+			<display_entry name="MagazineSize" title_key="statMagazineSize" tags="perkSorceryTrap1Ice"/>
+			<display_entry name="RoundsPerMinute" title_key="statRoundsPerMinute" tags="perkSorceryTrap1Ice"/>
+			<display_entry name="DegradationMax" title_key="statDegradationHPMax" tags="perkSorceryTrap1Ice"/>
+			<display_entry name="DegradationPerUse" title_key="statDegradationPerUse" tags="perkSorceryTrap1Ice"/>
+			<display_entry name="dMaxSpiritReductionPerLevel" title_key="Max Spirit Penalty Reduction per Level" display_type="Percent"/>
 			<display_entry name="dSpiritCost" title_key="Spirit Cost" negative_preferred="true"/>
 		</item_display_info>
 	</append>
@@ -365,9 +386,9 @@
 	<!-- <append xpath="/ui_display_info/character_stat_display">	
 		<display_entry name="dsorcSpirit" title_key="Spirit" display_type="Percent"/>
 		<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Percent"/>
-		<display_entry name="dsorcEssenceFire" title_key="Essence Harvest: Fire" display_type="Percent"/>
-		<display_entry name="dsorcEssenceIce" title_key="Essence Harvest: Ice" display_type="Percent"/>
-		<display_entry name="dsorcEssenceLightning" title_key="Essence Harvest: Lightning" display_type="Percent"/>
+		<display_entry name="dsorcEssenceFire" title_key="Essence Find: Fire" display_type="Percent"/>
+		<display_entry name="dsorcEssenceIce" title_key="Essence Find: Ice" display_type="Percent"/>
+		<display_entry name="dsorcEssenceLightning" title_key="Essence Find: Lightning" display_type="Percent"/>
 		<display_entry name="dsorcMovementSpeed" title_key="Movement Speed" display_type="Percent"/>
 	</append> -->
 
@@ -381,9 +402,8 @@
 			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="Fire Resources" />
 		</crafting_category_list>
 		<crafting_category_list display_type="conjureIce">
-			<crafting_category name="Ammo/Weapons" icon="ui_symbol_spell_ice_sorcery" display_name="[02599c]Ice[-] Sorcery" />
-			<crafting_category name="Mods" icon="ui_symbol_rune_sorcery" display_name="[02599c]Ice[-] Runesmithing" />
-			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="[02599c]Ice[-] Transmute" />
+			<crafting_category name="Ammo/Weapons" icon="ui_symbol_spell_ice_sorcery" display_name="Ice Spellcrafting" />
+			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="Ice Resources" />
 		</crafting_category_list>
 		<crafting_category_list display_type="conjureLightning">
 			<crafting_category name="Ammo/Weapons" icon="ui_symbol_spell_lightning_sorcery" display_name="[5c009d]Lightning[-] Sorcery" />
@@ -418,11 +438,9 @@
 			<crafting_category name="RuneLightning" icon="uic_symbol_rune_lightning" display_name="Lightning Enchantments" />
 			<crafting_category name="RuneUnholy" icon="uic_symbol_rune_unholy" display_name="Unholy Enchantments" />
 			<crafting_category name="RuneHoly" icon="uic_symbol_rune_holy" display_name="Holy Enchantments" />
+			<crafting_category name="Transmutation" icon="ui_symbol_transmute" display_name="Transmutations" />
 		</crafting_category_list>
 	</append>
-	
-	
-
 	
 	
 </Sorcery>
