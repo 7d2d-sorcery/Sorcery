@@ -7322,11 +7322,12 @@
 				<property name="QuestGiven" value="quest_skillGrimoire"/>
 			</property>
 		</item>
+	<!-- END - SKILL QUESTS __________________________________________________________________________________ -->
+	
+	<!-- DEV QUESTS __________________________________________________________________________________ -->
 		<!-- DEV Quest: Gain +100 Skill Point -->
 		<item name="qDEV_sorcerySkillGrimoire">
 			<property name="Extends" value="questMasterSorcery"/>
-			<property name="NameKey" value="DEV Skill Grimoire"/>
-			<property name="DescriptionKey" value="DEV: Grants +100 Skill Points"/>
 			<property name="CreativeMode" value="Dev"/>
 			<property name="CustomIcon" value="q_sorcerySkillGrimoire"/>
 			<property name="CustomIconTint" value="102,0,204"/>
@@ -7338,69 +7339,7 @@
 				<property name="QuestGiven" value="questDEV_skillGrimoire"/>
 			</property>
 		</item>
-		
-		<!-- <item name="q_summonFamiliar">
-			<property name="Extends" value="questMasterSorcery"/>
-			<property name="HoldType" value="67"/>
-	<property name="HoldingItemHidden" value="false"/>
-			<property name="Meshfile" value="#@modfolder:Resources/familiarArcane.unity3d?familiarArcane"/>
-			<property name="Material" value="MsorceryExtractOmni"/><property name="Weight" value="0"/>
-			<property name="Stacknumber" value="999"/>
-			<property name="Candrop" value="True"/>
-			<property class="Action0"> 
-				<property name="Class" value="Quest"/>
-				<property name="UseAnimation" value="false"/>
-				<property name="Delay" value="0"/>
-				<property name="Use_time" value="0"/>
-				<property name="QuestGiven" value="quest_summonFamiliarArcane"/>
-				<property name="Consume" value="false"/>
-			</property>
-			<property class="Action0">
-					<requirement name="NotHasBuff" buff="buffFamiliarCooldown"/>
-		<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="30000"/>
-				<property name="Class" value="Quest"/>
-				<property name="UseAnimation" value="false"/>
-				<property name="Delay" value="0"/>
-				<property name="Use_time" value="0"/>
-				<property name="QuestGiven" value="quest_summonFamiliarArcane"/>
-				<property name="Consume" value="false"/>
-			</property>
-			<property class="Action1">
-		<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="30000"/>
-				<property name="Class" value="Activate"/>
-				<property name="Delay" value="0.1"/>
-				<property name="UsePowerAttackAnimation" value="false"/>
-			</property>
-			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="PlaySound" sound="familiarWhistle">
-					<requirement name="HasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffFamiliarArcaneTrigger_ActivePlayer"/>
-			</effect_group>			
-			<effect_group tiered="false" name="Ability: HEAL">
-					<requirement name="NotHasBuff" buff="buffFamiliarArcane_HealCD"/>
-					<requirement name="HasBuff" buff="buffFamiliarArcane_ActivePlayer"/>
-					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="10"/>
-		<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="30000"/>
-				<triggered_effect trigger="onSelfSecondaryActionStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="10"/>
-				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" target="selfAOE" range="30" buff="buffFamiliarArcane_Heal" target_tags="familiar"/>
-				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="buffFamiliarArcane_HealCD,buffSpiritRegenStop"/>
-			</effect_group>
-		</item> -->
-	<!-- END - SKILL QUESTS __________________________________________________________________________________ -->
-		
-		
-		<!-- DEV: TEST QUESTS -->
-		<!-- <item name="qtest_BiomeTrader">
-			<property name="Extends" value="questMaster"/>
-			<property name="CustomIconTint" value="210,0,210"/>
-			<property class="Action0">
-				<property name="QuestGiven" value="quest_sorceryTraderTest"/>
-			</property>
-			<property name="CreativeMode" value="Dev"/>
-		</item> -->
-		
-	<!-- END - QUEST ITEMS ______________________________________-->
+	<!-- END - DEV QUESTS __________________________________________________________________________________ -->
 
 
 

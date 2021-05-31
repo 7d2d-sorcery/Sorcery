@@ -674,6 +674,12 @@
 		<recipe name="spellBoltFire" count="1" craft_time="1">
 			<ingredient name="spellArrowFire" count="1"/>
 		</recipe>
+		<recipe name="spellArrowIce" count="1" craft_time="1">
+			<ingredient name="spellBoltIce" count="1"/>
+		</recipe>
+		<recipe name="spellBoltIce" count="1" craft_time="1">
+			<ingredient name="spellArrowIce" count="1"/>
+		</recipe>
 	<!-- END - SPELL AMMO ______________________________________-->
 		
 	<!-- RUNES ______________________________________-->

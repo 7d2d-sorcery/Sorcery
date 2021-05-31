@@ -886,13 +886,21 @@
 			<property name="RootMotion" value="false"/>
 			<property name="RagdollOnDeathChance" value="0"/>
 
-			<property name="SoundRandom" value="Animals/Boar/boarroam"/>
+			<!-- <property name="SoundRandom" value="Animals/Boar/boarroam"/>
 			<property name="SoundAlert" value="Animals/Boar/boaralert"/>
 			<property name="SoundHurt" value="Animals/Boar/boarpain"/>
 			<property name="SoundDeath" value="Animals/Boar/boardeath"/>
 			<property name="SoundAttack" value="Animals/Boar/boarattack"/>
 			<property name="SoundSense" value="Animals/Boar/boarsense"/>
-			<property name="SoundGiveUp" value="Animals/Boar/boargiveup"/>
+			<property name="SoundGiveUp" value="Animals/Boar/boargiveup"/> -->
+			
+			<property name="SoundRandom" value=""/>
+			<property name="SoundAlert" value=""/>
+			<property name="SoundHurt" value=""/>
+			<property name="SoundDeath" value=""/>
+			<property name="SoundAttack" value=""/>
+			<property name="SoundSense" value=""/>
+			<property name="SoundGiveUp" value=""/>
 
 			<!-- Gameplay -->
 			<property name="PhysicsBody" value="bear"/>

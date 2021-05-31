@@ -987,7 +987,7 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="StopSound" sound="spiritLow" play_in_head="true"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="spiritRegen"/>
 					</effect_group>
-				<!-- FIRE FX -->
+				<!-- FIRE FX ______________________________________________________ -->
 					<effect_group name="BURN">
 							<requirements>
 								<requirement name="NotHasBuff" buff="spellFire"/>
@@ -1026,7 +1026,14 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_FireNadoClone"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="fireTornadoClone"/>
 					</effect_group>
-				<!-- ICE FX -->
+					<effect_group name="FIRE REGEN">
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellFallenFire_regenerate"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_FireRegen"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="fallenRechargeFire"/>
+					</effect_group>
+				<!-- ICE FX ______________________________________________________ -->
 					<effect_group name="CHILL">
 							<!-- NOTE: spellFX_IceChill -->
 							<requirements>
@@ -1056,6 +1063,7 @@
 								<requirement name="NotHasBuff" buff="spellIce_Hail"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceHail"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="iceHail"/>
 					</effect_group>
 					<effect_group name="ICE STORM">
 							<requirements>
@@ -1063,6 +1071,36 @@
 							</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceStorm"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="iceStorm"/>
+					</effect_group>
+					<effect_group name="ICE REGEN">
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellFallenIce_regenerate"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceRegen"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="fallenRechargeIce"/>
+					</effect_group>
+				<!-- LIGHTNING FX ______________________________________________________ -->
+					<effect_group name="LIGHTNING SHOCK">
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellEntityLightning_Shock"/>
+								<requirement name="NotHasBuff" buff="spellFallenLightning_Shock"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_LightningShock"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="lightningArc"/>
+					</effect_group>
+					<effect_group name="LIGHTNING ELECTROCUTE">
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellFallenLightning_Electrocute"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_LightningElectrocute"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="lightningElectrocute"/>
+					</effect_group>
+					<effect_group name="LIGHTNING REGENERATE">
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellFallenLightning_regenerate"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_LightningRegen"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="fallenRechargeLightning"/>
 					</effect_group>
 			</buff>	
 
@@ -3941,8 +3979,9 @@
 		<!-- END - IMPACT: FIRE ______________________________________________________-->			
 		
 		
-			
-		<!--___________________________ FIRE: FX ___________________________-->
+	<!-- SPELL FX MANAGEMENT ______________________________________________________-->
+	<!-- NOTE: spellFX_ManageCleanup -->
+		<!-- FIRE FX ______________________________________________________-->
 			<!-- FX: FIRE BURN -->
 			<buff name="spellFX_FireBurn" hidden="true" remove_on_death="true">
 				<damage_type value="heat"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
@@ -3988,7 +4027,6 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_FireBurn"/>
 					</effect_group>
 			</buff>
-			<!-- FX: FIRE BURN 2 -->
 			<buff name="spellFX_FireBurn2" hidden="true" remove_on_death="true">
 				<damage_type value="heat"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
 					<effect_group name="Start"> 
@@ -4014,7 +4052,6 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_FireBurn2"/>
 					</effect_group>
 			</buff>
-			<!-- FX: FIRENADO -->
 			<buff name="spellFX_FireNado" hidden="true" remove_on_death="true">
 				<damage_type value="heat"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
 					<effect_group name="Start"> 
@@ -4034,7 +4071,6 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_FireNado"/>
 					</effect_group>
 			</buff>
-			<!-- FX: FIRENADO CLONE -->
 			<buff name="spellFX_FireNadoClone" hidden="true" remove_on_death="true">
 				<damage_type value="heat"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
 					<effect_group name="Start"> 
@@ -4054,7 +4090,218 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_FireNadoClone"/>
 					</effect_group>
 			</buff>
-		<!-- END - SPELL FX -->
+			<buff name="spellFX_FireRegen" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
+					<effect_group name="Start"> 
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fallenRechargeFire-finish" />
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeFire.unity3d?fallenRechargeFire" parent_transform=""/>
+					</effect_group>
+					<effect_group name="Finish">
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeFire-finish.unity3d?fallenRechargeFire-finish" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fallenRechargeFire"/>
+					</effect_group>
+					<effect_group name="Cleanup">
+							<!-- NOTE: spellFX_ManageCleanup -->
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellEntityFire_Regenerate"/>
+								<requirement name="NotHasBuff" buff="spellFallenFire_regenerate"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_FireRegen"/>
+					</effect_group>
+			</buff>
+		
+		<!-- ICE FX ______________________________________________________-->
+			<buff name="spellFX_IceChill" hidden="true" remove_on_death="true">
+				<damage_type value="cold"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
+					<effect_group name="Start"> 
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceChill-finish"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill.unity3d?iceChill" parent_transform="Hips"><requirement name="!EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill.unity3d?iceChill" parent_transform="Hips"><requirement name="!EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill.unity3d?iceChill" parent_transform="" local_offset="0,.3,0"><requirement name="EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill.unity3d?iceChill" parent_transform="" local_offset="0,.3,0"><requirement name="EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_chill"/>
+					</effect_group>
+					<effect_group name="Finish">
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill-finish.unity3d?iceChill-finish" parent_transform="Hips"><requirement name="!EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill-finish.unity3d?iceChill-finish" parent_transform="" local_offset="0,.3,0"><requirement name="EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceChill"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryIce_chill"/>
+					</effect_group>
+					<effect_group name="Start: FX Screen">
+							<requirements compare_type="or">
+								<requirement name="HasBuff" buff="spellEntityIce_Chill"/>
+								<requirement name="HasBuff" buff="spellFallenIce_Chill"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="0" effect_name="Cold"/>
+					</effect_group>
+					<effect_group name="Finish: FX Screen">
+							<requirements>
+								<requirement name="NotHasBuff" buff="buffElementCold"/>
+								<requirement name="NotHasBuff" buff="buffElementFreezing"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="0.5" effect_name="Cold"/>
+					</effect_group>
+					<effect_group name="Cleanup">
+							<!-- NOTE: spellFX_ManageCleanup -->
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellIce_Chill"/>
+								<requirement name="NotHasBuff" buff="spellcastIce_Slide"/>
+								<requirement name="NotHasBuff" buff="buffRune_AspectOfIce_AuraAOE"/>
+								<requirement name="NotHasBuff" buff="spellTrap_Ice"/>
+								<requirement name="NotHasBuff" buff="spellTrap_IceFX"/>
+								<!-- entity -->
+								<requirement name="NotHasBuff" buff="spellEntityIce_Chill"/>
+								<requirement name="NotHasBuff" buff="spellFallenIce_Chill"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceChill"/>
+					</effect_group>
+			</buff>
+			<buff name="spellFX_IceFreeze" hidden="true" remove_on_death="true">
+				<damage_type value="cold"/><stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
+					<effect_group name="Start">
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceFrozen.unity3d?iceFrozen" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceFrozen.unity3d?iceFrozen" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellImpact_IceGround"/>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceFrozen-finish"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_freeze"/>
+					</effect_group>
+					<effect_group name="Finish">
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceFrozen-finish.unity3d?iceFrozen-finish" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceFrozen"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryIce_freeze"/>
+					</effect_group>
+					<effect_group name="Cleanup">
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellIce_Freeze"/>
+								<!-- entity -->
+								<requirement name="NotHasBuff" buff="spellFallenIce_Frozen"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceFreeze"/>
+					</effect_group>
+			</buff>
+			<buff name="spellFX_IceHail" hidden="true" remove_on_death="true">
+				<damage_type value="cold"/><stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
+					<effect_group name="Start">
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceHail.unity3d?iceHail" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceHail.unity3d?iceHail" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceHail-finish"/>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_freeze"/>
+					</effect_group>
+					<effect_group name="Finish">
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceHail-finish.unity3d?iceHail-finish" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceHail"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryIce_freeze"/>
+					</effect_group>
+					<effect_group name="Cleanup">
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellIce_Hail"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceHail"/>
+					</effect_group>
+			</buff>
+			<buff name="spellFX_IceStorm" hidden="true" remove_on_death="true">
+				<damage_type value="cold"/><stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
+					<effect_group name="Start"> 
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_icestorm"/>
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceStorm-finish"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceStorm.unity3d?iceStorm" parent_transform=""/>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceStorm.unity3d?iceStorm" parent_transform=""/>
+					</effect_group>
+					<effect_group name="Finish">
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceStorm-finish.unity3d?iceStorm-finish" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceStorm"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="sorceryIce_icestorm"/>
+					</effect_group>
+					<effect_group name="Cleanup">
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellIce3"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceStorm"/>
+					</effect_group>
+			</buff>
+			<buff name="spellFX_IceRegen" hidden="true" remove_on_death="true">
+				<damage_type value="cold"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
+					<effect_group name="Start"> 
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fallenRechargeIce-finish" />
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeIce.unity3d?fallenRechargeIce" parent_transform=""/>
+					</effect_group>
+					<effect_group name="Finish">
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeIce-finish.unity3d?fallenRechargeIce-finish" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fallenRechargeIce"/>
+					</effect_group>
+					<effect_group name="Cleanup">
+							<!-- NOTE: spellFX_ManageCleanup -->
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellEntityIce_Regenerate"/>
+								<requirement name="NotHasBuff" buff="spellFallenIce_regenerate"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceRegen"/>
+					</effect_group>
+			</buff>
+			
+		<!-- LIGHTNING FX ______________________________________________________-->
+			<buff name="spellFX_LightningShock" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
+					<effect_group name="Start"> 
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryLightning_crackling" />
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningArc.unity3d?lightningArc" parent_transform="Hips"/>
+					</effect_group>
+					<effect_group name="Finish">
+						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryLightning_crackling" />
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningArc"/>
+					</effect_group>
+					<effect_group name="Cleanup">
+							<!-- NOTE: spellFX_ManageCleanup -->
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellLightning_Shock"/>
+								<requirement name="NotHasBuff" buff="spellEntityLightning_Shock"/>
+								<requirement name="NotHasBuff" buff="spellFallenLightning_Shock"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_LightningShock"/>
+					</effect_group>
+			</buff>
+			<buff name="spellFX_LightningElectrocute" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
+					<effect_group name="Start"> 
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="electric_fence_impact" />
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningElectrocute.unity3d?lightningElectrocute" parent_transform="Hips"/>
+					</effect_group>
+					<effect_group name="Finish">
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningElectrocute"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" target="self" sound="electric_fence_impact" />
+						<triggered_effect trigger="onSelfLeaveGame" action="StopSound" target="self" sound="electric_fence_impact" />
+					</effect_group>
+					<effect_group name="Cleanup">
+							<!-- NOTE: spellFX_ManageCleanup -->
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellLightning_Electrocute"/>
+								<requirement name="NotHasBuff" buff="spellFallenLightning_Electrocute"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_LightningElectrocute"/>
+					</effect_group>
+			</buff>
+			<buff name="spellFX_LightningRegen" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
+					<effect_group name="Start"> 
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fallenRechargeLightning-finish" />
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeLightning.unity3d?fallenRechargeLightning" parent_transform=""/>
+					</effect_group>
+					<effect_group name="Finish">
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeLightning-finish.unity3d?fallenRechargeLightning-finish" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fallenRechargeLightning"/>
+					</effect_group>
+					<effect_group name="Cleanup">
+							<!-- NOTE: spellFX_ManageCleanup -->
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellEntityLightning_Regenerate"/>
+								<requirement name="NotHasBuff" buff="spellFallenLightning_regenerate"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_LightningRegen"/>
+					</effect_group>
+			</buff>
+	<!-- END - SPELL FX ______________________________________________________-->
+		
+		
 		<!-- SPELLS ______________________________________________________-->
 		
 			<!-- SPELL: FIRE ______________________________________________________-->
@@ -4670,119 +4917,7 @@
 					</effect_group>
 			</buff>
 			
-		<!--___________________________ ICE: FX ___________________________-->
-			<!-- FX: ICE CHILL -->
-			<buff name="spellFX_IceChill" hidden="true" remove_on_death="true">
-				<damage_type value="cold"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
-					<effect_group name="Start"> 
-						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceChill-finish"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill.unity3d?iceChill" parent_transform="Hips"><requirement name="!EntityTagCompare" tags="animal"/></triggered_effect>
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill.unity3d?iceChill" parent_transform="Hips"><requirement name="!EntityTagCompare" tags="animal"/></triggered_effect>
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill.unity3d?iceChill" parent_transform="" local_offset="0,.3,0"><requirement name="EntityTagCompare" tags="animal"/></triggered_effect>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill.unity3d?iceChill" parent_transform="" local_offset="0,.3,0"><requirement name="EntityTagCompare" tags="animal"/></triggered_effect>
-						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_chill"/>
-					</effect_group>
-					<effect_group name="Finish">
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill-finish.unity3d?iceChill-finish" parent_transform="Hips"><requirement name="!EntityTagCompare" tags="animal"/></triggered_effect>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill-finish.unity3d?iceChill-finish" parent_transform="" local_offset="0,.3,0"><requirement name="EntityTagCompare" tags="animal"/></triggered_effect>
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceChill"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryIce_chill"/>
-					</effect_group>
-					<effect_group name="Start: FX Screen">
-							<requirements compare_type="or">
-								<requirement name="HasBuff" buff="spellEntityIce_Chill"/>
-								<requirement name="HasBuff" buff="spellFallenIce_Chill"/>
-							</requirements>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="0" effect_name="Cold"/>
-					</effect_group>
-					<effect_group name="Finish: FX Screen">
-							<requirements>
-								<requirement name="NotHasBuff" buff="buffElementCold"/>
-								<requirement name="NotHasBuff" buff="buffElementFreezing"/>
-							</requirements>
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="0.5" effect_name="Cold"/>
-					</effect_group>
-					<effect_group name="Cleanup">
-							<!-- NOTE: spellFX_ManageCleanup -->
-							<requirements>
-								<requirement name="NotHasBuff" buff="spellIce_Chill"/>
-								<requirement name="NotHasBuff" buff="spellcastIce_Slide"/>
-								<requirement name="NotHasBuff" buff="buffRune_AspectOfIce_AuraAOE"/>
-								<requirement name="NotHasBuff" buff="spellTrap_Ice"/>
-								<requirement name="NotHasBuff" buff="spellTrap_IceFX"/>
-								<!-- entity -->
-								<requirement name="NotHasBuff" buff="spellEntityIce_Chill"/>
-								<requirement name="NotHasBuff" buff="spellFallenIce_Chill"/>
-							</requirements>
-						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceChill"/>
-					</effect_group>
-			</buff>
-			<!-- FX: ICE FREEZE -->
-			<buff name="spellFX_IceFreeze" hidden="true" remove_on_death="true">
-				<damage_type value="cold"/><stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
-					<effect_group name="Start">
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceFrozen.unity3d?iceFrozen" parent_transform=""/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceFrozen.unity3d?iceFrozen" parent_transform=""/>
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellImpact_IceGround"/>
-						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceFrozen-finish"/>
-						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_freeze"/>
-					</effect_group>
-					<effect_group name="Finish">
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceFrozen-finish.unity3d?iceFrozen-finish" parent_transform=""/>
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceFrozen"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryIce_freeze"/>
-					</effect_group>
-					<effect_group name="Cleanup">
-							<requirements>
-								<requirement name="NotHasBuff" buff="spellIce_Freeze"/>
-								<!-- entity -->
-								<requirement name="NotHasBuff" buff="spellFallenIce_Frozen"/>
-							</requirements>
-						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceFreeze"/>
-					</effect_group>
-			</buff>
-			<buff name="spellFX_IceHail" hidden="true" remove_on_death="true">
-				<damage_type value="cold"/><stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
-					<effect_group name="Start">
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceHail.unity3d?iceHail" parent_transform=""/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceHail.unity3d?iceHail" parent_transform=""/>
-						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceHail-finish"/>
-						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_freeze"/>
-					</effect_group>
-					<effect_group name="Finish">
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceHail-finish.unity3d?iceHail-finish" parent_transform=""/>
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceHail"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="PlaySound" sound="sorceryIce_freeze"/>
-					</effect_group>
-					<effect_group name="Cleanup">
-							<requirements>
-								<requirement name="NotHasBuff" buff="spellIce_Hail"/>
-							</requirements>
-						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceHail"/>
-					</effect_group>
-			</buff>
-			<!-- FX: ICE STORM -->
-			<buff name="spellFX_IceStorm" hidden="true" remove_on_death="true">
-				<damage_type value="cold"/><stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
-					<effect_group name="Start"> 
-						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_icestorm"/>
-						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceStorm-finish"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceStorm.unity3d?iceStorm" parent_transform=""/>
-						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceStorm.unity3d?iceStorm" parent_transform=""/>
-					</effect_group>
-					<effect_group name="Finish">
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceStorm-finish.unity3d?iceStorm-finish" parent_transform=""/>
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceStorm"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="sorceryIce_icestorm"/>
-					</effect_group>
-					<effect_group name="Cleanup">
-							<requirements>
-								<requirement name="NotHasBuff" buff="spellIce3"/>
-							</requirements>
-						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceStorm"/>
-					</effect_group>
-			</buff>
-			
+
 		<!--___________________________ ICE: SPELL ___________________________-->
 			<!-- SPELL: ICE ______________________________________________________-->
 			<buff name="spellIce" hidden="true" remove_on_death="true">
@@ -8431,48 +8566,37 @@
 					<effect_group name="FX">
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_FireBurn"/>
 					</effect_group>
-					<effect_group name="SCALE">
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c1" operation="multiply" value="3"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c2" operation="multiply" value="4"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityFire_Burn_c3" operation="multiply" value="2"/>
-						<!-- stack -->
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c1" operation="multiply" value="3"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c2" operation="multiply" value="4"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityFire_Burn_c3" operation="multiply" value="2"/>						
-					</effect_group>
 					<effect_group name="IMPACT">
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityFire_Burn_c1"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityFire_Burn_c1"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityFire_Burn_c2"/> <!-- spirit -->
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityFire_Burn_c2"/> <!-- spirit -->
-						<!-- <passive_effect name="RunSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
-						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="3"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="3"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="4"/> <!-- spirit -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="4"/> <!-- spirit -->
 					</effect_group>
 					<effect_group name="BURN">
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityFire_Burn_c3"/> <!-- spirit -->
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$spellEntityFire_Burn_c3"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="3"/> <!-- spirit -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="3"/>
 					</effect_group>
 					<effect_group name="EXPLODE">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFallenFire_explode"/>
 						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="spellFallenFire_explode"/>
 					</effect_group>
-					<effect_group name="cleanup">
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellEntityFire_Burn_c1" operation="set" value="0"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellEntityFire_Burn_c2" operation="set" value="0"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellEntityFire_Burn_c3" operation="set" value="0"/>
+			</buff>
+			<buff name="spellEntityFire_Regenerate" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/><duration value="4"/><update_rate value="1"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_FireRegen"/>
+					</effect_group>
+					<effect_group>
+						<passive_effect name="HealthChangeOT" operation="base_add" value="5"/>
+						<passive_effect name="WalkSpeed" operation="perc_add" value="-.5" />
+						<passive_effect name="RunSpeed" operation="perc_add" value="-.5" />
 					</effect_group>
 			</buff>
 		<!-- END - FIRE ENTITY SPELLS -->
 		
-			<!-- SPELL: ENTITY ICE CHILL ______________________________________________________-->
+		<!-- ICE ENTITY SPELLS -->
+			<!-- ICE: Chill -->
 			<buff name="spellEntityIce_Chill" hidden="true" remove_on_death="true">
 				<damage_type value="cold"/><stack_type value="replace"/><duration value="4"/><update_rate value="1"/>
 					<effect_group name="FX">
@@ -8485,6 +8609,7 @@
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="5"/> <!-- spirit -->
 					</effect_group>
 					<effect_group name="DOT">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="3"/> <!-- spirit -->
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="3"/>
 					</effect_group>
 					<effect_group name="CHILL">
@@ -8497,105 +8622,51 @@
 						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellIce_Freeze_CD"/> -->
 					</effect_group>
 			</buff>
-		
-		<!-- OLD - ICE ENTITY SPELLS -->
-			<!-- ICE: Chill --> 
-			<buff name="spellEntityIce_Chill_OLD" hidden="true" remove_on_death="true">
-				<damage_type value="cold"/><stack_type value="replace"/><duration value="2"/><update_rate value="1"/>
+			<buff name="spellEntityIce_Regenerate" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/><duration value="4"/><update_rate value="1"/>
 					<effect_group name="FX">
-						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="iceChill-finish"/>
-						<triggered_effect trigger="onSelfBuffStack" action="RemoveParticleEffectFromEntity" particle="iceChill-finish"/>
-						<triggered_effect trigger="onSelfBuffStart" action="onSelfBuffStart" particle="#@modfolder:Resources/iceChill.unity3d?iceChill" parent_transform="Hips" />					
-						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryIce_freeze" />
-						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryIce_freeze" />
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/iceChill-finish.unity3d?iceChill-finish" parent_transform="Hips" />					
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="iceChill" />
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_IceRegen"/>
 					</effect_group>
-					<effect_group name="SCALE">
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c1" operation="multiply" value="3"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c2" operation="multiply" value="4"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityIce_Chill_c3" operation="multiply" value="3"/>
-						<!-- stack -->
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c1" operation="multiply" value="3"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c2" operation="multiply" value="4"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityIce_Chill_c3" operation="multiply" value="3"/>						
-					</effect_group>
-					<effect_group name="IMPACT">
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityIce_Chill_c1"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityIce_Chill_c1"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityIce_Chill_c2"/> <!-- spirit -->
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityIce_Chill_c2"/> <!-- spirit -->
-						<!-- <passive_effect name="RunSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
-						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/>
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.25" duration="0,0.5"/> -->
-					</effect_group>
-					<effect_group name="CHILL">
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="@$spellEntityIce_Chill_c3"/>
-						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".9,0" duration="0,2"/>
-						<passive_effect name="RunSpeed" operation="perc_subtract" value=".9,0" duration="0,2"/>
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value=".9,0" duration="0,2" />
-						<passive_effect name="JumpStrength" operation="perc_subtract" value=".9,0" duration="0,2" />
-					</effect_group>
-					<effect_group name="FREEZE">
-							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFallenTriggerImpact_Frozen"/>
-						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="spellFallenTriggerImpact_Frozen"/>
-					</effect_group>
-					<effect_group name="cleanup">
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellEntityIce_Chill_c1" operation="set" value="0"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellEntityIce_Chill_c2" operation="set" value="0"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellEntityIce_Chill_c3" operation="set" value="0"/>
+					<effect_group>
+						<passive_effect name="HealthChangeOT" operation="base_add" value="5"/>
+						<passive_effect name="WalkSpeed" operation="perc_add" value="-.5" />
+						<passive_effect name="RunSpeed" operation="perc_add" value="-.5" />
 					</effect_group>
 			</buff>
 		<!-- END - ICE ENTITY SPELLS -->
+		
 		<!-- LIGHTNING ENTITY SPELLS -->
 			<!-- LIGHTNING: Shock -->
 			<buff name="spellEntityLightning_Shock" hidden="true" remove_on_death="true">
 				<damage_type value="heat"/><stack_type value="replace"/><duration value="3"/><update_rate value="1"/>
 					<effect_group name="FX">
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningArc.unity3d?lightningArc" parent_transform="Hips"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningArc"/>
-						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryLightning_crackling" />
-						<triggered_effect trigger="onSelfBuffRemove" action="StopSound" sound="sorceryLightning_crackling" />
-					</effect_group>
-					<effect_group name="SCALE">
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c1" operation="multiply" value="3"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c2" operation="multiply" value="4"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c3" operation="multiply" value="2"/>
-						<!-- stack -->
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c1" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c1" operation="multiply" value="3"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c2" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c2" operation="multiply" value="4"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c3" operation="set" value="@sorceryPlayerTier"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellEntityLightning_Shock_c3" operation="multiply" value="2"/>						
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_LightningShock"/>
 					</effect_group>
 					<effect_group name="IMPACT">
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityLightning_Shock_c1"/>
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="@$spellEntityLightning_Shock_c1"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityLightning_Shock_c2"/> <!-- spirit -->
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@$spellEntityLightning_Shock_c2"/> <!-- spirit -->
-						<!-- <passive_effect name="RunSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>
-						<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/>
-						<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.5" duration="0,0.5"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="4"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="4"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="6"/> <!-- spirit -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="6"/> <!-- spirit -->
 					</effect_group>
-					<effect_group name="SHOCK">
-						<passive_effect name="HealthChangeOT" operation="base_subtract" value="4"/>
+					<effect_group name="DOT">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="5"/> <!-- spirit -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="4"/>
 					</effect_group>
 					<effect_group name="ELECTROCUTE">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFallenTriggerImpact_Electrocute"/>
 						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="spellFallenTriggerImpact_Electrocute"/>
+					</effect_group>
+			</buff>
+			<buff name="spellEntityLightning_Regenerate" hidden="true" remove_on_death="true">
+				<stack_type value="replace"/><duration value="4"/><update_rate value="1"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_LightningRegen"/>
+					</effect_group>
+					<effect_group>
+						<passive_effect name="HealthChangeOT" operation="base_add" value="5"/>
+						<passive_effect name="WalkSpeed" operation="perc_add" value="-.5" />
+						<passive_effect name="RunSpeed" operation="perc_add" value="-.5" />
 					</effect_group>
 			</buff>
 		<!-- END - LIGHTNING ENTITY SPELLS -->
@@ -8694,11 +8765,10 @@
 			<!-- FIRE FALLEN: Fire Regenerate -->
 			<buff name="spellFallenFire_regenerate" hidden="true" remove_on_death="true">
 				<stack_type value="replace"/><duration value="6"/><update_rate value="1"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_FireRegen"/>
+					</effect_group>
 					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeFire.unity3d?fallenRechargeFire"/>
-						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fallenRechargeFire-finish" />
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fallenRechargeFire"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeFire-finish.unity3d?fallenRechargeFire-finish"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="50"/>
 						<passive_effect name="WalkSpeed" operation="perc_add" value="-.5" />
 						<passive_effect name="RunSpeed" operation="perc_add" value="-.5" />
@@ -8803,11 +8873,10 @@
 			<!-- ICE FALLEN: Regenerate -->
 			<buff name="spellFallenIce_regenerate" hidden="true" remove_on_death="true">
 				<stack_type value="replace"/><duration value="6"/><update_rate value="1"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_IceRegen"/>
+					</effect_group>
 					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeIce.unity3d?fallenRechargeIce"/>
-						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fallenRechargeIce-finish" />
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fallenRechargeIce"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeIce-finish.unity3d?fallenRechargeIce-finish"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="50"/>
 						<passive_effect name="WalkSpeed" operation="perc_add" value="-.5" />
 						<passive_effect name="RunSpeed" operation="perc_add" value="-.5" />
@@ -8836,8 +8905,7 @@
 			<buff name="spellFallenLightning_Shock" hidden="true" remove_on_death="true">
 				<damage_type value="heat"/><stack_type value="replace"/><duration value="2"/><update_rate value="1"/>
 					<effect_group name="FX">
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningArc.unity3d?lightningArc" parent_transform="Hips"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningArc"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_LightningShock"/>
 					</effect_group>
 					<effect_group name="SCALE">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Shock_c1" operation="set" value="@sorceryPlayerTier"/>
@@ -8883,11 +8951,7 @@
 			<buff name="spellFallenLightning_Electrocute" hidden="true" remove_on_death="true">
 				<damage_type value="electrical"/><stack_type value="ignore"/><duration value="1"/><update_rate value="1"/>
 					<effect_group name="FX">
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/lightningElectrocute.unity3d?lightningElectrocute" parent_transform="Hips"/>
-						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="electric_fence_impact" />
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="lightningElectrocute"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" target="self" sound="electric_fence_impact" />
-						<triggered_effect trigger="onSelfLeaveGame" action="StopSound" target="self" sound="electric_fence_impact" />
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_LightningElectrocute"/>
 					</effect_group>
 					<effect_group name="SCALE">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellFallenLightning_Electrocute_c1" operation="set" value="@sorceryPlayerTier"/>
@@ -8907,11 +8971,10 @@
 			<!-- LIGHTNING FALLEN: Regenerate -->
 			<buff name="spellFallenLightning_regenerate" hidden="true" remove_on_death="true">
 				<stack_type value="replace"/><duration value="6"/><update_rate value="1"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_LightningRegen"/>
+					</effect_group>
 					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeLightning.unity3d?fallenRechargeLightning"/>
-						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="fallenRechargeLightning-finish" />
-						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="fallenRechargeLightning"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fallenRechargeLightning-finish.unity3d?fallenRechargeLightning-finish"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="50"/>
 						<passive_effect name="WalkSpeed" operation="perc_add" value="-.5" />
 						<passive_effect name="RunSpeed" operation="perc_add" value="-.5" />
@@ -8928,27 +8991,15 @@
 			</effect_group>
 		</buff>
 		<!-- WISP: FIRE -->
-			<buff name="buffWispFire" hidden="true" remove_on_death="true">
+			<buff name="buffWispFire" hidden="true" remove_on_death="true"> 
 				<stack_type value="ignore"/><duration value="120"/><update_rate value="1"/>
 					<effect_group name="COUNTER">
+						<triggered_effect trigger="onOtherAttackedSelf" action="ModifyCVar" cvar="$buffWispFire_combat" operation="set" value="1"/>
 						<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="$buffWispFire_combat" operation="set" value="1"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffWispFire" operation="set" value="20"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffWispFire" operation="add" value="-1">
 							<requirement name="CVarCompare" cvar="$buffWispFire_combat" operation="GTE" value="1"/>
 						</triggered_effect>
-					</effect_group>
-					<effect_group name="AURA: EMPOWER">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffEntity_FireTouched" target_tags="zombie,animal"/>
-					</effect_group>
-					<effect_group name="AURA: PLAYER">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="spellEntityFire_Burn" target_tags="player"/>
-						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="other" buff="spellEntityFire_Burn" target_tags="player"/>
-					</effect_group>
-					<effect_group name="SUMMON">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="spellFallen_summon" target_tags="player"/>
-					</effect_group>
-					<effect_group name="REGENERATE">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="spellFallenFire_regenerate" target_tags="zombie,animal"/>
 					</effect_group>
 					<effect_group name="VANISH">
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSorceryEntitySuicide">
@@ -8956,30 +9007,34 @@
 						</triggered_effect>
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSorceryEntitySuicide"/>
 					</effect_group>
+					<effect_group name="AURA: EMPOWER"> 
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="buffEntity_FireTouched" target_tags="zombie,animal"/>
+					</effect_group>
+					<effect_group name="PLAYER">
+						<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="other" buff="spellEntityFire_Shock"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="ModifyStats" target="other" stat="Health" operation="subtract" value="20"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="ModifyCVar" target="other" cvar=".spiritSubtract" operation="add" value="50"/> <!-- spirit -->
+					</effect_group>
+					<effect_group name="SUMMON">
+							<requirement name="CVarCompare" cvar="$buffWispFire_combat" operation="GTE" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="10" buff="spellFallen_summon" target_tags="player"/>
+					</effect_group>
+					<effect_group name="REGENERATE">
+							<requirement name="CVarCompare" cvar="$buffWispFire_combat" operation="GTE" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="spellEntityFire_Regenerate" target_tags="zombie,animal"/>
+					</effect_group>
 			</buff>
 		<!-- END - FIRE WISP -->
 		<!-- WISP: ICE -->
-			<buff name="buffWispIce" hidden="true" remove_on_death="true">
+			<buff name="buffWispIce" hidden="true" remove_on_death="true"> 
 				<stack_type value="ignore"/><duration value="120"/><update_rate value="1"/>
 					<effect_group name="COUNTER">
+						<triggered_effect trigger="onOtherAttackedSelf" action="ModifyCVar" cvar="$buffWispIce_combat" operation="set" value="1"/>
 						<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="$buffWispIce_combat" operation="set" value="1"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffWispIce" operation="set" value="20"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffWispIce" operation="add" value="-1">
 							<requirement name="CVarCompare" cvar="$buffWispIce_combat" operation="GTE" value="1"/>
 						</triggered_effect>
-					</effect_group>
-					<effect_group name="AURA: EMPOWER">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffEntity_IceTouched" target_tags="zombie,animal"/>
-					</effect_group>
-					<effect_group name="AURA: PLAYER">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="spellEntityIce_Chill" target_tags="player"/>
-						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="other" buff="spellEntityIce_Chill" target_tags="player"/>
-					</effect_group>
-					<effect_group name="SUMMON">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="spellFallen_summon" target_tags="player"/>
-					</effect_group>
-					<effect_group name="REGENERATE">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="spellFallenIce_regenerate" target_tags="zombie,animal"/>
 					</effect_group>
 					<effect_group name="VANISH">
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSorceryEntitySuicide">
@@ -8987,36 +9042,56 @@
 						</triggered_effect>
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSorceryEntitySuicide"/>
 					</effect_group>
+					<effect_group name="AURA: EMPOWER"> 
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="buffEntity_IceTouched" target_tags="zombie,animal"/>
+					</effect_group>
+					<effect_group name="PLAYER">
+						<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="other" buff="spellEntityIce_Shock"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="ModifyStats" target="other" stat="Health" operation="subtract" value="20"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="ModifyCVar" target="other" cvar=".spiritSubtract" operation="add" value="50"/> <!-- spirit -->
+					</effect_group>
+					<effect_group name="SUMMON">
+							<requirement name="CVarCompare" cvar="$buffWispIce_combat" operation="GTE" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="10" buff="spellFallen_summon" target_tags="player"/>
+					</effect_group>
+					<effect_group name="REGENERATE">
+							<requirement name="CVarCompare" cvar="$buffWispIce_combat" operation="GTE" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="spellEntityIce_Regenerate" target_tags="zombie,animal"/>
+					</effect_group>
 			</buff>
 		<!-- END - ICE WISP -->
 		<!-- WISP: LIGHTNING -->
-			<buff name="buffWispLightning" hidden="true" remove_on_death="true">
+			<buff name="buffWispLightning" hidden="true" remove_on_death="true"> 
 				<stack_type value="ignore"/><duration value="120"/><update_rate value="1"/>
 					<effect_group name="COUNTER">
+						<triggered_effect trigger="onOtherAttackedSelf" action="ModifyCVar" cvar="$buffWispLightning_combat" operation="set" value="1"/>
 						<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="$buffWispLightning_combat" operation="set" value="1"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffWispLightning" operation="set" value="20"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffWispLightning" operation="add" value="-1">
 							<requirement name="CVarCompare" cvar="$buffWispLightning_combat" operation="GTE" value="1"/>
 						</triggered_effect>
 					</effect_group>
-					<effect_group name="AURA: EMPOWER">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffEntity_LightningTouched" target_tags="zombie,animal"/>
-					</effect_group>
-					<effect_group name="AURA: PLAYER">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="2" buff="spellEntityLightning_Shock" target_tags="player"/>
-						<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="other" buff="spellEntityLightning_Shock" target_tags="player"/>
-					</effect_group>
-					<effect_group name="SUMMON">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="spellFallen_summon" target_tags="player"/>
-					</effect_group>
-					<effect_group name="REGENERATE">
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="spellFallenLightning_regenerate" target_tags="zombie,animal"/>
-					</effect_group>
 					<effect_group name="VANISH">
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffSorceryEntitySuicide">
 							<requirement name="CVarCompare" cvar="$buffWispLightning" operation="LTE" value="0"/>
 						</triggered_effect>
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSorceryEntitySuicide"/>
+					</effect_group>
+					<effect_group name="AURA: EMPOWER"> 
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="buffEntity_LightningTouched" target_tags="zombie,animal"/>
+					</effect_group>
+					<effect_group name="PLAYER">
+						<triggered_effect trigger="onOtherAttackedSelf" action="AddBuff" target="other" buff="spellEntityLightning_Shock"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="ModifyStats" target="other" stat="Health" operation="subtract" value="20"/>
+						<triggered_effect trigger="onOtherAttackedSelf" action="ModifyCVar" target="other" cvar=".spiritSubtract" operation="add" value="50"/> <!-- spirit -->
+					</effect_group>
+					<effect_group name="SUMMON">
+							<requirement name="CVarCompare" cvar="$buffWispLightning_combat" operation="GTE" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="10" buff="spellFallen_summon" target_tags="player"/>
+					</effect_group>
+					<effect_group name="REGENERATE">
+							<requirement name="CVarCompare" cvar="$buffWispLightning_combat" operation="GTE" value="1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="5" buff="spellEntityLightning_Regenerate" target_tags="zombie,animal"/>
 					</effect_group>
 			</buff>
 		<!-- END - LIGHTNING WISP -->
