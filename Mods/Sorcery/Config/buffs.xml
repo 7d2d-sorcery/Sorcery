@@ -952,7 +952,7 @@
 				 <!-- END - CALCULATE: Essence Harvest -->
 				 <!-- END - ESSENCE HARVEST -->
 					 <effect_group name="SUPPORTER DISCLAIMER">
-						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMaster" operation="set" value="1622319495"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMaster" operation="set" value="1324189421"/>
 						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMasterCompare" operation="set" value="@$sorcerySupporterMaster"/>
 					 </effect_group>
 					 <effect_group name="SUPPORTER DISCLAIMER">
