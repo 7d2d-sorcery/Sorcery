@@ -1089,7 +1089,7 @@ quest_sorceryIntroFireSpellTurret,Quest,Quest Info,,,"Deporting the undead back 
 quest_sorceryIntroFireCraftFireTrap_title,Quest,Quest Info,,,"[970000]Sorcery[-] Fire Trap",,,,,,,,,,,,,,
 quest_sorceryIntroFireCraftFireTrap_subtitle,Quest,Quest Info,,,"Craft Fire Trap",,,,,,,,,,,,,,
 quest_sorceryIntroFireCraftFireTrap,Quest,Quest Info,,,"If you want to survive the horde, you'll want an arsenal of Fire Trap's to Incinerate and Explode trespassers. You'll find the Fire Trap in the [ae92d5]Fire Sorcery[-] skill tree. Unlock it there then head to a [ae92d5]Sorcerer Desk[-] to craft them.",,,,,,,,,,,,,,
-quest_sorceryFirePowder_title,Quest,Quest Info,,,"[02599c]Sorcery[-] Enchanted Mortar",,,,,,,,,,,,,,
+quest_sorceryFirePowder_title,Quest,Quest Info,,,"[970000]Sorcery[-] Enchanted Mortar",,,,,,,,,,,,,,
 quest_sorceryFirePowder_subtitle,Quest,Quest Info,,,"Craft Fire Powder",,,,,,,,,,,,,,
 quest_sorceryFirePowder,Quest,Quest Info,,,"You'll want to become acquainted with an [ae92d5]Enchanted Mortar[-] to craft Fire Powder and Potions on the go. By holding the [ae92d5]Enchanted Mortar[-] in your Toolbelt, you can then view [ae92d5]Recipes[-] by selecting [ae92d5]Fire Essence[-] in your inventory and looking at available recipes. Most Potions require the mixing of multiple ingredients. Go ahead and craft [ae92d5]Fire Powder[-] now using the [ae92d5]Enchanted Mortar[-].",,,,,,,,,,,,,,
 

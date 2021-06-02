@@ -439,9 +439,6 @@
 			<ingredient name="resourceExtractOmni" count="50"/>
 			<ingredient name="resourcePaper" count="100"/>
 			<ingredient name="resourceWood" count="200"/>
-			<effect_group>
-				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,10" value="-1,-5" tags="resourceExtractOmni"/> -->
-			</effect_group>
 		</recipe>
 	<!-- ENCHANTING STATION -->
 		<recipe name="sorceryEnchantingStation" count="1" craft_area="sorceryDesk" craft_time="60" tags="sorceryTier,learnable">

@@ -3918,6 +3918,7 @@
 						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/fireImpact2.unity3d?fireImpact2" parent_transform="" local_offset="0,.3,0"><requirement name="EntityTagCompare" tags="animal"/></triggered_effect>
 					</effect_group>
 			</buff>
+			<!-- NOTE: Replace with spellTriggerImpact3_Fire -->
 			<buff name="spellTriggerImpact3_Fire" hidden="true" remove_on_death="true">
 				<damage_type value="heat"/><stack_type value="ignore"/><duration value="0.01"/>
 					<effect_group>

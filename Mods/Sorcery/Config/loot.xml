@@ -190,9 +190,9 @@
 			<item name="runeIce_LuckyEssence"/>
 			<item name="runeFire_LuckyEssence"/>
 			<!-- groups -->
-			<item group="sorceryRunes_silver" count="1" prob="0.3"/>
-			<item group="sorceryRunes_gold" count="1" prob="0.2"/>
-			<item group="sorceryRunes_class" count="1" prob="0.2"/>
+			<item group="sorceryRunes_silver" count="1" prob="0.6"/> <!-- 3 -->
+			<item group="sorceryRunes_gold" count="1" prob="0.5"/> <!-- 2 -->
+			<item group="sorceryRunes_class" count="1" prob="0.4"/> <!-- 2 -->
 		</lootgroup>
 	<!-- END - RUNES -->	
 		
@@ -242,7 +242,7 @@
 			<item name="scroll_AugmentDigging"/>
 			<item name="scroll_AugmentLogging"/>
 			<item name="scroll_EssenceHarvest"/>
-			<item name="scroll_Recall" prob=".4"/>
+			<item name="scroll_Recall" prob=".5"/>
 		</lootgroup>
 		<!-- Scrolls: FIRE  -->
 		<lootgroup name="sorceryScrollsFire"> 
@@ -313,7 +313,7 @@
 			<item group="sorceryBooksScrolls" count="1"/>
 			<item group="sorceryArmor" count="1" prob=".3"/>
 			<item group="sorceryRunes" count="1" prob=".2"/>
-			<item group="sorceryRunes_class" count="1" prob="0.025"/>
+			<item group="sorceryRunes_class" count="1" prob="0.05"/>
 		</lootgroup>	
 		<!-- Fallen: FIRE -->
 		<lootgroup name="sorceryFallen_Fire"> 

@@ -535,6 +535,68 @@
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
+		<!-- Intro: Fire2 Craft:  -->
+		<quest id="quest_sorceryIntroFireCraftFire2">
+			<property name="name_key" value="quest_sorceryIntroFireCraftFire2_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFire2_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireCraftFire2" />
+			<property name="offer_key" value="quest_sorceryIntroFireCraftFire2" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="spellFire2" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellFire2" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroFireCraftFire2_2"/>
+		</quest>
+		<quest id="quest_sorceryIntroFireCraftFire2_2">
+			<property name="name_key" value="quest_sorceryIntroFireCraftFire2_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFire2_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireCraftFire2" />
+			<property name="offer_key" value="quest_sorceryIntroFireCraftFire2" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="spellFire2" value="100" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
+		</quest>
+		<!-- Intro: Fire3 Craft:  -->
+		<quest id="quest_sorceryIntroFireCraftFire3">
+			<property name="name_key" value="quest_sorceryIntroFireCraftFire3_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFire3_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireCraftFire3" />
+			<property name="offer_key" value="quest_sorceryIntroFireCraftFire3" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="spellFire3" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellFire3" value="10" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroFireCraftFire3_2"/>
+		</quest>
+		<quest id="quest_sorceryIntroFireCraftFire3_2">
+			<property name="name_key" value="quest_sorceryIntroFireCraftFire3_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireCraftFire3_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireCraftFire3" />
+			<property name="offer_key" value="quest_sorceryIntroFireCraftFire3" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="spellFire3" value="100" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
+		</quest>
 		<!-- Intro: Fire Armor Set -->
 		<quest id="quest_sorceryIntroFireArmor">
 			<property name="name_key" value="quest_sorceryIntroFireArmor_title" />
