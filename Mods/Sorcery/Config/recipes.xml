@@ -341,83 +341,119 @@
 
 	<!-- SCROLLS __________________________________________________________________________________ -->
 		<!-- Recall -->
-		<recipe name="scroll_Recall" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scroll_Recall" count="1" craft_area="sorceryDesk" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractOmni" count="100"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
 			<ingredient name="bedroll" count="1"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 		<!-- Arcane Vision -->
-		<recipe name="scroll_ArcaneVision" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scroll_ArcaneVision" count="1" craft_area="sorceryDesk" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractOmni" count="20"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 		<!-- Augment XP -->
-		<recipe name="scroll_AugmentXP" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scroll_AugmentXP" count="1" craft_area="sorceryDesk" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractOmni" count="20"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 		<!-- Augment Hunger -->
-		<recipe name="scroll_AugmentHunger" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scroll_AugmentHunger" count="1" craft_area="sorceryDesk" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractOmni" count="20"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 		<!-- Augment Mining -->
-		<recipe name="scroll_AugmentMining" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scroll_AugmentMining" count="1" craft_area="sorceryDesk" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractOmni" count="20"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 		<!-- Augment Digging -->
-		<recipe name="scroll_AugmentDigging" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scroll_AugmentDigging" count="1" craft_area="sorceryDesk" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractOmni" count="20"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 		<!-- Augment Logging -->
-		<recipe name="scroll_AugmentLogging" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scroll_AugmentLogging" count="1" craft_area="sorceryDesk" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractOmni" count="20"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 		<!-- Essence Find -->
-		<recipe name="scroll_EssenceHarvest" count="1" craft_area="sorceryDesk" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scroll_EssenceHarvest" count="1" craft_area="sorceryDesk" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractOmni" count="50"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 	<!-- FIRE SCROLLS -->
 		<!-- Fire Weapon -->
-		<recipe name="scrollFire_Weapon" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scrollFire_Weapon" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractFire" count="40"/>
 			<ingredient name="resourceCoal" count="40"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 		<!-- Fire Ammo -->
-		<recipe name="scrollFire_Ammo" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scrollFire_Ammo" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractFire" count="50"/>
 			<ingredient name="resourceCoal" count="50"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 	<!-- ICE SCROLLS -->
 		<!-- Ice Weapon -->
-		<recipe name="scrollIce_Weapon" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scrollIce_Weapon" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractIce" count="40"/>
 			<ingredient name="resourcePotassiumNitratePowder" count="50"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 		<!-- Ice Ammo -->
-		<recipe name="scrollIce_Ammo" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="10" tags="sorceryTier,learnable">
+		<recipe name="scrollIce_Ammo" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="10" tags="perkSorceryScrollMastery,learnable">
 			<ingredient name="resourceExtractIce" count="50"/>
 			<ingredient name="resourcePotassiumNitratePowder" count="50"/>
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourcePaper"/>
+			</effect_group>
 		</recipe>
 	
 	<!-- END - SCROLLS __________________________________________________________________________________ -->
@@ -581,14 +617,20 @@
 
 	<!-- TRAPS ______________________________________-->
 		<!-- FIRE TRAP -->
-		<recipe name="sorceryTrap_Fire" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="5" tags="perkSorceryTrap2Fire,learnable">
+		<recipe name="sorceryTrap_Fire" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="5" tags="perkSorceryTrap2Fire,rune_ClassSpellTrapper,learnable">
 			<ingredient name="spellFire" count="1"/>
 			<ingredient name="resourceExtractFire" count="20"/>
+			<effect_group name="CLASS RUNE: rune_ClassSpellTrapper">
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,2,3" value="0,-0.15,-0.3" tags="resourceExtractFire"/>
+			</effect_group>
 		</recipe>
 		<!-- ICE TRAP -->
-		<recipe name="sorceryTrap_Ice" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="5" tags="perkSorceryTrap2Ice,learnable">
+		<recipe name="sorceryTrap_Ice" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="5" tags="perkSorceryTrap2Ice,rune_ClassSpellTrapper,learnable">
 			<ingredient name="spellIce" count="1"/>
 			<ingredient name="resourceExtractIce" count="20"/>
+			<effect_group name="CLASS RUNE: rune_ClassSpellTrapper">
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,2,3" value="0,-0.15,-0.3" tags="resourceExtractIce"/>
+			</effect_group>
 		</recipe>
 	<!-- END - TRAPS ______________________________________-->
 
@@ -596,23 +638,23 @@
 		<!-- FIRE SPELLS -->
 		<!-- Spell: Fire -->
 		<recipe name="spellFire" count="1" craft_area="conjureFire" material_based="true" craft_time="1" tags="perkSorcerySpellFire,conjureFireCrafting,learnable">
-			<ingredient name="unit_fire" count="20"/>
+			<ingredient name="unit_fire" count="20"/> <!-- 20 -->
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_fire"/>
+				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_fire"/> -->
 			</effect_group>
 		</recipe>
 		<!-- Spell: Firenado -->
 		<recipe name="spellFire2" count="1" craft_area="conjureFire" material_based="true" craft_time="1" tags="perkSorcerySpellFire2,conjureFireCrafting,learnable">
-			<ingredient name="unit_fire" count="60"/>
+			<ingredient name="unit_fire" count="60"/> <!-- 60 -->
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_fire"/>
+				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_fire"/> -->
 			</effect_group>
 		</recipe>
 		<!-- Spell: Meteor -->
 		<recipe name="spellFire3" count="1" craft_area="conjureFire" material_based="true" craft_time="1" tags="perkSorcerySpellFire3,conjureFireCrafting,learnable">
-			<ingredient name="unit_fire" count="100"/>
+			<ingredient name="unit_fire" count="100"/> <!-- 100 -->
 				<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_fire"/>
+				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_fire"/> -->
 			</effect_group>
 		</recipe>
 		
@@ -621,21 +663,21 @@
 		<recipe name="spellIce" count="1" craft_area="conjureIce" material_based="true" craft_time="1" tags="perkSorcerySpellIce,conjureIceCrafting,learnable">
 			<ingredient name="unit_ice" count="20"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_ice"/>
+				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_ice"/> -->
 			</effect_group>
 		</recipe>
 		<!-- Spell: Comet -->
 		<recipe name="spellIce2" count="1" craft_area="conjureIce" material_based="true" craft_time="1" tags="perkSorcerySpellIce2,conjureIceCrafting,learnable">
 			<ingredient name="unit_ice" count="60"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_ice"/>
+				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_ice"/> -->
 			</effect_group>
 		</recipe>
 		<!-- Spell: Ice Storm -->
 		<recipe name="spellIce3" count="1" craft_area="conjureIce" material_based="true" craft_time="1" tags="perkSorcerySpellIce3,conjureIceCrafting,learnable">
 			<ingredient name="unit_ice" count="100"/>
 				<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_ice"/>
+				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="0,-.4" tags="unit_ice"/> -->
 			</effect_group>
 		</recipe>
 	<!-- END - SPELLS ______________________________________-->		
@@ -679,8 +721,8 @@
 		</recipe>
 	<!-- END - SPELL AMMO ______________________________________-->
 		
-	<!-- RUNES ______________________________________-->
-		<!-- SUPPORTER RUNES -->
+<!-- RUNES ______________________________________-->
+	<!-- SUPPORTER RUNES -->
 		<!-- Rune: Astryael’s Eternal Youth (GOLD) -->
 		<recipe name="rune_SupporterAstryael" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="30">
 			<ingredient name="resourceExtractOmni" count="100"/>
@@ -688,7 +730,7 @@
 			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
 			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Dragoness Scale (GOLD) -->
@@ -698,17 +740,29 @@
 			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
 			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
-	<!-- ARCANE RUNES -->
-	<!-- RARE: SILVER -->
+<!-- ARCANE RUNES -->
+	<!-- GOLD: ARCANE RUNES -->
+		<!-- Rune: Silence (GOLD) -->
+		<recipe name="rune_Silence" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="30">
+			<ingredient name="resourceExtractOmni" count="100"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="3"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="3"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="3"/>
+			<ingredient name="resourceDuctTape" count="5"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
+			</effect_group>
+		</recipe>
+	<!-- SILVER: ARCANE RUNES -->
 		<!-- Rune: Augment Hunger (SILVER) -->
 		<recipe name="rune_AugmentHunger" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
 			<ingredient name="resourceExtractOmni" count="50"/>
 			<ingredient name="foodCharredMeat" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Lock Shatter (SILVER) -->
@@ -716,7 +770,7 @@
 			<ingredient name="resourceExtractOmni" count="50"/>
 			<ingredient name="resourceLockPick" count="5"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Door Shatter (SILVER) -->
@@ -724,16 +778,16 @@
 			<ingredient name="resourceExtractOmni" count="50"/>
 			<ingredient name="resourceDoorKnob" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
-	<!-- COMMON -->
+	<!-- COMMON: ARCANE RUNES -->
 		<!-- Rune: Augment XP -->
 		<recipe name="rune_AugmentXP" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="10">
 			<ingredient name="resourceExtractOmni" count="30"/>
 			<ingredient name="resourceCropCoffeeBeans" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Augment Mining -->
@@ -744,7 +798,7 @@
 			<ingredient name="resourcePotassiumNitratePowder" count="50"/>
 			<ingredient name="resourceScrapLead" count="50"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Augment Digging -->
@@ -752,7 +806,7 @@
 			<ingredient name="resourceExtractOmni" count="30"/>
 			<ingredient name="resourceClayLump" count="200"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Augment Logging -->
@@ -760,7 +814,7 @@
 			<ingredient name="resourceExtractOmni" count="30"/>
 			<ingredient name="resourceWood" count="200"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Spell Light -->
@@ -769,7 +823,7 @@
 			<ingredient name="candle" count="1"/>
 			<ingredient name="meleeToolTorch" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Lucky Dukes -->
@@ -777,7 +831,7 @@
 			<ingredient name="resourceExtractOmni" count="25"/>
 			<ingredient name="casinoCoin" count="200"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Lucky Potions -->
@@ -785,7 +839,7 @@
 			<ingredient name="resourceExtractOmni" count="15"/>
 			<ingredient name="potionBottle" count="1"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Lucky Spells -->
@@ -795,7 +849,7 @@
 			<ingredient name="resourceExtractIce" count="5"/>
 			<ingredient name="resourceExtractLightning" count="5"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Lucky Ammo -->
@@ -804,7 +858,7 @@
 			<ingredient name="resourceBulletTip" count="5"/>
 			<ingredient name="resourceBulletCasing" count="5"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune: Lucky Scrolls -->
@@ -812,12 +866,12 @@
 			<ingredient name="resourceExtractOmni" count="15"/>
 			<ingredient name="resourcePaper" count="5"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractOmni"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractOmni"/>
 			</effect_group>
 		</recipe>
 		
-	<!-- CLASS RUNES -->
-		<!-- SPELLCASTER CLASS -->
+<!-- CLASS RUNES -->
+	<!-- SPELLCASTER CLASS -->
 		<!-- Spellcaster I -->
 		<recipe name="rune_ClassSpellcaster1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
 			<ingredient name="rune_ClassSpellcaster2" count="1"/>
@@ -857,8 +911,167 @@
 			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
 			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
 		</recipe>
-
-		<!-- ALCHEMIST CLASS -->
+	<!-- SPELL GUNNER CLASS -->
+		<!-- SpellGunner I -->
+		<recipe name="rune_ClassSpellGunner1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellGunner2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellGunner1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellGunner3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- SpellGunner II -->
+		<recipe name="rune_ClassSpellGunner2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellGunner1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellGunner2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellGunner3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- SpellGunner III -->
+		<recipe name="rune_ClassSpellGunner3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellGunner1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellGunner3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellGunner2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+	<!-- SPELL ARCHER CLASS -->
+		<!-- SpellArcher I -->
+		<recipe name="rune_ClassSpellArcher1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellArcher2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellArcher1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellArcher3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- SpellArcher II -->
+		<recipe name="rune_ClassSpellArcher2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellArcher1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellArcher2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellArcher3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- SpellArcher III -->
+		<recipe name="rune_ClassSpellArcher3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellArcher1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellArcher3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellArcher2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+	<!-- SPELL KNIGHT CLASS -->
+		<!-- SpellKnight I -->
+		<recipe name="rune_ClassSpellKnight1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellKnight2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellKnight1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellKnight3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- SpellKnight II -->
+		<recipe name="rune_ClassSpellKnight2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellKnight1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellKnight2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellKnight3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- SpellKnight III -->
+		<recipe name="rune_ClassSpellKnight3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellKnight1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellKnight3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellKnight2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+	<!-- SPELL TRAPPER CLASS -->
+		<!-- SpellTrapper I -->
+		<recipe name="rune_ClassSpellTrapper1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellTrapper2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellTrapper1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellTrapper3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- SpellTrapper II -->
+		<recipe name="rune_ClassSpellTrapper2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellTrapper1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellTrapper2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellTrapper3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- SpellTrapper III -->
+		<recipe name="rune_ClassSpellTrapper3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellTrapper1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassSpellTrapper3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassSpellTrapper2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+	<!-- ALCHEMIST CLASS -->
 		<!-- Alchemist I -->
 		<recipe name="rune_ClassAlchemist1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
 			<ingredient name="rune_ClassAlchemist2" count="1"/>
@@ -898,6 +1111,203 @@
 			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
 			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
 		</recipe>
+	<!-- ENCHANTER CLASS -->
+		<!-- Enchanter I -->
+		<recipe name="rune_ClassEnchanter1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassEnchanter2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassEnchanter1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassEnchanter3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- Enchanter II -->
+		<recipe name="rune_ClassEnchanter2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassEnchanter1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassEnchanter2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassEnchanter3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- Enchanter III -->
+		<recipe name="rune_ClassEnchanter3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassEnchanter1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassEnchanter3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassEnchanter2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+	<!-- SCHOLAR CLASS -->
+		<!-- Scholar I -->
+		<recipe name="rune_ClassScholar1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassScholar2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassScholar1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassScholar3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- Scholar II -->
+		<recipe name="rune_ClassScholar2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassScholar1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassScholar2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassScholar3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- Scholar III -->
+		<recipe name="rune_ClassScholar3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassScholar1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassScholar3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassScholar2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- Scholar Class Recipes -->
+			<recipe name="resourcePaper" count="10" tags="learnable">
+				<ingredient name="resourceWood" count="10"/>
+				<ingredient name="resourceGlue" count="1"/>
+				<ingredient name="drinkJarRiverWater" count="1"/>
+			</recipe>
+	<!-- TAILOR CLASS -->
+		<!-- Tailor I -->
+		<recipe name="rune_ClassTailor1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassTailor2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassTailor1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassTailor3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- Tailor II -->
+		<recipe name="rune_ClassTailor2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassTailor1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassTailor2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassTailor3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- Tailor III -->
+		<recipe name="rune_ClassTailor3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassTailor1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassTailor3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassTailor2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+			<!-- Tailor Class Recipes -->
+			<recipe name="resourceThreadArcane" count="2" tags="learnable">
+				<ingredient name="resourceExtractOmni" count="1"/>
+			</recipe>
+			<recipe name="resourceThreadFire" count="2" tags="learnable">
+				<ingredient name="resourceExtractFire" count="1"/>
+			</recipe>	
+			<recipe name="resourceThreadIce" count="2" tags="learnable">
+				<ingredient name="resourceExtractIce" count="1"/>
+			</recipe>
+			<recipe name="resourceThreadLightning" count="2" tags="learnable">
+				<ingredient name="resourceExtractLightning" count="1"/>
+			</recipe>
+	<!-- RITUALIST CLASS -->
+		<!-- Ritualist I -->
+		<recipe name="rune_ClassRitualist1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassRitualist2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassRitualist1" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassRitualist3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- Ritualist II -->
+		<recipe name="rune_ClassRitualist2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassRitualist1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassRitualist2" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassRitualist3" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- Ritualist III -->
+		<recipe name="rune_ClassRitualist3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassRitualist1" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<recipe name="rune_ClassRitualist3" count="1" craft_area="sorceryEnchantingStation" tags="learnable" craft_time="1">
+			<ingredient name="rune_ClassRitualist2" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
+		<!-- Ritualist Class Recipes -->
+			<recipe name="resourceRitualStoneFire" count="1" craft_time="10" tags="learnable">
+				<ingredient name="resourceRockSmall" count="100"/>
+				<ingredient name="resourceExtractFire" count="100"/>
+			</recipe>		
+			<recipe name="resourceRitualStoneIce" count="1" craft_time="10" tags="learnable">
+				<ingredient name="resourceRockSmall" count="100"/>
+				<ingredient name="resourceExtractIce" count="100"/>
+			</recipe>		
+			<recipe name="resourceRitualStoneLightning" count="1" craft_time="10" tags="learnable">
+				<ingredient name="resourceRockSmall" count="100"/>
+				<ingredient name="resourceExtractLightning" count="100"/>
+			</recipe>
+		
+
+		
+
+		
 		
 <!-- FIRE RUNES -->
 	<!-- SPECIAL: GOLD -->
@@ -907,7 +1317,7 @@
 			<ingredient name="resourceCoal" count="100"/>
 			<ingredient name="resourceRitualBloodFallenFire" count="3"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractFire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractFire"/>
 			</effect_group>
 		</recipe>
 	<!-- RARE: SILVER -->
@@ -917,7 +1327,7 @@
 			<ingredient name="resourceCoal" count="100"/>
 			<ingredient name="resourceRitualBloodFallenFire" count="2"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractFire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractFire"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune Fire: Aura Burn (SILVER) -->
@@ -926,7 +1336,7 @@
 			<ingredient name="resourceCoal" count="100"/>
 			<ingredient name="resourceRitualBloodFallenFire" count="2"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractFire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractFire"/>
 			</effect_group>
 		</recipe>
 	<!-- COMMON -->
@@ -936,7 +1346,7 @@
 			<ingredient name="resourceEssenceFire" count="10"/>
 			<ingredient name="resourceCoal" count="10"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractFire"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractFire"/>
 			</effect_group>
 		</recipe>
 		
@@ -948,7 +1358,7 @@
 			<ingredient name="resourceEssenceIce" count="10"/>
 			<ingredient name="resourcePotassiumNitratePowder" count="10"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractIce"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractIce"/>
 			</effect_group>
 		</recipe>
 	<!-- RARE: SILVER -->
@@ -958,7 +1368,7 @@
 			<ingredient name="resourcePotassiumNitratePowder" count="100"/>
 			<ingredient name="resourceRitualBloodFallenIce" count="2"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractIce"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractIce"/>
 			</effect_group>
 		</recipe>
 		<!-- Rune Ice: Hailstorm (SILVER) -->
@@ -967,7 +1377,7 @@
 			<ingredient name="resourcePotassiumNitratePowder" count="100"/>
 			<ingredient name="resourceRitualBloodFallenIce" count="2"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractIce"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractIce"/>
 			</effect_group>
 		</recipe>
 	<!-- SPECIAL: GOLD -->
@@ -977,7 +1387,7 @@
 			<ingredient name="resourcePotassiumNitratePowder" count="100"/>
 			<ingredient name="resourceRitualBloodFallenIce" count="3"/>
 			<effect_group>
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.08,-.4" tags="resourceExtractIce"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="2,5" value="-.1,-.4" tags="resourceExtractIce"/>
 			</effect_group>
 		</recipe>
 

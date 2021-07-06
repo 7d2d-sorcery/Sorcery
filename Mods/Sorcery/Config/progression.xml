@@ -270,8 +270,6 @@
 			</effect_group>
 			<effect_group name="RECIPES">
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,10" tags="sorceryArcaneWheel"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,10" tags="scroll_Recall,scroll_ArcaneVision,scrollFire_Weapon,scrollFire_Ammo,scrollIce_Weapon,scrollIce_Ammo,scroll_AugmentXP,scroll_AugmentHunger,scroll_AugmentMining,scroll_AugmentDigging,scroll_AugmentLogging"/>
-				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="10" tags=""/> -->
 			</effect_group>
 		</attribute>
 		
@@ -699,66 +697,6 @@
 			</effect_group>
 		</perk>	
 	
-		<!-- ALCHEMY MASTERY -->
-		<perk name="perkSorceryAlchemyMastery" parent="skillSorceryMastery" name_key="perkSorceryAlchemyMasteryName" desc_key="perkSorceryAlchemyMasteryDesc" icon="uic_symbol_potion" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
-			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
-			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="4" desc_key="reqSorceryLevel04"/></level_requirements>
-			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="6" desc_key="reqSorceryLevel06"/></level_requirements>
-			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="8" desc_key="reqSorceryLevel08"/></level_requirements>
-			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
-			<effect_group>
-				<effect_description level="1" desc_key="perkSorceryAlchemyMasteryRank1Desc" long_desc_key="perkSorceryAlchemyMasteryRank1LongDesc"/>
-				<effect_description level="2" desc_key="perkSorceryAlchemyMasteryRank2Desc" long_desc_key="perkSorceryAlchemyMasteryRank2LongDesc"/>
-				<effect_description level="3" desc_key="perkSorceryAlchemyMasteryRank3Desc" long_desc_key="perkSorceryAlchemyMasteryRank3LongDesc"/>
-				<effect_description level="4" desc_key="perkSorceryAlchemyMasteryRank4Desc" long_desc_key="perkSorceryAlchemyMasteryRank4LongDesc"/>
-				<effect_description level="5" desc_key="perkSorceryAlchemyMasteryRank5Desc" long_desc_key="perkSorceryAlchemyMasteryRank5LongDesc"/>
-			</effect_group>
-			<effect_group name="ALCHEMY: Level">
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="0">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="LT" value="1"/>
-				</triggered_effect>			
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="1">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="1"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="2">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="2"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="3">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="3"/>
-				</triggered_effect>
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="4">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="4"/>
-				</triggered_effect>	
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="5">
-					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="GTE" value="5"/>
-				</triggered_effect>
-				<!-- +20% Per Level (Potion Potency) -->
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="set" value="@$sorceryAlchemyMastery"/>
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="multiply" value=".2"/>
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="add" value="1"/>
-				<!-- +20% Per Level (Damage) -->
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_damage" operation="set" value="@$sorceryAlchemyMastery"/>
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_damage" operation="multiply" value=".2"/>				
-			</effect_group>
-			<effect_group name="CRAFTING">
-				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorceryAlchemyMastery"/><!-- used to scale resources -->
-				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-1,-5" tags="resourcePowderArcane,resourcePowderFire,resourcePowderIce,resourcePowderLightning"/> -->
-			</effect_group>
-			<effect_group name="ALCHEMY: General Recipes">
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryAlchemyMortar,potion_Health,potion_Stamina,potion_Spirit,potion_Remedy,potion_Devour,potion_SlowFall,potion_Travel,potionFire_Essence,potionFire_Sorcery,potionIce_Essence,potionIce_Sorcery,potion_Haste,potion_Taunt"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags=""/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sorceryAlchemyStation"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags=""/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="sorceryElixir_attFire,sorceryElixir_attIce"/>
-			</effect_group>
-			
-			<effect_group name="ALCHEMY: Bomb Recipes">
-				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryPotionBomb_fire,sorceryPotionBomb_ice,sorceryPotionBomb_lightning,sorceryPotionBomb_grass"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sorceryPotionBomb_fire2,sorceryPotionBomb_ice2,sorceryPotionBomb_lightning2,sorceryPotionBomb_grass2"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="sorceryPotionBomb_fire3,sorceryPotionBomb_ice3,sorceryPotionBomb_lightning3,sorceryPotionBomb_grass3"/> -->
-			</effect_group>
-		</perk>	
-	
 		<!-- ESSENCE MASTERY -->
 		<perk name="perkSorceryEssenceMastery" parent="skillSorceryMastery" name_key="perkSorceryEssenceMasteryName" desc_key="perkSorceryEssenceMasteryDesc" icon="uic_symbol_essence_sorcery" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
@@ -774,7 +712,7 @@
 				<effect_description level="5" desc_key="perkSorceryEssenceMasteryRank5Desc" long_desc_key="perkSorceryEssenceMasteryRank5LongDesc"/>
 			</effect_group>
 			<effect_group name="RECIPES">
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="scroll_EssenceHarvest"/>
+				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags=""/> -->
 			</effect_group>			
 			<effect_group name="ESSENCE MASTERY: Level">
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryEssenceMastery" operation="set" value="0">
@@ -847,7 +785,71 @@
 				<passive_effect name="HarvestCount" operation="base_set" level="1" value="2.5" tags="essenceHarvestHidden"/>
 			</effect_group>		
 		</perk>		
-		
+	
+		<!-- ALCHEMY MASTERY -->
+		<perk name="perkSorceryAlchemyMastery" parent="skillSorceryMastery" name_key="perkSorceryAlchemyMasteryName" desc_key="perkSorceryAlchemyMasteryDesc" icon="uic_symbol_potion" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="4" desc_key="reqSorceryLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="6" desc_key="reqSorceryLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="8" desc_key="reqSorceryLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorceryAlchemyMasteryRank1Desc" long_desc_key="perkSorceryAlchemyMasteryRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorceryAlchemyMasteryRank2Desc" long_desc_key="perkSorceryAlchemyMasteryRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorceryAlchemyMasteryRank3Desc" long_desc_key="perkSorceryAlchemyMasteryRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorceryAlchemyMasteryRank4Desc" long_desc_key="perkSorceryAlchemyMasteryRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorceryAlchemyMasteryRank5Desc" long_desc_key="perkSorceryAlchemyMasteryRank5LongDesc"/>
+			</effect_group>
+			<effect_group name="ALCHEMY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="LT" value="1"/>
+				</triggered_effect>			
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Potion Potency) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="set" value="@$sorceryAlchemyMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_power" operation="add" value="1"/>
+				<!-- +20% Per Level (Damage) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_damage" operation="set" value="@$sorceryAlchemyMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryAlchemyMastery_damage" operation="multiply" value=".2"/>
+				<!-- PERK: Boost Allies -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffSorceryPerk_AlchemyMastery_Ally" target="selfAOE" target_tags="ally,party" range="15">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryAlchemyMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="CRAFTING">
+				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorceryAlchemyMastery"/><!-- used to scale resources -->
+				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-1,-5" tags="resourcePowderArcane,resourcePowderFire,resourcePowderIce,resourcePowderLightning"/> -->
+			</effect_group>
+			<effect_group name="ALCHEMY: General Recipes">
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryAlchemyMortar,potion_Health,potion_Stamina,potion_Spirit,potion_Remedy,potion_Devour,potion_SlowFall,potion_Travel,potionFire_Essence,potionFire_Sorcery,potionIce_Essence,potionIce_Sorcery,potion_Haste,potion_Taunt"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags=""/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sorceryAlchemyStation"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags=""/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="sorceryElixir_attFire,sorceryElixir_attIce"/>
+			</effect_group>
+			
+			<effect_group name="ALCHEMY: Bomb Recipes">
+				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryPotionBomb_fire,sorceryPotionBomb_ice,sorceryPotionBomb_lightning,sorceryPotionBomb_grass"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="sorceryPotionBomb_fire2,sorceryPotionBomb_ice2,sorceryPotionBomb_lightning2,sorceryPotionBomb_grass2"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="sorceryPotionBomb_fire3,sorceryPotionBomb_ice3,sorceryPotionBomb_lightning3,sorceryPotionBomb_grass3"/> -->
+			</effect_group>
+		</perk>	
+	
 		<!-- RUNE MASTERY -->
 		<perk name="perkSorceryRuneMastery" parent="skillSorceryMastery" name_key="perkSorceryRuneMasteryName" desc_key="perkSorceryRuneMasteryDesc" icon="uic_symbol_rune" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
@@ -878,10 +880,6 @@
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="set" value="@$sorceryRuneMastery"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="multiply" value=".2"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryRuneMastery_power" operation="add" value="1"/>
-				<!-- UI: Display -->
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryRuneMasteryUI" operation="set" value="@$sorceryRuneMastery"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryRuneMasteryUI" operation="multiply" value=".2"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryRuneMasteryUI" operation="multiply" value="100"/>
 			</effect_group>
 			<effect_group name="LEVEL 0">
 					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="LT" value="1"/>
@@ -913,15 +911,39 @@
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeBurdenCost" operation="set" value=".25"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$runeDegradeCost" operation="set" value=".5"/>
 			</effect_group>
+			<effect_group name="ALLY AOE">
+				<!-- PERK: Boost Allies -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="AddBuff" buff="buffSorceryPerk_RuneMastery_Ally" target="selfAOE" target_tags="ally,party" range="15">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryRuneMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+			</effect_group>
+		<!-- CLASS RUNE: ENCHANTER -->
+			<!-- buffSorceryManage -->
+		<!-- END - CLASS RUNE: ENCHANTER -->
 			<effect_group name="RUNECRAFTING: RECIPES">
+				<!-- Common (Grey) -->
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryEnchantingStation,toolHammerFire,toolHammerIce,toolHammerLightning"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="rune_SpellLight,rune_LuckyPotions,rune_LuckyAmmo,rune_LuckyScrolls,rune_LuckySpells,rune_LuckyDukes,runeFire_LuckyEssence,runeIce_LuckyEssence"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="rune_AugmentXP,rune_AugmentMining,rune_AugmentDigging,rune_AugmentLogging"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="rune_ClassSpellcaster1,rune_ClassSpellcaster2,rune_ClassSpellcaster3"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="rune_ClassAlchemist1,rune_ClassAlchemist2,rune_ClassAlchemist3"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_LockShatter,rune_DoorShatter,rune_AugmentHunger"/>
+				<!-- Transmutations -->
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_ClassSpellcaster1,rune_ClassSpellcaster2,rune_ClassSpellcaster3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_ClassSpellGunner1,rune_ClassSpellGunner2,rune_ClassSpellGunner3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_ClassSpellArcher1,rune_ClassSpellArcher2,rune_ClassSpellArcher3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_ClassSpellKnight1,rune_ClassSpellKnight2,rune_ClassSpellKnight3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_ClassSpellTrapper1,rune_ClassSpellTrapper2,rune_ClassSpellTrapper3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_ClassAlchemist1,rune_ClassAlchemist2,rune_ClassAlchemist3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_ClassEnchanter1,rune_ClassEnchanter2,rune_ClassEnchanter3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_ClassScholar1,rune_ClassScholar2,rune_ClassScholar3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_ClassTailor1,rune_ClassTailor2,rune_ClassTailor3"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_ClassRitualist1,rune_ClassRitualist2,rune_ClassRitualist3"/>
+				<!-- Rare (Silver) -->
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="rune_LockShatter,rune_DoorShatter,rune_AugmentHunger"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeFire_TurretAuraBurn,runeFire_TurretMeteor"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeIce_TurretAuraChill,runeIce_TurretHailstorm"/>
+				<!-- Legendary (Gold) -->
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="rune_Silence"/>
+				<!-- Transcendent (Orange) -->
+				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5,5" tags=""/> -->
 				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorceryRuneMastery"/><!-- used to scale resources -->
 			</effect_group>
 			<effect_group>
@@ -931,8 +953,84 @@
 				<effect_description level="4" desc_key="perkSorceryRuneMasteryRank4Desc" long_desc_key="perkSorceryRuneMasteryRank4LongDesc"/>
 				<effect_description level="5" desc_key="perkSorceryRuneMasteryRank5Desc" long_desc_key="perkSorceryRuneMasteryRank5LongDesc"/>
 			</effect_group>			
-		</perk>		
+		</perk>
 		
+		<!-- SCROLL MASTERY -->
+		<perk name="perkSorceryScrollMastery" parent="skillSorceryMastery" name_key="perkSorceryScrollMasteryName" desc_key="perkSorceryScrollMasteryDesc" icon="uic_sorcery_scroll" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1" max_level_ratio_to_parent="5">
+			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
+			<level_requirements level="2"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="4" desc_key="reqSorceryLevel04"/></level_requirements>
+			<level_requirements level="3"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="6" desc_key="reqSorceryLevel06"/></level_requirements>
+			<level_requirements level="4"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="8" desc_key="reqSorceryLevel08"/></level_requirements>
+			<level_requirements level="5"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="10" desc_key="reqSorceryLevel10"/></level_requirements>
+			<effect_group name="SCROLL MASTERY: Level">
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryScrollMastery" operation="set" value="0">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="LT" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryScrollMastery" operation="set" value="1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="Equals" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryScrollMastery" operation="set" value="2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="Equals" value="2"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryScrollMastery" operation="set" value="3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="Equals" value="3"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryScrollMastery" operation="set" value="4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="Equals" value="4"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryScrollMastery" operation="set" value="5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="GTE" value="5"/>
+				</triggered_effect>
+				<!-- +20% Per Level (Power) -->
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryScrollMastery_power" operation="set" value="@$sorceryScrollMastery"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryScrollMastery_power" operation="multiply" value=".2"/>
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryScrollMastery_power" operation="add" value="1"/>
+			</effect_group>
+			<effect_group name="LEVEL 0">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="LT" value="1"/>
+			</effect_group>
+			<effect_group name="LEVEL 1">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="Equals" value="1"/>
+			</effect_group>
+			<effect_group name="LEVEL 2">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="Equals" value="2"/>
+			</effect_group>
+			<effect_group name="LEVEL 3">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="Equals" value="3"/>
+			</effect_group>
+			<effect_group name="LEVEL 4">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="Equals" value="4"/>
+			</effect_group>
+			<effect_group name="LEVEL 5">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryScrollMastery" operation="GTE" value="5"/>
+			</effect_group>
+		<!-- CLASS RUNE: SCHOLAR -->
+			<!-- buffSorceryManage -->
+		<!-- END - CLASS RUNE: SCHOLAR -->
+			<effect_group name="CRAFTING: TIER">
+				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorceryScrollMastery"/><!-- used to scale resources -->
+			</effect_group>
+			<effect_group name="CRAFTING: RECIPES (SCROLLS)">
+			<!-- Common (Grey) -->
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="scroll_ArcaneVision,scrollFire_Weapon,scrollFire_Ammo,scrollIce_Weapon,scrollIce_Ammo,scroll_AugmentXP,scroll_AugmentHunger,scroll_AugmentMining,scroll_AugmentDigging,scroll_AugmentLogging"/>
+			<!-- Transmutations -->
+				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags=""/> -->
+			<!-- Rare (Silver) -->
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="scroll_Recall,scroll_EssenceHarvest"/>
+			<!-- Legendary (Gold) -->
+				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="scrollQuest_ConjureFireItems,scrollQuest_ConjureIceItems,scrollQuest_ConjureLightningItems"/> -->
+			<!-- Transcendent (Orange) -->
+				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5,5" tags=""/> -->
+			</effect_group>
+			<effect_group>
+				<effect_description level="1" desc_key="perkSorceryScrollMasteryRank1Desc" long_desc_key="perkSorceryScrollMasteryRank1LongDesc"/>
+				<effect_description level="2" desc_key="perkSorceryScrollMasteryRank2Desc" long_desc_key="perkSorceryScrollMasteryRank2LongDesc"/>
+				<effect_description level="3" desc_key="perkSorceryScrollMasteryRank3Desc" long_desc_key="perkSorceryScrollMasteryRank3LongDesc"/>
+				<effect_description level="4" desc_key="perkSorceryScrollMasteryRank4Desc" long_desc_key="perkSorceryScrollMasteryRank4LongDesc"/>
+				<effect_description level="5" desc_key="perkSorceryScrollMasteryRank5Desc" long_desc_key="perkSorceryScrollMasteryRank5LongDesc"/>
+			</effect_group>			
+		</perk>
+
 		<!-- ARMOR MASTERY -->
 		<perk name="perkSorceryArmor" parent="skillSorceryArmor" name_key="perkSorceryArmorName" desc_key="perkSorceryArmorDesc" icon="uic_symbol_armor_sorcery" min_level="0" max_level="5" base_skill_point_cost="1" cost_multiplier_per_level="1.317" max_level_ratio_to_parent="5">
 			<level_requirements level="1"><requirement name="ProgressionLevel" progression_name="attSorcery" operation="GTE" value="2" desc_key="reqSorceryLevel02"/></level_requirements>
@@ -1164,77 +1262,77 @@
 					<requirement name="ProgressionLevel" progression_name="perkSorceryFireAspect" operation="Equals" value="1"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 				<!-- debuffPerk_AspectOfFire_Attacks -->
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
 			</effect_group>
 			<effect_group name="Level 2: Fire Attack">
 					<requirement name="ProgressionLevel" progression_name="perkSorceryFireAspect" operation="Equals" value="2"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
 			</effect_group>
 			<effect_group name="Level 3: Fire Attack">
 					<requirement name="ProgressionLevel" progression_name="perkSorceryFireAspect" operation="Equals" value="3"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
 			</effect_group>
 			<effect_group name="Level 4: Fire Attack">
 					<requirement name="ProgressionLevel" progression_name="perkSorceryFireAspect" operation="Equals" value="4"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="35"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
 			</effect_group>
 			<effect_group name="Level 5: Fire Attack">
 					<requirement name="ProgressionLevel" progression_name="perkSorceryFireAspect" operation="Equals" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellTriggerImpact_FireAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_FireSorcery,spellFX_FireImpactAOE,spellFire_Burn"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
 			</effect_group>
 		</perk>
 
@@ -1676,77 +1774,77 @@
 					<requirement name="ProgressionLevel" progression_name="perkSorceryIceAspect" operation="Equals" value="1"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
 				<!-- debuffPerk_AspectOfIce_Attacks -->
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
 			</effect_group>
 			<effect_group name="Level 2: Ice Attack">
 					<requirement name="ProgressionLevel" progression_name="perkSorceryIceAspect" operation="Equals" value="2"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="25"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
 			</effect_group>
 			<effect_group name="Level 3: Ice Attack">
 					<requirement name="ProgressionLevel" progression_name="perkSorceryIceAspect" operation="Equals" value="3"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
 			</effect_group>
 			<effect_group name="Level 4: Ice Attack">
 					<requirement name="ProgressionLevel" progression_name="perkSorceryIceAspect" operation="Equals" value="4"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="35"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
 			</effect_group>
 			<effect_group name="Level 5: Ice Attack">
 					<requirement name="ProgressionLevel" progression_name="perkSorceryIceAspect" operation="Equals" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="40"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
-				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellTriggerImpact_IceAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="bow,crossbow,launcher"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="gun,turretRanged"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="ItemHasTags" tags="thrownWeapon"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="weapon,melee" has_all_tags="true"/></triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" target_tags="enemy,animal,hostile" buff="imprint_IceSorcery,spellFX_IceImpactAOE,spellIce_Chill"><requirement name="HoldingItemHasTags" tags="tool,melee" has_all_tags="true"/></triggered_effect>
 			</effect_group>
 		</perk>
 

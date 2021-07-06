@@ -58,6 +58,7 @@
 		<!-- Weapon: FIRE -->
 		<lootgroup name="sorceryWeaponFire" loot_quality_template="QLTemplateT2"> 
 			<item name="spellcastFire"/>
+			<item name="sorceryTrap_Fire" count="2,5"/>
 		</lootgroup>
 		<!-- Weapon: FIRE -->
 		<lootgroup name="sorceryWeaponIce" loot_quality_template="QLTemplateT2"> 
@@ -162,6 +163,7 @@
 		</lootgroup>
 		<!-- Runes: GOLD -->
 		<lootgroup name="sorceryRunes_gold"> 
+			<item name="rune_Silence"/>
 			<item name="rune_SupporterAstryael"/>
 			<item name="rune_SupporterDragoness"/>
 		</lootgroup>
@@ -170,9 +172,34 @@
 			<item name="rune_ClassSpellcaster1"/>
 			<item name="rune_ClassSpellcaster2"/>
 			<item name="rune_ClassSpellcaster3"/>
+			<item name="rune_ClassSpellGunner1"/>
+			<item name="rune_ClassSpellGunner2"/>
+			<item name="rune_ClassSpellGunner3"/>
+			<item name="rune_ClassSpellArcher1"/>
+			<item name="rune_ClassSpellArcher2"/>
+			<item name="rune_ClassSpellArcher3"/>
+			<item name="rune_ClassSpellKnight1"/>
+			<item name="rune_ClassSpellKnight2"/>
+			<item name="rune_ClassSpellKnight3"/>
+			<item name="rune_ClassSpellTrapper1"/>
+			<item name="rune_ClassSpellTrapper2"/>
+			<item name="rune_ClassSpellTrapper3"/>
+			<!-- common -->
 			<item name="rune_ClassAlchemist1"/>
 			<item name="rune_ClassAlchemist2"/>
 			<item name="rune_ClassAlchemist3"/>
+			<item name="rune_ClassEnchanter1"/>
+			<item name="rune_ClassEnchanter2"/>
+			<item name="rune_ClassEnchanter3"/>
+			<item name="rune_ClassScholar1"/>
+			<item name="rune_ClassScholar2"/>
+			<item name="rune_ClassScholar3"/>
+			<item name="rune_ClassTailor1"/>
+			<item name="rune_ClassTailor2"/>
+			<item name="rune_ClassTailor3"/>
+			<item name="rune_ClassRitualist1"/>
+			<item name="rune_ClassRitualist2"/>
+			<item name="rune_ClassRitualist3"/>
 		</lootgroup>	
 		<!-- Runes: ARCANE  -->
 		<lootgroup name="sorceryRunes"> 
@@ -190,9 +217,9 @@
 			<item name="runeIce_LuckyEssence"/>
 			<item name="runeFire_LuckyEssence"/>
 			<!-- groups -->
-			<item group="sorceryRunes_silver" count="1" prob="0.6"/> <!-- 3 -->
-			<item group="sorceryRunes_gold" count="1" prob="0.5"/> <!-- 2 -->
-			<item group="sorceryRunes_class" count="1" prob="0.4"/> <!-- 2 -->
+			<item group="sorceryRunes_silver" count="1" prob="0.9"/> <!-- 3 -->
+			<item group="sorceryRunes_gold" count="1" prob="0.8"/> <!-- 2 -->
+			<item group="sorceryRunes_class" count="1" prob="0.8"/> <!-- 2 -->
 		</lootgroup>
 	<!-- END - RUNES -->	
 		
@@ -312,8 +339,8 @@
 			<item group="sorceryPotions" count="1,2"/>
 			<item group="sorceryBooksScrolls" count="1"/>
 			<item group="sorceryArmor" count="1" prob=".3"/>
-			<item group="sorceryRunes" count="1" prob=".2"/>
-			<item group="sorceryRunes_class" count="1" prob="0.05"/>
+			<item group="sorceryRunes" count="1" prob=".3"/>
+			<item group="sorceryRunes_class" count="1" prob="0.2"/>
 		</lootgroup>	
 		<!-- Fallen: FIRE -->
 		<lootgroup name="sorceryFallen_Fire"> 

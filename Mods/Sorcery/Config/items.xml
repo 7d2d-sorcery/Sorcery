@@ -457,7 +457,7 @@
 				<property name="DamageBonus.wood" value="1"/>
 				<property name="DamageBonus.glass" value="1"/>
 				<property name="DamageBonus.cloth" value="1"/>		
-				<property name="Buff" value="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,spellTriggerImpact_Fire,spellFire,spellFire_Burn"/> <!-- SPELLS -->
+				<property name="Buff" value="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,spellFX_FireImpact,spellFire,spellFire_Burn"/> <!-- SPELLS -->
 			</property>
 			<property class="Attributes">
 				<property name="EntityDamage" value="1"/>
@@ -465,7 +465,7 @@
 		<!-- SPELL TURRET -->
 			<effect_group tiered="false" name="SPELLS: SPELL TURRET">
 					<requirement name="ItemHasTags" tags="spellTurretFire"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireSpell,spellTriggerImpact_Fire,spellFire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireSpell,spellFX_FireImpact,spellFire,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 		<!-- END - SPELL TURRET -->
 			<effect_group tiered="false" name="COST">
@@ -489,7 +489,7 @@
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
 				<passive_effect name="BlockDamage" operation="base_set" value="15"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="20"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,imprint_FireTrap1,spellFireTurret,spellTriggerImpact_Fire,spellFire,spellFire_Burn"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,spellFireTurret,spellFX_FireImpact,spellFire,spellFire_Burn"/>
 				<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 				<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireball_impact" />
@@ -525,7 +525,7 @@
 					<requirement name="!ItemHasTags" tags="spellTurretFire"/>
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire" operation="Equals" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@.spellFire_c1"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="4" buff="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,spellTriggerImpact_Fire,spellFireTurret,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="4" buff="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,spellFX_FireImpact,spellFireTurret,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: Wield">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSpiritRegenStop,spellCharge_Fire,spellcastAmmo_Fire">
@@ -633,7 +633,7 @@
 				<property name="DamageBonus.wood" value="1"/>
 				<property name="DamageBonus.glass" value="1"/>
 				<property name="DamageBonus.cloth" value="1"/>		
-				<property name="Buff" value="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell2,spellTriggerImpact_Fire,spellFire2,spellFire_Burn"/> <!-- SPELLS -->
+				<property name="Buff" value="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell2,spellFX_FireImpact,spellFire2,spellFire_Burn"/> <!-- SPELLS -->
 			</property>
 		<property class="Attributes">
 			<property name="EntityDamage" value="1"/>
@@ -641,7 +641,7 @@
 		<!-- SPELL TURRET -->
 			<effect_group tiered="false" name="SPELLS: SPELL TURRET">
 					<requirement name="ItemHasTags" tags="spellTurretFire"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireSpell2,spellTriggerImpact_Fire,spellFire2,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireSpell2,spellFX_FireImpact,spellFire2,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 		<!-- END - SPELL TURRET -->
 			<effect_group tiered="false" name="COST">
@@ -667,10 +667,10 @@
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
 				<passive_effect name="BlockDamage" operation="base_set" value="15"/>
 				<passive_effect name="DegradationPerUse" operation="base_add" value="10" /> <!-- Essence Repair: 20 -->
-				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell2,spellTriggerImpact_Fire,spellFire2,spellFire_Burn,spellFire2_Clone"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell2,spellFX_FireImpact,spellFire2,spellFire_Burn,spellFire2_Clone"/>
 				<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 				<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
-				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffSorceryMark,imprint_FireSorcery,spellTriggerImpact_Fire,spellFire2"/> -->
+				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffSorceryMark,imprint_FireSorcery,spellFX_FireImpact,spellFire2"/> -->
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireball_impact" />
 			</effect_group>
 			<effect_group tiered="false" name="CALC">
@@ -701,7 +701,7 @@
 					<requirement name="!ItemHasTags" tags="spellTurretFire"/>
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire2" operation="GTE" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@.spellFire2_c1"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="otherAOE" range="2" buff="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell2,spellTriggerImpact_Fire,spellFire2_Clone,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="otherAOE" range="2" buff="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell2,spellFX_FireImpact,spellFire2_Clone,spellFire_Burn" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: Wield">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSpiritRegenStop,spellCharge_Fire2,spellcastAmmo_Fire2">
@@ -813,7 +813,7 @@
 				<property name="DamageBonus.wood" value="1"/>
 				<property name="DamageBonus.glass" value="1"/>
 				<property name="DamageBonus.cloth" value="1"/>
-				<property name="Buff" value="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell3,spellTriggerImpact2_Fire,spellTrigger_Fire3"/> <!-- SPELLS -->
+				<property name="Buff" value="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell3,spellFX_FireImpact2,spellFX_FireMeteorImpact"/> <!-- SPELLS -->
 			</property>
 		<property class="Attributes">
 			<property name="EntityDamage" value="1"/>
@@ -821,7 +821,7 @@
 		<!-- SPELL TURRET -->
 			<effect_group tiered="false" name="SPELLS: SPELL TURRET">
 					<requirement name="ItemHasTags" tags="spellTurretFire"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireSpell3,spellTriggerImpact2_Fire,spellTrigger_Fire3" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireSpell3,spellFX_FireImpact2,spellFX_FireMeteorImpact" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 		<!-- END - SPELL TURRET -->
 			<effect_group tiered="false" name="COST">
@@ -847,10 +847,10 @@
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
 				<passive_effect name="BlockDamage" operation="base_set" value="15"/>
 				<passive_effect name="DegradationPerUse" operation="base_add" value="20" /> <!-- Essence Repair: 20 -->
-				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell3,spellTriggerImpact2_Fire,spellTrigger_Fire3,spellTriggerImpact_Fire3,spellFire3,spellFire3_Shower"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell3,spellFX_FireImpact2,spellFX_FireMeteorImpact,spellTriggerImpact_Fire3,spellFire3,spellFire3_Shower"/>
 				<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 				<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
-				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffSorceryMark,imprint_FireSorcery,spellTriggerImpact2_Fire,spellTrigger_Fire3"/> -->
+				<!-- <triggered_effect trigger="onProjectileImpact" action="AddBuff" target="other" buff="buffSorceryMark,imprint_FireSorcery,spellFX_FireImpact2,spellFX_FireMeteorImpact"/> -->
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireball_impact" />
 			</effect_group>
 			<effect_group tiered="false" name="CALC">
@@ -881,7 +881,7 @@
 					<requirement name="!ItemHasTags" tags="spellTurretFire"/>
 					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellFire3" operation="GTE" value="5"/>
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="@.spellFire3_c1"/>
-				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="5" buff="buffSorceryMark,imprint_FireSorcery,spellTrigger_Fire3_Shower" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onProjectileImpact" action="AddBuff" target="selfAOE" range="5" buff="buffSorceryMark,imprint_FireSorcery,spellFX_FireMeteorShowerImpact" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: Wield">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" target="self" buff="buffSpiritRegenStop,spellCharge_Fire3,spellcastAmmo_Fire3">
@@ -997,7 +997,7 @@
 				<property name="DamageBonus.wood" value="1"/>
 				<property name="DamageBonus.glass" value="1"/>
 				<property name="DamageBonus.cloth" value="1"/>		
-				<property name="Buff" value="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,spellTriggerImpact_Ice,spellIce,spellIce_Chill"/> <!-- SPELLS -->
+				<property name="Buff" value="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,spellFX_IceImpact,spellIce,spellIce_Chill"/> <!-- SPELLS -->
 			</property>
 			<property class="Attributes">
 				<property name="EntityDamage" value="1"/>
@@ -1005,7 +1005,7 @@
 		<!-- SPELL TURRET -->
 			<effect_group tiered="false" name="SPELLS: SPELL TURRET">
 					<requirement name="ItemHasTags" tags="spellTurretIce"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceSpell,spellTriggerImpact_Ice,spellIce,spellIce_Chill" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceSpell,spellFX_IceImpact,spellIce,spellIce_Chill" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 		<!-- END - SPELL TURRET -->
 			<effect_group tiered="false" name="COST">
@@ -1029,7 +1029,7 @@
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
 				<passive_effect name="BlockDamage" operation="base_set" value="15"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="20"/>				
-				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,spellTriggerImpact_Ice,spellTriggerImpact_IceAOE,spellIce,spellIce_AOE,spellIce_Chill"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,spellFX_IceImpact,spellFX_IceImpactAOE,spellIce,spellIce_AOE,spellIce_Chill"/>
 			<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 			<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryIce_impact" />
@@ -1153,7 +1153,7 @@
 				<property name="DamageBonus.wood" value="1"/>
 				<property name="DamageBonus.glass" value="1"/>
 				<property name="DamageBonus.cloth" value="1"/>		
-				<property name="Buff" value="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell2,spellTriggerImpact_IceShards,spellTriggerImpact_IceComet,spellIce_Chill"/> <!-- SPELLS -->
+				<property name="Buff" value="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell2,spellFX_IceImpact2,spellFX_IceCometImpact,spellIce_Chill"/> <!-- SPELLS -->
 			</property>
 			<property class="Attributes">
 				<property name="EntityDamage" value="1"/>
@@ -1161,7 +1161,7 @@
 		<!-- SPELL TURRET -->
 			<effect_group tiered="false" name="SPELLS: SPELL TURRET">
 					<requirement name="ItemHasTags" tags="spellTurretIce"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceSpell2,spellTriggerImpact_IceShards,spellTriggerImpact_IceComet,spellIce_Chill" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceSpell2,spellFX_IceImpact2,spellFX_IceCometImpact,spellIce_Chill" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 		<!-- END - SPELL TURRET -->
 			<effect_group tiered="false" name="COST">
@@ -1186,7 +1186,7 @@
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
 				<passive_effect name="BlockDamage" operation="base_set" value="15"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="20"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell2,spellTriggerImpact_IceShards,spellTriggerImpact_IceComet,spellIce_Chill"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell2,spellFX_IceImpact2,spellFX_IceCometImpact,spellIce_Chill"/>
 				<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 				<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryIce_impact" />
@@ -1310,7 +1310,7 @@
 				<property name="DamageBonus.wood" value="1"/>
 				<property name="DamageBonus.glass" value="1"/>
 				<property name="DamageBonus.cloth" value="1"/>		
-				<property name="Buff" value="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell3,spellTriggerImpact_IceShards,spellIce3,spellIce_Chill"/> <!-- SPELLS -->
+				<property name="Buff" value="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell3,spellFX_IceImpact2,spellIce3,spellIce_Chill"/> <!-- SPELLS -->
 			</property>
 			<property class="Attributes">
 				<property name="EntityDamage" value="1"/>
@@ -1318,7 +1318,7 @@
 		<!-- SPELL TURRET -->
 			<effect_group tiered="false" name="SPELLS: SPELL TURRET">
 					<requirement name="ItemHasTags" tags="spellTurretIce"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceSpell3,spellTriggerImpact_IceShards,spellIce3,spellIce_Chill" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceSpell3,spellFX_IceImpact2,spellIce3,spellIce_Chill" target_tags="enemy,animal,hostile"/>
 			</effect_group>
 		<!-- END - SPELL TURRET -->
 			<effect_group tiered="false" name="COST">
@@ -1343,7 +1343,7 @@
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
 				<passive_effect name="BlockDamage" operation="base_set" value="15"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="20"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell3,spellTriggerImpact_IceShards,spellImpact_IceStorm,spellIce_Chill"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell3,spellFX_IceImpact2,spellImpact_IceStorm,spellIce_Chill"/>
 				<!-- NOTE: target_tags="enemy" does not work properly on modded/imported entities; resort to workaround -->
 				<!-- target_tags="animal,hostile,zombie,npc,survivor,bandit,bandits,mutant,demon" -->
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryIce_impact" />
@@ -1461,14 +1461,14 @@
 			<property name="UnlockedBy" value="perkSorcerySpellFire"/>
 			<property class="Action1">
 				<property name="Gravity" value="-3"/>
-				<property name="Buff" value="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,imprint_FireSpell2,imprint_FireSpell3,spellTriggerImpact_Fire,spellArrowFire"/>
+				<property name="Buff" value="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,imprint_FireSpell2,imprint_FireSpell3,spellFX_FireImpact,spellArrowFire"/>
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="20"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="3"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="45"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,imprint_FireSpell2,imprint_FireSpell3,spellTriggerImpact_Fire,spellArrowFire"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,imprint_FireSpell2,imprint_FireSpell3,spellFX_FireImpact,spellArrowFire"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
 				<display_value name="dsorcAmmoScale" value="1"/>
 				<display_value name="dsorcAmmoDOT" value="1" />
@@ -1544,14 +1544,14 @@
 			<property name="UnlockedBy" value="perkSorcerySpellFire"/>
 			<property class="Action1">
 				<property name="Gravity" value="-3"/>
-				<property name="Buff" value="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,imprint_FireSpell2,imprint_FireSpell3,spellTriggerImpact_Fire,spellArrowFire"/>
+				<property name="Buff" value="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,imprint_FireSpell2,imprint_FireSpell3,spellFX_FireImpact,spellArrowFire"/>
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="20"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="3"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="70"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,imprint_FireSpell2,imprint_FireSpell3,spellTriggerImpact_Fire,spellArrowFire"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,imprint_FireSorcery,imprint_FireSpell,imprint_FireSpell2,imprint_FireSpell3,spellFX_FireImpact,spellArrowFire"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryFireArrow_impact" />
 				<display_value name="dsorcAmmoScale" value="1"/>
 				<display_value name="dsorcAmmoDOT" value="1" />
@@ -1627,14 +1627,14 @@
 			<property name="UnlockedBy" value="perkSorcerySpellIce"/>
 			<property class="Action1">
 				<property name="Gravity" value="-3"/>
-				<property name="Buff" value="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,imprint_IceSpell2,imprint_IceSpell3,spellTriggerImpact_Ice,spellArrowIce"/>
+				<property name="Buff" value="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,imprint_IceSpell2,imprint_IceSpell3,spellFX_IceImpact,spellArrowIce"/>
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="20"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="3"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="45"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,imprint_IceSpell2,imprint_IceSpell3,spellTriggerImpact_Ice,spellArrowIce"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,imprint_IceSpell2,imprint_IceSpell3,spellFX_IceImpact,spellArrowIce"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryIceArrow_impact" />
 				<display_value name="dsorcAmmoScale" value="1"/>
 				<display_value name="dsorcAmmoDOT" value="1" />
@@ -1709,14 +1709,14 @@
 			<property name="UnlockedBy" value="perkSorcerySpellIce"/>
 			<property class="Action1">
 				<property name="Gravity" value="-3"/>
-				<property name="Buff" value="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,imprint_IceSpell2,imprint_IceSpell3,spellTriggerImpact_Ice,spellArrowIce"/>
+				<property name="Buff" value="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,imprint_IceSpell2,imprint_IceSpell3,spellFX_IceImpact,spellArrowIce"/>
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="20"/>
 				<passive_effect name="BlockDamage" operation="base_set" value="3"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="70"/>
 				<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,imprint_IceSpell2,imprint_IceSpell3,spellTriggerImpact_Ice,spellArrowIce"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="5" tags="buffSorceryMark,imprint_IceSorcery,imprint_IceSpell,imprint_IceSpell2,imprint_IceSpell3,spellFX_IceImpact,spellArrowIce"/>
 				<triggered_effect trigger="onProjectileImpact" action="PlaySound" target="positionAOE" range="30" sound="sorceryIceArrow_impact" />
 				<display_value name="dsorcAmmoScale" value="1"/>
 				<display_value name="dsorcAmmoDOT" value="1" />
@@ -6801,7 +6801,7 @@
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="0.5"/>
-			<property name="UnlockedBy" value="sorceryArcaneWheel"/>
+			<property name="UnlockedBy" value="sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
 		<!-- THREAD: FIRE -->
 		<item name="resourceThreadFire">
@@ -6818,7 +6818,7 @@
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="0.5"/>
-			<property name="UnlockedBy" value="sorceryArcaneWheel"/>
+			<property name="UnlockedBy" value="sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
 		<!-- THREAD: ICE -->
 		<item name="resourceThreadIce">
@@ -6835,7 +6835,7 @@
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="0.5"/>
-			<property name="UnlockedBy" value="sorceryArcaneWheel"/>
+			<property name="UnlockedBy" value="sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
 		<!-- THREAD: LIGHTNING -->
 		<item name="resourceThreadLightning">
@@ -6852,7 +6852,7 @@
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="0.5"/>
-			<property name="UnlockedBy" value="sorceryArcaneWheel"/>
+			<property name="UnlockedBy" value="sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
 		<!-- THREAD: UNHOLY -->
 		<item name="resourceThreadUnholy">
@@ -6892,7 +6892,7 @@
 		<!-- RITUAL STONES -->
 		<!-- Stones: Fire -->
 		<item name="resourceRitualStoneFire">
-			<property name="Tags" value="ritual,Ritualist"/>
+			<property name="Tags" value="ritual,Ritualist,ritualStone"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -6903,14 +6903,16 @@
 			<property name="Weight" value="80"/>
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="5"/>
+			<property name="UnlockedBy" value="rune_ClassRitualist3"/>
 		</item>
 		<item name="resourceRitualShardFire">
 			<property name="Extends" value="resourceRitualStoneFire"/>
+			<property name="Tags" value="ritual,Ritualist,ritualShard"/>
 			<property name="Weight" value="20"/>
 		</item>
 		<!-- Stones: Ice -->
 		<item name="resourceRitualStoneIce">
-			<property name="Tags" value="ritual,Ritualist"/>
+			<property name="Tags" value="ritual,Ritualist,ritualStone"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -6921,14 +6923,16 @@
 			<property name="Weight" value="80"/>
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="5"/>
+			<property name="UnlockedBy" value="rune_ClassRitualist3"/>
 		</item>
 		<item name="resourceRitualShardIce">
 			<property name="Extends" value="resourceRitualStoneIce"/>
+			<property name="Tags" value="ritual,Ritualist,ritualShard"/>
 			<property name="Weight" value="20"/>
 		</item>	
 		<!-- Stones: Lightning -->
 		<item name="resourceRitualStoneLightning">
-			<property name="Tags" value="ritual,Ritualist"/>
+			<property name="Tags" value="ritual,Ritualist,ritualStone"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -6939,14 +6943,16 @@
 			<property name="Weight" value="80"/>
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="5"/>
+			<property name="UnlockedBy" value="rune_ClassRitualist3"/>
 		</item>
 		<item name="resourceRitualShardLightning">
 			<property name="Extends" value="resourceRitualStoneLightning"/>
+			<property name="Tags" value="ritual,Ritualist,ritualShard"/>
 			<property name="Weight" value="20"/>
 		</item>	
 		<!-- Stones: Unholy -->
 		<item name="resourceRitualStoneUnholy">
-			<property name="Tags" value="ritual,Ritualist"/>
+			<property name="Tags" value="ritual,Ritualist,ritualStone"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -6960,11 +6966,12 @@
 		</item>
 		<item name="resourceRitualShardUnholy">
 			<property name="Extends" value="resourceRitualStoneUnholy"/>
+			<property name="Tags" value="ritual,Ritualist,ritualShard"/>
 			<property name="Weight" value="20"/>
 		</item>
 		<!-- Stones: Holy -->
 		<item name="resourceRitualStoneHoly">
-			<property name="Tags" value="ritual,Ritualist"/>
+			<property name="Tags" value="ritual,Ritualist,ritualStone"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -6978,13 +6985,14 @@
 		</item>
 		<item name="resourceRitualShardHoly">
 			<property name="Extends" value="resourceRitualStoneHoly"/>
+			<property name="Tags" value="ritual,Ritualist,ritualShard"/>
 			<property name="Weight" value="20"/>
 		</item>		
 		
 		<!-- RITUAL BLOOD -->
 		<!-- Blood: Lightning -->
 		<item name="resourceRitualBloodFallenLightning">
-			<property name="Tags" value="blood,ritual,Ritualist"/>
+			<property name="Tags" value="blood,ritual,Ritualist,ritualBlood"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -7002,7 +7010,7 @@
 		</item>
 		<!-- Blood: Fire -->
 		<item name="resourceRitualBloodFallenFire">
-			<property name="Tags" value="blood,ritual,Ritualist"/>
+			<property name="Tags" value="blood,ritual,Ritualist,ritualBlood"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -7020,7 +7028,7 @@
 		</item>
 		<!-- Blood: Ice -->
 		<item name="resourceRitualBloodFallenIce">
-			<property name="Tags" value="blood,ritual,Ritualist"/>
+			<property name="Tags" value="blood,ritual,Ritualist,ritualBlood"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -7038,7 +7046,7 @@
 		</item>
 		<!-- Blood: Unholy -->
 		<item name="resourceRitualBloodFallenUnholy">
-			<property name="Tags" value="blood,ritual,Ritualist"/>
+			<property name="Tags" value="blood,ritual,Ritualist,ritualBlood"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -7056,7 +7064,7 @@
 		</item>	
 		<!-- Blood: Holy -->
 		<item name="resourceRitualBloodFallenHoly">
-			<property name="Tags" value="blood,ritual,Ritualist"/>
+			<property name="Tags" value="blood,ritual,Ritualist,ritualBlood"/>
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
@@ -7261,9 +7269,10 @@
 		<!-- Fallen: FIRE -->
 		<item name="q_sorceryFallen_Fire">
 			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
+			<property name="Tags" value="ritual,Ritualist,ritualSummoning"/>
 			<property name="TintColor" value="151,0,0"/>
 			<property name="Material" value="MsorceryExtractFire"/> <property name="Weight" value="100"/>
-			<property name="UnlockedBy" value="sorceryDesk"/>
+			<property name="UnlockedBy" value="sorceryDesk,rune_ClassRitualist3"/>
 			<property class="Action0">
 					<!-- <requirement name="ProgressionLevel" progression_name="perkSorcerySupport" operation="GTE" value="2"/> -->
 				<property name="Class" value="Quest"/>
@@ -7274,9 +7283,10 @@
 		<!-- Fallen: ICE -->
 		<item name="q_sorceryFallen_Ice">
 			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
+			<property name="Tags" value="ritual,Ritualist,ritualSummoning"/>
 			<property name="TintColor" value="40,120,255"/>
 			<property name="Material" value="MsorceryExtractIce"/> <property name="Weight" value="100"/>
-			<property name="UnlockedBy" value="sorceryDesk"/>
+			<property name="UnlockedBy" value="sorceryDesk,rune_ClassRitualist3"/>
 			<property class="Action0">
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_sorceryFallen_Ice"/>
@@ -7286,9 +7296,10 @@
 		<!-- Fallen: LIGHTNING -->
 		<item name="q_sorceryFallen_Lightning">
 			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
+			<property name="Tags" value="ritual,Ritualist,ritualSummoning"/>
 			<property name="TintColor" value="102,0,119"/>
 			<property name="Material" value="MsorceryExtractLightning"/> <property name="Weight" value="100"/>
-			<property name="UnlockedBy" value="sorceryDesk"/>
+			<property name="UnlockedBy" value="sorceryDesk,rune_ClassRitualist3"/>
 			<property class="Action0">
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_sorceryFallen_Lightning"/>
@@ -7298,9 +7309,10 @@
 		<!-- Fallen: TRIO -->
 		<item name="q_sorceryFallen_Trio">
 			<property name="Extends" value="questMasterSorcery" param1="CustomIcon"/>
+			<property name="Tags" value="ritual,Ritualist,ritualSummoning"/>
 			<property name="TintColor" value="40,120,255"/>
 			<property name="Material" value="MsorceryExtractOmni"/> <property name="Weight" value="100"/>
-			<property name="UnlockedBy" value="sorceryDesk"/>
+			<property name="UnlockedBy" value="sorceryDesk,rune_ClassRitualist3"/>
 			<property class="Action0">
 				<property name="Class" value="Quest"/>
 				<property name="QuestGiven" value="quest_sorceryFallen_Trio"/>
@@ -7318,6 +7330,7 @@
 			<property name="Material" value="MsorceryExtractOmni"/><property name="Weight" value="0"/>
 			<property name="Candrop" value="false"/>
 			<property name="Stacknumber" value="1"/>
+			<property name="UnlockedBy" value="rune_ClassRitualist3"/>
 			<property class="Action0"> 
 				<property name="QuestGiven" value="quest_skillGrimoire"/>
 			</property>
@@ -7716,13 +7729,13 @@
 				<property name="Sphere" value="1"/>
 				<property name="DamageEntity" value="10"/>
 				<property name="DamageBlock" value="200"/>
-				<property name="Buff" value="imprint_IceSorcery,imprint_FireSorcery,spellTriggerImpact_FireAOE,spellTriggerImpact_IceAOE,spellFire_Burn,spellIce_Chill"/>
+				<property name="Buff" value="imprint_IceSorcery,imprint_FireSorcery,spellFX_FireImpactAOE,spellFX_IceImpactAOE,spellFire_Burn,spellIce_Chill"/>
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="4" tags="earth,wood"/>
 				<triggered_effect trigger="onSelfAttackedOther" action="Ragdoll" target="other" duration="0" force="30"/>
-				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="imprint_IceSorcery,imprint_FireSorcery,spellTriggerImpact_FireAOE,spellTriggerImpact_IceAOE,spellFire_Burn,spellIce_Chill"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="imprint_IceSorcery,imprint_FireSorcery,spellFX_FireImpactAOE,spellFX_IceImpactAOE,spellFire_Burn,spellIce_Chill"/>
 			</effect_group>
 		</item>
 		<item name="sorceryFamiliarArcane">
@@ -7801,8 +7814,10 @@
 
 <!-- APPEND VANILLA ITEMS ______________________________________ -->
 	<!-- ITEM TAGS -->
-	<append xpath="/items/item[@name='resourcePaper']/property[@name='Tags']/@value">,Scholar</append>
+	<append xpath="/items/item[@name='resourcePaper']/property[@name='Tags']/@value">,resourcePaper,Scholar</append>
 	<append xpath="/items/item[@name='resourceBrokenGlass']"><property name="Tags" value="brokenglass,Alchemist"/></append>
+	<append xpath="/items/item[@name='resourceCloth']"><property name="Tags" value="resourceCloth,Tailor"/></append>
+	<append xpath="/items/item[@name='resourceCropCottonPlant']"><property name="Tags" value="resourceCropCottonPlant,Tailor"/></append>
 
 	<!-- UPGRADE -->
 	<append xpath="/items/item[@name='meleeToolRepairT0StoneAxe' or @name='meleeToolRepairT0TazasStoneAxe' or @name='meleeToolRepairT1ClawHammer' or @name='meleeToolRepairT3Nailgun']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceEssenceFire,resourceExtractFire,resourceEssenceIce,resourceExtractIce</append>

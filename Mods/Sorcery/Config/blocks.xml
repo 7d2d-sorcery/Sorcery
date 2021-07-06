@@ -510,7 +510,6 @@
 			<property name="EconomicValue" value="100"/>
 			<property name="Group" value="Tools/Traps,TrapFire,SorceryTrap"/>
 			<property name="UnlockedBy" value="perkSorceryTrap2Fire"/>
-			<property name="Weight" value="40"/>
 		</block>
 		<block name="sorceryTrap_Fire_dmg1">
 			<property name="Extends" value="sorceryTrap_Fire"/>
@@ -586,7 +585,6 @@
 			<property name="EconomicValue" value="100"/>
 			<property name="Group" value="Tools/Traps,TrapIce,SorceryTrap"/>
 			<property name="UnlockedBy" value="perkSorceryTrap2Ice"/>
-			<property name="Weight" value="40"/>
 		</block>
 		<block name="sorceryTrap_Ice_dmg1">
 			<property name="Extends" value="sorceryTrap_Ice"/>
@@ -736,6 +734,9 @@
 
 	
 	<!--___________________ SORCERY APPEND VANILLA ___________________-->
+	<!-- SET TAGS: Ore Boulders (ore,surfaceOre) -->
+		<setattribute xpath="/blocks/block[@name='oreIronBoulder' or @name='oreLeadBoulder' or @name='orePotassiumNitrateBoulder' and not(@tag)]" name="tag">ore,surfaceOre</setattribute>
+	
 	<!-- ALL ESSENCE -->
 		<!-- Boulder -->
 		<append xpath="/blocks/block[@name='rockResourceBroke1' or @name='rockResourceBroke2' or @name='rockResource02Broke1' or @name='rockResource02Broke2']">
@@ -782,8 +783,10 @@
 	<append xpath="/blocks/block[@name='commercialDoor1_v1' or @name='commercialDoor1_v3' or @name='houseFrontDoor1_v1']/property[@name='Tags']/@value">,lockedDoor</append>
 	<append xpath="/blocks/block[@name='garageDoorMetal_v1' or @name='garageDoorMetal_v3' or @name='garageDoorHousePlayer' or @name='garageDoorHouseBrown' or @name='garageDoorIndustrial']/property[@name='Tags']/@value">,lockedDoor</append>
 	
-		<!-- ITEM HARVESTS -->
-	<setattribute  xpath="/blocks/block//drop[@event='Destroy' and @name='resourceBrokenGlass' and not(@tag)]" name="tag">brokenglass,Alchemist</setattribute>
 	
+<!-- ITEM HARVESTS -->
+	<setattribute xpath="/blocks/block//drop[@event='Destroy' and @name='resourcePaper' and not(@tag)]" name="tag">resourcePaper,Scholar</setattribute>
+	<setattribute xpath="/blocks/block//drop[@event='Destroy' and @name='resourceBrokenGlass' and not(@tag)]" name="tag">brokenglass,Alchemist</setattribute>	
+	<setattribute xpath="/blocks/block[@name='plantedCotton3Harvest' or @name='plantedCotton3HarvestPlayer' and not(@tag)]" name="tag">wildCottonHarvest,Tailor</setattribute>
 	
 </Sorcery>
