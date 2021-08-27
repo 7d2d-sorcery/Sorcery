@@ -49,7 +49,25 @@
 		
 	<!-- item_display -->
 	<append xpath="/ui_display_info/item_display">
-
+		<!-- STAVES -->
+		<item_display_info display_type="sorceryStaffFire" display_group="groupMelee">
+			<display_entry name="EntityDamage" title_key="statEntityDamageMelee" tags="perkSorceryStaffFire"/>
+			<display_entry name="EntityDamage" title_key="statPowerAttack" tags="secondary,perkSorceryStaffFire"/>
+			<display_entry name="dsorcDamageFire" title_key="Fire Sorcery Damage Scaling" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="BlockDamage" title_key="statBlockDamage" tags="perkSorceryStaffFire"/>
+			<display_entry name="StaminaLoss" title_key="statStaminaLoss" negative_preferred="true"/>
+			<display_entry name="dsorcSpiritCost" title_key="Spirit Cost | -20 (Secondary), -50 (Nova)" negative_preferred="true"/>
+			<display_entry name="DegradationMax" title_key="statDegradationMax" tags="perkSorceryStaffFire"/>
+		</item_display_info>
+		<item_display_info display_type="sorceryStaffIce" display_group="groupMelee">
+			<display_entry name="EntityDamage" title_key="statEntityDamageMelee" tags="perkSorceryStaffIce"/>
+			<display_entry name="EntityDamage" title_key="statPowerAttack" tags="secondary,perkSorceryStaffIce"/>
+			<display_entry name="dsorcDamageIce" title_key="Ice Sorcery Damage Scaling" display_type="Percent" display_leading_plus="true"/>
+			<display_entry name="BlockDamage" title_key="statBlockDamage" tags="perkSorceryStaffIce"/>
+			<display_entry name="StaminaLoss" title_key="statStaminaLoss" negative_preferred="true"/>
+			<display_entry name="dsorcSpiritCost" title_key="Spirit Cost | -20 (Secondary), -50 (Nova)" negative_preferred="true"/>
+			<display_entry name="DegradationMax" title_key="statDegradationMax" tags="perkSorceryStaffIce"/>
+		</item_display_info>
 		<!-- FIRE -->
 		<item_display_info display_type="sorcerySpellcastFire" display_group="groupWeapons" >
 			<display_entry name="@$spiritAmount" title_key="[ff2000]Fire Spellcast[-]" display_leading_plus="true"/>
@@ -180,9 +198,14 @@
 			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
 		</item_display_info>
 		<item_display_info display_type="potion_Remedy" display_group="groupConsumables" >
-			<display_entry name="dsorcPotionRemedy" title_key="Remedy Critical Ailments" display_type="Bool"/>
+			<display_entry name="dsorcPotionRemedy" title_key="Remedy: All Critical Ailments" display_type="Bool"/>
 			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
 			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<item_display_info display_type="potion_Mending" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionMending" title_key="Mend: Sprained and Broken Bones" display_type="Bool"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration, Minutes"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown, Minutes"/>
 		</item_display_info>
 		<item_display_info display_type="potion_Travel" display_group="groupConsumables" >
 			<display_entry name="dsorcPotionTravel" title_key="Walk Speed" display_type="Percent"/>
@@ -367,8 +390,8 @@
 			<display_entry name="RoundsPerMinute" title_key="statRoundsPerMinute" tags="perkSorceryTrap1Fire"/>
 			<display_entry name="DegradationMax" title_key="statDegradationHPMax" tags="perkSorceryTrap1Fire"/>
 			<display_entry name="DegradationPerUse" title_key="statDegradationPerUse" tags="perkSorceryTrap1Fire"/>
-			<display_entry name="dMaxSpiritReductionPerLevel" title_key="Max Spirit Penalty Reduction per Level" display_type="Percent"/>
-			<display_entry name="dSpiritCost" title_key="Spirit Cost" negative_preferred="true"/>
+			<!-- <display_entry name="dMaxSpiritReductionPerLevel" title_key="Max Spirit Penalty Reduction per Level" display_type="Percent"/> -->
+			<display_entry name="dSpiritCost" title_key="Spirit Cost to Deploy" negative_preferred="true"/>
 		</item_display_info>
 		<item_display_info display_type="spellTurretIce" display_group="groupRanged">
 			<display_entry name="dSpellAmmoIce" title_key="Spell Ammo: Ice, Comet, Ice Storm" display_type="Bool"/>
@@ -376,8 +399,8 @@
 			<display_entry name="RoundsPerMinute" title_key="statRoundsPerMinute" tags="perkSorceryTrap1Ice"/>
 			<display_entry name="DegradationMax" title_key="statDegradationHPMax" tags="perkSorceryTrap1Ice"/>
 			<display_entry name="DegradationPerUse" title_key="statDegradationPerUse" tags="perkSorceryTrap1Ice"/>
-			<display_entry name="dMaxSpiritReductionPerLevel" title_key="Max Spirit Penalty Reduction per Level" display_type="Percent"/>
-			<display_entry name="dSpiritCost" title_key="Spirit Cost" negative_preferred="true"/>
+			<!-- <display_entry name="dMaxSpiritReductionPerLevel" title_key="Max Spirit Penalty Reduction per Level" display_type="Percent"/> -->
+			<display_entry name="dSpiritCost" title_key="Spirit Cost to Deploy" negative_preferred="true"/>
 		</item_display_info>
 	</append>
 
@@ -424,11 +447,12 @@
 			<crafting_category name="ClothingHoly" icon="uic_symbol_armor_holy_sorcery" display_name="Holy Tailoring" />
 		</crafting_category_list>
 		<crafting_category_list display_type="sorceryDesk">
-			<crafting_category name="Building" icon="ui_symbol_pentagram" display_name="Stations" />
-			<crafting_category name="SorceryTrap" icon="ui_symbol_trap_sorcery" display_name="Spell Traps" />
+			<crafting_category name="Building" icon="ui_symbol_pentagram" display_name="Sorcery Building" />
+			<crafting_category name="SorceryWeapon" icon="ui_symbol_weapon_sorcery" display_name="Magic Staves" />
 			<crafting_category name="SorceryAmmo" icon="ui_sorcery_ammo" display_name="Spell Ammo" />
+			<crafting_category name="SorceryTrap" icon="ui_symbol_trap_sorcery" display_name="Spell Traps" />
 			<crafting_category name="Books" icon="ui_sorcery_scroll" display_name="Scrolls" />
-			<crafting_category name="SorceryFamiliar" icon="ui_familiar_sorcery" display_name="Familiars" />
+			<crafting_category name="SorceryFamiliar" icon="ui_familiar_sorcery" display_name="Conjurations" />
 			<crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Quests" />
 		</crafting_category_list>
 		<crafting_category_list display_type="sorceryEnchantingStation">

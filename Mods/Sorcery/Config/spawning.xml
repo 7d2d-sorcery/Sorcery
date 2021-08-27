@@ -2,7 +2,7 @@
  <!--__________________________________________________________________________________
 		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
 		__________________________________________________________________________________
-		2020 "DEVRIX"
+		2021 "DEVRIX"
 		All Rights Reserved.
 		__________________________________________________________________________________
 		HOME: http://sorcerymod.com
@@ -51,28 +51,28 @@
 	<!-- FALLEN -->
 	<!-- Pine Forest -->
 	<append xpath="/spawning/biome[@name='pine_forest']">
-		<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="SorceryFallenLightning" />
-		<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="SorceryFallenOmni" />
+		<spawn maxcount="1" respawndelay="0.1" time="Any" entitygroup="SorceryFallenLightningT2" />
+		<spawn maxcount="1" respawndelay="0.2" time="Any" entitygroup="SorceryFallenOmni" />
 	</append>
-		
 	<!-- Burnt Forest -->
 	<append xpath="/spawning/biome[@name='burnt_forest']">
-		<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="SorceryFallenFire" />
-		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="SorceryFallenOmni" />
-	</append>
-	
+		<spawn maxcount="1" respawndelay="0.1" time="Any" entitygroup="SorceryFallenFireT2" />
+		<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="SorceryFallenOmni" />
+	</append>	
 	<!-- Snow -->
 	<append xpath="/spawning/biome[@name='snow']">
-		<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="SorceryFallenIce" />
-		<spawn maxcount="1" respawndelay="1" time="Any" entitygroup="SorceryFallenOmni" />
+		<spawn maxcount="1" respawndelay="0.1" time="Any" entitygroup="SorceryFallenIceT2" />
+		<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="SorceryFallenOmni" />
 	</append>
-	
+	<!-- Desert -->
+	<append xpath="/spawning/biome[@name='desert']">
+		<spawn maxcount="1" respawndelay="0.2" time="Any" entitygroup="SorceryFallenOmni" />
+	</append>
 	<!-- Wasteland -->
 	<append xpath="/spawning/biome[@name='wasteland']">
-		<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="SorceryFallenFire" />
-		<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="SorceryFallenIce" />
-		<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="SorceryFallenLightning" />
-		<spawn maxcount="1" respawndelay="0.3" time="Any" entitygroup="SorceryFallenOmni" />
+		<spawn maxcount="1" respawndelay="0.2" time="Any" entitygroup="SorceryFallenFire" />
+		<spawn maxcount="1" respawndelay="0.2" time="Any" entitygroup="SorceryFallenIce" />
+		<spawn maxcount="1" respawndelay="0.2" time="Any" entitygroup="SorceryFallenLightning" />
 	</append>
 	
 </Sorcery>

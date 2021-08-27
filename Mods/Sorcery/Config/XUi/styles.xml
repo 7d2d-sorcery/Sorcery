@@ -50,6 +50,50 @@
 	<!-- XUI Styles -->	
 	<append xpath="/styles">
 	
+<!-- DIFFICULTY MODES -->
+	<!-- LOGO -->
+		<!-- Easy -->
+		<style name="sorcery.window.ingame.logo.easy.texture" type="texture">
+			<style_entry name="texture" value="@modfolder:Textures/SorceryLogo0.png" />
+			<style_entry name="tooltip_key" value="sorceryUI_difficulty0" />
+		</style>
+		<style name="sorcery.window.ingame.logo.easy.label" type="label">
+			<style_entry name="text" value="Easy Mode"/>
+			<style_entry name="color" value="200,180,140"/>
+			<style_entry name="tooltip_key" value="sorceryUI_difficulty0"/>
+		</style>
+		<!-- Normal -->
+		<style name="sorcery.window.ingame.logo.normal.texture" type="texture">
+			<style_entry name="texture" value="@modfolder:Textures/SorceryLogo.png" />
+			<style_entry name="tooltip_key" value="sorceryUI_difficulty1" />
+		</style>
+		<style name="sorcery.window.ingame.logo.normal.label" type="label">
+			<style_entry name="text" value="Normal Mode"/>
+			<style_entry name="color" value="140,30,255"/>
+			<style_entry name="tooltip_key" value="sorceryUI_difficulty1"/>
+		</style>
+		<!-- Hard -->
+		<style name="sorcery.window.ingame.logo.hard.texture" type="texture">
+			<style_entry name="texture" value="@modfolder:Textures/SorceryLogo2.png" />
+			<style_entry name="tooltip_key" value="sorceryUI_difficulty2" />
+		</style>
+		<style name="sorcery.window.ingame.logo.hard.label" type="label">
+			<style_entry name="text" value="Hard Mode"/>
+			<style_entry name="color" value="255,144,0"/>
+			<style_entry name="tooltip_key" value="sorceryUI_difficulty2"/>
+		</style>
+		<!-- Apocalyptic -->
+		<style name="sorcery.window.ingame.logo.apocalyptic.texture" type="texture">
+			<style_entry name="texture" value="@modfolder:Textures/SorceryLogo3.png" />
+			<style_entry name="tooltip_key" value="sorceryUI_difficulty3" />
+		</style>
+		<style name="sorcery.window.ingame.logo.apocalyptic.label" type="label">
+			<style_entry name="text" value="Apocalyptic Mode"/>
+			<style_entry name="color" value="160,0,0"/>
+			<style_entry name="tooltip_key" value="sorceryUI_difficulty3"/>
+		</style>
+<!-- END - DIFFICULTY MODES -->
+	
 		<!-- SUPPORT: KEYS -->
 		<!-- Noble -->
 		<style name="sorcery.window.ingame.support.key.noble.texture" type="texture">

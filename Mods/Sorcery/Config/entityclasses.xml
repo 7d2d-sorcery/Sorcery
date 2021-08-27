@@ -300,7 +300,8 @@
 			<property name="PainResistPerHit" value=".6"/><!-- Fallen -->	
 			<!-- Stealth -->
 			<property name="MaxViewAngle" value="280"/>
-			<property name="SightRange" value="60"/> <!-- distance in m -->
+			<!-- <property name="SightRange" value="60"/> --> <!-- distance in m -->
+			<property name="SightRange" value="35"/> <!-- distance in m -->
 			<property name="SightLightThreshold" value="-2,150"/> <!-- how well lit you have to be for the zombie to see you at min,max range -->
 			<property name="SleeperWakeupSightDetectionMin" value="-40,5"/> <!-- Indiv.Random. sight capability - "I see you" light value at point blank -->
 			<property name="SleeperWakeupSightDetectionMax" value="340,480"/> <!-- Indiv.Random. "I see you" light value at "SightRange" -->
@@ -518,8 +519,9 @@
 				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffFallenFire"/>
 				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
-				<!-- <passive_effect name="HealthMax" operation="perc_set" value="1"/> --> <!-- Zombie HP scale -->
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
 				<!-- Journal -->
 				<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddJournalEntry" journal="tip_sorcery_Fallen" target_tags="player"/>
 				<triggered_effect trigger="onOtherAttackedSelf" target="other" action="AddJournalEntry" journal="tip_sorcery_Fallen" target_tags="player"/>
@@ -600,6 +602,7 @@
 				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
 			</effect_group>
 			<!-- CVAR: SCALING -->
 			<effect_group name="PLAYER TIER: Level">
@@ -677,6 +680,7 @@
 				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
 			</effect_group>
 			<!-- CVAR: SCALING -->
 			<effect_group name="PLAYER TIER: Level">

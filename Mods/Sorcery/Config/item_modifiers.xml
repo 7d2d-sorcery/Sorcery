@@ -390,7 +390,7 @@
 					<!-- power -->
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeAugmentMining_degrade"/>
 					<passive_effect name="BlockDamage" operation="perc_add" value="@.runeAugmentMining" tags="ore"/>
-					<passive_effect name="DamageModifier" operation="perc_add" value="@.runeAugmentMining" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="@.runeAugmentMining" tags="stone,ore"/>
 				</effect_group>
 		</item_modifier>
 		<!-- AUGMENT DIGGING -->
@@ -511,15 +511,13 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteorDisplay" operation="set" value="@$runeFireTurretMeteor" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteorDisplay" operation="multiply" value="100" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_degrade" operation="set" value="@$sorceryRuneDegrade" target_tags="player"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_degrade" operation="multiply" value="2" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_degrade" operation="multiply" value="1" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_degradeDisplay" operation="set" value="@$runeFireTurretMeteor_degrade" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretMeteor_degradeDisplay" operation="multiply" value="100" target_tags="player"/>
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-					<triggered_effect trigger="onSelfEquipStop" action="AddBuff" buff="spellTurretFire_MeteorAOE_Trigger" target_tags="player">
-						<requirement name="!HoldingItemHasTags" tags="spellTurret"/>
-						<requirement name="HasBuff" buff="spellTurretFire_Deployed"/>
-					</triggered_effect>
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="9"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="spellTurretFire_Starcaller"/>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@$runeFireTurretMeteor_degrade"/>
 				</effect_group>
 		</item_modifier>
@@ -533,15 +531,13 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretAuraBurnDisplay" operation="set" value="@$runeFireTurretAuraBurn" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretAuraBurnDisplay" operation="multiply" value="100" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretAuraBurn_degrade" operation="set" value="@$sorceryRuneDegrade" target_tags="player"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretAuraBurn_degrade" operation="multiply" value="1" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretAuraBurn_degrade" operation="multiply" value="0.5" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretAuraBurn_degradeDisplay" operation="set" value="@$runeFireTurretAuraBurn_degrade" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeFireTurretAuraBurn_degradeDisplay" operation="multiply" value="100" target_tags="player"/>
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-					<triggered_effect trigger="onSelfEquipStop" action="AddBuff" buff="spellTurretFire_AuraBurn_Trigger" target_tags="player">
-						<requirement name="!HoldingItemHasTags" tags="spellTurret"/>
-						<requirement name="HasBuff" buff="spellTurretFire_Deployed"/>
-					</triggered_effect>
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="21"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="spellTurretFire_Burn"/>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@$runeFireTurretAuraBurn_degrade"/>
 				</effect_group>
 		</item_modifier>
@@ -588,15 +584,13 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChillDisplay" operation="set" value="@$runeIceTurretAuraChill" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChillDisplay" operation="multiply" value="100" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChill_degrade" operation="set" value="@$sorceryRuneDegrade" target_tags="player"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChill_degrade" operation="multiply" value="1" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChill_degrade" operation="multiply" value="0.5" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChill_degradeDisplay" operation="set" value="@$runeIceTurretAuraChill_degrade" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretAuraChill_degradeDisplay" operation="multiply" value="100" target_tags="player"/>
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-					<triggered_effect trigger="onSelfEquipStop" action="AddBuff" buff="spellTurretIce_AuraChill_Trigger" target_tags="player">
-						<requirement name="!HoldingItemHasTags" tags="spellTurret"/>
-						<requirement name="HasBuff" buff="spellTurretIce_Deployed"/>
-					</triggered_effect>
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="20"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="spellTurretIce_Chill"/>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@$runeIceTurretAuraChill_degrade"/>
 				</effect_group>
 		</item_modifier>
@@ -610,15 +604,13 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstormDisplay" operation="set" value="@$runeIceTurretHailstorm" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstormDisplay" operation="multiply" value="100" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstorm_degrade" operation="set" value="@$sorceryRuneDegrade" target_tags="player"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstorm_degrade" operation="multiply" value="2" target_tags="player"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstorm_degrade" operation="multiply" value="1" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstorm_degradeDisplay" operation="set" value="@$runeIceTurretHailstorm_degrade" target_tags="player"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$runeIceTurretHailstorm_degradeDisplay" operation="multiply" value="100" target_tags="player"/>
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-					<triggered_effect trigger="onSelfEquipStop" action="AddBuff" buff="spellTurretIce_Hailstorm_Trigger" target_tags="player">
-						<requirement name="!HoldingItemHasTags" tags="spellTurret"/>
-						<requirement name="HasBuff" buff="spellTurretIce_Deployed"/>
-					</triggered_effect>
+						<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="spellTurretIce_Hailstorm"/>
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@$runeIceTurretHailstorm_degrade"/>
 				</effect_group>
 		</item_modifier>

@@ -50,13 +50,15 @@
 	<append xpath="/windows">
 		<!-- UI: SORCERY VERSION -->
 		<window name="SorceryVersion" depth="99" pos="0,0" width="200" height="22" anchor="RightTop">
-			<label name="SorceryVersion" pos="-215,-40" depth="0" text="Sorcery v0.944" font_size="26" effect="outline" color="102,0,204,255" justify="right" upper_case="false"/>
+			<label name="SorceryVersion" pos="-216,-43" depth="0" text="Sorcery v0.96" font_size="26" effect="outline" color="102,0,204,255" justify="right" upper_case="false"/>
+			<label name="SorceryDifficulty" pos="-216,-65" depth="0" font_size="26" effect="outline" justify="right" upper_case="false" style="sorcery.window.mainmenu.logo.normal.label"/>
 		</window>
 
 		<!-- UI: SORCERY ELEMENTS -->		
 		<window name="SorceryLogo" depth="99" pos="0,-5" width="200" height="53" anchor="LeftTop">
 			<!-- <label name="SorceryVersion" pos="13,0" depth="0" text="v0.90" font_size="16" effect="outline" color="102,0,204,255" justify="center" upper_case="false" /> -->
-			<texture name="SorceryLogo" pos="10, -5" width="200" height="53" texture="@modfolder:Textures/SorceryLogo.png" />
+			<texture name="SorceryLogo" pos="10, -5" width="200" height="53" style="sorcery.window.mainmenu.logo.normal.texture"/>
+			<!-- <texture name="SorceryLogo" style="sorcery.window.mainmenu.logo.normal.texture" /> -->
 			<label name="SorceryWebsite" pos="10,-56" text="www.SorceryMod.com" font_size="20" effect="outline" color="102,0,204,255" justify="center" upper_case="false" />
 		</window>
 		<!-- <window name="SorceryCredits" depth="-1" pos="0, 0" width="220" height="941" anchor="LeftBottom">

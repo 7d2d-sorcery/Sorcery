@@ -77,8 +77,8 @@
 			<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
 			<property name="RepairExpMultiplier" value="5.5"/>
 			<property name="PickupJournalEntry" value="alternateAmmoTip"/>
-			<property name="Weight" value="100"/>
-			<property name="MeltTimePerUnit" value="10"/>
+			<!-- <property name="Weight" value="100"/> -->
+			<property name="MeltTimePerUnit" value="0.1"/>
 			<property name="ShowQuality" value="true"/>
 			<property name="UnlockedBy" value="perkSorcerySpellcastFire"/>
 			<property class="Action0">	
@@ -173,7 +173,7 @@
 				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="10"/> <!-- Essence Repair: 20 -->
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/> <!-- Essence Repair: 20 -->
-				<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="ModPowerBonus" operation="perc_add" value="0.15" tags="EntityDamage"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 				<!-- PUSHBACK / KNOCKDOWN	-->
@@ -259,8 +259,8 @@
 			<property name="CraftingSkillGroup" value="craftSkillWeapons"/>
 			<property name="RepairExpMultiplier" value="5.5"/>
 			<property name="PickupJournalEntry" value="alternateAmmoTip"/>
-			<property name="Weight" value="100"/>
-			<property name="MeltTimePerUnit" value="10"/>
+			<!-- <property name="Weight" value="100"/> -->
+			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="ShowQuality" value="true"/>
 			<property name="UnlockedBy" value="perkSorcerySpellcastIce"/>
 			<property class="Action0">	
@@ -365,7 +365,7 @@
 				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0"/>
 				<passive_effect name="DegradationPerUse" operation="base_set" value="10"/> <!-- Essence Repair: 20 -->
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/> <!-- Essence Repair: 20 -->
-				<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="ModPowerBonus" operation="perc_add" value="0.15" tags="EntityDamage"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
 			</effect_group>
@@ -422,6 +422,279 @@
 	
 <!-- STAVES ______________________________________-->	
 	<!-- FIRE STAFF ______________________________________-->
+		<item name="staffFire">
+			<property name="Tags" value="blunt,melee,grunting,heavy,weapon,meleeWeapon,longShaft,attStrength,staffFire,perkSorceryStaffFire"/>
+			<property name="DisplayType" value="sorceryStaffFire"/>
+			<property name="HoldType" value="33"/>
+			<property name="Meshfile" value="#@modfolder:Resources/staffFire.unity3d?staffFire"/>
+			<property name="Material" value="MsorceryExtractFire"/>
+			<property name="RepairTools" value="resourceEssenceFire"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="SoundJammed" value="ItemNeedsRepair"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="FuelValue" value="50"/>
+			<property name="EconomicValue" value="175"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Ammo/Weapons,SorceryWeapon"/>
+			<property name="UnlockedBy" value="perkSorceryStaffFire,sorceryDesk"/>
+			<property name="ShowQuality" value="true"/>
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="club_swinglight"/>
+				<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+				<property name="ToolCategory.Butcher" value="0" param1="5"/> <!-- damage vs entity corpses -->
+				<property name="UseGrazingHits" value="true"/>
+				<property name="IsHorizontalSwing" value="true"/>
+				<property name="GrazeStart" value=".515"/>
+				<property name="GrazeEnd" value=".52"/>
+				<property name="SwingDegrees" value="120"/>
+				<property name="SwingAngle" value="90"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="woodhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="woodgrazeorganic"/>
+				</property>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="club_swingheavy"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+				<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+				<property name="ToolCategory.Butcher" value="0" param1="5"/> <!-- damage vs entity corpses -->
+				<property name="UseGrazingHits" value="true"/>
+				<property name="IsHorizontalSwing" value="true"/>
+				<property name="GrazeStart" value=".515"/>
+				<property name="GrazeEnd" value=".52"/>
+				<property name="SwingDegrees" value="120"/>
+				<property name="SwingAngle" value="90"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="woodhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="woodgrazeorganic"/>
+				</property>
+			</property>
+			<effect_group name="PRIMARY">
+				<display_value name="dsorcDamageFire" value="1"/>
+				<display_value name="dsorcSpiritCost" value="6"/>
+				<passive_effect name="GrazeDamageMultiplier" operation="base_set" value=".5"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="20" tags="perkSorceryStaffFire"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="20" tags="perkSorceryStaffFire"/>
+				<passive_effect name="DamageModifier" operation="base_set" value="1" tags="perkSorceryStaffFire"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkSorceryStaffFire"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="12" tags="primary"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="60,180" tier="1,6" tags="perkSorceryStaffFire"/> <!-- Essence Repair: 20 -->
+				<passive_effect name="DegradationMax" operation="base_set" value="6000,45000" tier="1,6" tags="perkSorceryStaffFire"/> <!-- Essence Repair: 20 -->
+				<passive_effect name="MaxRange" operation="base_set" value="4"/>
+				<passive_effect name="BlockRange" operation="base_set" value="4"/>
+				<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="primary,perkSorceryStaffFire"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,2,3,5,7,8" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="lockedDoor"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.5" tags="earth,ore,stone,wood"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="ore"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest,perkSorceryStaffFire"/>
+			</effect_group>
+			<effect_group name="SECONDARY">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="25" tags="secondary"/>
+				<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="secondary,perkSorceryStaffFire"/>
+			</effect_group>
+			<effect_group name="CHARGE">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="staffCharge_Fire"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" buff="staffCharge_Fire">
+					<requirement name="IsAlive" target="other"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="SPELL: PRIMARY">
+				<!-- primary -->
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireStaff,spellFX_FireImpact,spellFire_Burn,spellFireStaff"/>
+				<!-- graze -->
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireStaff,spellFX_FireImpactAOE,spellFire_Burn,spellFireStaff_AOE">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireStaff,spellFX_FireImpactAOE,spellFire_Burn">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="LT" value="6"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="SPELL: SECONDARY">
+				<!-- secondary -->
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireStaff,spellFX_FireImpact,spellFire_Burn,spellFireStaff"/>
+				<!-- graze -->
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireStaff,spellFX_FireImpactAOE,spellFire_Burn,spellFireStaff_AOE">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" buff="imprint_FireSorcery,imprint_FireStaff,spellFX_FireImpactAOE,spellFire_Burn">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="LT" value="20"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="NOVA">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryStaffFire" operation="GTE" value="1"/>
+					<requirement name="CVarCompare" cvar="FireStacksPlayer" operation="GTE" value="1"/>
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="50"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" target="selfAOE" range="4" buff="imprint_FireSorcery,imprint_FireStaff,spellFX_FireImpactAOE,spellFireStaff_Nova,spellFire_Burn" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="spellFX_FireNova"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="spell_EnergyRegen">
+					<requirement name="CVarCompare" cvar="FireStacksPlayer" operation="GTE" value="4"/>
+				</triggered_effect>
+				<!-- charges -->
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="ModifyCVar" cvar="FireStacksPlayer" operation="set" value="0"/>
+				<!-- nova cost: add base secondary cost -->
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="30"/>
+			</effect_group>
+			<effect_group name="COST">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="6">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="20">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="1"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
+	<!-- ICE STAFF ______________________________________-->
+		<item name="staffIce">
+			<property name="Tags" value="blunt,melee,grunting,heavy,weapon,meleeWeapon,longShaft,attStrength,staffIce,perkSorceryStaffIce"/>
+			<property name="DisplayType" value="sorceryStaffIce"/>
+			<property name="HoldType" value="33"/>
+			<property name="Meshfile" value="#@modfolder:Resources/staffIce.unity3d?staffIce"/>
+			<property name="Material" value="MsorceryExtractIce"/>
+			<property name="RepairTools" value="resourceEssenceIce"/> 
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="SoundJammed" value="ItemNeedsRepair"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="FuelValue" value="50"/>
+			<property name="EconomicValue" value="175"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Ammo/Weapons,SorceryWeapon"/>
+			<property name="UnlockedBy" value="perkSorceryStaffIce,sorceryDesk"/>
+			<property name="ShowQuality" value="true"/>
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="club_swinglight"/>
+				<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+				<property name="ToolCategory.Butcher" value="0" param1="5"/> <!-- damage vs entity corpses -->
+				<property name="UseGrazingHits" value="true"/>
+				<property name="IsHorizontalSwing" value="true"/>
+				<property name="GrazeStart" value=".515"/>
+				<property name="GrazeEnd" value=".52"/>
+				<property name="SwingDegrees" value="120"/>
+				<property name="SwingAngle" value="90"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="woodhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="woodgrazeorganic"/>
+				</property>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+				<property name="Sound_start" value="club_swingheavy"/>
+				<property name="UsePowerAttackAnimation" value="true"/>
+				<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+				<property name="ToolCategory.Butcher" value="0" param1="5"/> <!-- damage vs entity corpses -->
+				<property name="UseGrazingHits" value="true"/>
+				<property name="IsHorizontalSwing" value="true"/>
+				<property name="GrazeStart" value=".515"/>
+				<property name="GrazeEnd" value=".52"/>
+				<property name="SwingDegrees" value="120"/>
+				<property name="SwingAngle" value="90"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="woodhitorganic"/>
+				</property>
+				<property class="GrazeSounds">
+					<property name="Override0" value="organic" param1="woodgrazeorganic"/>
+				</property>
+			</property>
+			<effect_group name="PRIMARY">
+				<display_value name="dsorcDamageIce" value="1"/>
+				<display_value name="dsorcSpiritCost" value="6"/>
+				<passive_effect name="GrazeDamageMultiplier" operation="base_set" value=".5"/>
+				<passive_effect name="EntityDamage" operation="base_set" value="20" tags="perkSorceryStaffIce"/>
+				<passive_effect name="BlockDamage" operation="base_set" value="20" tags="perkSorceryStaffIce"/>
+				<passive_effect name="DamageModifier" operation="base_set" value="1" tags="perkSorceryStaffIce"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkSorceryStaffIce"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="12" tags="primary"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="60,180" tier="1,6" tags="perkSorceryStaffIce"/> <!-- Essence Repair: 20 -->
+				<passive_effect name="DegradationMax" operation="base_set" value="6000,45000" tier="1,6" tags="perkSorceryStaffIce"/> <!-- Essence Repair: 20 -->
+				<passive_effect name="MaxRange" operation="base_set" value="4"/>
+				<passive_effect name="BlockRange" operation="base_set" value="4"/>
+				<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="primary,perkSorceryStaffIce"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,2,3,5,7,8" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="lockedDoor"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="1.5" tags="earth,ore,stone,wood"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="ore"/>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" tags="butcherHarvest,perkSorceryStaffIce"/>
+			</effect_group>
+			<effect_group name="SECONDARY">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="25" tags="secondary"/>
+				<passive_effect name="DismemberChance" operation="base_add" value=".1" tags="secondary,perkSorceryStaffIce"/>
+			</effect_group>
+			<effect_group name="CHARGE">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="staffCharge_Ice"/>
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" buff="staffCharge_Ice">
+					<requirement name="IsAlive" target="other"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="SPELL: PRIMARY">
+				<!-- primary -->
+				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceStaff,spellFX_IceImpact,spellIce_Chill,spellIceStaff"/>
+				<!-- graze -->
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceStaff,spellFX_IceImpactAOE,spellIce_Chill,spellIceStaff_AOE">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="6"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfPrimaryActionGrazeHit" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceStaff,spellFX_IceImpactAOE,spellIce_Chill">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="LT" value="6"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="SPELL: SECONDARY">
+				<!-- secondary -->
+				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceStaff,spellFX_IceImpact,spellIce_Chill,spellIceStaff"/>
+				<!-- graze -->
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceStaff,spellFX_IceImpactAOE,spellIce_Chill,spellIceStaff_AOE">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="20"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" buff="imprint_IceSorcery,imprint_IceStaff,spellFX_IceImpactAOE,spellIce_Chill">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="LT" value="20"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="NOVA">
+					<requirement name="ProgressionLevel" progression_name="perkSorceryStaffIce" operation="GTE" value="1"/>
+					<requirement name="CVarCompare" cvar="IceStacksPlayer" operation="GTE" value="1"/>
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="50"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" target="selfAOE" range="4" buff="imprint_IceSorcery,imprint_IceStaff,spellFX_IceImpactAOE,spellIceStaff_Nova,spellIce_Chill" target_tags="enemy,animal,hostile"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="spellFX_IceNova"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="spell_EnergyRegen">
+					<requirement name="CVarCompare" cvar="IceStacksPlayer" operation="GTE" value="4"/>
+				</triggered_effect>
+				<!-- charges -->
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="ModifyCVar" cvar="IceStacksPlayer" operation="set" value="0"/>
+				<!-- nova cost: add base secondary cost -->
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="30"/>
+			</effect_group>
+			<effect_group name="COST">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="6">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="1"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="20">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="1"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
 <!-- END - STAVES ______________________________________-->	
 	
 <!-- SPELLS: Ammo ______________________________________-->	
@@ -439,7 +712,7 @@
 			<property name="Material" value="fire"/>
 			<property name="Damage_type" value="Heat"/>
 			<property name="Weight" value="12"/>
-			<property name="MeltTimePerUnit" value="10"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="Stacknumber" value="1000"/>
 			<property name="EconomicValue" value="24"/>
 			<property name="SellableToTrader" value="false"/>
@@ -484,6 +757,7 @@
 				<!-- End - Sticky Hack: Prevent spell retrieval without perks -->
 				<passive_effect name="MaxRange" operation="base_set" value="30"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="25" tags="spellTurretFire,perkSorceryTrap1Fire"/>
 				<passive_effect name="MaxRange" operation="base_set" value="15" tags="spellTurretFire"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="10" tags="spellTurretFire"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
@@ -615,7 +889,7 @@
 			<property name="Material" value="fire"/>
 			<property name="Damage_type" value="Heat"/>
 			<property name="Weight" value="36"/>
-			<property name="MeltTimePerUnit" value="10"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="Stacknumber" value="1000"/>
 			<property name="EconomicValue" value="44"/>
 			<property name="SellableToTrader" value="false"/>
@@ -645,10 +919,10 @@
 			</effect_group>
 		<!-- END - SPELL TURRET -->
 			<effect_group tiered="false" name="COST">
-				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="25"/>
-				<triggered_effect trigger="onReloadStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="25"/>
-				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="25"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="25"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="10"/>
+				<triggered_effect trigger="onReloadStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="10"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: BASE">
 				<!-- Sticky Hack: Prevent spell retrieval without perks -->
@@ -658,9 +932,9 @@
 				</passive_effect>
 				<passive_effect name="ProjectileStickChance" operation="base_set" value="1" tags="earth,wood,stone,metal,glass,cloth"/>
 				<!-- End - Sticky Hack: Prevent spell retrieval without perks -->
-				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.5" tags="spellTurretFire"/>
 				<passive_effect name="MaxRange" operation="base_set" value="30"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="15" tags="spellTurretFire,perkSorceryTrap1Fire"/>
 				<passive_effect name="MaxRange" operation="base_set" value="15" tags="spellTurretFire"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="10" tags="spellTurretFire"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="20"/>
@@ -795,7 +1069,7 @@
 			<property name="Material" value="fire"/>
 			<property name="Damage_type" value="Heat"/>
 			<property name="Weight" value="60"/>
-			<property name="MeltTimePerUnit" value="10"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="Stacknumber" value="1000"/>
 			<property name="EconomicValue" value="64"/>
 			<property name="SellableToTrader" value="false"/>
@@ -825,10 +1099,10 @@
 			</effect_group>
 		<!-- END - SPELL TURRET -->
 			<effect_group tiered="false" name="COST">
-				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="50"/>
-				<triggered_effect trigger="onReloadStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="50"/>
-				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="50"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="50"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="20"/>
+				<triggered_effect trigger="onReloadStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="20"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="20"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="ModifyCVar" cvar=".spellcastFire_spiritCost" operation="set" value="20"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: BASE">
 				<!-- Sticky Hack: Prevent spell retrieval without perks -->
@@ -838,9 +1112,9 @@
 				</passive_effect>
 				<passive_effect name="ProjectileStickChance" operation="base_set" value="1" tags="earth,wood,stone,metal,glass,cloth"/>
 				<!-- End - Sticky Hack: Prevent spell retrieval without perks -->
-				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.5" tags="spellTurretFire"/>
 				<passive_effect name="MaxRange" operation="base_set" value="30"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="10" tags="spellTurretFire,perkSorceryTrap1Fire"/>
 				<passive_effect name="MaxRange" operation="base_set" value="15" tags="spellTurretFire"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="10" tags="spellTurretFire"/>
 				<passive_effect name="ProjectileVelocity" operation="base_set" value="30"/>
@@ -979,7 +1253,7 @@
 			<property name="Material" value="ice"/>
 			<property name="Damage_type" value="Cold"/>
 			<property name="Weight" value="12"/>
-			<property name="MeltTimePerUnit" value="10"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="Stacknumber" value="1000"/>
 			<property name="EconomicValue" value="24"/>
 			<property name="SellableToTrader" value="false"/>
@@ -1024,6 +1298,7 @@
 			<!-- End - Sticky Hack: Prevent spell retrieval without perks -->
 				<passive_effect name="MaxRange" operation="base_set" value="30"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="25" tags="spellTurretIce,perkSorceryTrap1Ice"/>
 				<passive_effect name="MaxRange" operation="base_set" value="15" tags="spellTurretIce"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="10" tags="spellTurretIce"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
@@ -1135,7 +1410,7 @@
 			<property name="Material" value="ice"/>
 			<property name="Damage_type" value="Cold"/>
 			<property name="Weight" value="36"/>
-			<property name="MeltTimePerUnit" value="10"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="Stacknumber" value="1000"/>
 			<property name="EconomicValue" value="44"/>
 			<property name="SellableToTrader" value="false"/>
@@ -1165,10 +1440,10 @@
 			</effect_group>
 		<!-- END - SPELL TURRET -->
 			<effect_group tiered="false" name="COST">
-				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="25"/>
-				<triggered_effect trigger="onReloadStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="25"/>
-				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="25"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="25"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="10"/>
+				<triggered_effect trigger="onReloadStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="10"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="10"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: BASE">
 				<!-- Sticky Hack: Prevent spell retrieval without perks -->
@@ -1178,9 +1453,9 @@
 				</passive_effect>
 				<passive_effect name="ProjectileStickChance" operation="base_set" value="1" tags="earth,wood,stone,metal,glass,cloth"/>
 				<!-- End - Sticky Hack: Prevent spell retrieval without perks -->
-				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.5" tags="spellTurretIce"/>
 				<passive_effect name="MaxRange" operation="base_set" value="30"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="15" tags="spellTurretIce,perkSorceryTrap1Ice"/>
 				<passive_effect name="MaxRange" operation="base_set" value="15" tags="spellTurretIce"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="10" tags="spellTurretIce"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
@@ -1292,7 +1567,7 @@
 			<property name="Material" value="ice"/>
 			<property name="Damage_type" value="Cold"/>
 			<property name="Weight" value="60"/>
-			<property name="MeltTimePerUnit" value="10"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="Stacknumber" value="1000"/>
 			<property name="EconomicValue" value="64"/>
 			<property name="SellableToTrader" value="false"/>
@@ -1322,10 +1597,10 @@
 			</effect_group>
 		<!-- END - SPELL TURRET -->
 			<effect_group tiered="false" name="COST">
-				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="50"/>
-				<triggered_effect trigger="onReloadStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="50"/>
-				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="50"/>
-				<triggered_effect trigger="onSelfHoldingItemCreated" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="50"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="20"/>
+				<triggered_effect trigger="onReloadStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="20"/>
+				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="20"/>
+				<triggered_effect trigger="onSelfHoldingItemCreated" action="ModifyCVar" cvar=".spellcastIce_spiritCost" operation="set" value="20"/>
 			</effect_group>
 			<effect_group tiered="false" name="SPELL: BASE">
 				<!-- Sticky Hack: Prevent spell retrieval without perks -->
@@ -1335,9 +1610,9 @@
 				</passive_effect>
 				<passive_effect name="ProjectileStickChance" operation="base_set" value="1" tags="earth,wood,stone,metal,glass,cloth"/>
 				<!-- End - Sticky Hack: Prevent spell retrieval without perks -->
-				<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.5" tags="spellTurretIce"/>
 				<passive_effect name="MaxRange" operation="base_set" value="30"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="25"/>
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="10" tags="spellTurretIce,perkSorceryTrap1Ice"/>
 				<passive_effect name="MaxRange" operation="base_set" value="15" tags="spellTurretIce"/>
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="10" tags="spellTurretIce"/>
 				<passive_effect name="EntityDamage" operation="base_set" value="1" /> <!-- Spell buffs control this -->
@@ -1835,7 +2110,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<!-- <display_value name="dsorcSetArcane" value="0"/> -->
 				<!-- <requirement name="RequirementItemTier" tier="sorceryArmor_Hood" operation="Equals" value="1"/> -->
 				<!-- <display_value name="dsorcSpirit" value="10" />
@@ -1941,7 +2216,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -2044,7 +2319,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -2144,7 +2419,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -2247,7 +2522,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -2347,7 +2622,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -2447,7 +2722,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -2548,7 +2823,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -2648,7 +2923,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -2761,7 +3036,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Arcane Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -2885,7 +3160,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -2971,7 +3246,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -3059,7 +3334,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -3144,7 +3419,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -3232,7 +3507,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -3317,7 +3592,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -3402,7 +3677,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -3488,7 +3763,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -3573,7 +3848,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -3671,7 +3946,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Fire Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -3783,7 +4058,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -3869,7 +4144,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -3957,7 +4232,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -4042,7 +4317,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -4130,7 +4405,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -4215,7 +4490,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -4300,7 +4575,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -4386,7 +4661,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -4471,7 +4746,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -4569,7 +4844,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Ice Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -4681,7 +4956,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -4767,7 +5042,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -4855,7 +5130,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -4940,7 +5215,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -5028,7 +5303,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -5113,7 +5388,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -5198,7 +5473,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -5284,7 +5559,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -5369,7 +5644,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -5467,7 +5742,7 @@
 			<effect_group name="TIER ALL">
 				<!-- Lightning Armor Set -->
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
-				<passive_effect name="ModSlots" operation="base_set" value="1,5" tier="1,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
@@ -5553,7 +5828,7 @@
 			<property name="Meshfile" value="#@modfolder:Resources/potionBottle.unity3d?potionBottle"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="Mglass"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="1000"/>
 			<property name="Weight" value="3"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
@@ -5682,6 +5957,28 @@
 				</triggered_effect>
 			</effect_group>
 		</item>
+	<!-- POTION: Mending -->
+		<item name="potion_Mending">
+			<property name="Extends" value="sorceryPotionMaster"/>
+			<property name="DisplayType" value="potion_Mending"/>
+			<property name="Meshfile" value="#@modfolder:Resources/potionArcane.unity3d?potionArcane"/>
+			<property class="Action0">
+					<requirement name="NotHasBuff" target="self" buff="buffPotion_Mending"/>
+			</property>
+			<effect_group tiered="false">
+				<!-- Transform -->
+				<triggered_effect trigger="onSelfEquipStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Remedy"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Remedy"/>
+				<display_value name="dsorcPotionMending" value="1"/>
+				<!-- <display_value name="dsorcPotionMending2" value="5"/> -->
+				<display_value name="dsorcPotionDuration" value="5"/>
+				<display_value name="dsorcPotionCooldown" value="5"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume,buffPotion_Mending"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="selfAOE" range="20" buff="buffPotionAlly,buffPotionConsume,buffPotion_Mending" target_tags="ally,party">
+					<requirement name="HasBuff" buff="buffRune_ClassAlchemist"/>
+				</triggered_effect>
+			</effect_group>
+		</item>	
 	<!-- POTION: Travel -->
 		<item name="potion_Travel">
 			<property name="Extends" value="sorceryPotionMaster"/>
@@ -6189,6 +6486,7 @@
 			<property name="EconomicValue" value="800"/>
 			<property name="Group" value="Books"/>
 			<property name="PickupJournalEntry" value="tip_sorcery_Scrolls"/>
+			<property name="UnlockedBy" value="perkSorceryScrollMastery,sorceryDesk"/>
 			<property class="Action0">
 				<property name="Class" value="Eat"/>
 				<property name="Delay" value="1.0"/>
@@ -6203,7 +6501,6 @@
 		<item name="scrollFire_Weapon">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
 			<property name="TintColor" value="151,0,0"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_WeaponFire"/>
@@ -6214,7 +6511,6 @@
 		<item name="scrollFire_Ammo">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
 			<property name="TintColor" value="151,0,0"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_AmmoFire"/>
@@ -6225,7 +6521,6 @@
 		<item name="scrollIce_Weapon">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
 			<property name="TintColor" value="0,0,151"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_WeaponIce"/>
@@ -6235,7 +6530,6 @@
 		<item name="scrollIce_Ammo">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
 			<property name="TintColor" value="0,0,151"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_AmmoIce"/>
@@ -6246,7 +6540,6 @@
 		<item name="scroll_ArcaneVision">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_ArcaneVision"/>
 			</effect_group>
@@ -6255,7 +6548,6 @@
 		<item name="scroll_Recall">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
 			<property class="Action0">
 				<requirement name="NotHasBuff" buff="buffScroll_RecallTrigger"/>
 				<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="1"/>
@@ -6271,7 +6563,6 @@
 		<item name="scroll_AugmentXP">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_AugmentXP"/>
 			</effect_group>
@@ -6280,7 +6571,6 @@
 		<item name="scroll_AugmentHunger">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_AugmentHunger"/>
 			</effect_group>
@@ -6289,7 +6579,6 @@
 		<item name="scroll_AugmentMining">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_AugmentMining"/>
 			</effect_group>
@@ -6298,7 +6587,6 @@
 		<item name="scroll_AugmentDigging">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_AugmentDigging"/>
 			</effect_group>
@@ -6307,7 +6595,6 @@
 		<item name="scroll_AugmentLogging">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="attSorcery,sorceryDesk"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_AugmentLogging"/>
 			</effect_group>
@@ -6316,9 +6603,16 @@
 		<item name="scroll_EssenceHarvest">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
-			<property name="UnlockedBy" value="perkSorceryEssenceMastery,sorceryDesk"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_EssenceHarvest"/>
+			</effect_group>
+		</item>
+		<!-- Scroll: Energy Regen -->
+		<item name="scroll_EnergyRegen">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_EnergyRegen"/>
 			</effect_group>
 		</item>
 		
@@ -6416,7 +6710,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="fire"/>
-			<property name="Weight" value="100"/>
+			<property name="Weight" value="200"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="EconomicValue" value="600"/>
 			<property name="SellableToTrader" value="false"/>
@@ -6444,7 +6738,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="ice"/>
-			<property name="Weight" value="100"/>
+			<property name="Weight" value="200"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="EconomicValue" value="600"/>
 			<property name="SellableToTrader" value="false"/>
@@ -6490,7 +6784,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="fire"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="EconomicValue" value="10"/>
@@ -6499,8 +6793,8 @@
 			<property name="Group" value="Resources,FireSorcery"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
-			<property name="MeltTimePerUnit" value=".5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="UnlockedBy" value="attSorceryFire"/>
 		</item>
 
@@ -6511,7 +6805,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="ice"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="Weight" value="1"/>
@@ -6520,8 +6814,8 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,IceSorcery"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
-			<property name="MeltTimePerUnit" value=".5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<!-- <property name="UnlockedBy" value="attSorceryIce"/> -->
 		</item>
 	<!-- ESSENCE: LIGHTNING ______________________________________-->
@@ -6531,7 +6825,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="lightning"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="Weight" value="1"/>
@@ -6540,8 +6834,8 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,LightningSorcery"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
-			<property name="MeltTimePerUnit" value=".5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<!-- <property name="UnlockedBy" value="attSorceryLightning"/> -->
 		</item>		
 	<!-- ESSENCE: UNHOLY ______________________________________-->
@@ -6550,7 +6844,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="unholy"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="Weight" value="1"/>
@@ -6559,8 +6853,8 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,UnholySorcery"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
-			<property name="MeltTimePerUnit" value=".5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<!-- <property name="UnlockedBy" value="attSorceryUnholy"/> -->
 		</item>
 	<!-- ESSENCE: HOLY ______________________________________-->
@@ -6569,7 +6863,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="holy"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="Weight" value="1"/>
@@ -6578,8 +6872,8 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,HolySorcery"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
-			<property name="MeltTimePerUnit" value=".5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<!-- <property name="UnlockedBy" value="attSorceryHoly"/> -->
 		</item>
 
@@ -6590,14 +6884,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractOmni"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="conjureFire,conjureIce,conjureLightning,sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		<!-- EXTRACT: FIRE -->
@@ -6606,14 +6900,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractFire"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="conjureFire"/>
 		</item>	
 		<!-- EXTRACT: ICE -->
@@ -6622,14 +6916,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractIce"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="conjureIce"/>
 		</item>	
 		<!-- EXTRACT: LIGHTNING -->
@@ -6638,14 +6932,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractLightning"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="conjureLightning"/>
 		</item>	
 		<!-- EXTRACT: UNHOLY -->
@@ -6654,14 +6948,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractUnholy"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 		</item>	
 		<!-- EXTRACT: HOLY -->
 		<item name="resourceExtractHoly">
@@ -6669,14 +6963,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractHoly"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 		</item>	
 		
 	<!--___________________ RESOURCE: Alchemy ___________________-->
@@ -6687,14 +6981,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryPowderArcane"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		<!-- POWDER: FIRE -->
@@ -6704,14 +6998,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryPowderFire"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		<!-- POWDER: ICE -->
@@ -6721,14 +7015,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryPowderIce"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		<!-- POWDER: LIGHTNING -->
@@ -6738,14 +7032,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryPowderLightning"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		<!-- POWDER: UNHOLY -->
@@ -6755,14 +7049,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryPowderUnholy"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		<!-- POWDER: HOLY -->
@@ -6772,14 +7066,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryPowderHoly"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
 		
@@ -6793,14 +7087,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothArcane"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairTime" value=".02"/>
 			<property name="RepairAmount" value="250"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,ClothingArcane"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
 		<!-- THREAD: FIRE -->
@@ -6810,14 +7104,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothFire"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="250"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,ClothingFire"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
 		<!-- THREAD: ICE -->
@@ -6827,14 +7121,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothIce"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="250"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,ClothingIce"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
 		<!-- THREAD: LIGHTNING -->
@@ -6844,14 +7138,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothLightning"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="250"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,ClothingLightning"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
 		<!-- THREAD: UNHOLY -->
@@ -6861,14 +7155,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothUnholy"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="250"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 		</item>	
 		<!-- THREAD: HOLY -->
 		<item name="resourceThreadHoly">
@@ -6877,14 +7171,14 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryClothHoly"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="250"/>
 			<property name="RepairTime" value="0.02"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
 			<property name="CraftingIngredientExp" value="5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 		</item>	
 		
 		
@@ -6896,11 +7190,11 @@
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="MsorceryExtractFire"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Material" value="fire"/>
+			<property name="Stacknumber" value="100"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
-			<property name="Weight" value="80"/>
+			<property name="Weight" value="500"/>
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="5"/>
 			<property name="UnlockedBy" value="rune_ClassRitualist3"/>
@@ -6916,11 +7210,11 @@
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="MsorceryExtractIce"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Material" value="ice"/>
+			<property name="Stacknumber" value="100"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
-			<property name="Weight" value="80"/>
+			<property name="Weight" value="500"/>
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="5"/>
 			<property name="UnlockedBy" value="rune_ClassRitualist3"/>
@@ -6936,11 +7230,11 @@
 			<property name="HoldType" value="45"/>
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-			<property name="Material" value="MsorceryExtractLightning"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Material" value="lightning"/>
+			<property name="Stacknumber" value="100"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
-			<property name="Weight" value="80"/>
+			<property name="Weight" value="500"/>
 			<property name="CraftingIngredientExp" value="5"/>
 			<property name="CraftingIngredientTime" value="5"/>
 			<property name="UnlockedBy" value="rune_ClassRitualist3"/>
@@ -6957,7 +7251,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractUnholy"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="100"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="80"/>
@@ -6976,7 +7270,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractHoly"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="100"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="80"/>
@@ -6997,7 +7291,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractLightning"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="100"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="50"/>
@@ -7015,7 +7309,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractFire"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="100"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="50"/>
@@ -7033,7 +7327,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractIce"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="100"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="50"/>
@@ -7051,7 +7345,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractUnholy"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="100"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="50"/>
@@ -7069,7 +7363,7 @@
 			<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractHoly"/>
-			<property name="Stacknumber" value="5000"/>
+			<property name="Stacknumber" value="100"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="50"/>
@@ -7094,8 +7388,8 @@
 			<property name="Group" value="Resources,FireSorcery"/>
 			<property name="ResourceUnit" value="true"/>
 			<property name="UserHidden" value="true"/>
-			<property name="MeltTimePerUnit" value=".5"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="MeltTimePerUnit" value=".1"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 		<!--___________________ ICE UNIT ___________________-->
@@ -7110,8 +7404,8 @@
 			<property name="Group" value="Resources,IceSorcery"/>
 			<property name="ResourceUnit" value="true"/>
 			<property name="UserHidden" value="true"/>
-			<property name="MeltTimePerUnit" value=".5"/>	
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="MeltTimePerUnit" value=".1"/>	
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 		<!--___________________ LIGHTNING UNIT ___________________-->
@@ -7125,9 +7419,9 @@
 			<property name="Weight" value="1"/>
 			<property name="Group" value="Resources,LightningSorcery"/>
 			<property name="ResourceUnit" value="true"/>
-			<property name="MeltTimePerUnit" value=".5"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="UserHidden" value="true"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 		<!--___________________ UNHOLY UNIT ___________________-->
@@ -7141,9 +7435,9 @@
 			<property name="Weight" value="1"/>
 			<property name="Group" value="Resources,UnholySorcery"/>
 			<property name="ResourceUnit" value="true"/>
-			<property name="MeltTimePerUnit" value=".5"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="UserHidden" value="true"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 		<!--___________________ HOLY UNIT ___________________-->
@@ -7157,9 +7451,9 @@
 			<property name="Weight" value="1"/>
 			<property name="Group" value="Resources,HolySorcery"/>
 			<property name="ResourceUnit" value="true"/>
-			<property name="MeltTimePerUnit" value=".5"/>
+			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="UserHidden" value="true"/>
-			<property name="CraftingIngredientTime" value="0.5"/>
+			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="CreativeMode" value="None"/>
 		</item>
 	<!-- END - RESOURCES ______________________________________-->
@@ -7584,7 +7878,7 @@
 			<property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/JunkTurret/junkTurretHeld_Prefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractFire"/><property name="Weight" value="100"/>
-			<property name="RepairTools" value="resourceExtractFire"/>
+			<property name="RepairTools" value="resourceEssenceFire"/>
 			<property name="DegradationBreaksAfter" value="false"/>
 			<property name="SoundJammed" value="weapon_jam"/>
 			<property name="Group" value="Tools/Traps,TrapFire,SorceryTrap"/>
@@ -7595,7 +7889,7 @@
 			<property name="UnlockedBy" value="perkSorceryTrap1Fire"/>
 			<property name="ShowQuality" value="true"/>
 			<property class="Action0">
-					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="9999"/> <!-- spirit -->
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="10"/> <!-- spirit -->
 				<property name="Class" value="Ranged"/>
 				<property name="Hitmask_override" value="Arrow"/>
 				<property name="Delay" value="0"/>
@@ -7621,10 +7915,11 @@
 				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkSorceryTrap1Fire"/> <!-- random DegMax -->
 				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkSorceryTrap1Fire"/>
 				<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122" tags="perkSorceryTrap1Fire"/> <!-- random MagazineSize -->
-				<passive_effect name="MagazineSize" operation="base_set" value="100" tags="perkSorceryTrap1Fire"/>
-				<passive_effect name="MagazineSize" operation="base_add" value="25,125" tier="2,6" tags="perkSorceryTrap1Fire"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="5" tags="perkSorceryTrap1Fire"/>
+				<passive_effect name="MagazineSize" operation="base_add" value="10,50" tier="2,6" tags="perkSorceryTrap1Fire"/>
 				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkSorceryTrap1Fire"/>
-				<passive_effect name="RoundsPerMinute" operation="base_set" value="25" tags="perkSorceryTrap1Fire"/>
+				<!-- RoundsPerMinute handled per Spell: T1:25, T2:15, T3:10 
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="25" tags="perkSorceryTrap1Fire"/> -->
 				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0"/>
 				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0"/>
 				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="0"/>
@@ -7633,13 +7928,22 @@
 				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0"/>
 				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="0"/>
 				<passive_effect name="WeaponHandling" operation="base_set" value="5"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="1"/> <!-- Repair: 20 -->
-				<passive_effect name="DegradationMax" operation="base_set" value="300,2000" tier="1,6" tags="perkSorceryTrap1Fire"/> <!-- Repair: 20 -->
-				<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+				<passive_effect name="ModSlots" operation="base_set" value="1,2,3,4,5,6" tier="1,2,3,4,5,6"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
 				<display_value name="dSpellAmmoFire" value="1"/>
 				<display_value name="dMaxSpiritReductionPerLevel" value=".05"/>
 				<display_value name="dSpiritCost" value="20"/>
+				<!-- REPAIR -->
+				<passive_effect name="DegradationPerUse" operation="base_set" value="100,100" tier="1,6"/> <!-- Essence Repair: 20 -->
+				<passive_effect name="DegradationMax" operation="base_set" value="10000,35000" tier="1,6" tags="perkSorceryTrap1Fire"/> <!-- Essence Repair: 20 -->
+			</effect_group>
+			<effect_group name="COST">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="10">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="10"/>
+					<requirement name="!HoldingItemBroken"/><!-- NRE if not wrapped -->
+					<requirement name="RoundsInMagazine" operation="GTE" value="1"/>
+					<requirement name="HoldingItemHasTags" tags="spellTurretFire"/>
+				</triggered_effect>
 			</effect_group>
 		</item>
 		
@@ -7655,7 +7959,7 @@
 			<property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/JunkTurret/junkTurretHeld_Prefab.prefab"/>
 			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
 			<property name="Material" value="MsorceryExtractIce"/><property name="Weight" value="100"/>
-			<property name="RepairTools" value="resourceExtractIce"/>
+			<property name="RepairTools" value="resourceEssenceIce"/>
 			<property name="DegradationBreaksAfter" value="false"/>
 			<property name="SoundJammed" value="weapon_jam"/>
 			<property name="Group" value="Tools/Traps,TrapIce,SorceryTrap"/>
@@ -7666,7 +7970,7 @@
 			<property name="UnlockedBy" value="perkSorceryTrap1Ice"/>
 			<property name="ShowQuality" value="true"/>
 			<property class="Action0">
-					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="9999"/> <!-- spirit -->
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="10"/> <!-- spirit -->
 				<property name="Class" value="Ranged"/>
 				<property name="Hitmask_override" value="Arrow"/>
 				<property name="Delay" value="0"/>
@@ -7692,10 +7996,11 @@
 				<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkSorceryTrap1Ice"/> <!-- random DegMax -->
 				<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkSorceryTrap1Ice"/>
 				<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122" tags="perkSorceryTrap1Ice"/> <!-- random MagazineSize -->
-				<passive_effect name="MagazineSize" operation="base_set" value="100" tags="perkSorceryTrap1Ice"/>
-				<passive_effect name="MagazineSize" operation="base_add" value="25,125" tier="2,6" tags="perkSorceryTrap1Ice"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="5" tags="perkSorceryTrap1Ice"/>
+				<passive_effect name="MagazineSize" operation="base_add" value="10,50" tier="2,6" tags="perkSorceryTrap1Ice"/>
 				<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkSorceryTrap1Ice"/>
-				<passive_effect name="RoundsPerMinute" operation="base_set" value="25" tags="perkSorceryTrap1Ice"/>
+				<!-- RoundsPerMinute handled per Spell: T1:25, T2:15, T3:10 
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="25" tags="perkSorceryTrap1Ice"/> -->
 				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0"/>
 				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0"/>
 				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="0"/>
@@ -7704,13 +8009,22 @@
 				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="0"/>
 				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="0"/>
 				<passive_effect name="WeaponHandling" operation="base_set" value="5"/>
-				<passive_effect name="DegradationPerUse" operation="base_set" value="1"/> <!-- Repair: 20 -->
-				<passive_effect name="DegradationMax" operation="base_set" value="300,2000" tier="1,6" tags="perkSorceryTrap1Ice"/> <!-- Repair: 20 -->
 				<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
 				<display_value name="dSpellAmmoIce" value="1"/>
 				<display_value name="dMaxSpiritReductionPerLevel" value=".05"/>
 				<display_value name="dSpiritCost" value="20"/>
+				<!-- REPAIR -->
+				<passive_effect name="DegradationPerUse" operation="base_set" value="100,100" tier="1,6"/> <!-- Essence Repair: 20 -->
+				<passive_effect name="DegradationMax" operation="base_set" value="10000,35000" tier="1,6" tags="perkSorceryTrap1Ice"/> <!-- Essence Repair: 20 -->
+			</effect_group>
+			<effect_group name="COST">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="10">
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="10"/>
+					<requirement name="!HoldingItemBroken"/><!-- NRE if not wrapped -->
+					<requirement name="RoundsInMagazine" operation="GTE" value="1"/>
+					<requirement name="HoldingItemHasTags" tags="spellTurretIce"/>
+				</triggered_effect>
 			</effect_group>
 		</item>
 	<!-- END - SPELL TURRETS ______________________________________-->
@@ -7820,7 +8134,7 @@
 	<append xpath="/items/item[@name='resourceCropCottonPlant']"><property name="Tags" value="resourceCropCottonPlant,Tailor"/></append>
 
 	<!-- UPGRADE -->
-	<append xpath="/items/item[@name='meleeToolRepairT0StoneAxe' or @name='meleeToolRepairT0TazasStoneAxe' or @name='meleeToolRepairT1ClawHammer' or @name='meleeToolRepairT3Nailgun']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceEssenceFire,resourceExtractFire,resourceEssenceIce,resourceExtractIce</append>
+	<append xpath="/items/item[@name='meleeToolRepairT0StoneAxe' or @name='meleeToolRepairT0TazasStoneAxe' or @name='meleeToolRepairT1ClawHammer' or @name='meleeToolRepairT3Nailgun']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceEssenceFire,resourceExtractFire,resourceEssenceIce,resourceExtractIce,resourceEssenceLightning,resourceExtractLightning</append>
 
 	<!-- ADMIN RESPEC -->
 	<append xpath="/items/item[@name='drinkJarFullRespecAdmin']/effect_group">
@@ -7840,7 +8154,7 @@
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="attSorceryHoly" level="0"/>
 	</append>
 	<append xpath="/items/item[@name='drinkJarGrandpasForgettingElixir']">
-		<!-- RESTORE: FIRE SORCERY -->
+	<!-- RESTORE: FIRE SORCERY -->
 		<effect_group tiered="false" name="Level 2: Initiate">
 				<requirement name="CVarCompare" cvar="$sorceryElixir_attFire" operation="Equals" value="2"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="attSorceryFire" level="2"/>
@@ -7886,7 +8200,7 @@
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="attSorceryFire" level="10"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ShowToolbeltMessage" message="[I]You are now a [e60000]MASTER[-] Fire Sorcerer[/I]"/>
 		</effect_group>
-		<!-- RESTORE: ICE SORCERY -->
+	<!-- RESTORE: ICE SORCERY -->
 		<effect_group tiered="false" name="Level 2: Initiate">
 				<requirement name="CVarCompare" cvar="$sorceryElixir_attIce" operation="Equals" value="2"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="SetProgressionLevel" progression_name="attSorceryIce" level="2"/>

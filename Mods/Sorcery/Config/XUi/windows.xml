@@ -80,6 +80,9 @@
 	<set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel[@width='200']/@pos">500,0</set> -->
 	<!-- <set xpath="/windows/window[@name='windowSkillList']/panel[@name='content']/rect[@name='categoryHeader']/panel[@width='200']/@width">60</set> -->
 
+	<!-- Extend Item Mod Slots -->
+	<set xpath="/windows/window[@name='windowAssemble']/panel[@name='content']/rect/rect/grid[@name='parts']/@rows">8</set>
+	
 		
 	<append xpath="/windows">
 
@@ -87,9 +90,9 @@
 		<!-- <window name="SorceryLogo" pos="0, 0" width="228" height="46" anchor="RightTop">
 			<texture name="SorceryLogo" pos="-238, -33" width="228" height="46" texture="@modfolder:Textures/SorceryLogo.png" />
 		</window>	 -->		
-		
 		<window name="SorceryLogo" depth="99" pos="0, 0" width="143" height="38" anchor="RightTop">
-			<texture name="SorceryLogo" pos="-153, -35" width="143" height="38" texture="@modfolder:Textures/SorceryLogo.png" />
+			<texture name="SorceryLogo" pos="-153, -37" width="143" height="38" style="sorcery.window.ingame.logo.normal.texture"/>
+			<!-- <label name="SorceryDifficulty" pos="153, -50" depth="0" size="143,30" text="Easy Mode" font_size="16" effect="outline" color="198,184,143,255" justify="Left" upper_case="false" /> -->
 		</window>
 		
 		<!-- UI: SORCERY TRACKER RUNES -->
@@ -99,7 +102,8 @@
 
 		<!-- UI: Pause Menu Splash -->
 		<window name="SorceryingameMenu" anchor="CenterCenter" pos="-125,200" width="250" height="200" controller="InGameMenuWindow" cursor_area="true">
-			<label name="SorceryVersion" pos="783, 288" depth="0" size="250,35" text="Sorcery v0.944" font_size="24" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
+			<label name="SorceryVersion" pos="783, 285" depth="0" size="250,35" text="Sorcery v0.96" font_size="24" effect="outline" color="102,0,204,255" justify="right" upper_case="false" />
+			<label name="SorceryDifficulty" pos="783, 265" depth="0" size="250,35" font_size="24" effect="outline" justify="right" upper_case="false" style="sorcery.window.ingame.logo.normal.label"/>
 			<texture name="SorceryingameMenuLogo" depth="0" size="672,446" texture="@modfolder:Textures/SorceryLogoMenu.png" pos="-200,194" />
 			<!-- <texture name="SorceryingameMenuChestNoble" style="sorcery.window.ingame.support.chest.noble.texture" /> -->
 			<texture name="SorceryingameMenuChestLord" style="sorcery.window.ingame.support.chest.lord.texture" />

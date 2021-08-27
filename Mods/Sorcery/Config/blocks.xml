@@ -465,20 +465,31 @@
 			<property name="FilterTags" value="floot"/>
 		</block>	
 	
-		<!-- <block name="sorcerySpawn_familiar">
-			<property name="Extends" value="metalTrussingRampOld" param1="DescriptionKey"/>
-			<property name="CustomIcon" value="sorceryFamiliarArcane"/>
-			<property name="CreativeMode" value="Dev"/>
-			<property name="Class" value="SpawnEntity"/>
-			<property name="StabilitySupport" value="false"/>
+		<!-- ARCANE CHEST -->	
+		<block name="sorceryCnt_ArcaneChest">
+			<property name="Class" value="SecureLoot"/>
+			<property name="Material" value="MwoodReinforced"/>
+			<property name="StabilitySupport" value="false"/> <!-- build restriction -->
+			<property name="Path" value="solid"/>
 			<property name="Shape" value="ModelEntity"/>
-			<property name="Mesh" value="models"/>
-			<property name="Model" value="Entities/Electrical/battery_bankPrefab"/> <property name="HandleFace" value="Bottom"/>
-			<property name="SpawnClass" value="sorceryFamiliarArcane"/>
-			<property name="FilterTags" value="fdesign"/>
-			<property name="Collide" value="sight"/>
-			<property name="IndexName" value="Familiar"/>
-		</block> -->
+			<property name="Model" value="#@modfolder:Resources/chestWoodenEnchanted.unity3d?chestWoodenEnchanted" />
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="MaxDamage" value="777"/>
+			<property class="RepairItems">
+				<property name="resourceExtractOmni" value="5"/>
+				<property name="resourceWood" value="20"/>
+			</property>
+			<drop event="Destroy" name="resourceWood" count="1,3"/>
+			<drop event="Destroy" name="resourceExtractOmni" count="1,3"/>
+			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
+			<property name="LootList" value="683"/>
+			<property name="FilterTags" value="floot"/>
+			<property name="Group" value="Basics,Building"/>
+		</block>
 		
 <!-- TRAPS ______________________________________-->
 		<!-- FIRE TRAP: Ground -->
@@ -518,12 +529,12 @@
 			<property name="Damage" value="1"/>
 			<property name="Damage_received" value="5"/>
 			<property name="DowngradeBlock" value="sorceryTrap_Fire_dmg2"/>
-			<property class="UpgradeBlock">
+			<!-- <property class="UpgradeBlock">
 				<property name="ToBlock" value="sorceryTrap_Fire"/>
 				<property name="Item" value="resourceExtractFire"/>
 				<property name="ItemCount" value="15"/>
 				<property name="UpgradeHitCount" value="4"/>
-			</property>
+			</property> -->
 			<property name="CustomUpgradeSound" value="sorceryFireball_draw"/>
 		</block>
 		<block name="sorceryTrap_Fire_dmg2">
@@ -533,12 +544,12 @@
 			<property name="Damage" value="1"/>
 			<property name="Damage_received" value="5"/>
 			<property name="DowngradeBlock" value="sorceryTrap_Fire_dmg3"/>
-			<property class="UpgradeBlock">
+			<!-- <property class="UpgradeBlock">
 				<property name="ToBlock" value="sorceryTrap_Fire_dmg1"/>
 				<property name="Item" value="resourceExtractFire"/>
 				<property name="ItemCount" value="15"/>
 				<property name="UpgradeHitCount" value="4"/>
-			</property>
+			</property> -->
 			<property name="CustomUpgradeSound" value="sorceryFireball_draw"/>
 		</block>
 		<block name="sorceryTrap_Fire_dmg3">
@@ -547,12 +558,12 @@
 			<property name="Model" value="#@modfolder:Resources/fireTrap-dmg3.unity3d?fireTrap-dmg3"/>
 			<property name="Damage" value="1"/>
 			<property name="Damage_received" value="5"/>
-			<property class="UpgradeBlock">
+			<!-- <property class="UpgradeBlock">
 				<property name="ToBlock" value="sorceryTrap_Fire_dmg2"/>
 				<property name="Item" value="resourceExtractFire"/>
 				<property name="ItemCount" value="15"/>
 				<property name="UpgradeHitCount" value="4"/>
-			</property>
+			</property> -->
 			<property name="CustomUpgradeSound" value="sorceryFireball_draw"/>
 		</block>
 		
@@ -593,12 +604,12 @@
 			<property name="Damage" value="1"/>
 			<property name="Damage_received" value="5"/>
 			<property name="DowngradeBlock" value="sorceryTrap_Ice_dmg2"/>
-			<property class="UpgradeBlock">
+			<!-- <property class="UpgradeBlock">
 				<property name="ToBlock" value="sorceryTrap_Ice"/>
 				<property name="Item" value="resourceExtractIce"/>
 				<property name="ItemCount" value="15"/>
 				<property name="UpgradeHitCount" value="4"/>
-			</property>
+			</property> -->
 			<property name="CustomUpgradeSound" value="sorceryIce_draw"/>
 			<!-- <property name="CustomUpgradeSound" value="bullethitsnow"/> -->
 		</block>
@@ -609,12 +620,12 @@
 			<property name="Damage" value="1"/>
 			<property name="Damage_received" value="5"/>
 			<property name="DowngradeBlock" value="sorceryTrap_Ice_dmg3"/>
-			<property class="UpgradeBlock">
+			<!-- <property class="UpgradeBlock">
 				<property name="ToBlock" value="sorceryTrap_Ice_dmg1"/>
 				<property name="Item" value="resourceExtractIce"/>
 				<property name="ItemCount" value="15"/>
 				<property name="UpgradeHitCount" value="4"/>
-			</property>
+			</property> -->
 			<property name="CustomUpgradeSound" value="sorceryIce_draw"/>
 		</block>
 		<block name="sorceryTrap_Ice_dmg3">
@@ -623,114 +634,113 @@
 			<property name="Model" value="#@modfolder:Resources/iceTrap-dmg3.unity3d?iceTrap-dmg3"/>
 			<property name="Damage" value="1"/>
 			<property name="Damage_received" value="5"/>
-			<property class="UpgradeBlock">
+			<!-- <property class="UpgradeBlock">
 				<property name="ToBlock" value="sorceryTrap_Ice_dmg2"/>
 				<property name="Item" value="resourceExtractIce"/>
 				<property name="ItemCount" value="15"/>
 				<property name="UpgradeHitCount" value="4"/>
-			</property>
+			</property> -->
 			<property name="CustomUpgradeSound" value="sorceryIce_draw"/>
 		</block>
+	
+
+	
+	
 	
 	</append>
 	<!-- END: /blocks -->
 
 	
-<!-- ESSENCE HARVESTS ______________________________________-->
-	<!-- FIRE, ICE, LIGHTNING: WILD ESSENCE ______________________________________-->
-	<!-- Boulders: FIRE, ICE, LIGHTNING -->
-	<!-- <append xpath="/blocks/block[@name='rockResource' or @name='rockResource02']">
-		<drop event="Harvest" name="resourceEssenceFire" count="4,5" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce" count="4,5" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning" count="4,5" tag="essenceLightningHarvest"/>
-	</append> -->
+<!-- ESSENCE HARVESTS ____________________________________________________________________________-->
+<!-- ROCKS -->
+	<!-- T3 BOULDERS -->
 	<append xpath="/blocks/block[@name='rockResourceBroke1' or @name='rockResourceBroke2' or @name='rockResource02Broke1' or @name='rockResource02Broke2']"> <!-- T1 -->
-		<drop event="Harvest" name="resourceEssenceFire" count="20,30" tag="essenceFireHarvest"/>
-		<drop event="Harvest" name="resourceEssenceIce" count="20,30" tag="essenceIceHarvest"/>
-		<drop event="Harvest" name="resourceEssenceLightning" count="20,30" tag="essenceLightningHarvest"/>
+		<drop event="Harvest" name="resourceEssenceFire" count="90,100" tag="essenceFireHarvest"/>
+		<drop event="Harvest" name="resourceEssenceIce" count="90,100" tag="essenceIceHarvest"/>
+		<drop event="Harvest" name="resourceEssenceLightning" count="90,100" tag="essenceLightningHarvest"/>
 			<!-- perk: essenceMastery, hidden -->
 			<drop event="Harvest" name="resourceEssenceFire" count="10" prob=".5" tag="essenceHarvestHidden"/>
 			<drop event="Harvest" name="resourceEssenceIce" count="10" prob=".5" tag="essenceHarvestHidden"/>
 			<drop event="Harvest" name="resourceEssenceLightning" count="10" prob=".5" tag="essenceHarvestHidden"/>
 	</append>
-	<!-- FIRE: WILD ESSENCE ______________________________________-->
-	<!-- Ore: FIRE -->
-	<append xpath="/blocks/block[@name='terrOreCoal' or @name='oreCoalBoulder']"> <!-- T3 -->
-		<drop event="Harvest" name="resourceEssenceFire" count="20,30" tag="essenceFireHarvest"/>
+<!-- ORE -->
+	<!-- T3 ORE VEINS -->
+	<append xpath="/blocks/block[@name='terrOreCoal' or @name='oreCoalBoulder']">
+		<drop event="Harvest" name="resourceEssenceFire" count="90,100" tag="essenceFireHarvest"/>
 			<drop event="Harvest" name="resourceEssenceFire" count="10" prob=".5" tag="essenceHarvestHidden"/>
 	</append>
-	<!-- Trees, Wild & Planted: FIRE -->
-		<!-- T0: FIRE -->
-		<append xpath="/blocks/block[@name='treePlantedOak16m']">
-			<drop event="Harvest" name="resourceEssenceFire" count="4,5" tag="essenceFireHarvest"/>
-		</append>
-		<!-- T1 Tree: FIRE -->
-		<append xpath="/blocks/block[@name='treeBurntMaple01' or @name='treePlantedOak27m']"> 
-			<drop event="Harvest" name="resourceEssenceFire" count="5,10" tag="essenceFireHarvest"/>
-			<drop event="Harvest" name="resourceEssenceFire" count="5" prob=".5" tag="essenceHarvestHidden"/>
-		</append>
-		<!-- T2 Tree: FIRE -->
-		<append xpath="/blocks/block[@name='treePineBurntMed' or @name='treePineBurntFullMed' or @name='treeBurntMaple02' or @name='treePlantedOak41m']">
-			<drop event="Harvest" name="resourceEssenceFire" count="15,20" tag="essenceFireHarvest"/>
-			<drop event="Harvest" name="resourceEssenceFire" count="5" prob=".5" tag="essenceHarvestHidden"/>
-		</append>
-		<!-- T3 Tree: FIRE -->
-		<append xpath="/blocks/block[@name='treePineBurntLrg' or @name='treeBurntMaple03']">
-			<drop event="Harvest" name="resourceEssenceFire" count="30,35" tag="essenceFireHarvest"/>
-			<drop event="Harvest" name="resourceEssenceFire" count="10" prob=".5" tag="essenceHarvestHidden"/>
-		</append>
-	<!-- ICE: WILD ESSENCE ______________________________________-->
-	<!-- Ore: ICE -->
-	<append xpath="/blocks/block[@name='terrOrePotassiumNitrate' or @name='orePotassiumNitrateBoulder']"> <!-- T3 -->
-		<drop event="Harvest" name="resourceEssenceIce" count="20,30" tag="essenceIceHarvest"/>
+	<append xpath="/blocks/block[@name='terrOrePotassiumNitrate' or @name='orePotassiumNitrateBoulder']">
+		<drop event="Harvest" name="resourceEssenceIce" count="90,100" tag="essenceIceHarvest"/>
 			<drop event="Harvest" name="resourceEssenceIce" count="10" prob=".5" tag="essenceHarvestHidden"/>
 	</append>
-	<!-- Trees, Wild & Planted: ICE -->
-		<!-- T0: ICE -->
-		<append xpath="/blocks/block[@name='treeWinterEverGreen' or @name='treePlantedWinterPine13m']">
-			<drop event="Harvest" name="resourceEssenceIce" count="4,5" tag="essenceIceHarvest"/>
-		</append>
-		<!-- T1 Tree: ICE -->
-		<append xpath="/blocks/block[@name='treeWinterPine13m' or @name='treePlantedWinterPine19m']"> 
-			<drop event="Harvest" name="resourceEssenceIce" count="5,10" tag="essenceIceHarvest"/>
-			<drop event="Harvest" name="resourceEssenceIce" count="5" prob=".5" tag="essenceHarvestHidden"/>
-		</append>
-		<!-- T2 Tree: ICE -->
-		<append xpath="/blocks/block[@name='treeWinterPine19m' or @name='treePlantedWinterPine28m']">
-			<drop event="Harvest" name="resourceEssenceIce" count="15,20" tag="essenceIceHarvest"/>
-			<drop event="Harvest" name="resourceEssenceIce" count="5" prob=".5" tag="essenceHarvestHidden"/>
-		</append>
-		<!-- T3 Tree: ICE -->
-		<append xpath="/blocks/block[@name='treeWinterPine28m']">
-			<drop event="Harvest" name="resourceEssenceIce" count="30,35" tag="essenceIceHarvest"/>
-			<drop event="Harvest" name="resourceEssenceIce" count="10" prob=".5" tag="essenceHarvestHidden"/>
-		</append>
-	<!-- LIGHTNING: ESSENCE ______________________________________-->
-	<!-- Ore: LIGHTNING -->
-	<append xpath="/blocks/block[@name='terrOreLead' or @name='oreLeadBoulder']"> <!-- T3 -->
-		<drop event="Harvest" name="resourceEssenceLightning" count="20,30" tag="essenceLightningHarvest"/>
+	<append xpath="/blocks/block[@name='terrOreLead' or @name='oreLeadBoulder']">
+		<drop event="Harvest" name="resourceEssenceLightning" count="90,100" tag="essenceLightningHarvest"/>
 		<drop event="Harvest" name="resourceEssenceLightning" count="10" prob=".5" tag="essenceHarvestHidden"/>
 	</append>
-	<!-- Trees, Wild & Planted: LIGHTNING -->
+<!-- TREES: WILD + PLANTED -->
+	<!-- T0 TREES: 20,30 -->
+		<!-- T0: FIRE -->
+		<append xpath="/blocks/block[@name='treePlantedOak16m']">
+			<drop event="Harvest" name="resourceEssenceFire" count="20,30" tag="essenceFireHarvest"/>
+		</append>
+		<!-- T0: ICE -->
+		<append xpath="/blocks/block[@name='treeWinterEverGreen' or @name='treePlantedWinterPine13m']">
+			<drop event="Harvest" name="resourceEssenceIce" count="20,30" tag="essenceIceHarvest"/>
+		</append>
 		<!-- T0: LIGHTNING -->
 		<append xpath="/blocks/block[@name='treeJuniper4m' or @name='treeMountainPine12m' or @name='treePlantedMountainPine19m']">
-			<drop event="Harvest" name="resourceEssenceLightning" count="4,5" tag="essenceLightningHarvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="20,30" tag="essenceLightningHarvest"/>
 		</append>
-		<!-- T1 Tree: LIGHTNING -->
+	<!-- T1 TREES: 40,50 -->
+		<!-- T1: FIRE -->
+		<append xpath="/blocks/block[@name='treeBurntMaple01' or @name='treePlantedOak27m']"> 
+			<drop event="Harvest" name="resourceEssenceFire" count="40,50" tag="essenceFireHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="5" prob=".5" tag="essenceHarvestHidden"/>
+		</append>
+		<!-- T1: ICE -->
+		<append xpath="/blocks/block[@name='treeWinterPine13m' or @name='treePlantedWinterPine19m']"> 
+			<drop event="Harvest" name="resourceEssenceIce" count="40,50" tag="essenceIceHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="5" prob=".5" tag="essenceHarvestHidden"/>
+		</append>
+		<!-- T1: LIGHTNING -->
 		<append xpath="/blocks/block[@name='treeMountainPine19m' or @name='treePlantedMountainPine27m']"> 
-			<drop event="Harvest" name="resourceEssenceLightning" count="5,10" tag="essenceLightningHarvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="40,50" tag="essenceLightningHarvest"/>
 			<drop event="Harvest" name="resourceEssenceLightning" count="5" prob=".5" tag="essenceHarvestHidden"/>
 		</append>
-		<!-- T2 Tree: LIGHTNING -->
-		<append xpath="/blocks/block[@name='treeMountainPineDry21m' or @name='treeMountainPine27m' or name='treeMountainPine31m' or name='treePlantedMountainPine41m']">
-			<drop event="Harvest" name="resourceEssenceLightning" count="15,20" tag="essenceLightningHarvest"/>
+	<!-- T2 TREES: 70,80 -->
+		<!-- T2: FIRE -->
+		<append xpath="/blocks/block[@name='treePineBurntMed' or @name='treePineBurntFullMed' or @name='treeBurntMaple02' or @name='treePlantedOak41m']">
+			<drop event="Harvest" name="resourceEssenceFire" count="70,80" tag="essenceFireHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="5" prob=".5" tag="essenceHarvestHidden"/>
+		</append>
+		<!-- T2: ICE -->
+		<append xpath="/blocks/block[@name='treeWinterPine19m' or @name='treePlantedWinterPine28m']">
+			<drop event="Harvest" name="resourceEssenceIce" count="70,80" tag="essenceIceHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="5" prob=".5" tag="essenceHarvestHidden"/>
+		</append>
+		<!-- T2: LIGHTNING -->
+		<append xpath="/blocks/block[@name='treeMountainPineDry21m' or @name='treeMountainPine27m' or @name='treeMountainPine31m' or @name='treePlantedMountainPine41m']">
+			<drop event="Harvest" name="resourceEssenceLightning" count="70,80" tag="essenceLightningHarvest"/>
 			<drop event="Harvest" name="resourceEssenceLightning" count="5" prob=".5" tag="essenceHarvestHidden"/>
 		</append>
-		<!-- T3 Tree: LIGHTNING -->
-		<append xpath="/blocks/block[@name='treeMountainPine41m' or @name='treeMountainPine48m']">
-			<drop event="Harvest" name="resourceEssenceLightning" count="30,35" tag="essenceLightningHarvest"/>
+	<!-- T3 TREES: 90,100 -->
+		<!-- T3: FIRE -->
+		<append xpath="/blocks/block[@name='treePineBurntLrg' or @name='treeBurntMaple03']">
+			<drop event="Harvest" name="resourceEssenceFire" count="90,100" tag="essenceFireHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="10" prob=".5" tag="essenceHarvestHidden"/>
+		</append>
+		<!-- T3: ICE -->
+		<append xpath="/blocks/block[@name='treeWinterPine28m']">
+			<drop event="Harvest" name="resourceEssenceIce" count="90,100" tag="essenceIceHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="10" prob=".5" tag="essenceHarvestHidden"/>
+		</append>
+		<!-- T3: LIGHTNING -->
+		<append xpath="/blocks/block[@name='treeMountainPine41m' or @name='treeMountainPine48m' or @name='treeFirLrg01']">
+			<drop event="Harvest" name="resourceEssenceLightning" count="90,100" tag="essenceLightningHarvest"/>
 			<drop event="Harvest" name="resourceEssenceLightning" count="10" prob=".5" tag="essenceHarvestHidden"/>
 		</append>
+<!-- END - ESSENCE HARVESTS ____________________________________________________________________________-->
+
 
 	
 	<!--___________________ SORCERY APPEND VANILLA ___________________-->
@@ -765,7 +775,7 @@
 		<!-- Ore -->
 		<append xpath="/blocks/block[@name='terrOreLead' or @name='oreLeadBoulder']/property[@name='Tags']/@value">,hasLightningEssence</append>
 		<!-- Trees -->
-		<append xpath="/blocks/block[@name='treeJuniper4m' or @name='treeMountainPine12m' or @name='treePlantedMountainPine19m' or @name='treeMountainPine19m' or @name='treePlantedMountainPine27m' or @name='treeMountainPineDry21m' or @name='treeMountainPine27m' or @name='treeMountainPine31m' or @name='treePlantedMountainPine41m' or @name='treeMountainPine41m' or @name='treeMountainPine48m']">
+		<append xpath="/blocks/block[@name='treeJuniper4m' or @name='treeMountainPine12m' or @name='treePlantedMountainPine19m' or @name='treeMountainPine19m' or @name='treePlantedMountainPine27m' or @name='treeMountainPineDry21m' or @name='treeMountainPine27m' or @name='treeMountainPine31m' or @name='treePlantedMountainPine41m' or @name='treeMountainPine41m' or @name='treeMountainPine48m' or @name='treeFirLrg01']">
 			<property name="Tags" value="hasLightningEssence"/>
 		</append>
 	

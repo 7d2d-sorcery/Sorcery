@@ -101,7 +101,7 @@
 				<action type="SpawnEnemy" id="sorceryFamiliarArcane" value="1" phase="1"/> <!-- familiar -->
 				<objective type="FetchKeep" id="sorceryElixir_attFire" value="1" phase="2" />
 				<objective type="FetchKeep" id="sorceryElixir_attIce" value="1" phase="2" />
-				<objective type="FetchKeep" id="sorceryElixir_attLightning" value="1" phase="2" />
+				<!-- <objective type="FetchKeep" id="sorceryElixir_attLightning" value="1" phase="2" /> -->
 			<reward type="Exp" value="777" />
 			<reward type="Item" id="cnt_SorceryCrateIntro" value="1" />
 			<reward type="Quest" id="quest_sorceryIntro2"/>
@@ -127,11 +127,14 @@
 				<objective type="FetchKeep" id="sorceryAlchemyMortar" value="1" phase="2" />
 				<objective type="FetchKeep" id="scrollQuest_ConjureFireItems" value="1" phase="2" />
 				<objective type="FetchKeep" id="scrollQuest_ConjureIceItems" value="1" phase="2" />
-				<objective type="FetchKeep" id="scrollQuest_ConjureLightningItems" value="1" phase="2" />
+				<!-- <objective type="FetchKeep" id="scrollQuest_ConjureLightningItems" value="1" phase="2" /> -->
 				<objective type="FetchKeep" id="sorceryArmor_Hood" phase="2" />
 				<objective type="FetchKeep" id="sorceryArmor_Chest" phase="2" />
 			<reward type="Exp" value="777" />
 			<reward type="Quest" id="quest_sorceryIntro3"/>
+			<reward type="Quest" id="quest_sorceryIntroFireStaff"><property name="chainquest" value="false"/></reward>
+			<reward type="Quest" id="quest_sorceryIntroIceStaff"><property name="chainquest" value="false"/></reward>
+			<!-- <reward type="Quest" id="quest_sorceryIntroLightningStaff"><property name="chainquest" value="false"/></reward> -->
 		</quest>
 		<!-- Intro 3: Consume Fire Skill Elixir, Read Journal of Fire Knowledge, Place Desk -->
 		<quest id="quest_sorceryIntro3">
@@ -154,6 +157,9 @@
 				<objective type="BlockPlace" id="sorceryDesk" value="1" />
 			<!-- Start: Intro Quests -->
 			<reward type="Quest" id="quest_sorceryIntroPotions">
+				<property name="chainquest" value="false"/>
+			</reward>
+			<reward type="Quest" id="quest_sorceryIntroChest">
 				<property name="chainquest" value="false"/>
 			</reward>
 			<reward type="Quest" id="quest_sorceryIntroTailoring">
@@ -182,7 +188,55 @@
 		</quest>
 		<!-- END - INTRO CHAIN -->
 		
-		
+	<!-- GENERAL INTRO QUESTS -->
+		<!-- Intro: Fire Staff -->
+		<quest id="quest_sorceryIntroFireStaff">
+			<property name="name_key" value="quest_sorceryIntroFireStaff_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireStaff_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireStaff" />
+			<property name="offer_key" value="quest_sorceryIntroFireStaff" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_weapon_fire_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="ZombieKill" value="5" phase="1"/>
+				<requirement type="Holding" id="staffFire" phase="1"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Ice Staff -->
+		<quest id="quest_sorceryIntroIceStaff">
+			<property name="name_key" value="quest_sorceryIntroIceStaff_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceStaff_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceStaff" />
+			<property name="offer_key" value="quest_sorceryIntroIceStaff" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_weapon_ice_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="ZombieKill" value="5" phase="1"/>
+				<requirement type="Holding" id="staffIce" phase="1"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Lightning Staff -->
+		<!-- <quest id="quest_sorceryIntroLightningStaff">
+			<property name="name_key" value="quest_sorceryIntroLightningStaff_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningStaff_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningStaff" />
+			<property name="offer_key" value="quest_sorceryIntroLightningStaff" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_weapon_lightning_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="ZombieKill" value="5" phase="1"/>
+				<requirement type="Holding" id="staffLightning" phase="1"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest> -->
 		
 	<!-- ARCANE INTRO QUESTS -->
 		<!-- Intro: Potions / Enchanted Mortar -->
@@ -199,7 +253,22 @@
 				<objective type="Craft" id="potion_Travel" value="1"/>
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
-			<!-- <reward type="SkillPoints" value="1"/> -->
+		</quest>
+		<!-- Intro: Arcane Chest -->
+		<quest id="quest_sorceryIntroChest">
+			<property name="name_key" value="quest_sorceryIntroChest_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroChest_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroChest" />
+			<property name="offer_key" value="quest_sorceryIntroChest" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_pentagram" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="sorceryCnt_ArcaneChest" value="1" phase="1" />
+				<objective type="BlockPlace" id="sorceryCnt_ArcaneChest" value="1" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		<!-- Intro: Scrolls -->
 		<quest id="quest_sorceryIntroScrolls">
@@ -294,7 +363,9 @@
 				<!-- NOTE: NRE if too many; alternative method. -->
 				<objective type="Wear" id="sorceryArmor_Hood" phase="1"/>
 				<objective type="ZombieKill" value="1" phase="2"/>
-				<requirement type="Buff" id="buffSorceryArmorSet_Arcane" phase="2"/>
+				<requirement type="Group" id="requirementFullSorcererArmorSet" value="OR" phase="2">
+					<requirement type="Buff" id="buffSorceryArmorSet_Arcane"/>
+				</requirement>
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
@@ -349,15 +420,13 @@
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
-			<action type="TrackQuest" />
 			<action type="ShowTip" value="quest_sorceryIntroGuide_Fire2">
-				<property name="delay" value="3"/>
 			</action>
-				<objective type="FetchKeep" id="resourceEssenceFire" value="125" phase="1" />
+				<objective type="FetchKeep" id="resourceEssenceFire" value="250" phase="1" />
 				<objective type="FetchKeep" id="resourceCoal" value="100" phase="1" />
 				<objective type="FetchKeep" id="resourceRockSmall" value="100" phase="1" />
 				<objective type="FetchKeep" id="resourceClayLump" value="100" phase="1" />
-				<objective type="FetchKeep" id="conjureFire" value="1" phase="2" />
+				<objective type="FetchKeep" id="conjureFire" value="1" phase="1" />
 				<objective type="BlockPlace" id="conjureFire" value="1" phase="2" />
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
@@ -455,7 +524,7 @@
 			<reward type="Item" id="spellFire3" value="5" />
 			<reward type="Item" id="scrollFire_Weapon" value="1" />
 			<reward type="Item" id="scrollFire_Ammo" value="1" />
-			<reward type="Item" id="resourceRitualShardFire" value="1" />
+			<reward type="Item" id="resourceRitualStoneFire" value="1" />
 			<reward type="Item" id="sorceryElixir_attFire" value="1" chainreward="true" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
 			<!-- Start: Fire Intro Quests -->
@@ -511,7 +580,7 @@
 			<property name="description_key" value="quest_sorceryFirePowder" />
 			<property name="offer_key" value="quest_sorceryFirePowder" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_potion" />
+			<property name="icon" value="uic_symbol_potion_fire" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -610,8 +679,10 @@
 			<property name="repeatable" value="false"/>
 				<!-- NOTE: NRE if too many; alternative method. -->
 				<objective type="Wear" id="sorceryArmorFire_Hood" phase="1"/>
-				<objective type="ZombieKill" value="1" phase="2"/>
-				<requirement type="Buff" id="buffSorceryArmorSet_Fire" phase="2"/>
+				<objective type="ZombieKill" value="1" phase="2"/>		
+				<requirement type="Group" id="requirementFullSorcererArmorSet" value="OR" phase="2">
+					<requirement type="Buff" id="buffSorceryArmorSet_Fire"/>
+				</requirement>
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
@@ -882,15 +953,13 @@
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
-			<action type="TrackQuest" />
 			<action type="ShowTip" value="quest_sorceryIntroGuide_Ice2">
-				<property name="delay" value="3"/>
 			</action>
 				<objective type="FetchKeep" id="resourceEssenceIce" value="250" phase="1" />
 				<objective type="FetchKeep" id="resourcePotassiumNitratePowder" value="100" phase="1" />
 				<objective type="FetchKeep" id="resourceRockSmall" value="100" phase="1" />
 				<objective type="FetchKeep" id="resourceClayLump" value="100" phase="1" />
-				<objective type="FetchKeep" id="conjureIce" value="1" phase="2" />
+				<objective type="FetchKeep" id="conjureIce" value="1" phase="1" />
 				<objective type="BlockPlace" id="conjureIce" value="1" phase="2" />
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
@@ -988,7 +1057,7 @@
 			<reward type="Item" id="spellIce3" value="5" />
 			<reward type="Item" id="scrollIce_Weapon" value="1" />
 			<reward type="Item" id="scrollIce_Ammo" value="1" />
-			<reward type="Item" id="resourceRitualShardIce" value="1" />
+			<reward type="Item" id="resourceRitualStoneIce" value="1" />
 			<reward type="Item" id="sorceryElixir_attIce" value="1"/>
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
 			<!-- <reward type="Quest" id="quest_sorceryIntroIceWildFallen"/> -->
@@ -1130,7 +1199,9 @@
 				<!-- NOTE: NRE if too many; alternative method. -->
 				<objective type="Wear" id="sorceryArmorIce_Hood" phase="1"/>
 				<objective type="ZombieKill" value="1" phase="2"/>
-				<requirement type="Buff" id="buffSorceryArmorSet_Ice" phase="2"/>
+				<requirement type="Group" id="requirementFullSorcererArmorSet" value="OR" phase="2">
+					<requirement type="Buff" id="buffSorceryArmorSet_Ice"/>
+				</requirement>
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
@@ -1188,7 +1259,7 @@
 			<property name="description_key" value="quest_sorceryIcePowder" />
 			<property name="offer_key" value="quest_sorceryIcePowder" />
 			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_potion" />
+			<property name="icon" value="uic_symbol_potion_ice" />
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
@@ -1415,7 +1486,7 @@
 				<objective type="ZombieKill" id="sorceryFallenFire" value="1" phase="3" />
 			<reward type="Exp" value="1666" />
 			<reward type="Item" id="sorceryElixir_attFire" value="1" />
-			<reward type="Item" id="resourceRitualShardFire" value="1" />
+			<reward type="Item" id="resourceRitualStoneFire" value="1" />
 		</quest>
 		<!-- Fallen: ICE -->
 		<quest id="quest_sorceryIntroFallen_Ice">
@@ -1441,7 +1512,7 @@
 				<objective type="ZombieKill" id="sorceryFallenIce" value="1" phase="3" />
 			<reward type="Exp" value="1666" />
 			<reward type="Item" id="sorceryElixir_attFire" value="1" />
-			<reward type="Item" id="resourceRitualShardIce" value="1" />
+			<reward type="Item" id="resourceRitualStoneIce" value="1" />
 		</quest>
 		<!-- Fallen: LIGHTNING -->
 		<quest id="quest_sorceryIntroFallen_Lightning">
@@ -1467,7 +1538,7 @@
 				<objective type="ZombieKill" id="sorceryFallenLightning" value="1" phase="3" />
 			<reward type="Exp" value="1666" />
 			<reward type="Item" id="sorceryElixir_attFire" value="1" />
-			<reward type="Item" id="resourceRitualShardLightning" value="1" />
+			<reward type="Item" id="resourceRitualStoneLightning" value="1" />
 		</quest>
 	<!-- END - INTRO FALLEN QUESTS __________________________________________________________________________________ -->
 
@@ -1495,7 +1566,7 @@
 				<action type="SpawnEnemy" id="sorceryFallenFire" value="2-4" phase="3" />
 				<objective type="ZombieKill" id="sorceryFallenFire" value="1" phase="3" />
 			<reward type="Exp" value="3666" />
-			<reward type="Item" id="resourceRitualShardFire" value="1" />
+			<reward type="Item" id="resourceRitualStoneFire" value="1" />
 		</quest>
 		<!-- Fallen: ICE -->
 		<quest id="quest_sorceryFallen_Ice">
@@ -1520,7 +1591,7 @@
 				<action type="SpawnEnemy" id="sorceryFallenIce" value="2-4" phase="3" />
 				<objective type="ZombieKill" id="sorceryFallenIce" value="1" phase="3" />
 			<reward type="Exp" value="3666" />
-			<reward type="Item" id="resourceRitualShardIce" value="1" />
+			<reward type="Item" id="resourceRitualStoneIce" value="1" />
 		</quest>
 		<!-- Fallen: LIGHTNING -->
 		<quest id="quest_sorceryFallen_Lightning">
@@ -1545,7 +1616,7 @@
 				<action type="SpawnEnemy" id="sorceryFallenLightning" value="2-4" phase="3" />
 				<objective type="ZombieKill" id="sorceryFallenLightning" value="1" phase="3" />
 			<reward type="Exp" value="3666" />
-			<reward type="Item" id="resourceRitualShardLightning" value="1" />
+			<reward type="Item" id="resourceRitualStoneLightning" value="1" />
 		</quest>
 		<!-- Fallen: TRIO -->
 		<quest id="quest_sorceryFallen_Trio">
