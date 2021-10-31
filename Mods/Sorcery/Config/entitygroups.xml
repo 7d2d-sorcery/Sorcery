@@ -159,6 +159,15 @@
 			<entity name="sorceryWispLightning" prob="3"/>
 		</entitygroup>
 		
+		
+	<!-- GROUPS -->
+		<entitygroup name="SorceryFallenGroup">
+			<entity name="sorceryFallenFire"/>
+			<entity name="sorceryFallenIce"/>
+			<entity name="sorceryFallenLightning"/>
+		</entitygroup>
+		
+		
 	</append>
 	
 </Sorcery>

@@ -1,0 +1,217 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+		__________________________________________________________________________________
+		2020 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+		
+		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+		of using this mod.
+		
+		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+		redistributed outside of its original distribution channels.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+		possible. Without their support, it is not possible to put in the enormous amount of time required to 
+		create the plethora of unique assets that make Sorcery.
+		
+		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+		__________________________________________________________________________________
+		
+		DISCLAIMER
+		__________________________________________________________________________________
+		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
+		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
+		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
+		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
+		__________________________________________________________________________________-->
+
+	<append xpath="/worldgeneration/biomes/biome[@name='snow']/decorations">
+		<!-- Bushes -->
+		<decoration type="block" blockname="tree_EssenceIce" prob=".0016" rotatemax="7"/>
+		<decoration type="block" blockname="tree_EssenceLightning" prob=".0004" rotatemax="7"/>
+		<decoration type="block" blockname="tree_EssenceFire" prob=".0002" rotatemax="7"/>
+		<!-- Arcane Shrines -->
+		<decoration type="block" blockname="shrinePotion" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineScroll" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineTouched" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainHealth" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainStamina" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainSpirit" onslopes="false" prob=".00007" rotatemax="3"/>
+		<!-- Fire Shrines -->
+		<decoration type="block" blockname="shrineFirePotion" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireScroll" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireTouched" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainHealth" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainStamina" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainSpirit" onslopes="false" prob=".00001" rotatemax="3"/>
+		<!-- Ice Shrines -->
+		<decoration type="block" blockname="shrineIcePotion" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceScroll" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceTouched" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainHealth" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainStamina" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainSpirit" onslopes="false" prob=".00007" rotatemax="3"/>
+		<!-- Lightning Shrines -->
+		<decoration type="block" blockname="shrineLightningPotion" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningScroll" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningTouched" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainHealth" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainStamina" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainSpirit" onslopes="false" prob=".00001" rotatemax="3"/>
+	</append>
+		
+	<append xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations">
+		<!-- Bushes -->
+		<decoration type="block" blockname="tree_EssenceLightning" prob=".0016" rotatemax="7"/>
+		<decoration type="block" blockname="tree_EssenceFire" prob=".0004" rotatemax="7"/>
+		<decoration type="block" blockname="tree_EssenceIce" prob=".0004" rotatemax="7"/>
+		<!-- Arcane Shrines -->
+		<decoration type="block" blockname="shrinePotion" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineScroll" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineTouched" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainHealth" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainStamina" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainSpirit" onslopes="false" prob=".00007" rotatemax="3"/>
+		<!-- Fire Shrines -->
+		<decoration type="block" blockname="shrineFirePotion" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireScroll" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireTouched" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainHealth" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainStamina" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainSpirit" onslopes="false" prob=".00001" rotatemax="3"/>
+		<!-- Ice Shrines -->
+		<decoration type="block" blockname="shrineIcePotion" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceScroll" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceTouched" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainHealth" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainStamina" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainSpirit" onslopes="false" prob=".00001" rotatemax="3"/>
+		<!-- Lightning Shrines -->
+		<decoration type="block" blockname="shrineLightningPotion" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningScroll" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningTouched" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainHealth" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainStamina" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainSpirit" onslopes="false" prob=".00007" rotatemax="3"/>
+	</append>
+
+	<append xpath="/worldgeneration/biomes/biome[@name='desert']/decorations">
+		<!-- Arcane Shrines -->
+		<decoration type="block" blockname="shrinePotion" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineScroll" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineTouched" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainHealth" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainStamina" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainSpirit" onslopes="false" prob=".00003" rotatemax="3"/>
+		<!-- Fire Shrines -->
+		<decoration type="block" blockname="shrineFirePotion" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireScroll" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireTouched" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainHealth" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainStamina" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainSpirit" onslopes="false" prob=".00003" rotatemax="3"/>
+		<!-- Ice Shrines -->
+		<decoration type="block" blockname="shrineIcePotion" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceScroll" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceTouched" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainHealth" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainStamina" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainSpirit" onslopes="false" prob=".00001" rotatemax="3"/>
+		<!-- Lightning Shrines -->
+		<decoration type="block" blockname="shrineLightningPotion" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningScroll" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningTouched" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainHealth" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainStamina" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainSpirit" onslopes="false" prob=".00003" rotatemax="3"/>
+	</append>
+
+	<append xpath="/worldgeneration/biomes/biome[@name='wasteland']/decorations">
+		<!-- Arcane Shrines -->
+		<decoration type="block" blockname="shrinePotion" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineScroll" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineTouched" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainHealth" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainStamina" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainSpirit" onslopes="false" prob=".00003" rotatemax="3"/>
+		<!-- Fire Shrines -->
+		<decoration type="block" blockname="shrineFirePotion" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireScroll" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireTouched" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainHealth" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainStamina" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainSpirit" onslopes="false" prob=".00003" rotatemax="3"/>
+		<!-- Ice Shrines -->
+		<decoration type="block" blockname="shrineIcePotion" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceScroll" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceTouched" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainHealth" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainStamina" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainSpirit" onslopes="false" prob=".00003" rotatemax="3"/>
+		<!-- Lightning Shrines -->
+		<decoration type="block" blockname="shrineLightningPotion" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningScroll" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningTouched" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainHealth" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainStamina" onslopes="false" prob=".00003" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainSpirit" onslopes="false" prob=".00003" rotatemax="3"/>
+	</append>
+
+	<append xpath="/worldgeneration/biomes/biome[@name='burnt_forest']/decorations">
+		<!-- Bushes -->
+		<decoration type="block" blockname="tree_EssenceFire" prob=".0016" rotatemax="7"/>
+		<decoration type="block" blockname="tree_EssenceLightning" prob=".0004" rotatemax="7"/>
+		<decoration type="block" blockname="tree_EssenceIce" prob=".0002" rotatemax="7"/>
+		<!-- Arcane Shrines -->
+		<decoration type="block" blockname="shrinePotion" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineScroll" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineTouched" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainHealth" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainStamina" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineDrainSpirit" onslopes="false" prob=".00007" rotatemax="3"/>
+		<!-- Fire Shrines -->
+		<decoration type="block" blockname="shrineFirePotion" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireScroll" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireTouched" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainHealth" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainStamina" onslopes="false" prob=".00007" rotatemax="3"/>
+		<decoration type="block" blockname="shrineFireDrainSpirit" onslopes="false" prob=".00007" rotatemax="3"/>
+		<!-- Ice Shrines -->
+		<decoration type="block" blockname="shrineIcePotion" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceScroll" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceTouched" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainHealth" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainStamina" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineIceDrainSpirit" onslopes="false" prob=".00001" rotatemax="3"/>
+		<!-- Lightning Shrines -->
+		<decoration type="block" blockname="shrineLightningPotion" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningScroll" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningTouched" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainHealth" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainStamina" onslopes="false" prob=".00001" rotatemax="3"/>
+		<decoration type="block" blockname="shrineLightningDrainSpirit" onslopes="false" prob=".00001" rotatemax="3"/>
+	</append>
+	
+</Sorcery>

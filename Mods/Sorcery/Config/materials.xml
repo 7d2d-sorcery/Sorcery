@@ -373,6 +373,21 @@
 			<property name="movement_factor" value="0.7"/>
 			<property name="Experience" value="2"/>
 		</material>
+		
+		<material id="MsorceryShrine">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/> <!-- cloth, earth, glass, metal, organic, plant, stone, water, wood -->
+			<property name="forge_category" value="stone"/>
+			<property name="particle_category" value="stone"/>
+			<property name="particle_destroy_category" value="stone"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="20"/>
+			<property name="Mass" type="int" value="1"/>
+			<property name="MaxDamage" value="777"/>
+			<!-- <property name="movement_factor" value="0.1"/> -->
+			<property name="Experience" value="200"/>
+		</material>
 
 	  </append>		
 </Sorcery>

@@ -150,6 +150,13 @@
 			<item name="sorceryArmorLightning_Leg"/>
 			<item name="sorceryArmorLightning_Pants"/>
 			<item name="sorceryArmorLightning_Boots"/>
+		</lootgroup>
+		<!-- Armor: OMNI -->
+		<lootgroup name="sorceryArmorOmni" loot_quality_template="QLTemplateT1"> 
+			<item group="sorceryArmor"/>
+			<item group="sorceryArmorFire"/>
+			<item group="sorceryArmorIce"/>
+			<item group="sorceryArmorLightning"/>
 		</lootgroup>		
 	<!-- END - ARMOR __________________________________________________________________________________ -->
 	
@@ -162,12 +169,36 @@
 			<item name="runeFire_TurretMeteor"/>
 			<item name="runeIce_TurretAuraChill"/>
 			<item name="runeIce_TurretHailstorm"/>
+			<item name="rune_Aquatic"/>
+			<item name="rune_Scavenger"/>
+			<item name="rune_StoneSkin"/>
+			<item name="runeFire_Empath"/>
+			<item name="runeFire_NovaSkin"/>
+			<item name="runeFire_Skin"/>
+			<item name="runeIce_Empath"/>
+			<item name="runeIce_NovaSkin"/>
+			<item name="runeIce_Skin"/>
+			<item name="runeLightning_Empath"/>
+			<item name="runeLightning_Skin"/>
 		</lootgroup>
 		<!-- Runes: GOLD -->
 		<lootgroup name="sorceryRunes_gold"> 
 			<item name="rune_Silence"/>
 			<item name="rune_SupporterAstryael"/>
 			<item name="rune_SupporterDragoness"/>
+			<item name="rune_ArcaneVision"/>
+			<item name="rune_DrainHealth"/>
+			<item name="rune_DrainSpirit"/>
+			<item name="rune_DrainStamina"/>
+			<item name="rune_Empath"/>
+			<item name="rune_Indestructible"/>
+			<item name="rune_SpiritWell"/>
+			<item name="runeFire_FirenadoCaster"/>
+			<item name="runeFire_MeteorCaster"/>
+			<item name="runeFire_NovaCaster"/>
+			<item name="runeIce_CometCaster"/>
+			<item name="runeIce_IceStormCaster"/>
+			<item name="runeIce_NovaCaster"/>
 		</lootgroup>
 		<!-- Runes: CLASS -->
 		<lootgroup name="sorceryRunes_class"> 
@@ -203,7 +234,7 @@
 			<item name="rune_ClassRitualist2"/>
 			<item name="rune_ClassRitualist3"/>
 		</lootgroup>	
-		<!-- Runes: ARCANE  -->
+		<!-- Runes: COMMON  -->
 		<lootgroup name="sorceryRunes"> 
 			<item name="rune_SpellLight"/>
 			<item name="rune_LuckyPotions"/>
@@ -232,16 +263,19 @@
 			<item name="potion_Health"/>
 			<item name="potion_Stamina"/>
 			<item name="potion_Spirit"/>
+			<item name="potion_Energy"/>
+			<item name="potion_Lifeforce"/>
 			<item name="potion_Devour"/>
 			<item name="potion_SlowFall"/>
 			<item name="potion_Mending"/>
 			<item name="potion_Travel"/>
+			<item name="potion_HolyWater"/>
+			<item name="potionFire_Essence"/>
+			<item name="potionFire_Sorcery"/>
+			<item name="potionIce_Essence"/>
+			<item name="potionIce_Sorcery"/>
 			<item name="potion_Remedy" prob=".3"/>
 			<item name="potion_Haste" prob=".2"/>
-			<item name="potionFire_Essence" prob=".2"/>
-			<item name="potionFire_Sorcery" prob=".2"/>
-			<item name="potionIce_Essence" prob=".2"/>
-			<item name="potionIce_Sorcery" prob=".2"/>
 			<item name="sorceryElixir_attFire" prob=".01"/>
 			<item name="sorceryElixir_attIce" prob=".01"/>
 			<item name="sorceryElixir_attLightning" prob=".01"/>
@@ -271,9 +305,18 @@
 			<item name="scroll_AugmentMining"/>
 			<item name="scroll_AugmentDigging"/>
 			<item name="scroll_AugmentLogging"/>
-			<item name="scroll_EssenceHarvest"/>
+			<item name="scroll_EssenceHarvest"/>			
+			<item name="scroll_Scavenger"/>
+			<item name="scroll_Thief"/>
+			<item name="scroll_DrainHealth"/>
+			<item name="scroll_DrainSpirit"/>
+			<item name="scroll_DrainStamina"/>
+			<item name="scroll_Recall"/>
+			<item name="scroll_ConjureEssence" prob=".2"/>
+			<item name="scrollFire_ConjureEssence" prob=".2"/>
+			<item name="scrollIce_ConjureEssence" prob=".2"/>
+			<item name="scrollLightning_ConjureEssence" prob=".2"/>
 			<item name="scroll_EnergyRegen" prob=".5"/>
-			<item name="scroll_Recall" prob=".5"/>
 		</lootgroup>
 		<!-- Scrolls: FIRE  -->
 		<lootgroup name="sorceryScrollsFire"> 
@@ -289,8 +332,10 @@
 		<lootgroup name="sorceryScrollsWeapon" count="1"> 
 			<item name="scrollFire_Weapon"/>
 			<item name="scrollIce_Weapon"/>
+			<item name="scrollLightning_Weapon"/>
 			<item name="scrollFire_Ammo"/>
 			<item name="scrollIce_Ammo"/>
+			<item name="scrollLightning_Ammo"/>
 		</lootgroup>
 	<!-- END - SCROLLS __________________________________________________________________________________ -->
 		
@@ -299,10 +344,10 @@
 			<item group="sorceryScrollsArcane"/>
 			<item group="sorceryScrollsFire"/>
 			<item group="sorceryScrollsIce"/>
-			<item name="q_sorceryFallen_Fire" prob="0.3"/>
-			<item name="q_sorceryFallen_Ice" prob="0.3"/>
-			<item name="q_sorceryFallen_Lightning" prob="0.3"/>
-			<item name="q_sorceryFallen_Trio" prob="0.2"/>
+			<item name="q_sorceryFallen_Fire" prob="0.2"/>
+			<item name="q_sorceryFallen_Ice" prob="0.2"/>
+			<item name="q_sorceryFallen_Lightning" prob="0.2"/>
+			<item name="q_sorceryFallen_Trio" prob="0.1"/>
 			<item name="q_sorcerySkillGrimoire" prob="0.05"/>
 		</lootgroup>	
 		
@@ -335,6 +380,17 @@
 		
 		
 	<!-- FALLEN __________________________________________________________________________________ -->
+		<!-- Fallen Stash -->
+		<lootgroup name="sorceryLoot_FallenStash" count="all">
+			<item group="sorceryRunes_class" count="1"/>
+			<item group="sorceryRunes" count="1"/>
+			<item group="sorceryPotions" count="2,4"/>
+			<item group="sorceryBooksScrolls" count="2,4"/>
+			<item group="sorceryArmorOmni" count="2,4"/>
+			<item name="resourceGoldNugget" count="2,6" /> <!-- 700 -->
+			<item name="resourceRawDiamond" count="0,4" /> <!-- 1500 -->
+		</lootgroup>	
+	
 		<!-- Fallen: ALL -->
 		<lootgroup name="sorceryFallen_All">
 			<item name="resourceSilverNugget" count="2,4" /> <!-- 250 -->
@@ -342,51 +398,87 @@
 			<item name="resourceRawDiamond" count="1,4" prob=".05" /> <!-- 1500 -->
 			<item group="sorceryPotions" count="1,2"/>
 			<item group="sorceryBooksScrolls" count="1"/>
-			<item group="sorceryArmor" count="1" prob=".3"/>
+			<item group="sorceryArmor" count="1" prob=".5"/>
 			<item group="sorceryRunes" count="1" prob=".4"/>
 			<item group="sorceryRunes_class" count="1" prob=".4"/>
 		</lootgroup>	
 		<!-- Fallen: FIRE -->
 		<lootgroup name="sorceryFallen_Fire"> 
-			<item name="sorceryElixir_attFire" count="1" prob=".1" />
-			<item name="q_sorceryFallen_Fire" count="1" prob=".1" />
-			<item name="resourceRitualStoneFire" count="1" prob=".1" />
+			<item name="sorceryElixir_attFire" count="1" prob=".05" />
+			<!-- <item name="q_sorceryFallen_Fire" count="1" prob=".1" /> -->
+			<!-- <item name="resourceRitualStoneFire" count="1" prob=".1" /> -->
 			<item name="toolFireCore" count="1" prob=".1" />
 			<item name="toolHammerFire" count="1" prob=".1" />
 			<item group="sorcerySpellsFire" count="2"/>
 			<item group="sorceryPotionsFire" count="1"/>
 			<item group="sorceryScrollsFire" count="1"/>
 			<item group="sorceryWeaponFire" count="1" prob=".1"/>
-			<item group="sorceryArmorFire" count="1" prob=".4"/>
+			<item group="sorceryArmorFire" count="1"/>
 			<item group="sorceryFallen_All"/>
 		</lootgroup>
 		<!-- Fallen: ICE -->
 		<lootgroup name="sorceryFallen_Ice"> 
-			<item name="sorceryElixir_attIce" count="1" prob=".1" />
-			<item name="q_sorceryFallen_Ice" count="1" prob=".1" />
-			<item name="resourceRitualStoneIce" count="1" prob=".1" />
+			<item name="sorceryElixir_attIce" count="1" prob=".05" />
+			<!-- <item name="q_sorceryFallen_Ice" count="1" prob=".1" /> -->
+			<!-- <item name="resourceRitualStoneIce" count="1" prob=".1" /> -->
 			<item name="toolIceCore" count="1" prob=".1" />
 			<item name="toolHammerIce" count="1" prob=".1" />
 			<item group="sorcerySpellsIce" count="2"/>
 			<item group="sorceryPotionsIce" count="1"/>
 			<item group="sorceryScrollsIce" count="1"/>
 			<item group="sorceryWeaponIce" count="1" prob=".1"/>
-			<item group="sorceryArmorIce" count="1" prob=".4"/>
+			<item group="sorceryArmorIce" count="1"/>
 			<item group="sorceryFallen_All"/>
 		</lootgroup>
 		<!-- Fallen: LIGHTNING -->
 		<lootgroup name="sorceryFallen_Lightning"> 
-			<item name="sorceryElixir_attLightning" count="1" prob=".1" />
-			<item name="q_sorceryFallen_Lightning" count="1" prob=".1" />
-			<item name="q_sorceryFallen_Ice" count="1" prob=".1" />
-			<item name="q_sorceryFallen_Fire" count="1" prob=".1" />
-			<item name="resourceRitualStoneLightning" count="1" prob=".1" />
+			<item name="sorceryElixir_attLightning" count="1" prob=".05" />
+			<!-- <item name="q_sorceryFallen_Lightning" count="1" prob=".1" /> -->
+			<!-- <item name="q_sorceryFallen_Ice" count="1" prob=".1" /> -->
+			<!-- <item name="q_sorceryFallen_Fire" count="1" prob=".1" /> -->
+			<!-- <item name="resourceRitualStoneLightning" count="1" prob=".1" /> -->
 			<item name="toolLightningCore" count="1" prob=".1" />
 			<item name="toolHammerLightning" count="1" prob=".1" />
-			<item group="sorceryArmorLightning" count="1" prob=".4"/>
+			<item group="sorceryArmorLightning" count="1"/>
 			<item group="sorceryFallen_All"/>
 		</lootgroup>
 	<!-- END - FALLEN __________________________________________________________________________________ -->
+		
+		
+	<!-- SHRINE LOOT __________________________________________________________________________________ -->
+		<!-- Arcane Shrine -->
+		<lootgroup name="sorceryLootShrine_Arcane">
+			<item name="resourceRitualStoneFire" count="1"/>
+			<item name="resourceRitualStoneIce" count="1"/>
+			<item name="resourceRitualStoneLightning" count="1"/>
+			<item name="q_sorceryFallen_Fire" count="1" prob="0.1"/>
+			<item name="q_sorceryFallen_Ice" count="1" prob="0.1"/>
+			<item name="q_sorceryFallen_Lightning" count="1" prob="0.1"/>
+			<item name="q_sorceryFallen_Trio" count="1" prob="0.05"/>
+			<item name="q_sorcerySkillGrimoire" count="1" prob="0.01"/>
+		</lootgroup>
+		<lootgroup name="sorceryLootShrine_Fire">
+			<item name="resourceRitualStoneFire" count="1"/>
+			<item name="q_sorceryFallen_Fire" count="1" prob="0.2"/>
+			<item name="q_sorceryFallen_Trio" count="1" prob="0.03"/>
+			<item name="q_sorcerySkillGrimoire" count="1" prob="0.01"/>
+			<item name="sorceryElixir_attFire" count="1" prob="0.01"/>
+		</lootgroup>
+		<lootgroup name="sorceryLootShrine_Ice">
+			<item name="resourceRitualStoneIce" count="1"/>
+			<item name="q_sorceryFallen_Ice" count="1" prob="0.2"/>
+			<item name="q_sorceryFallen_Trio" count="1" prob="0.03"/>
+			<item name="q_sorcerySkillGrimoire" count="1" prob="0.01"/>
+			<item name="sorceryElixir_attIce" count="1" prob="0.01"/>
+		</lootgroup>
+		<lootgroup name="sorceryLootShrine_Lightning">
+			<item name="resourceRitualStoneLightning" count="1"/>
+			<item name="q_sorceryFallen_Lightning" count="1" prob="0.2"/>
+			<item name="q_sorceryFallen_Trio" count="1" prob="0.03"/>
+			<item name="q_sorcerySkillGrimoire" count="1" prob="0.01"/>
+			<item name="sorceryElixir_attLightning" count="1" prob="0.01"/>
+		</lootgroup>
+	<!-- END - SHRINE LOOT __________________________________________________________________________________ -->
 		
 	<!-- FIXED LOOT __________________________________________________________________________________ -->
 		<!-- INTRO -->
@@ -490,6 +582,7 @@
 			<item name="resourceEssenceLightning" count="0,100"/>
 		</lootgroup>
 	<!-- END - WISP LOOT __________________________________________________________________________________ -->
+
 		
 	</insertBefore>
 <!-- END - LOOT GROUPS, CONTAINERS __________________________________________________________________________________ -->
@@ -528,7 +621,7 @@
 		<!-- Intro: ALTIN'S CHEST -->
 		<lootcontainer id="700" count="1" size="6,6" sound_open="sorceryRitualChant" sound_close="sorceryLightning_implodelow" loot_quality_template="sorceryTemplate_lowest" open_time="4" destroy_on_close="true">
 			<item group="sorceryIntroLoot_Chest" />
-		</lootcontainer>		
+		</lootcontainer>
 		<!-- Intro Fallen: CORPSES -->
 		<lootcontainer id="699" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
 			<item group="sorceryIntroLootFallen_Fire" />
@@ -589,6 +682,30 @@
 		<lootcontainer id="683" count="0" size="10,10" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="qualBaseTemplate">
 			<item name="cobweb" count="1,2"/>
 		</lootcontainer>
+		<lootcontainer id="680" count="1" size="6,6" sound_open="sorceryHorn" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="15" destroy_on_close="false">
+			<item group="sorceryLoot_FallenStash" />
+		</lootcontainer>
+		
+		<!-- SHRINES -->
+		<lootcontainer id="679" count="1" size="4,3" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
+			<item group="sorceryLootShrine_Arcane" />
+		</lootcontainer>
+		<lootcontainer id="678" count="1" size="4,3" sound_open="sorceryFireball_launch" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
+			<item group="sorceryLootShrine_Fire" />
+		</lootcontainer>
+		<lootcontainer id="677" count="1" size="4,3" sound_open="sorceryIce_freeze" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
+			<item group="sorceryLootShrine_Ice" />
+		</lootcontainer>
+		<lootcontainer id="676" count="1" size="4,3" sound_open="sorceryLightning_strike" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
+			<item group="sorceryLootShrine_Lightning" />
+		</lootcontainer>
+		<!-- <lootcontainer id="675" count="1" size="4,3" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
+			<item group="sorceryLootShrine_Unholy" />
+		</lootcontainer> -->
+		<!-- <lootcontainer id="674" count="1" size="4,3" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
+			<item group="sorceryLootShrine_Holy" />
+		</lootcontainer> -->
+		
 	</append> 
 <!-- END - SORCERY CONTAINERS __________________________________________________________________________________ -->
 

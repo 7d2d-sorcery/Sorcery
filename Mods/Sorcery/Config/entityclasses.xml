@@ -221,8 +221,9 @@
 			<property name="Class" value="EntityZombie"/>
 			<property name="Parent" value="Enemies"/>
 			<property name="PhysicsBody" value="zombieStandard"/>
-			<property name="Mass" value="110"/>
-			<property name="Weight" value="30"/>
+			<property name="Mass" value="180"/> <!-- old 110 -->
+			<property name="Weight" value="70"/> <!-- old 30 -->
+			<property name="PushFactor" value="30"/> <!-- NEW v0.97 -->
 			<property name="LookAtAngle" value="60"/>
 			<property name="Faction" value="undead"/>
 			<property name="IsEnemyEntity" value="true"/>
@@ -287,17 +288,23 @@
 			<property name="DismemberMultiplierLegs" value="0"/>
 			<property name="LegCrawlerThreshold" value="0"/> <!-- at like .175 nearly every zombie knocked down from a leg hit turns into a crawler -->
 			<property name="LegCrippleThreshold" value="0"/>
-			<property name="KnockdownProneDamageThreshold" value="0.1"/>
+			<property name="KnockdownProneDamageThreshold" value="0.7"/>
 			<property name="KnockdownProneStunDuration" value="0.1,0.3"/>
 			<property name="KnockdownProneRefillRate" value="0.1,0.1"/>
 			<property name="KnockdownKneelDamageThreshold" value="0.1"/>
 			<property name="KnockdownKneelStunDuration" value="0.1,0.3"/>
 			<property name="KnockdownKneelRefillRate" value="0.1,0.1"/>
+			<!-- <property name="KnockdownProneDamageThreshold" value="0.1"/>
+			<property name="KnockdownProneStunDuration" value="0.1,0.3"/>
+			<property name="KnockdownProneRefillRate" value="0.1,0.1"/>
+			<property name="KnockdownKneelDamageThreshold" value="0.1"/>
+			<property name="KnockdownKneelStunDuration" value="0.1,0.3"/>
+			<property name="KnockdownKneelRefillRate" value="0.1,0.1"/> -->
 			<property name="LegsExplosionDamageMultiplier" value="0"/>
 			<property name="ArmsExplosionDamageMultiplier" value="0"/>
 			<property name="HeadExplosionDamageMultiplier" value="0"/>
 			<property name="ChestExplosionDamageMultiplier" value="0"/>
-			<property name="PainResistPerHit" value=".6"/><!-- Fallen -->	
+			<property name="PainResistPerHit" value=".9"/> <!-- old .6 --> <!-- Added when hit. Caps at 3. Decay .2 per second. At 1 movement is not slowed by pain -->
 			<!-- Stealth -->
 			<property name="MaxViewAngle" value="280"/>
 			<!-- <property name="SightRange" value="60"/> --> <!-- distance in m -->
@@ -527,7 +534,7 @@
 				<triggered_effect trigger="onOtherAttackedSelf" target="other" action="AddJournalEntry" journal="tip_sorcery_Fallen" target_tags="player"/>
 			</effect_group>
 			<!-- CVAR: SCALING -->
-			<effect_group name="PLAYER TIER: Level">
+			<effect_group name="PLAYER TIER: Level"> <!-- NOTE: onCombatEntered -->
 				<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="sorceryPlayerTier" operation="set" value="0.5"/>
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="1">
 					<requirement name="PlayerLevel" target="other" operation="GTE" value="10"/>
@@ -568,13 +575,11 @@
 				<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="10">
 					<requirement name="PlayerLevel" target="other" operation="GTE" value="300"/>
 				</triggered_effect>
-			</effect_group>			
+				<passive_effect name="LootDropProb" operation="base_set" value="0">
+					<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="LTE" value="0.5"/>
+				</passive_effect>
+			</effect_group>
 			<property name="NavObject" value="sorceryFallenFire"/>
-			<drop event="Harvest" name="resourceEssenceFire" count="1,2" tag="essenceFireHarvest"/>
-			<drop event="Harvest" name="resourceEssenceFire2" count="1,2" prob=".7" tag="essenceFire2Harvest"/>
-			<drop event="Harvest" name="resourceEssenceFire3" count="1,2" prob=".4" tag="essenceFire3Harvest"/>
-			<drop event="Harvest" name="resourceEssenceFire4" count="1,2" prob=".1" tag="essenceFire4Harvest"/>
-			<drop event="Harvest" name="resourceEssenceFire5" count="1,2" prob=".01" tag="essenceFire5Harvest"/>
 			<property name="LootListAlive" value="696"/>
 			<property name="LootDropProb" value="1"/>
 			<property name="LootDropEntityClass" value="FallenLootContainerFire"/>
@@ -648,11 +653,6 @@
 				</triggered_effect>
 			</effect_group>			
 			<property name="NavObject" value="sorceryFallenIce"/>
-			<drop event="Harvest" name="resourceEssenceIce" count="1,2" tag="essenceIceHarvest"/>
-			<drop event="Harvest" name="resourceEssenceIce2" count="1,2" prob=".7" tag="essenceIce2Harvest"/>
-			<drop event="Harvest" name="resourceEssenceIce3" count="1,2" prob=".4" tag="essenceIce3Harvest"/>
-			<drop event="Harvest" name="resourceEssenceIce4" count="1,2" prob=".1" tag="essenceIce4Harvest"/>
-			<drop event="Harvest" name="resourceEssenceIce5" count="1,2" prob=".01" tag="essenceIce5Harvest"/>
 			<property name="LootListAlive" value="695"/>
 			<property name="LootDropProb" value="1"/>
 			<property name="LootDropEntityClass" value="FallenLootContainerIce"/>
@@ -726,11 +726,6 @@
 				</triggered_effect>
 			</effect_group>			
 			<property name="NavObject" value="sorceryFallenLightning"/>
-			<drop event="Harvest" name="resourceEssenceLightning" count="1,2" tag="essenceLightningHarvest"/>
-			<drop event="Harvest" name="resourceEssenceLightning2" count="1,2" prob=".7" tag="essenceLightning2Harvest"/>
-			<drop event="Harvest" name="resourceEssenceLightning3" count="1,2" prob=".4" tag="essenceLightning3Harvest"/>
-			<drop event="Harvest" name="resourceEssenceLightning4" count="1,2" prob=".1" tag="essenceLightning4Harvest"/>
-			<drop event="Harvest" name="resourceEssenceLightning5" count="1,2" prob=".01" tag="essenceLightning5Harvest"/>
 			<property name="LootListAlive" value="694"/>
 			<property name="LootDropProb" value="1"/>
 			<property name="LootDropEntityClass" value="FallenLootContainerLightning"/>

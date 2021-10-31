@@ -423,7 +423,7 @@
 <!-- STAVES ______________________________________-->	
 	<!-- FIRE STAFF ______________________________________-->
 		<item name="staffFire">
-			<property name="Tags" value="blunt,melee,grunting,heavy,weapon,meleeWeapon,longShaft,attStrength,staffFire,perkSorceryStaffFire"/>
+			<property name="Tags" value="blunt,melee,grunting,heavy,weapon,meleeWeapon,longShaft,attStrength,staff,staffFire,perkSorceryStaffFire"/>
 			<property name="DisplayType" value="sorceryStaffFire"/>
 			<property name="HoldType" value="33"/>
 			<property name="Meshfile" value="#@modfolder:Resources/staffFire.unity3d?staffFire"/>
@@ -560,7 +560,7 @@
 		</item>
 	<!-- ICE STAFF ______________________________________-->
 		<item name="staffIce">
-			<property name="Tags" value="blunt,melee,grunting,heavy,weapon,meleeWeapon,longShaft,attStrength,staffIce,perkSorceryStaffIce"/>
+			<property name="Tags" value="blunt,melee,grunting,heavy,weapon,meleeWeapon,longShaft,attStrength,staff,staffIce,perkSorceryStaffIce"/>
 			<property name="DisplayType" value="sorceryStaffIce"/>
 			<property name="HoldType" value="33"/>
 			<property name="Meshfile" value="#@modfolder:Resources/staffIce.unity3d?staffIce"/>
@@ -2057,7 +2057,7 @@
 		<item name="sorceryArmorMaster">
 			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="sorceryArmor_Hood"/>
-			<property name="DisplayType" value=""/>
+			<property name="DisplayType" value="sorceryArmor"/>
 			<property name="DescriptionKey" value="sorceryArmorGroupDesc"/>
 			<property name="Material" value="MsorceryClothArcane"/>
 			<property name="Weight" value="40"/>
@@ -2117,6 +2117,7 @@
 				<display_value name="dsorcSpiritRegen" value="0.10" />
 				<display_value name="dsorcEssenceAll" value=".15" /> -->
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -2218,6 +2219,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -2321,6 +2323,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -2421,6 +2424,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -2524,6 +2528,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -2624,6 +2629,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -2724,6 +2730,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -2825,6 +2832,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -2925,6 +2933,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -2997,6 +3006,7 @@
 		<!-- ACCESSORY: ARCANE SHADES -->
 		<item name="sorceryAccessory_Shades">
 			<property name="Tags" value="head,clothing,sorceryAccessory,sorceryAccessoryEpic,sorceryArmorSetArcane"/>
+			<property name="DisplayType" value="sorceryArmor"/>
 			<property name="DescriptionKey" value="sorceryAccessory_ShadesDesc"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="Material" value="MsorceryClothArcane"/>
@@ -3038,6 +3048,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Arcane"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -3112,7 +3123,7 @@
 		<item name="sorceryArmorFireMaster">
 			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="sorceryArmorFire_Hood"/>
-			<property name="DisplayType" value=""/>
+			<property name="DisplayType" value="sorceryArmor"/>
 			<property name="DescriptionKey" value="sorceryArmorGroupDesc"/>
 			<property name="Material" value="MsorceryClothFire"/>
 			<property name="Weight" value="40"/>
@@ -3162,6 +3173,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -3248,6 +3260,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -3336,6 +3349,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -3421,6 +3435,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -3509,6 +3524,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -3594,6 +3610,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -3679,6 +3696,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -3765,6 +3783,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -3850,6 +3869,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -3910,6 +3930,7 @@
 		<!-- FIRE ARMOR: FIRE SHADES -->
 		<item name="sorceryAccessoryFire_Shades">
 			<property name="Tags" value="head,clothing,sorceryAccessory,sorceryAccessoryEpic,sorceryArmorSetFire"/>
+			<property name="DisplayType" value="sorceryArmor"/>
 			<property name="DescriptionKey" value="sorceryAccessoryFire_ShadesDesc"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="Material" value="MsorceryClothFire"/>
@@ -3948,6 +3969,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Fire"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -4010,7 +4032,7 @@
 		<item name="sorceryArmorIceMaster">
 			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="sorceryArmorIce_Hood"/>
-			<property name="DisplayType" value=""/>
+			<property name="DisplayType" value="sorceryArmor"/>
 			<property name="DescriptionKey" value="sorceryArmorGroupDesc"/>
 			<property name="Material" value="MsorceryClothIce"/>
 			<property name="Weight" value="40"/>
@@ -4060,6 +4082,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -4146,6 +4169,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -4234,6 +4258,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -4319,6 +4344,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -4407,6 +4433,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -4492,6 +4519,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -4577,6 +4605,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -4663,6 +4692,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -4748,6 +4778,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -4808,6 +4839,7 @@
 		<!-- ICE ARMOR: ICE SHADES -->
 		<item name="sorceryAccessoryIce_Shades">
 			<property name="Tags" value="head,clothing,sorceryAccessory,sorceryAccessoryEpic,sorceryArmorSetIce"/>
+			<property name="DisplayType" value="sorceryArmor"/>
 			<property name="DescriptionKey" value="sorceryAccessoryIce_ShadesDesc"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="Material" value="MsorceryClothIce"/>
@@ -4846,6 +4878,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Ice"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -4908,7 +4941,7 @@
 		<item name="sorceryArmorLightningMaster">
 			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="sorceryArmorLightning_Hood"/>
-			<property name="DisplayType" value=""/>
+			<property name="DisplayType" value="sorceryArmor"/>
 			<property name="DescriptionKey" value="sorceryArmorGroupDesc"/>
 			<property name="Material" value="MsorceryClothLightning"/>
 			<property name="Weight" value="40"/>
@@ -4958,6 +4991,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -5044,6 +5078,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -5132,6 +5167,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -5217,6 +5253,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -5305,6 +5342,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -5390,6 +5428,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -5475,6 +5514,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -5561,6 +5601,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -5646,6 +5687,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -5706,6 +5748,7 @@
 		<!-- LIGHTNING ARMOR: LIGHTNING SHADES -->
 		<item name="sorceryAccessoryLightning_Shades">
 			<property name="Tags" value="head,clothing,sorceryAccessory,sorceryAccessoryEpic,sorceryArmorSetLightning"/>
+			<property name="DisplayType" value="sorceryArmor"/>
 			<property name="DescriptionKey" value="sorceryAccessoryLightning_ShadesDesc"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="Material" value="MsorceryClothLightning"/>
@@ -5744,6 +5787,7 @@
 				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffSorceryValidateArmorSet_Lightning"/>			
 				<passive_effect name="ModSlots" operation="base_set" value="1,6" tier="1,6"/>
 				<passive_effect name="PhysicalDamageResist" operation="base_add" value="1,5" tier="1,6" />
+				<passive_effect name="ElementalDamageResist" operation="base_add" value="1,5" tier="1,6" tags="heat,electrical"/>
 				<passive_effect name="HypothermalResist" operation="base_add" value="2,8" tier="1,6" />
 				<passive_effect name="HyperthermalResist" operation="base_add" value="2,8" tier="1,6"/>
 				<passive_effect name="DegradationMax" operation="base_set" value="1000,9000" tier="1,6"/>
@@ -5935,6 +5979,53 @@
 				</triggered_effect>
 			</effect_group>
 		</item>	
+	<!-- POTION: Energy -->
+		<item name="potion_Energy">
+			<property name="Extends" value="sorceryPotionMaster"/>
+			<property name="DisplayType" value="potion_Energy"/>
+			<property name="Meshfile" value="#@modfolder:Resources/potionArcane.unity3d?potionArcane"/>
+			<property class="Action0">
+					<requirement name="NotHasBuff" target="self" buff="potion_Energy"/>
+			</property>
+			<effect_group tiered="false">
+				<!-- Transform -->
+				<triggered_effect trigger="onSelfEquipStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Stamina"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Stamina"/>
+				<display_value name="dsorcPotionEnergy" value="50"/>
+				<display_value name="dsorcPotionStaminaRegen" value="6"/>
+				<display_value name="dsorcPotionSpiritRegen" value="3"/>
+				<display_value name="dsorcPotionDuration" value="10"/>
+				<display_value name="dsorcPotionCooldown" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume,potion_Energy"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="selfAOE" range="20" buff="buffPotionAlly,buffPotionConsume,potion_Energy" target_tags="ally,party">
+					<requirement name="HasBuff" buff="buffRune_ClassAlchemist"/>
+				</triggered_effect>
+			</effect_group>
+		</item>	
+	<!-- POTION: Lifeforce -->
+		<item name="potion_Lifeforce">
+			<property name="Extends" value="sorceryPotionMaster"/>
+			<property name="DisplayType" value="potion_Lifeforce"/>
+			<property name="Meshfile" value="#@modfolder:Resources/potionArcane.unity3d?potionArcane"/>
+			<property class="Action0">
+					<requirement name="NotHasBuff" target="self" buff="potion_Lifeforce"/>
+			</property>
+			<effect_group tiered="false">
+				<!-- Transform -->
+				<triggered_effect trigger="onSelfEquipStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Health"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Health"/>
+				<display_value name="dsorcPotionLifeforce" value="50"/>
+				<display_value name="dsorcPotionHealthRegen" value="5"/>
+				<display_value name="dsorcPotionStaminaRegen" value="6"/>
+				<display_value name="dsorcPotionSpiritRegen" value="3"/>
+				<display_value name="dsorcPotionDuration" value="10"/>
+				<display_value name="dsorcPotionCooldown" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume,potion_Lifeforce"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="selfAOE" range="20" buff="buffPotionAlly,buffPotionConsume,potion_Lifeforce" target_tags="ally,party">
+					<requirement name="HasBuff" buff="buffRune_ClassAlchemist"/>
+				</triggered_effect>
+			</effect_group>
+		</item>	
 	<!-- POTION: Remedy -->
 		<item name="potion_Remedy">
 			<property name="Extends" value="sorceryPotionMaster"/>
@@ -6075,6 +6166,29 @@
 				</triggered_effect>
 			</effect_group>
 		</item>
+	<!-- POTION: HolyWater -->
+		<item name="potion_HolyWater">
+			<property name="Extends" value="sorceryPotionMaster"/>
+			<property name="DisplayType" value="potion_HolyWater"/>
+			<property name="Meshfile" value="#@modfolder:Resources/potionArcane.unity3d?potionArcane"/>
+			<property class="Action0">
+					<!-- <requirement name="NotHasBuff" target="self" buff="potion_HolyWater"/> -->
+			</property>
+			<effect_group tiered="false">
+				<!-- Transform -->
+				<triggered_effect trigger="onSelfEquipStart" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="Remedy"/>
+				<triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="Remedy"/>
+				<display_value name="dsorcPotionHolyWater" value="20"/>
+				<display_value name="dsorcPotionHolyWater2" value=".2"/>
+				<display_value name="dsorcPotionDuration" value="300"/>
+				<display_value name="dsorcPotionCooldown" value="0"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffPotionConsume,potion_HolyWater"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="selfAOE" range="20" buff="buffPotionAlly,buffPotionConsume,potion_HolyWater" target_tags="ally,party">
+					<requirement name="HasBuff" buff="buffRune_ClassAlchemist"/>
+				</triggered_effect>
+			</effect_group>
+		</item>
+	
 	<!-- POTION: Fire Essence -->
 		<item name="potionFire_Essence">
 			<property name="Extends" value="sorceryPotionMaster"/>
@@ -6516,6 +6630,24 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_AmmoFire"/>
 			</effect_group>
 		</item>
+		<!-- Scroll: Conjure Fire Essence  -->
+		<item name="scrollFire_ConjureEssence">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="TintColor" value="151,0,0"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="sorceryChant"/>
+				<property name="UseAnimation" value="true"/>
+				<property name="Create_item" value="resourceEssenceFire"/>
+				<property name="Create_item_count" value="5000"/>
+			</property>
+		</item>
+	
 	<!-- ICE SCROLLS -->
 		<!-- Ice Scroll: Enchant Weapon -->
 		<item name="scrollIce_Weapon">
@@ -6535,6 +6667,58 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_AmmoIce"/>
 			</effect_group>
 		</item>
+		<!-- Scroll: Conjure Ice Essence  -->
+		<item name="scrollIce_ConjureEssence">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="TintColor" value="0,0,151"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="sorceryChant"/>
+				<property name="UseAnimation" value="true"/>
+				<property name="Create_item" value="resourceEssenceIce"/>
+				<property name="Create_item_count" value="5000"/>
+			</property>
+		</item>
+		
+	<!-- LIGHTNING SCROLLS -->
+		<!-- Lightning Scroll: Enchant Weapon -->
+		<item name="scrollLightning_Weapon">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_WeaponLightning"/>
+			</effect_group>
+		</item>
+		<!-- Lightning Scroll: Enchant Ammo -->
+		<item name="scrollLightning_Ammo">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_AmmoLightning"/>
+			</effect_group>
+		</item>
+		<!-- Scroll: Conjure Lightning Essence  -->
+		<item name="scrollLightning_ConjureEssence">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="sorceryChant"/>
+				<property name="UseAnimation" value="true"/>
+				<property name="Create_item" value="resourceEssenceLightning"/>
+				<property name="Create_item_count" value="5000"/>
+			</property>
+		</item>
+		
 	<!-- ARCANE SCROLLS -->
 		<!-- Scroll: Arcane Vision -->
 		<item name="scroll_ArcaneVision">
@@ -6615,12 +6799,69 @@
 				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffScroll_EnergyRegen"/>
 			</effect_group>
 		</item>
+		<!-- Scroll: Conjure Essence  -->
+		<item name="scroll_ConjureEssence">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="Weight" value="0"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="sorceryChant"/>
+				<property name="UseAnimation" value="true"/>
+				<property name="Create_item" value="resourceEssenceFire,resourceEssenceIce,resourceEssenceLightning"/>
+				<property name="Create_item_count" value="5000,5000,5000"/>
+			</property>
+		</item>
+		<!-- Scroll: Scavenger -->
+		<item name="scroll_Scavenger">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="scroll_Scavenger"/>
+			</effect_group>
+		</item>
+		<!-- Scroll: Thief -->
+		<item name="scroll_Thief">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="scroll_Thief"/>
+			</effect_group>
+		</item>
+		<!-- Scroll: Drain Health -->
+		<item name="scroll_DrainHealth">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="scroll_DrainHealth"/>
+			</effect_group>
+		</item>
+		<!-- Scroll: Drain Stamina -->
+		<item name="scroll_DrainStamina">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="scroll_DrainStamina"/>
+			</effect_group>
+		</item>
+		<!-- Scroll: Drain Spirit -->
+		<item name="scroll_DrainSpirit">
+			<property name="Extends" value="sorceryScrollMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="scroll_DrainSpirit"/>
+			</effect_group>
+		</item>
 		
 		<!-- QUEST SCROLLS -->
 		<!-- Scroll: Conjure Fire Items  -->
 		<item name="scrollQuest_ConjureFireItems">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
+			<property name="TintColor" value="151,0,0"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="Weight" value="0"/>
 			<property name="Candrop" value="false"/>
@@ -6644,6 +6885,7 @@
 		<item name="scrollQuest_ConjureIceItems">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="CreativeMode" value="Player"/>
+			<property name="TintColor" value="0,0,151"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="Weight" value="0"/>
 			<property name="Candrop" value="false"/>

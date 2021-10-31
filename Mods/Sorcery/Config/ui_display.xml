@@ -78,13 +78,14 @@
 
 		<!-- SORCERY ARMOR -->
 		<item_display_info display_type="sorceryArmor" display_group="groupAttire" >
-			<display_entry name="dsorcSetArcane" title_key="[c2b2ff]Arcane Armor Set[-]" display_leading_plus="true"/>
-			<display_entry name="dsorcSpirit" title_key="Spirit" display_leading_plus="true"/>
-			<display_entry name="dsorcSpiritRegen" title_key="Spirit Regen" display_type="Decimal" display_leading_plus="true"/>
-			<display_entry name="dsorcEssenceAll" title_key="Essence Find: [ff2000]Fire[-], [448aff]Ice[-], [9a57ff]Lightning[-]" display_type="Percent"/>
 			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="ElementalDamageResist" title_key="statExplosionResistance" tags="heat,electrical,cold"/>
+			<display_entry name="BuffResistance" title_key="statBuffResistance" display_type="Percent" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffInjuryStunned01CHTrigger" show_inverted="true"/>
+			<display_entry name="dStaminaChangeOT" title_key="statStaminaChangeOT" display_type="Decimal"/>
+			<display_entry name="Mobility" title_key="statMobility" display_type="Percent" show_inverted="true" negative_preferred="false"/>
 			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="HyperthermalResist" title_key="statHyperthermalResist"/>
+			<display_entry name="DegradationMax" title_key="statDegradationMax"/>
 		</item_display_info>
 		<!-- FIRE -->
 		<item_display_info display_type="sorceryArmorFire" display_group="groupAttire" >
@@ -180,7 +181,7 @@
 		<!-- POTIONS -->
 		<item_display_info display_type="potion_Health" display_group="groupConsumables" >
 			<display_entry name="dsorcPotionHealth" title_key="Health"/>
-			<display_entry name="dsorcPotionHealthRegen" title_key="Health Regen /s" display_type="Decimal"/>
+			<display_entry name="dsorcPotionHealthRegen" title_key="Health Regen" display_type="Decimal"/>
 			<display_entry name="dsorcPotionHealthDesc" title_key="Cure: Bleeding, Laceration, Abrasion" display_type="Bool"/>
 			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
 			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
@@ -193,6 +194,21 @@
 		</item_display_info>
 		<item_display_info display_type="potion_Spirit" display_group="groupConsumables" >
 			<display_entry name="dsorcPotionSpirit" title_key="Spirit"/>
+			<display_entry name="dsorcPotionSpiritRegen" title_key="Spirit Regen" display_type="Decimal"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<item_display_info display_type="potion_Energy" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionEnergy" title_key="Stamina, Spirit"/>
+			<display_entry name="dsorcPotionStaminaRegen" title_key="Stamina Regen" display_type="Decimal"/>
+			<display_entry name="dsorcPotionSpiritRegen" title_key="Spirit Regen" display_type="Decimal"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<item_display_info display_type="potion_Lifeforce" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionLifeforce" title_key="Health, Stamina, Spirit"/>
+			<display_entry name="dsorcPotionHealthRegen" title_key="Health Regen" display_type="Decimal"/>
+			<display_entry name="dsorcPotionStaminaRegen" title_key="Stamina Regen" display_type="Decimal"/>
 			<display_entry name="dsorcPotionSpiritRegen" title_key="Spirit Regen" display_type="Decimal"/>
 			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
 			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
@@ -239,6 +255,12 @@
 			<display_entry name="dsorcPotionTaunt" title_key="Taunt Nearby Foes" display_type="Bool"/>
 			<display_entry name="dsorcPotionTaunt2" title_key="Taunt Strength" display_type="Percent"/>
 			<display_entry name="dsorcPotionRemove" title_key="Remove With Secondary" display_type="Bool"/>
+			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
+			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
+		</item_display_info>
+		<item_display_info display_type="potion_HolyWater" display_group="groupConsumables" >
+			<display_entry name="dsorcPotionHolyWater" title_key="Hydrate"/>
+			<display_entry name="dsorcPotionHolyWater2" title_key="Ailment Resistance" display_type="Percent"/>
 			<display_entry name="dsorcPotionDuration" title_key="Duration"/>
 			<display_entry name="dsorcPotionCooldown" title_key="Cooldown"/>
 		</item_display_info>
@@ -435,7 +457,7 @@
 		</crafting_category_list>
 		<crafting_category_list display_type="sorceryAlchemyStation">
 			<crafting_category name="Food/Cooking" icon="ui_symbol_potion" display_name="Potions" />
-			<crafting_category name="Ammo/Weapons" icon="ui_symbol_potion_bomb" display_name="Potion Bombs" />
+			<!-- <crafting_category name="Ammo/Weapons" icon="ui_symbol_potion_bomb" display_name="Potion Bombs" /> -->
 			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="Resources" />
 		</crafting_category_list>
 		<crafting_category_list display_type="sorceryArcaneWheel">

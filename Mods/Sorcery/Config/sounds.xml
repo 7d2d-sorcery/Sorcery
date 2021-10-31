@@ -70,6 +70,20 @@
 			<AudioClip ClipName="#@modfolder:Resources/audioSorcery.unity3d?spiritFull"/>
 			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/>
 		</SoundDataNode>
+		<!-- SHRINE AGGRO -->
+		<SoundDataNode name="shrineAggro"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+			<Noise ID="5" noise="100" time="2" heat_map_strength="1.0" heat_map_time="60"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioSorcery.unity3d?sorceryAggroSilent"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxVoicesPerEntity value="1"/> <MaxRepeatRate value="0.5"/>
+		</SoundDataNode>
+		<!-- HOLY AH -->
+		<SoundDataNode name="holyAh"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>
+			<Noise ID="4" noise="60" time="2" heat_map_strength="0.1" heat_map_time="30"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioSorcery.unity3d?holyAh"/>
+			<LowestPitch name="0.8"/><HighestPitch name="1.2"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxVoicesPerEntity value="1"/> <MaxRepeatRate value="0.5"/>
+		</SoundDataNode>
+		
 		
 		<!-- AGGRO -->
 		<SoundDataNode name="sorceryAggroSm"> <AudioSource name="Sounds/AudioSource_Explosion"/>

@@ -463,11 +463,12 @@
 			<drop event="Destroy" count="0"/>
 			<property name="LootList" value="700"/>
 			<property name="FilterTags" value="floot"/>
-		</block>	
+		</block>
 	
 		<!-- ARCANE CHEST -->	
 		<block name="sorceryCnt_ArcaneChest">
 			<property name="Class" value="SecureLoot"/>
+			<property name="Tags" value="arcaneChest"/>
 			<property name="Material" value="MwoodReinforced"/>
 			<property name="StabilitySupport" value="false"/> <!-- build restriction -->
 			<property name="Path" value="solid"/>
@@ -489,6 +490,32 @@
 			<property name="LootList" value="683"/>
 			<property name="FilterTags" value="floot"/>
 			<property name="Group" value="Basics,Building"/>
+		</block>
+		
+		<!-- LOOT CONTAINERS -->
+		<!-- CONTAINER: INTRO CHEST LOOT -->	
+		<block name="cntLoot_SorceryFallenStash">
+			<property name="CreativeMode" value="Dev"/>
+			<!-- <property name="DescriptionKey" value="cntLoot_SorceryFallenStashDesc"/> -->
+			<!-- <property name="Class" value="SecureLoot"/> -->
+			<property name="Class" value="Loot"/>
+			<property name="Material" value="MwoodReinforced"/>
+			<property name="Path" value="solid"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/chestWoodenEnchanted.unity3d?chestWoodenEnchanted" />
+			<property name="CustomIcon" value="sorceryCnt_ArcaneChest"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="Candrop" value="false"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="MaxDamage" value="7777"/>
+				<!-- <property name="LockPickItem" value="resourceLockPick"/>
+				<property name="LockPickTime" value="15"/>
+				<property name="LockPickBreakChance" value="0.5"/> -->
+			<drop event="Destroy" count="0"/>
+			<property name="LootList" value="680"/>
+			<property name="FilterTags" value="floot"/>
 		</block>
 		
 <!-- TRAPS ______________________________________-->
@@ -644,12 +671,756 @@
 		</block>
 	
 
+	<!-- HELPER BLOCKS -->
+		<block name="sorcerySpellforgeRandomLootHelper">
+			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
+			<property name="CustomIcon" value="conjureFire"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Texture" value="279"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/conjureFire.unity3d?conjureFire"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+		</block>
+		<block name="sorceryBushRandomLootHelper">
+			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
+			<property name="CustomIcon" value="treeEssenceFire"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Texture" value="279"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceFire.unity3d?treeEssenceFire"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+		</block>
+		<block name="sorceryShrineRandomLootHelper">
+			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
+			<property name="CustomIcon" value="shrineMaster"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Texture" value="279"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/shrineArcane.unity3d?shrineArcane"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+		</block>
+	<!-- END - HELPER BLOCKS -->
+	
+	
+<!-- PLANTS ______________________________________-->
+	<!-- TREE MASTER: BUSH ______________________________________-->
+		<block name="treeMaster_Essence">
+			<!-- <property name="NameKey" value="tree_EssenceFire"/> -->
+			<!-- <property name="DescriptionKey" value="tree_EssenceFireDesc"/> -->
+			<property name="Extends" value="cropsHarvestableMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="tree_EssenceFire"/>
+			<property name="Material" value="Mleaves"/>
+			<property name="MaxDamage" value="1"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceFire.unity3d?treeEssenceFire" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,2,1"/>
+			<property name="Collide" value="melee"/>
+			<property name="VehicleHitScale" value=".1"/>
+			<property name="LightOpacity" value="1"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="IsDecoration" value="true"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="CanDecorateOnSlopes" value="true"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="CanPlayersSpawnOn" value="false"/>
+			<property name="Tags" value="EssenceBush,hasFireEssence"/>
+			<!-- <property name="BlockTag" value="TreeTrunk"/> -->
+			<property name="IsPlant" value="true"/> <!-- the biome decorator will only place this if underground.fertile_level GT 0 -->
+			<property name="HarvestOverdamage" value="false"/>
+			<property name="PassThroughDamage" value="false"/>
+			<property name="ActivationDistance" value="5"/>
+			<property name="SortOrder2" value="0144"/> <!-- SortTree -->
+			<property name="BuffChance" value="1"/>
+			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Bush"/>
+		</block>
+		<block name="treeGrowingMaster_Essence">
+			<property name="Extends" value="cropsHarvestableMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="tree_EssenceFire"/>
+			<property name="DisplayType" value=""/>
+			<property name="Material" value="Mleaves"/>
+			<property name="MaxDamage" value="1"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceFire.unity3d?treeEssenceFire" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="3,2,3"/>
+			<property name="Collide" value="melee"/>
+			<property name="VehicleHitScale" value=".1"/>
+			<property name="Class" value="PlantGrowing"/>
+			<property name="PlantGrowing.Next" value="treeDeadPineLeaf"/>
+			<property name="PlantGrowing.GrowthRate" value="63"/>
+			<property name="PlantGrowing.IsRandom" value="false"/>
+			<property name="PlantGrowing.LightLevelGrow" value="0"/>
+			<property name="PlantGrowing.LightLevelStay" value="0"/>
+			<property name="PlantGrowing.FertileLevel" value="1"/>
+			<property name="LightOpacity" value="1"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="IsDecoration" value="true"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="CanDecorateOnSlopes" value="true"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="CanPlayersSpawnOn" value="false"/>
+			<property name="Tags" value="EssenceBush,hasFireEssence"/>
+			<property name="IsPlant" value="true"/> <!-- the biome decorator will only place this if underground.fertile_level GT 0 -->
+			<property name="HarvestOverdamage" value="false"/>
+			<property name="PassThroughDamage" value="false"/>
+			<property name="ActivationDistance" value="5"/>
+			<property name="SortOrder2" value="0144"/> <!-- SortTree -->
+			<property name="PickupJournalEntry" value="tip_sorcery_BushSeed"/>
+		</block>
+
+	<!-- BUSH: FIRE BUSH ______________________________________-->
+	<!-- WILD: Fire Bush -->
+		<block name="tree_EssenceFire">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceFire.unity3d?treeEssenceFire" />
+			<property name="Tags" value="EssenceBush,hasFireEssence"/>
+			<property name="DowngradeBlock" value="tree_EssenceFireBare"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="200,250" tag="essenceFireHarvest"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="1000,1500"/>
+			<drop event="Destroy" name="treePlanted_EssenceFireSeed" count="1" prob=".02"/>
+		</block>
+		<block name="tree_EssenceFireBare">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="tree_EssenceFire"/>
+			<property name="Class" value="PlantGrowing"/>
+			<property name="PlantGrowing.Next" value="treeDeadPineLeaf"/>
+			<property name="PlantGrowing.GrowthRate" value="1.5"/>
+			<property name="PlantGrowing.IsRandom" value="false"/>
+			<property name="PlantGrowing.LightLevelGrow" value="0"/>
+			<property name="PlantGrowing.LightLevelStay" value="0"/>
+			<property name="PlantGrowing.FertileLevel" value="0"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceFireBare.unity3d?treeEssenceFireBare" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="Material" value="Mstone"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="100,300"/>
+		</block>
+	<!-- PLANTED: Fire Bush -->
+		<!-- Planted: Seed -->
+		<block name="treePlanted_EssenceFireSeed">
+			<property name="Extends" value="treeGrowingMaster_Essence"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="tree_EssenceFire"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceFireBare.unity3d?treeEssenceFireBare" />
+			<property name="Material" value="Mstone"/>
+			<property name="PlantGrowing.Next" value="treePlanted_EssenceFireGrowing"/>
+			<property name="CanPickup" value="true" param1="treePlanted_EssenceFireSeed"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="200,250" tag="essenceFireHarvest"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="1000,1500"/>
+		</block>
+		<block name="treePlanted_EssenceFireGrowing">
+			<property name="Extends" value="treeGrowingMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="tree_EssenceFire"/>
+			<property name="PlantGrowing.Next" value="treePlanted_EssenceFire"/>
+			<property name="PlantGrowing.GrowthRate" value="315"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceFireGrowing.unity3d?treeEssenceFireGrowing" />
+			<property name="CanPickup" value="true" param1="treePlanted_EssenceFireSeed"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="200,250" tag="essenceFireHarvest"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="1000,1500"/>
+		</block>
+		<block name="treePlanted_EssenceFire">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Tags" value="EssenceBush,hasFireEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceFire.unity3d?treeEssenceFire" />
+			<property name="MultiBlockDim" value="3,2,3"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="200,250" tag="essenceFireHarvest"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="1000,1500"/>
+			<property name="DowngradeBlock" value="treePlanted_EssenceFireSeed"/>
+		</block>
+	
+	<!-- BUSH: ICE BUSH ______________________________________-->
+	<!-- WILD: Ice Bush -->
+		<block name="tree_EssenceIce">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="tree_EssenceIce"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceIce.unity3d?treeEssenceIce" />
+			<property name="Tags" value="EssenceBush,hasIceEssence"/>
+			<property name="DowngradeBlock" value="tree_EssenceIceBare"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="200,250" tag="essenceIceHarvest"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="1000,1500"/>
+			<drop event="Destroy" name="treePlanted_EssenceIceSeed" count="1" prob=".02"/>
+		</block>
+		<block name="tree_EssenceIceBare">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="tree_EssenceIce"/>
+			<property name="Class" value="PlantGrowing"/>
+			<property name="PlantGrowing.Next" value="treeDeadPineLeaf"/>
+			<property name="PlantGrowing.GrowthRate" value="1.5"/>
+			<property name="PlantGrowing.IsRandom" value="false"/>
+			<property name="PlantGrowing.LightLevelGrow" value="0"/>
+			<property name="PlantGrowing.LightLevelStay" value="0"/>
+			<property name="PlantGrowing.FertileLevel" value="0"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceIceBare.unity3d?treeEssenceIceBare" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="Material" value="Mstone"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="100,300"/>
+		</block>
+	<!-- PLANTED: Ice Bush -->
+		<!-- Planted: Seed -->
+		<block name="treePlanted_EssenceIceSeed">
+			<property name="Extends" value="treeGrowingMaster_Essence"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="tree_EssenceIce"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceIceBare.unity3d?treeEssenceIceBare" />
+			<property name="Material" value="Mstone"/>
+			<property name="PlantGrowing.Next" value="treePlanted_EssenceIceGrowing"/>
+			<property name="CanPickup" value="true" param1="treePlanted_EssenceIceSeed"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="200,250" tag="essenceIceHarvest"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="1000,1500"/>
+		</block>
+		<block name="treePlanted_EssenceIceGrowing">
+			<property name="Extends" value="treeGrowingMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="tree_EssenceIce"/>
+			<property name="PlantGrowing.Next" value="treePlanted_EssenceIce"/>
+			<property name="PlantGrowing.GrowthRate" value="315"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceIceGrowing.unity3d?treeEssenceIceGrowing" />
+			<property name="CanPickup" value="true" param1="treePlanted_EssenceIceSeed"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="200,250" tag="essenceIceHarvest"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="1000,1500"/>
+		</block>
+		<block name="treePlanted_EssenceIce">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="tree_EssenceIce"/>			
+			<property name="Tags" value="EssenceBush,hasIceEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceIce.unity3d?treeEssenceIce" />
+			<property name="MultiBlockDim" value="3,2,3"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="200,250" tag="essenceIceHarvest"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="1000,1500"/>
+			<property name="DowngradeBlock" value="treePlanted_EssenceIceSeed"/>
+		</block>
+	
+	<!-- BUSH: LIGHTNING BUSH ______________________________________-->
+	<!-- WILD: Lightning Bush -->
+		<block name="tree_EssenceLightning">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="tree_EssenceLightning"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceLightning.unity3d?treeEssenceLightning" />
+			<property name="Tags" value="EssenceBush,hasLightningEssence"/>
+			<property name="DowngradeBlock" value="tree_EssenceLightningBare"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="200,250" tag="essenceLightningHarvest"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="1000,1500"/>
+			<drop event="Destroy" name="treePlanted_EssenceLightningSeed" count="1" prob=".02"/>
+		</block>
+		<block name="tree_EssenceLightningBare">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="tree_EssenceLightning"/>
+			<property name="Class" value="PlantGrowing"/>
+			<property name="PlantGrowing.Next" value="treeDeadPineLeaf"/>
+			<property name="PlantGrowing.GrowthRate" value="1.5"/>
+			<property name="PlantGrowing.IsRandom" value="false"/>
+			<property name="PlantGrowing.LightLevelGrow" value="0"/>
+			<property name="PlantGrowing.LightLevelStay" value="0"/>
+			<property name="PlantGrowing.FertileLevel" value="0"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceLightningBare.unity3d?treeEssenceLightningBare" />
+			<property name="Material" value="Mstone"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="100,300"/>
+		</block>
+	<!-- PLANTED: Lightning Bush -->
+		<!-- Planted: Seed -->
+		<block name="treePlanted_EssenceLightningSeed">
+			<property name="Extends" value="treeGrowingMaster_Essence"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="tree_EssenceLightning"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceLightningBare.unity3d?treeEssenceLightningBare" />
+			<property name="Material" value="Mstone"/>
+			<property name="PlantGrowing.Next" value="treePlanted_EssenceLightningGrowing"/>
+			<property name="CanPickup" value="true" param1="treePlanted_EssenceLightningSeed"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="200,250" tag="essenceLightningHarvest"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="1000,1500"/>
+		</block>
+		<block name="treePlanted_EssenceLightningGrowing">
+			<property name="Extends" value="treeGrowingMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="tree_EssenceLightning"/>
+			<property name="PlantGrowing.Next" value="treePlanted_EssenceLightning"/>
+			<property name="PlantGrowing.GrowthRate" value="315"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceLightningGrowing.unity3d?treeEssenceLightningGrowing" />
+			<property name="CanPickup" value="true" param1="treePlanted_EssenceLightningSeed"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="200,250" tag="essenceLightningHarvest"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="1000,1500"/>
+		</block>
+		<block name="treePlanted_EssenceLightning">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="tree_EssenceLightning"/>
+			<property name="Tags" value="EssenceBush,hasLightningEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceLightning.unity3d?treeEssenceLightning" />
+			<property name="MultiBlockDim" value="3,2,3"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="200,250" tag="essenceLightningHarvest"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="1000,1500"/>
+			<property name="DowngradeBlock" value="treePlanted_EssenceLightningSeed"/>
+		</block>
+<!-- END - PLANTS ______________________________________-->
+	
+	
+<!-- SHRINES ______________________________________-->
+	<!-- SHRINE: MASTER ______________________________________-->
+		<block name="shrineMaster">
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="shrineMaster"/>
+			<property name="DisplayInfo" value="Name"/> <!-- valid: "Description, Name" -->
+			<property name="Class" value="Loot"/>			
+			<property name="LootList" value="679"/>
+			<property name="Material" value="MsorceryShrine"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/shrineArcane.unity3d?shrineArcane" />
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="MultiBlockDim" value="5,6,5"/>
+			<property name="BigDecorationRadius" value="5"/>
+			<property name="CanDecorateOnSlopes" value="false"/>			
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Path" value="solid"/>
+			<property name="LightOpacity" value="1"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="IsDecoration" value="true"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="CanPlayersSpawnOn" value="false"/>
+			<property name="ActivationDistance" value="5"/>
+			<property name="BuffChance" value="1"/>
+			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+			<property name="DowngradeBlock" value="shrineBareMaster"/>
+			<drop event="Harvest" name="resourceRockSmall" count="100" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="shrineBareMaster">
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="shrineMaster"/>
+			<property name="DisplayInfo" value="Description"/> <!-- valid: "Description, Name" -->
+			<property name="Material" value="MsorceryShrine"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/shrineArcaneBare.unity3d?shrineArcaneBare" />
+			<property name="ModelOffset" value="0,0,0"/>
+			<property name="MultiBlockDim" value="5,6,5"/>
+			<property name="BigDecorationRadius" value="5"/>
+			<property name="CanDecorateOnSlopes" value="false"/>			
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Path" value="solid"/>
+			<property name="LightOpacity" value="1"/>
+			<property name="Class" value="PlantGrowing"/>
+			<property name="PlantGrowing.Next" value="shrineMaster"/>
+			<property name="PlantGrowing.GrowthRate" value="400"/>
+			<property name="PlantGrowing.IsRandom" value="false"/>
+			<property name="PlantGrowing.LightLevelGrow" value="0"/>
+			<property name="PlantGrowing.LightLevelStay" value="0"/>
+			<property name="PlantGrowing.FertileLevel" value="0"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="IsDecoration" value="true"/>
+			<property name="IsPlant" value="false"/>
+			<property name="HarvestOverdamage" value="false"/>
+			<property name="PassThroughDamage" value="false"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="CanPlayersSpawnOn" value="false"/>
+			<property name="ActivationDistance" value="5"/>
+			<property name="BuffChance" value="1"/>
+			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+			<drop event="Harvest" name="resourceRockSmall" count="100" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="shrineFireMaster">
+			<property name="Extends" value="shrineMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="LootList" value="678"/>
+			<property name="Model" value="#@modfolder:Resources/shrineFire.unity3d?shrineFire" />
+			<property name="DowngradeBlock" value="shrineFireBareMaster"/>
+			<property name="BuffChance" value="1"/>
+			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+		</block>
+		<block name="shrineFireBareMaster">
+			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Model" value="#@modfolder:Resources/shrineFireBare.unity3d?shrineFireBare" />
+			<property name="BuffChance" value="1"/>
+			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+		</block>
+		<block name="shrineIceMaster">
+			<property name="Extends" value="shrineMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="LootList" value="677"/>
+			<property name="Model" value="#@modfolder:Resources/shrineIce.unity3d?shrineIce" />
+			<property name="DowngradeBlock" value="shrineIceBareMaster"/>
+			<property name="BuffChance" value="1"/>
+			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+		</block>
+		<block name="shrineIceBareMaster">
+			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Model" value="#@modfolder:Resources/shrineIceBare.unity3d?shrineIceBare" />
+			<property name="BuffChance" value="1"/>
+			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+		</block>
+		<block name="shrineLightningMaster">
+			<property name="Extends" value="shrineMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="LootList" value="676"/>
+			<property name="Model" value="#@modfolder:Resources/shrineLightning.unity3d?shrineLightning" />
+			<property name="DowngradeBlock" value="shrineLightningBareMaster"/>
+			<property name="BuffChance" value="1"/>
+			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+		</block>
+		<block name="shrineLightningBareMaster">
+			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Model" value="#@modfolder:Resources/shrineLightningBare.unity3d?shrineLightningBare" />
+			<property name="BuffChance" value="1"/>
+			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+		</block>
+
+<!-- SHRINES: ARCANE ______________________________________-->	
+	<!-- NOTE: buffSorceryManage: SHRINE MANAGE -->
+	<!-- ARCANE SHRINE: POTION --> 
+		<block name="shrinePotion">
+			<property name="Extends" value="shrineMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrinePotion"/>
+			<property name="DowngradeBlock" value="shrineBarePotion"/>
+		</block>
+		<block name="shrineBarePotion">
+			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrinePotionDesc"/>
+			<property name="PlantGrowing.Next" value="shrinePotion"/>
+		</block>
+	<!-- ARCANE SHRINE: SCROLL --> 
+		<block name="shrineScroll">
+			<property name="Extends" value="shrineMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineScroll"/>
+			<property name="DowngradeBlock" value="shrineBareScroll"/>
+		</block>
+		<block name="shrineBareScroll">
+			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineScrollDesc"/>
+			<property name="PlantGrowing.Next" value="shrineScroll"/>
+		</block>
+	<!-- ARCANE SHRINE: TOUCHED --> 
+		<block name="shrineTouched">
+			<property name="Extends" value="shrineMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineTouched"/>
+			<property name="DowngradeBlock" value="shrineBareTouched"/>
+		</block>
+		<block name="shrineBareTouched">
+			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineTouchedDesc"/>
+			<property name="PlantGrowing.Next" value="shrineTouched"/>
+		</block>
+	<!-- ARCANE SHRINE: DRAIN HEALTH --> 
+		<block name="shrineDrainHealth">
+			<property name="Extends" value="shrineMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineDrainHealth"/>
+			<property name="DowngradeBlock" value="shrineBareDrainHealth"/>
+		</block>
+		<block name="shrineBareDrainHealth">
+			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineDrainHealthDesc"/>
+			<property name="PlantGrowing.Next" value="shrineDrainHealth"/>
+		</block>
+	<!-- ARCANE SHRINE: DRAIN STAMINA --> 
+		<block name="shrineDrainStamina">
+			<property name="Extends" value="shrineMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineDrainStamina"/>
+			<property name="DowngradeBlock" value="shrineBareDrainStamina"/>
+		</block>
+		<block name="shrineBareDrainStamina">
+			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineDrainStaminaDesc"/>
+			<property name="PlantGrowing.Next" value="shrineDrainStamina"/>
+		</block>
+	<!-- ARCANE SHRINE: DRAIN SPIRIT --> 
+		<block name="shrineDrainSpirit">
+			<property name="Extends" value="shrineMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineDrainSpirit"/>
+			<property name="DowngradeBlock" value="shrineBareDrainSpirit"/>
+		</block>
+		<block name="shrineBareDrainSpirit">
+			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineDrainSpiritDesc"/>
+			<property name="PlantGrowing.Next" value="shrineDrainSpirit"/>
+		</block>
+		
+<!-- SHRINES: FIRE ______________________________________-->	
+	<!-- NOTE: buffSorceryManage: SHRINE MANAGE -->
+	<!-- FIRE SHRINE: POTION --> 
+		<block name="shrineFirePotion">
+			<property name="Extends" value="shrineFireMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineFirePotion"/>
+			<property name="DowngradeBlock" value="shrineFireBarePotion"/>
+		</block>
+		<block name="shrineFireBarePotion">
+			<property name="Extends" value="shrineFireBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineFirePotionDesc"/>
+			<property name="PlantGrowing.Next" value="shrineFirePotion"/>
+		</block>
+	<!-- FIRE SHRINE: SCROLL --> 
+		<block name="shrineFireScroll">
+			<property name="Extends" value="shrineFireMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineFireScroll"/>
+			<property name="DowngradeBlock" value="shrineFireBareScroll"/>
+		</block>
+		<block name="shrineFireBareScroll">
+			<property name="Extends" value="shrineFireBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineFireScrollDesc"/>
+			<property name="PlantGrowing.Next" value="shrineFireScroll"/>
+		</block>
+	<!-- FIRE SHRINE: TOUCHED --> 
+		<block name="shrineFireTouched">
+			<property name="Extends" value="shrineFireMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineFireTouched"/>
+			<property name="DowngradeBlock" value="shrineFireBareTouched"/>
+		</block>
+		<block name="shrineFireBareTouched">
+			<property name="Extends" value="shrineFireBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineFireTouchedDesc"/>
+			<property name="PlantGrowing.Next" value="shrineFireTouched"/>
+		</block>
+	<!-- FIRE SHRINE: DRAIN HEALTH --> 
+		<block name="shrineFireDrainHealth">
+			<property name="Extends" value="shrineFireMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineFireDrainHealth"/>
+			<property name="DowngradeBlock" value="shrineFireBareDrainHealth"/>
+		</block>
+		<block name="shrineFireBareDrainHealth">
+			<property name="Extends" value="shrineFireBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineFireDrainHealthDesc"/>
+			<property name="PlantGrowing.Next" value="shrineFireDrainHealth"/>
+		</block>
+	<!-- FIRE SHRINE: DRAIN STAMINA --> 
+		<block name="shrineFireDrainStamina">
+			<property name="Extends" value="shrineFireMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineFireDrainStamina"/>
+			<property name="DowngradeBlock" value="shrineFireBareDrainStamina"/>
+		</block>
+		<block name="shrineFireBareDrainStamina">
+			<property name="Extends" value="shrineFireBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineFireDrainStaminaDesc"/>
+			<property name="PlantGrowing.Next" value="shrineFireDrainStamina"/>
+		</block>
+	<!-- FIRE SHRINE: DRAIN SPIRIT --> 
+		<block name="shrineFireDrainSpirit">
+			<property name="Extends" value="shrineFireMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineFireDrainSpirit"/>
+			<property name="DowngradeBlock" value="shrineFireBareDrainSpirit"/>
+		</block>
+		<block name="shrineFireBareDrainSpirit">
+			<property name="Extends" value="shrineFireBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineFireDrainSpiritDesc"/>
+			<property name="PlantGrowing.Next" value="shrineFireDrainSpirit"/>
+		</block>
+	
+<!-- SHRINES: ICE ______________________________________-->	
+	<!-- NOTE: buffSorceryManage: SHRINE MANAGE -->
+	<!-- ICE SHRINE: POTION --> 
+		<block name="shrineIcePotion">
+			<property name="Extends" value="shrineIceMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineIcePotion"/>
+			<property name="DowngradeBlock" value="shrineIceBarePotion"/>
+		</block>
+		<block name="shrineIceBarePotion">
+			<property name="Extends" value="shrineIceBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineIcePotionDesc"/>
+			<property name="PlantGrowing.Next" value="shrineIcePotion"/>
+		</block>
+	<!-- ICE SHRINE: SCROLL --> 
+		<block name="shrineIceScroll">
+			<property name="Extends" value="shrineIceMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineIceScroll"/>
+			<property name="DowngradeBlock" value="shrineIceBareScroll"/>
+		</block>
+		<block name="shrineIceBareScroll">
+			<property name="Extends" value="shrineIceBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineIceScrollDesc"/>
+			<property name="PlantGrowing.Next" value="shrineIceScroll"/>
+		</block>
+	<!-- ICE SHRINE: TOUCHED --> 
+		<block name="shrineIceTouched">
+			<property name="Extends" value="shrineIceMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineIceTouched"/>
+			<property name="DowngradeBlock" value="shrineIceBareTouched"/>
+		</block>
+		<block name="shrineIceBareTouched">
+			<property name="Extends" value="shrineIceBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineIceTouchedDesc"/>
+			<property name="PlantGrowing.Next" value="shrineIceTouched"/>
+		</block>
+	<!-- ICE SHRINE: DRAIN HEALTH --> 
+		<block name="shrineIceDrainHealth">
+			<property name="Extends" value="shrineIceMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineIceDrainHealth"/>
+			<property name="DowngradeBlock" value="shrineIceBareDrainHealth"/>
+		</block>
+		<block name="shrineIceBareDrainHealth">
+			<property name="Extends" value="shrineIceBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineIceDrainHealthDesc"/>
+			<property name="PlantGrowing.Next" value="shrineIceDrainHealth"/>
+		</block>
+	<!-- ICE SHRINE: DRAIN STAMINA --> 
+		<block name="shrineIceDrainStamina">
+			<property name="Extends" value="shrineIceMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineIceDrainStamina"/>
+			<property name="DowngradeBlock" value="shrineIceBareDrainStamina"/>
+		</block>
+		<block name="shrineIceBareDrainStamina">
+			<property name="Extends" value="shrineIceBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineIceDrainStaminaDesc"/>
+			<property name="PlantGrowing.Next" value="shrineIceDrainStamina"/>
+		</block>
+	<!-- ICE SHRINE: DRAIN SPIRIT --> 
+		<block name="shrineIceDrainSpirit">
+			<property name="Extends" value="shrineIceMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineIceDrainSpirit"/>
+			<property name="DowngradeBlock" value="shrineIceBareDrainSpirit"/>
+		</block>
+		<block name="shrineIceBareDrainSpirit">
+			<property name="Extends" value="shrineIceBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineIceDrainSpiritDesc"/>
+			<property name="PlantGrowing.Next" value="shrineIceDrainSpirit"/>
+		</block>
+	
+<!-- SHRINES: LIGHTNING ______________________________________-->	
+	<!-- NOTE: buffSorceryManage: SHRINE MANAGE -->
+	<!-- LIGHTNING SHRINE: POTION --> 
+		<block name="shrineLightningPotion">
+			<property name="Extends" value="shrineLightningMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineLightningPotion"/>
+			<property name="DowngradeBlock" value="shrineLightningBarePotion"/>
+		</block>
+		<block name="shrineLightningBarePotion">
+			<property name="Extends" value="shrineLightningBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineLightningPotionDesc"/>
+			<property name="PlantGrowing.Next" value="shrineLightningPotion"/>
+		</block>
+	<!-- LIGHTNING SHRINE: SCROLL --> 
+		<block name="shrineLightningScroll">
+			<property name="Extends" value="shrineLightningMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineLightningScroll"/>
+			<property name="DowngradeBlock" value="shrineLightningBareScroll"/>
+		</block>
+		<block name="shrineLightningBareScroll">
+			<property name="Extends" value="shrineLightningBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineLightningScrollDesc"/>
+			<property name="PlantGrowing.Next" value="shrineLightningScroll"/>
+		</block>
+	<!-- LIGHTNING SHRINE: TOUCHED --> 
+		<block name="shrineLightningTouched">
+			<property name="Extends" value="shrineLightningMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineLightningTouched"/>
+			<property name="DowngradeBlock" value="shrineLightningBareTouched"/>
+		</block>
+		<block name="shrineLightningBareTouched">
+			<property name="Extends" value="shrineLightningBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineLightningTouchedDesc"/>
+			<property name="PlantGrowing.Next" value="shrineLightningTouched"/>
+		</block>
+	<!-- LIGHTNING SHRINE: DRAIN HEALTH --> 
+		<block name="shrineLightningDrainHealth">
+			<property name="Extends" value="shrineLightningMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineLightningDrainHealth"/>
+			<property name="DowngradeBlock" value="shrineLightningBareDrainHealth"/>
+		</block>
+		<block name="shrineLightningBareDrainHealth">
+			<property name="Extends" value="shrineLightningBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineLightningDrainHealthDesc"/>
+			<property name="PlantGrowing.Next" value="shrineLightningDrainHealth"/>
+		</block>
+	<!-- LIGHTNING SHRINE: DRAIN STAMINA --> 
+		<block name="shrineLightningDrainStamina">
+			<property name="Extends" value="shrineLightningMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineLightningDrainStamina"/>
+			<property name="DowngradeBlock" value="shrineLightningBareDrainStamina"/>
+		</block>
+		<block name="shrineLightningBareDrainStamina">
+			<property name="Extends" value="shrineLightningBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineLightningDrainStaminaDesc"/>
+			<property name="PlantGrowing.Next" value="shrineLightningDrainStamina"/>
+		</block>
+	<!-- LIGHTNING SHRINE: DRAIN SPIRIT --> 
+		<block name="shrineLightningDrainSpirit">
+			<property name="Extends" value="shrineLightningMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Tags" value="shrineLightningDrainSpirit"/>
+			<property name="DowngradeBlock" value="shrineLightningBareDrainSpirit"/>
+		</block>
+		<block name="shrineLightningBareDrainSpirit">
+			<property name="Extends" value="shrineLightningBareMaster"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="shrineLightningDrainSpiritDesc"/>
+			<property name="PlantGrowing.Next" value="shrineLightningDrainSpirit"/>
+		</block>
+	
+<!-- END - SHRINES ______________________________________-->
 	
 	
 	
 	</append>
 	<!-- END: /blocks -->
 
+	
 	
 <!-- ESSENCE HARVESTS ____________________________________________________________________________-->
 <!-- ROCKS -->

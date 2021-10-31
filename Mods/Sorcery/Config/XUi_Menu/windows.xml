@@ -50,7 +50,7 @@
 	<append xpath="/windows">
 		<!-- UI: SORCERY VERSION -->
 		<window name="SorceryVersion" depth="99" pos="0,0" width="200" height="22" anchor="RightTop">
-			<label name="SorceryVersion" pos="-216,-43" depth="0" text="Sorcery v0.96" font_size="26" effect="outline" color="102,0,204,255" justify="right" upper_case="false"/>
+			<label name="SorceryVersion" pos="-216,-43" depth="0" text="Sorcery v0.973" font_size="26" effect="outline" color="102,0,204,255" justify="right" upper_case="false"/>
 			<label name="SorceryDifficulty" pos="-216,-65" depth="0" font_size="26" effect="outline" justify="right" upper_case="false" style="sorcery.window.mainmenu.logo.normal.label"/>
 		</window>
 
@@ -74,5 +74,14 @@
 			<texture name="SorceryTeaser" texture="@modfolder:Textures/SorceryTeaser.png"/>
 		</window>
 	</append>
+	
+	<!-- Enable Max Spawned Zombies -->
+	<!-- <insertAfter xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsGeneral']/grid/gameoption[@name='ServerMaxPlayerCount']">
+		<gameoption name="MaxSpawnedZombies" title="goMaxSpawnedZombies" value_wrap="false" value_type="int" values="60, 100, 150, 200" display_names="60,100,150,200" value_localization_prefix="goZombie" />
+	</insertAfter> -->
+	
+	<!-- <insertAfter xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsBasic']/grid/gameoption[@name='ZombieBMMove']">
+		<gameoption name="MaxSpawnedZombies" title="goMaxSpawnedZombies" value_wrap="false" value_type="int" values="60, 100, 150, 200" display_names="60,100,150,200" value_localization_prefix="goZombie" />
+	</insertAfter> -->
 	
 </Sorcery>
