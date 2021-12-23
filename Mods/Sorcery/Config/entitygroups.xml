@@ -117,46 +117,47 @@
 	<!-- FALLEN -->
 		<!-- Any Fallen -->
 		<entitygroup name="SorceryFallenOmni">
-			<entity name="invisibleSorceryEntity" prob="60"/>
 			<entity name="sorceryFallenFire" prob="1"/>
 			<entity name="sorceryFallenIce" prob="1"/>
 			<entity name="sorceryFallenLightning" prob="1"/>
 			<entity name="sorceryWispFire" prob="3"/>
 			<entity name="sorceryWispIce" prob="3"/>
 			<entity name="sorceryWispLightning" prob="3"/>
+			<!-- <entity name="invisibleSorceryEntity" prob="60"/> -->
+			<entity name="none" prob="60"/><!-- must not be first since first name determines if enemy group -->
 		</entitygroup>
 	<!-- FIRE -->
 		<entitygroup name="SorceryFallenFire">
-			<entity name="invisibleSorceryEntity" prob="50"/>
 			<entity name="sorceryFallenFire" prob="1"/>
 			<entity name="sorceryWispFire" prob="2"/>
+			<entity name="none" prob="50"/><!-- must not be first since first name determines if enemy group -->
 		</entitygroup>
 		<entitygroup name="SorceryFallenFireT2">
-			<entity name="invisibleSorceryEntity" prob="35"/>
 			<entity name="sorceryFallenFire" prob="1"/>
 			<entity name="sorceryWispFire" prob="3"/>
+			<entity name="none" prob="35"/><!-- must not be first since first name determines if enemy group -->
 		</entitygroup>
 	<!-- ICE -->
 		<entitygroup name="SorceryFallenIce">
-			<entity name="invisibleSorceryEntity" prob="50"/>
 			<entity name="sorceryFallenIce" prob="1"/>
 			<entity name="sorceryWispIce" prob="2"/>
+			<entity name="none" prob="50"/><!-- must not be first since first name determines if enemy group -->
 		</entitygroup>	
 		<entitygroup name="SorceryFallenIceT2">
-			<entity name="invisibleSorceryEntity" prob="35"/>
 			<entity name="sorceryFallenIce" prob="1"/>
 			<entity name="sorceryWispIce" prob="3"/>
+			<entity name="none" prob="35"/><!-- must not be first since first name determines if enemy group -->
 		</entitygroup>	
 	<!-- LIGHTNING -->
 		<entitygroup name="SorceryFallenLightning">
-			<entity name="invisibleSorceryEntity" prob="50"/>
 			<entity name="sorceryFallenLightning" prob="1"/>
 			<entity name="sorceryWispLightning" prob="2"/>
+			<entity name="none" prob="50"/><!-- must not be first since first name determines if enemy group -->
 		</entitygroup>
 		<entitygroup name="SorceryFallenLightningT2">
-			<entity name="invisibleSorceryEntity" prob="35"/>
 			<entity name="sorceryFallenLightning" prob="1"/>
 			<entity name="sorceryWispLightning" prob="3"/>
+			<entity name="none" prob="35"/><!-- must not be first since first name determines if enemy group -->
 		</entitygroup>
 		
 		
@@ -167,6 +168,10 @@
 			<entity name="sorceryFallenLightning"/>
 		</entitygroup>
 		
+	<!-- SUMMON GROUPS -->
+		<entitygroup name="SorceryFamiliarGroup">
+			<entity name="sorceryFamiliarArcane"/>
+		</entitygroup>
 		
 	</append>
 	

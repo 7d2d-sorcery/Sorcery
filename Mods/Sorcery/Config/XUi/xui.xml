@@ -67,8 +67,8 @@
 	
 	<!-- XUI -->	
 	<append xpath="/xui/ruleset">
-	<!--___________________________ FIRE CONJURE ___________________________-->
-		<window_group name="workstation_conjureFire" controller="XUiC_WorkstationWindowGroup">
+<!-- FIRE SPELLFORGE ______________________________________________________-->
+		<window_group name="workstation_conjureFire" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
@@ -79,8 +79,8 @@
 			<window name="windowNonPagingHeader" />
 		</window_group>
 
-	<!--___________________________ ICE CONJURE ___________________________-->	
-		<window_group name="workstation_conjureIce" controller="XUiC_WorkstationWindowGroup">
+<!-- ICE SPELLFORGE ______________________________________________________-->
+		<window_group name="workstation_conjureIce" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
@@ -91,8 +91,8 @@
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		
-	<!--___________________________ LIGHTNING CONJURE ___________________________-->
-		<window_group name="workstation_conjureLightning" controller="XUiC_WorkstationWindowGroup">
+<!-- LIGHTNING SPELLFORGE ______________________________________________________-->
+		<window_group name="workstation_conjureLightning" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
@@ -104,7 +104,7 @@
 		</window_group>
 		
 		<!--___________________________ ALCHEMY STATION ___________________________-->
-		<window_group name="workstation_sorceryAlchemyStation" controller="XUiC_WorkstationWindowGroup">
+		<window_group name="workstation_sorceryAlchemyStation" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
@@ -113,7 +113,7 @@
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		<!--___________________________ LOOM STATION ___________________________-->
-		<window_group name="workstation_sorceryArcaneWheel" controller="XUiC_WorkstationWindowGroup">
+		<window_group name="workstation_sorceryArcaneWheel" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
@@ -122,7 +122,7 @@
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		<!-- DESK STATION ______________________________________________________-->
-		<window_group name="workstation_sorceryDesk" controller="XUiC_WorkstationWindowGroup">
+		<window_group name="workstation_sorceryDesk" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>
@@ -131,7 +131,7 @@
 			<window name="windowNonPagingHeader" />
 		</window_group>
 		<!-- ENCHANTING STATION ______________________________________________________-->
-		<window_group name="workstation_sorceryEnchantingStation" controller="XUiC_WorkstationWindowGroup">
+		<window_group name="workstation_sorceryEnchantingStation" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
 			<window name="windowCraftingList"/>
 			<window name="craftingInfoPanel"/>
 			<window name="windowCraftingQueue"/>

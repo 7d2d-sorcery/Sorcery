@@ -1,0 +1,66 @@
+<SorceryDifficultyMode3_Apocalyptic>
+ <!--__________________________________________________________________________________
+		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+		__________________________________________________________________________________
+		2021 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+		
+		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+		of using this mod.
+		
+		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+		redistributed outside of its original distribution channels.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+		possible. Without their support, it is not possible to put in the enormous amount of time required to 
+		create the plethora of unique assets that make Sorcery.
+		
+		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+		__________________________________________________________________________________
+		
+		DISCLAIMER
+		__________________________________________________________________________________
+		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
+		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
+		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
+		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
+		__________________________________________________________________________________-->
+
+	<!-- FALLEN -->
+		<!-- NOTE: temp remove for v0.97+ -->
+		<set xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='Mass' and @value='110']/@value">180</set>
+		<set xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='Weight' and @value='30']/@value">70</set>
+		<insertAfter xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='Weight']">
+			<property name="PushFactor" value="30"/>
+		</insertAfter>		
+		<set xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='PainResistPerHit']/@value">0.9</set>		
+		
+	<!-- KnockdownProneDamageThreshold -->	
+	<set xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='KnockdownProneDamageThreshold']/@value">0</set>
+	<!-- SizeScale -->
+	<append xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']"><property name="SizeScale" value="1.2"/></append>
+	<!-- HealthMax -->
+	<set xpath="/entity_classes/entity_class[@name='sorceryFallenFire' or @name='sorceryFallenIce' or @name='sorceryFallenLightning']/passive_effect[@name='HealthMax' and @operation='base_set' and @value='1000']/@value">2000</set>
+	
+</SorceryDifficultyMode3_Apocalyptic>

@@ -1,0 +1,111 @@
+<Sorcery>
+ <!--__________________________________________________________________________________
+		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+		__________________________________________________________________________________
+		2021 "DEVRIX"
+		All Rights Reserved.
+		__________________________________________________________________________________
+		HOME: http://sorcerymod.com
+		AUTHOR: http://author.sorcerymod.com
+		FORUM: http://forum.sorcerymod.com
+		DISCORD: http://discord.sorcerymod.com
+		YOUTUBE: http://youtube.sorcerymod.com
+		DOWNLOAD: http://download.sorcerymod.com
+		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+		__________________________________________________________________________________
+		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+		
+		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+		of using this mod.
+		
+		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+		redistributed outside of its original distribution channels.
+		
+		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+		possible. Without their support, it is not possible to put in the enormous amount of time required to 
+		create the plethora of unique assets that make Sorcery.
+		
+		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+		__________________________________________________________________________________
+		
+		DISCLAIMER
+		__________________________________________________________________________________
+		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
+		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
+		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
+		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
+		__________________________________________________________________________________-->
+	
+	<!-- INTRO -->
+	<set xpath="/gameevents/action_sequence[@name='game_first_spawn']/action[@class='AddJournalTip'][1]/property[@name='tip_name' and @value='tutorialTipQuest01']/@value">quest_sorceryIntro1</set>
+	<set xpath="/gameevents/action_sequence[@name='game_first_spawn']/action[@class='AddJournalTip'][1]/property[@name='show_window' and @value='true']/@value">false</set>
+	<set xpath="/gameevents/action_sequence[@name='game_first_spawn']/action[@class='AddQuest'][1]/property[@name='quest' and @value='quest_BasicSurvival1']/@value">quest_sorceryIntro</set>
+	
+	<!-- NOTE: CallGameEvent Action is currently broken for Clients in MP. Contacted TFP. Pending fix. -->
+	
+	<!-- CATEGORIES -->
+	<!-- <append xpath="/gameevents/category[@name='poi']">
+		<category name="sorcery" display_name="Sorcery" icon="ui_symbol_pentagram" />
+	</append> -->
+	
+	
+	<!-- EVENTS -->
+	<!-- <append xpath="/gameevents"> -->
+		
+		<!-- Teleport -->
+		<!-- <action_sequence name="sorcery_action_teleport_bedroll">
+			<property name="category" value="sorcery" />
+			<action class="TeleportToSpecial">
+				<property name="special_type" value="Bedroll" param1="special_type" />
+			</action>
+		</action_sequence> -->
+		
+		<!-- Spawn: Familiar Arcane -->
+		<!-- <action_sequence name="sorcery_action_spawn_familiar">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarArcane" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="add_to_group" value="familiar" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence> -->
+		
+		<!-- Kill: Familiars -->
+		<!-- <action_sequence name="sorcery_action_kill_familiar"> -->
+			<!-- <property name="category" value="sorcery" /> -->
+			<!-- <requirement class="NearbyEntities"> -->
+				<!-- <property name="entity_tags" value="familiar" /> -->
+				<!-- <property name="max_distance" value="100" /> -->
+				<!-- <property name="target_is_owner" value="true" /> -->
+			<!-- </requirement> -->
+			<!-- <action class="AddEntitiesToGroup"> -->
+				<!-- <property name="entity_tags" value="familiar" /> -->
+				<!-- <property name="group_name" value="familiar" /> -->
+				<!-- <property name="max_distance" value="100" /> -->
+				<!-- <property name="target_only" value="true" /> -->
+			<!-- </action> -->
+			<!-- <action class="Kill"> -->
+				<!-- <property name="target_group" value="familiar" /> -->
+			<!-- </action> -->
+		<!-- </action_sequence> -->
+		
+	<!-- </append> -->
+	
+</Sorcery>

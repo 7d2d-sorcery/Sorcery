@@ -180,6 +180,7 @@
 			<item name="runeIce_Skin"/>
 			<item name="runeLightning_Empath"/>
 			<item name="runeLightning_Skin"/>
+			<item name="rune_KnockbackSpell"/>
 		</lootgroup>
 		<!-- Runes: GOLD -->
 		<lootgroup name="sorceryRunes_gold"> 
@@ -534,20 +535,14 @@
 		<lootgroup name="sorceryLootFallen_Fire" count="all">
 			<item name="resourceEssenceFire" count="50,80"/>
 			<item name="resourceRitualBloodFallenFire" count="1" />
-			<!-- <item group="sorceryFallen_All" count="0,1" />
-			<item group="sorceryFallen_Fire" count="0,1" /> -->
 		</lootgroup>
 		<lootgroup name="sorceryLootFallen_Ice" count="all">
 			<item name="resourceEssenceIce" count="50,80"/>
 			<item name="resourceRitualBloodFallenIce" count="1" />
-			<!-- <item group="sorceryFallen_All" count="0,1" />
-			<item group="sorceryFallen_Ice" count="0,1" /> -->
 		</lootgroup>
 		<lootgroup name="sorceryLootFallen_Lightning" count="all">
 			<item name="resourceEssenceLightning" count="50,80"/>
 			<item name="resourceRitualBloodFallenLightning" count="1" />
-			<!-- <item group="sorceryFallen_All" count="0,1" />
-			<item group="sorceryFallen_Lightning" count="0,1" /> -->
 		</lootgroup>
 		<!-- CHEST -->
 		<lootgroup name="sorceryLootChestFallen_Fire" count="all">
@@ -570,16 +565,13 @@
 	<!-- WISP LOOT __________________________________________________________________________________ -->
 		<!-- ALIVE -->
 		<lootgroup name="sorceryLootWisp_Fire" count="all">
-			<item name="resourceEssenceFire" count="200,300"/>
-			<item name="resourceEssenceFire" count="0,100"/>
+			<item name="resourceEssenceFire" count="250,300"/>
 		</lootgroup>
 		<lootgroup name="sorceryLootWisp_Ice" count="all">
-			<item name="resourceEssenceIce" count="200,300"/>
-			<item name="resourceEssenceIce" count="0,100"/>
+			<item name="resourceEssenceIce" count="250,300"/>
 		</lootgroup>
 		<lootgroup name="sorceryLootWisp_Lightning" count="all">
-			<item name="resourceEssenceLightning" count="200,300"/>
-			<item name="resourceEssenceLightning" count="0,100"/>
+			<item name="resourceEssenceLightning" count="250,300"/>
 		</lootgroup>
 	<!-- END - WISP LOOT __________________________________________________________________________________ -->
 
@@ -603,7 +595,7 @@
 <!-- SORCERY CONTAINERS __________________________________________________________________________________ -->
 	<append xpath="/lootcontainers">
 		<!-- MAX: 1023 -->
-		<!-- VANILLA: 200 -->
+		<!-- VANILLA: 1,551 -->
 		<!-- SORCERY: 700,600 -->
 			<!-- <lootqualitytemplate name="QLTemplateT0">
 				<qualitytemplate level="0,7" default_quality="5"><loot quality="5,11" prob="1"/></qualitytemplate>
@@ -619,92 +611,86 @@
 			</lootqualitytemplate> -->
 		<!-- SORCERY INTRO -->
 		<!-- Intro: ALTIN'S CHEST -->
-		<lootcontainer id="700" count="1" size="6,6" sound_open="sorceryRitualChant" sound_close="sorceryLightning_implodelow" loot_quality_template="sorceryTemplate_lowest" open_time="4" destroy_on_close="true">
+		<lootcontainer id="700" name="introChest_sorcery" count="1" size="6,6" sound_open="sorceryRitualChant" sound_close="sorceryLightning_implodelow" loot_quality_template="sorceryTemplate_lowest" open_time="4" destroy_on_close="true">
 			<item group="sorceryIntroLoot_Chest" />
 		</lootcontainer>
 		<!-- Intro Fallen: CORPSES -->
-		<lootcontainer id="699" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
+		<lootcontainer id="699" name="fallenFireCorpse_sorcery" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
 			<item group="sorceryIntroLootFallen_Fire" />
 		</lootcontainer>
-		<lootcontainer id="698" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
+		<lootcontainer id="698" name="fallenIceCorpse_sorcery" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
 			<item group="sorceryIntroLootFallen_Ice" />
 		</lootcontainer>
-		<lootcontainer id="697" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
+		<lootcontainer id="697" name="fallenLightningCorpse_sorcery" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
 			<item group="sorceryIntroLootFallen_Lightning" />
 		</lootcontainer>
 		<!-- Fallen: ALIVE -->
-		<lootcontainer id="696" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
+		<lootcontainer id="696" name="fallenFire_sorcery" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
 			<item group="sorceryLootFallen_Fire" />
 		</lootcontainer>
-		<lootcontainer id="695" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
+		<lootcontainer id="695" name="fallenIce_sorcery" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
 			<item group="sorceryLootFallen_Ice" />
 		</lootcontainer>
-		<lootcontainer id="694" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
+		<lootcontainer id="694" name="fallenLightning_sorcery" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
 			<item group="sorceryLootFallen_Lightning" />
 		</lootcontainer>
-		<!-- Fallen: CHEST, SOUL -->
-		<lootcontainer id="693" count="1" size="6,4" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="2" destroy_on_close="false">
+		<!-- Fallen: SOUL -->
+		<lootcontainer id="693" name="fallenFireSoul_sorcery" count="1" size="6,4" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="2" destroy_on_close="false">
 			<item group="sorceryLootChestFallen_Fire" />
 		</lootcontainer>
-		<lootcontainer id="692" count="1" size="6,4" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="2" destroy_on_close="false">
+		<lootcontainer id="692" name="fallenIceSoul_sorcery" count="1" size="6,4" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="2" destroy_on_close="false">
 			<item group="sorceryLootChestFallen_Ice" />
 		</lootcontainer>
-		<lootcontainer id="691" count="1" size="6,4" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="2" destroy_on_close="false">
+		<lootcontainer id="691" name="fallenLightningSoul_sorcery" count="1" size="6,4" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="2" destroy_on_close="false">
 			<item group="sorceryLootChestFallen_Lightning" />
 		</lootcontainer>
 		<!-- Familiar Inventory -->
-		<lootcontainer id="690" count="0" size="5,3" sound_open="sorceryChant" open_time="0" sound_close="sorceryLightning_implodelow" loot_quality_template="sorceryTemplate_lowest">
+		<lootcontainer id="690" name="familiarStorage_sorcery" count="0" size="5,3" sound_open="sorceryChant" open_time="0" sound_close="sorceryLightning_implodelow" loot_quality_template="sorceryTemplate_lowest">
 		</lootcontainer>
 		<!-- Intro Items Fallen: CORPSES -->
-		<lootcontainer id="689" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
+		<lootcontainer id="689" name="fallenFireCorpseIntro_sorcery" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
 			<item group="sorceryIntroItemsLootFallen_Fire" />
 		</lootcontainer>
-		<lootcontainer id="688" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
+		<lootcontainer id="688" name="fallenIceCorpseIntro_sorcery" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
 			<item group="sorceryIntroItemsLootFallen_Ice" />
 		</lootcontainer>
-		<lootcontainer id="687" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
+		<lootcontainer id="687" name="fallenLightningCorpseIntro_sorcery" count="1" size="4,3" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
 			<item group="sorceryIntroItemsLootFallen_Lightning" />
 		</lootcontainer>
 
 		<!-- WISPS: ALIVE -->
-		<lootcontainer id="686" count="1" size="4,2" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
+		<lootcontainer id="686" name="wispFire_sorcery" count="1" size="4,2" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
 			<item group="sorceryLootWisp_Fire" />
 		</lootcontainer>
-		<lootcontainer id="685" count="1" size="4,2" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
+		<lootcontainer id="685" name="wispIce_sorcery" count="1" size="4,2" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
 			<item group="sorceryLootWisp_Ice" />
 		</lootcontainer>
-		<lootcontainer id="684" count="1" size="4,2" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
+		<lootcontainer id="684" name="wispLightning_sorcery" count="1" size="4,2" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="1" destroy_on_close="false">
 			<item group="sorceryLootWisp_Lightning" />
 		</lootcontainer>
 		
 	<!-- CONTAINERS -->
 		<!-- ARCANE CHEST -->
-		<lootcontainer id="683" count="0" size="10,10" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="qualBaseTemplate">
+		<lootcontainer id="683" name="arcaneStorage_sorcery" count="0" size="10,10" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="qualBaseTemplate">
 			<item name="cobweb" count="1,2"/>
 		</lootcontainer>
-		<lootcontainer id="680" count="1" size="6,6" sound_open="sorceryHorn" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="15" destroy_on_close="false">
+		<lootcontainer id="680" name="fallenCamp_sorcery" count="1" size="6,6" sound_open="sorceryHorn" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="15" destroy_on_close="false">
 			<item group="sorceryLoot_FallenStash" />
 		</lootcontainer>
 		
 		<!-- SHRINES -->
-		<lootcontainer id="679" count="1" size="4,3" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
+		<lootcontainer id="679" name="shrineArcane_sorcery" count="1" size="4,3" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="false">
 			<item group="sorceryLootShrine_Arcane" />
 		</lootcontainer>
-		<lootcontainer id="678" count="1" size="4,3" sound_open="sorceryFireball_launch" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
+		<lootcontainer id="678" name="shrineFire_sorcery" count="1" size="4,3" sound_open="sorceryFireball_launch" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="false">
 			<item group="sorceryLootShrine_Fire" />
 		</lootcontainer>
-		<lootcontainer id="677" count="1" size="4,3" sound_open="sorceryIce_freeze" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
+		<lootcontainer id="677" name="shrineIce_sorcery" count="1" size="4,3" sound_open="sorceryIce_freeze" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="false">
 			<item group="sorceryLootShrine_Ice" />
 		</lootcontainer>
-		<lootcontainer id="676" count="1" size="4,3" sound_open="sorceryLightning_strike" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
+		<lootcontainer id="676" name="shrineLightning_sorcery" count="1" size="4,3" sound_open="sorceryLightning_strike" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="false">
 			<item group="sorceryLootShrine_Lightning" />
 		</lootcontainer>
-		<!-- <lootcontainer id="675" count="1" size="4,3" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
-			<item group="sorceryLootShrine_Unholy" />
-		</lootcontainer> -->
-		<!-- <lootcontainer id="674" count="1" size="4,3" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="true">
-			<item group="sorceryLootShrine_Holy" />
-		</lootcontainer> -->
 		
 	</append> 
 <!-- END - SORCERY CONTAINERS __________________________________________________________________________________ -->
@@ -721,9 +707,9 @@
 <!-- VANILLA CONTAINERS __________________________________________________________________________________ -->
 	
 	<!-- GROUP QUEST CHALLENGE -->
-	<append xpath="/lootcontainers/lootgroup[@name='groupQuestChallenge']">
+	<!-- <append xpath="/lootcontainers/lootgroup[@name='groupQuestChallenge']">
 		<item name="q_sorceryFallen_Trio"/>
-	</append>
+	</append> -->
 	
 	
 	<!-- TREASURE MAPS -->
@@ -849,7 +835,7 @@
 	<append xpath="/lootcontainers/lootgroup[@name='drinks']">
 		<item group="sorceryPotions"/>
 	</append>
-	<append xpath="/lootcontainers/lootgroup[@name='beverages']">
+	<append xpath="/lootcontainers/lootgroup[@name='groupDrinksCommon' or @name='groupDrinksUncommon']">
 		<item group="sorceryPotions"/>
 	</append>
 	<!-- END - FOOD / DRINK _______________________________________________________ -->
@@ -858,24 +844,24 @@
 	
 	<!-- MISCELLANEOUS _______________________________________________________ -->
 	<!-- Cupboard -->
-	<append xpath="/lootcontainers/lootgroup[@name='cupboard']">
-		<item group="sorceryPotions" count="1"/>
-		<item group="sorceryScrollsArcane" count="1"/>
-		<item group="sorceryScrollsWeapon" count="1"/>
+	<append xpath="/lootcontainers/lootgroup[@name='groupCupboard01']">
+		<item group="sorceryPotions" count="0,1"/>
+		<item group="sorceryScrollsArcane" count="0,1"/>
+		<item group="sorceryScrollsWeapon" count="0,1"/>
 	</append>
 	<!-- Rare Ores -->
 	<append xpath="/lootcontainers/lootgroup[@name='rareOres']">
-		<item name="resourceEssenceFire" count="40,100"/>
+		<!-- <item name="resourceEssenceFire" count="40,100"/>
 		<item name="resourceEssenceIce" count="40,100"/>
-		<item name="resourceEssenceLightning" count="40,100"/>
+		<item name="resourceEssenceLightning" count="40,100"/> -->
 	</append>
 	<!-- Junk -->
 	<!-- <append xpath="/lootcontainers/lootgroup[@name='junk']">
 		<item group="sorceryScrollsWeapon" count="1"/>
 	</append> -->
 	<!-- Medicine -->
-	<append xpath="/lootcontainers/lootgroup[@name='medicine']">
-		<item group="sorceryPotions" count="1,2"/>
+	<append xpath="/lootcontainers/lootgroup[@name='groupMedicalCommon']">
+		<item group="sorceryPotions" count="1"/>
 	</append>
 	<!-- END - MISCELLANEOUS _______________________________________________________ -->
 	

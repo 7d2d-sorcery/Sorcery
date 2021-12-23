@@ -49,15 +49,16 @@
 		
 
 	<!-- FALLEN CAMPS -->
-	<append xpath="/rwgmixer/prefab_rules/prefab_rule[@name='prefabGroup4k']">
-		<!-- <prefab name="sorcery_camp_fallen" max_count="6" min_repeat_distance="100" />
+	<!-- A19 -->
+	<!-- <append xpath="/rwgmixer/prefab_rules/prefab_rule[@name='prefabGroup4k']">
+		<prefab name="sorcery_camp_fallen" max_count="6" min_repeat_distance="100" />
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
-		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" /> -->
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
 	</append>
 	<append xpath="/rwgmixer/prefab_rules/prefab_rule[@name='prefabGroup8k']">
-		<!-- <prefab name="sorcery_camp_fallen" max_count="11" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="11" min_repeat_distance="100" />
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
@@ -71,7 +72,7 @@
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
-		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" /> -->
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
 	</append>
 	<append xpath="/rwgmixer/prefab_rules/prefab_rule[@name='prefabList']">
 		<prefab name="sorcery_camp_fallen" max_count="11" min_repeat_distance="100" />
@@ -94,7 +95,58 @@
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
 		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
-	</append>
+	</append> -->
 	
+	
+	<!-- A20 -->
+	<!-- <append xpath="/rwgmixer">
+		<prefab_rules>
+			<prefab_rule name="prefabList">
+				<prefab name="sorcery_camp_fallen" max_count="11" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+				<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+			</prefab_rule>
+		</prefab_rules>
+	</append> -->
+
+	<!-- <append xpath="/rwgmixer/district[@name='wilderness' or @name='rural' or @name='oldwest']">
+		<prefab name="sorcery_camp_fallen" max_count="11" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+		<prefab name="sorcery_camp_fallen" max_count="1" min_repeat_distance="100" />
+	</append> -->
 
 </Sorcery>

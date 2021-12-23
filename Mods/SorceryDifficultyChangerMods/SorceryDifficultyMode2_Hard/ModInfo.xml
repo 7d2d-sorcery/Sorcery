@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="Sorcery Difficulty Mode Hard" />
+		<Description value="Changes the difficulty of Sorcery to Hard." />
+		<Author value="Devrix" />
+		<Version value="1.11" />
+		<Website value="http://sorcerymod.com" />
+	</ModInfo>
+</xml>

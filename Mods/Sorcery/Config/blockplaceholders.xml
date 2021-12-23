@@ -2,7 +2,7 @@
  <!--__________________________________________________________________________________
 		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
 		__________________________________________________________________________________
-		2020 "DEVRIX"
+		2021 "DEVRIX"
 		All Rights Reserved.
 		__________________________________________________________________________________
 		HOME: http://sorcerymod.com
@@ -49,7 +49,13 @@
 		
 	<append xpath="/blockplaceholders">
 	
-		
+		<placeholder name="sorceryBlockStormRandomLootHelper">
+			<block name="sorceryBlockStorm"/>
+			<!-- <block name="sorceryBlockStorm" prob="1" biome="wasteland"/>
+			<block name="sorceryBlockStorm" prob="1" biome="burnt_forest"/>
+			<block name="sorceryBlockStorm" prob="1" biome="snow"/>
+			<block name="sorceryBlockStorm" prob="1" biome="desert"/> -->
+		</placeholder>
 		<placeholder name="sorcerySpellforgeRandomLootHelper">
 			<block name="conjureFire"/>
 			<block name="conjureIce"/>
@@ -61,8 +67,9 @@
 			<block name="tree_EssenceIce"/>
 			<block name="tree_EssenceLightning"/>
 			<block name="tree_EssenceFire" prob="1" biome="burnt_forest"/>
+			<block name="tree_EssenceFire" prob="1" biome="wasteland"/>
 			<block name="tree_EssenceIce" prob="1" biome="snow"/>
-			<block name="tree_EssenceLightning" prob="0.5" biome="pine_forest"/>
+			<block name="tree_EssenceLightning" prob="1" biome="desert"/>
 		</placeholder>
 		<placeholder name="sorceryShrineRandomLootHelper">
 			<block name="shrinePotion"/>

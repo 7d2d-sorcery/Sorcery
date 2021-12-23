@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="Sorcery Difficulty Mode Apocalyptic" />
+		<Description value="Changes the difficulty of Sorcery to Insanely Hard." />
+		<Author value="Devrix" />
+		<Version value="1.11" />
+		<Website value="http://sorcerymod.com" />
+	</ModInfo>
+</xml>

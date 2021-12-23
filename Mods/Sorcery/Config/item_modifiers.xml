@@ -200,17 +200,17 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyDukes_degrade" operation="multiply" value=".12"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyDukes_degradeDisplay" operation="set" value="@.runeLuckyDukes_degrade"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyDukes_degradeDisplay" operation="multiply" value="100"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyDukes_burden" operation="set" value="@$sorceryRuneBurden"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyDukes_burden" operation="multiply" value="3"/>
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyDukes_burden" operation="set" value="@$sorceryRuneBurden"/> -->
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyDukes_burden" operation="multiply" value="3"/> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyDukes" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyDukes_degrade" operation="set" value="0" />
-					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyDukes_burden" operation="set" value="0" />
+					<!-- <triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyDukes_burden" operation="set" value="0" /> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyDukesDisplay" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyDukes_degradeDisplay" operation="set" value="0" />
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLuckyDukes_burden"/>
-					<triggered_effect trigger="onSelfOpenLootContainer" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLuckyDukes_burden"/>
+						<!-- <requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLuckyDukes_burden"/> -->
+					<!-- <triggered_effect trigger="onSelfOpenLootContainer" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLuckyDukes_burden"/> -->
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeLuckyDukes_degrade"/>
 					<passive_effect name="LootQuantity" operation="perc_add" value="@.runeLuckyDukes" tags="dukes"/>
 				</effect_group>
@@ -227,17 +227,17 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyAmmo_degrade" operation="multiply" value=".1"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyAmmo_degradeDisplay" operation="set" value="@.runeLuckyAmmo_degrade"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyAmmo_degradeDisplay" operation="multiply" value="100"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyAmmo_burden" operation="set" value="@$sorceryRuneBurden"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyAmmo_burden" operation="multiply" value="2"/>
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyAmmo_burden" operation="set" value="@$sorceryRuneBurden"/> -->
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyAmmo_burden" operation="multiply" value="2"/> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyAmmo" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyAmmo_degrade" operation="set" value="0" />
-					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyAmmo_burden" operation="set" value="0" />
+					<!-- <triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyAmmo_burden" operation="set" value="0" /> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyAmmoDisplay" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyAmmo_degradeDisplay" operation="set" value="0" />
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLuckyAmmo_burden"/>
-					<triggered_effect trigger="onSelfOpenLootContainer" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLuckyAmmo_burden"/>
+						<!-- <requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLuckyAmmo_burden"/> -->
+					<!-- <triggered_effect trigger="onSelfOpenLootContainer" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLuckyAmmo_burden"/> -->
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeLuckyAmmo_degrade"/>
 					<passive_effect name="LootQuantity" operation="perc_add" value="@.runeLuckyAmmo" tags="ammo"/>
 				</effect_group>
@@ -254,17 +254,17 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckySpells_degrade" operation="multiply" value=".1"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckySpells_degradeDisplay" operation="set" value="@.runeLuckySpells_degrade"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckySpells_degradeDisplay" operation="multiply" value="100"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckySpells_burden" operation="set" value="@$sorceryRuneBurden"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckySpells_burden" operation="multiply" value="2"/>
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckySpells_burden" operation="set" value="@$sorceryRuneBurden"/> -->
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckySpells_burden" operation="multiply" value="2"/> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckySpells" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckySpells_degrade" operation="set" value="0" />
-					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckySpells_burden" operation="set" value="0" />
+					<!-- <triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckySpells_burden" operation="set" value="0" /> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckySpellsDisplay" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckySpells_degradeDisplay" operation="set" value="0" />
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLuckySpells_burden"/>
-					<triggered_effect trigger="onSelfOpenLootContainer" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLuckySpells_burden"/>
+						<!-- <requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLuckySpells_burden"/> -->
+					<!-- <triggered_effect trigger="onSelfOpenLootContainer" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLuckySpells_burden"/> -->
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeLuckySpells_degrade"/>
 					<passive_effect name="LootQuantity" operation="perc_add" value="@.runeLuckySpells" tags="spell"/>
 				</effect_group>
@@ -281,17 +281,17 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyPotions_degrade" operation="multiply" value=".1"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyPotions_degradeDisplay" operation="set" value="@.runeLuckyPotions_degrade"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyPotions_degradeDisplay" operation="multiply" value="100"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyPotions_burden" operation="set" value="@$sorceryRuneBurden"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyPotions_burden" operation="multiply" value="2"/>
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyPotions_burden" operation="set" value="@$sorceryRuneBurden"/> -->
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyPotions_burden" operation="multiply" value="2"/> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyPotions" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyPotions_degrade" operation="set" value="0" />
-					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyPotions_burden" operation="set" value="0" />
+					<!-- <triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyPotions_burden" operation="set" value="0" /> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyPotionsDisplay" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyPotions_degradeDisplay" operation="set" value="0" />
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLuckyPotions_burden"/>
-					<triggered_effect trigger="onSelfOpenLootContainer" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLuckyPotions_burden"/>
+						<!-- <requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLuckyPotions_burden"/> -->
+					<!-- <triggered_effect trigger="onSelfOpenLootContainer" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLuckyPotions_burden"/> -->
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeLuckyPotions_degrade"/>
 					<passive_effect name="LootQuantity" operation="perc_add" value="@.runeLuckyPotions" tags="potion"/>
 				</effect_group>
@@ -308,17 +308,17 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyScrolls_degrade" operation="multiply" value=".1"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyScrolls_degradeDisplay" operation="set" value="@.runeLuckyScrolls_degrade"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyScrolls_degradeDisplay" operation="multiply" value="100"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyScrolls_burden" operation="set" value="@$sorceryRuneBurden"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyScrolls_burden" operation="multiply" value="2"/>
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyScrolls_burden" operation="set" value="@$sorceryRuneBurden"/> -->
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeLuckyScrolls_burden" operation="multiply" value="2"/> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyScrolls" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyScrolls_degrade" operation="set" value="0" />
-					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyScrolls_burden" operation="set" value="0" />
+					<!-- <triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyScrolls_burden" operation="set" value="0" /> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyScrollsDisplay" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeLuckyScrolls_degradeDisplay" operation="set" value="0" />
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
-						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLuckyScrolls_burden"/>
-					<triggered_effect trigger="onSelfOpenLootContainer" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLuckyScrolls_burden"/>
+						<!-- <requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeLuckyScrolls_burden"/> -->
+					<!-- <triggered_effect trigger="onSelfOpenLootContainer" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeLuckyScrolls_burden"/> -->
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeLuckyScrolls_degrade"/>
 					<passive_effect name="LootQuantity" operation="perc_add" value="@.runeLuckyScrolls" tags="scroll"/>
 				</effect_group>
@@ -549,6 +549,35 @@
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeAquatic_degrade"/>
 				</effect_group>
 		</item_modifier>
+		<!-- SPELL KNOCKBACK (SILVER) -->
+		<item_modifier name="rune_KnockbackSpell" installable_tags="spellcast,bow,crossbow" type="mod">
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="40"/>
+				<effect_group tiered="false" name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeKnockbackSpell_degrade" operation="set" value="@$sorceryRuneDegrade"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeKnockbackSpell_degrade" operation="multiply" value="1"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeKnockbackSpell_burden" operation="set" value="@$sorceryRuneBurden"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeKnockbackSpell_burden" operation="multiply" value="2"/>
+					<!-- clear -->
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeKnockbackSpell_degrade" operation="set" value="0" />
+					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeKnockbackSpell_burden" operation="set" value="0" />
+				</effect_group>
+				<effect_group tiered="false" name="RUNE: Spellcast">
+						<requirement name="HoldingItemHasTags" tags="spellcast"/>
+						<requirement name="!ItemHasTags" tags="spellTurret"/>
+						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeKnockbackSpell_burden"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="Ragdoll" target="other" duration="0" force="150"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeKnockbackSpell_burden"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeKnockbackSpell_degrade"/>
+				</effect_group>
+				<effect_group tiered="false" name="RUNE: Bows">
+						<requirement name="HoldingItemHasTags" tags="bow,crossbow"/>
+						<requirement name="HasBuff" buff="hasEquipped_spellArrow"/>
+						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeKnockbackSpell_burden"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="Ragdoll" target="other" duration="0" force="225"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeKnockbackSpell_burden"/>
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeKnockbackSpell_degrade"/>
+				</effect_group>
+		</item_modifier>
 		<!-- SILENCE (GOLD) -->
 		<item_modifier name="rune_Silence" installable_tags="weapon,spellcast,spellTurret" modifier_tags="rune_Silence" type="mod">
 			<property name="Extends" value="runeMaster"/><property name="Weight" value="60"/>
@@ -635,7 +664,7 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIndestructible_burden" operation="multiply" value="10"/>
 				</effect_group>
 				<effect_group tiered="false" name="RUNE: Mundane">
-						<requirement name="ItemHasTags" tags="weapon"/>				
+						<requirement name="ItemHasTags" tags="weapon,tool,armor,clothing"/>				
 						<requirement name="!ItemHasTags" tags="staff,spellcast,spellTurret,sorceryArmor,sorceryAccessory"/>
 					<passive_effect name="DegradationPerUse" operation="base_set" value="0"/>
 					<passive_effect name="DegradationPerUse" operation="perc_set" value="0"/>
@@ -734,19 +763,19 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeFireLuckyEssence_degrade" operation="multiply" value=".1"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeFireLuckyEssence_degradeDisplay" operation="set" value="@.runeFireLuckyEssence_degrade"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeFireLuckyEssence_degradeDisplay" operation="multiply" value="100"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeFireLuckyEssence_burden" operation="set" value="@$sorceryRuneBurden"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeFireLuckyEssence_burden" operation="multiply" value="1"/>
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeFireLuckyEssence_burden" operation="set" value="@$sorceryRuneBurden"/> -->
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeFireLuckyEssence_burden" operation="multiply" value="1"/> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeFireLuckyEssence" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeFireLuckyEssence_degrade" operation="set" value="0" />
-					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeFireLuckyEssence_burden" operation="set" value="0" />
+					<!-- <triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeFireLuckyEssence_burden" operation="set" value="0" /> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeFireLuckyEssenceDisplay" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeFireLuckyEssence_degradeDisplay" operation="set" value="0" />
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
 						<requirement name="TriggerHasTags" tags="hasFireEssence"/>
-						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeFireLuckyEssence_burden"/>
-					<triggered_effect trigger="onSelfDamagedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeFireLuckyEssence_burden"/>
-					<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeFireLuckyEssence_burden"/>
+						<!-- <requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeFireLuckyEssence_burden"/> -->
+					<!-- <triggered_effect trigger="onSelfDamagedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeFireLuckyEssence_burden"/> -->
+					<!-- <triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeFireLuckyEssence_burden"/> -->
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeFireLuckyEssence_degrade"/>
 					<passive_effect name="HarvestCount" operation="perc_add" value="@.runeFireLuckyEssence" tags="essenceFireHarvest"/>
 				</effect_group>
@@ -942,19 +971,19 @@
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_degrade" operation="multiply" value=".1"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_degradeDisplay" operation="set" value="@.runeIceLuckyEssence_degrade"/>
 					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_degradeDisplay" operation="multiply" value="100"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_burden" operation="set" value="@$sorceryRuneBurden"/>
-					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_burden" operation="multiply" value="1"/>
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_burden" operation="set" value="@$sorceryRuneBurden"/> -->
+					<!-- <triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeIceLuckyEssence_burden" operation="multiply" value="1"/> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeIceLuckyEssence" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeIceLuckyEssence_degrade" operation="set" value="0" />
-					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeIceLuckyEssence_burden" operation="set" value="0" />
+					<!-- <triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeIceLuckyEssence_burden" operation="set" value="0" /> -->
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeIceLuckyEssenceDisplay" operation="set" value="0" />
 					<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar=".runeIceLuckyEssence_degradeDisplay" operation="set" value="0" />
 				</effect_group>
 				<effect_group tiered="false" name="RUNE">
 						<requirement name="TriggerHasTags" tags="hasIceEssence"/>
-						<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeIceLuckyEssence_burden"/>
-					<triggered_effect trigger="onSelfDamagedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeIceLuckyEssence_burden"/>
-					<triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeIceLuckyEssence_burden"/>
+						<!-- <requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="@.runeIceLuckyEssence_burden"/> -->
+					<!-- <triggered_effect trigger="onSelfDamagedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeIceLuckyEssence_burden"/> -->
+					<!-- <triggered_effect trigger="onSelfDestroyedBlock" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="@.runeIceLuckyEssence_burden"/> -->
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeIceLuckyEssence_degrade"/>
 					<passive_effect name="HarvestCount" operation="perc_add" value="@.runeIceLuckyEssence" tags="essenceIceHarvest"/>
 				</effect_group>

@@ -52,7 +52,7 @@
 	
 		<nav_object_class name="sorceryFamiliar">
 			<map_settings>
-				<property name="sprite_name" value="ui_familiar_sorcery"/>
+				<property name="sprite_name" value="ui_familiar_sorcery"/> <!-- ui_game_symbol_enemy_dot -->
 				<property name="min_distance" value="0"/>
 				<property name="max_distance" value="-1"/>
 				<property name="color" value="0,255,0,255"/>
@@ -70,8 +70,8 @@
 			</compass_settings>
 			<onscreen_settings>
 				<property name="sprite_name" value="ui_familiar_sorcery"/>
-				<property name="min_distance" value="0"/>
-				<property name="max_distance" value="30"/>
+				<property name="min_distance" value="15"/>
+				<property name="max_distance" value="60"/>
 				<property name="color" value="0,255,0,255"/>
 				<property name="has_pulse" value="false"/>
 				<property name="show_distance" value="false"/>
@@ -161,6 +161,20 @@
 			</compass_settings>
 			<onscreen_settings>
 				<property name="color" value="92,0,157"/>
+			</onscreen_settings>
+		</nav_object_class>
+		
+		<!-- INTRO -->
+		<nav_object_class name="sorceryFallenIntroCorpse" extends="sorceryFallenFire">
+			<!-- <property name="requirement_type" value="Tracking" /> -->
+			<map_settings>
+				<property name="color" value="102,0,204"/>
+			</map_settings>
+			<compass_settings>
+				<property name="color" value="102,0,204"/>
+			</compass_settings>
+			<onscreen_settings>
+				<property name="color" value="102,0,204"/>
 			</onscreen_settings>
 		</nav_object_class>
 		

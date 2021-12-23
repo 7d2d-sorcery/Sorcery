@@ -2,7 +2,7 @@
  <!--__________________________________________________________________________________
 		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
 		__________________________________________________________________________________
-		2020 "DEVRIX"
+		2021 "DEVRIX"
 		All Rights Reserved.
 		__________________________________________________________________________________
 		HOME: http://sorcerymod.com
@@ -370,8 +370,9 @@
 			<effect_group name="SCALE CRAFTING: FIRE">
 				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,2,10" value="4,4,2" tags="unit_fire,resourceEssenceFire"/> -->
 			</effect_group>
-			<effect_group name="FIRE ESSENCE">
-				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceFireHarvest"><requirement name="!InBiome" biome="9"/></passive_effect>
+			<effect_group name="FIRE ESSENCE: Burnt Forest, Wasteland">
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceFireHarvest"><requirement name="!InBiome" biome="8"/><requirement name="!InBiome" biome="9"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="0" tags="essenceFireHarvest"><requirement name="InBiome" biome="8"/></passive_effect>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="0" tags="essenceFireHarvest"><requirement name="InBiome" biome="9"/></passive_effect>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,10" tags="essenceFireHarvest"/>
 			</effect_group>
@@ -546,10 +547,10 @@
 				<effect_description level="9" desc_key="attSorceryLightningRank9Desc" long_desc_key="attSorceryLightningRank9LongDesc"/>
 				<effect_description level="10" desc_key="attSorceryLightningRank10Desc" long_desc_key="attSorceryLightningRank10LongDesc"/> -->
 			</effect_group>
-			<effect_group name="LIGHTNING ESSENCE">
+			<effect_group name="LIGHTNING ESSENCE: Desert">
 				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceLightning2Harvest,essenceLightning3Harvest,essenceLightning4Harvest,essenceLightning5Harvest"/>
-				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceLightningHarvest"><requirement name="!InBiome" biome="3"/></passive_effect>
-				<passive_effect name="HarvestCount" operation="base_set" value="1" level="0" tags="essenceLightningHarvest"><requirement name="InBiome" biome="3"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_set" value="-1" level="0" tags="essenceLightningHarvest"><requirement name="!InBiome" biome="5"/></passive_effect>
+				<passive_effect name="HarvestCount" operation="base_set" value="1" level="0" tags="essenceLightningHarvest"><requirement name="InBiome" biome="5"/></passive_effect>
 				<passive_effect name="HarvestCount" operation="base_set" value="1" level="2,10" tags="essenceLightningHarvest"/>
 			</effect_group>
 			<effect_group name="SCALE CRAFTING: LIGHTNING">
@@ -935,6 +936,7 @@
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeFire_TurretAuraBurn,runeFire_TurretMeteor,runeFire_Empath,runeFire_Skin"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeIce_TurretAuraChill,runeIce_TurretHailstorm,runeIce_Empath,runeIce_Skin"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeLightning_Empath,runeLightning_Skin"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="rune_KnockbackSpell"/>
 				<!-- Legendary (Gold) -->
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="rune_Silence,rune_ArcaneVision,rune_Empath,rune_Indestructible"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="runeFire_FirenadoCaster,runeFire_NovaCaster"/>
