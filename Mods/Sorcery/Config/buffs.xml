@@ -7520,7 +7520,7 @@
 			</buff>
 		<!-- SPELL: RETRIBUTION ______________________________________________________-->
 			<buff name="spellHoly_Retribution" name_key="spellHoly_Retribution" description_key="spellHoly_RetributionDesc" icon="ui_symbol_aura_sorcery" icon_color="198,184,143">
-				<!-- <damage_type value="Bashing"/> --><stack_type value="replace"/><update_rate value="3"/><duration value="0"/>
+				<!-- <damage_type value="Bashing"/> --><stack_type value="replace"/><update_rate value="3"/><duration value="10"/>
 					<effect_group name="CALC: PLAYER">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Retribution" operation="set" value="3" />
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Retribution" operation="multiply" value="@$sorceryArcaneDamage"/> <!-- 1,xx -->
@@ -11587,6 +11587,7 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="add" value="0.1"/>
 						<!-- HOLY RETRIBUTION SPELL -->
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellHoly_Retribution"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellHoly_Retribution"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="spellHoly_Retribution"/>
 					</effect_group>
 					<effect_group name="SHRINE: LEVEL 1">
@@ -14111,52 +14112,42 @@
 			</buff>
 			<!-- Familiar: WEAPON -->
 			<buff name="summonFamiliarArcane_Weapon" hidden="true" remove_on_death="true">
-				<damage_type value="Bashing"/><stack_type value="replace"/><duration value="0"/><update_rate value="1"/>
-					<effect_group name="BASE">
-						<!-- DEV: Taunt -->
-						<!-- <triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="10" buff="buffFamiliarArcane_TauntAOE" target_tags="zombie,animal"/> -->
-						<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="subtract" value="20"/>
-						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="buffSorceryMark"/>
-					</effect_group>
-					<effect_group name="LEVEL: 0">
-						<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="LTE" value="0"/>
-					</effect_group>
-					<effect_group name="LEVEL 1: LOYAL">
-						<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="1"/>
-					</effect_group>
+				<damage_type value="Bashing"/><stack_type value="replace"/><duration value="0"/>
 					<effect_group name="LEVEL 2: BURNING">
-						<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="2"/>
-						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_FireSorcery,spellFire_Burn">
-							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
-						</triggered_effect>
-						<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="subtract" value="25"/>
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="2"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="GTE" value="50"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_FireSorcery,spellFire_Burn"/>
 					</effect_group>
 					<effect_group name="LEVEL 3: CHILLING">
-						<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="3"/>
-						<passive_effect name="EntityDamage" operation="base_add" value="10" tags="familiarMelee"/>
-						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_IceSorcery,spellIce_Chill">
-							<requirement name="RandomRoll" seed_type="Random" min_max="100,200" operation="LTE" value="150"/>
-						</triggered_effect>
-						<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="subtract" value="30"/>
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="3"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="GTE" value="50"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_IceSorcery,spellIce_Chill"/>
 					</effect_group>
 					<effect_group name="LEVEL 4: SHOCKING">
-						<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="4"/>
-						<passive_effect name="EntityDamage" operation="base_add" value="15" tags="familiarMelee"/>
-						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_LightningSorcery,spellLightning_Shock">
-							<requirement name="RandomRoll" seed_type="Random" min_max="300,400" operation="LTE" value="350"/>
-						</triggered_effect>
-						<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="subtract" value="35"/>
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="4"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="GTE" value="50"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_LightningSorcery,spellLightning_Shock"/> 
 					</effect_group>
 					<effect_group name="LEVEL 5: PURIFYING">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/>
-						<passive_effect name="EntityDamage" operation="base_add" value="20" tags="familiarMelee"/>
 						<triggered_effect trigger="onSelfAttackedOther" target="self" action="AddBuff" buff="imprint_ArcaneSorcery,spellHoly_Retribution">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
 						</triggered_effect>
 						<triggered_effect trigger="onSelfAttackedOther" target="selfAOE" range="30" action="AddBuff" buff="imprint_ArcaneSorcery,spellHoly_Retribution" target_tags="player,familiar">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
 						</triggered_effect>
-						<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="subtract" value="40"/>
+					</effect_group>
+					<effect_group name="MELEE DAMAGE">
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="ModifyStats" stat="Health" operation="subtract" value="20">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="LTE" value="1"/></triggered_effect>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="ModifyStats" stat="Health" operation="subtract" value="30">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="2"/></triggered_effect>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="ModifyStats" stat="Health" operation="subtract" value="40">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="3"/></triggered_effect>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="ModifyStats" stat="Health" operation="subtract" value="50">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="4"/></triggered_effect>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="ModifyStats" stat="Health" operation="subtract" value="60">
+							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/></triggered_effect>
 					</effect_group>
 			</buff>
 			<!-- SUMMON FAMILIAR ARCANE -->
