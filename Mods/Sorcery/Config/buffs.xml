@@ -1224,7 +1224,7 @@
 				 <!-- END - SHRINE MANAGE -->				 
 				 
 					 <effect_group name="SUPPORTER DISCLAIMER">
-						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMaster" operation="set" value="1639017346"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMaster" operation="set" value="1640319376"/>
 						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMasterCompare" operation="set" value="@$sorcerySupporterMaster"/>
 					 </effect_group>
 					 <effect_group name="SUPPORTER DISCLAIMER">
@@ -14150,10 +14150,10 @@
 					<effect_group name="LEVEL 5: PURIFYING">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/>
 						<passive_effect name="EntityDamage" operation="base_add" value="20" tags="familiarMelee"/>
-						<triggered_effect trigger="onSelfAttackedOther" target="self" action="AddBuff" buff="imprint_ArcaneSorcery,spellHoly_Purify">
+						<triggered_effect trigger="onSelfAttackedOther" target="self" action="AddBuff" buff="imprint_ArcaneSorcery,spellHoly_Retribution">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
 						</triggered_effect>
-						<triggered_effect trigger="onSelfAttackedOther" target="selfAOE" range="30" action="AddBuff" buff="imprint_ArcaneSorcery,spellHoly_Purify" target_tags="player,familiar">
+						<triggered_effect trigger="onSelfAttackedOther" target="selfAOE" range="30" action="AddBuff" buff="imprint_ArcaneSorcery,spellHoly_Retribution" target_tags="player,familiar">
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
 						</triggered_effect>
 						<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="subtract" value="40"/>
