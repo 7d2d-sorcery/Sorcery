@@ -2,7 +2,7 @@
 <Servers>
 	<ServerGroup Name="Sorcery" Logo="https://i.postimg.cc/fRBSLWsQ/sorcery-a19-logo-v09.png" Description="Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.">
 			<Server Name="Sorcery" Logo="https://i.postimg.cc/fRBSLWsQ/sorcery-a19-logo-v09.png">
-			<Description>Sorcery A20 Public (v0.984) - New Content and Features!
+			<Description>Sorcery A20 Public (v0.984) - EAC OFF for certain features to work!
 http://www.SorceryMod.com
 Play 7 Days to Die as a balanced post apocalyptic zombie vanquishing Sorcerer. Through training and discovery, you'll learn how to deport the undead straight back to hell by casting elemental spells of Fire, Ice and Lightning.
 • Vanilla game 100% untouched, add-only policy!
@@ -41,6 +41,7 @@ DIFFICULTY MODES: http://modes.SorceryMod.com
 			</Description>
 			<DownloadMode>Clone</DownloadMode>
 			<Version>Latest</Version>
+			<EAC>Disabled</EAC>
 			<ReleaseNotes>http://forum.SorceryMod.com</ReleaseNotes>
 			<Downloads>
 			<Download>https://github.com/7d2d-sorcery/Sorcery</Download>
