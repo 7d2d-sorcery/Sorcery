@@ -7519,7 +7519,7 @@
 					</effect_group>
 			</buff>
 		<!-- SPELL: RETRIBUTION ______________________________________________________-->
-			<buff name="spellHoly_Retribution" name_key="spellHoly_Retribution" description_key="spellHoly_RetributionDesc" icon="ui_symbol_aura_sorcery" icon_color="198,184,143">
+			<buff name="spellHoly_Retribution" name_key="spellHoly_Retribution" description_key="spellHoly_RetributionDesc" icon="ui_symbol_aura_sorcery" icon_blink="true" icon_color="198,184,143">
 				<!-- <damage_type value="Bashing"/> --><stack_type value="replace"/><update_rate value="3"/><duration value="10"/>
 					<effect_group name="CALC: PLAYER">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Retribution" operation="set" value="3" />
@@ -7528,7 +7528,9 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spellHoly_Retribution" operation="multiply" value="@$sorceryArcaneDamage"/>
 					</effect_group>
 					<effect_group name="SPELL">
-						<triggered_effect trigger="onOtherAttackedSelf" target="other" action="AddBuff" buff="imprint_ArcaneSorcery,spellHoly_Purify"/>
+						<triggered_effect trigger="onOtherAttackedSelf" target="other" action="AddBuff" buff="imprint_ArcaneSorcery,spellHoly_Purify">
+							<requirement name="!EntityTagCompare" target="other" tags="player,familiar,turret,drone"/>
+						</triggered_effect>
 					</effect_group>
 			</buff>
 	<!-- END - HOLY SPELLS ______________________________________________________ -->
@@ -13928,7 +13930,7 @@
 	<!-- END - ENTITY BUFFS __________________________________________________________________________________ -->
 
 
-	<!-- FAMILIAR BUFFS __________________________________________________________________________________-->
+	<!-- SUMMON BUFFS __________________________________________________________________________________-->
 			<!-- Summon: DESPAWN -->
 			<buff name="summon_Despawn" hidden="true">
 				<duration value="1"/>
@@ -13943,65 +13945,81 @@
 					<triggered_effect trigger="onSelfBuffFinish" action="ModifyStats" stat="Health" operation="add" value="-9999"/>
 				</effect_group>
 			</buff>
+	<!-- FAMILIAR BUFFS __________________________________________________________________________________-->
+		<!-- FAMILIAR: ARCANE __________________________________________________________________________________-->
+		<!-- NOTE: Duration and Stacking to account for Client latency -->
 			<!-- Familiar: SPAWN -->
 			<buff name="summonFamiliarArcane_Spawn" hidden="true">
 				<stack_type value="ignore"/><duration value="0.5"/>
 					<effect_group>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".7"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".7"/>
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".7"/>
 						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="summonFamiliarArcane_Imprint"/>
 					</effect_group>
 			</buff>
 			<!-- Familiar: IMPRINT -->
 			<buff name="summonFamiliarArcane_Imprint" hidden="true">
-				<stack_type value="ignore"/><duration value="1"/>
+				<stack_type value="replace"/><duration value="1"/>
+					<effect_group name="IMPRINT">
+						<triggered_effect trigger= "onSelfBuffStart" action="SetCVar, Sorcery" cvar="SummonerID" target="selfAOE" range="5" target_tags="familiarArcane">
+							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger= "onSelfBuffStart" action="ModifyCVar" cvar="SummonFamiliar" operation="set" value="1" target="selfAOE" range="5" target_tags="familiar">
+							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
+							<requirement name="CVarCompare" cvar="SummonFamiliarOmniPack" target="other" operation="NE" value="1"/>
+						</triggered_effect>
+					</effect_group>
 					<effect_group name="SET: Level 0">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="LTE" value="0"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="0" target="selfAOE" range="30" target_tags="familiar">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="0" target="selfAOE" range="30" target_tags="familiarArcane">
 							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
 						</triggered_effect>
 					</effect_group>
 					<effect_group name="SET: Level 1">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="1"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="1" target="selfAOE" range="30" target_tags="familiar">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="1" target="selfAOE" range="30" target_tags="familiarArcane">
 							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
 						</triggered_effect>
 					</effect_group>
 					<effect_group name="SET: Level 2">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="2"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="2" target="selfAOE" range="30" target_tags="familiar">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="2" target="selfAOE" range="30" target_tags="familiarArcane">
 							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
 						</triggered_effect>
 					</effect_group>
 					<effect_group name="SET: Level 3">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="3"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="3" target="selfAOE" range="30" target_tags="familiar">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="3" target="selfAOE" range="30" target_tags="familiarArcane">
 							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
 						</triggered_effect>
 					</effect_group>
 					<effect_group name="SET: Level 4">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="4"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="4" target="selfAOE" range="30" target_tags="familiar">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="4" target="selfAOE" range="30" target_tags="familiarArcane">
 							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
 						</triggered_effect>
 					</effect_group>
 					<effect_group name="SET: Level 5">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="5" target="selfAOE" range="30" target_tags="familiar">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="5" target="selfAOE" range="30" target_tags="familiarArcane">
 							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
 						</triggered_effect>
 					</effect_group>
 					<effect_group name="APPLY">
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpiritRegenStop,summonFamiliarArcane_Cooldown,summonFamiliarArcane_Duration,summonFamiliarArcane_Player"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpiritRegenStop,summonFamiliarArcane_Duration,summonFamiliarArcane_Player"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="30"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="summonFamiliarArcane_Duration,summonFamiliarArcane,summonFamiliarArcane_Familiar,summonFamiliarArcane_Weapon,buffSorceryMark" target_tags="familiar">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="summonFamiliarArcane_Duration,summonFamiliarArcane,summonFamiliarArcane_Familiar,summonFamiliarArcane_Weapon,buffSorceryMark" target_tags="familiarArcane">
 							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
+							<requirement name="CVarCompare" cvar="SummonFamiliar" target="other" operation="Equals" value="1"/>
 						</triggered_effect>
 					</effect_group>
 			</buff>
 			<!-- Familiar Arcane: DESPAWN -->
 			<buff name="summonFamiliarArcane_Despawn" hidden="true" remove_on_death="false">
-				<duration value="0.5"/><stack_type value="ignore"/>
+				<duration value="0.1"/><stack_type value="ignore"/>
 				<effect_group>
-					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="200" buff="summon_Despawn" target_tags="familiar">
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="200" buff="summon_Despawn" target_tags="familiarArcane">
 						<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
 					</triggered_effect>
 				</effect_group>
@@ -14025,17 +14043,18 @@
 			<buff name="summonFamiliarArcane_AbilityDespawn" hidden="false" name_key="Despawn Familiars" description_key="Despawning Familiars" icon="ui_familiar_sorcery" icon_color="220,0,0" icon_blink="true">
 				<duration value="1"/><display_value_key value="Despawn"/><display_value value="xxx"/>
 				<effect_group>
-					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="200" buff="summon_Despawn" target_tags="familiar">
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="200" buff="summon_Despawn" target_tags="familiarArcane">
 						<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
+						<requirement name="CVarCompare" cvar="SummonFamiliar" target="other" operation="Equals" value="1"/>
 					</triggered_effect>
 				</effect_group>
 			</buff>
 			<!-- Familiar: COOLDOWN -->
-			<buff name="summonFamiliarArcane_Cooldown" hidden="false" name_key="Familiar Cooldown" description_key="Wait time before summoning another Familiar." icon="ui_game_symbol_clock" icon_color="174,146,213" icon_blink="true" remove_on_death="true">
+			<buff name="summonFamiliarArcane_Cooldown" hidden="false" name_key="Familiar Cooldown" description_key="Wait time before summoning another Arcane Familiar." icon="ui_cooldown_familiar" icon_color="174,146,213" icon_blink="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="0"/>
 				<display_value value=".summonFamiliarArcane_Cooldown"/><display_value_key value="{0:0}"/> 
 				<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".summonFamiliarArcane_Cooldown" operation="set" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".summonFamiliarArcane_Cooldown" operation="set" value="15"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".summonFamiliarArcane_Cooldown" operation="add" value="-1"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="summonFamiliarArcane_Cooldown">
 							<requirement name="CVarCompare" cvar=".summonFamiliarArcane_Cooldown" operation="LTE" value="0"/>
@@ -14055,6 +14074,12 @@
 					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="120"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="3"/></triggered_effect>
 					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="150"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="4"/></triggered_effect>
 					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="3600"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/></triggered_effect>
+					<!-- stack -->
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="60"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="1"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="90"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="2"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="120"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="3"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="150"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="4"/></triggered_effect>
+					<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$familiarDuration" operation="set" value="3600"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/></triggered_effect>
 				</effect_group>
 				<effect_group name="ALL">
 					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="familiarArcaneDuration" operation="set" value="@$familiarDuration"/>
@@ -14081,13 +14106,13 @@
 
 			<!-- Familiar: PLAYER -->
 			<buff name="summonFamiliarArcane_Player" hidden="true" remove_on_death="true">
-				<stack_type value="replace"/><duration value="4"/><update_rate value="2"/>
+				<stack_type value="replace"/><duration value="5"/><update_rate value="2"/>
 					<effect_group>
 						<!-- Renew Familiar -->
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="summonFamiliarArcane_Familiar" target_tags="familiar">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="summonFamiliarArcane_Familiar" target_tags="familiarArcane">
 							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
 						</triggered_effect>
-						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="summonFamiliarArcane_Familiar" target_tags="familiar">
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="summonFamiliarArcane_Familiar" target_tags="familiarArcane">
 							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
 						</triggered_effect>
 						<!-- Remove -->
@@ -14097,7 +14122,7 @@
 			</buff>
 			<!-- Familiar: FAMILIAR -->
 			<buff name="summonFamiliarArcane_Familiar" hidden="true" remove_on_death="true">
-				<stack_type value="replace"/><duration value="4"/><update_rate value="2"/>
+				<stack_type value="replace"/><duration value="5"/><update_rate value="2"/>
 					<effect_group>
 						<!-- Renew Owner -->
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="summonFamiliarArcane_Player" target_tags="player">
@@ -14116,28 +14141,32 @@
 					<effect_group name="LEVEL 2: BURNING">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="2"/>
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="GTE" value="50"/>
+							<requirement name="!EntityTagCompare" target="other" tags="player,summon,trader,vehicle,turret,drone"/>
 						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_FireSorcery,spellFire_Burn"/>
 					</effect_group>
 					<effect_group name="LEVEL 3: CHILLING">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="3"/>
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="GTE" value="50"/>
+							<requirement name="!EntityTagCompare" target="other" tags="player,summon,trader,vehicle,turret,drone"/>
 						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_IceSorcery,spellIce_Chill"/>
 					</effect_group>
 					<effect_group name="LEVEL 4: SHOCKING">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="4"/>
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="GTE" value="50"/>
+							<requirement name="!EntityTagCompare" target="other" tags="player,summon,trader,vehicle,turret,drone"/>
 						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_LightningSorcery,spellLightning_Shock"/> 
 					</effect_group>
 					<effect_group name="LEVEL 5: PURIFYING">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/>
-						<triggered_effect trigger="onSelfAttackedOther" target="self" action="AddBuff" buff="imprint_ArcaneSorcery,spellHoly_Retribution">
-							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="self" action="AddBuff" buff="spellHoly_Retribution">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/> <!-- 5 --> 
 						</triggered_effect>
-						<triggered_effect trigger="onSelfAttackedOther" target="selfAOE" range="30" action="AddBuff" buff="imprint_ArcaneSorcery,spellHoly_Retribution" target_tags="player,familiar">
-							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="selfAOE" range="30" action="AddBuff" buff="spellHoly_Retribution" target_tags="player,summon">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="5"/> <!-- 5 -->
 						</triggered_effect>
 					</effect_group>
 					<effect_group name="MELEE DAMAGE">
+							<requirement name="!EntityTagCompare" target="other" tags="player,summon,trader,vehicle,turret,drone"/>
 						<triggered_effect trigger="onSelfAttackedOther" target="other" action="ModifyStats" stat="Health" operation="subtract" value="20">
 							<requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="LTE" value="1"/></triggered_effect>
 						<triggered_effect trigger="onSelfAttackedOther" target="other" action="ModifyStats" stat="Health" operation="subtract" value="30">
@@ -14183,16 +14212,26 @@
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="1"/>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="2"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="3"/><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="LT" value="5"/></triggered_effect>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="3"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/></triggered_effect>
+						<!-- stack -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="2"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="3"/><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="LT" value="5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$familiarMaxCount" operation="set" value="3"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/></triggered_effect>
 					</effect_group>
 					<effect_group name="CVAR: Max Health">
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxHealth" operation="set" value="50"/>
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxHealth" operation="multiply" value="@$sorceryFamiliar"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxHealth" operation="set" value="0"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="LTE" value="1"/></triggered_effect>	
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxHealth" operation="set" value="50"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="2"/></triggered_effect>	
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxHealth" operation="set" value="100"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxHealth" operation="set" value="150"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="Equals" value="4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarMaxHealth" operation="set" value="200"><requirement name="CVarCompare" cvar="$sorceryFamiliar" operation="GTE" value="5"/></triggered_effect>
+					</effect_group>
+					<effect_group name="HEALTH">
+							<requirement name="CVarCompare" cvar="$familiarMaxHealth" operation="GT" value="0"/>
 						<passive_effect name="HealthMax" operation="base_add" value="@$familiarMaxHealth"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="@$familiarMaxHealth"/>
 						<passive_effect name="HealthChangeOT" operation="base_add" value="1000,1000" duration="0,2"/>
 					</effect_group>
 				<!-- HEALTH -->
 					<effect_group name="UI Health: 100">
-							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".99"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".95"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
@@ -14203,7 +14242,7 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
 					</effect_group>
 					<effect_group name="UI Health: 90">
-							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".99"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".95"/>
 							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".9"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="90"/>
@@ -14263,7 +14302,7 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
 					</effect_group>
 					<effect_group name="UI Health: 25">
-							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".25"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".2"/>
 							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".4"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
@@ -14275,7 +14314,7 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
 					</effect_group>
 					<effect_group name="UI Health: 10">
-							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".25"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".2"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
@@ -14375,8 +14414,8 @@
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$summonFamiliarArcane_AbilityHeal" operation="set" value="0"/>
 						<!-- fx -->
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="holyCleanse-finish"/>
-						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse.unity3d?holyCleanse" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse-finish.unity3d?holyCleanse-finish" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform="Hips"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse.unity3d?holyCleanse" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/holyCleanse-finish.unity3d?holyCleanse-finish" local_offset=".9,0,0" local_rotation="0,0,90" parent_transform=""/>
 						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="holyCleanse"/>
 						<!-- ability -->
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="200"/>
@@ -14384,6 +14423,7 @@
 					</effect_group>
 			</buff>
 	
+
 		<!-- FIRE FAMILIAR SPELLS -->
 			<buff name="spellFamiliarTriggerImpact_FireExplode" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="0.01"/>

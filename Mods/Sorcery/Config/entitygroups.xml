@@ -168,11 +168,20 @@
 			<entity name="sorceryFallenLightning"/>
 		</entitygroup>
 		
-	<!-- SUMMON GROUPS -->
+	<!-- SUMMON GROUPS (Sorcery.dll) -->
+		<!-- NOTE: Incantations, Summons -->
 		<entitygroup name="SorceryFamiliarGroup">
 			<entity name="sorceryFamiliarArcane"/>
 		</entitygroup>
-		
+		<entitygroup name="SorceryFamiliarFireGroup">
+			<entity name="sorceryFamiliarFire"/>
+		</entitygroup>
+		<entitygroup name="SorceryFamiliarIceGroup">
+			<entity name="sorceryFamiliarIce"/>
+		</entitygroup>
+		<entitygroup name="SorceryFamiliarLightningGroup">
+			<entity name="sorceryFamiliarLightning"/>
+		</entitygroup>	
 	</append>
 	
 </Sorcery>

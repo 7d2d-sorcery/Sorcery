@@ -6974,11 +6974,10 @@
 					<requirement name="NotHasBuff" buff="spellRecall_CD"/>
 					<requirement name="NotHasBuff" buff="spellRecall"/>
 					<requirement name="NotHasBuff" buff="spellRecall_Teleport"/>
-				<property name="Class" value="Eat"/>
+				<property name="Class" value="Activate"/>
 				<property name="Delay" value="1"/>
-				<property name="UseAnimation" value="true"/>
-				<property name="Use_time" value="1"/>
-				<property name="Create_item" value="incantation_Recall"/>
+				<property name="Consume" value="false"/>
+				<!-- <property name="UseAnimation" value="true"/> -->
 			</property>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="spellRecall_CD,spellRecall"/>
@@ -8389,24 +8388,19 @@
 				<property name="Sphere" value="1"/>
 				<property name="DamageEntity" value="0"/>
 				<property name="DamageBlock" value="200"/>
-				<!-- <property name="Buff" value="imprint_IceSorcery,imprint_FireSorcery,spellFire_Burn,spellIce_Chill,spellLightning_Shock"/> -->
 			</property>
 			<effect_group name="Base Effects" tiered="false">
 				<passive_effect name="EntityDamage" operation="base_set" value="0"/>
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
 				<passive_effect name="DamageModifier" operation="perc_add" value="4" tags="earth,wood"/>
-				<!-- <triggered_effect trigger="onSelfAttackedOther" action="Ragdoll" target="other" duration="0" force="30"/> -->
 				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="imprint_IceSorcery,imprint_FireSorcery,spellFX_FireImpactAOE,spellFX_IceImpactAOE,spellFX_LightningImpactAOE,spellFire_Burn,spellIce_Chill,spellLightning_Shock"/>
 			</effect_group>
 		</item>
+		<!-- SUMMON FAMILIAR: ARCANE -->
 		<item name="sorceryFamiliarArcane">
 			<property name="Extends" value="sorceryScrollMaster"/>
 			<property name="Tags" value="familiarArcane"/>
 			<property name="HoldingItemHidden" value="true"/>
-			<!-- <property name="Meshfile" value="#Other/Items?Misc/snowballPrefab.prefab"/> -->
-			<!-- <property name="HandMeshfile" value="#@modfolder:Resources/familiarArcane.unity3d?familiarArcane"/> -->
-			<!-- <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/> -->
-			<!-- <property name="Material" value="Morganic"/> -->
 			<property name="Weight" value="0"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="SellableToTrader" value="false"/>
@@ -8415,21 +8409,19 @@
 			<property class="Action0">
 					<requirement name="NotHasBuff" buff="summonFamiliarArcane_Cooldown"/>
 					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="30"/>
-				<property name="Class" value="Eat"/>
+				<property name="Class" value="Activate"/>
 				<property name="Delay" value="1"/>
-				<property name="UseAnimation" value="false"/>
-				<property name="Use_time" value="1"/>
-				<property name="Create_item" value="sorceryFamiliarArcane"/>
-				<property name="Sound_start" value="..."/>
+				<property name="Consume" value="false"/>
+				<property name="Sound_start" value=""/>
 			</property>
 			<property class="Action1">
 				<property name="Class" value="Activate"/>
-				<property name="Delay" value="0"/>
-				<property name="UsePowerAttackAnimation" value="false"/>
+				<property name="Delay" value="1"/>
+						<property name="Consume" value="false"/>
 			</property>
 			<effect_group tiered="false" name="SPAWN">
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="summonFamiliarArcane_Despawn,spell_SummonFamiliar"/>
-				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="summonFamiliarArcane_Spawn"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="summonFamiliarArcane_Cooldown,summonFamiliarArcane_Spawn"/>
 			</effect_group>
 			<effect_group tiered="false" name="ABILITY: Despawn">
 					<requirement name="HasBuff" buff="summonFamiliarArcane_Player"/>
@@ -8442,7 +8434,7 @@
 					<requirement name="HasBuff" buff="summonFamiliarArcane_Player"/>
 					<requirement name="CVarCompare" cvar=".summonFamiliarArcane_CounterDespawn" operation="LTE" value="1"/>
 					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="10"/>
-				<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="10"/> <!-- spirit -->
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="10"/>
 				<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" target="selfAOE" range="30" buff="summonFamiliarArcane_AbilityHeal" target_tags="familiar">
 					<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
 				</triggered_effect>

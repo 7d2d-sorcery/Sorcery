@@ -50,7 +50,7 @@
 	<append xpath="/windows">
 		<!-- UI: SORCERY VERSION -->
 		<window name="SorceryVersion" depth="99" pos="0,0" width="200" height="22" anchor="RightTop">
-			<label name="SorceryVersion" pos="-212,-43" depth="0" text="Sorcery A20 (v0.984)" font_size="26" effect="outline" color="144,95,255,255" justify="right" upper_case="false"/>
+			<label name="SorceryVersion" pos="-212,-43" depth="0" text="Sorcery A20 (v0.985)" font_size="26" effect="outline" color="144,95,255,255" justify="right" upper_case="false"/>
 			<label name="SorceryDifficulty" pos="-214,-68" depth="0" font_size="26" effect="outline" justify="right" upper_case="false" style="sorcery.window.mainmenu.logo.normal.label"/>
 		</window>
 
@@ -74,6 +74,9 @@
 			<texture name="SorceryTeaser" texture="@modfolder:Textures/SorceryTeaser.png"/>
 		</window>
 	</append>
+	
+	<!-- Force 100% Loot -->
+	<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsAdvanced']/grid/gameoption[@name='LootAbundance']/@values">100</set>
 	
 	<!-- Enable Max Spawned Zombies -->
 	<!-- <insertAfter xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsGeneral']/grid/gameoption[@name='ServerMaxPlayerCount']">

@@ -838,9 +838,8 @@
 	<!-- FAMILIARS ______________________________________-->
 		<entity_class name="sorceryFamiliarMaster">
 			<property name="HideInSpawnMenu" value="true"/>
-			<property name="Tags" value="entity,familiar"/>
+			<property name="Tags" value="entity,familiar,summon"/>
 			<property name="Class" value="EntityAnimalStag"/>
-			<!-- <property name="Class" value="EntityEnemyAnimal"/> -->
 			<property name="NavObject" value="sorceryFamiliar" />
 			<property name="Parent" value="Animals"/>
 			<property name="EntityType" value="Animal"/>
@@ -848,33 +847,33 @@
 			<property name="ModelType" value="Standard"/>
 			<property name="Prefab" value="/Entities/Animals/Wolf/animalStandardWolfRagdoll"/>
 			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_familiarArcane.unity3d?mat_familiarArcane"/>
-			<!-- <property name="ReplaceMaterial1" value="#@modfolder:Resources/mat_awakenedEyeLightning.unity3d?mat_awakenedEyeLightning"/> -->
 			<property name="SurfaceCategory" value="organic"/>
 			<property name="ParticleOnDeath" value="blood_death"/>
-			<property name="HasDeathAnim" value="true"/>
+			<!-- <property name="HasDeathAnim" value="true"/> -->
 			<property name="HasDeathAnim" value="false"/>
 			<property name="RootMotion" value="true"/>
-			<property name="HasRagdoll" value="true"/>
-			<property name="PhysicsBody" value="wolf"/>
+			<property name="HasRagdoll" value="false"/>
+			<property name="PhysicsBody" value="wolfFamiliar"/>
 			<property name="Mass" value="95"/>
 			<property name="Weight" value="300"/>
 			<!-- <property name="PushFactor" value="100"/> -->
-			<property name="SizeScale" value=".75"/>
+			<property name="SizeScale" value=".7"/>
 			<property name="IsAnimalEntity" value="true"/>
 			<property name="IsEnemyEntity" value="false"/>
 			<property name="Faction" value="animals"/>
 			<property name="LookAtAngle" value="90"/>
 			<property name="AIGroupCircle" value="1"/>
-			<property name="AINoiseSeekDist" value="1000"/>
+			<property name="AINoiseSeekDist" value="100"/>
 			<property name="AIPathCostScale" value="100, 100"/>
 			<property name="AIFeralSense" value="5"/>
 			<property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityZombie,20,EntityNPC,20,EntityEnemyAnimal,20,EntityAnimalSnake,20"/> <!-- class,maxChaseTime (return home) -->
-			<property name="AITask-2" value="ApproachSpot" data="class=EntityPlayer,1000"/>
-
+			<property name="AITask-2" value="ApproachSpot" data="class=EntityPlayer,100"/>
+			<property name="AITask-3" value=""/>
+			<!-- <property name="AITask-3" value="Territorial"/> -->
 			<!-- <property name="AITask-3" value="Look"/> -->
 			<!-- <property name="AITask-4" value="Wander"/> -->
 			
-			<property name="AITarget-1" value="SetNearestEntityAsTarget" data="class=EntityPlayer,1000,1000,EntityNPC,40,40,EntityZombie,40,40,EntityEnemyAnimal,40,40"/> <!-- class, hear dist, see dist (checked left to right, 0 dist uses entity default) -->
+			<property name="AITarget-1" value="SetNearestEntityAsTarget" data="class=EntityPlayer,100,100,EntityNPC,40,40,EntityZombie,40,40,EntityEnemyAnimal,40,40"/> <!-- class, hear dist, see dist (checked left to right, 0 dist uses entity default) -->
 			<property name="AITarget-2" value="SetAsTargetIfHurt" data="class=EntityNPC,EntityZombie,EntityEnemyAnimal,EntityAnimalSnake"/>
 				<!-- <property name="AITarget-3" value="BlockingTargetTask"/> -->
 				<!-- <property name="AITarget-4" value="SetNearestCorpseAsTarget" data="class=EntityPlayer"/> -->
@@ -888,7 +887,7 @@
 			<!-- Stealth settings -->
 			<property name="MaxViewAngle" value="720"/>
 			<property name="SightRange" value="1000"/> 
-			<!-- <property name="SightLightThreshold" value="-100,-100"/> --> <!-- how well lit you have to be for entity to see you at min,max range -->
+			<property name="SightLightThreshold" value="-100,-100"/> <!-- how well lit you have to be for entity to see you at min,max range -->
 
 			<property name="SoundRandom" value="wolfroam"/>
 			<property name="SoundAlert" value="wolfalert"/>
@@ -900,11 +899,9 @@
 
 			<!-- Gameplay -->
 			<property name="PainResistPerHit" value=".9"/> <!-- no pain -1 -->
-			<!-- <property name="PainResistPerHit" value="3"/> -->
 			<property name="MaxTurnSpeed" value="420"/>
 			<property name="MoveSpeed" value="1"/>
 			<property name="MoveSpeedAggro" value="4, 4"/>
-			<!-- <property name="MoveSpeedRand" value="0"/> -->
 			<property name="MoveSpeedPanic" value="5"/>
 			<property name="SwimSpeed" value="5"/>
 			<property name="SwimStrokeRate" value="1.1,1.5"/>
@@ -917,23 +914,9 @@
 			<property name="DismemberMultiplierArms" value="0"/>
 			<property name="DismemberMultiplierLegs" value="0"/>
 
-			<!-- <property name="TimeStayAfterDeath" value="3"/> -->
-			<property name="TimeStayAfterDeath" value="1.5"/>
-			<!-- <property name="DeadBodyHitPoints" value="1000"/> -->
+			<property name="TimeStayAfterDeath" value="1"/>
 			<property name="DeadBodyHitPoints" value="0"/>
-			
-			<!-- LOOT DROP -->
-			<!-- <property name="TimeStayAfterDeath" value="-1"/>
-			<property name="DeadBodyHitPoints" value="0"/>
-			<property name="PassThroughDamage" value="true"/>
-			<property name="LootDropProb" value="1"/>
-			<property name="LootDropEntityClass" value="FamiliarLootContainerArcane"/> -->
-
-			<!-- <property name="LootListAlive" value="690"/> -->
-			<!-- <property name="LootListOnDeath" value="139"/> -->
-			<!-- <property name="LootDropProb" value="0"/> -->
-			
-			<!-- <property name="Buffs" value="spellFX_Conjure,buffSorceryImmunity_All,buffSorceryImmunity_Entities"/> -->
+		
 			<property name="HandItem" value="meleeHandFamiliarArcane"/>	
 			<property name="ExperienceGain" value="0"/>
 			<effect_group name="Base Effects" tiered="false">
@@ -949,15 +932,27 @@
 		</entity_class>
 		<!-- Familiar: ARCANE -->
 		<entity_class name="sorceryFamiliarArcane" extends="sorceryFamiliarMaster">
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,familiar,familiarArcane"/>
 			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_familiarArcane.unity3d?mat_familiarArcane"/>
+		</entity_class>
+		<!-- Familiar: FIRE -->
+		<entity_class name="sorceryFamiliarFire" extends="sorceryFamiliarMaster">
 			<property name="HideInSpawnMenu" value="true"/>
-			<!-- <property name="LootListAlive" value="139"/> -->
-			<!-- <property name="LootDropProb" value="1"/>
-			<property name="LootDropEntityClass" value="FamiliarLootContainerArcane"/>
-			<property name="TimeStayAfterDeath" value="-1"/>
-			<property name="DeadBodyHitPoints" value="0"/>
-			<property name="PassThroughDamage" value="true"/> -->
+			<property name="Tags" value="entity,familiar,familiarFire"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_familiarFire.unity3d?mat_familiarFire"/>
+		</entity_class>
+		<!-- Familiar: ICE -->
+		<entity_class name="sorceryFamiliarIce" extends="sorceryFamiliarMaster">
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="Tags" value="entity,familiar,familiarIce"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_familiarIce.unity3d?mat_familiarIce"/>
+		</entity_class>
+		<!-- Familiar: LIGHTNING -->
+		<entity_class name="sorceryFamiliarLightning" extends="sorceryFamiliarMaster">
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="Tags" value="entity,familiar,familiarLightning"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_familiarLightning.unity3d?mat_familiarLightning"/>
 		</entity_class>
 		
 		

@@ -51,6 +51,7 @@
 	<append xpath="/nav_object_classes">
 	
 		<nav_object_class name="sorceryFamiliar">
+			<property name="requirement_type" value="Tracking" />
 			<map_settings>
 				<property name="sprite_name" value="ui_familiar_sorcery"/> <!-- ui_game_symbol_enemy_dot -->
 				<property name="min_distance" value="0"/>

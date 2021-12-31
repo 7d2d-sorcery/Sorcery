@@ -473,7 +473,7 @@
 			<crafting_category name="SorceryAmmo" icon="ui_sorcery_ammo" display_name="Spell Ammo" />
 			<crafting_category name="SorceryTrap" icon="ui_symbol_trap_sorcery" display_name="Spell Traps" />
 			<crafting_category name="Books" icon="ui_sorcery_scroll" display_name="Scrolls / Incantations" />
-			<crafting_category name="SorceryFamiliar" icon="ui_familiar_sorcery" display_name="Conjurations" />
+			<crafting_category name="SorceryFamiliar" icon="ui_familiar_sorcery" display_name="Summons" />
 			<crafting_category name="Special Items" icon="ui_game_symbol_quest" display_name="Quests" />
 		</crafting_category_list>
 		<crafting_category_list display_type="sorceryEnchantingStation">
