@@ -181,7 +181,7 @@
 		</entitygroup>
 		<entitygroup name="SorceryFamiliarLightningGroup">
 			<entity name="sorceryFamiliarLightning"/>
-		</entitygroup>	
+		</entitygroup>		
 	</append>
 	
 </Sorcery>

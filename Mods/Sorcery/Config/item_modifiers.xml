@@ -578,6 +578,21 @@
 					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeKnockbackSpell_degrade"/>
 				</effect_group>
 		</item_modifier>
+		<!-- RECALL (GOLD) -->
+		<item_modifier name="rune_Recall" installable_tags="spellcast,staff" modifier_tags="rune_Recall" type="mod">
+			<property name="Extends" value="runeMaster"/><property name="Weight" value="60"/>
+				<effect_group tiered="false" name="CALC">
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeRecall_degrade" operation="set" value="@$sorceryRuneDegrade"/>
+					<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".runeRecall_degrade" operation="multiply" value="2"/>
+				</effect_group>
+				<effect_group tiered="false" name="RUNE">
+					<triggered_effect trigger="onSelfItemActivate" action="AddBuff" buff="spellRecallRune_CD,spellRecall">
+						<requirement name="NotHasBuff" buff="spellRecallRune_CD"/>
+					</triggered_effect>
+					<!-- <triggered_effect trigger="onSelfItemDeactivate" action="RemoveBuff" buff="buffRune_AspectOfFire_Aura"/> -->
+					<passive_effect name="DegradationPerUse" operation="perc_add" value="@.runeRecall_degrade"/>
+				</effect_group>
+		</item_modifier>
 		<!-- SILENCE (GOLD) -->
 		<item_modifier name="rune_Silence" installable_tags="weapon,spellcast,spellTurret" modifier_tags="rune_Silence" type="mod">
 			<property name="Extends" value="runeMaster"/><property name="Weight" value="60"/>

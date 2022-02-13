@@ -6983,39 +6983,39 @@
 				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="spellRecall_CD,spellRecall"/>
 			</effect_group>
 		</item>
-		<!-- Incantation: Summon Familiar (Sorcery.dll) -->
-		<item name="incantation_SummonFamiliar">
+		<!-- Incantation: Summon Omni Pack (Sorcery.dll) -->
+		<item name="incantation_SummonOmniPack">
 			<property name="Extends" value="sorceryScrollMaster"/>
-			<property name="Tags" value="sorceryIncantation"/>
-			<property name="CreativeMode" value="None"/>
-			<property name="CustomIcon" value="sorceryFamiliarArcane"/>
-			<property name="Stacknumber" value="1"/>
+			<property name="Tags" value="familiarArcane"/>
+			<property name="HoldingItemHidden" value="true"/>
 			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="SorceryFamiliar"/>
+			<property name="UnlockedBy" value="perkSorceryFamiliar"/>
+			<property name="Tags" value="familiarOmni"/>
 			<property class="Action0">
-					<!-- <requirement name="NotHasBuff" buff="spellRecall_CD"/>
-					<requirement name="NotHasBuff" buff="spellRecall"/>
-					<requirement name="NotHasBuff" buff="spellRecall_Teleport"/> -->
-				<property name="Class" value="Eat"/>
+					<requirement name="NotHasBuff" buff="summonFamiliarOmniPack_Cooldown"/>
+					<requirement name="CVarCompare" cvar="$spiritAmount" operation="GTE" value="100"/>
+				<property name="Class" value="Activate"/>
 				<property name="Delay" value="1"/>
-				<property name="UseAnimation" value="false"/>
-				<property name="Use_time" value="1"/>
-				<property name="Create_item" value="incantation_SummonFamiliar"/>
+				<property name="Consume" value="false"/>
+				<property name="Sound_start" value=""/>
 			</property>
-			<effect_group tiered="false">
-				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="spell_SummonFamiliar"/>
-				<!-- <triggered_effect trigger="onSelfSecondaryActionStart" action="CallGameEvent" event="sorcery_action_kill_familiar" /> -->
-				<!-- <triggered_effect trigger="onSelfSecondaryActionEnd" action="CreateItem, Sorcery" item="incantation_SummonFamiliar" count="1"/> -->
-			</effect_group>
 			<property class="Action1">
-					<!-- <requirement name="NotHasBuff" buff="spellRecall_CD"/>
-					<requirement name="NotHasBuff" buff="spellRecall"/>
-					<requirement name="NotHasBuff" buff="spellRecall_Teleport"/> -->
-				<property name="Class" value="Eat"/>
+				<property name="Class" value="Activate"/>
 				<property name="Delay" value="1"/>
-				<property name="UseAnimation" value="false"/>
-				<property name="Use_time" value="..."/>
-				<property name="Create_item" value="incantation_SummonFamiliar"/>
+				<property name="Consume" value="false"/>
+				<property name="Sound_start" value=""/>
 			</property>
+			<effect_group tiered="false" name="SPAWN">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="spell_SummonFamiliarOmni"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="summonFamiliarOmniPack_Cooldown,summonFamiliarOmniPack_Spawn"/>
+			</effect_group>
+			<effect_group tiered="false" name="ABILITY: DESPAWN">
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="summonFamiliarOmniPack_DespawnCounter"/>
+				<triggered_effect trigger="onSelfSecondaryActionEnd" action="RemoveBuff" buff="summonFamiliarOmniPack_DespawnCounter"/>
+			</effect_group>
 		</item>
 <!-- END - INCANTATIONS ______________________________________-->
 

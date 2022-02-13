@@ -566,10 +566,16 @@
 			<ingredient name="resourcePaper" count="20"/>
 			<ingredient name="resourceWood" count="5"/>
 		</recipe>
-	
-	
 <!-- FAMILIARS __________________________________________________________________________________ -->
-		<!-- Arcane Vision -->
+		<!-- Incantation: Familiar Omni Pack -->
+		<recipe name="incantation_SummonOmniPack" count="1" craft_area="sorceryDesk" craft_time="600" tags="learnable">
+			<ingredient name="resourceRitualBloodOmni" count="5"/>
+			<ingredient name="resourceBone" count="75"/>
+			<ingredient name="foodRawMeat" count="100"/>
+			<ingredient name="resourcePaper" count="20"/>
+			<ingredient name="resourceWood" count="5"/>
+		</recipe>	
+		<!-- Incantation: Familiar Arcane -->
 		<recipe name="sorceryFamiliarArcane" count="1" craft_area="sorceryDesk" craft_time="10" tags="learnable,sorceryTier">
 			<ingredient name="resourceRitualBloodOmni" count="1"/>
 			<ingredient name="resourceBone" count="25"/>
@@ -578,7 +584,16 @@
 			<ingredient name="resourceWood" count="5"/>
 		</recipe>
 	<!-- END - FAMILIARS __________________________________________________________________________________ -->
+<!-- END - INCANTATIONS __________________________________________________________________________________ -->
 
+<!-- BLOCKS ______________________________________-->
+	<!-- RECALL PORTAL -->
+		<recipe name="portalRecall" count="1" craft_area="sorceryDesk" craft_time="600">
+			<ingredient name="resourceRitualBloodOmni" count="6"/>
+			<ingredient name="resourcePowderArcane" count="777"/>
+			<ingredient name="resourceRockSmall" count="5000"/>
+			<ingredient name="incantation_Recall" count="1"/>
+		</recipe>
 
 <!-- STATIONS ______________________________________-->
 	<!-- SORCERER DESK -->
@@ -883,6 +898,12 @@
 		</recipe>
 <!-- ARCANE RUNES -->
 	<!-- GOLD: ARCANE RUNES -->
+		<!-- Rune: Recall (GOLD) -->
+		<recipe name="rune_Recall" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="30">
+			<ingredient name="resourceRitualBloodOmni" count="3"/>
+			<ingredient name="resourceExtractOmni" count="100"/>
+			<ingredient name="scroll_Recall" count="1"/>
+		</recipe>
 		<!-- Rune: Silence (GOLD) -->
 		<recipe name="rune_Silence" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="30">
 			<ingredient name="resourceExtractOmni" count="100"/>

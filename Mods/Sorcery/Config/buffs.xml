@@ -903,6 +903,7 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellCharge" operation="set" value="0"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".sorcerySpellCharge_multiplier" operation="set" value="1"/>
 							<!-- add -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellCharge" operation="add" value="@$sorcerySpellCharge_add"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellCharge" operation="add" value="@.sorcerySpellCharge_add"/>
 						<!-- multiply -->
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorcerySpellCharge" operation="multiply" value="@.sorcerySpellCharge_multiplier">
@@ -1505,8 +1506,12 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".spiritAdd" operation="add" value="5"/>
 					</effect_group>
 					<effect_group name="Spellcasting Speed"> 
-						<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorcerySpellSpeed_add" operation="add" value=".5"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$sorcerySpellSpeed_add" operation="subtract" value=".5"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorcerySpellSpeed_add" operation="add" value=".5"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$sorcerySpellSpeed_add" operation="subtract" value=".5"/>
+					</effect_group>
+					<effect_group name="Spell Charge Speed"> 
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorcerySpellCharge_add" operation="add" value=".5"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$sorcerySpellCharge_add" operation="subtract" value=".5"/>
 					</effect_group>
 					<effect_group name="All Sorcery Damage">
 						<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryDamage_add" operation="add" value=".5"/>
@@ -1517,8 +1522,7 @@
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$sorceryAllEssenceHarvest_add" operation="subtract" value="1.0"/> -->
 					</effect_group>
 					<effect_group name="Spellcast Degradtion">
-							<!-- <requirement name="HoldingItemHasTags" tags="spellcast"/> -->
-						<passive_effect name="DegradationPerUse" operation="perc_subtract" value="1" tags="spellcast,staff"/>
+						<passive_effect name="DegradationPerUse" operation="perc_subtract" value=".5" tags="spellcast,staff"/>
 					</effect_group>
 					<effect_group name="CHECKPOINT">
 						<requirements compare_type="or">
@@ -5503,32 +5507,29 @@
 					</effect_group>
 			</buff>
 			<!-- SPELL: SUMMON FAMILIAR (Sorcery.dll) -->
-			<buff name="spell_SummonFamiliar" hidden="true" remove_on_death="false">
-				<stack_type value="ignore"/><duration value="0.01"/>
-					<effect_group name="SUMMON"> 
+			<buff name="spell_SummonFamiliar" hidden="true">
+				<stack_type value="ignore"/><duration value="0.1"/>
+					<effect_group name="SUMMON"> <!-- Sorcery.dll -->
 						<!-- <triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="sorcery_action_spawn_familiar" /> -->
-						<triggered_effect trigger="onSelfBuffRemove" action="SpawnEntity, Sorcery" target="self" SpawnGroup="SorceryFamiliarGroup" Cvar="SummonerID"/> <!-- Sorcery.dll -->
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="SpawnEntity, Sorcery" SpawnGroup="SorceryFamiliarGroup"/> -->
+						<triggered_effect trigger="onSelfBuffStart" action="SpawnEntity, Sorcery" SpawnClass="sorceryFamiliarArcane"/>
 					</effect_group>
 					<effect_group name="SUMMON 2"> 
 							<requirement name="CVarCompare" cvar="$familiarMaxCount" operation="GTE" value="2"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="SpawnEntity, Sorcery" target="self" SpawnGroup="SorceryFamiliarGroup" Cvar="SummonerID"/> <!-- Sorcery.dll -->
+						<triggered_effect trigger="onSelfBuffStart" action="SpawnEntity, Sorcery" SpawnClass="sorceryFamiliarArcane"/>
 					</effect_group>
 					<effect_group name="SUMMON 3"> 
 							<requirement name="CVarCompare" cvar="$familiarMaxCount" operation="GTE" value="3"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="SpawnEntity, Sorcery" target="self" SpawnGroup="SorceryFamiliarGroup" Cvar="SummonerID"/> <!-- Sorcery.dll -->
+						<triggered_effect trigger="onSelfBuffStart" action="SpawnEntity, Sorcery" SpawnClass="sorceryFamiliarArcane"/>
 					</effect_group>
 			</buff>
-			<buff name="spell_FamiliarFollow" hidden="true" remove_on_death="false">
-				<stack_type value="ignore"/><duration value="0"/>
-					<effect_group name="DISABLE ATTACKS">
-							<!-- <requirement name="EntityTagCompare" target="other" tags="player"/> -->
-						<passive_effect name="DisableItem" operation="base_set" value="1" tags="melee" />
-						<passive_effect name="EntityDamage" operation="perc_set" value="0"/>
-						<passive_effect name="AttacksPerMinute" operation="perc_set" value="-2"/>
-						<passive_effect name="RoundsPerMinute" operation="perc_set" value="-2"/>
-						<passive_effect name="EntityDamage" operation="base_set" value="0"/>
-						<passive_effect name="AttacksPerMinute" operation="base_set" value="-100"/>
-						<passive_effect name="RoundsPerMinute" operation="base_set" value="-100"/>
+			<!-- SPELL: SUMMON FAMILIAR OMNI (Sorcery.dll) -->
+			<buff name="spell_SummonFamiliarOmni" hidden="true">
+				<stack_type value="ignore"/><duration value="0.1"/>
+					<effect_group name="SUMMON"> <!-- Sorcery.dll -->
+						<triggered_effect trigger="onSelfBuffStart" action="SpawnEntity, Sorcery" SpawnClass="sorceryFamiliarFire"/>
+						<triggered_effect trigger="onSelfBuffStart" action="SpawnEntity, Sorcery" SpawnClass="sorceryFamiliarIce"/>
+						<triggered_effect trigger="onSelfBuffStart" action="SpawnEntity, Sorcery" SpawnClass="sorceryFamiliarLightning"/>
 					</effect_group>
 			</buff>
 <!-- FIRE ____________________________________________________________________________________________________________ -->
@@ -8976,7 +8977,26 @@
 						</triggered_effect>
 					</effect_group>
 			</buff>
-			<!-- SPELL: PORTAL RECALL -->
+			<!-- RUNE: Recall CD -->
+			<buff name="spellRecallRune_CD" hidden="false" remove_on_death="false" name_key="spellRecallRune_CD" description_key="spellRecallRune_CDDesc" icon="ui_cooldown_recall"  icon_color="227,187,112">
+				<stack_type value="replace"/><duration value="0"/><update_rate value="1"/>
+				<display_value value="$runeRecallCD"/><display_value_format value="time"/>
+					<effect_group name="Duration">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$runeRecallCD" operation="set" value="1800"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$runeRecallCD" operation="set" value="1800"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".runeRecallCD" operation="set" value="@$runeRecallCD"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".runeRecallCD" operation="set" value="@$runeRecallCD"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".runeRecallCD" operation="set" value="@$runeRecallCD"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".runeRecallCD" operation="divide" value="60"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar=".runeRecallCD" operation="divide" value="60"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".runeRecallCD" operation="divide" value="60"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$runeRecallCD" operation="add" value="-1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellRecallRune_CD">
+							<requirement name="CVarCompare" cvar="$runeRecallCD" operation="LTE" value="0"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+			<!-- SPELL: PORTAL BLOCK RECALL -->
 			<buff name="spellPortalRecall" hidden="true" remove_on_death="false">
 				<stack_type value="ignore"/><duration value="3"/>
 					<effect_group>
@@ -8984,7 +9004,7 @@
 						<passive_effect name="BuffBlink" operation="base_set" value="1" tags="spellPortalRecall_CD">
 							<requirement name="HasBuff" buff="spellPortalRecall_CD"/>
 						</passive_effect>
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellRecall,spellPortalRecall_CD">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellPortalRecall_CD,spellRecall">
 							<requirement name="NotHasBuff" buff="spellPortalRecall_CD"/>
 						</triggered_effect>
 					</effect_group>
@@ -14423,7 +14443,6 @@
 					</effect_group>
 			</buff>
 	
-
 		<!-- FIRE FAMILIAR SPELLS -->
 			<buff name="spellFamiliarTriggerImpact_FireExplode" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="0.01"/>
@@ -14489,6 +14508,145 @@
 					</effect_group>
 			</buff>
 		<!-- END - FIRE FAMILIAR SPELLS -->
+	
+	
+		<!-- FAMILIAR: OMNI PACK __________________________________________________________________________________-->
+			<!-- Familiar: SPAWN -->
+			<buff name="summonFamiliarOmniPack_Spawn" hidden="true">
+				<stack_type value="ignore"/><duration value="0.5"/>
+					<effect_group>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".7"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".7"/>
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".7"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="summonFamiliarOmniPack_Imprint"/>
+					</effect_group>
+			</buff>
+			<!-- Familiar: IMPRINT --> 
+			<buff name="summonFamiliarOmniPack_Imprint" hidden="true">
+				<stack_type value="ignore"/><duration value="1"/>
+					<effect_group name="APPLY">
+						<triggered_effect trigger= "onSelfBuffStart" action="SetCVar, Sorcery" cvar="SummonerID" target="selfAOE" range="5" target_tags="familiar">
+							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger= "onSelfBuffStart" action="ModifyCVar" cvar="SummonFamiliarOmniPack" operation="set" value="1" target="selfAOE" range="5" target_tags="familiar">
+							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
+							<requirement name="CVarCompare" cvar="SummonFamiliar" target="other" operation="NE" value="1"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSpiritRegenStop"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".spiritSubtract" operation="add" value="100"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="30" buff="summonFamiliarOmniPack,summonFamiliarOmniPack_Weapon,buffSorceryMark" target_tags="familiar">
+							<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
+							<requirement name="CVarCompare" cvar="SummonFamiliarOmniPack" target="other" operation="Equals" value="1"/>
+						</triggered_effect>
+					</effect_group>
+			</buff>
+			<!-- Familiar Omni Pack: DESPAWN -->
+			<buff name="summonFamiliarOmniPack_DespawnCounter" hidden="true" remove_on_death="false">
+				<stack_type value="ignore"/><duration value="2"/><update_rate value="1"/>
+				<effect_group>
+					<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".summonFamiliarOmniPack_DespawnCounter" operation="set" value="0"/>
+					<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".summonFamiliarOmniPack_DespawnCounter" operation="add" value="1"/>
+					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".summonFamiliarOmniPack_DespawnCounter" operation="set" value="0"/>
+					<!-- action -->
+					<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="summonFamiliarOmniPack_Despawn">
+						<requirement name="CVarCompare" cvar=".summonFamiliarOmniPack_DespawnCounter" operation="GTE" value="1"/>
+					</triggered_effect>
+					<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="summonFamiliarOmniPack_DespawnCounter">
+						<requirement name="CVarCompare" cvar=".summonFamiliarOmniPack_DespawnCounter" operation="GTE" value="1"/>
+					</triggered_effect>
+				</effect_group>
+			</buff>
+			<buff name="summonFamiliarOmniPack_Despawn" hidden="false" name_key="Despawn Omni Pack" description_key="Despawning Omni Pack" icon="ui_familiar_sorcery" icon_color="220,0,0" icon_blink="true">
+				<duration value="1"/><display_value_key value="Despawn"/><display_value value="xxx"/>
+				<effect_group>
+					<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="selfAOE" range="100" buff="summon_Despawn" target_tags="familiar">
+						<requirement name="CVarCompare" cvar="SummonerID" target="other" operation="Equals" value="@SummonerID"/>
+						<requirement name="CVarCompare" cvar="SummonFamiliarOmniPack" target="other" operation="Equals" value="1"/>
+					</triggered_effect>
+				</effect_group>
+			</buff>
+			<!-- Familiar: COOLDOWN -->
+			<buff name="summonFamiliarOmniPack_Cooldown" hidden="false" name_key="Cooldown: Summon Omni Pack" description_key="Wait time before summoning another Omni Pack." icon="ui_cooldown_familiar" icon_color="227,187,112" remove_on_death="false">
+				<stack_type value="ignore"/><duration value="0"/>
+				<display_value value="$summonFamiliarOmniPack_Cooldown"/><display_value_format value="time"/>
+				<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$summonFamiliarOmniPack_Cooldown" operation="set" value="900"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".summonFamiliarOmniPack_Cooldown" operation="set" value="@$summonFamiliarOmniPack_Cooldown"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$summonFamiliarOmniPack_Cooldown" operation="add" value="-1"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".summonFamiliarOmniPack_Cooldown" operation="divide" value="60"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="summonFamiliarOmniPack_Cooldown">
+							<requirement name="CVarCompare" cvar="$summonFamiliarOmniPack_Cooldown" operation="LTE" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$summonFamiliarOmniPack_Cooldown" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".summonFamiliarOmniPack_Cooldown" operation="set" value="0"/>
+				</effect_group>
+			</buff>
+			<!-- Familiar: WEAPON -->
+			<buff name="summonFamiliarOmniPack_Weapon" hidden="true" remove_on_death="true">
+				<damage_type value="Bashing"/><stack_type value="replace"/><duration value="0"/><update_rate value="1"/>
+					<effect_group name="BASE">
+						<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="subtract" value="20"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="buffSorceryMark"/>
+					</effect_group>
+					<effect_group name="FIRE">
+							<requirement name="EntityTagCompare" target="self" tags="familiarFire"/>
+							<requirement name="!EntityTagCompare" target="other" tags="player,summon,trader,vehicle,turret,drone"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_FireSorcery,spellFire_Burn"/>
+					</effect_group>
+					<effect_group name="ICE">
+							<requirement name="EntityTagCompare" target="self" tags="familiarIce"/>
+							<requirement name="!EntityTagCompare" target="other" tags="player,summon,trader,vehicle,turret,drone"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_IceSorcery,spellIce_Chill"/>
+					</effect_group>
+					<effect_group name="LIGHTNING">
+							<requirement name="EntityTagCompare" target="self" tags="familiarLightning"/>
+							<requirement name="!EntityTagCompare" target="other" tags="player,summon,trader,vehicle,turret,drone"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="imprint_LightningSorcery,spellLightning_Shock"/>
+					</effect_group>
+					<effect_group name="MELEE DAMAGE">
+							<requirement name="!EntityTagCompare" target="other" tags="player,summon,trader,vehicle,turret,drone"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="ModifyStats" stat="Health" operation="subtract" value="60"/>
+					</effect_group>
+			</buff>
+			<!-- SUMMON FAMILIAR OMNI PACK -->
+			<buff name="summonFamiliarOmniPack" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/><duration value="120"/><update_rate value="1"/>
+					<effect_group name="BASE">
+						<triggered_effect trigger="onSelfBuffStart" action="SetScale" scale=".8" />
+						<passive_effect name="HealthMax" operation="base_add" value="900"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="add" value="1000"/>
+						<passive_effect name="HealthChangeOT" operation="base_add" value="1000,1000" duration="0,2"/>
+					</effect_group>
+					<effect_group name="HEAD">
+						<!-- Head: True -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$familiarHeadItem" operation="set" value="1">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="75"/></triggered_effect>
+						<!-- Head: Attach -->
+						<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" target="self" parent_transform="Head" prefab="#@modfolder:Resources/headSantaHat.unity3d?headSantaHat" local_offset="0,.04,.037" local_rotation="-40,0,0">
+							<requirement name="CVarCompare" cvar="$familiarHeadItem" operation="GTE" value="1"/></triggered_effect>
+						<!-- Head 1: Red -->
+						<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="headSantaHat" transform_path="santaHatRed">
+							<requirement name="CVarCompare" cvar="$familiarHeadItem" operation="Equals" value="1"/>
+							<requirement name="EntityTagCompare" tags="familiarFire"/>
+						</triggered_effect>
+						<!-- Head 2: Blue -->
+						<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="headSantaHat" transform_path="santaHatBlue">
+							<requirement name="CVarCompare" cvar="$familiarHeadItem" operation="Equals" value="1"/>
+							<requirement name="EntityTagCompare" tags="familiarIce"/>
+						</triggered_effect>
+						<!-- Head 3: Purple -->
+						<triggered_effect trigger="onSelfBuffStart" action="SetTransformActive" active="true" parent_transform="headSantaHat" transform_path="santaHatPurple">
+							<requirement name="CVarCompare" cvar="$familiarHeadItem" operation="Equals" value="1"/>
+							<requirement name="EntityTagCompare" tags="familiarLightning"/>
+						</triggered_effect>
+					</effect_group>
+					<effect_group name="DESPAWN">
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="summon_AutoDespawn"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="summon_Despawn"/>
+					</effect_group>
+			</buff>
+	
+	
 	<!-- END - FAMILIAR BUFFS __________________________________________________________________________________-->
 
 

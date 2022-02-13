@@ -66,6 +66,7 @@
 			<!-- <property name="Collide" value="none"/> -->
 			<!-- <property name="VehicleHitScale" value="0"/> -->
 			<property name="ItemTypeIcon" value="triangle"/>
+			<drop event="Destroy" count="0"/>
 		</block>
 	
 <!-- STATIONS ______________________________________-->
@@ -1522,7 +1523,6 @@
 <!-- PORTALS ____________________________________________________________________________-->
 		<block name="portalRecall">
 			<property name="CreativeMode" value="Dev"/>
-			<property name="CustomIcon" value="shrineMaster"/>
 			<property name="DisplayInfo" value="Name"/>
 			<property name="Material" value="Mstone"/>
 			<property name="MaxDamage" value="2000"/>
@@ -1531,7 +1531,6 @@
 			<property name="Model" value="#@modfolder:Resources/blockPortal.unity3d?blockPortal" />
 			<property name="ModelOffset" value="0,0,0"/>
 			<property name="MultiBlockDim" value="5,4,3"/>
-			<!-- <property name="MultiBlockDim" value="4,4,2"/> -->
 			<property name="BigDecorationRadius" value="6"/>
 			<property name="CanDecorateOnSlopes" value="false"/>			
 			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
@@ -1547,10 +1546,14 @@
 			<property name="Place" value="TowardsPlacer"/>
 			<property name="BuffChance" value="1"/>
 			<property name="BuffsWhenWalkedOn" value="spellPortalRecall"/>
+			<property name="Stacknumber" value="1"/>
 			<property class="RepairItems">
 				<property name="resourceExtractOmni" value="1000"/>
 				<property name="resourceRockSmall" value="1000"/>
 			</property>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Building"/>
+			<property name="UnlockedBy" value="sorceryDesk"/>
 		</block>
 <!-- END - PORTALS ____________________________________________________________________________-->
 	

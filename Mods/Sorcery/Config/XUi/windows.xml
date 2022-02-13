@@ -102,7 +102,7 @@
 
 		<!-- UI: Pause Menu Splash -->
 		<window name="SorceryingameMenu" anchor="CenterCenter" pos="-125,200" width="250" height="200" controller="InGameMenuWindow" cursor_area="true">
-			<label name="SorceryVersion" pos="783, 285" depth="0" size="250,35" text="Sorcery A20 (v0.985)" font_size="24" effect="outline" color="144,95,255,255" justify="right" upper_case="false" />
+			<label name="SorceryVersion" pos="783, 285" depth="0" size="250,35" text="Sorcery A20 (v0.992)" font_size="24" effect="outline" color="144,95,255,255" justify="right" upper_case="false" />
 			<label name="SorceryDifficulty" pos="781, 260" depth="0" size="250,35" font_size="24" effect="outline" justify="right" upper_case="false" style="sorcery.window.ingame.logo.normal.label"/>
 			<texture name="SorceryingameMenuLogo" depth="0" size="672,446" texture="@modfolder:Textures/SorceryLogoMenu.png" pos="-200,194" />
 			<!-- <texture name="SorceryingameMenuChestNoble" style="sorcery.window.ingame.support.chest.noble.texture" /> -->

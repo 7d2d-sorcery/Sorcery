@@ -933,14 +933,15 @@
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="2,5" tags="rune_ClassRitualist1,rune_ClassRitualist2,rune_ClassRitualist3"/>
 				<!-- Rare (Silver) -->
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="rune_LockShatter,rune_DoorShatter,rune_AugmentHunger,rune_Aquatic,rune_Scavenger,rune_StoneSkin"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeFire_TurretAuraBurn,runeFire_TurretMeteor,runeFire_Empath,runeFire_Skin"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeIce_TurretAuraChill,runeIce_TurretHailstorm,runeIce_Empath,runeIce_Skin"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeFire_TurretAuraBurn,runeFire_TurretMeteor,runeFire_Empath,runeFire_Skin,runeFire_NovaSkin"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeIce_TurretAuraChill,runeIce_TurretHailstorm,runeIce_Empath,runeIce_Skin,runeIce_NovaSkin"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeLightning_Empath,runeLightning_Skin"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="rune_KnockbackSpell"/>
 				<!-- Legendary (Gold) -->
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="rune_Silence,rune_ArcaneVision,rune_Empath,rune_Indestructible"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="runeFire_FirenadoCaster,runeFire_NovaCaster"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="runeIce_CometCaster,runeIce_NovaCaster"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="rune_Recall,rune_Silence,rune_ArcaneVision,rune_Empath,rune_Indestructible,rune_DrainHealth,rune_DrainSpirit,rune_DrainStamina"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="runeFire_FirenadoCaster,runeFire_NovaCaster,runeFire_MeteorCaster"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="runeIce_CometCaster,runeIce_NovaCaster,runeIce_IceStormCaster"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="4,5" tags="runeLightning_NovaCaster"/>
 				<!-- Transcendent (Orange) -->
 				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5,5" tags=""/> -->
 				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="0,5" tags="perkSorceryRuneMastery"/><!-- used to scale resources -->
@@ -1181,6 +1182,7 @@
 				<!-- used to scale resources -->
 				<passive_effect name="CraftingTier" operation="base_set" level="0,5" value="1,6" tags="perkSorceryFamiliar"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="1,5" tags="sorceryFamiliarArcane"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="incantation_SummonOmniPack"/>
 			</effect_group>
 			<effect_group name="ARCANE FAMILIAR: Level">
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorceryFamiliar" operation="set" value="0">
