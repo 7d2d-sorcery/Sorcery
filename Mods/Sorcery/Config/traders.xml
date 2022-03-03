@@ -1,62 +1,325 @@
 <Sorcery>
- <!--__________________________________________________________________________________
-		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
-		__________________________________________________________________________________
-		2021 "DEVRIX"
-		All Rights Reserved.
-		__________________________________________________________________________________
-		HOME: http://sorcerymod.com
-		AUTHOR: http://author.sorcerymod.com
-		FORUM: http://forum.sorcerymod.com
-		DISCORD: http://discord.sorcerymod.com
-		YOUTUBE: http://youtube.sorcerymod.com
-		DOWNLOAD: http://download.sorcerymod.com
-		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
-		__________________________________________________________________________________
-		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
-		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
-		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
-		
-		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
-		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
-		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
-		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
-		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
-		of using this mod.
-		
-		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
-		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
-		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
-		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
-		redistributed outside of its original distribution channels.
-		
-		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
-		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
-		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
-		possible. Without their support, it is not possible to put in the enormous amount of time required to 
-		create the plethora of unique assets that make Sorcery.
-		
-		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
-		__________________________________________________________________________________
-		
-		DISCLAIMER
-		__________________________________________________________________________________
-		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
-		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
-		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
-		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
-		__________________________________________________________________________________-->
+ <!--_____________________________________________________________________________________________________________________
+	TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+	_____________________________________________________________________________________________________________________
+	2022 "DEVRIX"
+	All Rights Reserved.
+	_____________________________________________________________________________________________________________________
+	HOME: http://sorcerymod.com
+	AUTHOR: http://author.sorcerymod.com
+	FORUM: http://forum.sorcerymod.com
+	DISCORD: http://discord.sorcerymod.com
+	YOUTUBE: http://youtube.sorcerymod.com
+	DOWNLOAD: http://download.sorcerymod.com
+	TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+	_____________________________________________________________________________________________________________________
+	NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+	the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+	irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
 
-<append xpath="/traders">
+	USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+	with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+	may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+	mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+	Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+	of using this mod.
+
+	REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+	to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+	direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+	Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+	redistributed outside of its original distribution channels.
+
+	PROHIBITED USE: Users are not permitted to modify, or bypass, Supporter Exclusive perks or items in any way.
+	The free in-game "Supporter Key Item" can be obtained through normal game means (loot, trader) and will unlock all 
+	supporter exclusive perks and items. Modifying or bypassing Supporter Exclusive perks or items is a violation of the 
+	Sorcery Terms of Use.
+
+	CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+	hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+	and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+	possible. Without their support, it is not possible to put in the enormous amount of time required to 
+	create the plethora of unique assets that make Sorcery.
+
+	MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+	_____________________________________________________________________________________________________________________
+
+	DISCLAIMER
+	_____________________________________________________________________________________________________________________
+	Sorcery is and will always be 100% FREE. When you choose to Support Development, you are supporting the
+	unique individual work I personally do outside of the game: The creation of unique VFX, SFX, Art, Time creating
+	content and the services/interaction I provide here on Discord. You are not supporting "derivative work of 
+	7 Days to Die" (AKA modding code/changing skins/etc). That is against TFP policy.
+
+	Support Not Required: Those unwilling, or unable, to support development can obtain in-game items 100% FREE.
+	You are not required to support in order to obtain in-game items. Non-supporters are able to obtain any
+	"In-Game Supporter Exclusives" 100% FREE, without supporting development. However, I cannot continue development
+	of Sorcery at this level without Ongoing Support. If support drops below a threshold, development halts. The large
+	amount of time allotted to development is made possible through the generous support given by our Supporters.
+	Disclaimer subject to ongoing changes.
+	_____________________________________________________________________________________________________________________-->
+
+<!-- TRADER GROUPS -->
+	<append xpath="/traders/trader_item_groups">
+
+			<!-- CLASS RUNES -->
+			<trader_item_group name="SorceryTrader_ClassRunes" count="1">
+				<item name="rune_ClassSpellcaster1"/>
+				<item name="rune_ClassSpellcaster2"/>
+				<item name="rune_ClassSpellcaster3"/>
+				<item name="rune_ClassSummoner1"/>
+				<item name="rune_ClassSummoner2"/>
+				<item name="rune_ClassSummoner3"/>
+				<item name="rune_ClassSpellGunner1"/>
+				<item name="rune_ClassSpellGunner2"/>
+				<item name="rune_ClassSpellGunner3"/>
+				<item name="rune_ClassSpellArcher1"/>
+				<item name="rune_ClassSpellArcher2"/>
+				<item name="rune_ClassSpellArcher3"/>
+				<item name="rune_ClassSpellKnight1"/>
+				<item name="rune_ClassSpellKnight2"/>
+				<item name="rune_ClassSpellKnight3"/>
+				<item name="rune_ClassSpellTrapper1"/>
+				<item name="rune_ClassSpellTrapper2"/>
+				<item name="rune_ClassSpellTrapper3"/>
+				<!-- common -->
+				<item name="rune_ClassAlchemist1"/>
+				<item name="rune_ClassAlchemist2"/>
+				<item name="rune_ClassAlchemist3"/>
+				<item name="rune_ClassEnchanter1"/>
+				<item name="rune_ClassEnchanter2"/>
+				<item name="rune_ClassEnchanter3"/>
+				<item name="rune_ClassScholar1"/>
+				<item name="rune_ClassScholar2"/>
+				<item name="rune_ClassScholar3"/>
+				<item name="rune_ClassTailor1"/>
+				<item name="rune_ClassTailor2"/>
+				<item name="rune_ClassTailor3"/>
+				<item name="rune_ClassRitualist1"/>
+				<item name="rune_ClassRitualist2"/>
+				<item name="rune_ClassRitualist3"/>
+				<!-- fragment -->
+				<item name="resourceFragmentClass"/>
+			</trader_item_group>
+			
+			<!-- SUMMONS -->
+			<trader_item_group name="SorceryTrader_Summons" count="1">
+				<item name="sorceryFamiliarArcane"/>
+				<item name="sorceryFamiliarFire"/>
+				<item name="sorceryFamiliarIce"/>
+				<item name="sorceryFamiliarLightning"/>
+				<item name="incantation_SummonOmniPack" prob=".3"/>
+				<item name="book_SummonFamiliars" prob=".1"/>
+			</trader_item_group>
+			
+			<!-- ELIXIRS -->
+			<trader_item_group name="SorceryTrader_Elixirs" count="1">
+				<item name="sorceryElixir_attFire"/>
+				<item name="sorceryElixir_attIce"/>
+				<item name="sorceryElixir_attLightning"/>
+			</trader_item_group>
+			
+			<!-- POTIONS -->
+			<trader_item_group name="SorceryTrader_Potions" count="1">
+				<item name="potionBottle" count="5,10" prob="1"/>
+				<item name="potion_Health" count="3,5" prob="1"/>
+				<item name="potion_Stamina" count="3,5" prob="1"/>
+				<item name="potion_Spirit" count="3,5" prob="1"/>
+				<item name="potion_Energy" count="1,2"/>
+				<item name="potion_Lifeforce" count="1,2"/>
+				<item name="potion_Devour" count="2,4"/>
+				<item name="potion_SlowFall" count="2,4"/>
+				<item name="potion_Mending" count="2,4"/>
+				<item name="potion_Travel" count="2,4"/>
+				<item name="potion_HolyWater" count="2,4"/>
+				<item name="potionFire_Essence" count="2,4"/>
+				<item name="potionFire_Sorcery" count="2,4"/>
+				<item name="potionIce_Essence" count="2,4"/>
+				<item name="potionIce_Sorcery" count="2,4"/>
+				<item name="potionLightning_Essence" count="2,4"/>
+				<item name="potionLightning_Sorcery" count="2,4"/>
+				<item name="potion_Remedy" count="1,2"/>
+				<item name="potion_Haste" count="1,2"/>
+			</trader_item_group>
+			
+			<!-- POTIONS -->
+			<trader_item_group name="SorceryTrader_Resources" count="1">
+				<item name="resourceBrokenGlass" count="20,30"/>
+				<item name="resourceCropChrysanthemumPlant" count="20,30"/>
+				<item name="resourceCropGoldenrodPlant" count="20,30"/>
+				<item name="resourceCropCottonPlant" count="20,30"/>
+				<item name="resourcePaper" count="30,40"/>
+			</trader_item_group>
+			
+			<!-- ARMOR -->
+			<trader_item_group name="SorceryTrader_Armor" count="1">
+				<!-- arcane -->
+				<item name="sorceryAccessory_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+				<item name="sorceryArmor_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmor_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+				<item name="sorceryArmor_Robe" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmor_Chest" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmor_Shirt" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmor_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmor_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmor_Pants" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmor_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+				<!-- fire -->
+				<item name="sorceryAccessoryFire_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorFire_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorFire_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorFire_Robe" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorFire_Chest" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorFire_Shirt" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorFire_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorFire_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorFire_Pants" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorFire_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+				<!-- ice -->
+				<item name="sorceryAccessoryIce_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorIce_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorIce_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorIce_Robe" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorIce_Chest" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorIce_Shirt" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorIce_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorIce_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorIce_Pants" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorIce_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+				<!-- lightning -->
+				<item name="sorceryAccessoryLightning_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorLightning_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorLightning_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorLightning_Robe" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorLightning_Chest" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorLightning_Shirt" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorLightning_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorLightning_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorLightning_Pants" mods="armor,clothing" mod_chance=".5"/>
+				<item name="sorceryArmorLightning_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+			</trader_item_group>
+			
+			<!-- WEAPONS -->
+			<trader_item_group name="SorceryTrader_Weapons" count="1">
+				<!-- fire -->
+				<item name="spellcastFire" mods="spellcast" mod_chance=".5"/>
+				<item name="spellTurretFire" mods="spellTurret" mod_chance=".5"/>
+				<item name="staffFire" mods="staff" mod_chance=".5"/>
+				<item name="sorceryTrap_Fire" count="25,50"/>
+				<!-- ice -->
+				<item name="spellcastIce" mods="spellcast" mod_chance=".5"/>
+				<item name="spellTurretIce" mods="spellTurret" mod_chance=".5"/>
+				<item name="staffIce" mods="staff" mod_chance=".5"/>
+				<item name="sorceryTrap_Ice" count="25,50"/>
+				<!-- lightning -->
+				<item name="spellcastLightning" mods="spellcast" mod_chance=".5"/>
+				<item name="spellTurretLightning" mods="spellTurret" mod_chance=".5"/>
+				<item name="staffLightning" mods="staff" mod_chance=".5"/>
+				<item name="sorceryTrap_Lightning" count="25,50"/>
+			</trader_item_group>
+			
+			<!-- SCROLLS -->
+			<trader_item_group name="SorceryTrader_Scrolls" count="1">
+				<item name="scroll_ArcaneVision"/>
+				<item name="scroll_AugmentXP"/>
+				<item name="scroll_AugmentHunger"/>
+				<item name="scroll_AugmentMining"/>
+				<item name="scroll_AugmentDigging"/>
+				<item name="scroll_AugmentLogging"/>
+				<item name="scroll_EssenceHarvest"/>
+				<item name="scroll_Scavenger"/>
+				<item name="scroll_Thief"/>
+				<item name="scroll_DrainHealth"/>
+				<item name="scroll_DrainSpirit"/>
+				<item name="scroll_DrainStamina"/>
+				<item name="scroll_Recall"/>
+				<item name="scroll_TeleportLandclaim"/>
+				<item name="scroll_TeleportBackpack"/>
+				<item name="scroll_Silence"/>
+				<item name="scroll_EnergyRegen"/>
+				<item name="scrollFire_Weapon"/>
+				<item name="scrollFire_Ammo"/>
+				<item name="scrollIce_Weapon"/>
+				<item name="scrollIce_Ammo"/>
+				<item name="scrollLightning_Weapon"/>
+				<item name="scrollLightning_Ammo"/>
+			</trader_item_group>
+			
+			<!-- SHRINES -->
+			<trader_item_group name="SorceryTrader_Shrines" count="1">
+				<item name="shrinePotion"/>
+				<item name="shrineScroll"/>
+				<item name="shrineTouched"/>
+				<item name="shrineDrainHealth"/>
+				<item name="shrineDrainStamina"/>
+				<item name="shrineDrainSpirit"/>
+				<item name="shrineFirePotion"/>
+				<item name="shrineFireScroll"/>
+				<item name="shrineFireTouched"/>
+				<item name="shrineIcePotion"/>
+				<item name="shrineIceScroll"/>
+				<item name="shrineIceTouched"/>
+				<item name="shrineLightningPotion"/>
+				<item name="shrineLightningScroll"/>
+				<item name="shrineLightningTouched"/>
+			</trader_item_group>
+			
+			<!-- STATIONS -->
+			<trader_item_group name="SorceryTrader_Stations" count="1">
+				<item name="conjureFire"/>
+				<item name="conjureIce"/>
+				<item name="conjureLightning"/>
+				<item name="sorceryAlchemyStation"/>
+				<item name="sorceryArcaneWheel"/>
+				<item name="sorceryEnchantingStation"/>
+			</trader_item_group>
+			
+			<!-- MISC -->
+			<trader_item_group name="SorceryTrader_Misc" count="1">
+				<item name="treePlanted_EssenceFireSeed"/>
+				<item name="treePlanted_EssenceIceSeed"/>
+				<item name="treePlanted_EssenceLightningSeed"/>
+				<item name="resourceFragmentClass"/>
+				<item name="sorceryBlockTraderSign" prob="0.1"/>
+			</trader_item_group>
+			
+			<!-- RARE -->
+			<trader_item_group name="SorceryTrader_Rare" count="1">
+				<item name="q_sorcerySkillGrimoire"/>
+				<item name="portalRecall"/>
+				<item name="supporterKey"/>
+			</trader_item_group>
+			
+			
+	</append>
+
+
+<!-- TRADERS -->
+	<!-- <removeattribute xpath="/traders/@currency_item"/> -->
+	<!-- <setattribute xpath="/traders/trader_info" name="currency_item">casinoCoin</setattribute> -->
+
+	<append xpath="/traders">
+			
+			<!-- TRADER: ARCANE MERCHANT -->	
+			<!-- currency_item="resourceRitualBloodOmni" override_currency_item="resourceRitualBloodOmni" -->
+			<trader_info id="70" allow_sell="true" override_buy_markup="1.0" override_sell_markup="0.16" full_reset="true" reset_interval="3" min_inventory="26" max_inventory="26" min_items_swapped="26" max_items_swapped="26">
+				<trader_items count="all">
+					<item group="SorceryTrader_Potions" count="3,4" prob="4"/>
+					<item group="SorceryTrader_Resources" count="3,4" prob="4"/>
+					<item group="SorceryTrader_Scrolls" count="2,3" prob="3"/>
+					<item group="SorceryTrader_Armor" count="2,3" prob="2"/>
+					<item group="SorceryTrader_Misc" count="2,3" prob="2"/>
+					<item group="SorceryTrader_ClassRunes" count="1" prob="2"/>
+					<item group="SorceryTrader_Summons" count="1,2"/>
+					<item group="SorceryTrader_Weapons" count="1"/>
+					<item group="SorceryTrader_Elixirs" count="1"/>
+					<item group="SorceryTrader_Stations" count="1"/>
+					<item group="SorceryTrader_Shrines" count="1"/>
+					<item group="SorceryTrader_Rare" count="1" prob="0.35"/>
+				</trader_items>
+			</trader_info>
 		
-	<!-- TRADER: BLOOD MERCHANT -->	
-	<!-- <trader_info id="70" currency_item="resourceRitualBloodFallenLightning" full_reset="true" min_inventory="10" max_inventory="70" min_items_swapped="20" max_items_swapped="20"
-		reset_interval="3" open_time="6:05" close_time="21:50">
-		<trader_items count="all">
-			<item group="ammo" count="5"/>
-		</trader_items>
-	</trader_info> -->
-	
-</append>
+		
+	</append>
 	
 </Sorcery>

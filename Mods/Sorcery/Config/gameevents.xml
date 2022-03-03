@@ -1,78 +1,355 @@
 <Sorcery>
- <!--__________________________________________________________________________________
-		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
-		__________________________________________________________________________________
-		2021 "DEVRIX"
-		All Rights Reserved.
-		__________________________________________________________________________________
-		HOME: http://sorcerymod.com
-		AUTHOR: http://author.sorcerymod.com
-		FORUM: http://forum.sorcerymod.com
-		DISCORD: http://discord.sorcerymod.com
-		YOUTUBE: http://youtube.sorcerymod.com
-		DOWNLOAD: http://download.sorcerymod.com
-		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
-		__________________________________________________________________________________
-		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
-		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
-		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
-		
-		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
-		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
-		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
-		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
-		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
-		of using this mod.
-		
-		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
-		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
-		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
-		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
-		redistributed outside of its original distribution channels.
-		
-		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
-		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
-		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
-		possible. Without their support, it is not possible to put in the enormous amount of time required to 
-		create the plethora of unique assets that make Sorcery.
-		
-		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
-		__________________________________________________________________________________
-		
-		DISCLAIMER
-		__________________________________________________________________________________
-		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
-		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
-		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
-		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
-		__________________________________________________________________________________-->
+ <!--_____________________________________________________________________________________________________________________
+	TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+	_____________________________________________________________________________________________________________________
+	2022 "DEVRIX"
+	All Rights Reserved.
+	_____________________________________________________________________________________________________________________
+	HOME: http://sorcerymod.com
+	AUTHOR: http://author.sorcerymod.com
+	FORUM: http://forum.sorcerymod.com
+	DISCORD: http://discord.sorcerymod.com
+	YOUTUBE: http://youtube.sorcerymod.com
+	DOWNLOAD: http://download.sorcerymod.com
+	TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+	_____________________________________________________________________________________________________________________
+	NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+	the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+	irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+
+	USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+	with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+	may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+	mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+	Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+	of using this mod.
+
+	REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+	to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+	direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+	Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+	redistributed outside of its original distribution channels.
+
+	PROHIBITED USE: Users are not permitted to modify, or bypass, Supporter Exclusive perks or items in any way.
+	The free in-game "Supporter Key Item" can be obtained through normal game means (loot, trader) and will unlock all 
+	supporter exclusive perks and items. Modifying or bypassing Supporter Exclusive perks or items is a violation of the 
+	Sorcery Terms of Use.
+
+	CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+	hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+	and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+	possible. Without their support, it is not possible to put in the enormous amount of time required to 
+	create the plethora of unique assets that make Sorcery.
+
+	MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+	_____________________________________________________________________________________________________________________
+
+	DISCLAIMER
+	_____________________________________________________________________________________________________________________
+	Sorcery is and will always be 100% FREE. When you choose to Support Development, you are supporting the
+	unique individual work I personally do outside of the game: The creation of unique VFX, SFX, Art, Time creating
+	content and the services/interaction I provide here on Discord. You are not supporting "derivative work of 
+	7 Days to Die" (AKA modding code/changing skins/etc). That is against TFP policy.
+
+	Support Not Required: Those unwilling, or unable, to support development can obtain in-game items 100% FREE.
+	You are not required to support in order to obtain in-game items. Non-supporters are able to obtain any
+	"In-Game Supporter Exclusives" 100% FREE, without supporting development. However, I cannot continue development
+	of Sorcery at this level without Ongoing Support. If support drops below a threshold, development halts. The large
+	amount of time allotted to development is made possible through the generous support given by our Supporters.
+	Disclaimer subject to ongoing changes.
+	_____________________________________________________________________________________________________________________-->
 	
 	<!-- INTRO -->
-	<set xpath="/gameevents/action_sequence[@name='game_first_spawn']/action[@class='AddJournalTip'][1]/property[@name='tip_name' and @value='tutorialTipQuest01']/@value">quest_sorceryIntro1</set>
+	<set xpath="/gameevents/action_sequence[@name='game_first_spawn']/action[@class='AddJournalTip'][1]/property[@name='tip_name' and @value='tutorialTipQuest01']/@value">quest_sorceryIntro</set>
 	<set xpath="/gameevents/action_sequence[@name='game_first_spawn']/action[@class='AddJournalTip'][1]/property[@name='show_window' and @value='true']/@value">false</set>
 	<set xpath="/gameevents/action_sequence[@name='game_first_spawn']/action[@class='AddQuest'][1]/property[@name='quest' and @value='quest_BasicSurvival1']/@value">quest_sorceryIntro</set>
 	
-	<!-- NOTE: CallGameEvent Action is currently broken for Clients in MP. Contacted TFP. Pending fix. -->
 	
 	<!-- CATEGORIES -->
-	<!-- <append xpath="/gameevents/category[@name='poi']">
+	<append xpath="/gameevents/category[@name='poi']">
 		<category name="sorcery" display_name="Sorcery" icon="ui_symbol_pentagram" />
-	</append> -->
+	</append>
+	
+	
+	<!-- GAME FIRST SPAWN -->
+	<append xpath="/gameevents/action_sequence[@name='game_first_spawn']">
+		
+		<action class="CallGameEvent">
+			<property name="game_events" value="sorcery_action_spawn_introquestfallen" />
+			<property name="phase" value="3" /> <!-- NOTE: spawn quest start -->
+		</action>
+		
+		<action class="Delay">
+			<property name="time" value="48" /> <!-- NOTE: intro quest complete -->
+			<property name="phase" value="4" />
+		</action>
+		
+		<action class="CallGameEvent">
+			<property name="game_events" value="sorcery_action_spawn_introarcanetrader" />
+			<property name="phase" value="5" />
+		</action>
+		
+	</append>
+	
 	
 	
 	<!-- EVENTS -->
-	<!-- <append xpath="/gameevents"> -->
+	<append xpath="/gameevents">
 		
-		<!-- Teleport -->
-		<!-- <action_sequence name="sorcery_action_teleport_bedroll">
+	<!-- INTRO -->
+		<!-- Spawn: Intro Quest Entity -->
+		<action_sequence name="sorcery_action_spawn_introquestentity">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryIntroEntity" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="2" />
+				<property name="max_distance" value="5" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		
+		<!-- Spawn: Intro Quest Arcane Trader -->
+		<action_sequence name="sorcery_action_spawn_introarcanetrader">
+			<property name="allow_user_trigger" value="false" />
+			<!-- <property name="category" value="sorcery" /> -->
+			
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFallenIntroArcaneTrader" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="4" />
+				<property name="max_distance" value="6" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+				<property name="phase" value="1" />
+			</action>
+			
+			<action class="Delay">
+				<property name="time" value="18" />
+				<property name="phase" value="2" />
+			</action>
+			
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryIntroPortalToArcaneTrader" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="6" />
+				<property name="max_distance" value="8" />
+				<!-- <property name="yOffset" value="-1" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="false" />
+				<property name="phase" value="3" />
+			</action>
+			
+		</action_sequence>
+		
+		<!-- Spawn: Intro Quest Fallen -->
+		<action_sequence name="sorcery_action_spawn_introquestfallen">
+			<property name="allow_user_trigger" value="false" />
+			<!-- <property name="category" value="sorcery" /> -->
+			
+			<action class="Delay">
+				<property name="time" value="11" />
+			</action>
+			
+			<action class="PlaySound">
+				<property name="sound" value="sorceryHorn" />
+				<property name="phase" value="1" />
+			</action>
+			
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFallenIntroFire" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="13" />
+				<property name="max_distance" value="16" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+				<property name="phase" value="1" />
+			</action>
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFallenIntroIce" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="13" />
+				<property name="max_distance" value="16" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+				<property name="phase" value="1" />
+			</action>
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFallenIntroLightning" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="13" />
+				<property name="max_distance" value="16" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+				<property name="phase" value="1" />
+			</action>
+			
+			<action class="Delay">
+				<property name="time" value="1" />
+				<property name="phase" value="2" />
+			</action>
+			
+			<!-- Intro Loot: Staves -->
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFallenIntroItemsFire" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="8" />
+				<property name="max_distance" value="11" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+				<property name="phase" value="3" />
+			</action>
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFallenIntroItemsIce" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="8" />
+				<property name="max_distance" value="11" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+				<property name="phase" value="3" />
+			</action>
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFallenIntroItemsLightning" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="8" />
+				<property name="max_distance" value="11" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+				<property name="phase" value="3" />
+			</action>
+		</action_sequence>
+		
+		
+	<!-- TELEPORT -->
+		<!-- Teleport: Bedroll -->
+		<action_sequence name="sorcery_action_teleport_bedroll">
 			<property name="category" value="sorcery" />
 			<action class="TeleportToSpecial">
 				<property name="special_type" value="Bedroll" param1="special_type" />
 			</action>
-		</action_sequence> -->
+		</action_sequence>
 		
+		<!-- Teleport: Landclaim -->
+		<action_sequence name="sorcery_action_teleport_landclaim">
+			<property name="category" value="sorcery" />
+			<action class="TeleportToSpecial">
+				<property name="special_type" value="Landclaim" param1="special_type" />
+			</action>
+		</action_sequence>
+		
+		<!-- Teleport: Backpack -->
+		<action_sequence name="sorcery_action_teleport_backpack">
+			<property name="category" value="sorcery" />
+			<action class="TeleportToSpecial">
+				<property name="special_type" value="Backpack" param1="special_type" />
+			</action>
+		</action_sequence>
+		
+
+
+	<!-- SPELLS / CONJURATIONS -->
+		<!-- Spawn: Portal to Intro Arcane Trader -->
+		<action_sequence name="sorcery_action_spawn_portaltoarcanetrader">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryIntroPortalToArcaneTrader" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="6" />
+				<property name="max_distance" value="8" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="false" />
+			</action>
+		</action_sequence>
+		<!-- Spawn: Portal to Intro Mundane Trader -->
+		<action_sequence name="sorcery_action_spawn_portaltomundanetrader">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryIntroPortalToMundaneTrader" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="19" />
+				<property name="max_distance" value="22" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="false" />
+			</action>
+		</action_sequence>
+	
+	<!-- FIRE -->
+		<!-- Spawn: Firenado -->
+		<action_sequence name="sorcery_action_spawn_spell_firenado">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryConjureFirenado" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+
+	<!-- ICE -->
+		<!-- Spawn: Ice Storm -->
+		<action_sequence name="sorcery_action_spawn_spell_icestorm">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryConjureIceStorm" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+
+	<!-- LIGHTNING -->
+		<!-- Spawn: Storm Totem -->
+		<action_sequence name="sorcery_action_spawn_spell_stormtotem">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryTotemLightning" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="false" /> <!-- NOTE -->
+			</action>
+		</action_sequence>
+		<!-- Spawn: Storm Totem -->
+		<action_sequence name="sorcery_action_spawn_spell_lightningstorm">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryConjureLightningStorm" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+
+	<!-- FAMILIARS -->
 		<!-- Spawn: Familiar Arcane -->
-		<!-- <action_sequence name="sorcery_action_spawn_familiar">
+		<action_sequence name="sorcery_action_spawn_familiar_arcane">
 			<property name="allow_user_trigger" value="false" />
 			<property name="category" value="sorcery" />
 			<action class="SpawnEntity">
@@ -80,12 +357,195 @@
 				<property name="spawn_count" value="1" />
 				<property name="min_distance" value="1" />
 				<property name="max_distance" value="3" />
-				<property name="add_to_group" value="familiar" />
+				<!-- <property name="add_to_group" value="familiar" /> -->
 				<property name="yOffset" value="-3" />
 				<property name="safe_spawn" value="true" />
 				<property name="attack_target" value="true" />
 			</action>
-		</action_sequence> -->
+		</action_sequence>
+		<action_sequence name="sorcery_action_spawn_familiar_arcane2">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarArcane" />
+				<property name="spawn_count" value="2" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		<action_sequence name="sorcery_action_spawn_familiar_arcane3">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarArcane" />
+				<property name="spawn_count" value="3" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		
+		<!-- Spawn: Familiar Fire -->
+		<action_sequence name="sorcery_action_spawn_familiar_fire">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarFire" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		<action_sequence name="sorcery_action_spawn_familiar_fire2">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarFire" />
+				<property name="spawn_count" value="2" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		<action_sequence name="sorcery_action_spawn_familiar_fire3">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarFire" />
+				<property name="spawn_count" value="3" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		
+		<!-- Spawn: Familiar Ice -->
+		<action_sequence name="sorcery_action_spawn_familiar_ice">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarIce" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		<action_sequence name="sorcery_action_spawn_familiar_ice2">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarIce" />
+				<property name="spawn_count" value="2" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		<action_sequence name="sorcery_action_spawn_familiar_ice3">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarIce" />
+				<property name="spawn_count" value="3" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		
+		<!-- Spawn: Familiar Lightning -->
+		<action_sequence name="sorcery_action_spawn_familiar_lightning">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarLightning" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		<action_sequence name="sorcery_action_spawn_familiar_lightning2">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarLightning" />
+				<property name="spawn_count" value="2" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		<action_sequence name="sorcery_action_spawn_familiar_lightning3">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarLightning" />
+				<property name="spawn_count" value="3" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+		
+		<!-- Spawn: Familiar Omni Pack -->
+		<action_sequence name="sorcery_action_spawn_familiar_omnipack">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarFire" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarIce" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorceryFamiliarLightning" />
+				<property name="spawn_count" value="1" />
+				<property name="min_distance" value="1" />
+				<property name="max_distance" value="3" />
+				<property name="yOffset" value="-3" />
+				<property name="safe_spawn" value="true" />
+				<property name="attack_target" value="true" />
+			</action>
+		</action_sequence>
+
 		
 		<!-- Kill: Familiars -->
 		<!-- <action_sequence name="sorcery_action_kill_familiar"> -->
@@ -106,6 +566,31 @@
 			<!-- </action> -->
 		<!-- </action_sequence> -->
 		
-	<!-- </append> -->
+		
+	<!-- MINIONS -->
+		<!-- Spawn: Fallen Minion Random -->
+		<action_sequence name="sorcery_action_spawn_fallenminion">
+			<property name="allow_user_trigger" value="false" />
+			<property name="category" value="sorcery" />
+			<action class="SpawnEntity">
+				<property name="entity_names" value="sorcerySummonZombieDog,sorcerySummonZombieBurnt,sorcerySummonVulture" />
+				<property name="spawn_count" value="1" />
+				<!-- <property name="min_distance" value="1" /> -->
+				<!-- <property name="max_distance" value="3" /> -->
+				<property name="add_to_group" value="fallenminion" />
+				<!-- <property name="yOffset" value="-3" /> -->
+				<property name="safe_spawn" value="false" />
+				<property name="attack_target" value="true" />
+				
+				<property name="spawn_from_position" value="true" />
+				<property name="clear_position_on_complete" value="true" />
+			</action>
+		</action_sequence>
+		
+		
+		
+		
+		
+	</append>
 	
 </Sorcery>

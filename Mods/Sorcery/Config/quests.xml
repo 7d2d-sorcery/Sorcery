@@ -1,51 +1,63 @@
 <Sorcery>
- <!--__________________________________________________________________________________
-		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
-		__________________________________________________________________________________
-		2021 "DEVRIX"
-		All Rights Reserved.
-		__________________________________________________________________________________
-		HOME: http://sorcerymod.com
-		AUTHOR: http://author.sorcerymod.com
-		FORUM: http://forum.sorcerymod.com
-		DISCORD: http://discord.sorcerymod.com
-		YOUTUBE: http://youtube.sorcerymod.com
-		DOWNLOAD: http://download.sorcerymod.com
-		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
-		__________________________________________________________________________________
-		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
-		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
-		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
-		
-		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
-		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
-		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
-		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
-		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
-		of using this mod.
-		
-		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
-		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
-		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
-		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
-		redistributed outside of its original distribution channels.
-		
-		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
-		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
-		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
-		possible. Without their support, it is not possible to put in the enormous amount of time required to 
-		create the plethora of unique assets that make Sorcery.
-		
-		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
-		__________________________________________________________________________________
-		
-		DISCLAIMER
-		__________________________________________________________________________________
-		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
-		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
-		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
-		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
-		__________________________________________________________________________________-->
+ <!--_____________________________________________________________________________________________________________________
+	TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+	_____________________________________________________________________________________________________________________
+	2022 "DEVRIX"
+	All Rights Reserved.
+	_____________________________________________________________________________________________________________________
+	HOME: http://sorcerymod.com
+	AUTHOR: http://author.sorcerymod.com
+	FORUM: http://forum.sorcerymod.com
+	DISCORD: http://discord.sorcerymod.com
+	YOUTUBE: http://youtube.sorcerymod.com
+	DOWNLOAD: http://download.sorcerymod.com
+	TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+	_____________________________________________________________________________________________________________________
+	NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+	the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+	irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+
+	USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+	with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+	may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+	mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+	Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+	of using this mod.
+
+	REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+	to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+	direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+	Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+	redistributed outside of its original distribution channels.
+
+	PROHIBITED USE: Users are not permitted to modify, or bypass, Supporter Exclusive perks or items in any way.
+	The free in-game "Supporter Key Item" can be obtained through normal game means (loot, trader) and will unlock all 
+	supporter exclusive perks and items. Modifying or bypassing Supporter Exclusive perks or items is a violation of the 
+	Sorcery Terms of Use.
+
+	CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+	hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+	and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+	possible. Without their support, it is not possible to put in the enormous amount of time required to 
+	create the plethora of unique assets that make Sorcery.
+
+	MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+	_____________________________________________________________________________________________________________________
+
+	DISCLAIMER
+	_____________________________________________________________________________________________________________________
+	Sorcery is and will always be 100% FREE. When you choose to Support Development, you are supporting the
+	unique individual work I personally do outside of the game: The creation of unique VFX, SFX, Art, Time creating
+	content and the services/interaction I provide here on Discord. You are not supporting "derivative work of 
+	7 Days to Die" (AKA modding code/changing skins/etc). That is against TFP policy.
+
+	Support Not Required: Those unwilling, or unable, to support development can obtain in-game items 100% FREE.
+	You are not required to support in order to obtain in-game items. Non-supporters are able to obtain any
+	"In-Game Supporter Exclusives" 100% FREE, without supporting development. However, I cannot continue development
+	of Sorcery at this level without Ongoing Support. If support drops below a threshold, development halts. The large
+	amount of time allotted to development is made possible through the generous support given by our Supporters.
+	Disclaimer subject to ongoing changes.
+	_____________________________________________________________________________________________________________________-->
 		
 	<append xpath="/quests">
 	<!-- SPECIAL QUESTS -->
@@ -94,122 +106,712 @@
 				<reward type="Item" id="incantation_Recall" value="1" />
 		</quest> -->
 		
+		
+<!-- ARCANE TRADER QUESTS __________________________________________________________________________________ -->
+		<!-- ARCANE TRADER: INTRO -->
+		<quest id="quest_sorcery_introtrader">
+			<property name="name_key" value="quest_sorcery_introtrader"/> <!-- title, subtitle, rally point name -->
+			<property name="subtitle_key" value="quest_sorcery_introtrader_subtitle"/> <!-- same as name_key, quest list, tracked and trader turn in name -->
+			<property name="description_key" value="quest_sorcery_introtrader_description"/> <!-- quest window description -->
+			<property name="offer_key" value="quest_sorcery_introtrader_description"/> <!-- description_key: trader window description -->
+			<property name="statement_key" value="quest_sorcery_introtrader_statement"/> <!-- trader spoken text, short -->
+			<property name="response_key" value="quest_sorcery_introtrader_response"/> <!-- trader quest list name -->
+			<property name="completion_key" value="quest_sorcery_introtrader_completion"/> <!-- trader turn in window description -->
+			<property name="icon" value="uic_symbol_pentagram" />
+			<property name="category_key" value="quest" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<property name="difficulty_tier" value="1"/>
+			<property name="completiontype" value="TurnIn"/>
+			<property name="return_to_quest_giver" value="false" />
+			<property name="add_to_tier_complete" value="false" />
+			<property name="login_rally_reset" value="true"/>
+			<property name="quest_type" value="special" />
+			<!-- <action type="TrackQuest" /> -->
+			
+				<!-- spellIntro_SpawnArcaneTraderAOE -->
+				<action type="SpawnEnemy" id="sorceryIntroSpawnArcaneTrader" value="1" phase="1" />
+				
+				<!-- NOTE: Not finding nearest on Dedi -->
+				<objective type="GotoPOISDX, Sorcery" value="5-10000" phase="1">
+					<property name="completion_distance" value="50" />
+					<property name="PrefabName" value="sorcery_trader_arcane" />
+					<property name="nav_object" value="quest" />
+					<!-- NOTE: Chance of no trader in specific Biome. -->
+					<property name="biome_filter_type" value="ExcludeBiome" />
+					<property name="biome_filter" value="wasteland" />
+				</objective>
+
+				<objective type="RallyPoint">
+					<property name="phase" value="2"/>
+					<property name="nav_object" value="rally" />
+				</objective>
+			
+				<objective type="FetchFromContainer">
+					<property name="phase" value="3"/>
+					<property name="quest_item_ID" value="70"/>
+					<property name="item_count" value="1"/>
+					<property name="default_container" value="cntLoot_SorceryCrateIntro"/>
+					<property name="nav_object" value="fetch_container" />
+				</objective>
+				
+                <objective type="InteractWithNPC">
+                    <property name="phase" value="4"/>
+                    <property name="nav_object" value="return_to_trader" />
+					<property name="use_closest" value="true" />
+                </objective>
+				
+			<reward type="Exp" value="777"/>
+			<reward type="SkillPoints" value="4" chainreward="false"/>
+			<reward type="Item" id="sorceryAlchemyMortar" value="1" />
+			<reward type="Item" id="sorceryDesk" value="1" />
+			<reward type="Item" id="sorceryElixir_attFire" value="1" />
+			<reward type="Item" id="sorceryElixir_attIce" value="1" />
+			<reward type="Item" id="sorceryElixir_attLightning" value="1" />
+		</quest>
+		
+		
+		<!-- ARCANE TRADER: GOTO MUNDANE -->
+		<quest id="quest_sorcery_mundanetrader_goto">
+			<property name="group_name_key" value="quest_next_trader"/>
+			<property name="name_key" value="quest_next_trader"/>
+			<property name="subtitle_key" value="quest_next_trader_subtitle"/>
+			<property name="description_key" value="quest_next_trader_description"/>
+			<property name="icon" value="ui_game_symbol_map_trader"/>
+			<property name="category_key" value="quest"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="difficulty" value="medium"/>
+			<property name="difficulty_tier" value="1"/>
+
+			<!-- <property name="unique_key" value="traderquest" /> --> <!-- DEV -->
+
+			<property name="offer_key" value="quest_next_trader_offer"/>
+			<property name="statement_key" value="quest_next_trader_statement"/>
+			<property name="response_key" value="quest_next_trader_response"/>
+
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="quest_next_trader_completion"/>
+
+			<property name="return_to_quest_giver" value="false" />
+			<property name="add_to_tier_complete" value="false" />
+
+			<property name="quest_type" value="special" />
+
+			<!-- <action type="SpawnEnemy" id="sorceryIntroPortalToMundaneTrader" value="1" phase="1" /> -->
+
+			<objective type="Goto" id="trader" value="5" phase="1">
+				<property name="biome_filter_type" value="ExcludeBiome" />
+				<property name="biome_filter" value="wasteland" />
+				<property name="nav_object" value="go_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="return_to_trader" />
+				<property name="use_closest" value="true" />
+			</objective>
+
+			<reward type="Exp" value="100"/>
+		</quest>
+		
+		<!-- ARCANE TRADER: FALLEN CAMP FETCH (T2) -->
+		<quest id="quest_sorcery_fallencamp_fetch">
+			<property name="name_key" value="quest_sorcery_fallencamp"/> <!-- title, subtitle -->
+			<property name="subtitle_key" value="quest_sorcery_fallencamp_fetch_subtitle"/> <!-- same as name_key, quest list, tracked and trader turn in name -->
+			<property name="description_key" value="quest_sorcery_fallencamp_fetch_description"/> <!-- quest window description -->
+			<property name="offer_key" value="quest_sorcery_fallencamp_fetch_description"/> <!-- description_key: trader window description -->
+			<property name="statement_key" value="quest_sorcery_fallencamp_fetch_statement"/> <!-- trader spoken text, short -->
+			<property name="response_key" value="quest_sorcery_fallencamp_fetch_response"/> <!-- trader quest list name -->
+			<property name="completion_key" value="quest_sorcery_fallencamp_fetch_completion"/> <!-- trader turn in window description -->
+			<property name="icon" value="uic_sorcery_unholy"/>
+			<property name="repeatable" value="true"/>
+			<property name="category_key" value="challenge"/>
+			<property name="difficulty" value="hard"/>
+			<property name="difficulty_tier" value="2"/>
+			<property name="login_rally_reset" value="true"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="GotoPOISDX, Sorcery" value="5-10000" phase="1">
+				<!-- <property name="completion_distance" value="50" /> -->
+				<property name="PrefabName" value="sorcery_camp_fallen" />
+				<property name="nav_object" value="quest" />
+				<property name="biome_filter_type" value="SameBiome" />
+				<property name="biome_filter" value="burnt_forest" />
+			</objective>
+
+			<objective type="RallyPoint">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally" />
+			</objective>
+
+			<objective type="FetchFromContainer">
+				<property name="phase" value="3"/>
+				<property name="quest_item_ID" value="1"/>
+				<property name="item_count" value="1"/>
+				<property name="default_container" value="cntFetchQuestSatchel"/>
+				<property name="nav_object" value="fetch_container" />
+			</objective>
+
+			<objective type="POIStayWithin">
+				<property name="phase" value="3"/>
+				<property name="radius" value="30"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="6666" />
+			<!-- <reward type="Item" id="resourceFragmentClass" value="1" /> -->
+			
+			<!--<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="1"/>-->	
+			<reward type="LootItem" id="sorceryQuestCurrency2" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryQuestCurrency3" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryRunes_silver" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryRunes" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryPotions" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryBooksScrolls" ischosen="true" value="2"/>
+			<reward type="LootItem" id="groupQuestSorceryArmorArcane,groupQuestSorceryArmorFire,groupQuestSorceryArmorIce,groupQuestSorceryArmorLightning" ischosen="true" value="2"/>
+			<reward type="LootItem" id="groupQuestSorceryWeaponsFire,groupQuestSorceryWeaponsIce,groupQuestSorceryWeaponsLightning" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryQuestFireSpellAmmo,sorceryQuestIceSpellAmmo,sorceryQuestLightningSpellAmmo" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryQuestResources" ischosen="true" value="2"/>
+		</quest>
+		
+		
+		<!-- ARCANE TRADER: FALLEN CAMP CLEAR (T3) -->
+		<quest id="quest_sorcery_fallencamp_clear">
+			<property name="name_key" value="quest_sorcery_fallencamp"/> <!-- title, subtitle -->
+			<property name="subtitle_key" value="quest_sorcery_fallencamp_clear_subtitle"/> <!-- same as name_key, quest list, tracked and trader turn in name -->
+			<property name="description_key" value="quest_sorcery_fallencamp_clear_description"/> <!-- quest window description -->
+			<property name="offer_key" value="quest_sorcery_fallencamp_clear_description"/> <!-- description_key: trader window description -->
+			<property name="statement_key" value="quest_sorcery_fallencamp_clear_statement"/> <!-- trader spoken text, short -->
+			<property name="response_key" value="quest_sorcery_fallencamp_clear_response"/> <!-- trader quest list name -->
+			<property name="completion_key" value="quest_sorcery_fallencamp_clear_completion"/> <!-- trader turn in window description -->
+			<property name="icon" value="uic_sorcery_unholy"/>
+			<property name="repeatable" value="true"/>
+			<property name="category_key" value="quest"/>
+			<property name="difficulty" value="hard"/>
+			<property name="difficulty_tier" value="3"/>
+			<property name="login_rally_reset" value="true"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="GotoPOISDX, Sorcery" value="5-10000" phase="1">
+				<!-- <property name="completion_distance" value="50" /> -->
+				<property name="PrefabName" value="sorcery_camp_fallen" />
+				<property name="nav_object" value="quest" />
+			</objective>
+
+			<objective type="RallyPoint">
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally" />
+			</objective>
+
+			<objective type="ClearSleepers">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+
+			<objective type="POIStayWithin">
+				<property name="phase" value="3"/>
+				<property name="radius" value="30"/>
+			</objective>
+
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="6666" />
+			<reward type="Item" id="resourceFragmentClass" value="1" />
+			
+			<!--<reward type="LootItem" id="groupQuestArmor,groupQuestMedical" ischosen="true" isfixed="true" value="1"/>-->			
+			<reward type="LootItem" id="sorceryQuestCurrency3" ischosen="true" value="3"/>
+			<reward type="LootItem" id="sorceryQuestCurrency4" ischosen="true" value="3"/>
+			<reward type="LootItem" id="sorceryRunes_class" ischosen="true" value="3"/>
+			<reward type="LootItem" id="sorceryRunes_gold" ischosen="true" value="3"/>
+			<reward type="LootItem" id="sorceryRunes_silver" ischosen="true" value="3"/>
+			<reward type="LootItem" id="sorceryBooksScrolls" ischosen="true" value="3"/>
+			<reward type="LootItem" id="groupQuestSorceryArmorArcane,groupQuestSorceryArmorFire,groupQuestSorceryArmorIce,groupQuestSorceryArmorLightning" ischosen="true" value="3"/>
+			<reward type="LootItem" id="groupQuestSorceryWeaponsFire,groupQuestSorceryWeaponsIce,groupQuestSorceryWeaponsLightning" ischosen="true" value="3"/>
+			<reward type="LootItem" id="sorceryQuestFireSpellAmmo,sorceryQuestIceSpellAmmo,sorceryQuestLightningSpellAmmo" ischosen="true" value="3"/>
+			<reward type="LootItem" id="sorceryQuestResources" ischosen="true" value="3"/>
+		</quest>
+
+		<!-- Arcane Trader: FIRE FALLEN (T1) -->
+		<quest id="quest_sorcery_fallenfire">
+			<property name="name_key" value="quest_sorcery_fallenfire" /> <!-- title, subtitle -->
+			<property name="subtitle_key" value="quest_sorcery_fallenfire_subtitle" /> <!-- same as name_key, quest list, tracked and trader turn in name -->
+			<property name="response_key" value="quest_sorcery_fallenfire_response"/> <!-- trader quest list name -->
+			<property name="description_key" value="quest_sorcery_fallenfire_description" /> <!-- quest window description -->
+			<property name="offer_key" value="quest_sorcery_fallenfire_description" /> <!-- description_key: trader window description -->
+			<property name="statement_key" value="quest_sorcery_fallenfire_statement"/> <!-- trader spoken text, short -->
+			<property name="completion_key" value="quest_sorcery_fallenfire_completion"/> <!-- trader turn in window, long -->
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="medium"/>
+			<property name="difficulty_tier" value="1"/>
+			<property name="shareable" value="true" />
+			<property name="repeatable" value="true"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+			
+			<objective type="POIStayWithin">
+				<property name="phase" value="2"/>
+				<property name="radius" value="80"/>
+			</objective>
+			<action type="SpawnEnemy" id="sorceryFallenQuestFire" value="1-2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenFire" value="1-2" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenFire" value="1" phase="2" />
+	
+			<objective type="ReturnToNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+				
+			<reward type="Exp" value="3666" />
+			<reward type="Item" id="resourceRitualStoneFire" value="1" />
+			<reward type="LootItem" id="sorceryQuestCurrency" ischosen="true" isfixed="true" value="1"/>
+			<reward type="LootItem" id="sorceryQuestCurrency2" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryPotions" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryRunes" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryBooksScrollsFire" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestSorceryArmorFire" ischosen="true" value="2"/>
+			<reward type="LootItem" id="groupQuestSorceryWeaponsFire" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryQuestFireSpellAmmo" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryQuestFireResources" ischosen="true" value="1"/>
+		</quest>
+		<!-- Arcane Trader: ICE FALLEN (T1) -->
+		<quest id="quest_sorcery_fallenice">
+			<property name="name_key" value="quest_sorcery_fallenice" /> <!-- title, subtitle -->
+			<property name="subtitle_key" value="quest_sorcery_fallenice_subtitle" /> <!-- same as name_key, quest list, tracked and trader turn in name -->
+			<property name="response_key" value="quest_sorcery_fallenice_response"/> <!-- trader quest list name -->
+			<property name="description_key" value="quest_sorcery_fallenice_description" /> <!-- quest window description -->
+			<property name="offer_key" value="quest_sorcery_fallenice_description" /> <!-- description_key: trader window description -->
+			<property name="statement_key" value="quest_sorcery_fallenice_statement"/> <!-- trader spoken text, short -->
+			<property name="completion_key" value="quest_sorcery_fallenice_completion"/> <!-- trader turn in window, long -->
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="medium"/>
+			<property name="difficulty_tier" value="1"/>
+			<property name="shareable" value="true" />
+			<property name="repeatable" value="true"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+			
+			<objective type="POIStayWithin">
+				<property name="phase" value="2"/>
+				<property name="radius" value="80"/>
+			</objective>
+			<action type="SpawnEnemy" id="sorceryFallenQuestIce" value="1-2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenIce" value="1-2" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenIce" value="1" phase="2" />
+	
+			<objective type="ReturnToNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="3666" />
+			<reward type="Item" id="resourceRitualStoneIce" value="1" />
+			<reward type="LootItem" id="sorceryQuestCurrency" ischosen="true" isfixed="true" value="1"/>
+			<reward type="LootItem" id="sorceryQuestCurrency2" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryPotions" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryRunes" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryBooksScrollsIce" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestSorceryArmorIce" ischosen="true" value="2"/>
+			<reward type="LootItem" id="groupQuestSorceryWeaponsIce" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryQuestIceSpellAmmo" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryQuestIceResources" ischosen="true" value="1"/>
+		</quest>
+		<!-- Arcane Trader: LIGHTNING FALLEN (T1) -->
+		<quest id="quest_sorcery_fallenlightning">
+			<property name="name_key" value="quest_sorcery_fallenlightning" /> <!-- title, subtitle -->
+			<property name="subtitle_key" value="quest_sorcery_fallenlightning_subtitle" /> <!-- same as name_key, quest list, tracked and trader turn in name -->
+			<property name="response_key" value="quest_sorcery_fallenlightning_response"/> <!-- trader quest list name -->
+			<property name="description_key" value="quest_sorcery_fallenlightning_description" /> <!-- quest window description -->
+			<property name="offer_key" value="quest_sorcery_fallenlightning_description" /> <!-- description_key: trader window description -->
+			<property name="statement_key" value="quest_sorcery_fallenlightning_statement"/> <!-- trader spoken text, short -->
+			<property name="completion_key" value="quest_sorcery_fallenlightning_completion"/> <!-- trader turn in window, long -->
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_lightning" />
+			<property name="difficulty" value="medium"/>
+			<property name="difficulty_tier" value="1"/>
+			<property name="shareable" value="true" />
+			<property name="repeatable" value="true"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+			
+			<objective type="POIStayWithin">
+				<property name="phase" value="2"/>
+				<property name="radius" value="80"/>
+			</objective>
+			<action type="SpawnEnemy" id="sorceryFallenQuestLightning" value="1-2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenLightning" value="1-2" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenLightning" value="1" phase="2" />
+	
+			<objective type="ReturnToNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="3666" />
+			<reward type="Item" id="resourceRitualStoneLightning" value="1" />
+			<reward type="LootItem" id="sorceryQuestCurrency" ischosen="true" isfixed="true" value="1"/>
+			<reward type="LootItem" id="sorceryQuestCurrency2" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryPotions" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryRunes" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryBooksScrollsLightning" ischosen="true" value="1"/>
+			<reward type="LootItem" id="groupQuestSorceryArmorLightning" ischosen="true" value="2"/>
+			<reward type="LootItem" id="groupQuestSorceryWeaponsLightning" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryQuestLightningSpellAmmo" ischosen="true" value="1"/>
+			<reward type="LootItem" id="sorceryQuestLightningResources" ischosen="true" value="1"/>
+		</quest>
+		
+		<!-- Arcane Trader: FIRE FALLEN (T4) -->
+		<quest id="quest_sorcery_fallenfire_t4">
+			<property name="name_key" value="quest_sorcery_fallenfire" /> <!-- title, subtitle -->
+			<property name="subtitle_key" value="quest_sorcery_fallenfire_subtitle" /> <!-- same as name_key, quest list, tracked and trader turn in name -->
+			<property name="response_key" value="quest_sorcery_fallenfire_t4_response"/> <!-- trader quest list name -->
+			<property name="description_key" value="quest_sorcery_fallenfire_description" /> <!-- quest window description -->
+			<property name="offer_key" value="quest_sorcery_fallenfire_description" /> <!-- description_key: trader window description -->
+			<property name="statement_key" value="quest_sorcery_fallenfire_statement"/> <!-- trader spoken text, short -->
+			<property name="completion_key" value="quest_sorcery_fallenfire_completion"/> <!-- trader turn in window, long -->
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_fire" />
+			<property name="difficulty" value="hard"/>
+			<property name="difficulty_tier" value="4"/>
+			<property name="shareable" value="true" />
+			<property name="repeatable" value="true"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+			
+			<objective type="POIStayWithin">
+				<property name="phase" value="2"/>
+				<property name="radius" value="80"/>
+			</objective>
+			<action type="SpawnEnemy" id="sorceryFallenQuestFire" value="2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenFire" value="2-4" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenFire" value="2" phase="2" />
+	
+			<objective type="ReturnToNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="3666" />
+			<reward type="Item" id="resourceRitualStoneFire" value="3" />
+			<reward type="LootItem" id="sorceryQuestCurrency3" ischosen="true" isfixed="true" value="4"/>
+			<reward type="LootItem" id="sorceryQuestCurrency4" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryPotions" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryRunes_silver" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryBooksScrollsFire" ischosen="true" value="4"/>
+			<reward type="LootItem" id="groupQuestSorceryArmorFire" ischosen="true" value="4"/>
+			<reward type="LootItem" id="groupQuestSorceryWeaponsFire" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryQuestFireSpellAmmo" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryQuestFireResources" ischosen="true" value="4"/>
+		</quest>
+		<!-- Arcane Trader: ICE FALLEN (T4) -->
+		<quest id="quest_sorcery_fallenice_t4">
+			<property name="name_key" value="quest_sorcery_fallenice" /> <!-- title, subtitle -->
+			<property name="subtitle_key" value="quest_sorcery_fallenice_subtitle" /> <!-- same as name_key, quest list, tracked and trader turn in name -->
+			<property name="response_key" value="quest_sorcery_fallenice_t4_response"/> <!-- trader quest list name -->
+			<property name="description_key" value="quest_sorcery_fallenice_description" /> <!-- quest window description -->
+			<property name="offer_key" value="quest_sorcery_fallenice_description" /> <!-- description_key: trader window description -->
+			<property name="statement_key" value="quest_sorcery_fallenice_statement"/> <!-- trader spoken text, short -->
+			<property name="completion_key" value="quest_sorcery_fallenice_completion"/> <!-- trader turn in window, long -->
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ice" />
+			<property name="difficulty" value="hard"/>
+			<property name="difficulty_tier" value="4"/>
+			<property name="shareable" value="true" />
+			<property name="repeatable" value="true"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+			
+			<objective type="POIStayWithin">
+				<property name="phase" value="2"/>
+				<property name="radius" value="80"/>
+			</objective>
+			<action type="SpawnEnemy" id="sorceryFallenQuestIce" value="2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenIce" value="2-4" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenIce" value="2" phase="2" />
+	
+			<objective type="ReturnToNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="3666" />
+			<reward type="Item" id="resourceRitualStoneIce" value="3" />
+			<reward type="LootItem" id="sorceryQuestCurrency3" ischosen="true" isfixed="true" value="4"/>
+			<reward type="LootItem" id="sorceryQuestCurrency4" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryPotions" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryRunes_silver" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryBooksScrollsIce" ischosen="true" value="4"/>
+			<reward type="LootItem" id="groupQuestSorceryArmorIce" ischosen="true" value="4"/>
+			<reward type="LootItem" id="groupQuestSorceryWeaponsIce" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryQuestIceSpellAmmo" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryQuestIceResources" ischosen="true" value="4"/>
+		</quest>
+		<!-- Arcane Trader: LIGHTNING FALLEN (T4) -->
+		<quest id="quest_sorcery_fallenlightning_t4">
+			<property name="name_key" value="quest_sorcery_fallenlightning" /> <!-- title, subtitle -->
+			<property name="subtitle_key" value="quest_sorcery_fallenlightning_subtitle" /> <!-- same as name_key, quest list, tracked and trader turn in name -->
+			<property name="response_key" value="quest_sorcery_fallenlightning_t4_response"/> <!-- trader quest list name -->
+			<property name="description_key" value="quest_sorcery_fallenlightning_description" /> <!-- quest window description -->
+			<property name="offer_key" value="quest_sorcery_fallenlightning_description" /> <!-- description_key: trader window description -->
+			<property name="statement_key" value="quest_sorcery_fallenlightning_statement"/> <!-- trader spoken text, short -->
+			<property name="completion_key" value="quest_sorcery_fallenlightning_completion"/> <!-- trader turn in window, long -->
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_lightning" />
+			<property name="difficulty" value="hard"/>
+			<property name="difficulty_tier" value="4"/>
+			<property name="shareable" value="true" />
+			<property name="repeatable" value="true"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+			
+			<objective type="POIStayWithin">
+				<property name="phase" value="2"/>
+				<property name="radius" value="80"/>
+			</objective>
+			<action type="SpawnEnemy" id="sorceryFallenQuestLightning" value="2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenLightning" value="2-4" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenLightning" value="2" phase="2" />
+	
+			<objective type="ReturnToNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="3666" />
+			<reward type="Item" id="resourceRitualStoneLightning" value="3" />
+			<reward type="LootItem" id="sorceryQuestCurrency3" ischosen="true" isfixed="true" value="4"/>
+			<reward type="LootItem" id="sorceryQuestCurrency4" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryPotions" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryRunes_silver" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryBooksScrollsLightning" ischosen="true" value="4"/>
+			<reward type="LootItem" id="groupQuestSorceryArmorLightning" ischosen="true" value="4"/>
+			<reward type="LootItem" id="groupQuestSorceryWeaponsLightning" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryQuestLightningSpellAmmo" ischosen="true" value="4"/>
+			<reward type="LootItem" id="sorceryQuestLightningResources" ischosen="true" value="4"/>
+		</quest>
+		
+		<!-- Arcane Trader: TRIO FALLEN (T2) -->
+		<quest id="quest_sorcery_fallentrio">
+			<property name="name_key" value="quest_sorcery_fallentrio" /> <!-- title, subtitle -->
+			<property name="subtitle_key" value="quest_sorcery_fallentrio_subtitle" /> <!-- same as name_key, quest list, tracked and trader turn in name -->
+			<property name="response_key" value="quest_sorcery_fallentrio_response"/> <!-- trader quest list name -->
+			<property name="description_key" value="quest_sorcery_fallentrio_description" /> <!-- quest window description -->
+			<property name="offer_key" value="quest_sorcery_fallentrio_description" /> <!-- description_key: trader window description -->
+			<property name="statement_key" value="quest_sorcery_fallentrio_statement"/> <!-- trader spoken text, short -->
+			<property name="completion_key" value="quest_sorcery_fallentrio_completion"/> <!-- trader turn in window, long -->
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_pentagram" />
+			<property name="difficulty" value="medium"/>
+			<property name="difficulty_tier" value="2"/>
+			<property name="shareable" value="true" />
+			<property name="repeatable" value="true"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+			
+			<objective type="POIStayWithin">
+				<property name="phase" value="2"/>
+				<property name="radius" value="80"/>
+			</objective>
+			<action type="SpawnEnemy" id="sorceryFallenQuestFire" value="1" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenQuestIce" value="1" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenQuestLightning" value="1" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenFire" value="1-2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenIce" value="1-2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenLightning" value="1-2" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenFire" value="1" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenIce" value="1" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenLightning" value="1" phase="2" />
+	
+			<objective type="ReturnToNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="6666" />
+			<!-- <reward type="Item" id="resourceFragmentClass" value="1" /> -->
+			<!-- <reward type="Item" id="resourceRitualStoneFire" value="1" />
+			<reward type="Item" id="resourceRitualStoneIce" value="1" />
+			<reward type="Item" id="resourceRitualStoneLightning" value="1" /> -->
+			<reward type="LootItem" id="sorceryQuestCurrency" ischosen="true" isfixed="true" value="2"/>
+			<reward type="LootItem" id="sorceryQuestCurrency2" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryRunes_silver" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryRunes" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryPotions" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryBooksScrolls" ischosen="true" value="2"/>
+			<reward type="LootItem" id="groupQuestSorceryArmorArcane,groupQuestSorceryArmorFire,groupQuestSorceryArmorIce,groupQuestSorceryArmorLightning" ischosen="true" value="2"/>
+			<reward type="LootItem" id="groupQuestSorceryWeaponsFire,groupQuestSorceryWeaponsIce,groupQuestSorceryWeaponsLightning" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryQuestFireSpellAmmo,sorceryQuestIceSpellAmmo,sorceryQuestLightningSpellAmmo" ischosen="true" value="2"/>
+			<reward type="LootItem" id="sorceryQuestResources" ischosen="true" value="2"/>
+		</quest>
+
+		<!-- Arcane Trader: TRIO FALLEN (T5) -->
+		<quest id="quest_sorcery_fallentrio_t5">
+			<property name="name_key" value="quest_sorcery_fallentrio" /> <!-- title, subtitle -->
+			<property name="subtitle_key" value="quest_sorcery_fallentrio_subtitle" /> <!-- same as name_key, quest list, tracked and trader turn in name -->
+			<property name="response_key" value="quest_sorcery_fallentrio_t5_response"/> <!-- trader quest list name -->
+			<property name="description_key" value="quest_sorcery_fallentrio_description" /> <!-- quest window description -->
+			<property name="offer_key" value="quest_sorcery_fallentrio_description" /> <!-- description_key: trader window description -->
+			<property name="statement_key" value="quest_sorcery_fallentrio_statement"/> <!-- trader spoken text, short -->
+			<property name="completion_key" value="quest_sorcery_fallentrio_completion"/> <!-- trader turn in window, long -->
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_pentagram" />
+			<property name="difficulty" value="hard"/>
+			<property name="difficulty_tier" value="5"/>
+			<property name="shareable" value="true" />
+			<property name="repeatable" value="true"/>
+			<property name="completiontype" value="TurnIn"/>
+
+			<objective type="RandomPOIGoto">
+				<property name="phase" value="1"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+			
+			<objective type="POIStayWithin">
+				<property name="phase" value="2"/>
+				<property name="radius" value="80"/>
+			</objective>
+			<action type="SpawnEnemy" id="sorceryFallenQuestFire" value="1" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenQuestIce" value="1" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenQuestLightning" value="1" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenFire" value="2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenIce" value="2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenLightning" value="2" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenFire" value="2" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenIce" value="2" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenLightning" value="2" phase="2" />
+	
+			<objective type="ReturnToNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+			<objective type="InteractWithNPC">
+				<property name="phase" value="3"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="6666" />
+			<!-- <reward type="Item" id="resourceFragmentClass" value="1" /> -->
+			<!-- <reward type="Item" id="resourceRitualStoneFire" value="1" />
+			<reward type="Item" id="resourceRitualStoneIce" value="1" />
+			<reward type="Item" id="resourceRitualStoneLightning" value="1" /> -->
+			<reward type="LootItem" id="sorceryQuestCurrency4" ischosen="true" isfixed="true" value="5"/>
+			<reward type="LootItem" id="sorceryQuestCurrency5" ischosen="true" value="5"/>
+			<reward type="LootItem" id="sorceryRunes_gold" ischosen="true" value="5"/>
+			<reward type="LootItem" id="sorceryPotions" ischosen="true" value="5"/>
+			<reward type="LootItem" id="sorceryBooksScrolls" ischosen="true" value="5"/>
+			<reward type="LootItem" id="groupQuestSorceryArmorArcane,groupQuestSorceryArmorFire,groupQuestSorceryArmorIce,groupQuestSorceryArmorLightning" ischosen="true" value="5"/>
+			<reward type="LootItem" id="groupQuestSorceryWeaponsFire,groupQuestSorceryWeaponsIce,groupQuestSorceryWeaponsLightning" ischosen="true" value="5"/>
+			<reward type="LootItem" id="sorceryQuestFireSpellAmmo,sorceryQuestIceSpellAmmo,sorceryQuestLightningSpellAmmo" ischosen="true" value="5"/>
+			<reward type="LootItem" id="sorceryQuestResources" ischosen="true" value="5"/>
+		</quest>
+<!-- END - ARCANE TRADER QUESTS __________________________________________________________________________________ -->
+		
+		
 	<!-- INTRO QUESTS __________________________________________________________________________________ -->
-		<!-- Intro 1: Summon Fallen, Loot Corpses, Receive Altin's Chest -->
+		<!-- INTRO: Summon Fallen, Loot Corpses, Arcane Trader -->
 		<quest id="quest_sorceryIntro">
 			<property name="group_name_key" value="quest_sorceryIntro" />
-			<property name="name_key" value="quest_sorceryIntro1_title" />
-			<property name="subtitle_key" value="quest_sorceryIntro1_subtitle" />
-			<property name="description_key" value="quest_sorceryIntro1" />
-			<property name="offer_key" value="quest_sorceryIntro1" />
+			<property name="name_key" value="quest_sorceryIntro_title" />
+			<property name="subtitle_key" value="quest_sorceryIntro_subtitle" />
+			<property name="description_key" value="quest_sorceryIntro_description" />
+			<property name="offer_key" value="quest_sorceryIntro_description" />
 			<property name="category_key" value="quest" />
 			<property name="icon" value="uic_symbol_pentagram" />
-			<property name="difficulty" value="insane"/>
+			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 			<action type="TrackQuest" />
+			
+				<!-- spellIntro_StormAOE -->
 				<action type="SpawnEnemy" id="sorceryIntroEntity" value="1" phase="1" />
-				<objective type="AnimalKill" id="sorceryIntroEntity" value="1" phase="1" />
-				<action type="SpawnEnemy" id="sorceryFallenIntroItemsFire" value="1" phase="2" />
-				<action type="SpawnEnemy" id="sorceryFallenIntroItemsIce" value="1" phase="2" />
-				<action type="SpawnEnemy" id="sorceryFallenIntroItemsLightning" value="1" phase="2" />
-				<action type="SpawnEnemy" id="sorceryFallenIntroFire" value="1" phase="2" />
-				<action type="SpawnEnemy" id="sorceryFallenIntroIce" value="1" phase="2" />
-				<action type="SpawnEnemy" id="sorceryFallenIntroLightning" value="1" phase="2" />
-				<!-- <action type="SpawnEnemy" id="sorceryFamiliarArcane" value="1" phase="1"/> -->
-				<objective type="FetchKeep" id="sorceryElixir_attFire" value="1" phase="2" />
-				<objective type="FetchKeep" id="sorceryElixir_attIce" value="1" phase="2" />
-				<!-- <objective type="FetchKeep" id="sorceryElixir_attLightning" value="1" phase="2" /> -->
-			<reward type="Exp" value="777" />
-			<reward type="Item" id="cnt_SorceryCrateIntro" value="1" />
-			<reward type="Quest" id="quest_sorceryIntro2"/>
-		</quest>
-		<!-- Intro 2: Place Altin's Chest, Fetch Items -->
-		<quest id="quest_sorceryIntro2">
-			<property name="group_name_key" value="quest_sorceryIntro" />
-			<property name="name_key" value="quest_sorceryIntro2_title" />
-			<property name="subtitle_key" value="quest_sorceryIntro2_subtitle" />
-			<property name="description_key" value="quest_sorceryIntro2" />
-			<property name="offer_key" value="quest_sorceryIntro2" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_pentagram" />
-			<property name="difficulty" value="easy"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-			<action type="TrackQuest" />
-			<action type="ShowTip" value="quest_sorceryIntro2">
-				<property name="delay" value="5"/>
-			</action>
-				<objective type="BlockPlace" id="cnt_SorceryCrateIntro" value="1" phase="1" />
-				<objective type="FetchKeep" id="sorceryDesk" value="1" phase="2" />
-				<objective type="FetchKeep" id="sorceryAlchemyMortar" value="1" phase="2" />
-				<objective type="FetchKeep" id="scrollQuest_ConjureFireItems" value="1" phase="2" />
-				<objective type="FetchKeep" id="scrollQuest_ConjureIceItems" value="1" phase="2" />
-				<!-- <objective type="FetchKeep" id="scrollQuest_ConjureLightningItems" value="1" phase="2" /> -->
-				<objective type="FetchKeep" id="sorceryArmor_Hood" phase="2" />
-				<objective type="FetchKeep" id="sorceryArmor_Chest" phase="2" />
-			<reward type="Exp" value="777" />
-			<reward type="Quest" id="quest_sorceryIntro3"/>
-			<reward type="Quest" id="quest_sorceryIntroFireStaff"><property name="chainquest" value="false"/></reward>
-			<reward type="Quest" id="quest_sorceryIntroIceStaff"><property name="chainquest" value="false"/></reward>
-			<!-- <reward type="Quest" id="quest_sorceryIntroLightningStaff"><property name="chainquest" value="false"/></reward> -->
-		</quest>
-		<!-- Intro 3: Consume Fire Skill Elixir, Read Journal of Fire Knowledge, Place Desk -->
-		<quest id="quest_sorceryIntro3">
-			<property name="group_name_key" value="quest_sorceryIntro" />
-			<property name="name_key" value="quest_sorceryIntro3_title" />
-			<property name="subtitle_key" value="quest_sorceryIntro3_subtitle" />
-			<property name="description_key" value="quest_sorceryIntro3" />
-			<property name="offer_key" value="quest_sorceryIntro3" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_pentagram" />
-			<property name="difficulty" value="easy"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-			<action type="TrackQuest" />
-			<action type="ShowTip" value="quest_sorceryIntro3">
-				<property name="delay" value="3"/>
-			</action>
-				<objective type="Wear" id="sorceryArmor_Hood" phase="1" />
-				<objective type="Wear" id="sorceryArmor_Chest" phase="1" />
-				<objective type="BlockPlace" id="sorceryDesk" value="1" />
-			<!-- Start: Vanilla Intro Trader Quest -->
-			<reward type="Quest" id="quest_whiteRiverCitizen1">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<!-- Start: Sorcery Intro Quests -->
-			<reward type="Quest" id="quest_sorceryIntroPotions">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroChest">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroTailoring">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroScrolls">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroAlchemy">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroEnchanting">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroRunesmithing">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroArcaneArmor">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFamiliar">
+
+				<objective type="FetchKeep" id="staffFire" value="1" phase="2" />
+				<objective type="FetchKeep" id="staffIce" value="1" phase="2" />
+				<objective type="FetchKeep" id="staffLightning" value="1" phase="2" />
+			<!-- ARCANE TRADER -->
+			<reward type="Quest" id="quest_sorcery_introtrader">
 				<property name="chainquest" value="false"/>
 			</reward>
 			<reward type="Exp" value="777" />
-			<reward type="SkillPoints" value="4" chainreward="true"/>
-			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
+			<!-- NOTE: quest_sorcery_introtrader -->
 		</quest>
-		<!-- END - INTRO CHAIN -->
+		<!-- END - INTRO -->
 		
 	<!-- GENERAL INTRO QUESTS -->
 		<!-- Intro: Fire Staff -->
@@ -245,7 +847,7 @@
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
 		<!-- Intro: Lightning Staff -->
-		<!-- <quest id="quest_sorceryIntroLightningStaff">
+		<quest id="quest_sorceryIntroLightningStaff">
 			<property name="name_key" value="quest_sorceryIntroLightningStaff_title" />
 			<property name="subtitle_key" value="quest_sorceryIntroLightningStaff_subtitle" />
 			<property name="description_key" value="quest_sorceryIntroLightningStaff" />
@@ -259,7 +861,7 @@
 				<requirement type="Holding" id="staffLightning" phase="1"/>
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
-		</quest> -->
+		</quest>
 		
 	<!-- ARCANE INTRO QUESTS -->
 		<!-- Intro: Potions / Enchanted Mortar -->
@@ -446,7 +1048,7 @@
 			<property name="repeatable" value="false"/>
 			<action type="ShowTip" value="quest_sorceryIntroGuide_Fire2">
 			</action>
-				<objective type="FetchKeep" id="resourceEssenceFire" value="250" phase="1">
+				<objective type="FetchKeep" id="resourceEssenceFire" value="1000" phase="1">
 					<modifier type="TrackBlocks">
 						<property name="block_index_name" value="quest_essence_fire"/>
 						<property name="nav_object" value="quest_resource"/>
@@ -479,115 +1081,12 @@
 			</action>
 				<objective type="Craft" id="spellFire" value="1" phase="1"/>
 				<objective type="FetchKeep" id="spellcastFire" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellFire" value="40" phase="1"/>
-			<reward type="Quest" id="quest_sorceryIntroGuide_Fire4" />
+				<objective type="FetchKeep" id="spellFire" value="100" phase="1"/>
+				<reward type="Item" id="sorceryElixir_attFire" value="2" />
 		</quest>
-		<quest id="quest_sorceryIntroGuide_Fire4">
-			<property name="group_name_key" value="quest_sorceryIntroGuide_Fire" />
-			<property name="name_key" value="quest_sorceryIntroGuide_Fire4_title" />
-			<property name="subtitle_key" value="quest_sorceryIntroGuide_Fire4_subtitle" />
-			<property name="description_key" value="quest_sorceryIntroGuide_Fire4" />
-			<property name="offer_key" value="quest_sorceryIntroGuide_Fire4" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_fire" />
-			<property name="difficulty" value="normal"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-			<action type="TrackQuest" />
-			<action type="ShowTip" value="quest_sorceryIntroGuide_Fire4">
-				<property name="delay" value="3"/>
-			</action>
-				<objective type="RandomGoto" value="500-800" phase="1">
-					<property name="completion_distance" value="50"/>
-					<property name="nav_object" value="quest" />
-				</objective>
-				<objective type="RallyPoint">
-					<property name="start_mode" value="Create"/>
-					<property name="phase" value="2"/>
-					<property name="nav_object" value="rally" />
-				</objective>
-				<action type="SpawnEnemy" id="sorceryFallenQuestFire" value="4" phase="3" />
-				<action type="SpawnEnemy" id="zombieBurnt" value="4" phase="3" />
-				<objective type="ZombieKill" id="zombieBurnt" value="2" phase="3" />
-				<action type="SpawnEnemy" id="sorceryFallenQuestFire" value="4" phase="4" />
-				<action type="SpawnEnemy" id="zombieBurnt" value="4" phase="4" />
-				<objective type="ZombieKill" id="zombieBurnt" value="2" phase="4" />
-			<reward type="Exp" value="1000" />
-			<reward type="Item" id="potion_Health" value="3" />
-			<reward type="Item" id="potion_Spirit" value="3" />
-			<reward type="Item" id="spellFire2" value="5" />
-			<reward type="Item" id="spellFire3" value="5" />
-			<reward type="Quest" id="quest_sorceryIntroGuide_Fire5" />
-		</quest>
-		<quest id="quest_sorceryIntroGuide_Fire5">
-			<property name="group_name_key" value="quest_sorceryIntroGuide_Fire" />
-			<property name="name_key" value="quest_sorceryIntroGuide_Fire5_title" />
-			<property name="subtitle_key" value="quest_sorceryIntroGuide_Fire5_subtitle" />
-			<property name="description_key" value="quest_sorceryIntroGuide_Fire5" />
-			<property name="offer_key" value="quest_sorceryIntroGuide_Fire5" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_fire" />
-			<property name="difficulty" value="hard"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-			<action type="TrackQuest" />
-			<action type="ShowTip" value="quest_sorceryIntroGuide_Fire5">
-				<property name="delay" value="10"/>
-			</action>
-				<objective type="FetchKeep" id="potion_Health" value="2" phase="1" />
-				<objective type="FetchKeep" id="spellcastFire" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellFire" value="60" phase="1"/>
-				<objective type="RandomGoto" value="500-800" phase="2">
-					<property name="completion_distance" value="50"/>
-					<property name="nav_object" value="quest" />
-				</objective>
-				<objective type="RallyPoint">
-					<property name="start_mode" value="Create"/>
-					<property name="phase" value="3"/>
-					<property name="nav_object" value="rally" />
-				</objective>
-				<action type="SpawnEnemy" id="sorceryFallenQuestFire" value="4" phase="4" />
-				<action type="SpawnEnemy" id="sorceryFallenFire" value="1" phase="4" />
-				<objective type="ZombieKill" id="sorceryFallenFire" value="1" phase="4" />
-			<reward type="Exp" value="1000" />
-			<reward type="Item" id="spellFire2" value="5" />
-			<reward type="Item" id="spellFire3" value="5" />
-			<reward type="Item" id="scrollFire_Weapon" value="1" />
-			<reward type="Item" id="scrollFire_Ammo" value="1" />
-			<reward type="Item" id="resourceRitualStoneFire" value="1" />
-			<reward type="Item" id="sorceryElixir_attFire" value="1" chainreward="true" />
-			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
-			<!-- Start: Fire Intro Quests -->
-			<reward type="Quest" id="quest_sorceryIntroFireAspectAura">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryFirePowder">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFireCraftArrowFire">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFireCraftFire2">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFireCraftFire3">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFireCraftFireTrap">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFireSpellTurret">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFireArmor">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroFireWildFallen">
-				<property name="chainquest" value="false"/>
-			</reward>
-		</quest>
+		
 	<!-- FIRE INTRO QUESTS -->
-		<!-- Intro: Aspect of Fire:  -->
+		<!-- Intro: Aspect of Fire: Fetch Kill -->
 		<quest id="quest_sorceryIntroFireAspectAura">
 			<property name="name_key" value="quest_sorceryIntroFireAspectAura_title" />
 			<property name="subtitle_key" value="quest_sorceryIntroFireAspectAura_subtitle" />
@@ -598,8 +1097,9 @@
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
-				<requirement type="Buff" id="buffRune_AspectOfFire_Aura" phase="1"/>
-				<objective type="ZombieKill" value="2" phase="1" />
+				<objective type="FetchKeep" id="rune_AspectOfFire" value="1" phase="1" />
+				<requirement type="Buff" id="buffRune_AspectOfFire_Aura" phase="2" />
+				<objective type="ZombieKill" value="2" phase="2" />
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
@@ -763,6 +1263,23 @@
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
+		<!-- Intro: Fire Familiar -->
+		<quest id="quest_sorceryIntroFireFamiliar">
+			<property name="name_key" value="quest_sorceryIntroFireFamiliar_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroFireFamiliar_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroFireFamiliar" />
+			<property name="offer_key" value="quest_sorceryIntroFireFamiliar" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_familiar_fire" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="sorceryFamiliarFire" value="1" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		
+		
 		<!-- FIRE CHAIN: Fire Fallen Wild:  -->
 		<quest id="quest_sorceryIntroFireWildFallen">
 			<property name="name_key" value="quest_sorceryIntroFireWildFallen_title" />
@@ -954,6 +1471,9 @@
 		</quest>
 	<!-- END - INTRO FIRE __________________________________________________________________________________ -->
 
+
+
+	<!-- INTRO ICE QUESTS __________________________________________________________________________________ -->
 	<!-- INTRO ICE QUESTS __________________________________________________________________________________ -->
 		<quest id="quest_sorceryIntroGuide_Ice">
 			<property name="group_name_key" value="quest_sorceryIntroGuide_Ice" />
@@ -986,7 +1506,7 @@
 			<property name="repeatable" value="false"/>
 			<action type="ShowTip" value="quest_sorceryIntroGuide_Ice2">
 			</action>
-				<objective type="FetchKeep" id="resourceEssenceIce" value="250" phase="1" >
+				<objective type="FetchKeep" id="resourceEssenceIce" value="1000" phase="1">
 					<modifier type="TrackBlocks">
 						<property name="block_index_name" value="quest_essence_ice"/>
 						<property name="nav_object" value="quest_resource"/>
@@ -1019,113 +1539,8 @@
 			</action>
 				<objective type="Craft" id="spellIce" value="1" phase="1"/>
 				<objective type="FetchKeep" id="spellcastIce" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellIce" value="40" phase="1"/>
-			<reward type="Quest" id="quest_sorceryIntroGuide_Ice4" />
-		</quest>
-		<quest id="quest_sorceryIntroGuide_Ice4">
-			<property name="group_name_key" value="quest_sorceryIntroGuide_Ice" />
-			<property name="name_key" value="quest_sorceryIntroGuide_Ice4_title" />
-			<property name="subtitle_key" value="quest_sorceryIntroGuide_Ice4_subtitle" />
-			<property name="description_key" value="quest_sorceryIntroGuide_Ice4" />
-			<property name="offer_key" value="quest_sorceryIntroGuide_Ice4" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_ice" />
-			<property name="difficulty" value="normal"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-			<action type="TrackQuest" />
-			<action type="ShowTip" value="quest_sorceryIntroGuide_Ice4">
-				<property name="delay" value="3"/>
-			</action>
-				<objective type="RandomGoto" value="500-800" phase="1">
-					<property name="completion_distance" value="50"/>
-					<property name="nav_object" value="quest" />
-				</objective>
-				<objective type="RallyPoint">
-					<property name="start_mode" value="Create"/>
-					<property name="phase" value="2"/>
-					<property name="nav_object" value="rally" />
-				</objective>
-				<action type="SpawnEnemy" id="sorceryFallenQuestIce" value="4" phase="3" />
-				<action type="SpawnEnemy" id="zombieLumberjack" value="3" phase="3" />
-				<objective type="ZombieKill" id="zombieLumberjack" value="1" phase="3" />
-				<action type="SpawnEnemy" id="sorceryFallenQuestIce" value="4" phase="4" />
-				<action type="SpawnEnemy" id="zombieLumberjack" value="3" phase="4" />
-				<objective type="ZombieKill" id="zombieLumberjack" value="1" phase="4" />
-			<reward type="Exp" value="1000" />
-			<reward type="Item" id="potion_Health" value="3" />
-			<reward type="Item" id="potion_Spirit" value="3" />
-			<reward type="Item" id="spellIce2" value="5" />
-			<reward type="Item" id="spellIce3" value="5" />
-			<reward type="Quest" id="quest_sorceryIntroGuide_Ice5" />
-		</quest>
-		<quest id="quest_sorceryIntroGuide_Ice5">
-			<property name="group_name_key" value="quest_sorceryIntroGuide_Ice" />
-			<property name="name_key" value="quest_sorceryIntroGuide_Ice5_title" />
-			<property name="subtitle_key" value="quest_sorceryIntroGuide_Ice5_subtitle" />
-			<property name="description_key" value="quest_sorceryIntroGuide_Ice5" />
-			<property name="offer_key" value="quest_sorceryIntroGuide_Ice5" />
-			<property name="category_key" value="quest" />
-			<property name="icon" value="uic_symbol_ice" />
-			<property name="difficulty" value="hard"/>
-			<property name="shareable" value="false" />
-			<property name="repeatable" value="false"/>
-			<action type="TrackQuest" />
-			<action type="ShowTip" value="quest_sorceryIntroIceWildFallen">
-				<property name="delay" value="10"/>
-			</action>
-				<objective type="FetchKeep" id="potion_Health" value="2" phase="1" />
-				<objective type="FetchKeep" id="spellcastIce" value="1" phase="1"/>
-				<objective type="FetchKeep" id="spellIce" value="60" phase="1"/>
-				<objective type="RandomGoto" value="500-800" phase="2">
-					<property name="completion_distance" value="50"/>
-					<property name="nav_object" value="quest" />
-				</objective>
-				<objective type="RallyPoint">
-					<property name="start_mode" value="Create"/>
-					<property name="phase" value="3"/>
-					<property name="nav_object" value="rally" />
-				</objective>
-				<action type="SpawnEnemy" id="sorceryFallenQuestIce" value="4" phase="4" />
-				<action type="SpawnEnemy" id="sorceryFallenIce" value="1" phase="4" />
-				<objective type="ZombieKill" id="sorceryFallenIce" value="1" phase="4" />
-			<reward type="Exp" value="1000" />
-			<reward type="Item" id="spellIce2" value="5" />
-			<reward type="Item" id="spellIce3" value="5" />
-			<reward type="Item" id="scrollIce_Weapon" value="1" />
-			<reward type="Item" id="scrollIce_Ammo" value="1" />
-			<reward type="Item" id="resourceRitualStoneIce" value="1" />
-			<reward type="Item" id="sorceryElixir_attIce" value="1"/>
-			<reward type="Item" id="q_sorcerySkillGrimoire" value="1"/>
-			<!-- <reward type="Quest" id="quest_sorceryIntroIceWildFallen"/> -->
-			<!-- Start: Ice Intro Quests -->
-			<reward type="Quest" id="quest_sorceryIntroIceAspectAura">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIcePowder">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroIceCraftArrowIce">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroIceCraftIce2">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroIceCraftIce3">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroIceCraftIceTrap">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroIceSpellTurret">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroIceArmor">
-				<property name="chainquest" value="false"/>
-			</reward>
-			<reward type="Quest" id="quest_sorceryIntroIceWildFallen">
-				<property name="chainquest" value="false"/>
-			</reward>
+				<objective type="FetchKeep" id="spellIce" value="100" phase="1"/>
+				<reward type="Item" id="sorceryElixir_attIce" value="2" />
 		</quest>
 	<!-- ICE INTRO QUESTS -->
 		<!-- Intro: Aspect of Ice:  -->
@@ -1302,6 +1717,21 @@
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
 				<objective type="Craft" id="resourcePowderIce" value="10"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+			<!-- Intro: Ice Familiar -->
+		<quest id="quest_sorceryIntroIceFamiliar">
+			<property name="name_key" value="quest_sorceryIntroIceFamiliar_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroIceFamiliar_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroIceFamiliar" />
+			<property name="offer_key" value="quest_sorceryIntroIceFamiliar" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_familiar_ice" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="sorceryFamiliarIce" value="1" phase="1" />
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>
@@ -1499,6 +1929,270 @@
 <!-- END - INTRO ICE __________________________________________________________________________________ -->
 
 
+
+
+<!-- INTRO LIGHTNING QUESTS __________________________________________________________________________________ -->
+		<quest id="quest_sorceryIntroGuide_Lightning">
+			<property name="group_name_key" value="quest_sorceryIntroGuide_Lightning" />
+			<property name="name_key" value="quest_sorceryIntroGuide_Lightning_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroGuide_Lightning_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroGuide_Lightning" />
+			<property name="offer_key" value="quest_sorceryIntroGuide_Lightning" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_lightning" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+			<reward type="Item" id="resourceEssenceLightning" value="100" />
+			<reward type="Item" id="resourceScrapLead" value="80" />
+			<reward type="Item" id="resourceRockSmall" value="80" />
+			<reward type="Item" id="resourceClayLump" value="80" />
+			<reward type="Quest" id="quest_sorceryIntroGuide_Lightning2" />
+		</quest>
+		<quest id="quest_sorceryIntroGuide_Lightning2">
+			<property name="group_name_key" value="quest_sorceryIntroGuide_Lightning" />
+			<property name="name_key" value="quest_sorceryIntroGuide_Lightning2_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroGuide_Lightning2_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroGuide_Lightning2" />
+			<property name="offer_key" value="quest_sorceryIntroGuide_Lightning2" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_lightning" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="ShowTip" value="quest_sorceryIntroGuide_Lightning2">
+			</action>
+				<objective type="FetchKeep" id="resourceEssenceLightning" value="1000" phase="1">
+					<modifier type="TrackBlocks">
+						<property name="block_index_name" value="quest_essence_lightning"/>
+						<property name="nav_object" value="quest_resource"/>
+						<property name="track_distance" value="100"/>
+					</modifier>
+				</objective>
+				<objective type="FetchKeep" id="resourceScrapLead" value="100" phase="1" />
+				<objective type="FetchKeep" id="resourceRockSmall" value="100" phase="1" />
+				<objective type="FetchKeep" id="resourceClayLump" value="100" phase="1" />
+				<objective type="FetchKeep" id="conjureLightning" value="1" phase="1" />
+				<objective type="BlockPlace" id="conjureLightning" value="1" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroGuide_Lightning3" />
+		</quest>
+		<quest id="quest_sorceryIntroGuide_Lightning3">
+			<property name="group_name_key" value="quest_sorceryIntroGuide_Lightning" />
+			<property name="name_key" value="quest_sorceryIntroGuide_Lightning3_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroGuide_Lightning3_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroGuide_Lightning3" />
+			<property name="offer_key" value="quest_sorceryIntroGuide_Lightning3" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_lightning" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+			<action type="TrackQuest" />
+			<action type="ShowTip" value="quest_sorceryIntroGuide_Lightning3">
+				<property name="delay" value="3"/>
+			</action>
+				<objective type="Craft" id="spellLightning" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellcastLightning" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellLightning" value="100" phase="1"/>
+				<reward type="Item" id="sorceryElixir_attLightning" value="2" />
+		</quest>
+
+	<!-- LIGHTNING INTRO QUESTS -->
+		<!-- Intro: Aspect of Lightning: Fetch Kill -->
+		<quest id="quest_sorceryIntroLightningAspectAura">
+			<property name="name_key" value="quest_sorceryIntroLightningAspectAura_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningAspectAura_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningAspectAura" />
+			<property name="offer_key" value="quest_sorceryIntroLightningAspectAura" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_rune_lightning" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="rune_AspectOfLightning" value="1" phase="1" />
+				<requirement type="Buff" id="buffRune_AspectOfLightning_Aura" phase="2" />
+				<objective type="ZombieKill" value="2" phase="2" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Lightning Powder / Enchanted Mortar -->
+		<quest id="quest_sorceryLightningPowder">
+			<property name="name_key" value="quest_sorceryLightningPowder_title" />
+			<property name="subtitle_key" value="quest_sorceryLightningPowder_subtitle" />
+			<property name="description_key" value="quest_sorceryLightningPowder" />
+			<property name="offer_key" value="quest_sorceryLightningPowder" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_potion_lightning" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="resourcePowderLightning" value="10"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: spellArrowLightning Craft:  -->
+		<quest id="quest_sorceryIntroLightningCraftArrowLightning">
+			<property name="name_key" value="quest_sorceryIntroLightningCraftArrowLightning_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningCraftArrowLightning_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningCraftArrowLightning" />
+			<property name="offer_key" value="quest_sorceryIntroLightningCraftArrowLightning" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_sorcery_ammo_lightning" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="spellArrowLightning" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellArrowLightning" value="10" phase="2"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Lightning2 Craft:  -->
+		<quest id="quest_sorceryIntroLightningCraftLightning2">
+			<property name="name_key" value="quest_sorceryIntroLightningCraftLightning2_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningCraftLightning2_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningCraftLightning2" />
+			<property name="offer_key" value="quest_sorceryIntroLightningCraftLightning2" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_lightning_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="spellLightning2" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellLightning2" value="10" phase="2"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroLightningCraftLightning2_2"/>
+		</quest>
+		<quest id="quest_sorceryIntroLightningCraftLightning2_2">
+			<property name="name_key" value="quest_sorceryIntroLightningCraftLightning2_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningCraftLightning2_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningCraftLightning2" />
+			<property name="offer_key" value="quest_sorceryIntroLightningCraftLightning2" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_lightning_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="spellLightning2" value="100" phase="1"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
+		</quest>
+		<!-- Intro: Lightning3 Craft:  -->
+		<quest id="quest_sorceryIntroLightningCraftLightning3">
+			<property name="name_key" value="quest_sorceryIntroLightningCraftLightning3_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningCraftLightning3_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningCraftLightning3" />
+			<property name="offer_key" value="quest_sorceryIntroLightningCraftLightning3" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_lightning_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="spellLightning3" value="1" phase="1"/>
+				<objective type="FetchKeep" id="spellLightning3" value="10" phase="2"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroLightningCraftLightning3_2"/>
+		</quest>
+		<quest id="quest_sorceryIntroLightningCraftLightning3_2">
+			<property name="name_key" value="quest_sorceryIntroLightningCraftLightning3_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningCraftLightning3_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningCraftLightning3" />
+			<property name="offer_key" value="quest_sorceryIntroLightningCraftLightning3" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_lightning_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="spellLightning3" value="100" phase="1"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true"/>
+		</quest>
+		<!-- Intro: Lightning Armor Set -->
+		<quest id="quest_sorceryIntroLightningArmor">
+			<property name="name_key" value="quest_sorceryIntroLightningArmor_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningArmor_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningArmor" />
+			<property name="offer_key" value="quest_sorceryIntroLightningArmor" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_armor_lightning_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<!-- NOTE: NRE if too many; alternative method. -->
+				<objective type="Wear" id="sorceryArmorLightning_Hood" phase="1"/>
+				<objective type="ZombieKill" value="1" phase="2"/>
+				<requirement type="Buff" id="buffSorceryArmorSet_Lightning" phase="2"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Lightning Trap Craft  -->
+		<quest id="quest_sorceryIntroLightningCraftLightningTrap">
+			<property name="name_key" value="quest_sorceryIntroLightningCraftLightningTrap_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningCraftLightningTrap_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningCraftLightningTrap" />
+			<property name="offer_key" value="quest_sorceryIntroLightningCraftLightningTrap" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_lightning_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="Craft" id="sorceryTrap_Lightning" value="1" phase="1"/>
+				<objective type="FetchKeep" id="sorceryTrap_Lightning" value="1" phase="2"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+			<reward type="Quest" id="quest_sorceryIntroLightningCraftLightningTrap_2"/>
+		</quest>
+		<quest id="quest_sorceryIntroLightningCraftLightningTrap_2">
+			<property name="name_key" value="quest_sorceryIntroLightningCraftLightningTrap_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningCraftLightningTrap_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningCraftLightningTrap" />
+			<property name="offer_key" value="quest_sorceryIntroLightningCraftLightningTrap" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_spell_lightning_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="sorceryTrap_Lightning" value="100" phase="1"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" chainreward="true" />
+		</quest>
+		<!-- Intro: Lightning Spell Turret  -->
+		<quest id="quest_sorceryIntroLightningSpellTurret">
+			<property name="name_key" value="quest_sorceryIntroLightningSpellTurret_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningSpellTurret_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningSpellTurret" />
+			<property name="offer_key" value="quest_sorceryIntroLightningSpellTurret" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_symbol_trap_lightning_sorcery" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="spellTurretLightning" value="1" phase="1"/>
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+		<!-- Intro: Lightning Familiar -->
+		<quest id="quest_sorceryIntroLightningFamiliar">
+			<property name="name_key" value="quest_sorceryIntroLightningFamiliar_title" />
+			<property name="subtitle_key" value="quest_sorceryIntroLightningFamiliar_subtitle" />
+			<property name="description_key" value="quest_sorceryIntroLightningFamiliar" />
+			<property name="offer_key" value="quest_sorceryIntroLightningFamiliar" />
+			<property name="category_key" value="quest" />
+			<property name="icon" value="uic_familiar_lightning" />
+			<property name="difficulty" value="easy"/>
+			<property name="shareable" value="false" />
+			<property name="repeatable" value="false"/>
+				<objective type="FetchKeep" id="sorceryFamiliarLightning" value="1" phase="1" />
+			<reward type="Exp" value="100" />
+			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
+		</quest>
+
+
+
 	<!-- INTRO FALLEN QUESTS __________________________________________________________________________________ -->
 		<!-- Fallen: FIRE -->
 		<quest id="quest_sorceryIntroFallen_Fire">
@@ -1580,116 +2274,7 @@
 		</quest>
 	<!-- END - INTRO FALLEN QUESTS __________________________________________________________________________________ -->
 
-	<!-- FALLEN QUESTS __________________________________________________________________________________ -->
-		<!-- Fallen: FIRE -->
-		<quest id="quest_sorceryFallen_Fire">
-			<property name="name_key" value="quest_sorceryFallen_Fire_title" />
-			<property name="subtitle_key" value="quest_sorceryFallen_Fire_subtitle" />
-			<property name="description_key" value="quest_sorceryFallen_Fire" />
-			<property name="offer_key" value="quest_sorceryFallen_Fire" />
-			<property name="category_key" value="challenge" />
-			<property name="icon" value="uic_sorcery_fire" />
-			<property name="difficulty" value="hard"/>
-			<property name="shareable" value="true" />
-				<objective type="RandomGoto" value="500-800" phase="1">
-					<property name="completion_distance" value="50"/>
-					<property name="nav_object" value="quest" />
-				</objective>
-				<objective type="RallyPoint">
-					<property name="start_mode" value="Create"/>
-					<property name="phase" value="2"/>
-					<property name="nav_object" value="rally" />
-				</objective>
-				<action type="SpawnEnemy" id="sorceryFallenQuestFire" value="1-2" phase="3" />
-				<action type="SpawnEnemy" id="sorceryFallenFire" value="2-4" phase="3" />
-				<objective type="ZombieKill" id="sorceryFallenFire" value="1" phase="3" />
-			<reward type="Exp" value="3666" />
-			<reward type="Item" id="resourceRitualStoneFire" value="1" />
-		</quest>
-		<!-- Fallen: ICE -->
-		<quest id="quest_sorceryFallen_Ice">
-			<property name="name_key" value="quest_sorceryFallen_Ice_title" />
-			<property name="subtitle_key" value="quest_sorceryFallen_Ice_subtitle" />
-			<property name="description_key" value="quest_sorceryFallen_Ice" />
-			<property name="offer_key" value="quest_sorceryFallen_Ice" />
-			<property name="category_key" value="challenge" />
-			<property name="icon" value="uic_sorcery_ice" />
-			<property name="difficulty" value="hard"/>
-			<property name="shareable" value="true" />
-				<objective type="RandomGoto" value="500-800" phase="1">
-					<property name="completion_distance" value="50"/>
-					<property name="nav_object" value="quest" />
-				</objective>
-				<objective type="RallyPoint">
-					<property name="start_mode" value="Create"/>
-					<property name="phase" value="2"/>
-					<property name="nav_object" value="rally" />
-				</objective>
-				<action type="SpawnEnemy" id="sorceryFallenQuestIce" value="1-2" phase="3" />
-				<action type="SpawnEnemy" id="sorceryFallenIce" value="2-4" phase="3" />
-				<objective type="ZombieKill" id="sorceryFallenIce" value="1" phase="3" />
-			<reward type="Exp" value="3666" />
-			<reward type="Item" id="resourceRitualStoneIce" value="1" />
-		</quest>
-		<!-- Fallen: LIGHTNING -->
-		<quest id="quest_sorceryFallen_Lightning">
-			<property name="name_key" value="quest_sorceryFallen_Lightning_title" />
-			<property name="subtitle_key" value="quest_sorceryFallen_Lightning_subtitle" />
-			<property name="description_key" value="quest_sorceryFallen_Lightning" />
-			<property name="offer_key" value="quest_sorceryFallen_Lightning" />
-			<property name="category_key" value="challenge" />
-			<property name="icon" value="uic_sorcery_lightning" />
-			<property name="difficulty" value="hard"/>
-			<property name="shareable" value="true" />
-				<objective type="RandomGoto" value="500-800" phase="1">
-					<property name="completion_distance" value="50"/>
-					<property name="nav_object" value="quest" />
-				</objective>
-				<objective type="RallyPoint">
-					<property name="start_mode" value="Create"/>
-					<property name="phase" value="2"/>
-					<property name="nav_object" value="rally" />
-				</objective>
-				<action type="SpawnEnemy" id="sorceryFallenQuestLightning" value="1-2" phase="3" />
-				<action type="SpawnEnemy" id="sorceryFallenLightning" value="2-4" phase="3" />
-				<objective type="ZombieKill" id="sorceryFallenLightning" value="1" phase="3" />
-			<reward type="Exp" value="3666" />
-			<reward type="Item" id="resourceRitualStoneLightning" value="1" />
-		</quest>
-		<!-- Fallen: TRIO -->
-		<quest id="quest_sorceryFallen_Trio">
-			<property name="name_key" value="quest_sorceryFallen_Trio_title" />
-			<property name="subtitle_key" value="quest_sorceryFallen_Trio_subtitle" />
-			<property name="description_key" value="quest_sorceryFallen_Trio" />
-			<property name="offer_key" value="quest_sorceryFallen_Trio" />
-			<property name="category_key" value="challenge" />
-			<property name="icon" value="uic_symbol_pentagram" />
-			<property name="difficulty" value="hard"/>
-			<property name="shareable" value="true" />
-				<objective type="RandomGoto" value="800-1200" phase="1">
-					<property name="completion_distance" value="50"/>
-					<property name="nav_object" value="quest" />
-				</objective>
-				<objective type="RallyPoint">
-					<property name="start_mode" value="Create"/>
-					<property name="phase" value="2"/>
-					<property name="nav_object" value="rally" />
-				</objective>
-				<action type="SpawnEnemy" id="sorceryFallenQuestFire" value="1-2" phase="3" />
-				<action type="SpawnEnemy" id="sorceryFallenQuestIce" value="1-2" phase="3" />
-				<action type="SpawnEnemy" id="sorceryFallenQuestLightning" value="1-2" phase="3" />
-				<action type="SpawnEnemy" id="sorceryFallenFire" value="1-2" phase="3" />
-				<action type="SpawnEnemy" id="sorceryFallenIce" value="1-2" phase="3" />
-				<action type="SpawnEnemy" id="sorceryFallenLightning" value="1-2" phase="3" />
-				<objective type="ZombieKill" id="sorceryFallenFire" value="1" phase="3" />
-				<objective type="ZombieKill" id="sorceryFallenIce" value="1" phase="3" />
-				<objective type="ZombieKill" id="sorceryFallenLightning" value="1" phase="3" />
-			<reward type="Exp" value="6666" />
-			<reward type="Item" id="resourceRitualStoneFire" value="1" />
-			<reward type="Item" id="resourceRitualStoneIce" value="1" />
-			<reward type="Item" id="resourceRitualStoneLightning" value="1" />
-		</quest>
-	<!-- END - FALLEN QUESTS __________________________________________________________________________________ -->
+
 		
 		
 <!-- DEV: TEST QUESTS -->
@@ -1730,8 +2315,295 @@
 	
 <!-- END - TEST QUEST -->
 		
+		
+		
+		
+		
+		<quest id="sorcery_intro_fetch">
+			<property name="name_key" value="intro fetch"/>
+			<property name="subtitle_key" value="Intro Fetch"/>
+			<property name="description_key" value="This is a fetch test quest for dev purposes"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="challenge"/>
+			<property name="difficulty" value="easy"/>
+			<property name="difficulty_tier" value="1"/>
+			<property name="offer_key" value="Test the fetch objective."/>
+			<property name="statement_key" value="Find the test fetch item in the POI."/>
+			<property name="response_key" value="Intro Test - Fetch"/>
+
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="Here is Altins Chest"/>
+
+			<objective type="RandomGotoNPC" phase="1">
+				<property name="completion_distance" value="20"/>
+				<property name="distance" value="50-100"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally" />
+			</objective>
+			
+			<action type="SpawnEnemy" id="zombieArlene" value="1" phase="3" />
+			<objective type="ZombieKill" id="zombieArlene" value="1" phase="3" />
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="777"/>
+			<reward type="Item" id="cnt_SorceryCrateIntro" ischosen="true" isfixed="true" value="1"/>
+			
+			<!-- <property name="unique_key" value="traderquest" /> -->
+			
+			<property name="quest_type" value="special" />
+		</quest>
+		
+		
+		<quest id="sorcery_special_test">
+			<property name="name_key" value="Sorcery Special Quest"/>
+			<property name="subtitle_key" value="Sorcery Special Quest"/>
+			<property name="description_key" value="Test Quest"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="quest"/>
+			<property name="difficulty" value="easy"/>
+			<property name="difficulty_tier" value="1"/>
+			<property name="offer_key" value="Test the fetch objective."/>
+			<property name="statement_key" value="Find the test fetch item in the POI."/>
+			<property name="response_key" value="Special Quest - Fetch"/>
+
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="Here is Altins Chest"/>
+
+			<objective type="RandomGotoNPC" phase="1">
+				<property name="completion_distance" value="20"/>
+				<property name="distance" value="50-100"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally" />
+			</objective>
+			
+			<action type="SpawnEnemy" id="zombieArlene" value="1" phase="3" />
+			<objective type="ZombieKill" id="zombieArlene" value="1" phase="3" />
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="777"/>
+			<reward type="Item" id="cnt_SorceryCrateIntro" ischosen="true" isfixed="true" value="1"/>
+			
+			<!-- <property name="unique_key" value="traderquest" /> -->
+			
+			<property name="quest_type" value="special" />
+		</quest>
+		
+		<quest id="sorcery_special_test2">
+			<property name="name_key" value="Sorcery Special Quest 2"/>
+			<property name="subtitle_key" value="Sorcery Special Quest 2"/>
+			<property name="description_key" value="Test Quest 2"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="shareable" value="false"/>
+			<property name="repeatable" value="false"/>
+			<property name="category_key" value="quest"/>
+			<property name="difficulty" value="easy"/>
+			<property name="difficulty_tier" value="1"/>
+			<property name="offer_key" value="Test the fetch objective."/>
+			<property name="statement_key" value="Find the test fetch item in the POI."/>
+			<property name="response_key" value="Special Quest 2 - Fetch"/>
+
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="Here is Altins Chest"/>
+
+			<objective type="RandomGotoNPC" phase="1">
+				<property name="completion_distance" value="20"/>
+				<property name="distance" value="50-100"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally" />
+			</objective>
+			
+			<action type="SpawnEnemy" id="zombieArlene" value="1" phase="3" />
+			<objective type="ZombieKill" id="zombieArlene" value="1" phase="3" />
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="777"/>
+			<reward type="Item" id="cnt_SorceryCrateIntro" ischosen="true" isfixed="true" value="1"/>
+			
+			<!-- <property name="unique_key" value="traderquest" /> -->
+			
+			<property name="quest_type" value="special" />
+		</quest>
+		
+	<!-- REPEATABLE -->
+	<!-- SHAREABLE -->
+		<quest id="sorcery_spawnkill_arlene">
+			<property name="name_key" value="Sorcery Spawn Kill"/>
+			<property name="subtitle_key" value="Sorcery Spawn Kill"/>
+			<property name="description_key" value="Sorcery Spawn Kill"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="shareable" value="true"/>
+			<property name="repeatable" value="true"/>
+			<property name="category_key" value="quest"/>
+			<property name="difficulty" value="easy"/>
+			<property name="difficulty_tier" value="1"/>
+			<property name="offer_key" value="Test Spawn Kill"/>
+			<property name="statement_key" value="Go to the Rally and start quest."/>
+			<property name="response_key" value="Spawn Kill - Arlene"/>
+
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="Excellent! You brought me more Blood."/>
+
+			<objective type="RandomGotoNPC" phase="1">
+				<property name="completion_distance" value="20"/>
+				<property name="distance" value="50-100"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally" />
+			</objective>
+			
+			<action type="SpawnEnemy" id="zombieArlene" value="5" phase="3" />
+			<objective type="ZombieKill" id="zombieArlene" value="1" phase="3" />
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="777"/>
+			<reward type="Item" id="cnt_SorceryCrateIntro" ischosen="true" isfixed="true" value="1"/>
+			
+			<!-- <property name="unique_key" value="traderquest" /> -->
+			<!-- <property name="quest_type" value="special" /> -->
+		</quest>
+		
+		<quest id="sorcery_spawnkill_arlene2">
+			<property name="name_key" value="Sorcery Spawn Kill2"/>
+			<property name="subtitle_key" value="Sorcery Spawn Kill2"/>
+			<property name="description_key" value="Sorcery Spawn Kill2"/>
+			<property name="icon" value="ui_game_symbol_quest"/>
+			<property name="shareable" value="true"/>
+			<property name="repeatable" value="true"/>
+			<property name="category_key" value="quest"/>
+			<property name="difficulty" value="easy"/>
+			<property name="difficulty_tier" value="2"/>
+			<property name="offer_key" value="Test Spawn Kill2"/>
+			<property name="statement_key" value="Go to the Rally and start quest."/>
+			<property name="response_key" value="Spawn Kill - Arlene2"/>
+
+			<property name="completiontype" value="TurnIn"/>
+			<property name="completion_key" value="Excellent! You brought me more Blood."/>
+
+			<objective type="RandomGotoNPC" phase="1">
+				<property name="completion_distance" value="20"/>
+				<property name="distance" value="50-100"/>
+				<property name="nav_object" value="quest" />
+			</objective>
+
+			<objective type="RallyPoint">
+				<property name="start_mode" value="Create"/>
+				<property name="phase" value="2"/>
+				<property name="nav_object" value="rally" />
+			</objective>
+			
+			<action type="SpawnEnemy" id="zombieArlene" value="5" phase="3" />
+			<objective type="ZombieKill" id="zombieArlene" value="1" phase="3" />
+			
+			<objective type="ReturnToNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<objective type="InteractWithNPC">
+				<property name="phase" value="4"/>
+				<property name="nav_object" value="return_to_trader" />
+			</objective>
+
+			<reward type="Exp" value="777"/>
+			<reward type="Item" id="cnt_SorceryCrateIntro" ischosen="true" isfixed="true" value="1"/>
+			
+			<!-- <property name="unique_key" value="traderquest" /> -->
+			<!-- <property name="quest_type" value="special" /> -->
+		</quest>
+		
+		
+		
+		
+		
+		<!-- ARCANE TRADER: QUESTS -->
+		<quest_list id="trader_sorcery_quests">
+			<!-- Special -->
+			<!-- <quest id="quest_sorcery_introtraderelixir"/> -->
+			<!-- Tier 1 -->
+			<quest id="quest_sorcery_fallenfire"/>
+			<quest id="quest_sorcery_fallenice"/>
+			<quest id="quest_sorcery_fallenlightning"/>
+			<!-- Tier 2 -->
+			<quest id="quest_sorcery_fallentrio"/>
+			<quest id="quest_sorcery_fallencamp_fetch"/>
+			<!-- Tier 3 -->
+			<quest id="quest_sorcery_fallencamp_clear"/>
+			<!-- Tier 4 -->
+			<quest id="quest_sorcery_fallenfire_t4"/>
+			<quest id="quest_sorcery_fallenice_t4"/>
+			<quest id="quest_sorcery_fallenlightning_t4"/>
+			<!-- Tier 5 -->
+			<quest id="quest_sorcery_fallentrio_t5"/>
+		</quest_list>
+		
 	</append>
 	
-	<!-- REMOVE -->
-	<!-- <remove xpath="/quests/quest[@id='quest_BasicSurvival1']/action[@type='TrackQuest']" /> -->
+	
+	
+	
+	
+	
+	<append xpath="/quests/quest_items">
+		<quest_item id="70" name="questSorcerySupplies" description_key="questSorcerySuppliesDesc" icon="questSorcerySupplies"/>
+	</append>
+
 </Sorcery>

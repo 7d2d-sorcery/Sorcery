@@ -1,51 +1,63 @@
 <Sorcery>
- <!--__________________________________________________________________________________
-		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
-		__________________________________________________________________________________
-		2021 "DEVRIX"
-		All Rights Reserved.
-		__________________________________________________________________________________
-		HOME: http://sorcerymod.com
-		AUTHOR: http://author.sorcerymod.com
-		FORUM: http://forum.sorcerymod.com
-		DISCORD: http://discord.sorcerymod.com
-		YOUTUBE: http://youtube.sorcerymod.com
-		DOWNLOAD: http://download.sorcerymod.com
-		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
-		__________________________________________________________________________________
-		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
-		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
-		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
-		
-		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
-		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
-		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
-		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
-		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
-		of using this mod.
-		
-		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
-		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
-		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
-		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
-		redistributed outside of its original distribution channels.
-		
-		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
-		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
-		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
-		possible. Without their support, it is not possible to put in the enormous amount of time required to 
-		create the plethora of unique assets that make Sorcery.
-		
-		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
-		__________________________________________________________________________________
-		
-		DISCLAIMER
-		__________________________________________________________________________________
-		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
-		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
-		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
-		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
-		__________________________________________________________________________________-->
+ <!--_____________________________________________________________________________________________________________________
+	TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+	_____________________________________________________________________________________________________________________
+	2022 "DEVRIX"
+	All Rights Reserved.
+	_____________________________________________________________________________________________________________________
+	HOME: http://sorcerymod.com
+	AUTHOR: http://author.sorcerymod.com
+	FORUM: http://forum.sorcerymod.com
+	DISCORD: http://discord.sorcerymod.com
+	YOUTUBE: http://youtube.sorcerymod.com
+	DOWNLOAD: http://download.sorcerymod.com
+	TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+	_____________________________________________________________________________________________________________________
+	NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+	the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+	irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+
+	USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+	with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+	may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+	mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+	Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+	of using this mod.
+
+	REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+	to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+	direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+	Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+	redistributed outside of its original distribution channels.
+
+	PROHIBITED USE: Users are not permitted to modify, or bypass, Supporter Exclusive perks or items in any way.
+	The free in-game "Supporter Key Item" can be obtained through normal game means (loot, trader) and will unlock all 
+	supporter exclusive perks and items. Modifying or bypassing Supporter Exclusive perks or items is a violation of the 
+	Sorcery Terms of Use.
+
+	CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+	hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+	and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+	possible. Without their support, it is not possible to put in the enormous amount of time required to 
+	create the plethora of unique assets that make Sorcery.
+
+	MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+	_____________________________________________________________________________________________________________________
+
+	DISCLAIMER
+	_____________________________________________________________________________________________________________________
+	Sorcery is and will always be 100% FREE. When you choose to Support Development, you are supporting the
+	unique individual work I personally do outside of the game: The creation of unique VFX, SFX, Art, Time creating
+	content and the services/interaction I provide here on Discord. You are not supporting "derivative work of 
+	7 Days to Die" (AKA modding code/changing skins/etc). That is against TFP policy.
+
+	Support Not Required: Those unwilling, or unable, to support development can obtain in-game items 100% FREE.
+	You are not required to support in order to obtain in-game items. Non-supporters are able to obtain any
+	"In-Game Supporter Exclusives" 100% FREE, without supporting development. However, I cannot continue development
+	of Sorcery at this level without Ongoing Support. If support drops below a threshold, development halts. The large
+	amount of time allotted to development is made possible through the generous support given by our Supporters.
+	Disclaimer subject to ongoing changes.
+	_____________________________________________________________________________________________________________________-->
 
 	<!-- BACKPACK -->
 	<!-- <set xpath="/lootcontainers/lootcontainer[@id='2']/@size">10,10</set> -->
@@ -57,99 +69,240 @@
 	<!-- WEAPONS __________________________________________________________________________________ -->
 		<!-- Weapon: FIRE -->
 		<lootgroup name="sorceryWeaponFire" loot_quality_template="QLTemplateT2"> 
-			<item name="spellcastFire"/>
-			<item name="staffFire"/>
-			<item name="sorceryTrap_Fire" count="3,6"/>
+			<item name="spellcastFire" mods="spellcast" mod_chance=".5"/>
+			<item name="spellTurretFire" mods="spellTurret" mod_chance=".5"/>
+			<item name="staffFire" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Fire" count="10,15"/>
 		</lootgroup>
-		<!-- Weapon: FIRE -->
+		<!-- Weapon: ICE -->
 		<lootgroup name="sorceryWeaponIce" loot_quality_template="QLTemplateT2"> 
-			<item name="spellcastIce"/>
-			<item name="staffIce"/>
-			<item name="sorceryTrap_Ice" count="3,6"/>
+			<item name="spellcastIce" mods="spellcast" mod_chance=".5"/>
+			<item name="spellTurretIce" mods="spellTurret" mod_chance=".5"/>
+			<item name="staffIce" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Ice" count="10,15"/>
+		</lootgroup>
+		<!-- Weapon: LIGHTNING -->
+		<lootgroup name="sorceryWeaponLightning" loot_quality_template="QLTemplateT2"> 
+			<item name="spellcastLightning" mods="spellcast" mod_chance=".5"/>
+			<item name="spellTurretLightning" mods="spellTurret" mod_chance=".5"/>
+			<item name="staffLightning" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Lightning" count="10,15"/>
 		</lootgroup>
 	<!-- END - WEAPONS -->
 	
+	<!-- QUEST WEAPONS __________________________________________________________________________________ -->
+		<!-- QUEST GROUP: FIRE WEAPONS -->
+		<lootgroup name="groupQuestSorceryWeaponFireT1" loot_quality_template="questT1QualTemplate"> 
+			<item name="spellcastFire" mods="spellcast" mod_chance=".5"/>
+			<item name="staffFire" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Fire" count="10,15"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryWeaponFireT2" loot_quality_template="questT2QualTemplate"> 
+			<item name="spellcastFire" mods="spellcast" mod_chance=".5"/>
+			<item name="spellTurretFire" mods="spellTurret" mod_chance=".5"/>
+			<item name="staffFire" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Fire" count="20,30"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryWeaponFireT3" loot_quality_template="questT3QualTemplate"> 
+			<item name="spellcastFire" mods="spellcast" mod_chance=".5"/>
+			<item name="spellTurretFire" mods="spellTurret" mod_chance=".5"/>
+			<item name="staffFire" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Fire" count="30,40"/>
+		</lootgroup>
+		<!-- QUEST GROUP: ICE WEAPONS -->
+		<lootgroup name="groupQuestSorceryWeaponIceT1" loot_quality_template="questT1QualTemplate"> 
+			<item name="spellcastIce" mods="spellcast" mod_chance=".5"/>
+			<item name="staffIce" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Ice" count="10,15"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryWeaponIceT2" loot_quality_template="questT2QualTemplate"> 
+			<item name="spellcastIce" mods="spellcast" mod_chance=".5"/>
+			<item name="spellTurretIce" mods="spellTurret" mod_chance=".5"/>
+			<item name="staffIce" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Ice" count="20,30"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryWeaponIceT3" loot_quality_template="questT3QualTemplate"> 
+			<item name="spellcastIce" mods="spellcast" mod_chance=".5"/>
+			<item name="spellTurretIce" mods="spellTurret" mod_chance=".5"/>
+			<item name="staffIce" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Ice" count="30,40"/>
+		</lootgroup>
+		<!-- QUEST GROUP: LIGHTNING WEAPONS -->
+		<lootgroup name="groupQuestSorceryWeaponLightningT1" loot_quality_template="questT1QualTemplate"> 
+			<item name="spellcastLightning" mods="spellcast" mod_chance=".5"/>
+			<item name="staffLightning" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Lightning" count="10,15"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryWeaponLightningT2" loot_quality_template="questT2QualTemplate"> 
+			<item name="spellcastLightning" mods="spellcast" mod_chance=".5"/>
+			<item name="spellTurretLightning" mods="spellTurret" mod_chance=".5"/>
+			<item name="staffLightning" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Lightning" count="20,30"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryWeaponLightningT3" loot_quality_template="questT3QualTemplate"> 
+			<item name="spellcastLightning" mods="spellcast" mod_chance=".5"/>
+			<item name="spellTurretLightning" mods="spellTurret" mod_chance=".5"/>
+			<item name="staffLightning" mods="staff" mod_chance=".5"/>
+			<item name="sorceryTrap_Lightning" count="30,40"/>
+		</lootgroup>
+		
+		<!-- QUEST LOOT: WEAPONS -->
+		<lootgroup name="groupQuestSorceryWeaponsFire">
+			<item group="groupQuestSorceryWeaponFireT1" loot_prob_template="QuestT1Prob"/>
+			<item group="groupQuestSorceryWeaponFireT2" loot_prob_template="QuestT2Prob"/>
+			<item group="groupQuestSorceryWeaponFireT3" loot_prob_template="QuestT3Prob"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryWeaponsIce">
+			<item group="groupQuestSorceryWeaponIceT1" loot_prob_template="QuestT1Prob"/>
+			<item group="groupQuestSorceryWeaponIceT2" loot_prob_template="QuestT2Prob"/>
+			<item group="groupQuestSorceryWeaponIceT3" loot_prob_template="QuestT3Prob"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryWeaponsLightning">
+			<item group="groupQuestSorceryWeaponLightningT1" loot_prob_template="QuestT1Prob"/>
+			<item group="groupQuestSorceryWeaponLightningT2" loot_prob_template="QuestT2Prob"/>
+			<item group="groupQuestSorceryWeaponLightningT3" loot_prob_template="QuestT3Prob"/>
+		</lootgroup>
+		
+	<!-- END - QUEST WEAPONS __________________________________________________________________________________ -->
+	
 	<!-- AMMO __________________________________________________________________________________ -->
+		<!-- Quest Spell Ammo -->
+		<lootgroup name="sorceryQuestSpellAmmo" count="1"> 
+			<item name="spellFire" count="20,30"/>
+			<item name="spellIce" count="20,30"/>
+			<item name="spellLightning" count="20,30"/>
+			<item name="spellArrowFire" count="20,30"/>
+			<item name="spellArrowIce" count="20,30"/>
+			<item name="spellArrowLightning" count="20,30"/>
+			<item name="spellArrowOmni" count="1,2" prob="0.01"/>
+			<item name="spellFire2" prob=".3" count="4,9"/>
+			<item name="spellIce2" prob=".3" count="4,9"/>
+			<item name="spellLightning2" prob=".3" count="4,9"/>
+			<item name="spellFire3" prob=".1" count="3,6"/>
+			<item name="spellIce3" prob=".1" count="3,6"/>
+			<item name="spellLightning3" prob=".1" count="3,6"/>
+		</lootgroup>
+		<lootgroup name="sorceryQuestFireSpellAmmo" count="1"> 
+			<item name="spellFire" count="20,30"/>
+			<item name="spellArrowFire" count="20,30"/>
+			<item name="spellFire2" prob=".3" count="4,9"/>
+			<item name="spellFire3" prob=".1" count="3,6"/>
+		</lootgroup>
+		<lootgroup name="sorceryQuestIceSpellAmmo" count="1"> 
+			<item name="spellIce" count="20,30"/>
+			<item name="spellArrowIce" count="20,30"/>
+			<item name="spellIce2" prob=".3" count="4,9"/>
+			<item name="spellIce3" prob=".1" count="3,6"/>
+		</lootgroup>
+		<lootgroup name="sorceryQuestLightningSpellAmmo" count="1"> 
+			<item name="spellLightning" count="20,30"/>
+			<item name="spellArrowLightning" count="20,30"/>
+			<item name="spellLightning2" count="4,9"/>
+			<item name="spellLightning3" count="3,6"/>
+		</lootgroup>
 		<!-- Spells: ALL -->
 		<lootgroup name="sorcerySpellsAll" count="1"> 
 			<!-- T1 -->
 			<item name="spellFire" count="6,12"/>
 			<item name="spellIce" count="6,12"/>
+			<item name="spellLightning" count="6,12"/>
 			<item name="spellArrowFire" count="6,12"/>
 			<item name="spellArrowIce" count="6,12"/>
+			<item name="spellArrowLightning" count="6,12"/>
 			<!-- T2 -->
 			<item name="spellFire2" prob=".3" count="3,9"/>
 			<item name="spellIce2" prob=".3" count="3,9"/>
+			<item name="spellLightning2" prob=".3" count="3,9"/>
 			<!-- T3 -->
 			<item name="spellFire3" prob=".1" count="1,6"/>
 			<item name="spellIce3" prob=".1" count="1,6"/>
+			<item name="spellLightning3" prob=".1" count="1,6"/>
+			<!-- RARE -->
+			<item name="spellArrowOmni" prob=".01" count="1,2"/>
 		</lootgroup>
 		<!-- Spells: FIRE  -->
 		<lootgroup name="sorcerySpellsFire" count="1"> 
 			<item name="spellFire" count="6,12"/>
+			<item name="spellArrowFire" count="6,12"/>
 			<item name="spellFire2" prob=".3" count="3,9"/>
 			<item name="spellFire3" prob=".1" count="1,6"/>
 		</lootgroup>
 		<!-- Spells: ICE -->
 		<lootgroup name="sorcerySpellsIce" count="1"> 
 			<item name="spellIce" count="6,12"/>
+			<item name="spellArrowIce" count="6,12"/>
 			<item name="spellIce2" prob=".3" count="3,9"/>
 			<item name="spellIce3" prob=".1" count="1,6"/>
+		</lootgroup>
+		<!-- Spells: LIGHTNING -->
+		<lootgroup name="sorcerySpellsLightning" count="1"> 
+			<item name="spellLightning" count="6,12"/>
+			<item name="spellArrowLightning" count="6,12"/>
+			<item name="spellLightning2" count="3,9"/>
+			<item name="spellLightning3" prob=".1" count="1,6"/>
 		</lootgroup>
 	<!-- END - AMMO -->
 	
 	<!-- ARMOR __________________________________________________________________________________ -->
 		<!-- Armor: ARCANE  -->
-		<lootgroup name="sorceryArmor" loot_quality_template="QLTemplateT0"> 
-			<item name="sorceryAccessory_Shades"/>
-			<item name="sorceryArmor_Hood"/>
-			<item name="sorceryArmor_Bandana"/>
-			<item name="sorceryArmor_Robe"/>
-			<item name="sorceryArmor_Chest"/>
-			<item name="sorceryArmor_Shirt"/>
-			<item name="sorceryArmor_Gloves"/>
-			<item name="sorceryArmor_Leg"/>
-			<item name="sorceryArmor_Pants"/>
-			<item name="sorceryArmor_Boots"/>
+		<lootgroup name="sorceryArmor" loot_quality_template="QLTemplateT1"> 
+			<item name="sorceryAccessory_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
 		</lootgroup>
 		<!-- Armor: FIRE -->
 		<lootgroup name="sorceryArmorFire" loot_quality_template="QLTemplateT1"> 
-			<item name="sorceryAccessoryFire_Shades"/>
-			<item name="sorceryArmorFire_Hood"/>
-			<item name="sorceryArmorFire_Bandana"/>
-			<item name="sorceryArmorFire_Robe"/>
-			<item name="sorceryArmorFire_Chest"/>
-			<item name="sorceryArmorFire_Shirt"/>
-			<item name="sorceryArmorFire_Gloves"/>
-			<item name="sorceryArmorFire_Leg"/>
-			<item name="sorceryArmorFire_Pants"/>
-			<item name="sorceryArmorFire_Boots"/>
+			<item name="sorceryAccessoryFire_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
 		</lootgroup>
 		<!-- Armor: ICE -->
 		<lootgroup name="sorceryArmorIce" loot_quality_template="QLTemplateT1"> 
-			<item name="sorceryAccessoryIce_Shades"/>
-			<item name="sorceryArmorIce_Hood"/>
-			<item name="sorceryArmorIce_Bandana"/>
-			<item name="sorceryArmorIce_Robe"/>
-			<item name="sorceryArmorIce_Chest"/>
-			<item name="sorceryArmorIce_Shirt"/>
-			<item name="sorceryArmorIce_Gloves"/>
-			<item name="sorceryArmorIce_Leg"/>
-			<item name="sorceryArmorIce_Pants"/>
-			<item name="sorceryArmorIce_Boots"/>
+			<item name="sorceryAccessoryIce_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
 		</lootgroup>
 		<!-- Armor: LIGHTNING -->
 		<lootgroup name="sorceryArmorLightning" loot_quality_template="QLTemplateT1"> 
-			<item name="sorceryAccessoryLightning_Shades"/>
-			<item name="sorceryArmorLightning_Hood"/>
-			<item name="sorceryArmorLightning_Bandana"/>
-			<item name="sorceryArmorLightning_Robe"/>
-			<item name="sorceryArmorLightning_Chest"/>
-			<item name="sorceryArmorLightning_Shirt"/>
-			<item name="sorceryArmorLightning_Gloves"/>
-			<item name="sorceryArmorLightning_Leg"/>
-			<item name="sorceryArmorLightning_Pants"/>
-			<item name="sorceryArmorLightning_Boots"/>
+			<item name="sorceryAccessoryLightning_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		
+		<!-- OMNI GROUPS -->
+		<!-- Weapons: OMNI -->
+		<lootgroup name="sorceryWeaponsOmni" loot_quality_template="QLTemplateT1"> 
+			<item group="sorceryWeaponFire"/>
+			<item group="sorceryWeaponIce"/>
+			<item group="sorceryWeaponLightning"/>
 		</lootgroup>
 		<!-- Armor: OMNI -->
 		<lootgroup name="sorceryArmorOmni" loot_quality_template="QLTemplateT1"> 
@@ -157,12 +310,188 @@
 			<item group="sorceryArmorFire"/>
 			<item group="sorceryArmorIce"/>
 			<item group="sorceryArmorLightning"/>
-		</lootgroup>		
+		</lootgroup>
 	<!-- END - ARMOR __________________________________________________________________________________ -->
+	
+	<!-- QUEST ARMOR __________________________________________________________________________________ -->
+		<!-- QUEST GROUP: ARCANE ARMOR -->
+		<lootgroup name="groupQuestSorceryArmorArcaneT1" loot_quality_template="questT1QualTemplate"> 
+			<item name="sorceryAccessory_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryArmorArcaneT2" loot_quality_template="questT2QualTemplate"> 
+			<item name="sorceryAccessory_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryArmorArcaneT3" loot_quality_template="questT3QualTemplate"> 
+			<item name="sorceryAccessory_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmor_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		<!-- QUEST GROUP: FIRE ARMOR -->
+		<lootgroup name="groupQuestSorceryArmorFireT1" loot_quality_template="questT1QualTemplate"> 
+			<item name="sorceryAccessoryFire_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryArmorFireT2" loot_quality_template="questT2QualTemplate"> 
+			<item name="sorceryAccessoryFire_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryArmorFireT3" loot_quality_template="questT3QualTemplate"> 
+			<item name="sorceryAccessoryFire_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorFire_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		<!-- QUEST GROUP: ICE ARMOR -->
+		<lootgroup name="groupQuestSorceryArmorIceT1" loot_quality_template="questT1QualTemplate"> 
+			<item name="sorceryAccessoryIce_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryArmorIceT2" loot_quality_template="questT2QualTemplate"> 
+			<item name="sorceryAccessoryIce_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryArmorIceT3" loot_quality_template="questT3QualTemplate"> 
+			<item name="sorceryAccessoryIce_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorIce_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		<!-- QUEST GROUP: LIGHTNING ARMOR -->
+		<lootgroup name="groupQuestSorceryArmorLightningT1" loot_quality_template="questT1QualTemplate"> 
+			<item name="sorceryAccessoryLightning_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryArmorLightningT2" loot_quality_template="questT2QualTemplate"> 
+			<item name="sorceryAccessoryLightning_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryArmorLightningT3" loot_quality_template="questT3QualTemplate"> 
+			<item name="sorceryAccessoryLightning_Shades" mods="sorceryAccessory,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Hood" mods="armorHead,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Bandana" mods="sorceryBandana,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Robe" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Chest" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Shirt" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Gloves" mods="armorHands,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Leg" mods="armorLegs,armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Pants" mods="armor,clothing" mod_chance=".5"/>
+			<item name="sorceryArmorLightning_Boots" mods="armorFeet,armor,clothing" mod_chance=".5"/>
+		</lootgroup>
+
+		<!-- QUEST LOOT: ARMOR -->
+		<lootgroup name="groupQuestSorceryArmorArcane">
+			<item group="groupQuestSorceryArmorArcaneT1" loot_prob_template="QuestT1Prob"/>
+			<item group="groupQuestSorceryArmorArcaneT2" loot_prob_template="QuestT2Prob"/>
+			<item group="groupQuestSorceryArmorArcaneT3" loot_prob_template="QuestT3Prob"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryArmorFire">
+			<item group="groupQuestSorceryArmorFireT1" loot_prob_template="QuestT1Prob"/>
+			<item group="groupQuestSorceryArmorFireT2" loot_prob_template="QuestT2Prob"/>
+			<item group="groupQuestSorceryArmorFireT3" loot_prob_template="QuestT3Prob"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryArmorIce">
+			<item group="groupQuestSorceryArmorIceT1" loot_prob_template="QuestT1Prob"/>
+			<item group="groupQuestSorceryArmorIceT2" loot_prob_template="QuestT2Prob"/>
+			<item group="groupQuestSorceryArmorIceT3" loot_prob_template="QuestT3Prob"/>
+		</lootgroup>
+		<lootgroup name="groupQuestSorceryArmorLightning">
+			<item group="groupQuestSorceryArmorLightningT1" loot_prob_template="QuestT1Prob"/>
+			<item group="groupQuestSorceryArmorLightningT2" loot_prob_template="QuestT2Prob"/>
+			<item group="groupQuestSorceryArmorLightningT3" loot_prob_template="QuestT3Prob"/>
+		</lootgroup>		
+	<!-- END - QUEST ARMOR __________________________________________________________________________________ -->
+		
 	
 	<!-- RUNES __________________________________________________________________________________ -->
 		<!-- Runes: SILVER -->
 		<lootgroup name="sorceryRunes_silver"> 
+			<item name="rune_Traveler"/>
+			<item name="rune_DeepPocket"/>
 			<item name="rune_LockShatter"/>
 			<item name="rune_DoorShatter"/>
 			<item name="runeFire_TurretAuraBurn"/>
@@ -184,6 +513,7 @@
 		</lootgroup>
 		<!-- Runes: GOLD -->
 		<lootgroup name="sorceryRunes_gold"> 
+			<item name="rune_DeeperPocket"/>
 			<item name="rune_Silence"/>
 			<item name="rune_SupporterAstryael"/>
 			<item name="rune_SupporterDragoness"/>
@@ -200,12 +530,17 @@
 			<item name="runeIce_CometCaster"/>
 			<item name="runeIce_IceStormCaster"/>
 			<item name="runeIce_NovaCaster"/>
+			<item name="runeLightning_NovaCaster"/>
+			<item name="runeLightning_StrikeCaster"/>
 		</lootgroup>
 		<!-- Runes: CLASS -->
 		<lootgroup name="sorceryRunes_class"> 
 			<item name="rune_ClassSpellcaster1"/>
 			<item name="rune_ClassSpellcaster2"/>
 			<item name="rune_ClassSpellcaster3"/>
+			<item name="rune_ClassSummoner1"/>
+			<item name="rune_ClassSummoner2"/>
+			<item name="rune_ClassSummoner3"/>
 			<item name="rune_ClassSpellGunner1"/>
 			<item name="rune_ClassSpellGunner2"/>
 			<item name="rune_ClassSpellGunner3"/>
@@ -250,10 +585,11 @@
 			<item name="rune_AugmentLogging"/>
 			<item name="runeIce_LuckyEssence"/>
 			<item name="runeFire_LuckyEssence"/>
+			<item name="supporterKey" count="1" prob=".08"/>
 			<!-- groups -->
-			<item group="sorceryRunes_silver" count="1" prob="0.9"/> <!-- 3 -->
-			<item group="sorceryRunes_gold" count="1" prob="0.8"/> <!-- 2 -->
-			<item group="sorceryRunes_class" count="1" prob="0.8"/> <!-- 2 -->
+			<item group="sorceryRunes_silver" count="1" prob=".8"/>
+			<item group="sorceryRunes_gold" count="1" prob=".7"/>
+			<item group="sorceryRunes_class" count="1" prob=".6"/>
 		</lootgroup>
 	<!-- END - RUNES -->	
 		
@@ -275,6 +611,8 @@
 			<item name="potionFire_Sorcery"/>
 			<item name="potionIce_Essence"/>
 			<item name="potionIce_Sorcery"/>
+			<item name="potionLightning_Essence"/>
+			<item name="potionLightning_Sorcery"/>
 			<item name="potion_Remedy" prob=".3"/>
 			<item name="potion_Haste" prob=".2"/>
 			<item name="sorceryElixir_attFire" prob=".01"/>
@@ -295,6 +633,13 @@
 			<item name="potionIce_Sorcery" prob=".1"/>
 			<item name="sorceryElixir_attIce" prob=".01"/>
 		</lootgroup>
+		<!-- Potions: LIGHTNING  -->
+		<lootgroup name="sorceryPotionsLightning"> 
+			<item name="potionBottle" count="1,2" prob=".6"/>
+			<item name="potionLightning_Essence"/>
+			<item name="potionLightning_Sorcery" prob=".1"/>
+			<item name="sorceryElixir_attLightning" prob=".01"/>
+		</lootgroup>
 	<!-- END - POTIONS __________________________________________________________________________________ -->
 		
 	<!-- SCROLLS __________________________________________________________________________________ -->
@@ -313,11 +658,16 @@
 			<item name="scroll_DrainSpirit"/>
 			<item name="scroll_DrainStamina"/>
 			<item name="scroll_Recall"/>
+			<item name="scroll_TeleportLandclaim"/>
+			<item name="scroll_TeleportBackpack"/>
+			<item name="scroll_Silence" prob=".1"/>
+			<item name="scroll_EnergyRegen" prob=".1"/>
 			<item name="scroll_ConjureEssence" prob=".2"/>
 			<item name="scrollFire_ConjureEssence" prob=".2"/>
 			<item name="scrollIce_ConjureEssence" prob=".2"/>
 			<item name="scrollLightning_ConjureEssence" prob=".2"/>
-			<item name="scroll_EnergyRegen" prob=".5"/>
+			<!-- <item name="scroll_ConjurePortalArcaneTrader" prob=".01"/> -->
+			<!-- <item name="scroll_ConjurePortalMundaneTrader" prob=".01"/> -->
 		</lootgroup>
 		<!-- Scrolls: FIRE  -->
 		<lootgroup name="sorceryScrollsFire"> 
@@ -329,6 +679,11 @@
 			<item name="scrollIce_Weapon"/>
 			<item name="scrollIce_Ammo"/>
 		</lootgroup>
+		<!-- Scrolls: LIGHTNING  -->
+		<lootgroup name="sorceryScrollsLightning"> 
+			<item name="scrollLightning_Weapon"/>
+			<item name="scrollLightning_Ammo"/>
+		</lootgroup>
 		<!-- Scrolls: WEAPON  -->
 		<lootgroup name="sorceryScrollsWeapon" count="1"> 
 			<item name="scrollFire_Weapon"/>
@@ -338,6 +693,13 @@
 			<item name="scrollIce_Ammo"/>
 			<item name="scrollLightning_Ammo"/>
 		</lootgroup>
+		<!-- Scrolls: OMNI -->
+		<lootgroup name="sorceryScrollsOmni" count="1"> 
+			<item group="sorceryScrollsArcane"/>
+			<item group="sorceryScrollsFire"/>
+			<item group="sorceryScrollsIce"/>
+			<item group="sorceryScrollsLightning"/>
+		</lootgroup>
 	<!-- END - SCROLLS __________________________________________________________________________________ -->
 		
 		<!-- BOOKS & SCROLLS -->
@@ -345,15 +707,82 @@
 			<item group="sorceryScrollsArcane"/>
 			<item group="sorceryScrollsFire"/>
 			<item group="sorceryScrollsIce"/>
-			<item name="q_sorceryFallen_Fire" prob="0.2"/>
-			<item name="q_sorceryFallen_Ice" prob="0.2"/>
-			<item name="q_sorceryFallen_Lightning" prob="0.2"/>
-			<item name="q_sorceryFallen_Trio" prob="0.1"/>
+			<item group="sorceryScrollsLightning"/>
+			<!-- <item name="q_sorceryFallen_Fire" prob="0.2"/> -->
+			<!-- <item name="q_sorceryFallen_Ice" prob="0.2"/> -->
+			<!-- <item name="q_sorceryFallen_Lightning" prob="0.2"/> -->
+			<!-- <item name="q_sorceryFallen_Trio" prob="0.1"/> -->
 			<item name="q_sorcerySkillGrimoire" prob="0.05"/>
-		</lootgroup>	
+		</lootgroup>
+		<lootgroup name="sorceryBooksScrollsFire" count="1"> 
+			<item group="sorceryScrollsArcane"/>
+			<item group="sorceryScrollsFire"/>
+			<item name="q_sorcerySkillGrimoire" prob="0.05"/>
+		</lootgroup>
+		<lootgroup name="sorceryBooksScrollsIce" count="1"> 
+			<item group="sorceryScrollsArcane"/>
+			<item group="sorceryScrollsIce"/>
+			<item name="q_sorcerySkillGrimoire" prob="0.05"/>
+		</lootgroup>
+		<lootgroup name="sorceryBooksScrollsLightning" count="1"> 
+			<item group="sorceryScrollsArcane"/>
+			<item group="sorceryScrollsLightning"/>
+			<item name="q_sorcerySkillGrimoire" prob="0.05"/>
+		</lootgroup>
+		
+	<!-- CURRENCY __________________________________________________________________________________ -->
+		<!-- CURRENCY QUESTS -->
+		<lootgroup name="sorceryQuestCurrency"> 
+			<item name="resourceSilverNugget" count="3,6"/> <!-- val: 250 -->
+			<item name="resourceGoldNugget" count="2,4"/> <!-- val: 700 -->
+			<item name="resourceRawDiamond" count="1,2" prob="0.2"/> <!-- val: 1500 -->
+		</lootgroup>
+		<lootgroup name="sorceryQuestCurrency2"> 
+			<item name="resourceSilverNugget" count="4,7"/> <!-- val: 250 -->
+			<item name="resourceGoldNugget" count="3,4"/> <!-- val: 700 -->
+			<item name="resourceRawDiamond" count="2,3" prob="0.3"/> <!-- val: 1500 -->
+		</lootgroup>
+		<lootgroup name="sorceryQuestCurrency3"> 
+			<item name="resourceSilverNugget" count="5,8"/> <!-- val: 250 -->
+			<item name="resourceGoldNugget" count="4,5"/> <!-- val: 700 -->
+			<item name="resourceRawDiamond" count="3,4" prob="0.35"/> <!-- val: 1500 -->
+		</lootgroup>
+		<lootgroup name="sorceryQuestCurrency4"> 
+			<item name="resourceSilverNugget" count="6,9"/> <!-- val: 250 -->
+			<item name="resourceGoldNugget" count="5,6"/> <!-- val: 700 -->
+			<item name="resourceRawDiamond" count="4,5" prob="0.4"/> <!-- val: 1500 -->
+		</lootgroup>
+		<lootgroup name="sorceryQuestCurrency5"> 
+			<item name="resourceSilverNugget" count="7,10"/> <!-- val: 250 -->
+			<item name="resourceGoldNugget" count="6,7"/> <!-- val: 700 -->
+			<item name="resourceRawDiamond" count="5,6" prob="0.45"/> <!-- val: 1500 -->
+		</lootgroup>
 		
 	<!-- RESOURCES __________________________________________________________________________________ -->
-		<!-- FIRE -->
+		<!-- RESOURCE QUESTS -->
+		<lootgroup name="sorceryQuestResources"> 
+			<item name="resourcePowderArcane" count="40,80"/>
+			<item name="resourceExtractOmni" count="40,80"/>
+			<item name="resourceExtractFire" count="40,80"/>
+			<item name="resourceExtractIce" count="40,80"/>
+			<item name="resourceExtractLightning" count="40,80"/>
+		</lootgroup>
+		<lootgroup name="sorceryQuestFireResources"> 
+			<item name="resourcePowderArcane" count="40,80"/>
+			<item name="resourceExtractOmni" count="40,80"/>
+			<item name="resourceExtractFire" count="40,80"/>
+		</lootgroup>
+		<lootgroup name="sorceryQuestIceResources">
+			<item name="resourcePowderArcane" count="40,80"/>
+			<item name="resourceExtractOmni" count="40,80"/>
+			<item name="resourceExtractIce" count="40,80"/>
+		</lootgroup>
+		<lootgroup name="sorceryQuestLightningResources">
+			<item name="resourcePowderArcane" count="40,80"/>
+			<item name="resourceExtractOmni" count="40,80"/>
+			<item name="resourceExtractLightning" count="40,80"/>
+		</lootgroup>
+		<!-- ARCANE -->
 		<lootgroup name="sorceryResourcesArcane"> 
 			<item name="resourcePowderArcane"/>
 			<item name="resourceThreadArcane"/>
@@ -383,12 +812,13 @@
 	<!-- FALLEN __________________________________________________________________________________ -->
 		<!-- Fallen Stash -->
 		<lootgroup name="sorceryLoot_FallenStash" count="all">
-			<item group="sorceryRunes_class" count="1"/>
-			<item group="sorceryRunes" count="1"/>
-			<item group="sorceryPotions" count="2,4"/>
-			<item group="sorceryBooksScrolls" count="2,4"/>
-			<item group="sorceryArmorOmni" count="2,4"/>
-			<item name="resourceGoldNugget" count="2,6" /> <!-- 700 -->
+			<item group="sorceryRunes_class" count="0,1"/>
+			<item group="sorceryRunes_gold" count="0,1"/>
+			<item group="sorceryRunes" count="1,2"/>
+			<item group="sorceryPotions" count="2,3"/>
+			<item group="sorceryBooksScrolls" count="2,3"/>
+			<item group="sorceryArmorOmni" count="2,3"/>
+			<item name="resourceGoldNugget" count="3,6" /> <!-- 700 -->
 			<item name="resourceRawDiamond" count="0,4" /> <!-- 1500 -->
 		</lootgroup>	
 	
@@ -400,46 +830,42 @@
 			<item group="sorceryPotions" count="1,2"/>
 			<item group="sorceryBooksScrolls" count="1"/>
 			<item group="sorceryArmor" count="1" prob=".5"/>
-			<item group="sorceryRunes" count="1" prob=".4"/>
-			<item group="sorceryRunes_class" count="1" prob=".4"/>
+			<item group="sorceryRunes" count="1" prob=".5"/>
+			<item group="sorceryRunes_class" count="1" prob=".2"/>
 		</lootgroup>	
 		<!-- Fallen: FIRE -->
 		<lootgroup name="sorceryFallen_Fire"> 
 			<item name="sorceryElixir_attFire" count="1" prob=".05" />
-			<!-- <item name="q_sorceryFallen_Fire" count="1" prob=".1" /> -->
-			<!-- <item name="resourceRitualStoneFire" count="1" prob=".1" /> -->
 			<item name="toolFireCore" count="1" prob=".1" />
 			<item name="toolHammerFire" count="1" prob=".1" />
+			<item group="sorceryWeaponFire" count="1" prob=".1"/>
 			<item group="sorcerySpellsFire" count="2"/>
 			<item group="sorceryPotionsFire" count="1"/>
 			<item group="sorceryScrollsFire" count="1"/>
-			<item group="sorceryWeaponFire" count="1" prob=".1"/>
 			<item group="sorceryArmorFire" count="1"/>
 			<item group="sorceryFallen_All"/>
 		</lootgroup>
 		<!-- Fallen: ICE -->
 		<lootgroup name="sorceryFallen_Ice"> 
 			<item name="sorceryElixir_attIce" count="1" prob=".05" />
-			<!-- <item name="q_sorceryFallen_Ice" count="1" prob=".1" /> -->
-			<!-- <item name="resourceRitualStoneIce" count="1" prob=".1" /> -->
 			<item name="toolIceCore" count="1" prob=".1" />
 			<item name="toolHammerIce" count="1" prob=".1" />
+			<item group="sorceryWeaponIce" count="1" prob=".1"/>
 			<item group="sorcerySpellsIce" count="2"/>
 			<item group="sorceryPotionsIce" count="1"/>
 			<item group="sorceryScrollsIce" count="1"/>
-			<item group="sorceryWeaponIce" count="1" prob=".1"/>
 			<item group="sorceryArmorIce" count="1"/>
 			<item group="sorceryFallen_All"/>
 		</lootgroup>
 		<!-- Fallen: LIGHTNING -->
 		<lootgroup name="sorceryFallen_Lightning"> 
 			<item name="sorceryElixir_attLightning" count="1" prob=".05" />
-			<!-- <item name="q_sorceryFallen_Lightning" count="1" prob=".1" /> -->
-			<!-- <item name="q_sorceryFallen_Ice" count="1" prob=".1" /> -->
-			<!-- <item name="q_sorceryFallen_Fire" count="1" prob=".1" /> -->
-			<!-- <item name="resourceRitualStoneLightning" count="1" prob=".1" /> -->
 			<item name="toolLightningCore" count="1" prob=".1" />
 			<item name="toolHammerLightning" count="1" prob=".1" />
+			<item group="sorceryWeaponLightning" count="1" prob=".1"/>
+			<item group="sorcerySpellsLightning" count="2"/>
+			<item group="sorceryPotionsLightning" count="1"/>
+			<item group="sorceryScrollsLightning" count="1"/>
 			<item group="sorceryArmorLightning" count="1"/>
 			<item group="sorceryFallen_All"/>
 		</lootgroup>
@@ -452,80 +878,154 @@
 			<item name="resourceRitualStoneFire" count="1"/>
 			<item name="resourceRitualStoneIce" count="1"/>
 			<item name="resourceRitualStoneLightning" count="1"/>
-			<item name="q_sorceryFallen_Fire" count="1" prob="0.1"/>
-			<item name="q_sorceryFallen_Ice" count="1" prob="0.1"/>
-			<item name="q_sorceryFallen_Lightning" count="1" prob="0.1"/>
-			<item name="q_sorceryFallen_Trio" count="1" prob="0.05"/>
 			<item name="q_sorcerySkillGrimoire" count="1" prob="0.01"/>
 		</lootgroup>
 		<lootgroup name="sorceryLootShrine_Fire">
 			<item name="resourceRitualStoneFire" count="1"/>
-			<item name="q_sorceryFallen_Fire" count="1" prob="0.2"/>
-			<item name="q_sorceryFallen_Trio" count="1" prob="0.03"/>
 			<item name="q_sorcerySkillGrimoire" count="1" prob="0.01"/>
 			<item name="sorceryElixir_attFire" count="1" prob="0.01"/>
 		</lootgroup>
 		<lootgroup name="sorceryLootShrine_Ice">
 			<item name="resourceRitualStoneIce" count="1"/>
-			<item name="q_sorceryFallen_Ice" count="1" prob="0.2"/>
-			<item name="q_sorceryFallen_Trio" count="1" prob="0.03"/>
 			<item name="q_sorcerySkillGrimoire" count="1" prob="0.01"/>
 			<item name="sorceryElixir_attIce" count="1" prob="0.01"/>
 		</lootgroup>
 		<lootgroup name="sorceryLootShrine_Lightning">
 			<item name="resourceRitualStoneLightning" count="1"/>
-			<item name="q_sorceryFallen_Lightning" count="1" prob="0.2"/>
-			<item name="q_sorceryFallen_Trio" count="1" prob="0.03"/>
 			<item name="q_sorcerySkillGrimoire" count="1" prob="0.01"/>
 			<item name="sorceryElixir_attLightning" count="1" prob="0.01"/>
 		</lootgroup>
 	<!-- END - SHRINE LOOT __________________________________________________________________________________ -->
 		
+	<!-- TREE LOOT __________________________________________________________________________________ -->
+		<lootgroup name="sorceryLootTree_Fire">
+			<item name="treePlanted_EssenceFireSeed" count="1"/>
+		</lootgroup>
+		<lootgroup name="sorceryLootTree_Ice">
+			<item name="treePlanted_EssenceIceSeed" count="1"/>
+		</lootgroup>
+				<lootgroup name="sorceryLootTree_Lightning">
+			<item name="treePlanted_EssenceLightningSeed" count="1"/>
+		</lootgroup>
+	<!-- END - TREE LOOT __________________________________________________________________________________ -->
+		
+		
+	<!-- SPELLFORGE STATION LOOT __________________________________________________________________________________ -->
+		<lootgroup name="sorceryLootSpellforge_Fire"> 
+			<item name="resourceEssenceFire" count="300,500"/>
+			<item name="spellFire" count="10,20"/>
+			<item name="spellFire2" count="5,10"/>
+			<item name="spellFire3" count="3,6"/>
+		</lootgroup>
+		<lootgroup name="sorceryLootSpellforge_Ice"> 
+			<item name="resourceEssenceIce" count="300,500"/>
+			<item name="spellIce" count="10,20"/>
+			<item name="spellIce2" count="5,10"/>
+			<item name="spellIce3" count="3,6"/>
+		</lootgroup>
+		<lootgroup name="sorceryLootSpellforge_Lightning"> 
+			<item name="resourceEssenceLightning" count="300,500"/>
+			<item name="spellLightning" count="10,20"/>
+			<item name="spellLightning2" count="5,10"/>
+			<item name="spellLightning3" count="3,6"/>
+		</lootgroup>
+	<!-- END - SPELLFORGE STATION LOOT __________________________________________________________________________________ -->
+	
+	
+	<!-- ALCHEMY STATION LOOT __________________________________________________________________________________ -->
+		<lootgroup name="sorceryLootAlchemy"> 
+			<item name="potionBottle" count="6,10"/>
+			<item name="resourceBrokenGlass" count="40,60"/>
+			<item name="resourcePowderArcane" count="40,60"/>
+			<item group="sorceryPotions" count="2" prob=".5"/>
+			<item name="toolFireCore" count="1" prob=".1" />
+			<item name="toolIceCore" count="1" prob=".1" />
+			<item name="toolLightningCore" count="1" prob=".1" />
+		</lootgroup>
+	<!-- END - ALCHEMY STATION LOOT __________________________________________________________________________________ -->
+	
+
+	<!-- ENCHANTING STATION LOOT __________________________________________________________________________________ -->
+		<lootgroup name="sorceryLootEnchanting"> 
+			<item name="resourceExtractOmni" count="55,110"/>
+			<item group="sorceryRunes" count="1" prob=".5"/>
+			<item name="toolHammerFire" count="1" prob=".1" />
+			<item name="toolHammerIce" count="1" prob=".1" />
+			<item name="toolHammerLightning" count="1" prob=".1" />
+		</lootgroup>
+	<!-- END - ENCHANTING STATION LOOT __________________________________________________________________________________ -->
+
+
+	<!-- TAILORING STATION LOOT __________________________________________________________________________________ -->
+		<lootgroup name="sorceryLootTailoring"> 
+			<item name="resourceThreadArcane" count="250,400"/>
+			<item name="resourceThreadFire" count="250,400"/>
+			<item name="resourceThreadIce" count="250,400"/>
+			<item name="resourceThreadLightning" count="250,400"/>
+			<item group="sorceryArmor" count="1"/>
+			<item name="toolFireCore" count="1" prob=".05" />
+			<item name="toolIceCore" count="1" prob=".05" />
+			<item name="toolLightningCore" count="1" prob=".05" />
+		</lootgroup>
+	<!-- END - TAILORING STATION LOOT __________________________________________________________________________________ -->
+
+	
 	<!-- FIXED LOOT __________________________________________________________________________________ -->
-		<!-- INTRO -->
+		<!-- INTRO LOOT: ALTINS CHEST -->
 		<lootgroup name="sorceryIntroLoot_Chest" count="all">
-			<item name="sorceryDesk" count="1"/>
-			<item name="sorceryAlchemyMortar" count="1"/>
+			<item name="spellcastFire" count="1"/>
+			<item name="spellcastIce" count="1"/>
+			<item name="spellcastLightning" count="1"/>
 			<item name="sorceryArmor_Hood" count="1"/>
 			<item name="sorceryArmor_Chest" count="1"/>
-			<item name="scrollQuest_ConjureFireItems" count="1"/>
-			<item name="scrollQuest_ConjureIceItems" count="1"/>
-			<!-- <item name="scrollQuest_ConjureLightningItems" count="1"/> -->
+			<!-- DEV -->
+			<!-- <item name="scroll_ConjureStarterItems" count="1"/> -->
 		</lootgroup>
+		
+		<!-- INTRO LOOT: QUEST FALLEN CORPSES -->
 		<lootgroup name="sorceryIntroLootFallen_Fire" count="all">
-			<item name="potionBottle" count="0,1"/>
-			<item name="potion_Health" count="0,1"/>
-			<item name="potion_Spirit" count="0,1"/>
-			<item name="spellFire" count="5,10"/>
-			<item name="resourceEssenceFire" count="6,14"/>
+			<item name="potionBottle" count="1,2"/>
+			<item name="potion_Health" count="0,2"/>
+			<item name="potion_Spirit" count="0,2"/>
+			<item name="spellFire" count="20,30"/>
+			<item name="resourceEssenceFire" count="100,150"/>
 		</lootgroup>
 		<lootgroup name="sorceryIntroLootFallen_Ice" count="all">
-			<item name="potionBottle" count="0,1"/>
-			<item name="potion_Health" count="0,1"/>
-			<item name="potion_Spirit" count="0,1"/>
-			<item name="spellIce" count="5,10"/>
-			<item name="resourceEssenceIce" count="6,14"/>
+			<item name="potionBottle" count="1,2"/>
+			<item name="potion_Health" count="0,2"/>
+			<item name="potion_Spirit" count="0,2"/>
+			<item name="spellIce" count="20,30"/>
+			<item name="resourceEssenceIce" count="100,150"/>
 		</lootgroup>
 		<lootgroup name="sorceryIntroLootFallen_Lightning" count="all">
-			<item name="potionBottle" count="0,1"/>
-			<item name="potion_Health" count="0,1" prob=".5"/>
-			<item name="potion_Spirit" count="0,1" prob=".3"/>
-			<item name="resourceEssenceLightning" count="6,14"/>
+			<item name="potionBottle" count="1,2"/>
+			<item name="potion_Health" count="0,2"/>
+			<item name="potion_Spirit" count="0,2"/>
+			<item name="spellLightning" count="20,30"/>
+			<item name="resourceEssenceLightning" count="100,150"/>
 		</lootgroup>
-		<!-- Intro Loot Items: ELIXIR -->
+		
+		<!-- INTRO LOOT: FALLEN CORPSES -->
 		<lootgroup name="sorceryIntroItemsLootFallen_Fire" count="all">
-			<item name="sorceryElixir_attFire" count="1"/>
-			<item name="spellcastFire" count="1"/>
+			<!-- <item name="sorceryElixir_attFire" count="1"/> -->
+			<!-- <item name="spellcastFire" count="1"/> -->
 			<item name="staffFire" count="1"/>
+			<item name="potionBottle" count="2"/>
+			<item name="potion_Health" count="2"/>
 		</lootgroup>
 		<lootgroup name="sorceryIntroItemsLootFallen_Ice" count="all">
-			<item name="sorceryElixir_attIce" count="1"/>
-			<item name="spellcastIce" count="1"/>
+			<!-- <item name="sorceryElixir_attIce" count="1"/> -->
+			<!-- <item name="spellcastIce" count="1"/> -->
 			<item name="staffIce" count="1"/>
+			<item name="potionBottle" count="2"/>
+			<item name="potion_Spirit" count="2"/>
 		</lootgroup>
 		<lootgroup name="sorceryIntroItemsLootFallen_Lightning" count="all">
-			<!-- <item name="staffLightning" count="1"/> -->
 			<!-- <item name="sorceryElixir_attLightning" count="1"/> -->
+			<!-- <item name="spellcastLightning" count="1"/> -->
+			<item name="staffLightning" count="1"/>
+			<item name="potionBottle" count="2"/>
+			<item name="potion_Travel" count="2"/>
 		</lootgroup>
 		
 	<!-- END - FIXED LOOT __________________________________________________________________________________ -->
@@ -592,6 +1092,8 @@
 	</append>   
 <!-- END - QUALITY, CONTAINERS __________________________________________________________________________________ -->  
   
+  
+
 <!-- SORCERY CONTAINERS __________________________________________________________________________________ -->
 	<append xpath="/lootcontainers">
 		<!-- MAX: 1023 -->
@@ -611,7 +1113,7 @@
 			</lootqualitytemplate> -->
 		<!-- SORCERY INTRO -->
 		<!-- Intro: ALTIN'S CHEST -->
-		<lootcontainer id="700" name="introChest_sorcery" count="1" size="6,6" sound_open="sorceryRitualChant" sound_close="sorceryLightning_implodelow" loot_quality_template="sorceryTemplate_lowest" open_time="4" destroy_on_close="true">
+		<lootcontainer id="700" name="introChest_sorcery" count="1" size="6,6" sound_open="sorceryRitualChant" sound_close="sorceryLightning_implodelow" loot_quality_template="sorceryTemplate_lowest" open_time="1" destroy_on_close="false">
 			<item group="sorceryIntroLoot_Chest" />
 		</lootcontainer>
 		<!-- Intro Fallen: CORPSES -->
@@ -678,7 +1180,7 @@
 			<item group="sorceryLoot_FallenStash" />
 		</lootcontainer>
 		
-		<!-- SHRINES -->
+		<!-- SHRINE LOOT -->
 		<lootcontainer id="679" name="shrineArcane_sorcery" count="1" size="4,3" sound_open="sorceryChant" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="false">
 			<item group="sorceryLootShrine_Arcane" />
 		</lootcontainer>
@@ -690,6 +1192,39 @@
 		</lootcontainer>
 		<lootcontainer id="676" name="shrineLightning_sorcery" count="1" size="4,3" sound_open="sorceryLightning_strike" sound_close="sorceryLightning_implodelow" loot_quality_template="QLTemplateT1" open_time="0" destroy_on_close="false">
 			<item group="sorceryLootShrine_Lightning" />
+		</lootcontainer>
+		
+		<!-- TREE LOOT -->
+		<lootcontainer id="669" name="treeFire_sorcery" count="1" size="6,1" sound_open="sorceryFireball_impact" sound_close="silencefiller" loot_quality_template="qualBaseTemplate" destroy_on_close="true">
+			<item group="sorceryLootTree_Fire" />
+		</lootcontainer>
+		<lootcontainer id="668" name="treeIce_sorcery" count="1" size="6,1" sound_open="sorceryIce_impact" sound_close="silencefiller" loot_quality_template="qualBaseTemplate" destroy_on_close="true">
+			<item group="sorceryLootTree_Ice" />
+		</lootcontainer>
+		<lootcontainer id="667" name="treeLightning_sorcery" count="1" size="6,1" sound_open="sorceryLightning_impact" sound_close="silencefiller" loot_quality_template="qualBaseTemplate" destroy_on_close="true">
+			<item group="sorceryLootTree_Lightning" />
+		</lootcontainer>
+		
+		<!-- SPELLFORGE LOOT -->
+		<lootcontainer id="659" name="spellforgeFire_sorcery" count="1" size="6,1" sound_open="sorceryFireball_impact" sound_close="silencefiller" loot_quality_template="qualBaseTemplate" destroy_on_close="false">
+			<item group="sorceryLootSpellforge_Fire" />
+		</lootcontainer>
+		<lootcontainer id="658" name="spellforgeIce_sorcery" count="1" size="6,1" sound_open="sorceryIce_impact" sound_close="silencefiller" loot_quality_template="qualBaseTemplate" destroy_on_close="false">
+			<item group="sorceryLootSpellforge_Ice" />
+		</lootcontainer>
+		<lootcontainer id="657" name="spellforgeLightning_sorcery" count="1" size="6,1" sound_open="sorceryLightning_impact" sound_close="silencefiller" loot_quality_template="qualBaseTemplate" destroy_on_close="false">
+			<item group="sorceryLootSpellforge_Lightning" />
+		</lootcontainer>
+		
+		<!-- STATION LOOT -->
+		<lootcontainer id="649" name="alchemyStation_sorcery" count="1" size="6,1" sound_open="sorceryAlchemy_grinding" sound_close="silencefiller" loot_quality_template="qualBaseTemplate" destroy_on_close="false">
+			<item group="sorceryLootAlchemy" />
+		</lootcontainer>
+		<lootcontainer id="648" name="enchantingStation_sorcery" count="1" size="6,1" sound_open="open_workbench" sound_close="silencefiller" loot_quality_template="qualBaseTemplate" destroy_on_close="false">
+			<item group="sorceryLootEnchanting" />
+		</lootcontainer>
+		<lootcontainer id="647" name="tailoringStation_sorcery" count="1" size="6,1" sound_open="sorceryArcaneWheel_open" sound_close="silencefiller" loot_quality_template="qualBaseTemplate" destroy_on_close="false">
+			<item group="sorceryLootTailoring" />
 		</lootcontainer>
 		
 	</append> 
@@ -714,40 +1249,22 @@
 	
 	<!-- TREASURE MAPS -->
 	<append xpath="/lootcontainers/lootgroup[@name='groupTreasureMaps']">
-		<item name="q_sorceryFallen_Fire"/>
-		<item name="q_sorceryFallen_Ice"/>
-		<item name="q_sorceryFallen_Lightning"/>
-		<item name="q_sorceryFallen_Trio"/>
+		<!-- <item name="q_sorceryFallen_Fire"/> -->
+		<!-- <item name="q_sorceryFallen_Ice"/> -->
+		<!-- <item name="q_sorceryFallen_Lightning"/> -->
+		<!-- <item name="q_sorceryFallen_Trio"/> -->
 	</append>
 	
 	
 	<!-- ARMOR / CLOTHING _______________________________________________________ -->
 	<!-- Clothes -->
-	<append xpath="/lootcontainers/lootgroup[@name='groupApparelClothes']">
-		<item group="sorceryArmor" count="1"/>
-		<item group="sorceryArmorFire" count="1" />
-		<item group="sorceryArmorIce" count="1" />
-		<item group="sorceryArmorLightning" count="1" />
+	<append xpath="/lootcontainers/lootgroup[@name='groupApparelClothes' or @name='groupApparelClothesNoShoes' or @name='groupWarmClothes' or @name='groupApparelSuit' or @name='groupApparelPants' or @name='groupApparelShirtLong' or @name='groupApparelCoats']">
+		<item group="sorceryArmorOmni" count="1"/>
 	</append>
 	<!-- Armor -->
-	<!-- <append xpath="/lootcontainers/lootgroup[@name='groupArmorT0']">
-		<item group="sorceryArmor" count="1"/>
-		<item group="sorceryArmorFire" count="1" />
-		<item group="sorceryArmorIce" count="1" />
-		<item group="sorceryArmorLightning" count="1" />
+	<append xpath="/lootcontainers/lootgroup[@name='groupArmorT0' or @name='groupArmorT1']">
+		<item group="sorceryArmorOmni" count="1"/>
 	</append>
-	<append xpath="/lootcontainers/lootgroup[@name='groupArmorT1']">
-		<item group="sorceryArmor" count="1" />
-		<item group="sorceryArmorFire" count="1" />
-		<item group="sorceryArmorIce" count="1" />
-		<item group="sorceryArmorLightning" count="1" />
-	</append>
-	<append xpath="/lootcontainers/lootgroup[@name='groupArmorT2']">
-		<item group="sorceryArmor" count="1"/>
-		<item group="sorceryArmorFire" count="1" />
-		<item group="sorceryArmorIce" count="1" />
-		<item group="sorceryArmorLightning" count="1" />
-	</append> -->
 	<!-- END - ARMOR / CLOTHING _______________________________________________________ -->
 	
 
@@ -778,18 +1295,19 @@
 	<!-- WEAPONS _______________________________________________________ -->
 	<!-- Weapon: T0 All -->
 	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsT0_All']">
+		<item group="sorceryWeaponsOmni" count="1"/>
 		<item group="sorcerySpellsAll" count="1"/>
 		<item group="sorceryScrollsWeapon" count="1"/>
 	</append>
 	<!-- Weapon: All Scaled -->
 	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsAllScaled']">
+		<item group="sorceryWeaponsOmni" count="1"/>
 		<item group="sorcerySpellsAll" count="1"/>
-		<item group="sorceryScrollsWeapon" count="1"/>
 	</append>
 	<!-- Weapon: All Scaled Plus -->
 	<append xpath="/lootcontainers/lootgroup[@name='groupWeaponsAllScaledTPlus']">
+		<item group="sorceryWeaponsOmni" count="1"/>
 		<item group="sorcerySpellsAll" count="1"/>
-		<item group="sorceryScrollsWeapon" count="1"/>
 	</append>
 	<!-- END - AMMO _______________________________________________________ -->
 	
@@ -799,9 +1317,25 @@
 	<append xpath="/lootcontainers/lootgroup[@name='modMeleeT1']">
 		<item group="sorceryRunes" count="1"/>
 	</append>
+	<!-- Melee: T2 -->
+	<append xpath="/lootcontainers/lootgroup[@name='modMeleeT2']">
+		<item group="sorceryRunes_silver" count="1"/>
+	</append>
+	<!-- Melee: T3 -->
+	<append xpath="/lootcontainers/lootgroup[@name='modMeleeT3']">
+		<item group="sorceryRunes_gold" count="1"/>
+	</append>
 	<!-- Armor: T1 -->
 	<append xpath="/lootcontainers/lootgroup[@name='modArmorT1']">
 		<item group="sorceryRunes" count="1"/>
+	</append>
+	<!-- Armor: T2 -->
+	<append xpath="/lootcontainers/lootgroup[@name='modArmorT2']">
+		<item group="sorceryRunes_silver" count="1"/>
+	</append>
+	<!-- Armor: T3 -->
+	<append xpath="/lootcontainers/lootgroup[@name='modArmorT3']">
+		<item group="sorceryRunes_gold" count="1"/>
 	</append>
 	<!-- END - MODS _______________________________________________________ -->
 	
@@ -845,9 +1379,8 @@
 	<!-- MISCELLANEOUS _______________________________________________________ -->
 	<!-- Cupboard -->
 	<append xpath="/lootcontainers/lootgroup[@name='groupCupboard01']">
-		<item group="sorceryPotions" count="0,1"/>
-		<item group="sorceryScrollsArcane" count="0,1"/>
-		<item group="sorceryScrollsWeapon" count="0,1"/>
+		<item group="sorceryPotions" count="1"/>
+		<item group="sorceryScrollsOmni" count="1"/>
 	</append>
 	<!-- Rare Ores -->
 	<append xpath="/lootcontainers/lootgroup[@name='rareOres']">

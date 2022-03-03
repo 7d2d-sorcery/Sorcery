@@ -1,57 +1,69 @@
 <Sorcery>
- <!--__________________________________________________________________________________
-		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
-		__________________________________________________________________________________
-		2020 "DEVRIX"
-		All Rights Reserved.
-		__________________________________________________________________________________
-		HOME: http://sorcerymod.com
-		AUTHOR: http://author.sorcerymod.com
-		FORUM: http://forum.sorcerymod.com
-		DISCORD: http://discord.sorcerymod.com
-		YOUTUBE: http://youtube.sorcerymod.com
-		DOWNLOAD: http://download.sorcerymod.com
-		TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
-		__________________________________________________________________________________
-		NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
-		the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
-		irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
-		
-		USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
-		with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
-		may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
-		mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
-		Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
-		of using this mod.
-		
-		REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
-		to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
-		direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
-		Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
-		redistributed outside of its original distribution channels.
-		
-		CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
-		hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
-		and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
-		possible. Without their support, it is not possible to put in the enormous amount of time required to 
-		create the plethora of unique assets that make Sorcery.
-		
-		MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
-		__________________________________________________________________________________
-		
-		DISCLAIMER
-		__________________________________________________________________________________
-		The Sorcery Mod is, and will always be, 100% FREE. When you choose to Support Development, you 
-		are supporting the unique individual work I (Devrix) personally do outside of the game, as a content 
-		creator: The creation of unique Assets, VFX, SFX, Art, Time creating content and the services and 
-		interaction I provide on Discord, Patreon, YouTube, Forums and other related places.
-		__________________________________________________________________________________-->
+ <!--_____________________________________________________________________________________________________________________
+	TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+	_____________________________________________________________________________________________________________________
+	2022 "DEVRIX"
+	All Rights Reserved.
+	_____________________________________________________________________________________________________________________
+	HOME: http://sorcerymod.com
+	AUTHOR: http://author.sorcerymod.com
+	FORUM: http://forum.sorcerymod.com
+	DISCORD: http://discord.sorcerymod.com
+	YOUTUBE: http://youtube.sorcerymod.com
+	DOWNLOAD: http://download.sorcerymod.com
+	TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+	_____________________________________________________________________________________________________________________
+	NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+	the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+	irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+
+	USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+	with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+	may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+	mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+	Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+	of using this mod.
+
+	REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+	to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+	direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+	Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+	redistributed outside of its original distribution channels.
+
+	PROHIBITED USE: Users are not permitted to modify, or bypass, Supporter Exclusive perks or items in any way.
+	The free in-game "Supporter Key Item" can be obtained through normal game means (loot, trader) and will unlock all 
+	supporter exclusive perks and items. Modifying or bypassing Supporter Exclusive perks or items is a violation of the 
+	Sorcery Terms of Use.
+
+	CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+	hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+	and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+	possible. Without their support, it is not possible to put in the enormous amount of time required to 
+	create the plethora of unique assets that make Sorcery.
+
+	MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+	_____________________________________________________________________________________________________________________
+
+	DISCLAIMER
+	_____________________________________________________________________________________________________________________
+	Sorcery is and will always be 100% FREE. When you choose to Support Development, you are supporting the
+	unique individual work I personally do outside of the game: The creation of unique VFX, SFX, Art, Time creating
+	content and the services/interaction I provide here on Discord. You are not supporting "derivative work of 
+	7 Days to Die" (AKA modding code/changing skins/etc). That is against TFP policy.
+
+	Support Not Required: Those unwilling, or unable, to support development can obtain in-game items 100% FREE.
+	You are not required to support in order to obtain in-game items. Non-supporters are able to obtain any
+	"In-Game Supporter Exclusives" 100% FREE, without supporting development. However, I cannot continue development
+	of Sorcery at this level without Ongoing Support. If support drops below a threshold, development halts. The large
+	amount of time allotted to development is made possible through the generous support given by our Supporters.
+	Disclaimer subject to ongoing changes.
+	_____________________________________________________________________________________________________________________-->
 		
 	<append xpath="/blocks">
 	
 	<!-- PARTICLE -->
 		<block name="sorceryBlockStorm">
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Material" value="Mstone_scrap"/>
 			<property name="StabilitySupport" value="true"/>
 			<property name="Shape" value="ModelEntity"/>
@@ -89,6 +101,7 @@
 			<property name="ImposterDontBlock" value="true"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="30000"/>
 			<property name="HeatMapStrength" value="3"/>
 			<property name="HeatMapTime" value="1200"/>
 			<property name="HeatMapFrequency" value="300"/>
@@ -121,11 +134,27 @@
 			<property name="TakeDelay" value="15"/>
 			<property name="Group" value="Building,FireSorcery"/>
 			<property name="DescriptionKey" value="conjureFireDesc"/>
-			<property name="EconomicValue" value="214"/>
 			<property name="UnlockedBy" value="attSorceryFire,sorceryDesk"/>
 			<!-- <property name="FilterTags" value="fother"/> -->
 			<!-- <property name="SortOrder1" value="70i0"/> -->
 			<property name="IndexName" value="quest_spellforge_fire"/>
+		</block>
+		<block name="conjureLoot_Fire">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="conjureFire"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="spellforgeFire_sorcery"/>
+			<!-- conjureFire -->
+			<property name="Material" value="Mstone_scrap"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/conjureFire.unity3d?conjureFire"/>
+			<property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
 		</block>
 		
 		<!-- STATION: ICE CONJURE -->
@@ -145,6 +174,7 @@
 			<property name="ImposterDontBlock" value="true"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="30000"/>
 			<property name="HeatMapStrength" value="3"/>
 			<property name="HeatMapTime" value="1200"/>
 			<property name="HeatMapFrequency" value="300"/>
@@ -172,12 +202,28 @@
 			<property name="TakeDelay" value="15"/>
 			<property name="Group" value="Building,IceSorcery"/>
 			<property name="DescriptionKey" value="conjureIceDesc"/>
-			<property name="EconomicValue" value="214"/>
 			<property name="UnlockedBy" value="attSorceryIce,sorceryDesk"/>
 			<property name="IndexName" value="quest_spellforge_ice"/>
 		</block>
+		<block name="conjureLoot_Ice">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="conjureIce"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="spellforgeIce_sorcery"/>
+			<!-- conjureIce -->
+			<property name="Material" value="Mstone_scrap"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/conjureIce.unity3d?conjureIce"/>
+			<property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+		</block>
 		
-		<!-- STATION: LIGHTNING SPELLFORGE -->
+		<!-- STATION: LIGHTNING CONJURE -->
 		<block name="conjureLightning">
 			<property name="Class" value="Forge"/>
 			<property name="Material" value="Mstone_scrap"/>
@@ -194,6 +240,7 @@
 			<property name="ImposterDontBlock" value="true"/>
 			<property name="Stacknumber" value="1"/>
 			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="30000"/>
 			<property name="HeatMapStrength" value="3"/>
 			<property name="HeatMapTime" value="1200"/>
 			<property name="HeatMapFrequency" value="300"/>
@@ -210,7 +257,7 @@
 			<property name="CraftCompleteSound" value="sorceryOrbWhoosh" />
 			<property class="RepairItems">
 				<property name="resourceExtractLightning" value="40"/>
-				<property name="resourceOilShale" value="10"/>
+				<property name="resourcePotassiumNitratePowder" value="10"/>
 				<property name="resourceRockSmall" value="50"/>
 				<property name="resourceClayLump" value="30"/>
 			</property>
@@ -221,10 +268,26 @@
 			<property name="TakeDelay" value="15"/>
 			<property name="Group" value="Building,LightningSorcery"/>
 			<property name="DescriptionKey" value="conjureLightningDesc"/>
-			<property name="EconomicValue" value="214"/>
 			<property name="UnlockedBy" value="attSorceryLightning,sorceryDesk"/>
 			<property name="IndexName" value="quest_spellforge_lightning"/>
-		</block>	
+		</block>
+		<block name="conjureLoot_Lightning">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="conjureLightning"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="spellforgeLightning_sorcery"/>
+			<!-- conjureLightning -->
+			<property name="Material" value="Mstone_scrap"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/conjureLightning.unity3d?conjureLightning"/>
+			<property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+		</block>
 		
 	<!-- STATION: ALCHEMY ______________________________________-->
 		<!-- STATION: ALCHEMY STATION -->
@@ -273,14 +336,32 @@
 			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 			<property name="TakeDelay" value="15"/>
 			<property name="Group" value="Food/Cooking,Building,AlchemySorcery"/>
-			<property name="EconomicValue" value="5"/>
+			<property name="EconomicValue" value="15000"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="UnlockedBy" value="perkSorceryAlchemyMastery"/>
 			<!-- <property name="FilterTags" value="fdecor,fother,ffurniture"/>
 			<property name="SortOrder1" value="70i0"/> -->
 			<property name="IndexName" value="quest_alchemy_station"/>
-		</block>	
+		</block>
+		<block name="alchemyStationLoot">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="sorceryAlchemyStation"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="alchemyStation_sorcery"/>
+			<!-- sorceryAlchemyStation -->
+			<property name="Material" value="Miron_scrap"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryAlchemyStation.unity3d?sorceryAlchemyStation"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="3,2,3"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+		</block>
 
 	<!-- STATION: TAILORING ______________________________________-->
 		<!-- STATION: ARCANE WHEEL -->
@@ -325,13 +406,30 @@
 			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 			<property name="TakeDelay" value="15"/>
 			<property name="Group" value="Clothing,Building"/>
-			<property name="EconomicValue" value="5"/>
+			<property name="EconomicValue" value="7000"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="UnlockedBy" value="attSorcery"/>
 			<!-- <property name="FilterTags" value="fdecor,fother,ffurniture"/>
 			<property name="SortOrder1" value="70i0"/> -->
 			<property name="IndexName" value="quest_arcanewheel_station"/>
+		</block>
+		<block name="arcaneWheelLoot">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="sorceryArcaneWheel"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="tailoringStation_sorcery"/>
+			<!-- sorceryArcaneWheel -->
+			<property name="Material" value="Mwood"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryArcaneWheel.unity3d?sorceryArcaneWheel"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
 		</block>
 		
 	<!-- STATION: DESK ______________________________________-->
@@ -429,11 +527,77 @@
 			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 			<property name="TakeDelay" value="15"/>
 			<property name="Group" value="Building"/>
-			<property name="EconomicValue" value="5"/>
+			<property name="EconomicValue" value="10000"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="UnlockedBy" value="perkSorceryRuneMastery"/>
 			<property name="IndexName" value="quest_enchanting_station"/>
+		</block>
+		<block name="enchantingStationLoot">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="sorceryEnchantingStation"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="enchantingStation_sorcery"/>
+			<!-- sorceryEnchantingStation -->
+			<property name="Material" value="Mwood"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryEnchantingStation.unity3d?sorceryEnchantingStation"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+		</block>
+	
+	<!-- STATION: RITUAL ______________________________________-->
+		<!-- STATION: RITUAL -->
+		<block name="sorceryRitualStation">
+			<property name="Class" value="Workstation"/>
+			<property name="Material" value="Mstone"/>
+			<property name="MaxDamage" value="1200"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryRitualStation.unity3d?sorceryRitualStation"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="HeatMapStrength" value="1.5"/>
+			<property name="HeatMapTime" value="1200"/>
+			<property name="HeatMapFrequency" value="25"/>
+			<property class="Workstation">
+				<property name="Modules" value="tools,output"/>
+				<property name="CraftingAreaRecipes" value="sorceryRitualStation"/>
+			</property>
+			<property name="WorkstationIcon" value="ui_symbol_shrine" />
+			<property name="CraftActionName" value="lblContextActionCraft" />
+			<property name="CraftIcon" value="ui_symbol_shrine" />
+			<property name="OpenSound" value="open_workbench" />
+			<property name="CloseSound" value="close_workbench" />
+			<property name="CraftSound" value="sorceryChant" />
+			<property name="CraftCompleteSound" value="sorceryOrbWhoosh" />
+			<property class="RepairItems">
+				<property name="resourceExtractOmni" value="100"/>
+				<property name="resourceRockSmall" value="200"/>
+			</property>
+			<drop event="Harvest" name="resourceExtractOmni" count="50"/>
+			<drop event="Harvest" name="resourceRockSmall" count="100" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.75" stick_chance="1"/>
+			<property name="TakeDelay" value="15"/>
+			<property name="Group" value="Building"/>
+			<property name="EconomicValue" value="40000"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="UnlockedBy" value="perkSorcerySupport"/>
 		</block>
 	
 <!-- CONTAINERS ______________________________________-->
@@ -442,7 +606,7 @@
 		<!-- CONTAINER: INTRO CHEST -->	
 		<block name="cnt_SorceryCrateIntro">
 			<property name="DescriptionKey" value="cnt_SorceryCrateIntroDesc"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<!-- <property name="ItemTypeIcon" value="all_blocks"/> -->
 				<property name="Class" value="PlantGrowing"/>
 				<property name="PlantGrowing.Next" value="cntLoot_SorceryCrateIntro"/>
@@ -469,6 +633,7 @@
 		<!-- CONTAINER: INTRO CHEST LOOT -->	
 		<block name="cntLoot_SorceryCrateIntro">
 			<property name="DescriptionKey" value="cnt_SorceryCrateIntroDesc"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Class" value="Loot"/>
 			<property name="Material" value="MwoodReinforced"/>
 			<property name="Path" value="solid"/>
@@ -480,11 +645,11 @@
 			<property name="Candrop" value="false"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Stacknumber" value="1"/>
-			<property name="MaxDamage" value="777"/>
+			<property name="MaxDamage" value="7777"/>
 			<drop event="Destroy" count="0"/>
 			<!-- <property name="LootList" value="700"/> -->
 			<property name="LootList" value="introChest_sorcery"/>
-			<property name="FilterTags" value="floot"/>
+			<property name="IndexName" value="FetchContainer"/>
 		</block>
 	
 		<!-- ARCANE CHEST -->	
@@ -517,7 +682,7 @@
 		<!-- LOOT CONTAINERS -->
 		<!-- CONTAINER: INTRO CHEST LOOT -->	
 		<block name="cntLoot_SorceryFallenStash">
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<!-- <property name="DescriptionKey" value="cntLoot_SorceryFallenStashDesc"/> -->
 			<!-- <property name="Class" value="SecureLoot"/> -->
 			<property name="Class" value="Loot"/>
@@ -542,158 +707,119 @@
 		
 <!-- TRAPS ______________________________________-->
 		<!-- FIRE TRAP: Ground -->
-		<block name="sorceryTrap_Fire"> <!-- log spike 1 wood -->
-			<property name="Class" value="Damage"/>
-			<property name="BlockTag" value="Spike"/>
-			<property name="Damage" value="1"/>
-			<property name="Damage_received" value="5"/> <!-- passthrough damage, block hp -->
+		<block name="sorceryTrap_Fire">
 			<property name="Material" value="MsorceryTrapFire"/>
 			<property name="StabilitySupport" value="false"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="Model" value="#@modfolder:Resources/fireTrap.unity3d?fireTrap"/>
-			<property name="Collide" value="movement,melee,rocket"/>
-			<property name="OnlySimpleRotations" value="true"/>
-			<property name="AllowAllRotations" value="false"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="AllowAllRotations" value="true"/>
 			<property name="IsTerrainDecoration" value="false"/>
 			<property name="ImposterExclude" value="true"/>
 			<property name="ImposterDontBlock" value="false"/>
 			<property name="LightOpacity" value="0"/>
-			<property name="DontDamageOnTouch" value="true"/>
+			<property name="DontDamageOnTouch" value="false"/>
 			<property name="BuffsWhenWalkedOn" value="spellTrap_Fire"/>
-			<property class="RepairItems"><property name="resourceExtractFire" value="15"/></property>
-			<property name="DowngradeBlock" value="sorceryTrap_Fire_dmg1"/>
-			<drop event="Destroy" name="resourceExtractFire" count="2,6"/>
+			<drop event="Destroy" name="resourceExtractFire" count="6,10"/>
 			<property name="FilterTags" value="fdecor,ftraps"/>
-			<property name="SortOrder1" value="70g0"/>
 			<property name="Stacknumber" value="500"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="EconomicValue" value="100"/>
 			<property name="Group" value="Tools/Traps,TrapFire,SorceryTrap"/>
 			<property name="UnlockedBy" value="perkSorceryTrap2Fire"/>
 		</block>
-		<block name="sorceryTrap_Fire_dmg1">
-			<property name="Extends" value="sorceryTrap_Fire"/>
-			<property name="CreativeMode" value="Dev"/>
-			<property name="Model" value="#@modfolder:Resources/fireTrap-dmg1.unity3d?fireTrap-dmg1"/>
-			<property name="Damage" value="1"/>
-			<property name="Damage_received" value="5"/>
-			<property name="DowngradeBlock" value="sorceryTrap_Fire_dmg2"/>
-			<!-- <property class="UpgradeBlock">
-				<property name="ToBlock" value="sorceryTrap_Fire"/>
-				<property name="Item" value="resourceExtractFire"/>
-				<property name="ItemCount" value="15"/>
-				<property name="UpgradeHitCount" value="4"/>
-			</property> -->
-			<property name="CustomUpgradeSound" value="sorceryFireball_draw"/>
-		</block>
-		<block name="sorceryTrap_Fire_dmg2">
-			<property name="Extends" value="sorceryTrap_Fire_dmg1"/>
-			<property name="CreativeMode" value="Dev"/>
-			<property name="Model" value="#@modfolder:Resources/fireTrap-dmg2.unity3d?fireTrap-dmg2"/>
-			<property name="Damage" value="1"/>
-			<property name="Damage_received" value="5"/>
-			<property name="DowngradeBlock" value="sorceryTrap_Fire_dmg3"/>
-			<!-- <property class="UpgradeBlock">
-				<property name="ToBlock" value="sorceryTrap_Fire_dmg1"/>
-				<property name="Item" value="resourceExtractFire"/>
-				<property name="ItemCount" value="15"/>
-				<property name="UpgradeHitCount" value="4"/>
-			</property> -->
-			<property name="CustomUpgradeSound" value="sorceryFireball_draw"/>
-		</block>
-		<block name="sorceryTrap_Fire_dmg3">
-			<property name="Extends" value="sorceryTrap_Fire_dmg2" param1="DowngradeBlock"/>
-			<property name="CreativeMode" value="Dev"/>
-			<property name="Model" value="#@modfolder:Resources/fireTrap-dmg3.unity3d?fireTrap-dmg3"/>
-			<property name="Damage" value="1"/>
-			<property name="Damage_received" value="5"/>
-			<!-- <property class="UpgradeBlock">
-				<property name="ToBlock" value="sorceryTrap_Fire_dmg2"/>
-				<property name="Item" value="resourceExtractFire"/>
-				<property name="ItemCount" value="15"/>
-				<property name="UpgradeHitCount" value="4"/>
-			</property> -->
-			<property name="CustomUpgradeSound" value="sorceryFireball_draw"/>
-		</block>
 		
 		<!-- ICE TRAP: Ground -->
-		<block name="sorceryTrap_Ice"> <!-- log spike 1 wood -->
-			<property name="Class" value="Damage"/>
-			<property name="BlockTag" value="Spike"/>
-			<property name="Damage" value="1"/>
-			<property name="Damage_received" value="5"/> <!-- passthrough damage, block hp -->
+		<block name="sorceryTrap_Ice">
 			<property name="Material" value="MsorceryTrapIce"/>
 			<property name="StabilitySupport" value="false"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="Model" value="#@modfolder:Resources/iceTrap.unity3d?iceTrap"/>
-			<property name="Collide" value="movement,melee,rocket"/>
-			<property name="OnlySimpleRotations" value="true"/>
-			<property name="AllowAllRotations" value="false"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="AllowAllRotations" value="true"/>
 			<property name="IsTerrainDecoration" value="false"/>
 			<property name="ImposterExclude" value="true"/>
 			<property name="ImposterDontBlock" value="false"/>
 			<property name="LightOpacity" value="0"/>
-			<property name="DontDamageOnTouch" value="true"/>
+			<property name="DontDamageOnTouch" value="false"/>
 			<property name="BuffsWhenWalkedOn" value="spellTrap_Ice"/>
-			<property class="RepairItems"><property name="resourceExtractIce" value="15"/></property>
-			<property name="DowngradeBlock" value="sorceryTrap_Ice_dmg1"/>
-			<drop event="Destroy" name="resourceExtractIce" count="2,6"/>
+			<drop event="Destroy" name="resourceExtractIce" count="6,10"/>
 			<property name="FilterTags" value="fdecor,ftraps"/>
-			<property name="SortOrder1" value="70g0"/>
 			<property name="Stacknumber" value="500"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="EconomicValue" value="100"/>
 			<property name="Group" value="Tools/Traps,TrapIce,SorceryTrap"/>
 			<property name="UnlockedBy" value="perkSorceryTrap2Ice"/>
 		</block>
-		<block name="sorceryTrap_Ice_dmg1">
-			<property name="Extends" value="sorceryTrap_Ice"/>
-			<property name="CreativeMode" value="Dev"/>
-			<property name="Model" value="#@modfolder:Resources/iceTrap-dmg1.unity3d?iceTrap-dmg1"/>
-			<property name="Damage" value="1"/>
-			<property name="Damage_received" value="5"/>
-			<property name="DowngradeBlock" value="sorceryTrap_Ice_dmg2"/>
-			<!-- <property class="UpgradeBlock">
-				<property name="ToBlock" value="sorceryTrap_Ice"/>
-				<property name="Item" value="resourceExtractIce"/>
-				<property name="ItemCount" value="15"/>
-				<property name="UpgradeHitCount" value="4"/>
-			</property> -->
-			<property name="CustomUpgradeSound" value="sorceryIce_draw"/>
-			<!-- <property name="CustomUpgradeSound" value="bullethitsnow"/> -->
-		</block>
-		<block name="sorceryTrap_Ice_dmg2">
-			<property name="Extends" value="sorceryTrap_Ice_dmg1"/>
-			<property name="CreativeMode" value="Dev"/>
-			<property name="Model" value="#@modfolder:Resources/iceTrap-dmg2.unity3d?iceTrap-dmg2"/>
-			<property name="Damage" value="1"/>
-			<property name="Damage_received" value="5"/>
-			<property name="DowngradeBlock" value="sorceryTrap_Ice_dmg3"/>
-			<!-- <property class="UpgradeBlock">
-				<property name="ToBlock" value="sorceryTrap_Ice_dmg1"/>
-				<property name="Item" value="resourceExtractIce"/>
-				<property name="ItemCount" value="15"/>
-				<property name="UpgradeHitCount" value="4"/>
-			</property> -->
-			<property name="CustomUpgradeSound" value="sorceryIce_draw"/>
-		</block>
-		<block name="sorceryTrap_Ice_dmg3">
-			<property name="Extends" value="sorceryTrap_Ice_dmg2" param1="DowngradeBlock"/>
-			<property name="CreativeMode" value="Dev"/>
-			<property name="Model" value="#@modfolder:Resources/iceTrap-dmg3.unity3d?iceTrap-dmg3"/>
-			<property name="Damage" value="1"/>
-			<property name="Damage_received" value="5"/>
-			<!-- <property class="UpgradeBlock">
-				<property name="ToBlock" value="sorceryTrap_Ice_dmg2"/>
-				<property name="Item" value="resourceExtractIce"/>
-				<property name="ItemCount" value="15"/>
-				<property name="UpgradeHitCount" value="4"/>
-			</property> -->
-			<property name="CustomUpgradeSound" value="sorceryIce_draw"/>
+	
+		<!-- LIGHTING TRAP: Ground -->
+		<block name="sorceryTrap_Lightning">
+			<property name="Material" value="MsorceryTrapLightning"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/lightningTrap.unity3d?lightningTrap"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="AllowAllRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="false"/>
+			<property name="LightOpacity" value="0"/>
+			<property name="DontDamageOnTouch" value="false"/>
+			<property name="BuffsWhenWalkedOn" value="spellTrap_Lightning"/>
+			<drop event="Destroy" name="resourceExtractLightning" count="6,10"/>
+			<property name="FilterTags" value="fdecor,ftraps"/>
+			<property name="Stacknumber" value="500"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="100"/>
+			<property name="Group" value="Tools/Traps,TrapLightning,SorceryTrap"/>
+			<property name="UnlockedBy" value="perkSorceryTrap2Lightning"/>
 		</block>
 	
+	<!-- TRADERS -->
+		<!-- BLOOD TRADER -->
+		<block name="spawnTraderSorcery">
+			<property name="Extends" value="metalTrussingRampOld" param1="DescriptionKey"/>
+			<property name="CustomIcon" value="metalTrussingRampOld"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Class" value="SpawnEntity"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Mesh" value="models"/>
+			<property name="Model" value="Entities/Electrical/battery_bankPrefab"/>
+			<property name="HandleFace" value="Bottom"/>
+			<property name="SpawnClass" value="sorceryTraderArcane"/>
+			<property name="FilterTags" value="MC_helpers,SC_questblocks"/>
+			<property name="Collide" value="sight"/>
+			<property name="IndexName" value="Trader"/>
+		</block>
+	<!-- END - TRADER -->
 
-	<!-- HELPER BLOCKS -->
+
+	<!-- TRADER SIGN -->
+		<block name="sorceryBlockTraderSign">
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="playerSignWood1x1"/>
+			<property name="Material" value="Mwood_regular"/>
+			<property name="Texture" value="241"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Model" value="#@modfolder:Resources/blockSorceryTraderSign.unity3d?blockSorceryTraderSign"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="5,2,1"/>
+			<property name="OnlySimpleRotations" value="false"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="7000"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Group" value="Decor/Miscellaneous"/>
+			<property name="FilterTags" value="MC_outdoor,SC_signs"/>
+			<property name="SortOrder1" value="70s0"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+
+
+<!-- HELPER BLOCKS -->
 		<block name="sorceryBlockStormRandomLootHelper">
 			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
 			<property name="CustomIcon" value="conjureFire"/> <property name="CustomIconTint" value="ff8080"/>
@@ -702,15 +828,66 @@
 			<property name="Model" value="Entities/OutdoorDecor/cinderBlock03Prefab"/>
 			<property name="Place" value="TowardsPlacerInverted"/>
 		</block>
+		
+		<!-- STATIONS -->
 		<block name="sorcerySpellforgeRandomLootHelper">
 			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
 			<property name="CustomIcon" value="conjureFire"/> <property name="CustomIconTint" value="ff8080"/>
 			<property name="CreativeMode" value="Dev"/>
-			<property name="Texture" value="279"/>
 			<property name="Shape" value="ModelEntity"/>
 			<property name="Model" value="#@modfolder:Resources/conjureFire.unity3d?conjureFire"/>
-			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
 		</block>
+		<block name="sorceryAlchemyStationRandomLootHelper">
+			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
+			<property name="CustomIcon" value="sorceryAlchemyStation"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Material" value="Miron_scrap"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryAlchemyStation.unity3d?sorceryAlchemyStation"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="DisplayType" value="blockMulti" />
+			<property name="MultiBlockDim" value="3,2,3"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+		</block>
+		<block name="sorceryEnchantingStationRandomLootHelper">
+			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
+			<property name="CustomIcon" value="sorceryEnchantingStation"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Material" value="Mwood"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryEnchantingStation.unity3d?sorceryEnchantingStation"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+		</block>
+		<block name="sorceryTailoringStationRandomLootHelper">
+			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
+			<property name="CustomIcon" value="sorceryArcaneWheel"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Material" value="Mwood"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryArcaneWheel.unity3d?sorceryArcaneWheel"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+		</block>
+		
+		<!-- BUSHES -->
 		<block name="sorceryBushRandomLootHelper">
 			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
 			<property name="CustomIcon" value="treeEssenceFire"/> <property name="CustomIconTint" value="ff8080"/>
@@ -720,6 +897,17 @@
 			<property name="Model" value="#@modfolder:Resources/treeEssenceFire.unity3d?treeEssenceFire"/>
 			<property name="Place" value="TowardsPlacerInverted"/>
 		</block>
+		<block name="sorcerySeedRandomLootHelper">
+			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
+			<property name="CustomIcon" value="treeEssenceIce"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Texture" value="279"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceIce.unity3d?treeEssenceIce"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+		</block>
+		
+		<!-- SHRINE -->
 		<block name="sorceryShrineRandomLootHelper">
 			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
 			<property name="CustomIcon" value="shrineMaster"/> <property name="CustomIconTint" value="ff8080"/>
@@ -729,7 +917,31 @@
 			<property name="Model" value="#@modfolder:Resources/shrineArcane.unity3d?shrineArcane"/>
 			<property name="Place" value="TowardsPlacerInverted"/>
 		</block>
-	<!-- END - HELPER BLOCKS -->
+		
+		<!-- QUESTS PH -->
+		<block name="cntQuestSorceryIntroLootHelper">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="IndexName" value="FetchContainer"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Material" value="MwoodReinforced"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/chestWoodenEnchanted.unity3d?chestWoodenEnchanted" />
+			<property name="CustomIcon" value="cntSorceryCrateIntro"/>
+			<property name="CustomIconTint" value="a0a0ff"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<!-- <property name="Model" value="#Entities/LootContainers?loot_satchelPrefab.prefab"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="CustomIcon" value="cntFetchQuestSatchel"/> -->
+			<property name="LightOpacity" value="0"/>
+			<property name="StabilitySupport" value="false"/> <!-- build restriction -->
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="GndAlign" value="1"/>
+			<property name="DisplayInfo" value="Name"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="FilterTags" value="MC_helpers,SC_helperOutdoor,SC_loot"/>
+		</block>
+<!-- END - HELPER BLOCKS -->
 	
 	
 <!-- PLANTS ______________________________________-->
@@ -804,14 +1016,18 @@
 			<property name="PassThroughDamage" value="false"/>
 			<property name="ActivationDistance" value="5"/>
 			<property name="SortOrder2" value="0144"/> <!-- SortTree -->
+			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="7777"/>
 			<property name="PickupJournalEntry" value="tip_sorcery_BushSeed"/>
+			<property name="UnlockedBy" value="perkSorcerySupport"/>
+			<property name="Group" value="Resources"/>
 		</block>
 
 	<!-- BUSH: FIRE BUSH ______________________________________-->
 	<!-- WILD: Fire Bush -->
 		<block name="tree_EssenceFire">
 			<property name="Extends" value="treeMaster_Essence"/>
-			<property name="CreativeMode" value="Player"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceFire.unity3d?treeEssenceFire" />
 			<property name="Tags" value="EssenceBush,hasFireEssence"/>
 			<property name="DowngradeBlock" value="tree_EssenceFireBare"/>
@@ -842,14 +1058,13 @@
 		<!-- Planted: Seed -->
 		<block name="treePlanted_EssenceFireSeed">
 			<property name="Extends" value="treeGrowingMaster_Essence"/>
-			<property name="CreativeMode" value="Player"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="tree_EssenceFire"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceFireBare.unity3d?treeEssenceFireBare" />
 			<property name="Material" value="Mstone"/>
 			<property name="PlantGrowing.Next" value="treePlanted_EssenceFireGrowing"/>
 			<property name="CanPickup" value="true" param1="treePlanted_EssenceFireSeed"/>
-			<drop event="Destroy" name="resourceEssenceFire" count="100,120" tag="essenceFireHarvest"/>
-			<drop event="Destroy" name="resourceEssenceFire" count="250,300"/>
+			<drop event="Destroy" name="treePlanted_EssenceFireSeed" count="1"/>
 		</block>
 		<block name="treePlanted_EssenceFireGrowing">
 			<property name="Extends" value="treeGrowingMaster_Essence"/>
@@ -859,8 +1074,7 @@
 			<property name="PlantGrowing.GrowthRate" value="63"/> <!-- 315 -->
 			<property name="Model" value="#@modfolder:Resources/treeEssenceFireGrowing.unity3d?treeEssenceFireGrowing" />
 			<property name="CanPickup" value="true" param1="treePlanted_EssenceFireSeed"/>
-			<drop event="Destroy" name="resourceEssenceFire" count="100,120" tag="essenceFireHarvest"/>
-			<drop event="Destroy" name="resourceEssenceFire" count="250,300"/>
+			<drop event="Destroy" name="treePlanted_EssenceFireSeed" count="1"/>
 		</block>
 		<block name="treePlanted_EssenceFire">
 			<property name="Extends" value="treeMaster_Essence"/>
@@ -872,12 +1086,23 @@
 			<drop event="Destroy" name="resourceEssenceFire" count="250,300"/>
 			<property name="DowngradeBlock" value="treePlanted_EssenceFireSeed"/>
 		</block>
+	<!-- LOOT: Fire Bush -->
+		<block name="treeLoot_EssenceFire">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="treeFire_sorcery"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceFire.unity3d?treeEssenceFire" />
+			<property name="DowngradeBlock" value="tree_EssenceFireBare"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="100,120" tag="essenceFireHarvest"/>
+			<drop event="Destroy" name="resourceEssenceFire" count="250,300"/>
+		</block>
 	
 	<!-- BUSH: ICE BUSH ______________________________________-->
 	<!-- WILD: Ice Bush -->
 		<block name="tree_EssenceIce">
 			<property name="Extends" value="treeMaster_Essence"/>
-			<property name="CreativeMode" value="Player"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="tree_EssenceIce"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceIce.unity3d?treeEssenceIce" />
 			<property name="Tags" value="EssenceBush,hasIceEssence"/>
@@ -909,14 +1134,13 @@
 		<!-- Planted: Seed -->
 		<block name="treePlanted_EssenceIceSeed">
 			<property name="Extends" value="treeGrowingMaster_Essence"/>
-			<property name="CreativeMode" value="Player"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="tree_EssenceIce"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceIceBare.unity3d?treeEssenceIceBare" />
 			<property name="Material" value="Mstone"/>
 			<property name="PlantGrowing.Next" value="treePlanted_EssenceIceGrowing"/>
 			<property name="CanPickup" value="true" param1="treePlanted_EssenceIceSeed"/>
-			<drop event="Destroy" name="resourceEssenceIce" count="100,120" tag="essenceIceHarvest"/>
-			<drop event="Destroy" name="resourceEssenceIce" count="250,300"/>
+			<drop event="Destroy" name="treePlanted_EssenceIceSeed" count="1"/>
 		</block>
 		<block name="treePlanted_EssenceIceGrowing">
 			<property name="Extends" value="treeGrowingMaster_Essence"/>
@@ -926,8 +1150,7 @@
 			<property name="PlantGrowing.GrowthRate" value="63"/> <!-- 315 -->
 			<property name="Model" value="#@modfolder:Resources/treeEssenceIceGrowing.unity3d?treeEssenceIceGrowing" />
 			<property name="CanPickup" value="true" param1="treePlanted_EssenceIceSeed"/>
-			<drop event="Destroy" name="resourceEssenceIce" count="100,120" tag="essenceIceHarvest"/>
-			<drop event="Destroy" name="resourceEssenceIce" count="250,300"/>
+			<drop event="Destroy" name="treePlanted_EssenceIceSeed" count="1"/>
 		</block>
 		<block name="treePlanted_EssenceIce">
 			<property name="Extends" value="treeMaster_Essence"/>
@@ -940,12 +1163,23 @@
 			<drop event="Destroy" name="resourceEssenceIce" count="250,300"/>
 			<property name="DowngradeBlock" value="treePlanted_EssenceIceSeed"/>
 		</block>
+	<!-- LOOT: Ice Bush -->
+		<block name="treeLoot_EssenceIce">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="treeIce_sorcery"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceIce.unity3d?treeEssenceIce" />
+			<property name="DowngradeBlock" value="tree_EssenceIceBare"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="100,120" tag="essenceIceHarvest"/>
+			<drop event="Destroy" name="resourceEssenceIce" count="250,300"/>
+		</block>
 	
 	<!-- BUSH: LIGHTNING BUSH ______________________________________-->
 	<!-- WILD: Lightning Bush -->
 		<block name="tree_EssenceLightning">
 			<property name="Extends" value="treeMaster_Essence"/>
-			<property name="CreativeMode" value="Player"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="tree_EssenceLightning"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceLightning.unity3d?treeEssenceLightning" />
 			<property name="Tags" value="EssenceBush,hasLightningEssence"/>
@@ -975,14 +1209,13 @@
 		<!-- Planted: Seed -->
 		<block name="treePlanted_EssenceLightningSeed">
 			<property name="Extends" value="treeGrowingMaster_Essence"/>
-			<property name="CreativeMode" value="Player"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="tree_EssenceLightning"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceLightningBare.unity3d?treeEssenceLightningBare" />
 			<property name="Material" value="Mstone"/>
 			<property name="PlantGrowing.Next" value="treePlanted_EssenceLightningGrowing"/>
 			<property name="CanPickup" value="true" param1="treePlanted_EssenceLightningSeed"/>
-			<drop event="Destroy" name="resourceEssenceLightning" count="100,120" tag="essenceLightningHarvest"/>
-			<drop event="Destroy" name="resourceEssenceLightning" count="250,300"/>
+			<drop event="Destroy" name="treePlanted_EssenceLightningSeed" count="1"/>
 		</block>
 		<block name="treePlanted_EssenceLightningGrowing">
 			<property name="Extends" value="treeGrowingMaster_Essence"/>
@@ -992,8 +1225,7 @@
 			<property name="PlantGrowing.GrowthRate" value="63"/> <!-- 315 -->
 			<property name="Model" value="#@modfolder:Resources/treeEssenceLightningGrowing.unity3d?treeEssenceLightningGrowing" />
 			<property name="CanPickup" value="true" param1="treePlanted_EssenceLightningSeed"/>
-			<drop event="Destroy" name="resourceEssenceLightning" count="100,120" tag="essenceLightningHarvest"/>
-			<drop event="Destroy" name="resourceEssenceLightning" count="250,300"/>
+			<drop event="Destroy" name="treePlanted_EssenceLightningSeed" count="1"/>
 		</block>
 		<block name="treePlanted_EssenceLightning">
 			<property name="Extends" value="treeMaster_Essence"/>
@@ -1006,6 +1238,18 @@
 			<drop event="Destroy" name="resourceEssenceLightning" count="250,300"/>
 			<property name="DowngradeBlock" value="treePlanted_EssenceLightningSeed"/>
 		</block>
+	<!-- LOOT: Lightning Bush -->
+		<block name="treeLoot_EssenceLightning">
+			<property name="Extends" value="treeMaster_Essence"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="treeLightning_sorcery"/>
+			<property name="Model" value="#@modfolder:Resources/treeEssenceLightning.unity3d?treeEssenceLightning" />
+			<property name="DowngradeBlock" value="tree_EssenceLightningBare"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="100,120" tag="essenceLightningHarvest"/>
+			<drop event="Destroy" name="resourceEssenceLightning" count="250,300"/>
+		</block>
+		
 <!-- END - PLANTS ______________________________________-->
 	
 	
@@ -1036,13 +1280,17 @@
 			<property name="BuffChance" value="1"/>
 			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
 			<property name="DowngradeBlock" value="shrineBareMaster"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="40777"/>
+			<property name="Group" value="Building"/>
+			<property name="UnlockedBy" value="perkSorcerySupport,sorceryRitualStation"/>
 			<drop event="Destroy" name="resourceRitualStoneFire" prob=".25" count="1"/>
 			<drop event="Destroy" name="resourceRitualStoneIce" prob=".25" count="1"/>
 			<drop event="Destroy" name="resourceRitualStoneLightning" prob=".25" count="1"/>
-			<drop event="Destroy" name="q_sorceryFallen_Fire" prob=".03" count="1"/>
-			<drop event="Destroy" name="q_sorceryFallen_Ice" prob=".03" count="1"/>
-			<drop event="Destroy" name="q_sorceryFallen_Lightning" prob=".03" count="1"/>
-			<drop event="Destroy" name="q_sorceryFallen_Trio" prob=".01" count="1"/>
+			<!-- <drop event="Destroy" name="q_sorceryFallen_Fire" prob=".03" count="1"/> -->
+			<!-- <drop event="Destroy" name="q_sorceryFallen_Ice" prob=".03" count="1"/> -->
+			<!-- <drop event="Destroy" name="q_sorceryFallen_Lightning" prob=".03" count="1"/> -->
+			<!-- <drop event="Destroy" name="q_sorceryFallen_Trio" prob=".01" count="1"/> -->
 			<drop event="Destroy" name="q_sorcerySkillGrimoire" prob=".001" count="1"/>
 		</block>
 		<block name="shrineBareMaster">
@@ -1079,12 +1327,14 @@
 			<property name="PlacementDistance" value="8"/>
 			<property name="BuffChance" value="1"/>
 			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+			<property name="UnlockedBy" value="perkSorcerySupport,sorceryRitualStation"/>
+			<property name="Group" value="Building"/>
 			<drop event="Harvest" name="resourceRockSmall" count="100" tag="allHarvest"/>
 			<drop event="Destroy" count="0"/>
 		</block>
 		<block name="shrineFireMaster">
 			<property name="CreativeMode" value="None"/>
-			<property name="CustomIcon" value="shrineMaster"/>
+			<property name="CustomIcon" value="shrineMasterFire"/>
 			<property name="DisplayInfo" value="Name"/>
 			<property name="Material" value="MsorceryShrine"/>
 			<property name="StabilitySupport" value="false"/>
@@ -1107,21 +1357,28 @@
 			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
 			<property name="Model" value="#@modfolder:Resources/shrineFire.unity3d?shrineFire" />
 			<property name="DowngradeBlock" value="shrineFireBareMaster"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="40777"/>
+			<property name="UnlockedBy" value="perkSorcerySupport,sorceryRitualStation"/>
+			<property name="Group" value="Building"/>
 			<drop event="Destroy" name="resourceRitualStoneFire" prob=".5" count="1"/>
-			<drop event="Destroy" name="q_sorceryFallen_Fire" prob=".05" count="1"/>
-			<drop event="Destroy" name="q_sorceryFallen_Trio" prob=".01" count="1"/>
+			<!-- <drop event="Destroy" name="q_sorceryFallen_Fire" prob=".05" count="1"/> -->
+			<!-- <drop event="Destroy" name="q_sorceryFallen_Trio" prob=".01" count="1"/> -->
 			<drop event="Destroy" name="q_sorcerySkillGrimoire" prob=".001" count="1"/>
 		</block>
 		<block name="shrineFireBareMaster">
 			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CustomIcon" value="shrineMasterFire"/>
 			<property name="CreativeMode" value="None"/>
 			<property name="Model" value="#@modfolder:Resources/shrineFireBare.unity3d?shrineFireBare" />
 			<property name="BuffChance" value="1"/>
 			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+			<property name="UnlockedBy" value="perkSorcerySupport,sorceryRitualStation"/>
+			<property name="Group" value="Building"/>
 		</block>
 		<block name="shrineIceMaster">
 			<property name="CreativeMode" value="None"/>
-			<property name="CustomIcon" value="shrineMaster"/>
+			<property name="CustomIcon" value="shrineMasterIce"/>
 			<property name="DisplayInfo" value="Name"/>
 			<property name="Material" value="MsorceryShrine"/>
 			<property name="StabilitySupport" value="false"/>
@@ -1144,21 +1401,28 @@
 			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
 			<property name="Model" value="#@modfolder:Resources/shrineIce.unity3d?shrineIce" />
 			<property name="DowngradeBlock" value="shrineIceBareMaster"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="40777"/>
+			<property name="UnlockedBy" value="perkSorcerySupport,sorceryRitualStation"/>
+			<property name="Group" value="Building"/>
 			<drop event="Destroy" name="resourceRitualStoneIce" prob=".5" count="1"/>
-			<drop event="Destroy" name="q_sorceryFallen_Ice" prob=".05" count="1"/>
-			<drop event="Destroy" name="q_sorceryFallen_Trio" prob=".01" count="1"/>
+			<!-- <drop event="Destroy" name="q_sorceryFallen_Ice" prob=".05" count="1"/> -->
+			<!-- <drop event="Destroy" name="q_sorceryFallen_Trio" prob=".01" count="1"/> -->
 			<drop event="Destroy" name="q_sorcerySkillGrimoire" prob=".001" count="1"/>
 		</block>
 		<block name="shrineIceBareMaster">
 			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CustomIcon" value="shrineMasterIce"/>
 			<property name="CreativeMode" value="None"/>
 			<property name="Model" value="#@modfolder:Resources/shrineIceBare.unity3d?shrineIceBare" />
 			<property name="BuffChance" value="1"/>
 			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+			<property name="UnlockedBy" value="perkSorcerySupport,sorceryRitualStation"/>
+			<property name="Group" value="Building"/>
 		</block>
 		<block name="shrineLightningMaster">
 			<property name="CreativeMode" value="None"/>
-			<property name="CustomIcon" value="shrineMaster"/>
+			<property name="CustomIcon" value="shrineMasterLightning"/>
 			<property name="DisplayInfo" value="Name"/>
 			<property name="Material" value="MsorceryShrine"/>
 			<property name="StabilitySupport" value="false"/>
@@ -1181,17 +1445,24 @@
 			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
 			<property name="Model" value="#@modfolder:Resources/shrineLightning.unity3d?shrineLightning" />
 			<property name="DowngradeBlock" value="shrineLightningBareMaster"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="40777"/>
+			<property name="UnlockedBy" value="perkSorcerySupport,sorceryRitualStation"/>
+			<property name="Group" value="Building"/>
 			<drop event="Destroy" name="resourceRitualStoneLightning" prob=".5" count="1"/>
-			<drop event="Destroy" name="q_sorceryFallen_Lightning" prob=".05" count="1"/>
-			<drop event="Destroy" name="q_sorceryFallen_Trio" prob=".01" count="1"/>
+			<!-- <drop event="Destroy" name="q_sorceryFallen_Lightning" prob=".05" count="1"/> -->
+			<!-- <drop event="Destroy" name="q_sorceryFallen_Trio" prob=".01" count="1"/> -->
 			<drop event="Destroy" name="q_sorcerySkillGrimoire" prob=".001" count="1"/>
 		</block>
 		<block name="shrineLightningBareMaster">
 			<property name="Extends" value="shrineBareMaster"/>
+			<property name="CustomIcon" value="shrineMasterLightning"/>
 			<property name="CreativeMode" value="None"/>
 			<property name="Model" value="#@modfolder:Resources/shrineLightningBare.unity3d?shrineLightningBare" />
 			<property name="BuffChance" value="1"/>
 			<property name="BuffsWhenWalkedOn" value="tip_sorcery_Shrine"/>
+			<property name="UnlockedBy" value="perkSorcerySupport,sorceryRitualStation"/>
+			<property name="Group" value="Building"/>
 		</block>
 
 <!-- SHRINES: ARCANE ______________________________________-->	
@@ -1199,78 +1470,78 @@
 	<!-- ARCANE SHRINE: POTION --> 
 		<block name="shrinePotion">
 			<property name="Extends" value="shrineMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrinePotion"/>
 			<property name="DowngradeBlock" value="shrineBarePotion"/>
 		</block>
 		<block name="shrineBarePotion">
 			<property name="Extends" value="shrineBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrinePotionDesc"/>
 			<property name="PlantGrowing.Next" value="shrinePotion"/>
 		</block>
 	<!-- ARCANE SHRINE: SCROLL --> 
 		<block name="shrineScroll">
 			<property name="Extends" value="shrineMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineScroll"/>
 			<property name="DowngradeBlock" value="shrineBareScroll"/>
 		</block>
 		<block name="shrineBareScroll">
 			<property name="Extends" value="shrineBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineScrollDesc"/>
 			<property name="PlantGrowing.Next" value="shrineScroll"/>
 		</block>
 	<!-- ARCANE SHRINE: TOUCHED --> 
 		<block name="shrineTouched">
 			<property name="Extends" value="shrineMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineTouched"/>
 			<property name="DowngradeBlock" value="shrineBareTouched"/>
 		</block>
 		<block name="shrineBareTouched">
 			<property name="Extends" value="shrineBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineTouchedDesc"/>
 			<property name="PlantGrowing.Next" value="shrineTouched"/>
 		</block>
 	<!-- ARCANE SHRINE: DRAIN HEALTH --> 
 		<block name="shrineDrainHealth">
 			<property name="Extends" value="shrineMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineDrainHealth"/>
 			<property name="DowngradeBlock" value="shrineBareDrainHealth"/>
 		</block>
 		<block name="shrineBareDrainHealth">
 			<property name="Extends" value="shrineBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineDrainHealthDesc"/>
 			<property name="PlantGrowing.Next" value="shrineDrainHealth"/>
 		</block>
 	<!-- ARCANE SHRINE: DRAIN STAMINA --> 
 		<block name="shrineDrainStamina">
 			<property name="Extends" value="shrineMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineDrainStamina"/>
 			<property name="DowngradeBlock" value="shrineBareDrainStamina"/>
 		</block>
 		<block name="shrineBareDrainStamina">
 			<property name="Extends" value="shrineBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineDrainStaminaDesc"/>
 			<property name="PlantGrowing.Next" value="shrineDrainStamina"/>
 		</block>
 	<!-- ARCANE SHRINE: DRAIN SPIRIT --> 
 		<block name="shrineDrainSpirit">
 			<property name="Extends" value="shrineMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineDrainSpirit"/>
 			<property name="DowngradeBlock" value="shrineBareDrainSpirit"/>
 		</block>
 		<block name="shrineBareDrainSpirit">
 			<property name="Extends" value="shrineBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineDrainSpiritDesc"/>
 			<property name="PlantGrowing.Next" value="shrineDrainSpirit"/>
 		</block>
@@ -1280,78 +1551,78 @@
 	<!-- FIRE SHRINE: POTION --> 
 		<block name="shrineFirePotion">
 			<property name="Extends" value="shrineFireMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineFirePotion"/>
 			<property name="DowngradeBlock" value="shrineFireBarePotion"/>
 		</block>
 		<block name="shrineFireBarePotion">
 			<property name="Extends" value="shrineFireBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineFirePotionDesc"/>
 			<property name="PlantGrowing.Next" value="shrineFirePotion"/>
 		</block>
 	<!-- FIRE SHRINE: SCROLL --> 
 		<block name="shrineFireScroll">
 			<property name="Extends" value="shrineFireMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineFireScroll"/>
 			<property name="DowngradeBlock" value="shrineFireBareScroll"/>
 		</block>
 		<block name="shrineFireBareScroll">
 			<property name="Extends" value="shrineFireBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineFireScrollDesc"/>
 			<property name="PlantGrowing.Next" value="shrineFireScroll"/>
 		</block>
 	<!-- FIRE SHRINE: TOUCHED --> 
 		<block name="shrineFireTouched">
 			<property name="Extends" value="shrineFireMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineFireTouched"/>
 			<property name="DowngradeBlock" value="shrineFireBareTouched"/>
 		</block>
 		<block name="shrineFireBareTouched">
 			<property name="Extends" value="shrineFireBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineFireTouchedDesc"/>
 			<property name="PlantGrowing.Next" value="shrineFireTouched"/>
 		</block>
 	<!-- FIRE SHRINE: DRAIN HEALTH --> 
 		<block name="shrineFireDrainHealth">
 			<property name="Extends" value="shrineFireMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineFireDrainHealth"/>
 			<property name="DowngradeBlock" value="shrineFireBareDrainHealth"/>
 		</block>
 		<block name="shrineFireBareDrainHealth">
 			<property name="Extends" value="shrineFireBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineFireDrainHealthDesc"/>
 			<property name="PlantGrowing.Next" value="shrineFireDrainHealth"/>
 		</block>
 	<!-- FIRE SHRINE: DRAIN STAMINA --> 
 		<block name="shrineFireDrainStamina">
 			<property name="Extends" value="shrineFireMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineFireDrainStamina"/>
 			<property name="DowngradeBlock" value="shrineFireBareDrainStamina"/>
 		</block>
 		<block name="shrineFireBareDrainStamina">
 			<property name="Extends" value="shrineFireBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineFireDrainStaminaDesc"/>
 			<property name="PlantGrowing.Next" value="shrineFireDrainStamina"/>
 		</block>
 	<!-- FIRE SHRINE: DRAIN SPIRIT --> 
 		<block name="shrineFireDrainSpirit">
 			<property name="Extends" value="shrineFireMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineFireDrainSpirit"/>
 			<property name="DowngradeBlock" value="shrineFireBareDrainSpirit"/>
 		</block>
 		<block name="shrineFireBareDrainSpirit">
 			<property name="Extends" value="shrineFireBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineFireDrainSpiritDesc"/>
 			<property name="PlantGrowing.Next" value="shrineFireDrainSpirit"/>
 		</block>
@@ -1361,78 +1632,78 @@
 	<!-- ICE SHRINE: POTION --> 
 		<block name="shrineIcePotion">
 			<property name="Extends" value="shrineIceMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineIcePotion"/>
 			<property name="DowngradeBlock" value="shrineIceBarePotion"/>
 		</block>
 		<block name="shrineIceBarePotion">
 			<property name="Extends" value="shrineIceBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineIcePotionDesc"/>
 			<property name="PlantGrowing.Next" value="shrineIcePotion"/>
 		</block>
 	<!-- ICE SHRINE: SCROLL --> 
 		<block name="shrineIceScroll">
 			<property name="Extends" value="shrineIceMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineIceScroll"/>
 			<property name="DowngradeBlock" value="shrineIceBareScroll"/>
 		</block>
 		<block name="shrineIceBareScroll">
 			<property name="Extends" value="shrineIceBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineIceScrollDesc"/>
 			<property name="PlantGrowing.Next" value="shrineIceScroll"/>
 		</block>
 	<!-- ICE SHRINE: TOUCHED --> 
 		<block name="shrineIceTouched">
 			<property name="Extends" value="shrineIceMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineIceTouched"/>
 			<property name="DowngradeBlock" value="shrineIceBareTouched"/>
 		</block>
 		<block name="shrineIceBareTouched">
 			<property name="Extends" value="shrineIceBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineIceTouchedDesc"/>
 			<property name="PlantGrowing.Next" value="shrineIceTouched"/>
 		</block>
 	<!-- ICE SHRINE: DRAIN HEALTH --> 
 		<block name="shrineIceDrainHealth">
 			<property name="Extends" value="shrineIceMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineIceDrainHealth"/>
 			<property name="DowngradeBlock" value="shrineIceBareDrainHealth"/>
 		</block>
 		<block name="shrineIceBareDrainHealth">
 			<property name="Extends" value="shrineIceBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineIceDrainHealthDesc"/>
 			<property name="PlantGrowing.Next" value="shrineIceDrainHealth"/>
 		</block>
 	<!-- ICE SHRINE: DRAIN STAMINA --> 
 		<block name="shrineIceDrainStamina">
 			<property name="Extends" value="shrineIceMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineIceDrainStamina"/>
 			<property name="DowngradeBlock" value="shrineIceBareDrainStamina"/>
 		</block>
 		<block name="shrineIceBareDrainStamina">
 			<property name="Extends" value="shrineIceBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineIceDrainStaminaDesc"/>
 			<property name="PlantGrowing.Next" value="shrineIceDrainStamina"/>
 		</block>
 	<!-- ICE SHRINE: DRAIN SPIRIT --> 
 		<block name="shrineIceDrainSpirit">
 			<property name="Extends" value="shrineIceMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineIceDrainSpirit"/>
 			<property name="DowngradeBlock" value="shrineIceBareDrainSpirit"/>
 		</block>
 		<block name="shrineIceBareDrainSpirit">
 			<property name="Extends" value="shrineIceBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineIceDrainSpiritDesc"/>
 			<property name="PlantGrowing.Next" value="shrineIceDrainSpirit"/>
 		</block>
@@ -1442,78 +1713,78 @@
 	<!-- LIGHTNING SHRINE: POTION --> 
 		<block name="shrineLightningPotion">
 			<property name="Extends" value="shrineLightningMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineLightningPotion"/>
 			<property name="DowngradeBlock" value="shrineLightningBarePotion"/>
 		</block>
 		<block name="shrineLightningBarePotion">
 			<property name="Extends" value="shrineLightningBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineLightningPotionDesc"/>
 			<property name="PlantGrowing.Next" value="shrineLightningPotion"/>
 		</block>
 	<!-- LIGHTNING SHRINE: SCROLL --> 
 		<block name="shrineLightningScroll">
 			<property name="Extends" value="shrineLightningMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineLightningScroll"/>
 			<property name="DowngradeBlock" value="shrineLightningBareScroll"/>
 		</block>
 		<block name="shrineLightningBareScroll">
 			<property name="Extends" value="shrineLightningBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineLightningScrollDesc"/>
 			<property name="PlantGrowing.Next" value="shrineLightningScroll"/>
 		</block>
 	<!-- LIGHTNING SHRINE: TOUCHED --> 
 		<block name="shrineLightningTouched">
 			<property name="Extends" value="shrineLightningMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineLightningTouched"/>
 			<property name="DowngradeBlock" value="shrineLightningBareTouched"/>
 		</block>
 		<block name="shrineLightningBareTouched">
 			<property name="Extends" value="shrineLightningBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineLightningTouchedDesc"/>
 			<property name="PlantGrowing.Next" value="shrineLightningTouched"/>
 		</block>
 	<!-- LIGHTNING SHRINE: DRAIN HEALTH --> 
 		<block name="shrineLightningDrainHealth">
 			<property name="Extends" value="shrineLightningMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineLightningDrainHealth"/>
 			<property name="DowngradeBlock" value="shrineLightningBareDrainHealth"/>
 		</block>
 		<block name="shrineLightningBareDrainHealth">
 			<property name="Extends" value="shrineLightningBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineLightningDrainHealthDesc"/>
 			<property name="PlantGrowing.Next" value="shrineLightningDrainHealth"/>
 		</block>
 	<!-- LIGHTNING SHRINE: DRAIN STAMINA --> 
 		<block name="shrineLightningDrainStamina">
 			<property name="Extends" value="shrineLightningMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineLightningDrainStamina"/>
 			<property name="DowngradeBlock" value="shrineLightningBareDrainStamina"/>
 		</block>
 		<block name="shrineLightningBareDrainStamina">
 			<property name="Extends" value="shrineLightningBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineLightningDrainStaminaDesc"/>
 			<property name="PlantGrowing.Next" value="shrineLightningDrainStamina"/>
 		</block>
 	<!-- LIGHTNING SHRINE: DRAIN SPIRIT --> 
 		<block name="shrineLightningDrainSpirit">
 			<property name="Extends" value="shrineLightningMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="Tags" value="shrineLoot,shrineLightningDrainSpirit"/>
 			<property name="DowngradeBlock" value="shrineLightningBareDrainSpirit"/>
 		</block>
 		<block name="shrineLightningBareDrainSpirit">
 			<property name="Extends" value="shrineLightningBareMaster"/>
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DescriptionKey" value="shrineLightningDrainSpiritDesc"/>
 			<property name="PlantGrowing.Next" value="shrineLightningDrainSpirit"/>
 		</block>
@@ -1522,7 +1793,7 @@
 	
 <!-- PORTALS ____________________________________________________________________________-->
 		<block name="portalRecall">
-			<property name="CreativeMode" value="Dev"/>
+			<property name="CreativeMode" value="None"/>
 			<property name="DisplayInfo" value="Name"/>
 			<property name="Material" value="Mstone"/>
 			<property name="MaxDamage" value="2000"/>
@@ -1552,8 +1823,9 @@
 				<property name="resourceRockSmall" value="1000"/>
 			</property>
 			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="75000"/>
 			<property name="Group" value="Building"/>
-			<property name="UnlockedBy" value="sorceryDesk"/>
+			<property name="UnlockedBy" value="perkSorcerySupport,sorceryDesk"/>
 		</block>
 <!-- END - PORTALS ____________________________________________________________________________-->
 	

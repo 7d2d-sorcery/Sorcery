@@ -1,0 +1,390 @@
+<Sorcery>
+ <!--_____________________________________________________________________________________________________________________
+	TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
+	_____________________________________________________________________________________________________________________
+	2022 "DEVRIX"
+	All Rights Reserved.
+	_____________________________________________________________________________________________________________________
+	HOME: http://sorcerymod.com
+	AUTHOR: http://author.sorcerymod.com
+	FORUM: http://forum.sorcerymod.com
+	DISCORD: http://discord.sorcerymod.com
+	YOUTUBE: http://youtube.sorcerymod.com
+	DOWNLOAD: http://download.sorcerymod.com
+	TFP POLICY: http://tfpmodforumpolicy.sorcerymod.com
+	_____________________________________________________________________________________________________________________
+	NOTICE: All digital assets and ideas contained herein, and made possible by the "Sorcery Mod", is 
+	the sole digital proprietary property of mod Author Devrix. Ownership and equal rights are hereby, 
+	irrefutably and solely, extended and granted to The Fun Pimps legal entity in good faith.
+
+	USAGE: The Sorcery Mod may be downloaded and used by players of the 7 Days to Die community, 
+	with no required royalties. Other than the XML Code itself, digital assets and works of the Sorcery Mod 
+	may not be used outside of the Sorcery Mod. By downloading and using the Sorcery Mod, users of the 
+	mod understand and accept full and sole responsibility and liability of using the mod. Author, nor The 
+	Fun Pimps, shall be held responsible or liable for any possible conflict(s) as a direct or indirect result 
+	of using this mod.
+
+	REDISTRIBUTION: The XML code of the Sorcery Mod may solely be redistributed within the 7 Days 
+	to Die community. Conditions of redistribution require this notice to remain in full, unmodified, and a 
+	direct link, with credit stated, to the original Mod and Author. You may not redistribute the digital 
+	Assets or works, aside from XML Code, of the Sorcery Mod. The Sorcery Mod itself should not be 
+	redistributed outside of its original distribution channels.
+
+	PROHIBITED USE: Users are not permitted to modify, or bypass, Supporter Exclusive perks or items in any way.
+	The free in-game "Supporter Key Item" can be obtained through normal game means (loot, trader) and will unlock all 
+	supporter exclusive perks and items. Modifying or bypassing Supporter Exclusive perks or items is a violation of the 
+	Sorcery Terms of Use.
+
+	CREDIT: This mod is made possible through the framework provided by The Fun Pimps. It is their 
+	hard work and ongoing dedication to building and improving an awesome game that fuels the passion 
+	and drives the creation of this mod. Supporters of the Sorcery Mod make ongoing development 
+	possible. Without their support, it is not possible to put in the enormous amount of time required to 
+	create the plethora of unique assets that make Sorcery.
+
+	MODIFICATION: The Terms of Use and Disclaimer herein are subject to changes and modifications.
+	_____________________________________________________________________________________________________________________
+
+	DISCLAIMER
+	_____________________________________________________________________________________________________________________
+	Sorcery is and will always be 100% FREE. When you choose to Support Development, you are supporting the
+	unique individual work I personally do outside of the game: The creation of unique VFX, SFX, Art, Time creating
+	content and the services/interaction I provide here on Discord. You are not supporting "derivative work of 
+	7 Days to Die" (AKA modding code/changing skins/etc). That is against TFP policy.
+
+	Support Not Required: Those unwilling, or unable, to support development can obtain in-game items 100% FREE.
+	You are not required to support in order to obtain in-game items. Non-supporters are able to obtain any
+	"In-Game Supporter Exclusives" 100% FREE, without supporting development. However, I cannot continue development
+	of Sorcery at this level without Ongoing Support. If support drops below a threshold, development halts. The large
+	amount of time allotted to development is made possible through the generous support given by our Supporters.
+	Disclaimer subject to ongoing changes.
+	_____________________________________________________________________________________________________________________-->
+
+	<append xpath="/dialogs">
+	
+		<!-- TRADER: BLOOD MERCHANT -->		
+			<dialog id="sorceryTraderArcane" startstatementid="start">
+				<!-- Statements -->
+				<statement id="start" text="dialog_sorcery_trader_statement_start">
+					<response_entry id="shop" />
+					<response_entry id="sorcerertraininghave" />
+					<response_entry id="jobsnone" />
+					<response_entry id="jobshave1" />
+					<response_entry id="jobshave2" />
+					<response_entry id="jobshave3" />
+					<response_entry id="jobshave4" />
+					<response_entry id="jobshave5" />
+					<!-- <response_entry id="specialjobshave" /> -->
+					<response_entry id="background" />
+					<response_entry id="admin" />
+					<response_entry id="done" />
+				</statement>
+				
+				<statement id="background" text="dialog_sorcery_trader_statement_background">
+					<response_entry id="fallen" />
+					<response_entry id="sorcerer" />
+					<response_entry id="elements" />
+					<response_entry id="spells" />
+					<response_entry id="spirit" />
+					<response_entry id="nevermind" />
+				</statement>
+				
+				<statement id="theawakening" text="dialog_sorcery_trader_statement_theawakening" nextstatementid="background" />
+				<statement id="fallen" text="dialog_sorcery_trader_statement_fallen" nextstatementid="background" />
+				<statement id="sorcerer" text="dialog_sorcery_trader_statement_sorcerer" nextstatementid="background" />
+				<statement id="elements" text="dialog_sorcery_trader_statement_elements" nextstatementid="background" />
+				<statement id="spells" text="dialog_sorcery_trader_statement_spells" nextstatementid="background" />
+				<statement id="spirit" text="dialog_sorcery_trader_statement_spirit" nextstatementid="background" />
+								
+				<statement id="currentjobs1" text="dialog_sorcery_trader_statement_currentjobs" nextstatementid="start" >
+					<quest_entry listindex="0" tier="1" />
+					<quest_entry listindex="1" tier="1" />
+					<quest_entry listindex="2" tier="1" />
+					<quest_entry listindex="3" tier="1" />
+					<quest_entry listindex="4" tier="1" />
+					<response_entry id="jobsnext2" uniqueid="next" />
+					<response_entry id="jobsnext3" uniqueid="next" />
+					<response_entry id="jobsnext4" uniqueid="next" />
+					<response_entry id="jobsnext5" uniqueid="next" />
+					<response_entry id="nevermind" />
+				</statement>
+				<statement id="currentjobs2" text="dialog_sorcery_trader_statement_currentjobs2" nextstatementid="start" >
+					<quest_entry listindex="0" tier="2" />
+					<quest_entry listindex="1" tier="2" />
+					<quest_entry listindex="2" tier="2" />
+					<quest_entry listindex="3" tier="2" />
+					<quest_entry listindex="4" tier="2" />
+					<response_entry id="jobsprev1" uniqueid="prev" />
+					<response_entry id="jobsnext3" uniqueid="next" />
+					<response_entry id="jobsnext4" uniqueid="next" />
+					<response_entry id="jobsnext5" uniqueid="next" />
+					<response_entry id="nevermind" />
+				</statement>
+				<statement id="currentjobs3" text="dialog_sorcery_trader_statement_currentjobs3" nextstatementid="start" >
+					<quest_entry listindex="0" tier="3" />
+					<quest_entry listindex="1" tier="3" />
+					<quest_entry listindex="2" tier="3" />
+					<quest_entry listindex="3" tier="3" />
+					<quest_entry listindex="4" tier="3" />
+					<response_entry id="jobsprev2" uniqueid="prev" />
+					<response_entry id="jobsprev1" uniqueid="prev" />
+					<response_entry id="jobsnext4" uniqueid="next" />
+					<response_entry id="jobsnext5" uniqueid="next" />
+					<response_entry id="nevermind" />
+				</statement>
+				<statement id="currentjobs4" text="dialog_sorcery_trader_statement_currentjobs4" nextstatementid="start" >
+					<quest_entry listindex="0" tier="4" />
+					<quest_entry listindex="1" tier="4" />
+					<quest_entry listindex="2" tier="4" />
+					<quest_entry listindex="3" tier="4" />
+					<quest_entry listindex="4" tier="4" />
+					<response_entry id="jobsprev3" uniqueid="prev" />
+					<response_entry id="jobsprev2" uniqueid="prev" />
+					<response_entry id="jobsprev1" uniqueid="prev" />
+					<response_entry id="jobsnext5" uniqueid="next" />
+					<response_entry id="nevermind" />
+				</statement>
+				<statement id="currentjobs5" text="dialog_sorcery_trader_statement_currentjobs5" nextstatementid="start" >
+					<quest_entry listindex="0" tier="5" />
+					<quest_entry listindex="1" tier="5" />
+					<quest_entry listindex="2" tier="5" />
+					<quest_entry listindex="3" tier="5" />
+					<quest_entry listindex="4" tier="5" />
+					<response_entry id="jobsprev4" uniqueid="prev" />
+					<response_entry id="jobsprev3" uniqueid="prev" />
+					<response_entry id="jobsprev2" uniqueid="prev" />
+					<response_entry id="jobsprev1" uniqueid="prev" />
+					<response_entry id="nevermind" />
+				</statement>
+				
+				<statement id="currentjobsspecial" text="dialog_sorcery_trader_statement_currentjobs" nextstatementid="start" >
+					<quest_entry type="special" listindex="0" />
+					<quest_entry type="special" listindex="1" />
+					<quest_entry type="special" listindex="2" />
+					<quest_entry type="special" listindex="3" />
+					<quest_entry type="special" listindex="4" />
+					<response_entry id="nevermind" />
+				</statement>
+				
+			<!-- TRAINING: JOBS -->
+				<statement id="currentjobstraining" text="dialog_sorcery_trader_statement_currentjobstraining" nextstatementid="start" >
+					<response_entry id="responseArcaneIntroQuests" />
+					<response_entry id="responseFireIntroQuests" />
+					<response_entry id="responseIceIntroQuests" />
+					<response_entry id="responseLightningIntroQuests" />
+					<response_entry id="responseTrainingNone" />
+					<!-- <response_entry id="responseUniqueQuest4" /> -->
+					<!-- <response_entry id="responseUniqueQuest5" /> -->
+					<!-- <response_entry id="responseUniqueQuest6" /> -->
+					<!-- <response_entry id="responseUniqueQuest7" /> -->
+					<!-- <response_entry id="responseUniqueQuest8" /> -->
+					<!-- <response_entry id="sorcerertraininghave2" /> -->
+					<response_entry id="nevermind" />
+				</statement>
+				<!-- Second Jobs Category -->
+				<statement id="currentjobstraining2" text="dialog_sorcery_trader_statement_currentjobstraining" nextstatementid="start" >
+					<!-- <response_entry id="responseUniqueQuest3" /> -->
+					<response_entry id="sorcerertrainingprev" uniqueid="prev" />
+					<response_entry id="nevermind" />
+				</statement>
+				
+				<statement id="nojobs" text="dialog_sorcery_trader_statement_nojobs" nextstatementid="start" />
+				
+				<statement id="admin" text="dialog_trader_statement_admin">
+					<response_entry id="restock" />
+					<response_entry id="resetquests" />
+					<response_entry id="nevermind" />
+				</statement>
+				
+			<!-- TRADER RESPONSES -->
+				<response id="shop" text="dialog_sorcery_trader_response_shop">
+					<action type="Trader" id="trade" />
+				</response>
+				
+				<!-- TRAINING RESPONSE: ALL TRAININGS -->
+				<response id="sorcerertraininghave" text="dialog_sorcery_trader_response_sorcerertraininghave" nextstatementid="currentjobstraining" >
+					<!-- <action type="AddJournalEntry" id="questTip" /> -->
+				</response>
+				<!-- TRAINING RESPONSE: CATEGORY #2 TRAININGS -->
+				<response id="sorcerertraininghave2" text="Second Sorcerer Training Category" nextstatementid="currentjobstraining2" >
+						<!-- Hide if NE0 -->
+						<!-- <requirement type="HasCVarSDX, Sorcery" operator="NE" value="0" id="$quest_sorcery_trainingsavailable" requirementtype="Hide" /> -->
+				</response>
+				<!-- Training: PREV -->
+				<response id="sorcerertrainingprev" text="Back" nextstatementid="currentjobstraining" >
+					<!-- <requirement type="QuestTier" value="1" requirementtype="Hide" /> -->
+				</response>
+				
+				<!-- TRAINING QUESTS -->
+				<!-- <response id="responseUniqueQuest1" text="Train me in [ae92d5]Arcane[-] Sorcery!"> -->
+				<response id="responseArcaneIntroQuests" text="Train me in [ae92d5]Arcane[-] Sorcery!">
+						<!-- Hide if NE0 -->
+						<requirement type="HasCVarSDX, Sorcery" operator="NE" value="0" id="$quest_sorceryIntroGuide_Arcane" requirementtype="Hide" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroPotions" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroAlchemy" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroChest" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroTailoring" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroScrolls" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroEnchanting" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroRunesmithing" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroArcaneArmor" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroFamiliar" />
+					<action type="AddCVar, Sorcery" id="$quest_sorceryIntroGuide_Arcane" operator="set" value="1" />
+				</response>
+				<response id="responseFireIntroQuests" text="Train me in [dc6e00]Fire[-] Sorcery!">
+						<requirement type="HasCVarSDX, Sorcery" operator="NE" value="0" id="$quest_sorceryIntroGuide_Fire" requirementtype="Hide" />
+						<requirement type="HasCVarSDX, Sorcery" operator="NE" value="1" id="$sorceryElementsLearned_Fire" requirementtype="Hide" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroGuide_Fire" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorcery_mundanetrader_goto" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroFireAspectAura" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroFireCraftArrowFire" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroFireCraftFire2" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroFireCraftFire3" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroFireStaff" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroFireCraftFireTrap" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroFireSpellTurret" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroFireArmor" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryFirePowder" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroFireFamiliar" />
+					<action type="AddCVar, Sorcery" id="$quest_sorceryIntroGuide_Fire" operator="set" value="1" />
+				</response>
+				<response id="responseIceIntroQuests" text="Teach me [006eaa]Ice[-] Sorcery!">
+						<requirement type="HasCVarSDX, Sorcery" operator="NE" value="0" id="$quest_sorceryIntroGuide_Ice" requirementtype="Hide" />
+						<requirement type="HasCVarSDX, Sorcery" operator="NE" value="1" id="$sorceryElementsLearned_Ice" requirementtype="Hide" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroGuide_Ice" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorcery_mundanetrader_goto" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroIceAspectAura" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroIceCraftArrowIce" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroIceCraftIce2" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroIceCraftIce3" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroIceStaff" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroIceCraftIceTrap" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroIceSpellTurret" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroIceArmor" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIcePowder" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroIceFamiliar" />
+					<action type="AddCVar, Sorcery" id="$quest_sorceryIntroGuide_Ice" operator="set" value="1" />
+				</response>
+				<response id="responseLightningIntroQuests" text="Train me in [9650ff]Lightning[-] Sorcery!">
+						<requirement type="HasCVarSDX, Sorcery" operator="NE" value="0" id="$quest_sorceryIntroGuide_Lightning" requirementtype="Hide" />
+						<requirement type="HasCVarSDX, Sorcery" operator="NE" value="1" id="$sorceryElementsLearned_Lightning" requirementtype="Hide" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroGuide_Lightning" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorcery_mundanetrader_goto" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroLightningAspectAura" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroLightningCraftArrowLightning" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroLightningCraftLightning2" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroLightningCraftLightning3" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroLightningStaff" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroLightningCraftLightningTrap" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroLightningSpellTurret" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroLightningArmor" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryLightningPowder" />
+					<action type="GiveQuestSDX, Sorcery" id="quest_sorceryIntroLightningFamiliar" />
+					<action type="AddCVar, Sorcery" id="$quest_sorceryIntroGuide_Lightning" operator="set" value="1" />
+				</response>
+				<response id="responseTrainingNone" text="dialog_sorcery_trader_response_trainingnone">
+				</response>
+				
+				
+				<response id="jobsnone" text="dialog_sorcery_trader_response_jobsnone" nextstatementid="nojobs" >
+					<requirement type="QuestStatus" value="InProgress" requirementtype="Hide" />
+				</response>
+				
+				<response id="jobshave1" text="dialog_sorcery_trader_response_jobshave" nextstatementid="currentjobs1" >
+					<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
+					<!-- DEV: Previously commented -->
+					<!-- <requirement type="QuestTierHighest" value="1" requirementtype="Hide" /> -->
+					<!-- <action type="AddJournalEntry" id="questTip" /> -->
+				</response>
+				
+				<response id="jobshave2" text="dialog_sorcery_trader_response_jobshave2" nextstatementid="currentjobs2" >
+					<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
+					<requirement type="QuestTierHighest" value="2" requirementtype="Hide" />
+					<!-- <action type="AddJournalEntry" id="questTip" /> -->
+				</response>
+				<response id="jobshave3" text="dialog_sorcery_trader_response_jobshave3" nextstatementid="currentjobs3" >
+					<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
+					<requirement type="QuestTierHighest" value="3" requirementtype="Hide" />
+				</response>
+				<response id="jobshave4" text="dialog_sorcery_trader_response_jobshave4" nextstatementid="currentjobs4" >
+					<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
+					<requirement type="QuestTierHighest" value="4" requirementtype="Hide" />
+				</response>
+				<response id="jobshave5" text="dialog_sorcery_trader_response_jobshave5" nextstatementid="currentjobs5" >
+					<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" />
+					<requirement type="QuestTierHighest" value="5" requirementtype="Hide" />
+				</response>
+				
+				<response id="jobsprev1" text="Show me [Tier I] [e3bb70]Sorcerer Jobs[-]." nextstatementid="currentjobs1" >
+					<requirement type="QuestTier" value="1" requirementtype="Hide" />
+				</response>
+				
+				<response id="jobsprev2" text="Show me [Tier II] [e3bb70]Sorcerer Jobs[-]." nextstatementid="currentjobs2" >
+					<requirement type="QuestTier" value="2" requirementtype="Hide" />
+					<requirement type="QuestTierHighest" value="2" requirementtype="Hide" />
+				</response>
+				<response id="jobsnext2" text="Show me [Tier II] [e3bb70]Sorcerer Jobs[-]." nextstatementid="currentjobs2" >
+					<requirement type="QuestTier" value="2" requirementtype="Hide" />
+				</response>
+				
+				<response id="jobsprev3" text="Show me [Tier III] [e3bb70]Sorcerer Jobs[-]." nextstatementid="currentjobs3" >
+					<requirement type="QuestTier" value="3" requirementtype="Hide" />
+					<requirement type="QuestTierHighest" value="3" requirementtype="Hide" />
+				</response>
+				<response id="jobsnext3" text="Show me [Tier III] [e3bb70]Sorcerer Jobs[-]." nextstatementid="currentjobs3" >
+					<requirement type="QuestTier" value="3" requirementtype="Hide" />
+				</response>
+				
+				<response id="jobsprev4" text="Show me [Tier IV] [e3bb70]Sorcerer Jobs[-]." nextstatementid="currentjobs4" >
+					<requirement type="QuestTier" value="4" requirementtype="Hide" />
+					<requirement type="QuestTierHighest" value="4" requirementtype="Hide" />
+				</response>
+				<response id="jobsnext4" text="Show me [Tier IV] [e3bb70]Sorcerer Jobs[-]." nextstatementid="currentjobs4" >
+					<requirement type="QuestTier" value="4" requirementtype="Hide" />
+				</response>
+				
+				<response id="jobsprev5" text="Show me [Tier V] [e3bb70]Sorcerer Jobs[-]." nextstatementid="currentjobs5" >
+					<requirement type="QuestTier" value="5" requirementtype="Hide" />
+					<requirement type="QuestTierHighest" value="5" requirementtype="Hide" />
+				</response>
+				<response id="jobsnext5" text="Show me [Tier V] [e3bb70]Sorcerer Jobs[-]." nextstatementid="currentjobs5" >
+					<requirement type="QuestTier" value="5" requirementtype="Hide" />
+				</response>
+				
+				<!-- <response id="specialjobshave" text="dialog_sorcery_trader_response_specialjobshave" nextstatementid="currentjobsspecial" >
+					<requirement type="QuestStatus" value="NotStarted" requirementtype="Hide" tag="special" />
+					<requirement type="QuestsAvailable" value="special" requirementtype="Hide" />
+					<action type="AddJournalEntry" id="questTip" />
+				</response> -->
+
+				
+				<response id="background" text="dialog_sorcery_trader_response_background" nextstatementid="background">
+				</response>
+				
+				<response id="theawakening" text="dialog_sorcery_trader_response_theawakening" nextstatementid="theawakening" />
+				<response id="fallen" text="dialog_sorcery_trader_response_fallen" nextstatementid="fallen" />
+				<response id="sorcerer" text="dialog_sorcery_trader_response_sorcerer" nextstatementid="sorcerer" />
+				<response id="elements" text="dialog_sorcery_trader_response_elements" nextstatementid="elements" />
+				<response id="spells" text="dialog_sorcery_trader_response_spells" nextstatementid="spells" />
+				<response id="spirit" text="dialog_sorcery_trader_response_spirit" nextstatementid="spirit" />
+				<response id="nevermind" text="dialog_trader_response_nevermind" nextstatementid="start" />
+				
+				<response id="admin" text="dialog_trader_response_admin" nextstatementid="admin" >
+					<requirement type="Admin" requirementtype="Hide" />
+				</response>
+				
+				<response id="restock" text="dialog_trader_response_restock">
+					<action type="Trader" id="restock" />
+				</response>
+				
+				<response id="resetquests" text="dialog_trader_response_resetquests">
+					<action type="Trader" id="reset_quests" />
+				</response>
+				
+				<response id="done" text="dialog_trader_response_nevermind" />
+				
+			</dialog>
+	
+	
+	</append>
+	
+</Sorcery>
