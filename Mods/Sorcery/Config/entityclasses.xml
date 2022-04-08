@@ -1213,6 +1213,218 @@
 		</entity_class>
 
 		
+
+	<!-- ANIMAL: EVENT ______________________________________-->
+		<entity_class name="sorceryRabbitMaster">
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="Tags" value="entity,animal,event,sorcerySpecial"/>
+			<property name="Class" value="EntityAnimalRabbit"/>
+			<property name="NavObject" value="sorcerySpecialTracking"/>
+			<property name="Parent" value="Animals"/>
+			<property name="EntityType" value="Animal"/>
+			<property name="ModelType" value="Standard"/>
+			<property name="Prefab" value="/Entities/Animals/Rabbit/RABBIT"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_rabbitArcane.unity3d?mat_rabbitArcane"/>
+			<property name="SurfaceCategory" value="organic"/>
+			<property name="ParticleOnDeath" value="blood_death"/>
+			<property name="HasDeathAnim" value="true"/>
+			<!-- <property name="RootMotion" value="true"/> -->
+			<property name="HasRagdoll" value="false"/>
+			<property name="CanBigHead" value="false" />
+			<property name="AvatarController" value="GameObjectAnimalAnimation"/>
+			<property name="PhysicsBody" value="rabbit"/>
+			<property name="RotateToGround" value="true"/>
+			<property name="Mass" value="130"/>
+			<property name="Weight" value="300"/>
+			<property name="PushFactor" value="30"/>
+			<property name="SizeScale" value="3"/>
+			<property name="IsAnimalEntity" value="true"/>
+			<property name="IsEnemyEntity" value="false"/>
+			<property name="Faction" value="animals"/>
+			<property name="LookAtAngle" value="90"/>
+			<!-- AI -->
+			<property name="AIGroupCircle" value="1"/>
+			<property name="AINoiseSeekDist" value="5"/>
+			<property name="AIPathCostScale" value="100, 100"/>
+			<property name="AIFeralSense" value="5"/>
+			<!-- AI: Task -->
+			<property name="AITask-1" value="RunawayWhenHurt"/>
+			<property name="AITask-2" value="RunawayFromEntity" data="class=EntityPlayer,EntityZombie,EntityEnemyAnimal;safeDistance=30"/>
+			<property name="AITask-3" value="Look"/>
+			<property name="AITask-4" value="Wander"/>
+
+			<!-- Stealth settings -->
+			<property name="MaxViewAngle" value="360"/>
+			<property name="SightRange" value="30"/>
+			<property name="SightLightThreshold" value="-100,-100"/> <!-- how well lit you have to be for entity to see you at min,max range -->
+
+			<property name="SoundRandom" value="Animals/rabbitpain"/>
+			<property name="SoundHurt" value="Animals/rabbitpain"/>
+			<property name="SoundDeath" value="Animals/rabbitdeath"/>
+			<property name="SoundAttack" value="Animals/rabbitpain"/>
+			<property name="SoundSense" value="Animals/rabbitpain"/>
+			<property name="SoundGiveUp" value="Animals/rabbitpain"/>
+
+			<!-- Gameplay -->
+			<property name="PainResistPerHit" value=".9"/> <!-- no pain -1 -->
+			<property name="MaxTurnSpeed" value="420"/>
+			<property name="MoveSpeed" value=".7"/>
+			<property name="MoveSpeedAggro" value="2, 2"/>
+			<property name="MoveSpeedPanic" value="2.5"/>
+			<property name="SwimSpeed" value="2"/>
+			<property name="SwimStrokeRate" value="1.1,1.5"/>
+			<property name="AttackTimeoutDay" value="1.5"/>
+			<property name="AttackTimeoutNight" value="1.4"/>
+			<property name="CanClimbLadders" value="true"/>
+
+			<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
+			<property name="DismemberMultiplierHead" value="0"/>
+			<property name="DismemberMultiplierArms" value="0"/>
+			<property name="DismemberMultiplierLegs" value="0"/>
+
+			<property name="TimeStayAfterDeath" value="60"/>
+			<property name="DeadBodyHitPoints" value="300"/>
+		
+			<property name="HandItem" value="meleeHandRabbitUnholy"/>
+			<property name="ExperienceGain" value="0"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="BuffProcChance" operation="base_set" value="100"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="summon_AutoDespawn,summonFamiliarArcane,summonFamiliarArcane_Spawn"/>
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="spellFX_Conjure,summon_AutoDespawn,buffSorceryImmunity_All,spell_SpawnHeal"/> -->
+				<!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="spellFX_Conjure,spell_SpawnHeal"/> -->
+				<passive_effect name="HealthMax" operation="base_set" value="100"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="10000"/>
+				<passive_effect name="StaminaChangeOT" operation="base_add" value="10"/>
+				<passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffInfectionCatch,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- Animal: RABBIT ARCANE -->
+		<entity_class name="sorceryRabbitArcane" extends="sorceryRabbitMaster">
+			<property name="HideInSpawnMenu" value="false"/>
+			<property name="Tags" value="entity,animal,event,sorcerySpecial"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_rabbitArcane.unity3d?mat_rabbitArcane"/>
+			<property name="ExperienceGain" value="300"/>
+			<property name="DeadBodyHitPoints" value="100"/>
+			<property name="LootListOnDeath" value="sorceryRabbitArcane"/>
+			<!-- Harvest -->
+			<drop event="Harvest" name="resourceExtractOmni" tag="allToolsHarvest" count="30,40"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="20"/>
+			<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="4"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="5"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+			<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="spellFX_Conjure,spell_SpawnHeal"/>
+				<passive_effect name="HealthMax" operation="base_set" value="100"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="45"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- Animal: RABBIT UNHOLY -->
+		<entity_class name="sorceryRabbitUnholy" extends="sorceryRabbitMaster">
+			<property name="HideInSpawnMenu" value="false"/>
+			<property name="Tags" value="entity,animal,event,sorcerySpecial"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_rabbitUnholy.unity3d?mat_rabbitUnholy"/>
+			<property name="Class" value="EntityZombieDog"/>
+			<property name="IsEnemyEntity" value="true"/>
+			<property name="HandItem" value="meleeHandRabbitUnholy"/>
+			<!-- AI -->
+			<property name="AITask-1" value="BreakBlock"/>
+			<property name="AITask-2" value="Territorial"/>
+			<property name="AITask-3" value="RunawayWhenHurt" data="runChance=0.5;healthPer=0.3;healthPerMax=0.6"/>
+			<property name="AITask-4" value="ApproachAndAttackTarget" data="class=EntityNPC,0,EntityEnemyAnimal,0,EntityPlayer,0"/> <!-- class,maxChaseTime (return home) -->
+			<property name="AITask-5" value="ApproachSpot"/>
+			<property name="AITask-6" value="Look"/>
+			<property name="AITask-7" value="Wander"/>
+			<property name="AITask-8" value=""/>
+			<!-- AI: Target -->
+			<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityNPC,EntityEnemyAnimal,EntityPlayer"/>
+			<property name="AITarget-2" value="BlockingTargetTask"/>
+			<property name="AITarget-3" value="SetNearestCorpseAsTarget" data="class=EntityPlayer"/>
+			<property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/> <!-- class, hear dist, see dist (checked left to right, 0 dist uses entity default) -->
+			<!-- Kill -->
+			<property name="ExperienceGain" value="300"/>
+			<property name="DeadBodyHitPoints" value="100"/>
+			<property name="LootListOnDeath" value="sorceryRabbitUnholy"/>
+			<!-- Harvest -->
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="20"/>
+			<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="7"/>
+			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="3"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="spellFX_UnholyConjure,spell_SpawnHeal,buffEntity_DrainLifeforce"/>
+				<passive_effect name="HealthMax" operation="base_set" value="100"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="45"/>
+			</effect_group>
+		</entity_class>
+		
+		<!-- Animal: RABBIT BOSS -->
+		<entity_class name="sorceryRabbitBoss" extends="sorceryRabbitMaster">
+			<property name="HideInSpawnMenu" value="false"/>
+			<property name="Tags" value="entity,animal,event,sorcerySpecial"/>
+			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_rabbitUnholy.unity3d?mat_rabbitUnholy"/>
+			<property name="Class" value="EntityZombieDog"/>
+			<property name="IsEnemyEntity" value="true"/>
+			<property name="HandItem" value="meleeHandRabbitBoss"/>
+			<!-- Boss -->
+			<property name="SightRange" value="30"/>
+			<property name="Mass" value="200"/>
+			<property name="Weight" value="400"/>
+			<property name="PushFactor" value="100"/>
+			<property name="SizeScale" value="8"/>
+			<property name="IsEnemyEntity" value="true"/>
+			<property name="MoveSpeed" value="2.5"/>
+			<property name="MoveSpeedAggro" value="3, 3"/>
+			<property name="MoveSpeedPanic" value="3.5"/>
+			<property name="SwimSpeed" value="3"/>
+			<!-- AI -->
+			<property name="AITask-1" value="BreakBlock"/>
+			<property name="AITask-2" value="Territorial"/>
+			<property name="AITask-3" value="RunawayWhenHurt" data="runChance=0.5;healthPer=0.3;healthPerMax=0.6"/>
+			<property name="AITask-4" value="ApproachAndAttackTarget" data="class=EntityNPC,0,EntityEnemyAnimal,0,EntityPlayer,0"/> <!-- class,maxChaseTime (return home) -->
+			<property name="AITask-5" value="ApproachSpot"/>
+			<property name="AITask-6" value="Look"/>
+			<property name="AITask-7" value="Wander"/>
+			<property name="AITask-8" value=""/>
+			<!-- AI: Target -->
+			<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityNPC,EntityEnemyAnimal,EntityPlayer"/>
+			<property name="AITarget-2" value="BlockingTargetTask"/>
+			<property name="AITarget-3" value="SetNearestCorpseAsTarget" data="class=EntityPlayer"/>
+			<property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/> <!-- class, hear dist, see dist (checked left to right, 0 dist uses entity default) -->
+			<!-- Kill -->
+			<property name="ExperienceGain" value="2000"/>
+			<property name="DeadBodyHitPoints" value="300"/>
+			<property name="LootListOnDeath" value="sorceryRabbitBoss"/>
+			<!-- Harvest -->
+			<drop event="Harvest" name="resourceExtractOmni" tag="allToolsHarvest" count="80,100"/>
+			<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="50"/>
+			<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="15"/>
+			<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="5"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="25"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
+			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<effect_group>
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" buff="spellFX_UnholyConjure,spell_SpawnHeal,buffEntity_DrainLifeforce,buffRabbitBoss"/>
+				<passive_effect name="HealthMax" operation="base_set" value="666"/>
+				<!-- <passive_effect name="PhysicalDamageResist" operation="base_set" value="90"/> -->
+			</effect_group>
+		</entity_class>
+		
+		
+		
 		
 	<!-- SPELL TURRETS ______________________________________-->
 		<!-- FIRE SPELL TURRET -->

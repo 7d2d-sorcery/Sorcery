@@ -196,32 +196,34 @@
 					<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
 				</triggered_effect> -->
 			</effect_group>
+			<!-- NOTE: RequirementItemTier preferred here. Bug with Mods prevents Weapon Quality from being read. -->
+			<!-- <requirement name="RequirementItemTier" tier="spellcastFire" operation="Equals" value="2"/> -->
 			<effect_group name="QUALITY: Tier 2 Novice">
-					<requirement name="RequirementItemTier" tier="spellcastFire" operation="Equals" value="2"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="Equals" value="2"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireDamage" operation="set" value=".1" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireSpellSpeed" operation="set" value=".1" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireSpellCharge" operation="set" value=".05" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 3 Intermediate">
-					<requirement name="RequirementItemTier" tier="spellcastFire" operation="Equals" value="3"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="Equals" value="3"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireDamage" operation="set" value=".2" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireSpellSpeed" operation="set" value=".2" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireSpellCharge" operation="set" value=".1" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 4 Adept">
-					<requirement name="RequirementItemTier" tier="spellcastFire" operation="Equals" value="4"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="Equals" value="4"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireDamage" operation="set" value=".3" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireSpellSpeed" operation="set" value=".3" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireSpellCharge" operation="set" value=".15" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 5 Expert">
-					<requirement name="RequirementItemTier" tier="spellcastFire" operation="Equals" value="5"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="Equals" value="5"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireDamage" operation="set" value=".4" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireSpellSpeed" operation="set" value=".4" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireSpellCharge" operation="set" value=".2" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 6 Master">
-					<requirement name="RequirementItemTier" tier="spellcastFire" operation="Equals" value="6"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastFire" operation="Equals" value="6"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireDamage" operation="set" value=".5" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireSpellSpeed" operation="set" value=".5" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryFireSpellCharge" operation="set" value=".25" />
@@ -389,36 +391,39 @@
 				<passive_effect name="ModPowerBonus" operation="perc_add" value="0.15" tags="EntityDamage"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="1000" tags="EconomicValue"/>
 			</effect_group>
+			<!-- NOTE: RequirementItemTier preferred here. Bug with Mods prevents Weapon Quality from being read. -->
+			<!-- <requirement name="RequirementItemTier" tier="spellcastIce" operation="Equals" value="2"/> -->
 			<effect_group name="QUALITY: Tier 2 Novice">
-					<requirement name="RequirementItemTier" tier="spellcastIce" operation="Equals" value="2"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastIce" operation="Equals" value="2"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceDamage" operation="set" value=".1" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceSpellSpeed" operation="set" value=".1" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceSpellCharge" operation="set" value=".05" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 3 Intermediate">
-					<requirement name="RequirementItemTier" tier="spellcastIce" operation="Equals" value="3"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastIce" operation="Equals" value="3"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceDamage" operation="set" value=".2" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceSpellSpeed" operation="set" value=".2" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceSpellCharge" operation="set" value=".1" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 4 Adept">
-					<requirement name="RequirementItemTier" tier="spellcastIce" operation="Equals" value="4"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastIce" operation="Equals" value="4"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceDamage" operation="set" value=".3" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceSpellSpeed" operation="set" value=".3" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceSpellCharge" operation="set" value=".15" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 5 Expert">
-					<requirement name="RequirementItemTier" tier="spellcastIce" operation="Equals" value="5"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastIce" operation="Equals" value="5"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceDamage" operation="set" value=".4" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceSpellSpeed" operation="set" value=".4" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceSpellCharge" operation="set" value=".2" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 6 Master">
-					<requirement name="RequirementItemTier" tier="spellcastIce" operation="Equals" value="6"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastIce" operation="Equals" value="6"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceDamage" operation="set" value=".5" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceSpellSpeed" operation="set" value=".5" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryIceSpellCharge" operation="set" value=".25" />
 			</effect_group>
+
 			<effect_group name="DISPLAY">
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".weapon_sorceryIceDamage" operation="set" value="@$weapon_sorceryIceDamage" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar=".weapon_sorceryIceDamage" operation="multiply" value="100" />
@@ -565,32 +570,34 @@
 				<passive_effect name="ModPowerBonus" operation="perc_add" value="0.15" tags="EntityDamage"/>
 				<passive_effect name="ModPowerBonus" operation="base_add" value="1000" tags="EconomicValue"/>
 			</effect_group>
+			<!-- NOTE: RequirementItemTier preferred here. Bug with Mods prevents Weapon Quality from being read. -->
+			<!-- <requirement name="RequirementItemTier" tier="spellcastLightning" operation="Equals" value="2"/> -->
 			<effect_group name="QUALITY: Tier 2 Novice">
-					<requirement name="RequirementItemTier" tier="spellcastLightning" operation="Equals" value="2"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastLightning" operation="Equals" value="2"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningDamage" operation="set" value=".1" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningSpellSpeed" operation="set" value=".1" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningSpellCharge" operation="set" value=".05" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 3 Intermediate">
-					<requirement name="RequirementItemTier" tier="spellcastLightning" operation="Equals" value="3"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastLightning" operation="Equals" value="3"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningDamage" operation="set" value=".2" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningSpellSpeed" operation="set" value=".2" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningSpellCharge" operation="set" value=".1" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 4 Adept">
-					<requirement name="RequirementItemTier" tier="spellcastLightning" operation="Equals" value="4"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastLightning" operation="Equals" value="4"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningDamage" operation="set" value=".3" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningSpellSpeed" operation="set" value=".3" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningSpellCharge" operation="set" value=".15" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 5 Expert">
-					<requirement name="RequirementItemTier" tier="spellcastLightning" operation="Equals" value="5"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastLightning" operation="Equals" value="5"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningDamage" operation="set" value=".4" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningSpellSpeed" operation="set" value=".4" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningSpellCharge" operation="set" value=".2" />
 			</effect_group>
 			<effect_group name="QUALITY: Tier 6 Master">
-					<requirement name="RequirementItemTier" tier="spellcastLightning" operation="Equals" value="6"/>	
+					<requirement name="ProgressionLevel" progression_name="perkSorcerySpellcastLightning" operation="Equals" value="6"/>
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningDamage" operation="set" value=".5" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningSpellSpeed" operation="set" value=".5" />
 				<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$weapon_sorceryLightningSpellCharge" operation="set" value=".25" />
@@ -10104,6 +10111,49 @@
 	<!-- END - SPELL TURRETS ______________________________________-->
 	
 	
+	<!-- MELEE HAND -->
+		<!-- Hand Rabbit: UNHOLY -->
+		<item name="meleeHandRabbitUnholy">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="Tags" value="melee"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Delay" value="1"/>
+				<property name="Range" value="1.6"/>
+				<property name="Sphere" value="1"/>
+				<property name="DamageEntity" value="10"/>
+				<property name="DamageBlock" value="100"/>
+			</property>
+			<effect_group name="Base Effects" tiered="false">
+				<passive_effect name="EntityDamage" operation="base_set" value="10"/>
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth,wood"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="imprint_IceSorcery,imprint_FireSorcery,spellFX_FireImpactAOE,spellFX_IceImpactAOE,spellFX_LightningImpactAOE,spellFire_Burn,spellIce_Chill,spellLightning_Shock"/>
+			</effect_group>
+		</item>
+		<!-- Hand Rabbit: BOSS -->
+		<item name="meleeHandRabbitBoss">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="Tags" value="melee"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property name="Degradation" value="99999" param1="true"/>
+			<property class="Action0">
+				<property name="Delay" value="1"/>
+				<property name="Range" value="3.6"/>
+				<property name="Sphere" value="1"/>
+				<property name="DamageEntity" value="20"/>
+				<property name="DamageBlock" value="300"/>
+			</property>
+			<effect_group name="Base Effects" tiered="false">
+				<passive_effect name="EntityDamage" operation="base_set" value="20"/>
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth,wood"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value="100" tags="imprint_IceSorcery,imprint_FireSorcery,spellFX_FireImpactAOE,spellFX_IceImpactAOE,spellFX_LightningImpactAOE,spellFire_Burn,spellIce_Chill,spellLightning_Shock"/>
+			</effect_group>
+		</item>
 	
 	<!-- FAMILIARS ______________________________________-->
 		<!-- Hand Familiar: ARCANE -->
@@ -10111,6 +10161,7 @@
 			<property name="Extends" value="meleeHandMaster"/>
 			<property name="Tags" value="melee,familiarMelee"/>
 			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
 			<property name="Degradation" value="99999" param1="true"/>
 			<property class="Action0">
 				<property name="Delay" value=".8"/>
@@ -10362,7 +10413,7 @@
 	<!-- UPGRADE -->
 	<append xpath="/items/item[@name='meleeToolRepairT0StoneAxe' or @name='meleeToolRepairT0TazasStoneAxe' or @name='meleeToolRepairT1ClawHammer' or @name='meleeToolRepairT3Nailgun']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceEssenceFire,resourceExtractFire,resourceEssenceIce,resourceExtractIce,resourceEssenceLightning,resourceExtractLightning</append>
 	<!-- MISC -->
-	<append xpath="/items/item[@name='resourceSilverNugget' or @name='resourceGoldNugget' or @name='resourceRawDiamond']"><property name="CreativeMode" value="None"/></append>
+	<append xpath="/items/item[@name='resourceSilverNugget' or @name='resourceGoldNugget' or @name='resourceRawDiamond' or @name='casinoCoin']"><property name="CreativeMode" value="None"/></append>
 	<!-- ADMIN RESPEC -->
 	<append xpath="/items/item[@name='drinkJarFullRespecAdmin']/effect_group">
 		<!-- SORCERY: DEV TESTING -->

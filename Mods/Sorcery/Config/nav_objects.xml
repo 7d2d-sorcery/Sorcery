@@ -263,6 +263,20 @@
 			</onscreen_settings>
 		</nav_object_class>
 		
+		<!-- SPECIAL -->
+		<nav_object_class name="sorcerySpecialTracking" extends="sorceryFallenFire">
+			<property name="requirement_type" value="Tracking" />
+			<map_settings>
+				<property name="color" value="215,220,228"/>
+			</map_settings>
+			<compass_settings>
+				<property name="color" value="215,220,228"/>
+			</compass_settings>
+			<onscreen_settings>
+				<property name="color" value="215,220,228"/>
+			</onscreen_settings>
+		</nav_object_class>
+		
 		<!-- INTRO -->
 		<nav_object_class name="sorceryFallenIntroCorpse" extends="sorceryFallenFire">
 			<!-- <property name="requirement_type" value="Tracking" /> -->

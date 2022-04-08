@@ -1362,7 +1362,7 @@
 				 <!-- END - SHRINE MANAGE -->				 
 				 
 					 <effect_group name="SUPPORTER DISCLAIMER">
-						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMaster" operation="set" value="1716345001"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMaster" operation="set" value="1489438318"/>
 						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMasterCompare" operation="set" value="@$sorcerySupporterMaster"/>
 					 </effect_group>
 					 <effect_group name="SUPPORTER DISCLAIMER">
@@ -13034,8 +13034,8 @@
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_ArcaneVision"/>
 					</effect_group>
 					<effect_group name="SCROLL">
-						<passive_effect name="TrackDistance" operation="base_set" value="500" tags="sorceryFallen,sorceryWisp,sorceryTrader"/>
-						<passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryFallen,sorceryWisp,sorceryTrader"/>
+						<passive_effect name="TrackDistance" operation="base_set" value="500" tags="sorceryFallen,sorceryWisp,sorceryTrader,sorcerySpecial"/>
+						<passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryFallen,sorceryWisp,sorceryTrader,sorcerySpecial"/>
 					</effect_group>
 			</buff>
 			<!-- SPELL: Recall -->
@@ -13713,10 +13713,10 @@
 					<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$runeArcaneVision_burden_d" operation="set" value="0"/> 
 				</effect_group>
 				<effect_group name="RUNE">
-					<passive_effect name="TrackDistance" operation="base_set" value="@.runeArcaneVision" tags="sorceryFallen,sorceryWisp,sorceryTrader">
+					<passive_effect name="TrackDistance" operation="base_set" value="@.runeArcaneVision" tags="sorceryFallen,sorceryWisp,sorceryTrader,sorcerySpecial">
 						<requirement name="NotHasBuff" buff="buffScroll_ArcaneVision"/>
 					</passive_effect>
-					<passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryFallen,sorceryWisp,sorceryTrader"/>
+					<passive_effect name="Tracking" operation="base_set" value="1" tags="sorceryFallen,sorceryWisp,sorceryTrader,sorcerySpecial"/>
 				</effect_group>
 			</buff>
 			<!-- RUNE: Spirit Well ______________________________________________________-->
@@ -16919,6 +16919,19 @@
 		<!-- END - ENTITY SPELLS: PLAYER -->
 	
 		<!-- ENTITY SPELLS -->
+			<buff name="buffEntity_DrainLifeforce" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
+					<effect_group name="TOUCHED"> <!-- NOTE: Difficulty Dependent -->
+							<requirement name="EntityTagCompare" target="other" tags="player"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="33"/>
+							<requirement name="TargetRange" target="other" operation="LTE" value="3"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddBuff" buff="spellFX_LoseHealth,spellFX_LoseStamina,spellFX_LoseSpirit"/>
+						<triggered_effect trigger="onSelfAttackedOther" target="other" action="ModifyStats" stat="Stamina" operation="add" value="-10"/>
+						<!-- leech -->
+						<triggered_effect trigger="onSelfAttackedOther" action="ModifyStats" stat="Health" operation="add" value="5"/>
+						<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" buff="spellEntity_GainLifeforce"/>
+					</effect_group>
+			</buff>
 			<!-- FIRE TOUCHED: ENTITY -->
 			<buff name="buffEntity_FireTouched" hidden="true" remove_on_death="true">
 				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
@@ -17113,6 +17126,13 @@
 					</effect_group>
 					<effect_group name="FINISH">
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="10000"/>
+					</effect_group>
+			</buff>
+			<!-- ENTITY SPELL: Gain Health, Stamina, Spirit -->
+			<buff name="spellEntity_GainLifeforce" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/><duration value="1.5"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_GainHealth,spellFX_GainStamina,spellFX_GainSpirit"/>
 					</effect_group>
 			</buff>
 			<!-- ENTITY SPELL: Gain Health -->
@@ -17349,6 +17369,17 @@
 					<effect_group name="SUMMON">
 						<!-- <triggered_effect trigger="onSelfBuffStart" action="CallGameEvent" event="sorcery_action_spawn_fallenminion" /> -->
 						<triggered_effect trigger="onSelfBuffStart" action="SpawnEntity, Sorcery" SpawnGroup="SorceryFallenSummonGroup"/>
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".7"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".7"/>
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".7"/>
+					</effect_group>
+			</buff>
+			<!-- RABBIT SUMMON -->
+			<buff name="spellRabbit_SummonMinions" hidden="true">
+				<stack_type value="ignore"/><duration value="5"/>
+					<effect_group name="SUMMON">
+						<triggered_effect trigger="onSelfBuffStart" action="SpawnEntity, Sorcery" SpawnGroup="SorceryRabbitSummonGroup"/>
+						<triggered_effect trigger="onSelfBuffStart" action="SpawnEntity, Sorcery" SpawnGroup="SorceryRabbitSummonGroup"/>
 						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".7"/>
 						<passive_effect name="RunSpeed" operation="perc_subtract" value=".7"/>
 						<passive_effect name="JumpStrength" operation="perc_subtract" value=".7"/>
@@ -18012,6 +18043,7 @@
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="2"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellFallen_SummonMinions"/>
 						<!-- SCALE -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="set" value="60">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="LTE" value="1"/>
 						</triggered_effect>
@@ -18422,6 +18454,7 @@
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="2"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellFallen_SummonMinions"/>
 						<!-- SCALE -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="set" value="60">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="LTE" value="1"/>
 						</triggered_effect>
@@ -18832,6 +18865,7 @@
 							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="2"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellFallen_SummonMinions"/>
 						<!-- SCALE -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="set" value="60"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="awakenedAbility4_cd" operation="set" value="60">
 							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="LTE" value="1"/>
 						</triggered_effect>
@@ -18984,6 +19018,361 @@
 		
 	<!-- END - FALLEN BUFFS ______________________________________________________-->			
 	
+	<!-- EVENT BUFFS ______________________________________________________-->			
+		<!-- EVENT: FEASTER BUNNY -->
+			<buff name="buffRabbitBoss" hidden="true" remove_on_death="true">
+				<stack_type value="ignore"/><duration value="0"/><update_rate value="1"/>
+					<effect_group name="FEASTER BUNNY">
+						<!-- CVar: _difficulty -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedHealth_remain" operation="set" value="10"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility1" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility1_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility2" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility2_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility3" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility3_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility4" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility4_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility5" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility5_cd" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility6" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$awakenedAbility6_cd" operation="set" value="0"/>
+						<!-- UI: HEALTH -->
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/familiarHealth.unity3d?familiarHealth" local_offset="0,.23,0" parent_transform="Head"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="familiarHealth"/>
+						<!-- Resists -->
+						<passive_effect name="PhysicalDamageResist" operation="base_set" value="90"/>
+					</effect_group>
+					<effect_group name="COOLDOWN">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility1_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="$awakenedAbility1_cd" operation="GT" value="0"/>
+						</triggered_effect>							
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility2_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="$awakenedAbility2_cd" operation="GT" value="0"/>
+						</triggered_effect>							
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility3_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="$awakenedAbility3_cd" operation="GT" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility4_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="$awakenedAbility4_cd" operation="GT" value="0"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility5_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="$awakenedAbility5_cd" operation="GT" value="0"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="90"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility6_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="$awakenedAbility6_cd" operation="GT" value="0"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="90"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedRun_cd" operation="subtract" value="1">
+							<requirement name="CVarCompare" cvar="$awakenedRun_cd" operation="GT" value="0"/>
+						</triggered_effect>								
+					</effect_group>
+					<effect_group name="HEALTH">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedHealth_remain" operation="set" value="10">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.99"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedHealth_remain" operation="set" value="9">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.99"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.9"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedHealth_remain" operation="set" value="8">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.9"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.8"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedHealth_remain" operation="set" value="7">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.8"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.7"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedHealth_remain" operation="set" value="6">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.7"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.6"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedHealth_remain" operation="set" value="5">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.6"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.5"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedHealth_remain" operation="set" value="4">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.5"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.4"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedHealth_remain" operation="set" value="3">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.4"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.3"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedHealth_remain" operation="set" value="2">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.3"/>
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="GTE" value="0.2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedHealth_remain" operation="set" value="1">
+							<requirement name="StatComparePercCurrentToMax" stat="Health" operation="LT" value="0.2"/>
+						</triggered_effect>
+					</effect_group>
+					<!-- SCALE -->
+					<effect_group name="PLAYER TARGET: SCALE">
+							<requirement name="EntityTagCompare" target="other" tags="player,familiar,conjuration"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="1">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" target="other" operation="Equals" value="1"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="2">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" target="other" operation="Equals" value="2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="3">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" target="other" operation="Equals" value="3"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="4">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" target="other" operation="Equals" value="4"/>
+						</triggered_effect>	
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="5">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" target="other" operation="Equals" value="5"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="6">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" target="other" operation="Equals" value="6"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="7">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" target="other" operation="Equals" value="7"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="8">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" target="other" operation="Equals" value="8"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="9">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" target="other" operation="Equals" value="9"/>
+						</triggered_effect>	
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryPlayerTier" operation="set" value="10">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" target="other" operation="GTE" value="10"/>
+						</triggered_effect>
+					</effect_group>
+					<effect_group name="DAMAGE: SCALE">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility1_damage" operation="set" value="@sorceryPlayerTier"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility1_damage" operation="multiply" value=".1"/>				
+					</effect_group>
+					<effect_group name="AURA: Empower">
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="buffEntity_FireTouched" target_tags="ally,party"/>
+					</effect_group>
+					<!-- Player Scaling -->
+					<effect_group name="SCALING: Player Tier 0 (Level 1-10)">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="LT" value="1"/>
+						<passive_effect name="HealthMax" operation="perc_subtract" value=".25"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value=".1"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value="0"/>
+					</effect_group>
+					<effect_group name="SCALING: Player Tier 1 (Level 10-19)">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="1"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value=".2"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value="0"/>
+					</effect_group>
+					<effect_group name="SCALING: Player Tier 2 (Level 20-39)">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="2"/>
+						<passive_effect name="HealthMax" operation="perc_add" value=".2"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value=".5"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value=".2"/>
+					</effect_group>
+					<effect_group name="SCALING: Player Tier 3 (Level 40-59)">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="3"/>
+						<passive_effect name="HealthMax" operation="perc_add" value=".3"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value=".75"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value=".4"/>
+					</effect_group>
+					<effect_group name="SCALING: Player Tier 4 (Level 60-79)">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="4"/>
+						<passive_effect name="HealthMax" operation="perc_add" value=".4"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="1"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value=".6"/>
+					</effect_group>
+					<effect_group name="SCALING: Player Tier 5 (Level 80-99)">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="5"/>
+						<passive_effect name="HealthMax" operation="perc_add" value=".5"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="1.25"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value=".8"/>
+					</effect_group>
+					<effect_group name="SCALING: Player Tier 6 (Level 100-149)">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="6"/>
+						<passive_effect name="HealthMax" operation="perc_add" value=".6"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="1.5"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value="1"/>
+					</effect_group>
+					<effect_group name="SCALING: Player Tier 7 (Level 150-199)">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="7"/>
+						<passive_effect name="HealthMax" operation="perc_add" value=".7"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="2"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value="1.5"/>
+					</effect_group>
+					<effect_group name="SCALING: Player Tier 8 (Level 200-249)">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="8"/>
+						<passive_effect name="HealthMax" operation="perc_add" value=".8"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="2.5"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value="2"/>
+					</effect_group>
+					<effect_group name="SCALING: Player Tier 9 (Level 250-299)">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="9"/>
+						<passive_effect name="HealthMax" operation="perc_add" value=".9"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="3"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value="2.5"/>
+					</effect_group>
+					<effect_group name="SCALING: Player Tier 10 (Level 300+)">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="10"/>
+						<passive_effect name="HealthMax" operation="perc_add" value="1"/>
+						<passive_effect name="HealthChangeOT" operation="base_set" value="4"/>
+						<passive_effect name="BlockDamage" operation="perc_add" value="3"/>
+					</effect_group>
+					<!-- End - Player Scaling -->
+					<effect_group name="SET HEALTH">
+							<requirement name="EntityTagCompare" target="other" tags="player"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier_ScaleHealth" operation="set" value="1">
+							<requirement name="CVarCompare" cvar="$sorceryPlayerTier_ScaleHealth" operation="LTE" value="0"/>
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="GTE" value="1"/> <!-- base -->
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellFallen_SpawnHeal">
+							<requirement name="CVarCompare" cvar="$sorceryPlayerTier_ScaleHealth" operation="Equals" value="1"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryPlayerTier_ScaleHealth" operation="set" value="2">
+							<requirement name="CVarCompare" cvar="$sorceryPlayerTier_ScaleHealth" operation="Equals" value="1"/>
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="GTE" value="1"/> <!-- base -->
+						</triggered_effect>
+					</effect_group>
+					<!-- SPAWN -->
+					<effect_group name="ABILITY4: SUMMON MINIONS">
+							<requirement name="NotHasBuff" buff="rune_Silence"/>
+							<requirement name="NPCIsAlert"/>
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="GTE" value="1"/>
+							<requirement name="CVarCompare" cvar="$awakenedAbility4_cd" operation="Equals" value="0"/>
+							<!-- <requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="30"/> -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellRabbit_SummonMinions"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility4_cd" operation="set" value="120"/>
+					</effect_group>					
+					<effect_group name="ABILITY5: Regenerate">
+							<requirement name="NotHasBuff" buff="rune_Silence"/>
+							<requirement name="NPCIsAlert"/>
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="GTE" value="1"/>
+							<requirement name="CVarCompare" cvar="$awakenedAbility5_cd" operation="Equals" value="0"/>
+							<requirement name="CVarCompare" cvar="$awakenedHealth_remain" operation="LTE" value="8"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellFallenFire_regenerate"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" range="30" buff="spellFallenFire_regenerate" target_tags="ally,party"/>
+						<!-- SCALE -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility5_cd" operation="set" value="120">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="1"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility5_cd" operation="set" value="60">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="Equals" value="2"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility5_cd" operation="set" value="30">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="GTE" value="3"/>
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="LT" value="5"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility5_cd" operation="set" value="15">
+							<requirement name="CVarCompare" cvar="sorceryPlayerTier" operation="GTE" value="5"/>
+						</triggered_effect>
+					</effect_group>
+					<effect_group name="ABILITY6">
+							<requirement name="NPCIsAlert"/>
+							<requirement name="CVarCompare" cvar="$awakenedAbility6_cd" operation="Equals" value="0"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$awakenedAbility6_cd" operation="set" value="10"/>
+					</effect_group>					
+					<!-- UI: HEALTH -->
+					<effect_group name="UI Health: 100">
+							<requirement name="NPCIsAlert"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".99"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+					</effect_group>
+					<effect_group name="UI Health: 90">
+							<requirement name="NPCIsAlert"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".99"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".9"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="90"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+					</effect_group>
+					<effect_group name="UI Health: 75">
+							<requirement name="NPCIsAlert"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".75"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".9"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="75"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+					</effect_group>
+					<effect_group name="UI Health: 60">
+							<requirement name="NPCIsAlert"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".6"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".75"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="60"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+					</effect_group>
+					<effect_group name="UI Health: 50">
+							<requirement name="NPCIsAlert"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".5"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".6"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="50"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+					</effect_group>
+					<effect_group name="UI Health: 40">
+							<requirement name="NPCIsAlert"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".4"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".5"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="40"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+					</effect_group>
+					<effect_group name="UI Health: 25">
+							<requirement name="NPCIsAlert"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value=".25"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".4"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="10"/>
+					</effect_group>
+					<effect_group name="UI Health: 10">
+							<requirement name="NPCIsAlert"/>
+							<requirement name="StatComparePercCurrentToMax" stat="health" operation="LT" value=".25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="100"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="90"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="75"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="60"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="50"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="40"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="false" parent_transform="familiarHealth" transform_path="25"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="SetTransformActive" active="true" parent_transform="familiarHealth" transform_path="10"/>
+					</effect_group>
+			</buff>
+	<!-- END - EVENT BUFFS ______________________________________________________-->			
 	<!-- END - ENTITY BUFFS __________________________________________________________________________________ -->
 
 

@@ -272,6 +272,7 @@
 				<item name="sorceryAlchemyStation"/>
 				<item name="sorceryArcaneWheel"/>
 				<item name="sorceryEnchantingStation"/>
+				<item name="sorceryRitualStation"/>
 			</trader_item_group>
 			
 			<!-- MISC -->
@@ -287,7 +288,6 @@
 			<trader_item_group name="SorceryTrader_Rare" count="1">
 				<item name="q_sorcerySkillGrimoire"/>
 				<item name="portalRecall"/>
-				<item name="supporterKey"/>
 			</trader_item_group>
 			
 			

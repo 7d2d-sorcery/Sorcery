@@ -1114,8 +1114,8 @@
 			<!-- Rare (Silver) -->
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="scroll_EssenceHarvest,scroll_Scavenger,scroll_Thief"/>
 			<!-- Legendary (Gold) -->
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="scroll_EnergyRegen,scroll_DrainHealth,scroll_DrainStamina,scroll_DrainSpirit"/>
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="scroll_ConjurePortalArcaneTrader,scroll_ConjurePortalMundaneTrader"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="scroll_Silence,scroll_EnergyRegen,scroll_DrainHealth,scroll_DrainStamina,scroll_DrainSpirit"/>
+				<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="scroll_ConjurePortalArcaneTrader,scroll_ConjurePortalMundaneTrader"/> -->
 			</effect_group>
 			<effect_group>
 				<effect_description level="1" desc_key="perkSorceryScrollMasteryRank1Desc" long_desc_key="perkSorceryScrollMasteryRank1LongDesc"/>

@@ -135,7 +135,10 @@
 			<entity name="sorceryWispFire" prob="3"/>
 			<entity name="sorceryWispIce" prob="3"/>
 			<entity name="sorceryWispLightning" prob="3"/>
-			<!-- <entity name="invisibleSorceryEntity" prob="60"/> -->
+			<!-- Event: Easter -->
+			<entity name="sorceryRabbitArcane" prob="3"/>
+			<entity name="sorceryRabbitUnholy" prob="2"/>
+			<entity name="sorceryRabbitBoss" prob=".8"/>
 			<entity name="none" prob="60"/><!-- must not be first since first name determines if enemy group -->
 		</entitygroup>
 	<!-- FIRE -->
@@ -202,8 +205,16 @@
 			<entity name="sorcerySummonZombieDog"/>
 			<entity name="sorcerySummonZombieBurnt"/>
 			<entity name="sorcerySummonVulture"/>
+			<!-- event -->
+			<entity name="sorceryRabbitUnholy"/>
 			<!-- <entity name="sorcerySummonScreamer"/> -->
 		</entitygroup>
+		<!-- RABBIT -->
+		<entitygroup name="SorceryRabbitSummonGroup">
+			<entity name="sorceryRabbitUnholy"/>
+		</entitygroup>
+
+
 	</append>
 	
 </Sorcery>

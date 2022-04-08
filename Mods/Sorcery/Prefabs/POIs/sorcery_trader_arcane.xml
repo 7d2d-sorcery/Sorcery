@@ -24,9 +24,9 @@
   <property name="POIMarkerPartRotations" value="2" />
   <property name="POIMarkerPartSpawnChance" value="1" />
   <property name="YOffset" value="-8" />
-  <property name="EditorGroups" value="Wilderness, rural, oldwest, out buildings, remnant, house old, industrial, commercial" />
-  <property name="Tags" value="wilderness,commercial,industrial,residential,countrytown,countryresidential,rural,oldwest" />
-  <property name="Zoning" value="ResidentialOld, Industrial, NoZone, Commercial, Residential" />
+  <property name="EditorGroups" value="rural, oldwest, out buildings, remnant, house old, house new, downtown" />
+  <property name="Tags" value="city,town,commercial,downtown,residential,countrytown,countryresidential,rural,oldwest,culdesac" />
+  <property name="Zoning" value="ResidentialOld, NoZone, Residential, ResidentialNew, downtown, Commercial" />
   <property name="SleeperVolumeSize" value="11, 5, 12" />
   <property name="SleeperVolumeStart" value="7, 13, 7" />
   <property name="SleeperVolumeGroupId" value="0" />
@@ -35,15 +35,15 @@
   <property name="SleeperIsQuestExclude" value="False" />
   <property name="SleeperVolumeFlags" value="0" />
   <property class="Stats">
-    <property name="TotalVertices" value="1098427" />
-    <property name="TotalTriangles" value="1170197" />
+    <property name="TotalVertices" value="1098728" />
+    <property name="TotalTriangles" value="1170173" />
     <property class="BlockEntities">
-      <property name="Vertices" value="1008490" />
-      <property name="Triangles" value="1096939" />
+      <property name="Vertices" value="1007975" />
+      <property name="Triangles" value="1096171" />
     </property>
     <property class="ChunkMeshes0">
-      <property name="Vertices" value="77542" />
-      <property name="Triangles" value="62100" />
+      <property name="Vertices" value="78358" />
+      <property name="Triangles" value="62844" />
     </property>
     <property class="ChunkMeshes1">
       <property name="Vertices" value="0" />
