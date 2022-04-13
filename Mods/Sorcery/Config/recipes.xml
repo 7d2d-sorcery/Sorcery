@@ -1042,7 +1042,7 @@
 			<ingredient name="spellLightning" count="1"/>
 			<ingredient name="resourceExtractLightning" count="20"/>
 			<effect_group name="CLASS RUNE: rune_ClassSpellTrapper">
-				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,2,3" value="0,-0.15,-0.3" tags="Lightning"/>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,2,3" value="0,-0.15,-0.3" tags="resourceExtractIceLightning"/>
 			</effect_group>
 		</recipe>
 	<!-- END - TRAPS ______________________________________-->
@@ -1241,9 +1241,9 @@
 	<!-- GOLD: ARCANE RUNES -->
 		<!-- Rune: Recall (GOLD) -->
 		<recipe name="rune_Recall" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="30">
-			<ingredient name="resourceRitualBloodOmni" count="3"/>
 			<ingredient name="resourceExtractOmni" count="100"/>
-			<ingredient name="scroll_Recall" count="1"/>
+			<ingredient name="resourceRitualBloodOmni" count="3"/>
+			<ingredient name="scroll_Recall" count="5"/>
 		</recipe>
 		<!-- Rune: Silence (GOLD) -->
 		<recipe name="rune_Silence" count="1" craft_area="sorceryEnchantingStation" tags="perkSorceryRuneMastery,learnable" craft_time="30">

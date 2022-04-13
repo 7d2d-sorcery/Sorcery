@@ -1302,7 +1302,7 @@
 		
 		<!-- Animal: RABBIT ARCANE -->
 		<entity_class name="sorceryRabbitArcane" extends="sorceryRabbitMaster">
-			<property name="HideInSpawnMenu" value="false"/>
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,event,sorcerySpecial"/>
 			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_rabbitArcane.unity3d?mat_rabbitArcane"/>
 			<property name="ExperienceGain" value="300"/>
@@ -1327,7 +1327,7 @@
 		
 		<!-- Animal: RABBIT UNHOLY -->
 		<entity_class name="sorceryRabbitUnholy" extends="sorceryRabbitMaster">
-			<property name="HideInSpawnMenu" value="false"/>
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,event,sorcerySpecial"/>
 			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_rabbitUnholy.unity3d?mat_rabbitUnholy"/>
 			<property name="Class" value="EntityZombieDog"/>
@@ -1370,7 +1370,7 @@
 		
 		<!-- Animal: RABBIT BOSS -->
 		<entity_class name="sorceryRabbitBoss" extends="sorceryRabbitMaster">
-			<property name="HideInSpawnMenu" value="false"/>
+			<property name="HideInSpawnMenu" value="true"/>
 			<property name="Tags" value="entity,animal,event,sorcerySpecial"/>
 			<property name="ReplaceMaterial0" value="#@modfolder:Resources/mat_rabbitUnholy.unity3d?mat_rabbitUnholy"/>
 			<property name="Class" value="EntityZombieDog"/>

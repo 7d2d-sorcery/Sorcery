@@ -658,7 +658,7 @@
 				</effect_group>
 		</item_modifier>
 		<!-- DEEPER POCKET (GOLD) -->
-		<item_modifier name="rune_DeeperPocket" installable_tags="armor,clothing" type="mod" modifier_tags="DeepPocket">
+		<item_modifier name="rune_DeeperPocket" installable_tags="armor,clothing" type="attachment" modifier_tags="DeepPocket">
 			<property name="Extends" value="runeMaster"/><property name="Weight" value="60"/>
 			<property name="CreativeMode" value="None"/>
 			<property name="UnlockedBy" value="perkSorcerySupport,perkSorceryRuneMastery"/>

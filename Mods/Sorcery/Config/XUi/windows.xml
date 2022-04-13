@@ -78,9 +78,8 @@
 	
 	<!-- UI: BACKPACK KEYS -->
 	<append xpath="/windows/window[@name='windowBackpack']/panel[@name='header']">
-		<!-- <sprite depth="4" name="backpackKeyNoble" sprite="uic_backpack_key_bronze" size="83,34" pos="464,-6" foregroundlayer="true" hovercolor="[white]" hoverscale="2" tooltip_key="backpackKeyNoble" /> -->
-		<sprite depth="4" name="backpackKeyLord" sprite="uic_backpack_key_silver" size="83,34" pos="567,-6" foregroundlayer="true" hovercolor="[white]" hoverscale="2" tooltip_key="sorceryUI_backpackKeyLord" />	
-		<sprite depth="4" name="backpackKeyRoyal" sprite="uic_backpack_key_gold" size="83,34" pos="670,-6" foregroundlayer="true" hovercolor="[white]" hoverscale="2" tooltip_key="sorceryUI_backpackKeyRoyal" />	
+		<sprite name="backpackKeySilver" style="sorcery.window.backpack.support.key.silver.sprite" />
+		<sprite name="backpackKeyGold" style="sorcery.window.backpack.support.key.gold.sprite" />
 	</append>
 
 
@@ -114,15 +113,13 @@
 
 		<!-- UI: Pause Menu Splash -->
 		<window name="SorceryingameMenu" anchor="CenterCenter" pos="-125,200" width="250" height="200" controller="InGameMenuWindow" cursor_area="true">
-			<label name="SorceryVersion" pos="783, 285" depth="0" size="250,35" text="Sorcery Feaster Event (v1.2)" font_size="24" effect="outline" color="144,95,255,255" justify="right" upper_case="false" />
+			<label name="SorceryVersion" pos="783, 285" depth="0" size="250,35" text="Sorcery Feaster Event (v1.22)" font_size="24" effect="outline" color="144,95,255,255" justify="right" upper_case="false" />
 			<label name="SorceryDifficulty" pos="781, 260" depth="0" size="250,35" font_size="24" effect="outline" justify="right" upper_case="false" style="sorcery.window.ingame.logo.normal.label"/>
 			<texture name="SorceryingameMenuLogo" depth="0" size="672,446" texture="@modfolder:Textures/SorceryLogoMenu.png" pos="-200,194" />
-			<!-- <texture name="SorceryingameMenuChestNoble" style="sorcery.window.ingame.support.chest.noble.texture" /> -->
-			<texture name="SorceryingameMenuChestLord" style="sorcery.window.ingame.support.chest.lord.texture" />
-			<texture name="SorceryingameMenuChestRoyal" style="sorcery.window.ingame.support.chest.royal.texture" />
-			<!-- <texture name="SorceryingameMenuKeyNoble" style="sorcery.window.ingame.support.key.noble.texture" /> -->
-			<texture name="SorceryingameMenuKeyLord" style="sorcery.window.ingame.support.key.lord.texture" />
-			<texture name="SorceryingameMenuKeyRoyal" style="sorcery.window.ingame.support.key.royal.texture" />
+			<texture name="SorceryingameMenuChestSilver" style="sorcery.window.ingame.support.chest.silver.texture" />
+			<texture name="SorceryingameMenuChestGold" style="sorcery.window.ingame.support.chest.gold.texture" />
+			<texture name="SorceryingameMenuKeySilver" style="sorcery.window.ingame.support.key.silver.texture" />
+			<texture name="SorceryingameMenuKeyGold" style="sorcery.window.ingame.support.key.gold.texture" />
 			<grid name="buttons" pos="0, -290" cols="1" width="250" cell_width="250" cell_height="56" arrangement="vertical" repeat_content="false" >
 				<simplebutton name="btnInvite" depth="3" width="250" height="46" caption_key="xuiMenuInvite" font_size="40" />
 				<simplebutton name="btnOptions" depth="3" width="250" height="46" caption_key="xuiMenuOptions" font_size="40" />

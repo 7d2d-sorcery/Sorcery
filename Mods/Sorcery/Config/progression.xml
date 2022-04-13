@@ -1031,7 +1031,7 @@
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="runeLightning_TurretAuraShock,runeLightning_TurretStrike,runeLightning_Empath,runeLightning_Skin,runeLightning_NovaSkin"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="3,5" tags="rune_KnockbackSpell,rune_DeepPocket"/>
 				<!-- Legendary (GOLD) -->
-				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="rune_Silence,rune_Empath,rune_SpiritWell,rune_DrainHealth,rune_DrainSpirit,rune_DrainStamina"/>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="rune_Silence,rune_Empath,rune_SpiritWell,rune_DrainHealth,rune_DrainSpirit,rune_DrainStamina,rune_Recall"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="runeFire_FirenadoCaster,runeFire_NovaCaster,runeFire_MeteorCaster"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="runeIce_CometCaster,runeIce_NovaCaster,runeIce_IceStormCaster"/>
 				<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" level="5" tags="runeLightning_NovaCaster,runeLightning_StrikeCaster"/>
@@ -1532,9 +1532,9 @@
 				<!-- +5% Per Level (Spellcasting Speed) -->
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFireAll_spellSpeed" operation="set" value="@$sorcerySpellcastFire"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFireAll_spellSpeed" operation="multiply" value=".05"/>
-				<!-- +5% Per Level (Spell Charge Speed) -->
+				<!-- +10% Per Level (Spell Charge Speed) -->
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire_spellCharge" operation="set" value="@$sorcerySpellcastFire"/>
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire_spellCharge" operation="multiply" value=".05"/>				
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastFire_spellCharge" operation="multiply" value=".1"/>				
 			</effect_group>			
 		</perk>
 		<!-- Fire Staff-->
@@ -2212,9 +2212,9 @@
 				<!-- +5% Per Level (Spellcasting Speed) -->
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastIceAll_spellSpeed" operation="set" value="@$sorcerySpellcastIce"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastIceAll_spellSpeed" operation="multiply" value=".05"/>
-				<!-- +5% Per Level (Spell Charge Speed) -->
+				<!-- +10% Per Level (Spell Charge Speed) -->
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastIce_spellCharge" operation="set" value="@$sorcerySpellcastIce"/>
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastIce_spellCharge" operation="multiply" value=".05"/>				
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastIce_spellCharge" operation="multiply" value=".1"/>				
 			</effect_group>			
 		</perk>
 		<!-- Ice Staff-->
@@ -2929,9 +2929,9 @@
 				<!-- +5% Per Level (Spellcasting Speed) -->
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastLightningAll_spellSpeed" operation="set" value="@$sorcerySpellcastLightning"/>
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastLightningAll_spellSpeed" operation="multiply" value=".05"/>
-				<!-- +5% Per Level (Spell Charge Speed) -->
+				<!-- +10% Per Level (Spell Charge Speed) -->
 				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastLightning_spellCharge" operation="set" value="@$sorcerySpellcastLightning"/>
-				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastLightning_spellCharge" operation="multiply" value=".05"/>				
+				<triggered_effect trigger="onSelfProgressionUpdate" action="ModifyCVar" cvar="$sorcerySpellcastLightning_spellCharge" operation="multiply" value=".1"/>
 			</effect_group>			
 		</perk>
 		<!-- Lightning Staff-->
