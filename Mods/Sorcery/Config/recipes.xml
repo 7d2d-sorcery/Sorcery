@@ -181,6 +181,10 @@
 			<ingredient name="resourceEssenceIce" count="5"/>
 			<ingredient name="resourceEssenceLightning" count="5"/>
 		</recipe>
+		<!-- Unholy Extract -->
+		<recipe name="resourceExtractUnholy" count="1" craft_time="0.5" tags="learnable"> <!-- craft_time="0.1" -->
+			<ingredient name="resourceEssenceUnholy" count="15"/>
+		</recipe>
 		<!-- Arcane Powder -->
 		<recipe name="resourcePowderArcane" count="1" craft_time="0.5" tags="learnable,sorceryFireTier">
 			<ingredient name="resourceEssenceFire" count="20"/>
@@ -201,7 +205,14 @@
 		<recipe name="resourcePowderLightning" craft_time="0.5" count="1" tags="learnable,sorceryLightningTier">
 			<ingredient name="resourceEssenceLightning" count="15"/>
 		</recipe>
+		<recipe name="resourcePowderUnholy" craft_time="0.5" count="1" tags="learnable">
+			<ingredient name="resourceEssenceUnholy" count="15"/>
+		</recipe>
 	<!-- ALCHEMY STATION -->
+		<!-- Unholy Extract -->
+		<recipe name="resourceExtractUnholy" count="1" craft_time="0.5" craft_area="sorceryAlchemyStation">
+			<ingredient name="resourceEssenceUnholy" count="10"/>
+		</recipe>
 		<!-- Alchemy Station Powders -->
 		<recipe name="resourcePowderArcane" count="1" craft_time="0.5" craft_area="sorceryAlchemyStation" tags="sorceryTier">
 			<ingredient name="resourceExtractOmni" count="1"/>
@@ -224,6 +235,9 @@
 		</recipe>
 		<recipe name="resourcePowderLightning" count="1" craft_time="0.5" craft_area="sorceryAlchemyStation" craft_tool="toolLightningCore" tags="sorceryLightningTier">
 			<ingredient name="resourceEssenceLightning" count="10"/>
+		</recipe>
+		<recipe name="resourcePowderUnholy" count="1" craft_time="0.5" craft_area="sorceryAlchemyStation">
+			<ingredient name="resourceEssenceUnholy" count="10"/>
 		</recipe>
 
 	<!-- RESOURCE: THREAD ______________________________________-->
@@ -1025,6 +1039,8 @@
 		<recipe name="sorceryTrap_Fire" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="5" tags="perkSorceryTrap2Fire,rune_ClassSpellTrapper,learnable">
 			<ingredient name="spellFire" count="1"/>
 			<ingredient name="resourceExtractFire" count="20"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
 			<effect_group name="CLASS RUNE: rune_ClassSpellTrapper">
 				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,2,3" value="0,-0.15,-0.3" tags="resourceExtractFire"/>
 			</effect_group>
@@ -1033,6 +1049,8 @@
 		<recipe name="sorceryTrap_Ice" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="5" tags="perkSorceryTrap2Ice,rune_ClassSpellTrapper,learnable">
 			<ingredient name="spellIce" count="1"/>
 			<ingredient name="resourceExtractIce" count="20"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
 			<effect_group name="CLASS RUNE: rune_ClassSpellTrapper">
 				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,2,3" value="0,-0.15,-0.3" tags="resourceExtractIce"/>
 			</effect_group>
@@ -1041,11 +1059,79 @@
 		<recipe name="sorceryTrap_Lightning" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="5" tags="perkSorceryTrap2Lightning,rune_ClassSpellTrapper,learnable">
 			<ingredient name="spellLightning" count="1"/>
 			<ingredient name="resourceExtractLightning" count="20"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
 			<effect_group name="CLASS RUNE: rune_ClassSpellTrapper">
 				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,2,3" value="0,-0.15,-0.3" tags="resourceExtractIceLightning"/>
 			</effect_group>
 		</recipe>
 	<!-- END - TRAPS ______________________________________-->
+
+	<!-- BLOCKS: BUILDING ______________________________________-->
+		<!-- FIRE: BLOCKS -->
+		<recipe name="blockFireFrame" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="1">
+			<ingredient name="resourceExtractFire" count="10"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
+		<recipe name="blockFire" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="1">
+			<ingredient name="resourceExtractFire" count="20"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
+		<recipe name="blockFireSphere" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="1">
+			<ingredient name="resourceExtractFire" count="20"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
+		<!-- ICE: BLOCKS -->
+		<recipe name="blockIceFrame" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="1">
+			<ingredient name="resourceExtractIce" count="10"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
+		<recipe name="blockIce" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="1">
+			<ingredient name="resourceExtractIce" count="20"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
+		<recipe name="blockIceSphere" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="1">
+			<ingredient name="resourceExtractIce" count="20"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
+		<!-- LIGHTNING: BLOCKS -->
+		<recipe name="blockLightningFrame" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="1">
+			<ingredient name="resourceExtractLightning" count="10"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
+		<recipe name="blockLightning" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="1">
+			<ingredient name="resourceExtractLightning" count="20"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
+		<recipe name="blockLightningSphere" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="1">
+			<ingredient name="resourceExtractLightning" count="20"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
+		<!-- UNHOLY: BLOCKS -->
+		<recipe name="blockUnholyFrame" count="1" craft_area="sorceryDesk" craft_time="1">
+			<ingredient name="resourceExtractUnholy" count="10"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
+		<recipe name="blockUnholy" count="1" craft_area="sorceryDesk" craft_time="1">
+			<ingredient name="resourceExtractUnholy" count="20"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
+		<recipe name="blockUnholySphere" count="1" craft_area="sorceryDesk" craft_time="1">
+			<ingredient name="resourceExtractUnholy" count="20"/>
+			<ingredient name="resourceRockSmall" count="20"/>
+			<ingredient name="resourceClayLump" count="20"/>
+		</recipe>
 
 	<!-- SPELLS ______________________________________-->
 	<!-- FIRE SPELLS -->
@@ -2532,15 +2618,12 @@
 		<!-- Potion: DEVOUR -->
 		<recipe name="potion_Devour" count="1" craft_time="10" craft_area="sorceryAlchemyStation" tags="perkSorceryAlchemyMastery">
 			<ingredient name="foodRottingFlesh" count="8"/>
-			<ingredient name="resourcePowderArcane" count="10"/>
+			<ingredient name="resourcePowderUnholy" count="30"/>
 			<ingredient name="potionBottle" count="1"/>
-			<effect_group>
-				<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.1,-.5" tags="resourcePowderArcane"/> -->
-			</effect_group>
 		</recipe>
 			<recipe name="potion_Devour" count="1" craft_time="10" tags="perkSorceryAlchemyMastery,learnable">
 				<ingredient name="foodRottingFlesh" count="10"/>
-				<ingredient name="resourcePowderArcane" count="12"/>
+				<ingredient name="resourcePowderUnholy" count="35"/>
 				<ingredient name="potionBottle" count="1"/>
 				<effect_group>
 					<!-- <passive_effect name="CraftingIngredientCount" operation="perc_add" level="1,5" value="-.1,-.5" tags="resourcePowderArcane"/> -->
@@ -2736,12 +2819,53 @@
 	<!-- END - ALCHEMY ______________________________________-->	
 		
 		<!-- CHEST -->
-		<!-- Arcane Chest -->
-		<recipe name="sorceryCnt_ArcaneChest" count="1" craft_area="sorceryDesk" craft_time="5">
+		<!-- Storage Chests -->
+		<!-- <recipe name="sorceryCnt_ArcaneChest" count="1" craft_area="sorceryDesk" craft_time="5">
 			<ingredient name="cntSecureStorageChest" count="1"/>
 			<ingredient name="resourceExtractOmni" count="50"/>
 			<ingredient name="resourceWood" count="20"/>
+		</recipe> -->
+		<!-- Writable Chests -->
+		<recipe name="cntChestScroll_Arcane" count="1" craft_area="sorceryDesk" craft_time="5">
+			<ingredient name="resourceExtractOmni" count="50"/>
+			<ingredient name="woodSignBlockVariantHelper" count="1"/>
+			<ingredient name="resourcePaper" count="5"/>
+			<ingredient name="resourceWood" count="20"/>
 		</recipe>
+		<recipe name="cntChestScroll_Fire" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="5">
+			<ingredient name="resourceExtractFire" count="100"/>
+			<ingredient name="woodSignBlockVariantHelper" count="1"/>
+			<ingredient name="resourcePaper" count="5"/>
+			<ingredient name="resourceWood" count="20"/>
+		</recipe>
+		<recipe name="cntChestScroll_Ice" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="5">
+			<ingredient name="resourceExtractIce" count="100"/>
+			<ingredient name="woodSignBlockVariantHelper" count="1"/>
+			<ingredient name="resourcePaper" count="5"/>
+			<ingredient name="resourceWood" count="20"/>
+		</recipe>
+		<recipe name="cntChestScroll_Lightning" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="5">
+			<ingredient name="resourceExtractLightning" count="100"/>
+			<ingredient name="woodSignBlockVariantHelper" count="1"/>
+			<ingredient name="resourcePaper" count="5"/>
+			<ingredient name="resourceWood" count="20"/>
+		</recipe>
+		<recipe name="cntChestScroll_Unholy" count="1" craft_area="sorceryDesk" craft_time="5">
+			<ingredient name="resourceExtractUnholy" count="100"/>
+			<ingredient name="woodSignBlockVariantHelper" count="1"/>
+			<ingredient name="resourcePaper" count="5"/>
+			<ingredient name="resourceWood" count="20"/>
+		</recipe>
+		
+
+<!-- VANILLA RECIPES ______________________________________-->
+		<recipe name="resourceBrokenGlass" count="1" material_based="true" craft_area="forge" tags="perkAdvancedEngineering">
+			<ingredient name="unit_glass" count="4"/>
+			<effect_group>
+				<passive_effect name="CraftingIngredientCount" operation="perc_add" level="0,1,2,3,4" value=".25,.25,.25,.12,.06" tags="unit_glass"/>
+			</effect_group>
+		</recipe>
+<!-- END - VANILLA RECIPES ______________________________________-->
 		
 	</append>
 </Sorcery>

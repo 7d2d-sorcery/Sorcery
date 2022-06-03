@@ -530,7 +530,8 @@
 			<crafting_category name="Resources" icon="ui_symbol_essence_sorcery" display_name="Resources" />
 		</crafting_category_list>
 		<crafting_category_list display_type="sorceryDesk">
-			<crafting_category name="Building" icon="ui_symbol_pentagram" display_name="Sorcery Building" />
+			<crafting_category name="advBuilding" icon="ui_symbol_pentagram" display_name="Sorcery Stations" />
+			<crafting_category name="Building" icon="ui_symbol_arcane_build" display_name="Sorcery Blocks" />
 			<crafting_category name="SorceryWeapon" icon="ui_symbol_weapon_sorcery" display_name="Magic Staves" />
 			<crafting_category name="SorceryAmmo" icon="ui_sorcery_ammo" display_name="Spell Ammo" />
 			<crafting_category name="SorceryTrap" icon="ui_symbol_trap_sorcery" display_name="Spell Traps" />

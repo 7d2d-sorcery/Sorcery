@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<uvmapping>
+<!--GRASS-->
+<!--DIRT AND MUD-->
+<!--ORES-->
+	<uv  id="781" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="stone" texture="Ore_Arcane.png" />
+	<uv  id="782" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="stone" texture="Ore_Fire.png" />
+	<uv  id="783" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="stone" texture="Ore_Holy.png" />
+	<uv  id="784" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="stone" texture="Ore_Ice.png" />
+	<uv  id="785" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="stone" texture="Ore_Lightning.png" />
+	<uv  id="786" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="stone" texture="Ore_Omni.png" />
+	<uv  id="787" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="stone" texture="Ore_Unholy.png" />
+<!--SNOW-->
+    <uv  id="788" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3764706,0.372549,0.3294118" globaluv="True" index="0" material="stone" texture="Ice.png" /> 
+	<uv  id="789" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="dirt" texture="Snow_01.png" />
+	<uv  id="790" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="dirt" texture="Snow_02.png" />
+	<uv  id="791" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="dirt" texture="Snow_03.png" />
+	<uv  id="792" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="dirt" texture="Snow_04.png" />	
+    <uv  id="793" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3764706,0.372549,0.3294118" globaluv="True" index="0" material="dirt" texture="TSnowGroundGrass2.png" />   
+<!--SAND-->
+<!--PATHWAYS-->
+    <uv  id="794" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3764706,0.372549,0.3294118" globaluv="True" index="0" material="stone" texture="Stone.png" /> 
+<!--SPECIALTY-->
+	<uv  id="795" x="34" y="34" w="247" h="247" blockw="8" blockh="8" color="0.2588235,0.2705882,0.1921569" globaluv="True" index="0" material="dirt" texture="Dark.png" />
+    <uv  id="796" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3764706,0.372549,0.3294118" globaluv="True" index="0" material="dirt" texture="Gore.png" /> 
+	<uv  id="797" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3882353,0.3372549,0.3294118" globaluv="True" index="0" material="stone" texture="Ash.png" />
+    <uv  id="798" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3098039,0.3058824,0.2588235" globaluv="True" index="0" material="stone" texture="Lava01.png" />
+    <uv  id="799" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3882353,0.3372549,0.3294118" globaluv="True" index="0" material="stone" texture="Lava02.png" />
+    <uv  id="800" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3882353,0.3372549,0.3294118" globaluv="True" index="0" material="stone" texture="Molten_01.png" />
+    <uv  id="801" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3882353,0.3372549,0.3294118" globaluv="True" index="0" material="stone" texture="Molten_02.png" />	
+<!--ADDITIONAL-->
+<!-- if you want to add your own textures, start at 781. 
+I don't believe there is a limit to the number of textures added, but have not tested it.
+blockw and blockh will always be 8, regardless of what you enter here. 
+Enter your texture name from unity as the Texture-->
+	
+</uvmapping>

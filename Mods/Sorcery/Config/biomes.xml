@@ -60,11 +60,31 @@
 	_____________________________________________________________________________________________________________________-->
 
 	<!-- SNOW: ICE -->
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='snow']/subbiome/decorations/decoration[@type='prefab' and @name='deco_nitrate_vein']">
+		<decoration type="prefab" name="deco_ice_vein" checkresource="-7" onslopes="true" prob=".02" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='snow']/subbiome/decorations/decoration[@type='prefab' and @name='deco_nitrate_vein']">
+		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='snow']/subbiome/decorations/decoration[@type='prefab' and @name='deco_coal_vein']">
+		<decoration type="prefab" name="deco_fire_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='snow']/subbiome/decorations/decoration[@type='prefab' and @name='deco_lead_vein']">
+		<decoration type="prefab" name="deco_lightning_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+	</insertAfter>
+	<!-- decorations -->
 	<append xpath="/worldgeneration/biomes/biome[@name='snow']/decorations">
 		<!-- Fallen Camp -->
 		<!-- <decoration type="prefab" name="sorcery_camp_fallen" prob=".0025" rotatemax="3"/> -->
 		<!-- Portal -->
 		<decoration type="block" blockname="portalRecall" onslopes="false" prob=".000005" rotatemax="3"/>
+		<!-- Trees -->
+		<decoration type="block" blockname="treeIceLrg" prob=".003" rotatemax="7"/>
+		<decoration type="block" blockname="treeIceMed" prob=".002" rotatemax="7"/>
+		<decoration type="block" blockname="treeFireLrg" prob=".0002" rotatemax="7"/>
+		<decoration type="block" blockname="treeLightningLrg" prob=".0002" rotatemax="7"/>
+		<decoration type="block" blockname="treeFireMed" prob=".0001" rotatemax="7"/>
+		<decoration type="block" blockname="treeLightningMed" prob=".0001" rotatemax="7"/>
 		<!-- Bushes -->
 		<decoration type="block" blockname="tree_EssenceFire" onslopes="true" prob=".0002" rotatemax="7"/>
 		<decoration type="block" blockname="tree_EssenceIce" onslopes="true" prob=".007" rotatemax="7"/>
@@ -97,14 +117,39 @@
 		<decoration type="block" blockname="shrineLightningDrainHealth" onslopes="false" prob=".00001" rotatemax="3"/>
 		<decoration type="block" blockname="shrineLightningDrainStamina" onslopes="false" prob=".00001" rotatemax="3"/>
 		<decoration type="block" blockname="shrineLightningDrainSpirit" onslopes="false" prob=".00001" rotatemax="3"/>
+		<!-- Loot: Chests -->
+		<decoration type="block" blockname="cntLootChest_Arcane" prob=".0000025" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Fire" prob=".000001" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Ice" prob=".000004" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Lightning" prob=".000001" rotatemax="7"/>
 	</append>
 
-	<!-- FOREST: OMNI -->	
+	<!-- FOREST: OMNI -->
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@type='prefab' and @name='deco_iron_vein']">
+		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".0015" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='pine_forest']/subbiome/decorations/decoration[@type='prefab' and @name='deco_coal_vein']">
+		<decoration type="prefab" name="deco_fire_vein" checkresource="-7" onslopes="true" prob=".003" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='pine_forest']/subbiome/decorations/decoration[@type='prefab' and @name='deco_nitrate_vein']">
+		<decoration type="prefab" name="deco_ice_vein" checkresource="-7" onslopes="true" prob=".003" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='pine_forest']/subbiome/decorations/decoration[@type='prefab' and @name='deco_lead_vein']">
+		<decoration type="prefab" name="deco_lightning_vein" checkresource="-7" onslopes="true" prob=".003" rotatemax="3"/>
+	</insertAfter>
+	<!-- decorations -->
 	<append xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations">
 		<!-- Fallen Camp -->
 		<!-- <decoration type="prefab" name="sorcery_camp_fallen" prob=".0025" rotatemax="3"/> -->
 		<!-- Portal -->
 		<decoration type="block" blockname="portalRecall" onslopes="false" prob=".000005" rotatemax="3"/>
+		<!-- Trees -->
+		<decoration type="block" blockname="treeFireLrg" prob=".0005" rotatemax="7"/>
+		<decoration type="block" blockname="treeIceLrg" prob=".0005" rotatemax="7"/>
+		<decoration type="block" blockname="treeLightningLrg" prob=".0005" rotatemax="7"/>
+		<decoration type="block" blockname="treeFireMed" prob=".0004" rotatemax="7"/>
+		<decoration type="block" blockname="treeIceMed" prob=".0004" rotatemax="7"/>
+		<decoration type="block" blockname="treeLightningMed" prob=".0004" rotatemax="7"/>
 		<!-- Bushes -->
 		<decoration type="block" blockname="tree_EssenceFire" onslopes="true" prob=".0025" rotatemax="7"/>
 		<decoration type="block" blockname="tree_EssenceIce" onslopes="true" prob=".0025" rotatemax="7"/>
@@ -137,14 +182,39 @@
 		<decoration type="block" blockname="shrineLightningDrainHealth" onslopes="false" prob=".00001" rotatemax="3"/>
 		<decoration type="block" blockname="shrineLightningDrainStamina" onslopes="false" prob=".00001" rotatemax="3"/>
 		<decoration type="block" blockname="shrineLightningDrainSpirit" onslopes="false" prob=".00001" rotatemax="3"/>
+		<!-- Loot: Chests -->
+		<decoration type="block" blockname="cntLootChest_Arcane" prob=".000002" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Fire" prob=".000001" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Ice" prob=".000001" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Lightning" prob=".000001" rotatemax="7"/>
 	</append>
 
 	<!-- DESERT: LIGHTNING -->
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='desert']/subbiome/decorations/decoration[@type='prefab' and @name='deco_lead_vein']">
+		<decoration type="prefab" name="deco_lightning_vein" checkresource="-7" onslopes="true" prob=".02" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='desert']/subbiome/decorations/decoration[@type='prefab' and @name='deco_lead_vein']">
+		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='desert']/subbiome/decorations/decoration[@type='prefab' and @name='deco_shale_vein']">
+		<decoration type="prefab" name="deco_fire_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='desert']/subbiome/decorations/decoration[@type='prefab' and @name='deco_nitrate_vein']">
+		<decoration type="prefab" name="deco_ice_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+	</insertAfter>
+	<!-- decorations -->
 	<append xpath="/worldgeneration/biomes/biome[@name='desert']/decorations">
 		<!-- Fallen Camp -->
 		<!-- <decoration type="prefab" name="sorcery_camp_fallen" prob=".0025" rotatemax="3"/> -->
 		<!-- Portal -->
 		<decoration type="block" blockname="portalRecall" onslopes="false" prob=".000005" rotatemax="3"/>
+		<!-- Trees -->
+		<decoration type="block" blockname="treeLightningLrg" prob=".003" rotatemax="7"/>
+		<decoration type="block" blockname="treeLightningMed" prob=".002" rotatemax="7"/>
+		<decoration type="block" blockname="treeFireLrg" prob=".0002" rotatemax="7"/>
+		<decoration type="block" blockname="treeIceLrg" prob=".0002" rotatemax="7"/>
+		<decoration type="block" blockname="treeFireMed" prob=".0001" rotatemax="7"/>
+		<decoration type="block" blockname="treeIceMed" prob=".0001" rotatemax="7"/>
 		<!-- Bushes -->
 		<decoration type="block" blockname="tree_EssenceFire" onslopes="true" prob=".0002" rotatemax="7"/>
 		<decoration type="block" blockname="tree_EssenceIce" onslopes="true" prob=".0002" rotatemax="7"/>
@@ -177,14 +247,39 @@
 		<decoration type="block" blockname="shrineLightningDrainHealth" onslopes="false" prob=".00005" rotatemax="3"/>
 		<decoration type="block" blockname="shrineLightningDrainStamina" onslopes="false" prob=".00005" rotatemax="3"/>
 		<decoration type="block" blockname="shrineLightningDrainSpirit" onslopes="false" prob=".00005" rotatemax="3"/>
+		<!-- Loot: Chests -->
+		<decoration type="block" blockname="cntLootChest_Arcane" prob=".0000025" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Fire" prob=".000001" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Ice" prob=".000001" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Lightning" prob=".000004" rotatemax="7"/>
 	</append>
 
 	<!-- WASTELAND / BURNT: FIRE -->
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='wasteland' or @name='burnt_forest']/subbiome/decorations/decoration[@type='prefab' and @name='deco_coal_vein']">
+		<decoration type="prefab" name="deco_fire_vein" checkresource="-7" onslopes="true" prob=".02" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='wasteland' or @name='burnt_forest']/subbiome/decorations/decoration[@type='prefab' and @name='deco_coal_vein']">
+		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='wasteland' or @name='burnt_forest']/subbiome/decorations/decoration[@type='prefab' and @name='deco_nitrate_vein']">
+		<decoration type="prefab" name="deco_ice_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+	</insertAfter>
+	<insertAfter xpath="/worldgeneration/biomes/biome[@name='wasteland' or @name='burnt_forest']/subbiome/decorations/decoration[@type='prefab' and @name='deco_lead_vein']">
+		<decoration type="prefab" name="deco_lightning_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+	</insertAfter>
+	<!-- decorations -->
 	<append xpath="/worldgeneration/biomes/biome[@name='wasteland' or @name='burnt_forest']/decorations">
 		<!-- Fallen Camp -->
 		<!-- <decoration type="prefab" name="sorcery_camp_fallen" prob=".005" rotatemax="3"/> -->
 		<!-- Portals -->
 		<decoration type="block" blockname="portalRecall" onslopes="false" prob=".000005" rotatemax="3"/>
+		<!-- Trees -->
+		<decoration type="block" blockname="treeFireLrg" prob=".003" rotatemax="7"/>
+		<decoration type="block" blockname="treeFireMed" prob=".002" rotatemax="7"/>
+		<decoration type="block" blockname="treeIceLrg" prob=".0002" rotatemax="7"/>
+		<decoration type="block" blockname="treeLightningLrg" prob=".0002" rotatemax="7"/>
+		<decoration type="block" blockname="treeIceMed" prob=".0001" rotatemax="7"/>
+		<decoration type="block" blockname="treeLightningMed" prob=".0001" rotatemax="7"/>
 		<!-- Bushes -->
 		<decoration type="block" blockname="tree_EssenceFire" onslopes="true" prob=".007" rotatemax="7"/>
 		<decoration type="block" blockname="tree_EssenceIce" onslopes="true" prob=".0002" rotatemax="7"/>
@@ -217,6 +312,11 @@
 		<decoration type="block" blockname="shrineLightningDrainHealth" onslopes="false" prob=".00001" rotatemax="3"/>
 		<decoration type="block" blockname="shrineLightningDrainStamina" onslopes="false" prob=".00001" rotatemax="3"/>
 		<decoration type="block" blockname="shrineLightningDrainSpirit" onslopes="false" prob=".00001" rotatemax="3"/>
+		<!-- Loot: Chests -->
+		<decoration type="block" blockname="cntLootChest_Arcane" prob=".0000025" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Fire" prob=".000004" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Ice" prob=".000001" rotatemax="7"/>
+		<decoration type="block" blockname="cntLootChest_Lightning" prob=".000001" rotatemax="7"/>
 	</append>
 	
 </Sorcery>

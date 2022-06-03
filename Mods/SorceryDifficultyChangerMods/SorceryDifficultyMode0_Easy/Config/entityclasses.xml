@@ -2,7 +2,7 @@
  <!--__________________________________________________________________________________
 		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
 		__________________________________________________________________________________
-		2021 "DEVRIX"
+		2022 "DEVRIX"
 		All Rights Reserved.
 		__________________________________________________________________________________
 		HOME: http://sorcerymod.com
@@ -48,11 +48,7 @@
 		__________________________________________________________________________________-->
 
 	<!-- FALLEN -->
-		<!-- NOTE: temp remove for v0.97+ -->
-		<set xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='Mass' and @value='110']/@value">180</set>
-		<set xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='Weight' and @value='30']/@value">70</set>
-		<insertAfter xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='Weight']">
-			<property name="PushFactor" value="30"/>
-		</insertAfter>
+	<!-- PhysicalDamageResist -->
+	<set xpath="/entity_classes/entity_class[@name='sorceryFallenFire' or @name='sorceryFallenIce' or @name='sorceryFallenLightning']/passive_effect[@name='PhysicalDamageResist' and @operation='base_set' and @value='20']/@value">10</set>
 	
 </SorceryDifficultyMode0_Easy>

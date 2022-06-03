@@ -94,6 +94,12 @@
 			<block name="sorceryEnchantingStation" prob=".33"/>
 		</placeholder>
 		
+		<!-- RITUAL STATION -->
+		<placeholder name="sorceryRitualStationRandomLootHelper">
+			<block name="ritualStationLoot"/>
+			<block name="sorceryRitualStation" prob=".05"/>
+		</placeholder>
+		
 		<!-- TAILORING STATION -->
 		<placeholder name="sorceryTailoringStationRandomLootHelper">
 			<block name="arcaneWheelLoot"/>
@@ -155,8 +161,17 @@
 			<block name="shrineLightningDrainStamina"/>
 			<block name="shrineLightningDrainSpirit"/>
 		</placeholder>
+	
 		
-		<!-- QUEST -->
+		<!-- PAINTINGS -->
+		<placeholder name="paintingSorcPictureSupportersRandomHelper">
+			<block name="paintingSorcSupporters1"/>
+			<block name="paintingSorcSupporters2"/>
+			<block name="paintingSorcSupporters3"/>
+		</placeholder>
+		
+		
+	<!-- QUEST -->
 		<!-- INTRO FETCH -->
 		<placeholder name="cntQuestSorceryIntroLootHelper">
 			<block name="cntLoot_SorceryCrateIntro" prob="1" questtag="fetch"/>
@@ -165,5 +180,32 @@
 		
 	</append>
 	
+	
+
+<!-- PAINTINGS -->
+	<append xpath="/blockplaceholders/placeholder[@name='paintingPictureRandomHelper']">
+		<block name="paintingSorcSupporters1" prob="1"/>
+		<block name="paintingSorcSupporters2" prob="1"/>
+		<block name="paintingSorcSupporters3" prob="1"/>
+		<block name="paintingSorcPetDaemon" prob="1"/>
+		<block name="paintingSorcPetAzazel" prob="1"/>
+		<block name="paintingSorcPetAbbie" prob="1"/>
+		<block name="paintingSorcPetBabou" prob="1"/>
+		<block name="paintingSorcPetPhoebe" prob="1"/>
+		<block name="paintingSorcPetSquidge" prob="1"/>
+	</append>
+	<!-- PAINTINGS: SAFES -->
+	<append xpath="/blockplaceholders/placeholder[@name='cntPaintingPictureSafeRandomLootHelper']">
+		<block name="hiddenSafePaintingSorcSupporters1" prob="1"/>
+		<block name="hiddenSafePaintingSorcSupporters2" prob="1"/>
+		<block name="hiddenSafePaintingSorcSupporters3" prob="1"/>
+		<block name="hiddenSafePaintingSorcPetDaemon" prob="1"/>
+		<block name="hiddenSafePaintingSorcPetAzazel" prob="1"/>
+		<block name="hiddenSafePaintingSorcPetAbbie" prob="1"/>
+		<block name="hiddenSafePaintingSorcPetBabou" prob="1"/>
+		<block name="hiddenSafePaintingSorcPetPhoebe" prob="1"/>
+		<block name="hiddenSafePaintingSorcPetSquidge" prob="1"/>
+	</append>
+
 
 </Sorcery>

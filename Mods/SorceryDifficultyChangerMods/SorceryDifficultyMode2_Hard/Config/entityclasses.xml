@@ -2,7 +2,7 @@
  <!--__________________________________________________________________________________
 		TERMS OF USE: YOU AGREE TO THESE TERMS BY USING SORCERY MOD.
 		__________________________________________________________________________________
-		2021 "DEVRIX"
+		2022 "DEVRIX"
 		All Rights Reserved.
 		__________________________________________________________________________________
 		HOME: http://sorcerymod.com
@@ -48,19 +48,13 @@
 		__________________________________________________________________________________-->
 
 	<!-- FALLEN -->
-		<!-- NOTE: temp remove for v0.97+ -->
-		<set xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='Mass' and @value='110']/@value">180</set>
-		<set xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='Weight' and @value='30']/@value">70</set>
-		<insertAfter xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='Weight']">
-			<property name="PushFactor" value="30"/>
-		</insertAfter>
-		<set xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='PainResistPerHit']/@value">0.9</set>		
-		
 	<!-- KnockdownProneDamageThreshold -->	
 	<set xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']/property[@name='KnockdownProneDamageThreshold']/@value">0.9</set>
 	<!-- SizeScale -->
 	<append xpath="/entity_classes/entity_class[@name='sorceryFallenMaster']"><property name="SizeScale" value="1.1"/></append>
 	<!-- HealthMax -->
 	<set xpath="/entity_classes/entity_class[@name='sorceryFallenFire' or @name='sorceryFallenIce' or @name='sorceryFallenLightning']/passive_effect[@name='HealthMax' and @operation='base_set' and @value='1000']/@value">1500</set>
+	<!-- PhysicalDamageResist -->
+	<set xpath="/entity_classes/entity_class[@name='sorceryFallenFire' or @name='sorceryFallenIce' or @name='sorceryFallenLightning']/passive_effect[@name='PhysicalDamageResist' and @operation='base_set' and @value='20']/@value">35</set>
 	
 </SorceryDifficultyMode2_Hard>

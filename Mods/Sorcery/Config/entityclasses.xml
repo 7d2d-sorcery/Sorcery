@@ -372,9 +372,9 @@
 			<property name="Class" value="EntityZombie"/>
 			<property name="Parent" value="Enemies"/>
 			<property name="PhysicsBody" value="zombieStandard"/>
-			<property name="Mass" value="180"/> <!-- old 110 -->
-			<property name="Weight" value="70"/> <!-- old 30 -->
-			<property name="PushFactor" value="30"/> <!-- NEW v0.97 -->
+			<property name="Mass" value="180"/>
+			<property name="Weight" value="70"/>
+			<property name="PushFactor" value="30"/>
 			<property name="LookAtAngle" value="60"/>
 			<property name="Faction" value="undead"/>
 			<property name="IsEnemyEntity" value="true"/>
@@ -741,10 +741,10 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/handFire.unity3d?handFire" local_offset="-.14,-0.05,0"/>	
 				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffFallenFire"/>
-				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+				<passive_effect name="HealthMax" operation="base_set" value="1000"/><!-- NOTE: Difficulty Modes -->
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/><!-- NOTE: Difficulty Modes -->
 				<!-- Journal -->
 				<triggered_effect trigger="onSelfAttackedOther" target="other" action="AddJournalEntry" journal="tip_sorcery_Fallen" target_tags="player"/>
 				<triggered_effect trigger="onOtherAttackedSelf" target="other" action="AddJournalEntry" journal="tip_sorcery_Fallen" target_tags="player"/>
@@ -782,10 +782,10 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/handIce.unity3d?handIce" local_offset="-.14,-0.05,0"/>	
 				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffFallenIce"/>
-				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+				<passive_effect name="HealthMax" operation="base_set" value="1000"/><!-- NOTE: Difficulty Modes -->
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/><!-- NOTE: Difficulty Modes -->
 			</effect_group>
 			<!-- CVAR: SCALING -->
 			<effect_group name="PLAYER TIER: Level">
@@ -817,10 +817,10 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/handLightning.unity3d?handLightning" local_offset="-.14,-0.05,0"/>	
 				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffFallenLightning"/>
-				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+				<passive_effect name="HealthMax" operation="base_set" value="1000"/><!-- NOTE: Difficulty Modes -->
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/><!-- NOTE: Difficulty Modes -->
 			</effect_group>
 			<!-- CVAR: SCALING -->
 			<effect_group name="PLAYER TIER: Level">
@@ -852,10 +852,10 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/handLightning.unity3d?handLightning" local_offset="-.14,-0.05,0"/>	
 				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffFallenLightning"/>
-				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+				<passive_effect name="HealthMax" operation="base_set" value="1000"/><!-- NOTE: Difficulty Modes -->
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/><!-- NOTE: Difficulty Modes -->
 			</effect_group>
 			<!-- CVAR: SCALING -->
 			<effect_group name="PLAYER TIER: Level">
@@ -886,10 +886,10 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AttachPrefabToEntity" target="self" parent_transform="LeftHand" prefab="#@modfolder:Resources/handLightning.unity3d?handLightning" local_offset="-.14,-0.05,0"/>	
 				<passive_effect name="BuffProcChance" operation="base_set" value="-5" tags="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"/>
 				<passive_effect name="BuffProcChance" operation="base_set" value="2" tags="buffFallenLightning"/>
-				<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+				<passive_effect name="HealthMax" operation="base_set" value="1000"/><!-- NOTE: Difficulty Modes -->
 				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 				<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-				<passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/><!-- NOTE: Difficulty Modes -->
 			</effect_group>
 			<!-- CVAR: SCALING -->
 			<effect_group name="PLAYER TIER: Level">

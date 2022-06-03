@@ -132,7 +132,7 @@
 			<drop event="Destroy" count="0"/>
 			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.75" stick_chance="1"/>
 			<property name="TakeDelay" value="15"/>
-			<property name="Group" value="Building,FireSorcery"/>
+			<property name="Group" value="advBuilding,FireSorcery"/>
 			<property name="DescriptionKey" value="conjureFireDesc"/>
 			<property name="UnlockedBy" value="attSorceryFire,sorceryDesk"/>
 			<!-- <property name="FilterTags" value="fother"/> -->
@@ -200,7 +200,7 @@
 			<drop event="Destroy" count="0"/>
 			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.75" stick_chance="1"/>
 			<property name="TakeDelay" value="15"/>
-			<property name="Group" value="Building,IceSorcery"/>
+			<property name="Group" value="advBuilding,IceSorcery"/>
 			<property name="DescriptionKey" value="conjureIceDesc"/>
 			<property name="UnlockedBy" value="attSorceryIce,sorceryDesk"/>
 			<property name="IndexName" value="quest_spellforge_ice"/>
@@ -266,7 +266,7 @@
 			<drop event="Destroy" count="0"/>
 			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.75" stick_chance="1"/>
 			<property name="TakeDelay" value="15"/>
-			<property name="Group" value="Building,LightningSorcery"/>
+			<property name="Group" value="advBuilding,LightningSorcery"/>
 			<property name="DescriptionKey" value="conjureLightningDesc"/>
 			<property name="UnlockedBy" value="attSorceryLightning,sorceryDesk"/>
 			<property name="IndexName" value="quest_spellforge_lightning"/>
@@ -335,7 +335,7 @@
 			<drop event="Destroy" count="0"/>
 			<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 			<property name="TakeDelay" value="15"/>
-			<property name="Group" value="Food/Cooking,Building,AlchemySorcery"/>
+			<property name="Group" value="Food/Cooking,advBuilding,AlchemySorcery"/>
 			<property name="EconomicValue" value="15000"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="false"/>
@@ -405,7 +405,7 @@
 			<drop event="Destroy" count="0"/>
 			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 			<property name="TakeDelay" value="15"/>
-			<property name="Group" value="Clothing,Building"/>
+			<property name="Group" value="Clothing,advBuilding"/>
 			<property name="EconomicValue" value="7000"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="false"/>
@@ -477,7 +477,7 @@
 			<drop event="Destroy" count="0"/>
 			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 			<property name="TakeDelay" value="5"/>
-			<property name="Group" value="Building"/>
+			<property name="Group" value="advBuilding"/>
 			<property name="EconomicValue" value="5"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="false"/>
@@ -526,7 +526,7 @@
 			<drop event="Destroy" count="0"/>
 			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 			<property name="TakeDelay" value="15"/>
-			<property name="Group" value="Building"/>
+			<property name="Group" value="advBuilding"/>
 			<property name="EconomicValue" value="10000"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="false"/>
@@ -593,11 +593,29 @@
 			<drop event="Destroy" count="0"/>
 			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.75" stick_chance="1"/>
 			<property name="TakeDelay" value="15"/>
-			<property name="Group" value="Building"/>
+			<property name="Group" value="advBuilding"/>
 			<property name="EconomicValue" value="40000"/>
 			<property name="EconomicBundleSize" value="1"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="UnlockedBy" value="perkSorcerySupport"/>
+		</block>
+		<block name="ritualStationLoot">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="sorceryRitualStation"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="ritualStation_sorcery"/>
+			<!-- sorceryRitualStation -->
+			<property name="Material" value="Mstone"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryRitualStation.unity3d?sorceryRitualStation"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
 		</block>
 	
 <!-- CONTAINERS ______________________________________-->
@@ -618,7 +636,7 @@
 				<!-- <property name="PlantGrowing.IsGrowOnTopEnabled" value="false"/> -->
 			<property name="Shape" value="ModelEntity"/>
 			<property name="Path" value="solid"/>
-			<property name="Model" value="#@modfolder:Resources/chestWooden.unity3d?chestWooden" />
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestHoly" />
 			<property name="Material" value="MwoodReinforced"/>
 			<property name="MaxDamage" value="7777"/>
 			<property name="Place" value="TowardsPlacer"/>
@@ -638,7 +656,7 @@
 			<property name="Material" value="MwoodReinforced"/>
 			<property name="Path" value="solid"/>
 			<property name="Shape" value="ModelEntity"/>
-			<property name="Model" value="#@modfolder:Resources/chestWoodenEnchanted.unity3d?chestWoodenEnchanted" />
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestHoly" />
 			<property name="CustomIcon" value="cntSorceryCrateIntro"/>
 			<property name="Place" value="TowardsPlacer"/>
 			<property name="OnlySimpleRotations" value="true"/>
@@ -660,7 +678,7 @@
 			<property name="StabilitySupport" value="false"/> <!-- build restriction -->
 			<property name="Path" value="solid"/>
 			<property name="Shape" value="ModelEntity"/>
-			<property name="Model" value="#@modfolder:Resources/chestWoodenArcane.unity3d?chestWoodenArcane" />
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestArcane" />
 			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 			<property name="Place" value="TowardsPlacer"/>
 			<property name="OnlySimpleRotations" value="true"/>
@@ -676,7 +694,7 @@
 			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
 			<property name="LootList" value="arcaneStorage_sorcery"/>
 			<property name="FilterTags" value="floot"/>
-			<property name="Group" value="Basics,Building"/>
+			<property name="Group" value="Building"/>
 		</block>
 		
 		<!-- LOOT CONTAINERS -->
@@ -689,7 +707,7 @@
 			<property name="Material" value="MwoodReinforced"/>
 			<property name="Path" value="solid"/>
 			<property name="Shape" value="ModelEntity"/>
-			<property name="Model" value="#@modfolder:Resources/chestWoodenEnchanted.unity3d?chestWoodenEnchanted" />
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestUnholy" />
 			<property name="CustomIcon" value="sorceryCnt_ArcaneChest"/> <property name="CustomIconTint" value="ff8080"/>
 			<property name="Place" value="TowardsPlacer"/>
 			<property name="OnlySimpleRotations" value="true"/>
@@ -703,6 +721,225 @@
 			<drop event="Destroy" count="0"/>
 			<property name="LootList" value="fallenCamp_sorcery"/>
 			<property name="FilterTags" value="floot"/>
+		</block>
+	<!-- NON-WRITABLE CONTAINERS	 -->
+		<block name="cntChestSorc_Master">
+			<property name="CreativeMode" value="None"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="Class" value="SecureLoot"/>
+			<property name="Tags" value="arcaneChest"/>
+			<property name="DescriptionKey" value="cntChestArcane_Desc"/>
+			<property name="Material" value="MwoodReinforced"/>
+			<property name="Path" value="solid"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestArcane" />
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="777"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="MaxDamage" value="777"/>
+			<property name="LootList" value="arcaneStorage_sorcery"/>
+			<property name="FilterTags" value="floot"/>
+			<property name="Group" value="Building"/>
+			<property class="RepairItems">
+				<property name="resourceWood" value="20"/>
+			</property>
+			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
+			<drop event="Destroy" name="resourceWood" count="5,8"/>
+		</block>
+		<block name="cntChest_Arcane">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestArcane" />
+			<property class="RepairItems">
+				<property name="resourceExtractOmni" value="40"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractOmni" count="4,6"/>
+		</block>
+		<block name="cntChest_Fire">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestFire" />
+			<property class="RepairItems">
+				<property name="resourceExtractFire" value="80"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractFire" count="8,10"/>
+		</block>
+		<block name="cntChest_Ice">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestIce" />
+			<property class="RepairItems">
+				<property name="resourceExtractIce" value="80"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractIce" count="8,10"/>
+		</block>
+		<block name="cntChest_Lightning">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestLightning" />
+			<property class="RepairItems">
+				<property name="resourceExtractLightning" value="80"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractLightning" count="8,10"/>
+		</block>
+		<block name="cntChest_Unholy">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestUnholy" />
+			<property class="RepairItems">
+				<property name="resourceExtractOmni" value="80"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractOmni" count="8,10"/>
+		</block>
+		<block name="cntChest_Holy">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestHoly" />
+			<property class="RepairItems">
+				<property name="resourceExtractOmni" value="80"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractOmni" count="8,10"/>
+		</block>
+		<!-- LOOT CHESTS -->
+		<block name="cntLootChest_Arcane">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestArcane" />
+			<property name="CustomIcon" value="cntChest_Arcane"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="chestArcaneLoot_sorcery"/>
+			<drop event="Destroy" name="resourceExtractOmni" count="4,6"/>
+		</block>
+		<block name="cntLootChest_Fire">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestFire" />
+			<property name="CustomIcon" value="cntChest_Fire"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="chestFireLoot_sorcery"/>
+			<drop event="Destroy" name="resourceExtractFire" count="8,10"/>
+		</block>
+		<block name="cntLootChest_Ice">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestIce" />
+			<property name="CustomIcon" value="cntChest_Ice"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="chestIceLoot_sorcery"/>
+			<drop event="Destroy" name="resourceExtractIce" count="8,10"/>
+		</block>
+		<block name="cntLootChest_Lightning">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestLightning" />
+			<property name="CustomIcon" value="cntChest_Lightning"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="chestLightningLoot_sorcery"/>
+			<drop event="Destroy" name="resourceExtractLightning" count="8,10"/>
+		</block>
+		<block name="cntLootChest_Unholy">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestUnholy" />
+			<property name="CustomIcon" value="cntChest_Unholy"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="fallenCamp_sorcery"/>
+			<drop event="Destroy" name="resourceExtractOmni" count="8,10"/>
+		</block>
+		<block name="cntLootChest_Holy">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="cntChestSorc_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestHoly" />
+			<property name="CustomIcon" value="cntChest_Holy"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Class" value="Loot"/>
+			<property name="LootList" value="fallenCamp_sorcery"/>
+			<drop event="Destroy" name="resourceExtractOmni" count="8,10"/>
+		</block>
+
+	
+	<!-- WRITABLE CONTAINERS -->
+		<block name="cntChestScroll_Master">
+			<property name="CreativeMode" value="None"/>
+			<property name="Class" value="SecureLootSigned"/>
+			<property name="Tags" value="arcaneChest"/>
+			<property name="DescriptionKey" value="cntChestScroll_Desc"/>
+			<property name="Material" value="MwoodReinforced"/>
+			<property name="Path" value="solid"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestWriteArcane" />
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicValue" value="777"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="MaxDamage" value="777"/>
+			<property name="LootList" value="arcaneStorage_sorcery"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+			<property name="Group" value="Building"/>
+			<property class="RepairItems">
+				<property name="resourceWood" value="20"/>
+			</property>
+			<drop event="Fall" name="terrDestroyedWoodDebris" count="1" prob="0.75" stick_chance="1"/>
+			<drop event="Destroy" name="resourceWood" count="5,8"/>
+		</block>
+		<block name="cntChestScroll_Arcane">
+			<property name="Extends" value="cntChestScroll_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestWriteArcane" />
+			<property class="RepairItems">
+				<property name="resourceExtractOmni" value="40"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractOmni" count="4,6"/>
+		</block>
+		<block name="cntChestScroll_Fire">
+			<property name="Extends" value="cntChestScroll_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestWriteFire" />
+			<property class="RepairItems">
+				<property name="resourceExtractFire" value="80"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractFire" count="8,10"/>
+		</block>
+		<block name="cntChestScroll_Ice">
+			<property name="Extends" value="cntChestScroll_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestWriteIce" />
+			<property class="RepairItems">
+				<property name="resourceExtractIce" value="80"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractIce" count="8,10"/>
+		</block>
+		<block name="cntChestScroll_Lightning">
+			<property name="Extends" value="cntChestScroll_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestWriteLightning" />
+			<property class="RepairItems">
+				<property name="resourceExtractLightning" value="80"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractLightning" count="8,10"/>
+		</block>
+		<block name="cntChestScroll_Unholy">
+			<property name="Extends" value="cntChestScroll_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestWriteUnholy" />
+			<property class="RepairItems">
+				<property name="resourceExtractUnholy" value="80"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractUnholy" count="8,10"/>
+		</block>
+		<block name="cntChestScroll_Holy">
+			<property name="CreativeMode" value="None"/>
+			<property name="Extends" value="cntChestScroll_Master"/>
+			<property name="Model" value="#@modfolder:Resources/chestsWoodenRunic.unity3d?chestWriteHoly" />
+			<property class="RepairItems">
+				<property name="resourceExtractHoly" value="80"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractHoly" count="8,10"/>
 		</block>
 		
 <!-- TRAPS ______________________________________-->
@@ -720,13 +957,17 @@
 			<property name="LightOpacity" value="0"/>
 			<property name="DontDamageOnTouch" value="false"/>
 			<property name="BuffsWhenWalkedOn" value="spellTrap_Fire"/>
-			<drop event="Destroy" name="resourceExtractFire" count="6,10"/>
 			<property name="FilterTags" value="fdecor,ftraps"/>
 			<property name="Stacknumber" value="500"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="EconomicValue" value="100"/>
 			<property name="Group" value="Tools/Traps,TrapFire,SorceryTrap"/>
 			<property name="UnlockedBy" value="perkSorceryTrap2Fire"/>
+			<property class="RepairItems">
+				<property name="resourceExtractFire" value="20"/>
+			</property>
+			<property name="CanPickup" value="true"/>
+			<drop event="Destroy" name="resourceExtractFire" count="10"/>
 		</block>
 		
 		<!-- ICE TRAP: Ground -->
@@ -743,13 +984,17 @@
 			<property name="LightOpacity" value="0"/>
 			<property name="DontDamageOnTouch" value="false"/>
 			<property name="BuffsWhenWalkedOn" value="spellTrap_Ice"/>
-			<drop event="Destroy" name="resourceExtractIce" count="6,10"/>
 			<property name="FilterTags" value="fdecor,ftraps"/>
 			<property name="Stacknumber" value="500"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="EconomicValue" value="100"/>
 			<property name="Group" value="Tools/Traps,TrapIce,SorceryTrap"/>
 			<property name="UnlockedBy" value="perkSorceryTrap2Ice"/>
+			<property class="RepairItems">
+				<property name="resourceExtractIce" value="20"/>
+			</property>
+			<property name="CanPickup" value="true"/>
+			<drop event="Destroy" name="resourceExtractIce" count="10"/>
 		</block>
 	
 		<!-- LIGHTING TRAP: Ground -->
@@ -766,14 +1011,462 @@
 			<property name="LightOpacity" value="0"/>
 			<property name="DontDamageOnTouch" value="false"/>
 			<property name="BuffsWhenWalkedOn" value="spellTrap_Lightning"/>
-			<drop event="Destroy" name="resourceExtractLightning" count="6,10"/>
 			<property name="FilterTags" value="fdecor,ftraps"/>
 			<property name="Stacknumber" value="500"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="EconomicValue" value="100"/>
 			<property name="Group" value="Tools/Traps,TrapLightning,SorceryTrap"/>
 			<property name="UnlockedBy" value="perkSorceryTrap2Lightning"/>
+			<property class="RepairItems">
+				<property name="resourceExtractLightning" value="20"/>
+			</property>
+			<property name="CanPickup" value="true"/>
+			<drop event="Destroy" name="resourceExtractLightning" count="10"/>
 		</block>
+	
+<!-- TRAPS: POI DEV ______________________________________-->
+	<!-- FIRE TRAPS: POI DEV ______________________________________-->
+		<!-- FIRE TRAP: FLOOR -->
+		<block name="blockFireTrapFloor3x3">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Extends" value="looseBoardsTrapBlock1x1" param1="CustomIcon"/>
+			<property name="Material" value="MsorceryExtractFire_weak"/>
+			<property name="TriggerDelay" value="0.01"/>
+			<property name="TriggerSound" value="sorceryFireball_explode"/>
+			<property name="ActivateSound" value="sorceryFireball_explode"/>
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/fireBlocks.unity3d?fireBlockTrapFloor3x3Off.prefab"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="MultiBlockDim" value="3,1,3"/>
+			<property name="ActivationDistance" value="6"/>
+			<property name="UseGlobalUV" value="Global"/>
+			<property name="DowngradeBlock" value="blockFireTrapFloor3x3On"/>
+		</block>
+		<block name="blockFireTrapFloor3x3On">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Extends" value="woodWeakNoUpgradeMaster"/>
+			<property name="Material" value="MsorceryExtractFire_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/fireBlocks.unity3d?fireBlockTrapFloor3x3On.prefab"/>
+			<property name="UseGlobalUV" value="D,D,D,D,L,D"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="MultiBlockDim" value="3,1,3"/>
+			<property name="FilterTags" value="MC_building,SC_destruction,SC_traps"/>
+			<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
+			<property name="ShowModelOnFall" value="true"/>
+		</block>
+	<!-- ICE TRAPS: POI DEV ______________________________________-->
+		<!-- ICE TRAP: SPIKE -->
+		<block name="iceBlockTrapSpike">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Class" value="TrunkTip"/>
+			<property name="BlockTag" value="Spike"/>
+			<property name="Damage" value="33"/>
+			<property name="Damage_received" value="33"/>
+			<property name="Material" value="MsorceryTraps"/>
+			<property name="DisplayType" value="blockHardened"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockTrapSpike.prefab"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="Collide" value="movement,melee"/>
+			<property name="LightOpacity" value="6"/>
+			<property name="Path" value="solid"/>
+			<!-- <property class="RepairItems">
+				<property name="resourceSnowBall" value="2"/>
+			</property> -->
+			<property name="CustomUpgradeSound" value="place_block_metal"/>
+			<drop event="Destroy" name="resourceSnowBall" count="10,20"/>
+			<drop event="Fall" count="0"/>
+			<property name="Group" value="Tools/Traps"/>
+			<property name="DescriptionKey" value="trapSpikesGroupDesc"/>
+			<!-- <property name="CanPickup" value="true"/> -->
+			<!-- <property name="BuffsWhenWalkedOn" value="buffIceBlock"/> -->
+		</block>
+		<block name="iceBlockTrapSpikeSml">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Class" value="TrunkTip"/>
+			<property name="BlockTag" value="Spike"/>
+			<property name="Damage" value="33"/>
+			<property name="Damage_received" value="33"/>
+			<property name="Material" value="MsorceryTraps"/>
+			<property name="DisplayType" value="blockHardened"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockTrapSpikeSml.prefab"/>
+			<property name="IsTerrainDecoration" value="false"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="Collide" value="movement,melee"/>
+			<property name="LightOpacity" value="6"/>
+			<property name="Path" value="solid"/>
+			<!-- <property class="RepairItems">
+				<property name="resourceSnowBall" value="2"/>
+			</property> -->
+			<property name="CustomUpgradeSound" value="place_block_metal"/>
+				<drop event="Destroy" name="resourceSnowBall" count="10,20"/>
+				<drop event="Fall" count="0"/>
+			<property name="Group" value="Tools/Traps"/>
+			<property name="DescriptionKey" value="trapSpikesGroupDesc"/>
+			<!-- <property name="CanPickup" value="true"/> -->
+			<!-- <property name="BuffsWhenWalkedOn" value="buffIceBlock"/> -->
+		</block>	
+	<!-- ICE TRAP: SPRING -->
+		<block name="blockIceTrapSpring">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Class" value="TrunkTip"/>
+			<property name="Material" value="MsorceryTraps"/>
+			<property name="MaxDamage" value="33"/>
+				<property name="Damage" value="33"/>
+			<property name="Damage_received" value="33"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<!-- <property name="BuffsWhenWalkedOn" value="buff_SpringTrap"/> -->
+			 <!-- <property class="RepairItems"> <property name="resourceExtractIce" value="10"/> </property> -->
+			<property name="MultiBlockDim" value="1,1,1"/>
+			<property name="Mesh" value="models"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockTrapSpringOff"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ActivationDistance" value="0.1"/>
+			<property name="Collide" value="melee,movement"/>
+			<property name="Group" value="Tools/Traps,Science"/>
+			<property name="FilterTags" value="ftraps"/>
+			<property name="EconomicValue" value="30"/>
+			<property name="DowngradeBlock" value="blockIceTrapSpringOn"/>
+			<!-- <property name="CanPickup" value="true" param1="blockIceTrapSpring"/> -->
+			<drop event="Fall" name="Bear Trap" count="1" prob="1" stick_chance="1"/>
+			<drop event="Destroy" name="resourceExtractIce" count="3,5"/>
+		</block>
+		<block name="blockIceTrapSpringOn">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Class" value="TrunkTip"/>
+			<property name="Material" value="MsorceryTraps"/>
+			<property name="Damage" value="33"/>
+			<property name="Damage_received" value="33"/>
+			<property name="DisplayType" value="blockHardened" />
+			<!-- <property name="BuffsWhenWalkedOn" value="buff_SpringTrapUpdate"/> -->
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Mesh" value="models"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockTrapSpringOn"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="Collide" value="melee,movement"/>
+			<property name="Path" value="solid"/>
+			<!-- <property class="RepairItems"> <property name="resourceExtractIce" value="10"/> </property> -->
+			<!-- <property class="UpgradeBlock">
+				<property name="ToBlock" value="blockIceTrapSpring"/>
+				<property name="Item" value="resourceExtractIce"/>
+				<property name="ItemCount" value="3"/>
+				<property name="UpgradeHitCount" value="1"/>
+			</property> -->
+			<!--<property name="CustomUpgradeSound" value="beartrapresetsound"/>-->
+			<property name="Group" value="Tools/Traps,Science"/>
+			<property name="DescriptionKey" value="trapSpikesGroupDesc"/>
+			<property name="EconomicValue" value="30"/>
+			<property name="EconomicBundleSize" value="20"/>
+			<property name="FilterTags" value="fdecor,ftraps"/>
+			<property name="SortOrder1" value="70g0"/>
+			<drop event="Destroy" name="resourceExtractIce" count="3,5"/>
+			<drop event="Fall" count="0"/>
+		</block>
+		<!-- ICE TRAP: FLOOR -->
+		<block name="blockIceTrapFloor3x3">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Extends" value="looseBoardsTrapBlock1x1" param1="CustomIcon"/>
+			<property name="Material" value="MsorceryExtractIce_weak"/>
+			<property name="TriggerDelay" value="0.01"/>
+			<property name="TriggerSound" value="sorceryIce_freeze"/>
+			<property name="ActivateSound" value="sorceryIce_freeze"/>
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockTrapFloor3x3Off.prefab"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="MultiBlockDim" value="3,1,3"/>
+			<property name="ActivationDistance" value="6"/>
+			<property name="UseGlobalUV" value="Global"/> <!-- NOTE: May need disabled -->
+			<property name="DowngradeBlock" value="blockIceTrapFloor3x3On"/>
+			<!-- <property name="CopyPaintOnDowngrade" value="T,B,W"/> -->
+			<!-- <property name="BuffsWhenWalkedOn" value="buffIceBlock"/> -->
+		</block>
+		<block name="blockIceTrapFloor3x3On">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Extends" value="woodWeakNoUpgradeMaster"/>
+			<property name="Material" value="MsorceryExtractIce_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockTrapFloor3x3On.prefab"/>
+			<property name="UseGlobalUV" value="D,D,D,D,L,D"/> <!-- NOTE: May need disabled or changed to GLOBAL -->
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="MultiBlockDim" value="3,1,3"/>
+			<property name="FilterTags" value="MC_building,SC_destruction,SC_traps"/>
+			<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
+			<property name="ShowModelOnFall" value="true"/>
+		</block>
+	<!-- LIGHTNING TRAPS: POI DEV ______________________________________-->
+		<!-- LIGHTNING TRAP: FLOOR -->
+		<block name="blockLightningTrapFloor3x3">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Extends" value="looseBoardsTrapBlock1x1" param1="CustomIcon"/>
+			<property name="Material" value="MsorceryExtractLightning_weak"/>
+			<property name="TriggerDelay" value="0.01"/>
+			<property name="TriggerSound" value="sorceryLightning_impact"/>
+			<property name="ActivateSound" value="sorceryLightning_impact"/>
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/lightningBlocks.unity3d?lightningBlockTrapFloor3x3Off.prefab"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="MultiBlockDim" value="3,1,3"/>
+			<property name="ActivationDistance" value="6"/>
+			<property name="UseGlobalUV" value="Global"/>
+			<property name="DowngradeBlock" value="blockLightningTrapFloor3x3On"/>
+		</block>
+		<block name="blockLightningTrapFloor3x3On">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Extends" value="woodWeakNoUpgradeMaster"/>
+			<property name="Material" value="MsorceryExtractLightning_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/lightningBlocks.unity3d?lightningBlockTrapFloor3x3On.prefab"/>
+			<property name="UseGlobalUV" value="D,D,D,D,L,D"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="MultiBlockDim" value="3,1,3"/>
+			<property name="FilterTags" value="MC_building,SC_destruction,SC_traps"/>
+			<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
+			<property name="ShowModelOnFall" value="true"/>
+		</block>
+	<!-- UNHOLY TRAPS: POI DEV ______________________________________-->
+		<!-- UNHOLY TRAP: FLOOR -->
+		<block name="blockUnholyTrapFloor3x3">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Extends" value="looseBoardsTrapBlock1x1" param1="CustomIcon"/>
+			<property name="Material" value="MsorceryExtractUnholy_weak"/>
+			<property name="TriggerDelay" value="0.01"/>
+			<property name="TriggerSound" value="sorceryUnholy_bloodconjure"/>
+			<property name="ActivateSound" value="sorceryUnholy_bloodconjure"/>
+			<property name="Shape" value="ModelEntity" />
+			<property name="Model" value="#@modfolder:Resources/unholyBlocks.unity3d?unholyBlockTrapFloor3x3Off.prefab"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="MultiBlockDim" value="3,1,3"/>
+			<property name="ActivationDistance" value="6"/>
+			<property name="UseGlobalUV" value="Global"/>
+			<property name="DowngradeBlock" value="blockUnholyTrapFloor3x3On"/>
+		</block>
+		<block name="blockUnholyTrapFloor3x3On">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Extends" value="woodWeakNoUpgradeMaster"/>
+			<property name="Material" value="MsorceryExtractUnholy_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/unholyBlocks.unity3d?unholyBlockTrapFloor3x3On.prefab"/>
+			<property name="UseGlobalUV" value="D,D,D,D,L,D"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="MultiBlockDim" value="3,1,3"/>
+			<property name="FilterTags" value="MC_building,SC_destruction,SC_traps"/>
+			<property name="DescriptionKey" value="creativeMenuBlockGroupDesc"/>
+			<property name="ShowModelOnFall" value="true"/>
+		</block>
+		
+	
+	
+<!-- BLOCKS: BUILDING ______________________________________-->
+		<!-- FIRE: BLOCKS -->
+		<block name="blockFireFrame">
+			<property name="CreativeMode" value="All"/>
+			<property name="CustomIcon" value="blockFire"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="blockElementalFrameDesc"/>
+			<property name="Material" value="MsorceryExtractFire_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/fireBlocks.unity3d?fireBlockFrame"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="false"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Group" value="Building"/>
+			<property class="RepairItems">
+				<property name="resourceExtractFire" value="8"/>
+			</property>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" value="blockFire"/>
+				<property name="Item" value="resourceExtractFire"/>
+				<property name="ItemCount" value="10"/>
+				<property name="UpgradeHitCount" value="2"/>
+			</property>
+			<property name="PassThroughDamage" value="true"/>
+			<property name="CustomUpgradeSound" value="place_block_concrete"/>
+			<drop event="Destroy" name="resourceExtractFire" count="5"/>
+			<property name="CanPickup" value="true"/>
+		</block>
+		<block name="blockFire">
+			<property name="CreativeMode" value="All"/>
+			<property name="DescriptionKey" value="blockElementalDesc"/>
+			<property name="Material" value="MsorceryExtractFire"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/fireBlocks.unity3d?fireBlock"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="false"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="BuffsWhenWalkedOn" value="spellBlock_Fire"/>
+			<property name="Group" value="Building"/>
+			<property class="RepairItems">
+				<property name="resourceExtractFire" value="16"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractFire" count="10"/>
+		</block>
+		<block name="blockFireSphere">
+			<property name="Extends" value="blockFire"/>
+			<property name="CreativeMode" value="All"/>
+			<property name="Model" value="#@modfolder:Resources/fireBlocks.unity3d?fireBlockSphere"/>
+		</block>
+		<!-- ICE: BLOCKS -->
+		<block name="blockIceFrame">
+			<property name="CreativeMode" value="All"/>
+			<property name="CustomIcon" value="blockIce"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="blockElementalFrameDesc"/>
+			<property name="Material" value="MsorceryExtractIce_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockFrame"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="false"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Group" value="Building"/>
+			<property class="RepairItems">
+				<property name="resourceExtractIce" value="8"/>
+			</property>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" value="blockIce"/>
+				<property name="Item" value="resourceExtractIce"/>
+				<property name="ItemCount" value="10"/>
+				<property name="UpgradeHitCount" value="2"/>
+			</property>
+			<property name="PassThroughDamage" value="true"/>
+			<property name="CustomUpgradeSound" value="place_block_concrete"/>
+			<drop event="Destroy" name="resourceExtractIce" count="5"/>
+			<property name="CanPickup" value="true"/>
+		</block>
+		<block name="blockIce">
+			<property name="CreativeMode" value="All"/>
+			<property name="DescriptionKey" value="blockElementalDesc"/>
+			<property name="Material" value="MsorceryExtractIce"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlock"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="false"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="BuffsWhenWalkedOn" value="spellBlock_Ice"/>
+			<property name="Group" value="Building"/>
+			<property class="RepairItems">
+				<property name="resourceExtractIce" value="16"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractIce" count="10"/>
+		</block>
+		<block name="blockIceSphere">
+			<property name="Extends" value="blockIce"/>
+			<property name="CreativeMode" value="All"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockSphere"/>
+		</block>
+		<!-- LIGHTNING: BLOCKS -->
+		<block name="blockLightningFrame">
+			<property name="CreativeMode" value="All"/>
+			<property name="CustomIcon" value="blockLightning"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="blockElementalFrameDesc"/>
+			<property name="Material" value="MsorceryExtractLightning_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/lightningBlocks.unity3d?lightningBlockFrame"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="false"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Group" value="Building"/>
+			<property class="RepairItems">
+				<property name="resourceExtractLightning" value="8"/>
+			</property>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" value="blockLightning"/>
+				<property name="Item" value="resourceExtractLightning"/>
+				<property name="ItemCount" value="10"/>
+				<property name="UpgradeHitCount" value="2"/>
+			</property>
+			<property name="PassThroughDamage" value="true"/>
+			<property name="CustomUpgradeSound" value="place_block_concrete"/>
+			<drop event="Destroy" name="resourceExtractLightning" count="5"/>
+			<property name="CanPickup" value="true"/>
+		</block>
+		<block name="blockLightning">
+			<property name="CreativeMode" value="All"/>
+			<property name="DescriptionKey" value="blockElementalDesc"/>
+			<property name="Material" value="MsorceryExtractLightning"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/lightningBlocks.unity3d?lightningBlock"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="false"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="BuffsWhenWalkedOn" value="spellBlock_Lightning"/>
+			<property name="Group" value="Building"/>
+			<property class="RepairItems">
+				<property name="resourceExtractLightning" value="16"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractLightning" count="10"/>
+		</block>
+		<block name="blockLightningSphere">
+			<property name="Extends" value="blockLightning"/>
+			<property name="CreativeMode" value="All"/>
+			<property name="Model" value="#@modfolder:Resources/lightningBlocks.unity3d?lightningBlockSphere"/>
+		</block>
+		<!-- UNHOLY: BLOCKS -->
+		<block name="blockUnholyFrame">
+			<property name="CreativeMode" value="All"/>
+			<property name="CustomIcon" value="blockUnholy"/>
+			<property name="ItemTypeIcon" value="all_blocks"/>
+			<property name="DescriptionKey" value="blockElementalFrameDesc"/>
+			<property name="Material" value="MsorceryExtractUnholy_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/unholyBlocks.unity3d?unholyBlockFrame"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="false"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Group" value="Building"/>
+			<property class="RepairItems">
+				<property name="resourceExtractUnholy" value="8"/>
+			</property>
+			<property class="UpgradeBlock">
+				<property name="ToBlock" value="blockUnholy"/>
+				<property name="Item" value="resourceExtractUnholy"/>
+				<property name="ItemCount" value="10"/>
+				<property name="UpgradeHitCount" value="2"/>
+			</property>
+			<property name="PassThroughDamage" value="true"/>
+			<property name="CustomUpgradeSound" value="place_block_concrete"/>
+			<drop event="Destroy" name="resourceExtractUnholy" count="5"/>
+			<property name="CanPickup" value="true"/>
+		</block>
+		<block name="blockUnholy">
+			<property name="CreativeMode" value="All"/>
+			<property name="DescriptionKey" value="blockElementalDesc"/>
+			<property name="Material" value="MsorceryExtractUnholy"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/unholyBlocks.unity3d?unholyBlock"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="false"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<!-- <property name="BuffsWhenWalkedOn" value="spellBlock_Unholy"/> -->
+			<property name="Group" value="Building"/>
+			<property class="RepairItems">
+				<property name="resourceExtractUnholy" value="16"/>
+			</property>
+			<drop event="Destroy" name="resourceExtractOmni" count="10"/>
+		</block>
+		<block name="blockUnholySphere">
+			<property name="Extends" value="blockUnholy"/>
+			<property name="CreativeMode" value="All"/>
+			<property name="Model" value="#@modfolder:Resources/unholyBlocks.unity3d?unholyBlockSphere"/>
+		</block>
+<!-- END - BLOCKS: BUILDING ______________________________________-->
 	
 	<!-- TRADERS -->
 		<!-- BLOOD TRADER -->
@@ -865,6 +1558,22 @@
 			<property name="Shape" value="ModelEntity"/>
 			<property name="Path" value="solid"/>
 			<property name="Model" value="#@modfolder:Resources/sorceryEnchantingStation.unity3d?sorceryEnchantingStation"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="MultiBlockDim" value="2,2,2"/>
+			<property name="Place" value="TowardsPlacer"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+		</block>
+		<block name="sorceryRitualStationRandomLootHelper">
+			<property name="Extends" value="cntWastelandRandomLootHelper" param1="CustomIcon,DescriptionKey"/>
+			<property name="CustomIcon" value="sorceryRitualStation"/> <property name="CustomIconTint" value="ff8080"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Material" value="Mstone"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Path" value="solid"/>
+			<property name="Model" value="#@modfolder:Resources/sorceryRitualStation.unity3d?sorceryRitualStation"/>
 			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
 			<property name="MultiBlockDim" value="2,2,2"/>
 			<property name="Place" value="TowardsPlacer"/>
@@ -1014,7 +1723,7 @@
 			<property name="IsPlant" value="true"/> <!-- the biome decorator will only place this if underground.fertile_level GT 0 -->
 			<property name="HarvestOverdamage" value="false"/>
 			<property name="PassThroughDamage" value="false"/>
-			<property name="ActivationDistance" value="5"/>
+			<property name="ActivationDistance" value="10"/>
 			<property name="SortOrder2" value="0144"/> <!-- SortTree -->
 			<property name="SellableToTrader" value="false"/>
 			<property name="EconomicValue" value="7777"/>
@@ -1070,6 +1779,7 @@
 			<property name="Extends" value="treeGrowingMaster_Essence"/>
 			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="tree_EssenceFire"/>
+			<property name="ItemTypeIcon" value="lock"/>
 			<property name="PlantGrowing.Next" value="treePlanted_EssenceFire"/>
 			<property name="PlantGrowing.GrowthRate" value="63"/> <!-- 315 -->
 			<property name="Model" value="#@modfolder:Resources/treeEssenceFireGrowing.unity3d?treeEssenceFireGrowing" />
@@ -1079,6 +1789,7 @@
 		<block name="treePlanted_EssenceFire">
 			<property name="Extends" value="treeMaster_Essence"/>
 			<property name="CreativeMode" value="None"/>
+			<property name="ItemTypeIcon" value="triangle"/>
 			<property name="Tags" value="EssenceBush,hasFireEssence"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceFire.unity3d?treeEssenceFire" />
 			<property name="MultiBlockDim" value="3,2,3"/>
@@ -1090,6 +1801,7 @@
 		<block name="treeLoot_EssenceFire">
 			<property name="Extends" value="treeMaster_Essence"/>
 			<property name="CreativeMode" value="None"/>
+			<property name="ItemTypeIcon" value="lock"/>
 			<property name="Class" value="Loot"/>
 			<property name="LootList" value="treeFire_sorcery"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceFire.unity3d?treeEssenceFire" />
@@ -1146,6 +1858,7 @@
 			<property name="Extends" value="treeGrowingMaster_Essence"/>
 			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="tree_EssenceIce"/>
+			<property name="ItemTypeIcon" value="lock"/>
 			<property name="PlantGrowing.Next" value="treePlanted_EssenceIce"/>
 			<property name="PlantGrowing.GrowthRate" value="63"/> <!-- 315 -->
 			<property name="Model" value="#@modfolder:Resources/treeEssenceIceGrowing.unity3d?treeEssenceIceGrowing" />
@@ -1155,7 +1868,8 @@
 		<block name="treePlanted_EssenceIce">
 			<property name="Extends" value="treeMaster_Essence"/>
 			<property name="CreativeMode" value="None"/>
-			<property name="CustomIcon" value="tree_EssenceIce"/>			
+			<property name="CustomIcon" value="tree_EssenceIce"/>
+			<property name="ItemTypeIcon" value="triangle"/>
 			<property name="Tags" value="EssenceBush,hasIceEssence"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceIce.unity3d?treeEssenceIce" />
 			<property name="MultiBlockDim" value="3,2,3"/>
@@ -1167,6 +1881,7 @@
 		<block name="treeLoot_EssenceIce">
 			<property name="Extends" value="treeMaster_Essence"/>
 			<property name="CreativeMode" value="None"/>
+			<property name="ItemTypeIcon" value="lock"/>
 			<property name="Class" value="Loot"/>
 			<property name="LootList" value="treeIce_sorcery"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceIce.unity3d?treeEssenceIce" />
@@ -1221,6 +1936,7 @@
 			<property name="Extends" value="treeGrowingMaster_Essence"/>
 			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="tree_EssenceLightning"/>
+			<property name="ItemTypeIcon" value="lock"/>
 			<property name="PlantGrowing.Next" value="treePlanted_EssenceLightning"/>
 			<property name="PlantGrowing.GrowthRate" value="63"/> <!-- 315 -->
 			<property name="Model" value="#@modfolder:Resources/treeEssenceLightningGrowing.unity3d?treeEssenceLightningGrowing" />
@@ -1231,6 +1947,7 @@
 			<property name="Extends" value="treeMaster_Essence"/>
 			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="tree_EssenceLightning"/>
+			<property name="ItemTypeIcon" value="triangle"/>
 			<property name="Tags" value="EssenceBush,hasLightningEssence"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceLightning.unity3d?treeEssenceLightning" />
 			<property name="MultiBlockDim" value="3,2,3"/>
@@ -1242,6 +1959,7 @@
 		<block name="treeLoot_EssenceLightning">
 			<property name="Extends" value="treeMaster_Essence"/>
 			<property name="CreativeMode" value="None"/>
+			<property name="ItemTypeIcon" value="lock"/>
 			<property name="Class" value="Loot"/>
 			<property name="LootList" value="treeLightning_sorcery"/>
 			<property name="Model" value="#@modfolder:Resources/treeEssenceLightning.unity3d?treeEssenceLightning" />
@@ -1251,6 +1969,382 @@
 		</block>
 		
 <!-- END - PLANTS ______________________________________-->
+	
+<!-- TREES ______________________________________-->
+	<!-- TREE ELEMENTAL MASTER ______________________________________-->
+		<block name="treeElementalMaster">
+			<!-- <property name="Extends" value="treeMaster"/> -->
+			<property name="CreativeMode" value="None"/>
+			<property name="DescriptionKey" value="plantsBlockGroupDesc"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="CustomIcon" value="tree_EssenceFire"/>
+			<property name="Class" value="ModelTree"/>
+			<property name="Shape" value="DistantDecoTree"/>
+			<property name="Material" value="MtreeWoodSmall"/>
+			<property name="LightOpacity" value="0"/>
+			<property name="Texture" value="116"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="CanPlayersSpawnOn" value="false"/>
+			<property name="Model" value="#@modfolder:Resources/treeFireLrg.unity3d?treeFireLrg" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,2,1"/>
+			<property name="BigDecorationRadius" value="5"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="IsDistantDecoration" value="true"/> <!-- this block will ALWAYS spawn regardless of underground.fertile_level. On distant terrain the underground block is unknown. -->
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="BlockTag" value="TreeTrunk"/>
+			<property name="IsPlant" value="true"/> <!-- the biome decorator will only place this if underground.fertile_level GT 0 -->
+			<property name="Tags" value="wood"/>
+			<property name="ParticleOnDeath" value="treeGib_burnt"/>
+			<!-- <property name="Collide" value="melee"/> -->
+			<!-- <property name="BuffChance" value="1"/> -->
+			<!-- <property name="BuffsWhenWalkedOn" value="tip_sorcery_Bush"/> -->
+			<property name="FilterTags" value="MC_outdoor,SC_trees"/>
+			<property name="SortOrder1" value="a0c0"/>
+			<property name="ActivationDistance" value="8"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceYuccaFibers" count="0" prob="1" stick_chance="0"/>			
+			<drop event="Harvest" name="foodHoney" prob="0" count="0" tag="WasteTreasuresHoneyHarvest"/>
+		</block>
+		<!-- TREE ELEMENTAL MASTER: GROWING ______________________________________-->
+		<block name="treeElementalMasterGrowing">
+			<property name="Extends" value="treeElementalMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="DisplayInfo" value="Name"/>
+			<property name="DisplayType" value=""/>
+			<property name="Collide" value="melee"/>
+			<property name="MultiBlockDim" value="1,2,1"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="PlantGrowing.Next" value="treeFireMed"/>
+			<property name="PlantGrowing.GrowthRate" value="63"/> <!-- 63 -->
+			<property name="PlantGrowing.IsRandom" value="false"/>
+			<property name="PlantGrowing.FertileLevel" value="1"/>
+			<property name="EconomicValue" value="24"/>
+			<property name="EconomicBundleSize" value="10"/>
+			<property name="ActivationDistance" value="4"/>
+		</block>
+	
+	<!-- TREE ELEMENTAL: FIRE ______________________________________-->
+		<block name="treeFireMed">
+			<property name="Extends" value="treeElementalMaster"/>
+			<property name="CustomIcon" value="treePlantedFireSeed"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Material" value="MtreeWoodMedium"/>
+			<property name="Tags" value="wood,hasFireEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeFireMed.unity3d?treeFireMed" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,10,1"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="150,200" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="50,70" tag="essenceFireHarvest"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="treeFireLrg">
+			<property name="Extends" value="treeElementalMaster"/>
+			<property name="CustomIcon" value="treePlantedFireSeed"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Material" value="MtreeWoodFull"/>
+			<property name="Tags" value="wood,hasFireEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeFireLrg.unity3d?treeFireLrg" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,21,1"/>
+			<property name="BigDecorationRadius" value="5"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<!-- <property name="ParticleOnDeath" value="treeGib_burnt_55m"/> -->
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="300,350" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="100,120" tag="essenceFireHarvest"/>
+			<drop event="Destroy" name="treePlantedFireSeed" count="0,1"/>
+		</block>
+	<!-- TREE ELEMENTAL: ICE ______________________________________-->
+		<block name="treeIceMed">
+			<property name="Extends" value="treeElementalMaster"/>
+			<property name="CustomIcon" value="treePlantedIceSeed"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Material" value="MtreeWoodMedium"/>
+			<property name="Tags" value="wood,hasIceEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeIceMed.unity3d?treeIceMed" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,10,1"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="150,200" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="50,70" tag="essenceIceHarvest"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="treeIceLrg">
+			<property name="Extends" value="treeElementalMaster"/>
+			<property name="CustomIcon" value="treePlantedIceSeed"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Material" value="MtreeWoodFull"/>
+			<property name="Tags" value="wood,hasIceEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeIceLrg.unity3d?treeIceLrg" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,17,1"/>
+			<property name="BigDecorationRadius" value="5"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="300,350" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="100,120" tag="essenceIceHarvest"/>
+			<drop event="Destroy" name="treePlantedIceSeed" count="0,1"/>
+		</block>
+	<!-- TREE ELEMENTAL: LIGHTNING ______________________________________-->
+		<block name="treeLightningMed">
+			<property name="Extends" value="treeElementalMaster"/>
+			<property name="CustomIcon" value="treePlantedLightningSeed"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Material" value="MtreeWoodMedium"/>
+			<property name="Tags" value="wood,hasLightningEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeLightningMed.unity3d?treeLightningMed" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,10,1"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="150,200" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="50,70" tag="essenceLightningHarvest"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="treeLightningLrg">
+			<property name="Extends" value="treeElementalMaster"/>
+			<property name="CustomIcon" value="treePlantedLightningSeed"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Material" value="MtreeWoodFull"/>
+			<property name="Tags" value="wood,hasLightningEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeLightningLrg.unity3d?treeLightningLrg" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,19,1"/>
+			<property name="BigDecorationRadius" value="5"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="300,350" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="100,120" tag="essenceLightningHarvest"/>
+			<drop event="Destroy" name="treePlantedLightningSeed" count="0,1"/>
+		</block>
+		
+	<!-- TREE PLANTABLE: FIRE ______________________________________-->
+		<block name="treePlantedFireSeed">
+			<property name="Extends" value="treeElementalMasterGrowing" param1="CustomIcon,Harvest"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DescriptionKey" value="treePlantedFireSeedDesc"/>
+			<property name="MaxDamage" value="10"/>
+			<property name="Material" value="Mplants"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Model" value="#@modfolder:Resources/treeFireSeed.unity3d?treeFireSeed" />
+			<property name="ModelOffset" value="0,-0.2,0"/>
+			<property name="Collide" value="melee"/>
+			<property name="FallOver" value="false"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="PlaceAsRandomRotation" value="true"/>
+			<property name="PlantGrowing.Next" value="treePlantedFireMed"/>
+			<property name="EconomicValue" value="50"/>
+			<property name="EconomicBundleSize" value="5"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="ParticleOnDeath" value="treeGib_sapling"/>
+			<property name="CanPickup" value="true" param1="treePlantedFireSeed"/>
+			<drop event="Destroy" name="treePlantedFireSeed" count="1"/>
+		</block>
+		<block name="treePlantedFireMed">
+			<property name="Extends" value="treeElementalMasterGrowing"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="treePlantedFireSeed"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="Material" value="MtreeWoodMedium"/>
+			<property name="Tags" value="wood,hasFireEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeFireMed.unity3d?treeFireMed" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,10,1"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<property name="PlantGrowing.Next" value="treePlantedFireLrg"/>
+			<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="150,200" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="50,70" tag="essenceFireHarvest"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="treePlantedFireLrg">
+			<property name="Extends" value="treeFireLrg"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DisplayInfo" value="Name"/>
+			<property name="CustomIcon" value="treePlantedFireSeed"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="Material" value="MtreeWoodFull"/>
+			<property name="Tags" value="wood,hasFireEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeFireLrg.unity3d?treeFireLrg" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,21,1"/>
+			<property name="BigDecorationRadius" value="5"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<property name="ActivationDistance" value="4"/>
+			<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="300,350" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="100,120" tag="essenceFireHarvest"/>
+			<drop event="Destroy" name="treePlantedFireSeed" count="1"/>
+		</block>
+	<!-- TREE PLANTABLE: ICE ______________________________________-->
+		<block name="treePlantedIceSeed">
+			<property name="Extends" value="treeElementalMasterGrowing" param1="CustomIcon,Harvest"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="DescriptionKey" value="treePlantedIceSeedDesc"/>
+			<property name="CustomIcon" value="treePlantedIceSeed"/>
+			<property name="MaxDamage" value="10"/>
+			<property name="Material" value="Mplants"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Model" value="#@modfolder:Resources/treeIceSeed.unity3d?treeIceSeed" />
+			<property name="ModelOffset" value="0,-0.2,0"/>
+			<property name="Collide" value="melee"/>
+			<property name="FallOver" value="false"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="PlaceAsRandomRotation" value="true"/>
+			<property name="PlantGrowing.Next" value="treePlantedIceMed"/>
+			<property name="EconomicValue" value="50"/>
+			<property name="EconomicBundleSize" value="5"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="ParticleOnDeath" value="treeGib_sapling"/>
+			<property name="CanPickup" value="true" param1="treePlantedIceSeed"/>
+			<drop event="Destroy" name="treePlantedIceSeed" count="1"/>
+		</block>
+		<block name="treePlantedIceMed">
+			<property name="Extends" value="treeElementalMasterGrowing"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="treePlantedIceSeed"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="Material" value="MtreeWoodMedium"/>
+			<property name="Tags" value="wood,hasIceEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeIceMed.unity3d?treeIceMed" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,10,1"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<property name="PlantGrowing.Next" value="treePlantedIceLrg"/>
+			<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="150,200" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="50,70" tag="essenceIceHarvest"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="treePlantedIceLrg">
+			<property name="Extends" value="treeIceLrg"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DisplayInfo" value="Name"/>
+			<property name="CustomIcon" value="treePlantedIceSeed"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="Material" value="MtreeWoodFull"/>
+			<property name="Tags" value="wood,hasIceEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeIceLrg.unity3d?treeIceLrg" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,21,1"/>
+			<property name="BigDecorationRadius" value="5"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<property name="ActivationDistance" value="4"/>
+			<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="300,350" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="100,120" tag="essenceIceHarvest"/>
+			<drop event="Destroy" name="treePlantedIceSeed" count="1"/>
+		</block>
+	<!-- TREE PLANTABLE: LIGHTNING ______________________________________-->
+		<block name="treePlantedLightningSeed">
+			<property name="Extends" value="treeElementalMasterGrowing" param1="CustomIcon,Harvest"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="DescriptionKey" value="treePlantedLightningSeedDesc"/>
+			<property name="CustomIcon" value="treePlantedLightningSeed"/>
+			<property name="MaxDamage" value="10"/>
+			<property name="Material" value="Mplants"/>
+			<property name="StabilitySupport" value="false"/>
+			<property name="Model" value="#@modfolder:Resources/treeLightningSeed.unity3d?treeLightningSeed" />
+			<property name="ModelOffset" value="0,-0.2,0"/>
+			<property name="Collide" value="melee"/>
+			<property name="FallOver" value="false"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="PlaceAsRandomRotation" value="true"/>
+			<property name="PlantGrowing.Next" value="treePlantedLightningMed"/>
+			<property name="EconomicValue" value="50"/>
+			<property name="EconomicBundleSize" value="5"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="Group" value="Resources"/>
+			<property name="ParticleOnDeath" value="treeGib_sapling"/>
+			<property name="CanPickup" value="true" param1="treePlantedLightningSeed"/>
+			<drop event="Destroy" name="treePlantedLightningSeed" count="1"/>
+		</block>
+		<block name="treePlantedLightningMed">
+			<property name="Extends" value="treeElementalMasterGrowing"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="treePlantedLightningSeed"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="Material" value="MtreeWoodMedium"/>
+			<property name="Tags" value="wood,hasLightningEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeLightningMed.unity3d?treeLightningMed" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,10,1"/>
+			<property name="BigDecorationRadius" value="4"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<property name="PlantGrowing.Next" value="treePlantedLightningLrg"/>
+			<drop event="Harvest" name="resourceWood" count="70" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="150,200" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="50,70" tag="essenceLightningHarvest"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="treePlantedLightningLrg">
+			<property name="Extends" value="treeLightningLrg"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DisplayInfo" value="Name"/>
+			<property name="CustomIcon" value="treePlantedLightningSeed"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="Material" value="MtreeWoodFull"/>
+			<property name="Tags" value="wood,hasLightningEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeLightningLrg.unity3d?treeLightningLrg" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,21,1"/>
+			<property name="BigDecorationRadius" value="5"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_dead_01"/>
+			<property name="ActivationDistance" value="4"/>
+			<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="300,350" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="100,120" tag="essenceLightningHarvest"/>
+			<drop event="Destroy" name="treePlantedLightningSeed" count="1"/>
+		</block>
+	
+	<!-- TREE ELEMENTAL - POI FX ______________________________________-->
+		<block name="treeUnholyPOI">
+			<property name="Extends" value="treeElementalMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="treeUnholyLrg"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="Material" value="MtreeWoodFull"/>
+			<property name="Tags" value="wood,hasUnholyEssence"/>
+			<property name="Model" value="#@modfolder:Resources/treeUnholyPOI.unity3d?treeUnholyPOI" />
+			<property name="ModelOffset" value="0,-0.3,0"/>
+			<property name="MultiBlockDim" value="1,23,1"/>
+			<property name="BigDecorationRadius" value="5"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
+			<drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+			<drop event="Harvest" name="resourceEssenceUnholy" count="300,350" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceUnholy" count="100,120" tag="essenceUnholyHarvest"/>
+			<!-- <drop event="Destroy" name="treePlantedUnholySeed" count="0,1"/> -->
+		</block>
+	
+<!-- END - TREES ______________________________________-->
 	
 	
 <!-- SHRINES ______________________________________-->
@@ -1296,6 +2390,7 @@
 		<block name="shrineBareMaster">
 			<property name="CreativeMode" value="None"/>
 			<property name="CustomIcon" value="shrineMaster"/>
+			<property name="ItemTypeIcon" value="triangle"/>
 			<property name="DisplayInfo" value="Description"/> <!-- valid: "Description, Name" -->
 			<property name="Material" value="MsorceryShrine"/>
 			<property name="StabilitySupport" value="false"/>
@@ -1824,10 +2919,890 @@
 			</property>
 			<property name="SellableToTrader" value="false"/>
 			<property name="EconomicValue" value="75000"/>
-			<property name="Group" value="Building"/>
+			<property name="Group" value="advBuilding"/>
 			<property name="UnlockedBy" value="perkSorcerySupport,sorceryDesk"/>
 		</block>
 <!-- END - PORTALS ____________________________________________________________________________-->
+	
+	
+<!-- DECORATIVE ____________________________________________________________________________-->
+	<!-- GENERAL -->
+		<!-- PAINTINGS -->
+		<!-- Paintings: SUPPORTERS -->
+		<block name="paintingSorcPictureSupportersRandomHelper">
+			<property name="Extends" value="paintingNoah" param1="DescriptionKey"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="DisplayInfo" value="Name"/>
+			<property name="CustomIcon" value="paintingSorcSupporters"/>
+			<property name="CustomIconTint" value="ff8080"/>
+			<property name="Model" value="#@modfolder:Resources/paintingsSorcery.unity3d?painting_Supp1" />
+			<property name="FilterTags" value="MC_helpers,SC_helperResidential"/>
+		</block>
+		<block name="paintingSorcSupporters1">
+			<property name="Extends" value="paintingBen"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="CustomIcon" value="paintingSorcSupporters"/>
+			<!-- <property name="Model" value="Entities/decor/painting_lorienPrefab" param1="main_mesh"/> -->
+			<property name="Model" value="#@modfolder:Resources/paintingsSorcery.unity3d?painting_Supp1" />
+		</block>
+		<block name="paintingSorcSupporters2">
+			<property name="Extends" value="paintingBen"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="CustomIcon" value="paintingSorcSupporters2"/>
+			<property name="Model" value="#@modfolder:Resources/paintingsSorcery.unity3d?painting_Supp2" />
+		</block>
+		<block name="paintingSorcSupporters3">
+			<property name="Extends" value="paintingBen"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="CustomIcon" value="paintingSorcSupporters2"/>
+			<property name="Model" value="#@modfolder:Resources/paintingsSorcery.unity3d?painting_Supp3" />
+		</block>
+		<!-- Paintings: PETS -->
+		<block name="paintingSorcPetDaemon">
+			<property name="Extends" value="paintingBen"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Model" value="#@modfolder:Resources/paintingsSorcery.unity3d?painting_Daemon" />
+		</block>
+		<block name="paintingSorcPetAzazel">
+			<property name="Extends" value="paintingBen"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Model" value="#@modfolder:Resources/paintingsSorcery.unity3d?painting_Azazel" />
+		</block>
+		<block name="paintingSorcPetAbbie">
+			<property name="Extends" value="paintingBen"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Model" value="#@modfolder:Resources/paintingsSorcery.unity3d?painting_Abbie" />
+		</block>
+		<block name="paintingSorcPetBabou">
+			<property name="Extends" value="paintingBen"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Model" value="#@modfolder:Resources/paintingsSorcery.unity3d?painting_Babou" />
+		</block>
+		<block name="paintingSorcPetPhoebe">
+			<property name="Extends" value="paintingBen"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Model" value="#@modfolder:Resources/paintingsSorcery.unity3d?painting_Phoebe" />
+		</block>
+		<block name="paintingSorcPetSquidge">
+			<property name="Extends" value="paintingBen"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Model" value="#@modfolder:Resources/paintingsSorcery.unity3d?painting_Squidge" />
+		</block>
+		
+		<!-- PAINTINGS: SAFES -->
+		<!-- Safe Paintings: SUPPORTERS -->
+		<block name="hiddenSafePaintingSorcSupporters1">
+			<property name="Extends" value="paintingSorcSupporters1"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="paintingSorcSupporters"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="DowngradeBlock" value="cntWallSafeRandomLootHelper"/>
+			<property name="DescriptionKey" value="hiddenSafePaintingGroupDesc"/>
+		</block>
+		<block name="hiddenSafePaintingSorcSupporters2">
+			<property name="Extends" value="paintingSorcSupporters2"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="paintingSorcSupporters2"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="DowngradeBlock" value="cntWallSafeRandomLootHelper"/>
+			<property name="DescriptionKey" value="hiddenSafePaintingGroupDesc"/>
+		</block>
+		<block name="hiddenSafePaintingSorcSupporters3">
+			<property name="Extends" value="paintingSorcSupporters3"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="paintingSorcSupporters2"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="DowngradeBlock" value="cntWallSafeRandomLootHelper"/>
+			<property name="DescriptionKey" value="hiddenSafePaintingGroupDesc"/>
+		</block>
+		<!-- Safe Paintings: PETS -->
+		<block name="hiddenSafePaintingSorcPetDaemon">
+			<property name="Extends" value="paintingSorcPetDaemon"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="paintingSorcPetDaemon"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="DowngradeBlock" value="cntWallSafeRandomLootHelper"/>
+			<property name="DescriptionKey" value="hiddenSafePaintingGroupDesc"/>
+		</block>
+		<block name="hiddenSafePaintingSorcPetAzazel">
+			<property name="Extends" value="paintingSorcPetAzazel"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="paintingSorcPetAzazel"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="DowngradeBlock" value="cntWallSafeRandomLootHelper"/>
+			<property name="DescriptionKey" value="hiddenSafePaintingGroupDesc"/>
+		</block>
+		<block name="hiddenSafePaintingSorcPetAbbie">
+			<property name="Extends" value="paintingSorcPetAbbie"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="paintingSorcPetAbbie"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="DowngradeBlock" value="cntWallSafeRandomLootHelper"/>
+			<property name="DescriptionKey" value="hiddenSafePaintingGroupDesc"/>
+		</block>
+		<block name="hiddenSafePaintingSorcPetBabou">
+			<property name="Extends" value="paintingSorcPetBabou"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="paintingSorcPetBabou"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="DowngradeBlock" value="cntWallSafeRandomLootHelper"/>
+			<property name="DescriptionKey" value="hiddenSafePaintingGroupDesc"/>
+		</block>
+		<block name="hiddenSafePaintingSorcPetPhoebe">
+			<property name="Extends" value="paintingSorcPetPhoebe"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="paintingSorcPetPhoebe"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="DowngradeBlock" value="cntWallSafeRandomLootHelper"/>
+			<property name="DescriptionKey" value="hiddenSafePaintingGroupDesc"/>
+		</block>
+		<block name="hiddenSafePaintingSorcPetSquidge">
+			<property name="Extends" value="paintingSorcPetSquidge"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="CustomIcon" value="paintingSorcPetSquidge"/>
+			<property name="ItemTypeIcon" value="lock"/>
+			<property name="DowngradeBlock" value="cntWallSafeRandomLootHelper"/>
+			<property name="DescriptionKey" value="hiddenSafePaintingGroupDesc"/>
+		</block>
+
+	<!-- FIRE: RUNE CIRCLES -->
+		<block name="fireBlockRuneCircle1x1">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/fireBlocks.unity3d?fireBlockRuneCircle1x1"/>
+			<property name="Material" value="MsorceryExtractFire_weak"/>
+			<property name="DisplayType" value="blockHardened"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<!-- <property name="Collide" value="melee,bullet,arrow,rocket"/> -->
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="Group" value="Tools/Traps"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="fireBlockRuneCircle3x3">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="fireBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/fireBlocks.unity3d?fireBlockRuneCircle3x3"/>
+		</block>
+		<block name="fireBlockRuneCircle5x5">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="fireBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/fireBlocks.unity3d?fireBlockRuneCircle5x5"/>
+		</block>
+		<block name="fireBlockRuneCircle7x7">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="fireBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/fireBlocks.unity3d?fireBlockRuneCircle7x7"/>
+		</block>
+	<!-- ICE: RUNE CIRCLES -->
+		<block name="iceBlockRuneCircle1x1">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockRuneCircle1x1"/>
+			<property name="Material" value="MsorceryExtractIce_weak"/>
+			<property name="DisplayType" value="blockHardened"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="Group" value="Tools/Traps"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="iceBlockRuneCircle3x3">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="iceBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockRuneCircle3x3"/>
+		</block>
+		<block name="iceBlockRuneCircle5x5">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="iceBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockRuneCircle5x5"/>
+		</block>
+		<block name="iceBlockRuneCircle7x7">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="iceBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/iceBlocks.unity3d?iceBlockRuneCircle7x7"/>
+		</block>
+	<!-- LIGHTNING: RUNE CIRCLES -->
+		<block name="lightningBlockRuneCircle1x1">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/lightningBlocks.unity3d?lightningBlockRuneCircle1x1"/>
+			<property name="Material" value="MsorceryExtractLightning_weak"/>
+			<property name="DisplayType" value="blockHardened"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="Group" value="Tools/Traps"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="lightningBlockRuneCircle3x3">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="lightningBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/lightningBlocks.unity3d?lightningBlockRuneCircle3x3"/>
+		</block>
+		<block name="lightningBlockRuneCircle5x5">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="lightningBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/lightningBlocks.unity3d?lightningBlockRuneCircle5x5"/>
+		</block>
+		<block name="lightningBlockRuneCircle7x7">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="lightningBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/lightningBlocks.unity3d?lightningBlockRuneCircle7x7"/>
+		</block>
+	<!-- UNHOLY: RUNE CIRCLES -->
+		<block name="unholyBlockRuneCircle1x1">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="ItemTypeIcon" value="triangle"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/unholyBlocks.unity3d?unholyBlockRuneCircle1x1"/>
+			<property name="Material" value="MsorceryExtractUnholy_weak"/>
+			<property name="DisplayType" value="blockHardened"/>
+			<property name="ImposterExclude" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="Group" value="Tools/Traps"/>
+			<drop event="Destroy" count="0"/>
+		</block>
+		<block name="unholyBlockRuneCircle3x3">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="unholyBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/unholyBlocks.unity3d?unholyBlockRuneCircle3x3"/>
+		</block>
+		<block name="unholyBlockRuneCircle5x5">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="unholyBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/unholyBlocks.unity3d?unholyBlockRuneCircle5x5"/>
+		</block>
+		<block name="unholyBlockRuneCircle7x7">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="unholyBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/unholyBlocks.unity3d?unholyBlockRuneCircle7x7"/>
+		</block>
+		<block name="unholyBlockRuneCircle17x17">
+			<property name="CreativeMode" value="Dev"/>
+			<property name="Extends" value="unholyBlockRuneCircle1x1"/>
+			<property name="Model" value="#@modfolder:Resources/unholyBlocks.unity3d?unholyBlockRuneCircle17x17"/>
+		</block>
+<!-- END - DECORATIVE ____________________________________________________________________________-->
+	
+	
+	
+<!-- TERRAIN CUSTOM ____________________________________________________________________________-->	
+		<block name="oreArcane">
+			<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+			<property name="Material" value="MoreStone"/>
+			<property name="Tags" value="ore,deepOre,hasFireEssence,hasIceEssence,hasLightningEssence"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="781"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="174,146,213"/>
+			<property name="ImposterExclude" value="true"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="140" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="45" tag="essenceFireHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="7" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="140" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="45" tag="essenceIceHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="7" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="140" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="45" tag="essenceLightningHarvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="7" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceRockSmall" count="14" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceEssenceFire" count="100" prob="0.4" stick_chance="0"/>
+			<drop event="Fall" name="resourceEssenceIce" count="100" prob="0.4" stick_chance="0"/>
+			<drop event="Fall" name="resourceEssenceLightning" count="100" prob="0.4" stick_chance="0"/>
+			<drop event="Fall" name="TGroundRock8" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0l0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+		<block name="oreOmni">
+			<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+			<property name="Material" value="MoreStone"/>
+			<property name="Tags" value="ore,deepOre,hasFireEssence,hasIceEssence,hasLightningEssence"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="786"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="174,146,213"/>
+			<property name="ImposterExclude" value="true"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="140" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="45" tag="essenceFireHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="7" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="140" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="45" tag="essenceIceHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="7" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="140" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="45" tag="essenceLightningHarvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="7" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceRockSmall" count="14" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceEssenceFire" count="100" prob="0.4" stick_chance="0"/>
+			<drop event="Fall" name="resourceEssenceIce" count="100" prob="0.4" stick_chance="0"/>
+			<drop event="Fall" name="resourceEssenceLightning" count="100" prob="0.4" stick_chance="0"/>
+			<drop event="Fall" name="TGroundRock8" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0l0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+		<block name="oreFire">
+			<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+			<property name="Material" value="MoreStone"/>
+			<property name="Tags" value="ore,deepOre,hasFireEssence"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="782"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="220,110,0"/>
+			<property name="ImposterExclude" value="true"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="400" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="120" tag="essenceFireHarvest"/>
+			<drop event="Harvest" name="resourceEssenceFire" count="20" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceRockSmall" count="14" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceEssenceFire" count="100" prob="0.4" stick_chance="0"/>
+			<drop event="Fall" name="TGroundRock8" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0l0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+		<block name="oreIce">
+			<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+			<property name="Material" value="MoreStone"/>
+			<property name="Tags" value="ore,deepOre,hasIceEssence"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="784"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="0,110,170"/>
+			<property name="ImposterExclude" value="true"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="400" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="120" tag="essenceIceHarvest"/>
+			<drop event="Harvest" name="resourceEssenceIce" count="20" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceRockSmall" count="14" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceEssenceIce" count="100" prob="0.4" stick_chance="0"/>
+			<drop event="Fall" name="TGroundRock8" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0l0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+		<block name="oreLightning">
+			<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+			<property name="Material" value="MoreStone"/>
+			<property name="Tags" value="ore,deepOre,hasLightningEssence"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="785"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="150,80,255"/>
+			<property name="ImposterExclude" value="true"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="400" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="120" tag="essenceLightningHarvest"/>
+			<drop event="Harvest" name="resourceEssenceLightning" count="20" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceRockSmall" count="14" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceEssenceLightning" count="100" prob="0.4" stick_chance="0"/>
+			<drop event="Fall" name="TGroundRock8" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0l0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+		<block name="oreUnholy">
+			<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+			<property name="Material" value="MoreStone"/>
+			<property name="Tags" value="ore,deepOre,hasUnholyEssence"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="787"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="130,48,48"/>
+			<property name="ImposterExclude" value="true"/>
+			<drop event="Harvest" name="resourceEssenceUnholy" count="400" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceUnholy" count="120" tag="essenceUnholyHarvest"/>
+			<drop event="Harvest" name="resourceEssenceUnholy" count="20" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceRockSmall" count="14" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceEssenceUnholy" count="100" prob="0.4" stick_chance="0"/>
+			<drop event="Fall" name="TGroundRock8" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0l0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+		<block name="oreHoly">
+			<property name="DescriptionKey" value="terrainBlockGroupDesc"/>
+			<property name="Material" value="MoreStone"/>
+			<property name="Tags" value="ore,deepOre,hasHolyEssence"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="783"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="198,184,143"/>
+			<property name="ImposterExclude" value="true"/>
+			<drop event="Harvest" name="resourceEssenceHoly" count="400" tag="essenceHarvestAlways"/>
+			<drop event="Harvest" name="resourceEssenceHoly" count="120" tag="essenceHolyHarvest"/>
+			<drop event="Harvest" name="resourceEssenceHoly" count="20" prob=".5" tag="essenceHarvestHidden"/>
+			<drop event="Harvest" name="resourceRockSmall" count="14" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceEssenceHoly" count="100" prob="0.4" stick_chance="0"/>
+			<drop event="Fall" name="TGroundRock8" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0l0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+
+<!--SNOW-->
+
+		<block name="Ice">
+			<property name="Material" value="Msnow"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="788"/>
+			<property name="TerrainIndex" value="0"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="209,209,209"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceSnowBall" value="10"/>
+			</property>
+			<drop event="Harvest" name="resourceSnowBall" count="11" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="FrozenIce" count="1" prob="0.25" stick_chance="1"/>
+			<drop event="Fall" name="resourceSnowBall" count="22" prob="0.187" stick_chance="0"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+
+		<block name="Snow_01">
+			<property name="Material" value="Msnow"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="789"/>
+			<property name="TerrainIndex" value="0"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="209,209,209"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceSnowBall" value="10"/>
+			</property>
+			<drop event="Harvest" name="resourceSnowBall" count="11" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="Snow_01" count="1" prob="0.25" stick_chance="1"/>
+			<drop event="Fall" name="resourceSnowBall" count="22" prob="0.187" stick_chance="0"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+
+		<block name="Snow_02">
+			<property name="Material" value="Msnow"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="790"/>
+			<property name="TerrainIndex" value="0"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="209,209,209"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceSnowBall" value="10"/>
+			</property>
+			<drop event="Harvest" name="resourceSnowBall" count="11" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="Snow_02" count="1" prob="0.25" stick_chance="1"/>
+			<drop event="Fall" name="resourceSnowBall" count="22" prob="0.187" stick_chance="0"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+
+		<block name="Snow_03">
+			<property name="Material" value="Msnow"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="791"/>
+			<property name="TerrainIndex" value="0"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="209,209,209"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceSnowBall" value="10"/>
+			</property>
+			<drop event="Harvest" name="resourceSnowBall" count="11" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="Snow_03" count="1" prob="0.25" stick_chance="1"/>
+			<drop event="Fall" name="resourceSnowBall" count="22" prob="0.187" stick_chance="0"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+
+		<block name="Snow_04">
+			<property name="Material" value="Msnow"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="792"/>
+			<property name="TerrainIndex" value="0"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="209,209,209"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceSnowBall" value="10"/>
+			</property>
+			<drop event="Harvest" name="resourceSnowBall" count="11" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="Snow_04" count="1" prob="0.25" stick_chance="1"/>
+			<drop event="Fall" name="resourceSnowBall" count="22" prob="0.187" stick_chance="0"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+
+
+		<block name="TSnowGroundGrass2">
+			<property name="Material" value="Msnow"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="793"/>
+			<property name="TerrainIndex" value="0"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="209,209,209"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceSnowBall" value="10"/>
+			</property>
+			<drop event="Harvest" name="resourceSnowBall" count="11" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="TSnowGroundGrass2" count="1" prob="0.25" stick_chance="1"/>
+			<drop event="Fall" name="resourceSnowBall" count="22" prob="0.187" stick_chance="0"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+
+
+<!--SAND-->
+<!--PATHWAYS-->
+
+		<block name="Stone">
+			<property name="Material" value="Mstone"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="794"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="100,100,100"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceRockSmall" value="14"/>
+			</property>
+			<drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+
+<!--SPECIALTY-->
+
+		<block name="Dark">
+			<property name="Material" value="Mstone"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="795"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="34,34,34"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceRockSmall" value="14"/>
+			</property>
+			<drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+
+
+		<block name="Gore">
+			<property name="Material" value="Mstone"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="796"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="130,48,48"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceRockSmall" value="14"/>
+			</property>
+			<drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+ 
+		<block name="Ash">
+			<property name="Material" value="Mstone"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="797"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="65,65,65"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceRockSmall" value="14"/>
+			</property>
+			<drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+ 
+		<block name="Lava01">
+			<property name="Material" value="Mstone"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="798"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="220,110,0"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceRockSmall" value="14"/>
+			</property>
+			<drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+ 
+		<block name="Lava02">
+			<property name="Material" value="Mstone"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="799"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="220,110,0"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceRockSmall" value="14"/>
+			</property>
+			<drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+    
+		<block name="Molten_01">
+			<property name="Material" value="Mstone"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="800"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="220,110,0"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceRockSmall" value="14"/>
+			</property>
+			<drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+
+		<block name="Molten_02">
+			<property name="Material" value="Mstone"/>
+			<property name="NoScrapping" value="true"/>
+			<property name="Shape" value="Terrain"/>
+			<property name="Mesh" value="terrain"/>
+			<property name="Texture" value="801"/>
+			<property name="TerrainIndex" value="2"/>
+			<property name="LPHardnessScale" value="2"/>
+			<property name="Map.Color" value="150,80,255"/>
+			<property name="ImposterExclude" value="true"/>
+			<property class="RepairItems">
+				<property name="resourceRockSmall" value="14"/>
+			</property>
+			<drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+			<drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+			<property name="CanMobsSpawnOn" value="true"/>
+			<property name="EconomicValue" value="5"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="FilterTags" value="MC_outdoor,SC_terrain"/>
+			<property name="SortOrder1" value="d0k0"/>
+			<property name="SortOrder2" value="0050"/>
+			<property name="DisplayType" value="blockTerrain"/>
+		</block>
+<!-- END - TERRAIN CUSTOM ____________________________________________________________________________-->	
+	
 	
 	</append>
 <!-- END: APPEND BLOCKS -->

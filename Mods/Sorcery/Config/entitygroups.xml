@@ -136,9 +136,9 @@
 			<entity name="sorceryWispIce" prob="3"/>
 			<entity name="sorceryWispLightning" prob="3"/>
 			<!-- Event: Easter -->
-			<entity name="sorceryRabbitArcane" prob="3"/>
-			<entity name="sorceryRabbitUnholy" prob="2"/>
-			<entity name="sorceryRabbitBoss" prob=".8"/>
+			<entity name="sorceryRabbitArcane" prob="1"/>
+			<!-- <entity name="sorceryRabbitUnholy" prob="2"/> -->
+			<!-- <entity name="sorceryRabbitBoss" prob=".8"/> -->
 			<entity name="none" prob="60"/><!-- must not be first since first name determines if enemy group -->
 		</entitygroup>
 	<!-- FIRE -->
@@ -185,6 +185,21 @@
 			<entity name="sorceryFallenIce"/>
 			<entity name="sorceryFallenLightning"/>
 		</entitygroup>
+		<entitygroup name="fireFallenGroup">
+			<entity name="sorceryFallenFire"/>
+		</entitygroup>		
+		<entitygroup name="iceFallenGroup">
+			<entity name="sorceryFallenIce"/>
+		</entitygroup>	
+		<entitygroup name="lightningFallenGroup">
+			<entity name="sorceryFallenLightning"/>
+		</entitygroup>
+		<!--<entitygroup name="unholyFallenGroup">
+			<entity name="sorceryFallenUnholy"/>
+		</entitygroup>
+		<entitygroup name="holyFallenGroup">
+			<entity name="sorceryFallenHoly"/>
+		</entitygroup>-->
 		
 	<!-- SUMMON GROUPS (Sorcery.dll) -->
 		<!-- NOTE: Incantations, Summons -->

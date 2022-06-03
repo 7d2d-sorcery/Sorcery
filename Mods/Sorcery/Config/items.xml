@@ -7037,7 +7037,7 @@
 			<property name="Stacknumber" value="1"/>
 			<property name="EconomicValue" value="5000"/>
 			<property name="SellableToTrader" value="false"/>
-			<property name="Group" value="Building"/>
+			<property name="Group" value="advBuilding"/>
 			<property name="UnlockedBy" value="perkSorceryAlchemyMastery"/>
 			<effect_group tiered="false">
 				<triggered_effect trigger="onSelfHoldingItemCreated" action="AddBuff" target="self" buff="buffCrafting_MortarPestle" />
@@ -8466,7 +8466,7 @@
 			<property name="Material" value="fire"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="EconomicValue" value="10"/>
 			<property name="EconomicBundleSize" value="10"/>
 			<property name="SellableToTrader" value="false"/>
@@ -8487,7 +8487,7 @@
 			<property name="Material" value="ice"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="10"/>
 			<property name="EconomicBundleSize" value="10"/>
@@ -8507,7 +8507,7 @@
 			<property name="Material" value="lightning"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="10"/>
 			<property name="EconomicBundleSize" value="10"/>
@@ -8526,7 +8526,7 @@
 			<property name="Material" value="unholy"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="10"/>
 			<property name="EconomicBundleSize" value="10"/>
@@ -8545,7 +8545,7 @@
 			<property name="Material" value="holy"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="Weight" value="1"/>
 			<property name="EconomicValue" value="10"/>
 			<property name="EconomicBundleSize" value="10"/>
@@ -8566,7 +8566,7 @@
 			<property name="Material" value="MsorceryExtractOmni"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8582,7 +8582,7 @@
 			<property name="Material" value="MsorceryExtractFire"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8598,7 +8598,7 @@
 			<property name="Material" value="MsorceryExtractIce"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8614,7 +8614,7 @@
 			<property name="Material" value="MsorceryExtractLightning"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8630,7 +8630,7 @@
 			<property name="Material" value="MsorceryExtractUnholy"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8645,7 +8645,7 @@
 			<property name="Material" value="MsorceryExtractHoly"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8663,7 +8663,7 @@
 			<property name="Material" value="MsorceryPowderArcane"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8680,7 +8680,7 @@
 			<property name="Material" value="MsorceryPowderFire"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8697,7 +8697,7 @@
 			<property name="Material" value="MsorceryPowderIce"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8714,7 +8714,7 @@
 			<property name="Material" value="MsorceryPowderLightning"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8731,7 +8731,7 @@
 			<property name="Material" value="MsorceryPowderUnholy"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8748,7 +8748,7 @@
 			<property name="Material" value="MsorceryPowderHoly"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="20"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8786,7 +8786,7 @@
 			<property name="Material" value="MsorceryClothFire"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="35"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,ClothingFire"/>
 			<property name="Weight" value="1"/>
@@ -8803,7 +8803,7 @@
 			<property name="Material" value="MsorceryClothIce"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="35"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,ClothingIce"/>
 			<property name="Weight" value="1"/>
@@ -8820,7 +8820,7 @@
 			<property name="Material" value="MsorceryClothLightning"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="35"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,ClothingLightning"/>
 			<property name="Weight" value="1"/>
@@ -8837,7 +8837,7 @@
 			<property name="Material" value="MsorceryClothUnholy"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="35"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
@@ -8853,7 +8853,7 @@
 			<property name="Material" value="MsorceryClothHoly"/>
 			<property name="Stacknumber" value="10000"/>
 			<property name="RepairAmount" value="35"/>
-			<property name="RepairTime" value="0.01"/>
+			<property name="RepairTime" value="0.001"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>

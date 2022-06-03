@@ -64,6 +64,22 @@
 		<group name="S_-_Group_Fallen_All" emptyChance="0" decoyChance="0" decoy1hpChance="0">
 			<spawner name="SorceryFallenGroup" count="3,5"/>
 		</group>
+		<group name="S_-_Group_Fallen_Fire" emptyChance="0" decoyChance="0" decoy1hpChance="0">
+			<spawner name="fireFallenGroup" count="3,5" />
+		</group>
+		<group name="S_-_Group_Fallen_Ice" emptyChance="0" decoyChance="0" decoy1hpChance="0">
+			<spawner name="iceFallenGroup" count="3,5" />
+		</group>
+		<group name="S_-_Group_Fallen_Lightning" emptyChance="0" decoyChance="0" decoy1hpChance="0">
+			<spawner name="lightningFallenGroup" count="3,5" />
+		</group>
+		<!--<group name="S_-_Group_Fallen_Unholy" emptyChance="0" decoyChance="0" decoy1hpChance="0">
+			<spawner name="unholyFallenGroup" count="3,5" />
+		</group>
+		<group name="S_-_Group_Fallen_Holy" emptyChance="0" decoyChance="0" decoy1hpChance="0">
+			<spawner name="holyFallenGroup" count="3,5" />
+		</group>-->
+		
 		<!-- Individual Group -->
 		<group name="sorceryEntityInvisible" emptyChance="0" decoyChance="0" decoy1hpChance="0">
 			<spawner name="sorceryEntityInvisible" count="1,1"/>
@@ -71,6 +87,15 @@
 		<!-- SPAWNERS -->
 		<spawner name="SorceryFallenGroup">
 			<gamestage stage="1"><spawn group="SorceryFallenGroup" num="1" maxAlive="1" duration="1"/></gamestage>
+		</spawner>
+		<spawner name="fireFallenGroup">
+			<gamestage stage="1"><spawn group="fireFallenGroup" num="1" maxAlive="1" duration="1"/></gamestage>
+		</spawner>
+		<spawner name="iceFallenGroup">
+			<gamestage stage="1"><spawn group="iceFallenGroup" num="1" maxAlive="1" duration="1"/></gamestage>
+		</spawner>
+		<spawner name="lightningFallenGroup">
+			<gamestage stage="1"><spawn group="lightningFallenGroup" num="1" maxAlive="1" duration="1"/></gamestage>
 		</spawner>
 		<!-- Individual Spawner -->
 		<spawner name="sorceryEntityInvisible">

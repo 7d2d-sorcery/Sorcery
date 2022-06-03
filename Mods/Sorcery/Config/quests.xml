@@ -286,7 +286,7 @@
 		</quest>
 		
 		
-		<!-- ARCANE TRADER: FALLEN CAMP CLEAR (T3) -->
+		<!-- ARCANE TRADER: FALLEN CAMP CLEAR + FETCH (T3) -->
 		<quest id="quest_sorcery_fallencamp_clear">
 			<property name="name_key" value="quest_sorcery_fallencamp"/> <!-- title, subtitle -->
 			<property name="subtitle_key" value="quest_sorcery_fallencamp_clear_subtitle"/> <!-- same as name_key, quest list, tracked and trader turn in name -->
@@ -312,11 +312,21 @@
 			<objective type="RallyPoint">
 				<property name="phase" value="2"/>
 				<property name="nav_object" value="rally" />
+				<property name="allowed_start_hour" value="22" />
+				<property name="allowed_end_hour" value="1" />
 			</objective>
 
 			<objective type="ClearSleepers">
 				<property name="phase" value="3"/>
 				<property name="nav_object" value="sleeper_volume"/>
+			</objective>
+			
+			<objective type="FetchFromContainer">
+				<property name="phase" value="3"/>
+				<property name="quest_item_ID" value="1"/>
+				<property name="item_count" value="1"/>
+				<property name="default_container" value="cntFetchQuestSatchel"/>
+				<property name="nav_object" value="fetch_container" />
 			</objective>
 
 			<objective type="POIStayWithin">
@@ -531,8 +541,8 @@
 				<property name="radius" value="80"/>
 			</objective>
 			<action type="SpawnEnemy" id="sorceryFallenQuestFire" value="2" phase="2" />
-			<action type="SpawnEnemy" id="sorceryFallenFire" value="2-4" phase="2" />
-			<objective type="ZombieKill" id="sorceryFallenFire" value="2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenFire" value="3-4" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenFire" value="3" phase="2" />
 	
 			<objective type="ReturnToNPC">
 				<property name="phase" value="3"/>
@@ -543,7 +553,7 @@
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 
-			<reward type="Exp" value="3666" />
+			<reward type="Exp" value="5666" />
 			<reward type="Item" id="resourceRitualStoneFire" value="3" />
 			<reward type="LootItem" id="sorceryQuestCurrency3" ischosen="true" isfixed="true" value="4"/>
 			<reward type="LootItem" id="sorceryQuestCurrency4" ischosen="true" value="4"/>
@@ -582,8 +592,8 @@
 				<property name="radius" value="80"/>
 			</objective>
 			<action type="SpawnEnemy" id="sorceryFallenQuestIce" value="2" phase="2" />
-			<action type="SpawnEnemy" id="sorceryFallenIce" value="2-4" phase="2" />
-			<objective type="ZombieKill" id="sorceryFallenIce" value="2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenIce" value="3-4" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenIce" value="3" phase="2" />
 	
 			<objective type="ReturnToNPC">
 				<property name="phase" value="3"/>
@@ -594,7 +604,7 @@
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 
-			<reward type="Exp" value="3666" />
+			<reward type="Exp" value="5666" />
 			<reward type="Item" id="resourceRitualStoneIce" value="3" />
 			<reward type="LootItem" id="sorceryQuestCurrency3" ischosen="true" isfixed="true" value="4"/>
 			<reward type="LootItem" id="sorceryQuestCurrency4" ischosen="true" value="4"/>
@@ -633,8 +643,8 @@
 				<property name="radius" value="80"/>
 			</objective>
 			<action type="SpawnEnemy" id="sorceryFallenQuestLightning" value="2" phase="2" />
-			<action type="SpawnEnemy" id="sorceryFallenLightning" value="2-4" phase="2" />
-			<objective type="ZombieKill" id="sorceryFallenLightning" value="2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenLightning" value="3-4" phase="2" />
+			<objective type="ZombieKill" id="sorceryFallenLightning" value="3" phase="2" />
 	
 			<objective type="ReturnToNPC">
 				<property name="phase" value="3"/>
@@ -645,7 +655,7 @@
 				<property name="nav_object" value="return_to_trader" />
 			</objective>
 
-			<reward type="Exp" value="3666" />
+			<reward type="Exp" value="5666" />
 			<reward type="Item" id="resourceRitualStoneLightning" value="3" />
 			<reward type="LootItem" id="sorceryQuestCurrency3" ischosen="true" isfixed="true" value="4"/>
 			<reward type="LootItem" id="sorceryQuestCurrency4" ischosen="true" value="4"/>
@@ -687,9 +697,9 @@
 			<action type="SpawnEnemy" id="sorceryFallenQuestFire" value="1" phase="2" />
 			<action type="SpawnEnemy" id="sorceryFallenQuestIce" value="1" phase="2" />
 			<action type="SpawnEnemy" id="sorceryFallenQuestLightning" value="1" phase="2" />
-			<action type="SpawnEnemy" id="sorceryFallenFire" value="1-2" phase="2" />
-			<action type="SpawnEnemy" id="sorceryFallenIce" value="1-2" phase="2" />
-			<action type="SpawnEnemy" id="sorceryFallenLightning" value="1-2" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenFire" value="1" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenIce" value="1" phase="2" />
+			<action type="SpawnEnemy" id="sorceryFallenLightning" value="1" phase="2" />
 			<objective type="ZombieKill" id="sorceryFallenFire" value="1" phase="2" />
 			<objective type="ZombieKill" id="sorceryFallenIce" value="1" phase="2" />
 			<objective type="ZombieKill" id="sorceryFallenLightning" value="1" phase="2" />
@@ -752,6 +762,7 @@
 			<action type="SpawnEnemy" id="sorceryFallenFire" value="2" phase="2" />
 			<action type="SpawnEnemy" id="sorceryFallenIce" value="2" phase="2" />
 			<action type="SpawnEnemy" id="sorceryFallenLightning" value="2" phase="2" />
+			<action type="SpawnEnemy" id="zombieScreamerFeral" value="1" phase="2" />
 			<objective type="ZombieKill" id="sorceryFallenFire" value="2" phase="2" />
 			<objective type="ZombieKill" id="sorceryFallenIce" value="2" phase="2" />
 			<objective type="ZombieKill" id="sorceryFallenLightning" value="2" phase="2" />
@@ -766,7 +777,7 @@
 			</objective>
 
 			<reward type="Exp" value="6666" />
-			<!-- <reward type="Item" id="resourceFragmentClass" value="1" /> -->
+			<reward type="Item" id="resourceRitualBloodOmni" value="1" />
 			<!-- <reward type="Item" id="resourceRitualStoneFire" value="1" />
 			<reward type="Item" id="resourceRitualStoneIce" value="1" />
 			<reward type="Item" id="resourceRitualStoneLightning" value="1" /> -->
@@ -890,8 +901,8 @@
 			<property name="difficulty" value="easy"/>
 			<property name="shareable" value="false" />
 			<property name="repeatable" value="false"/>
-				<objective type="FetchKeep" id="sorceryCnt_ArcaneChest" value="1" phase="1" />
-				<objective type="BlockPlace" id="sorceryCnt_ArcaneChest" value="1" phase="2" />
+				<objective type="FetchKeep" id="cntChestScroll_Arcane" value="1" phase="1" />
+				<objective type="BlockPlace" id="cntChestScroll_Arcane" value="1" phase="2" />
 			<reward type="Exp" value="100" />
 			<reward type="Item" id="q_sorcerySkillGrimoire" value="1" />
 		</quest>

@@ -76,7 +76,7 @@
 			<style_entry name="hoverscale" value="2"/>
 			<style_entry name="tooltip_key" value="sorceryUI_backpackKeySilver" />
 		</style>
-			<style name="sorcery.window.backpack.supporter.key.silver.sprite201" type="sprite">
+			<style name="sorcery.window.backpack.supporter.key.silver.sprite203" type="sprite">
 				<style_entry name="depth" value="4"/>
 				<style_entry name="sprite" value="uic_backpack_key_silver_supporter"/>
 				<style_entry name="width" value="83" />
@@ -99,7 +99,7 @@
 			<style_entry name="hoverscale" value="2"/>
 			<style_entry name="tooltip_key" value="sorceryUI_backpackKeyGold" />
 		</style>
-			<style name="sorcery.window.backpack.supporter.key.gold.sprite201" type="sprite">
+			<style name="sorcery.window.backpack.supporter.key.gold.sprite203" type="sprite">
 				<style_entry name="depth" value="4"/>
 				<style_entry name="sprite" value="uic_backpack_key_gold_supporter"/>
 				<style_entry name="width" value="83" />
@@ -115,34 +115,34 @@
 		<!-- Silver -->
 		<style name="sorcery.window.mainmenu.support.key.silver.texture" type="texture">
 			<style_entry name="depth" value="-1"/>
-			<style_entry name="height" value="400" />
-			<style_entry name="width" value="169" />
-			<style_entry name="pos" value="10, 400" />
+			<style_entry name="height" value="250" />
+			<style_entry name="width" value="105" />
+			<style_entry name="pos" value="10, 250" />
 			<style_entry name="tooltip_key" value="sorceryUI_backpackKeySilver" />
 			<style_entry name="texture" value="@modfolder:Textures/SorceryMenuKeySilver.png" />
 		</style>
-			<style name="sorcery.window.mainmenu.supporter.key.silver.texture201" type="texture">
+			<style name="sorcery.window.mainmenu.supporter.key.silver.texture203" type="texture">
 				<style_entry name="depth" value="-1"/>
-				<style_entry name="height" value="400" />
-				<style_entry name="width" value="169" />
-				<style_entry name="pos" value="10, 400" />
+				<style_entry name="height" value="250" />
+				<style_entry name="width" value="105" />
+				<style_entry name="pos" value="10, 250" />
 				<style_entry name="tooltip_key" value="sorceryUI_backpackKeySilver_supporter" />
 				<style_entry name="texture" value="@modfolder:Textures/SorceryMenuKeySilverSupporter.png" />
 			</style>
 		<!-- Gold -->
 		<style name="sorcery.window.mainmenu.support.key.gold.texture" type="texture">
 			<style_entry name="depth" value="-1"/>
-			<style_entry name="height" value="400" />
-			<style_entry name="width" value="169" />
-			<style_entry name="pos" value="170, 400" />
+			<style_entry name="height" value="250" />
+			<style_entry name="width" value="105" />
+			<style_entry name="pos" value="105, 250" />
 			<style_entry name="tooltip_key" value="sorceryUI_backpackKeyGold" />
 			<style_entry name="texture" value="@modfolder:Textures/SorceryMenuKeyGold.png" />
 		</style>
-			<style name="sorcery.window.mainmenu.supporter.key.gold.texture201" type="texture">
+			<style name="sorcery.window.mainmenu.supporter.key.gold.texture203" type="texture">
 				<style_entry name="depth" value="-1"/>
-				<style_entry name="height" value="400" />
-				<style_entry name="width" value="169" />
-				<style_entry name="pos" value="170, 400" />
+				<style_entry name="height" value="250" />
+				<style_entry name="width" value="105" />
+				<style_entry name="pos" value="105, 250" />
 				<style_entry name="tooltip_key" value="sorceryUI_backpackKeyGold_supporter" />
 				<style_entry name="texture" value="@modfolder:Textures/SorceryMenuKeyGoldSupporter.png" />
 			</style>
@@ -157,7 +157,7 @@
 			<style_entry name="tooltip_key" value="sorceryUI_backpackKeySilver" />
 			<style_entry name="texture" value="@modfolder:Textures/SorceryMenuKeySilver.png" />
 		</style>
-			<style name="sorcery.window.ingame.supporter.key.silver.texture201" type="texture">
+			<style name="sorcery.window.ingame.supporter.key.silver.texture203" type="texture">
 				<style_entry name="depth" value="-1"/>
 				<style_entry name="height" value="400" />
 				<style_entry name="width" value="169" />
@@ -174,7 +174,7 @@
 			<style_entry name="tooltip_key" value="sorceryUI_backpackKeyGold" />
 			<style_entry name="texture" value="@modfolder:Textures/SorceryMenuKeyGold.png" />
 		</style>
-			<style name="sorcery.window.ingame.supporter.key.gold.texture201" type="texture">
+			<style name="sorcery.window.ingame.supporter.key.gold.texture203" type="texture">
 				<style_entry name="depth" value="-1"/>
 				<style_entry name="height" value="400" />
 				<style_entry name="width" value="169" />
@@ -192,7 +192,7 @@
 			<style_entry name="tooltip_key" value="sorceryUI_NonSupporter" />
 			<style_entry name="texture" value="@modfolder:Textures/SorceryingameMenuMessageSupport.png" />
 		</style>
-			<style name="sorcery.window.ingame.supporter.message.texture201" type="texture">
+			<style name="sorcery.window.ingame.supporter.message.texture203" type="texture">
 				<style_entry name="depth" value="0"/>
 				<style_entry name="height" value="147" />
 				<style_entry name="width" value="740" />
@@ -211,7 +211,7 @@
 			<style_entry name="tooltip_key" value="sorceryUI_backpackKeySilver" />
 			<style_entry name="texture" value="@modfolder:Textures/SorceryingameMenuChestSilver.png" />
 		</style>
-			<style name="sorcery.window.ingame.supporter.chest.silver.texture201" type="texture">
+			<style name="sorcery.window.ingame.supporter.chest.silver.texture203" type="texture">
 				<style_entry name="depth" value="-1"/>
 				<style_entry name="height" value="263" />
 				<style_entry name="width" value="260" />
@@ -228,7 +228,7 @@
 			<style_entry name="tooltip_key" value="sorceryUI_backpackKeyGold" />
 			<style_entry name="texture" value="@modfolder:Textures/SorceryingameMenuChestGold.png" />
 		</style>
-			<style name="sorcery.window.ingame.supporter.chest.gold.texture201" type="texture">
+			<style name="sorcery.window.ingame.supporter.chest.gold.texture203" type="texture">
 				<style_entry name="depth" value="-1"/>
 				<style_entry name="height" value="303" />
 				<style_entry name="width" value="300" />
