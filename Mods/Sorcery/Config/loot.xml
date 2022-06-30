@@ -1347,7 +1347,7 @@
 			<!-- <item name="foodEggBoiled" count="2,3"/> -->
 			<!-- potions -->
 			<item name="potion_HolyWater"/>
-			<item name="potion_Remedy"/>
+			<!-- <item name="potion_Remedy"/> -->
 			<item name="potion_Energy"/>
 			<item name="potion_Travel"/>
 			<item name="potion_Haste"/>
@@ -1355,11 +1355,11 @@
 			<item name="scroll_Recall"/>
 			<item name="scroll_TeleportLandclaim"/>
 			<item name="scroll_EssenceHarvest"/>
-			<item name="scroll_ConjureEssence"/>
+			<!-- <item name="scroll_ConjureEssence"/> -->
 			<!-- currency -->
 			<item group="sorceryQuestCurrency"/>
-			<item group="sorceryQuestCurrency2"/>
-			<item group="sorceryQuestCurrency3"/>
+			<!-- <item group="sorceryQuestCurrency2"/> -->
+			<!-- <item group="sorceryQuestCurrency3"/> -->
 		</lootgroup>
 		
 		<!-- EVENT: RABBIT UNHOLY  -->
@@ -1377,8 +1377,8 @@
 			<item name="scroll_EssenceHarvest"/>
 			<!-- currency -->
 			<item group="sorceryQuestCurrency"/>
-			<item group="sorceryQuestCurrency2"/>
-			<item group="sorceryQuestCurrency3"/>
+			<!-- <item group="sorceryQuestCurrency2"/> -->
+			<!-- <item group="sorceryQuestCurrency3"/> -->
 		</lootgroup>
 	<!-- END - EVENT LOOT GROUPS __________________________________________________________________________________ -->
 

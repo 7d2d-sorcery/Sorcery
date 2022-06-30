@@ -173,6 +173,34 @@
 			<ingredient name="resourceFragmentClass" count="1"/>
 		</recipe>
 		
+	<!-- RESOURCE: CRYSTALS -->
+		<recipe name="resourceCrystalArcane" count="1" craft_time="5" craft_area="sorceryDesk">
+			<ingredient name="resourceExtractOmni" count="200"/>
+			<ingredient name="resourceEssenceFire" count="10000"/>
+			<ingredient name="resourceEssenceIce" count="10000"/>
+			<ingredient name="resourceEssenceLightning" count="10000"/>
+		</recipe>
+		<recipe name="resourceCrystalFire" count="1" craft_time="5" craft_area="sorceryDesk" craft_tool="toolFireCore">
+			<ingredient name="toolFireCore" count="1"/>
+			<ingredient name="resourceEssenceFire" count="10000"/>
+		</recipe>
+		<recipe name="resourceCrystalIce" count="1" craft_time="5" craft_area="sorceryDesk" craft_tool="toolIceCore">
+			<ingredient name="toolIceCore" count="1"/>
+			<ingredient name="resourceEssenceIce" count="10000"/>
+		</recipe>
+		<recipe name="resourceCrystalLightning" count="1" craft_time="5" craft_area="sorceryDesk" craft_tool="toolLightningCore">
+			<ingredient name="toolLightningCore" count="1"/>
+			<ingredient name="resourceEssenceLightning" count="10000"/>
+		</recipe>
+		<recipe name="resourceCrystalUnholy" count="1" craft_time="5" craft_area="sorceryDesk">
+			<ingredient name="resourceExtractUnholy" count="200"/>
+			<ingredient name="resourceEssenceUnholy" count="10000"/>
+		</recipe>
+		<!-- <recipe name="resourceCrystalHoly" count="1" craft_time="5" craft_area="sorceryDesk">
+			<ingredient name="resourceExtractHoly" count="200"/>
+			<ingredient name="resourceEssenceHoly" count="10000"/>
+		</recipe> -->
+		
 	<!-- RESOURCE: POWDER ______________________________________-->
 	<!-- ENCHANTED MORTAR -->
 		<!-- Omni Extract -->
@@ -1069,65 +1097,45 @@
 
 	<!-- BLOCKS: BUILDING ______________________________________-->
 		<!-- FIRE: BLOCKS -->
-		<recipe name="blockFireFrame" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="1">
+		<recipe name="blockFireFrameVariantHelper" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="1">
 			<ingredient name="resourceExtractFire" count="10"/>
 			<ingredient name="resourceRockSmall" count="20"/>
 			<ingredient name="resourceClayLump" count="20"/>
 		</recipe>
-		<recipe name="blockFire" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="1">
-			<ingredient name="resourceExtractFire" count="20"/>
-			<ingredient name="resourceRockSmall" count="20"/>
-			<ingredient name="resourceClayLump" count="20"/>
-		</recipe>
-		<recipe name="blockFireSphere" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="1">
+		<recipe name="blockFireVariantHelper" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="1">
 			<ingredient name="resourceExtractFire" count="20"/>
 			<ingredient name="resourceRockSmall" count="20"/>
 			<ingredient name="resourceClayLump" count="20"/>
 		</recipe>
 		<!-- ICE: BLOCKS -->
-		<recipe name="blockIceFrame" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="1">
+		<recipe name="blockIceFrameVariantHelper" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="1">
 			<ingredient name="resourceExtractIce" count="10"/>
 			<ingredient name="resourceRockSmall" count="20"/>
 			<ingredient name="resourceClayLump" count="20"/>
 		</recipe>
-		<recipe name="blockIce" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="1">
-			<ingredient name="resourceExtractIce" count="20"/>
-			<ingredient name="resourceRockSmall" count="20"/>
-			<ingredient name="resourceClayLump" count="20"/>
-		</recipe>
-		<recipe name="blockIceSphere" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="1">
+		<recipe name="blockIceVariantHelper" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="1">
 			<ingredient name="resourceExtractIce" count="20"/>
 			<ingredient name="resourceRockSmall" count="20"/>
 			<ingredient name="resourceClayLump" count="20"/>
 		</recipe>
 		<!-- LIGHTNING: BLOCKS -->
-		<recipe name="blockLightningFrame" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="1">
+		<recipe name="blockLightningFrameVariantHelper" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="1">
 			<ingredient name="resourceExtractLightning" count="10"/>
 			<ingredient name="resourceRockSmall" count="20"/>
 			<ingredient name="resourceClayLump" count="20"/>
 		</recipe>
-		<recipe name="blockLightning" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="1">
-			<ingredient name="resourceExtractLightning" count="20"/>
-			<ingredient name="resourceRockSmall" count="20"/>
-			<ingredient name="resourceClayLump" count="20"/>
-		</recipe>
-		<recipe name="blockLightningSphere" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="1">
+		<recipe name="blockLightningVariantHelper" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="1">
 			<ingredient name="resourceExtractLightning" count="20"/>
 			<ingredient name="resourceRockSmall" count="20"/>
 			<ingredient name="resourceClayLump" count="20"/>
 		</recipe>
 		<!-- UNHOLY: BLOCKS -->
-		<recipe name="blockUnholyFrame" count="1" craft_area="sorceryDesk" craft_time="1">
+		<recipe name="blockUnholyFrameVariantHelper" count="1" craft_area="sorceryDesk" craft_time="1">
 			<ingredient name="resourceExtractUnholy" count="10"/>
 			<ingredient name="resourceRockSmall" count="20"/>
 			<ingredient name="resourceClayLump" count="20"/>
 		</recipe>
-		<recipe name="blockUnholy" count="1" craft_area="sorceryDesk" craft_time="1">
-			<ingredient name="resourceExtractUnholy" count="20"/>
-			<ingredient name="resourceRockSmall" count="20"/>
-			<ingredient name="resourceClayLump" count="20"/>
-		</recipe>
-		<recipe name="blockUnholySphere" count="1" craft_area="sorceryDesk" craft_time="1">
+		<recipe name="blockUnholyVariantHelper" count="1" craft_area="sorceryDesk" craft_time="1">
 			<ingredient name="resourceExtractUnholy" count="20"/>
 			<ingredient name="resourceRockSmall" count="20"/>
 			<ingredient name="resourceClayLump" count="20"/>
@@ -1276,6 +1284,21 @@
 			<ingredient name="resourceFragmentClass" count="1"/>
 			<ingredient name="resourceRitualBloodOmni" count="1"/>
 		</recipe>
+		<recipe name="treePlantedFireSeed" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="5">
+			<ingredient name="supporterKey" count="1"/>
+			<ingredient name="toolFireCore" count="1"/>
+			<ingredient name="resourceRitualBloodFallenFire" count="1"/>
+		</recipe>
+		<recipe name="treePlantedIceSeed" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="5">
+			<ingredient name="supporterKey" count="1"/>
+			<ingredient name="toolIceCore" count="1"/>
+			<ingredient name="resourceRitualBloodFallenIce" count="1"/>
+		</recipe>
+		<recipe name="treePlantedLightningSeed" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="5">
+			<ingredient name="supporterKey" count="1"/>
+			<ingredient name="toolLightningCore" count="1"/>
+			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
+		</recipe>
 		<recipe name="treePlanted_EssenceFireSeed" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="5">
 			<ingredient name="supporterKey" count="1"/>
 			<ingredient name="toolFireCore" count="1"/>
@@ -1291,15 +1314,21 @@
 			<ingredient name="toolLightningCore" count="1"/>
 			<ingredient name="resourceRitualBloodFallenLightning" count="1"/>
 		</recipe>
-		<recipe name="resourceEssenceFire" count="20000" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="5">
+		<recipe name="resourceCrystalArcane" count="1" craft_area="sorceryDesk" craft_time="5">
+			<ingredient name="supporterKey" count="1"/>
+			<ingredient name="runeFire_LuckyEssence" count="1"/>
+			<ingredient name="runeIce_LuckyEssence" count="1"/>
+			<ingredient name="runeLightning_LuckyEssence" count="1"/>
+		</recipe>
+		<recipe name="resourceCrystalFire" count="1" craft_area="sorceryDesk" craft_tool="toolFireCore" craft_time="5">
 			<ingredient name="supporterKey" count="1"/>
 			<ingredient name="runeFire_LuckyEssence" count="1"/>
 		</recipe>
-		<recipe name="resourceEssenceIce" count="20000" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="5">
+		<recipe name="resourceCrystalIce" count="1" craft_area="sorceryDesk" craft_tool="toolIceCore" craft_time="5">
 			<ingredient name="supporterKey" count="1"/>
 			<ingredient name="runeIce_LuckyEssence" count="1"/>
 		</recipe>
-		<recipe name="resourceEssenceLightning" count="20000" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="5">
+		<recipe name="resourceCrystalLightning" count="1" craft_area="sorceryDesk" craft_tool="toolLightningCore" craft_time="5">
 			<ingredient name="supporterKey" count="1"/>
 			<ingredient name="runeLightning_LuckyEssence" count="1"/>
 		</recipe>

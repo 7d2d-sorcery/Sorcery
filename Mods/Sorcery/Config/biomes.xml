@@ -64,7 +64,7 @@
 		<decoration type="prefab" name="deco_ice_vein" checkresource="-7" onslopes="true" prob=".02" rotatemax="3"/>
 	</insertAfter>
 	<insertAfter xpath="/worldgeneration/biomes/biome[@name='snow']/subbiome/decorations/decoration[@type='prefab' and @name='deco_nitrate_vein']">
-		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".0002" rotatemax="3"/>
 	</insertAfter>
 	<insertAfter xpath="/worldgeneration/biomes/biome[@name='snow']/subbiome/decorations/decoration[@type='prefab' and @name='deco_coal_vein']">
 		<decoration type="prefab" name="deco_fire_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
@@ -126,7 +126,7 @@
 
 	<!-- FOREST: OMNI -->
 	<insertAfter xpath="/worldgeneration/biomes/biome[@name='pine_forest']/decorations/decoration[@type='prefab' and @name='deco_iron_vein']">
-		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".0015" rotatemax="3"/>
+		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".0005" rotatemax="3"/>
 	</insertAfter>
 	<insertAfter xpath="/worldgeneration/biomes/biome[@name='pine_forest']/subbiome/decorations/decoration[@type='prefab' and @name='deco_coal_vein']">
 		<decoration type="prefab" name="deco_fire_vein" checkresource="-7" onslopes="true" prob=".003" rotatemax="3"/>
@@ -194,7 +194,7 @@
 		<decoration type="prefab" name="deco_lightning_vein" checkresource="-7" onslopes="true" prob=".02" rotatemax="3"/>
 	</insertAfter>
 	<insertAfter xpath="/worldgeneration/biomes/biome[@name='desert']/subbiome/decorations/decoration[@type='prefab' and @name='deco_lead_vein']">
-		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".0002" rotatemax="3"/>
 	</insertAfter>
 	<insertAfter xpath="/worldgeneration/biomes/biome[@name='desert']/subbiome/decorations/decoration[@type='prefab' and @name='deco_shale_vein']">
 		<decoration type="prefab" name="deco_fire_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
@@ -259,7 +259,7 @@
 		<decoration type="prefab" name="deco_fire_vein" checkresource="-7" onslopes="true" prob=".02" rotatemax="3"/>
 	</insertAfter>
 	<insertAfter xpath="/worldgeneration/biomes/biome[@name='wasteland' or @name='burnt_forest']/subbiome/decorations/decoration[@type='prefab' and @name='deco_coal_vein']">
-		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>
+		<decoration type="prefab" name="deco_omni_vein" checkresource="-7" onslopes="true" prob=".0002" rotatemax="3"/>
 	</insertAfter>
 	<insertAfter xpath="/worldgeneration/biomes/biome[@name='wasteland' or @name='burnt_forest']/subbiome/decorations/decoration[@type='prefab' and @name='deco_nitrate_vein']">
 		<decoration type="prefab" name="deco_ice_vein" checkresource="-7" onslopes="true" prob=".001" rotatemax="3"/>

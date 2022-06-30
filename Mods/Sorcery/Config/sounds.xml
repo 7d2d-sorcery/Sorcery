@@ -556,6 +556,12 @@
 			<LowestPitch name="0.9"/><HighestPitch name="1.1"/>
 			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxVoicesPerEntity value="3"/> <MaxRepeatRate value="1"/>
 		</SoundDataNode>
+		<SoundDataNode name="sorceryUnholy_corruption"> <AudioSource name="Sounds/AudioSource_Amb_Med"/>
+			<Noise ID="1" noise="10" time="2" heat_map_strength="0.1" heat_map_time="30"/>
+			<AudioClip ClipName="#@modfolder:Resources/audioUnholy.unity3d?unholy_corruption" Loop="true"/>
+			<LowestPitch name="0.9"/><HighestPitch name="1.1"/>
+			<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxVoicesPerEntity value="3"/> <MaxRepeatRate value="1"/>
+		</SoundDataNode>
 		
 		<!-- SPELL ARROWS -->
 		<SoundDataNode name="sorceryFireArrow_impact"> <AudioSource name="Sounds/AudioSource_Impact_Large"/>

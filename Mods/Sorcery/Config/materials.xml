@@ -119,24 +119,61 @@
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="3000"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
 		</material>
 		<material id="MsorceryExtractOmni_weak">
 			<property name="damage_category" value="stone"/>
 			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="resourceExtractOmni"/>
 			<property name="Hardness" type="float" value="1"/>
-			<property name="explosionresistance" value="1.2"/>
+			<property name="explosionresistance" value=".9"/>
 			<property name="stepsound" value="stone"/>
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="100"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
+		</material>
+		<material id="MsorceryExtractOmni_Iron">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractOmni"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="1.6"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="200"/>
+			<property name="Mass" type="int" value="15"/>
+			<property name="MaxDamage" value="7777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractOmni_Steel">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractOmni"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="2.5"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="300"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="MaxDamage" value="15777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractOmni_Arcane">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractOmni"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="4"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="500"/>
+			<property name="Mass" type="int" value="25"/>
+			<property name="MaxDamage" value="30777"/>
+			<property name="Experience" value="0.25"/>
 		</material>
 		<!-- Extract: Fire -->
 		<material id="MsorceryExtractFire">
-		<property name="damage_category" value="stone"/>
-		<property name="surface_category" value="stone"/>
+			<property name="collidable" value="true"/>
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="resourceExtractFire"/>
 			<property name="Hardness" type="float" value="1"/>
 			<property name="explosionresistance" value="1.2"/>
@@ -144,19 +181,59 @@
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="3000"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
 		</material>
 		<material id="MsorceryExtractFire_weak">
+			<property name="collidable" value="true"/>
 			<property name="damage_category" value="stone"/>
 			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="resourceExtractFire"/>
 			<property name="Hardness" type="float" value="1"/>
-			<property name="explosionresistance" value="1.2"/>
+			<property name="explosionresistance" value=".9"/>
 			<property name="stepsound" value="stone"/>
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="100"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
+		</material>
+		<material id="MsorceryExtractFire_Iron">
+			<property name="collidable" value="true"/>
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractFire"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="1.6"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="200"/>
+			<property name="Mass" type="int" value="15"/>
+			<property name="MaxDamage" value="7777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractFire_Steel">
+			<property name="collidable" value="true"/>
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractFire"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="2.5"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="300"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="MaxDamage" value="15777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractFire_Arcane">
+			<property name="collidable" value="true"/>
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractFire"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="4"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="500"/>
+			<property name="Mass" type="int" value="25"/>
+			<property name="MaxDamage" value="30777"/>
+			<property name="Experience" value="0.25"/>
 		</material>
 		<!-- Extract: Ice -->
 		<material id="MsorceryExtractIce">
@@ -169,19 +246,55 @@
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="3000"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
 		</material>
 		<material id="MsorceryExtractIce_weak">
 			<property name="damage_category" value="stone"/>
 			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="resourceExtractIce"/>
 			<property name="Hardness" type="float" value="1"/>
-			<property name="explosionresistance" value="1.2"/>
+			<property name="explosionresistance" value=".9"/>
 			<property name="stepsound" value="stone"/>
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="100"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
+		</material>
+		<material id="MsorceryExtractIce_Iron">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractIce"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="1.6"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="200"/>
+			<property name="Mass" type="int" value="15"/>
+			<property name="MaxDamage" value="7777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractIce_Steel">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractIce"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="2.5"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="300"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="MaxDamage" value="15777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractIce_Arcane">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractIce"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="4"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="500"/>
+			<property name="Mass" type="int" value="25"/>
+			<property name="MaxDamage" value="30777"/>
+			<property name="Experience" value="0.25"/>
 		</material>
 		<!-- Extract: Lightning -->
 		<material id="MsorceryExtractLightning">
@@ -194,19 +307,55 @@
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="3000"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
 		</material>
 		<material id="MsorceryExtractLightning_weak">
 			<property name="damage_category" value="stone"/>
 			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="resourceExtractLightning"/>
 			<property name="Hardness" type="float" value="1"/>
-			<property name="explosionresistance" value="1.2"/>
+			<property name="explosionresistance" value=".9"/>
 			<property name="stepsound" value="stone"/>
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="100"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
+		</material>
+		<material id="MsorceryExtractLightning_Iron">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractLightning"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="1.6"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="200"/>
+			<property name="Mass" type="int" value="15"/>
+			<property name="MaxDamage" value="7777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractLightning_Steel">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractLightning"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="2.5"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="300"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="MaxDamage" value="15777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractLightning_Arcane">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractLightning"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="4"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="500"/>
+			<property name="Mass" type="int" value="25"/>
+			<property name="MaxDamage" value="30777"/>
+			<property name="Experience" value="0.25"/>
 		</material>
 		<!-- Extract: Unholy -->
 		<material id="MsorceryExtractUnholy">
@@ -219,19 +368,55 @@
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="3000"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
 		</material>
 		<material id="MsorceryExtractUnholy_weak">
 			<property name="damage_category" value="stone"/>
 			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="resourceExtractUnholy"/>
 			<property name="Hardness" type="float" value="1"/>
-			<property name="explosionresistance" value="1.2"/>
+			<property name="explosionresistance" value=".9"/>
 			<property name="stepsound" value="stone"/>
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="100"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
+		</material>
+		<material id="MsorceryExtractUnholy_Iron">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractUnholy"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="1.6"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="200"/>
+			<property name="Mass" type="int" value="15"/>
+			<property name="MaxDamage" value="7777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractUnholy_Steel">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractUnholy"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="2.5"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="300"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="MaxDamage" value="15777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractUnholy_Arcane">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractUnholy"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="4"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="500"/>
+			<property name="Mass" type="int" value="25"/>
+			<property name="MaxDamage" value="30777"/>
+			<property name="Experience" value="0.25"/>
 		</material>
 		<!-- Extract: Holy -->
 		<material id="MsorceryExtractHoly">
@@ -244,19 +429,55 @@
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="3000"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
 		</material>
 		<material id="MsorceryExtractHoly_weak">
 			<property name="damage_category" value="stone"/>
 			<property name="surface_category" value="stone"/>
 			<property name="forge_category" value="resourceExtractHoly"/>
 			<property name="Hardness" type="float" value="1"/>
-			<property name="explosionresistance" value="1.2"/>
+			<property name="explosionresistance" value=".9"/>
 			<property name="stepsound" value="stone"/>
 			<property name="stability_glue" value="120"/>
 			<property name="Mass" type="int" value="10"/>
 			<property name="MaxDamage" value="100"/>
-			<property name="Experience" value="2"/>
+			<property name="Experience" value="0.5"/>
+		</material>
+		<material id="MsorceryExtractHoly_Iron">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractHoly"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="1.6"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="200"/>
+			<property name="Mass" type="int" value="15"/>
+			<property name="MaxDamage" value="7777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractHoly_Steel">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractHoly"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="2.5"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="300"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="MaxDamage" value="15777"/>
+			<property name="Experience" value="0.25"/>
+		</material>
+		<material id="MsorceryExtractHoly_Arcane">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractHoly"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="explosionresistance" value="4"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="500"/>
+			<property name="Mass" type="int" value="25"/>
+			<property name="MaxDamage" value="30777"/>
+			<property name="Experience" value="0.25"/>
 		</material>
 		
 	<!--___________________________ SORCERY MATERIAL: POWDER ___________________________-->	
@@ -432,6 +653,19 @@
 		</material>
 
 	<!-- TRAPS -->
+		<material id="MsorceryTrapBlock_POI">
+			<property name="collidable" value="true"/>
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="Hardness" type="float" value="10000"/>
+			<property name="explosionresistance" value="4"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="500"/>
+			<property name="Mass" type="int" value="25"/>
+			<property name="MaxDamage" value="50000"/>
+			<property name="movement_factor" value="0.5"/>
+			<property name="Experience" value="0.25"/>
+		</material>
 		<!-- FIRE TRAP: T1 -->
 		<material id="MsorceryTrapFire">
 			<property name="damage_category" value="stone"/>
@@ -445,7 +679,7 @@
 			<property name="Mass" type="int" value="20"/>
 			<property name="explosionresistance" value="1.4"/>
 			<property name="MaxDamage" value="200"/>
-			<property name="movement_factor" value="0.5"/>
+			<property name="movement_factor" value="0.3"/>
 			<property name="Experience" value="2"/>
 		</material>
 		<!-- ICE TRAP: T1 -->
@@ -456,13 +690,12 @@
 			<property name="particle_category" value="stone"/>
 			<property name="particle_destroy_category" value="stone"/>
 			<property name="Hardness" type="float" value="1"/>
-			<!-- <property name="stepsound" value="stone"/> -->
 			<property name="stepsound" value="stone"/>
 			<property name="stability_glue" value="20"/>
 			<property name="Mass" type="int" value="20"/>
 			<property name="explosionresistance" value="1.4"/>
 			<property name="MaxDamage" value="200"/>
-			<property name="movement_factor" value="0.7"/>
+			<property name="movement_factor" value="0.5"/>
 			<property name="Experience" value="2"/>
 		</material>
 		<!-- LIGHTNING TRAP: T1 -->
@@ -478,7 +711,23 @@
 			<property name="Mass" type="int" value="20"/>
 			<property name="explosionresistance" value="1.4"/>
 			<property name="MaxDamage" value="200"/>
-			<property name="movement_factor" value="0.5"/>
+			<property name="movement_factor" value="0.3"/>
+			<property name="Experience" value="2"/>
+		</material>
+		<!-- UNHOLY TRAP: T1 -->
+		<material id="MsorceryTrapUnholy">
+			<property name="damage_category" value="stone"/>
+			<property name="surface_category" value="stone"/>
+			<property name="forge_category" value="resourceExtractUnholy"/>
+			<property name="particle_category" value="stone"/>
+			<property name="particle_destroy_category" value="stone"/>
+			<property name="Hardness" type="float" value="1"/>
+			<property name="stepsound" value="stone"/>
+			<property name="stability_glue" value="20"/>
+			<property name="Mass" type="int" value="20"/>
+			<property name="explosionresistance" value="1.4"/>
+			<property name="MaxDamage" value="200"/>
+			<property name="movement_factor" value="0.3"/>
 			<property name="Experience" value="2"/>
 		</material>
 		

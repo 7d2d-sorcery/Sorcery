@@ -629,7 +629,7 @@
 			<property name="Tags" value="blunt,melee,grunting,heavy,weapon,meleeWeapon,longShaft,attStrength,staff,staffFire,perkSorceryStaffFire"/>
 			<property name="DisplayType" value="sorceryStaffFire"/>
 			<property name="HoldType" value="33"/>
-			<property name="Meshfile" value="#@modfolder:Resources/staffFire.unity3d?staffFire"/>
+			<property name="Meshfile" value="#@modfolder:Resources/weaponStaves.unity3d?staffFire"/>
 			<property name="Material" value="MsorceryExtractFire"/>
 			<property name="Weight" value="100"/>
 			<property name="RepairTools" value="resourceEssenceFire"/>
@@ -800,7 +800,7 @@
 			<property name="Tags" value="blunt,melee,grunting,heavy,weapon,meleeWeapon,longShaft,attStrength,staff,staffIce,perkSorceryStaffIce"/>
 			<property name="DisplayType" value="sorceryStaffIce"/>
 			<property name="HoldType" value="33"/>
-			<property name="Meshfile" value="#@modfolder:Resources/staffIce.unity3d?staffIce"/>
+			<property name="Meshfile" value="#@modfolder:Resources/weaponStaves.unity3d?staffIce"/>
 			<property name="Material" value="MsorceryExtractIce"/>
 			<property name="Weight" value="100"/>
 			<property name="RepairTools" value="resourceEssenceIce"/> 
@@ -969,7 +969,7 @@
 			<property name="Tags" value="blunt,melee,grunting,heavy,weapon,meleeWeapon,longShaft,attStrength,staff,staffLightning,perkSorceryStaffLightning"/>
 			<property name="DisplayType" value="sorceryStaffLightning"/>
 			<property name="HoldType" value="33"/>
-			<property name="Meshfile" value="#@modfolder:Resources/staffLightning.unity3d?staffLightning"/>
+			<property name="Meshfile" value="#@modfolder:Resources/weaponStaves.unity3d?staffLightning"/>
 			<property name="Material" value="MsorceryExtractLightning"/>
 			<property name="Weight" value="100"/>
 			<property name="RepairTools" value="resourceEssenceLightning"/>
@@ -8472,7 +8472,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,FireSorcery"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="0.05"/>
 			<property name="CraftingIngredientTime" value=".01"/>
 			<property name="MeltTimePerUnit" value=".1"/>
 			<property name="UnlockedBy" value="attSorceryFire"/>
@@ -8493,7 +8493,7 @@
 			<property name="EconomicBundleSize" value="10"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,IceSorcery"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="0.05"/>
 			<property name="CraftingIngredientTime" value=".01"/>
 			<property name="MeltTimePerUnit" value=".1"/>
 			<!-- <property name="UnlockedBy" value="attSorceryIce"/> -->
@@ -8513,7 +8513,7 @@
 			<property name="EconomicBundleSize" value="10"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,LightningSorcery"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="0.05"/>
 			<property name="CraftingIngredientTime" value=".01"/>
 			<property name="MeltTimePerUnit" value=".1"/>
 			<!-- <property name="UnlockedBy" value="attSorceryLightning"/> -->
@@ -8532,7 +8532,7 @@
 			<property name="EconomicBundleSize" value="10"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,UnholySorcery"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="0.05"/>
 			<property name="CraftingIngredientTime" value=".01"/>
 			<property name="MeltTimePerUnit" value=".1"/>
 			<!-- <property name="UnlockedBy" value="attSorceryUnholy"/> -->
@@ -8551,7 +8551,7 @@
 			<property name="EconomicBundleSize" value="10"/>
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,HolySorcery"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="0.05"/>
 			<property name="CraftingIngredientTime" value=".01"/>
 			<property name="MeltTimePerUnit" value=".1"/>
 			<!-- <property name="UnlockedBy" value="attSorceryHoly"/> -->
@@ -8570,7 +8570,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="1"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="conjureFire,conjureIce,conjureLightning,sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
@@ -8586,7 +8586,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="1"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="conjureFire"/>
 		</item>	
@@ -8602,7 +8602,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="1"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="conjureIce"/>
 		</item>	
@@ -8618,7 +8618,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="1"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="conjureLightning"/>
 		</item>	
@@ -8634,7 +8634,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="1"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 		</item>	
 		<!-- EXTRACT: HOLY -->
@@ -8649,9 +8649,9 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="1"/>
 			<property name="CraftingIngredientTime" value=".1"/>
-		</item>	
+		</item>
 		
 	<!--___________________ RESOURCE: Alchemy ___________________-->
 		<!-- POWDER: ARCANE -->
@@ -8667,7 +8667,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
@@ -8684,7 +8684,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
@@ -8701,7 +8701,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
@@ -8718,7 +8718,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
@@ -8735,7 +8735,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
@@ -8752,7 +8752,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryAlchemyMortar,sorceryAlchemyStation"/>
 		</item>	
@@ -8773,7 +8773,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,ClothingArcane"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="perkSorceryArmor,sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
@@ -8790,7 +8790,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,ClothingFire"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="perkSorceryArmorFire,sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
@@ -8807,7 +8807,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,ClothingIce"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="perkSorceryArmorIce,sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
@@ -8824,7 +8824,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources,ClothingLightning"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 			<property name="UnlockedBy" value="sorceryArcaneWheel,rune_ClassTailor1"/>
 		</item>	
@@ -8841,7 +8841,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 		</item>	
 		<!-- THREAD: HOLY -->
@@ -8857,7 +8857,7 @@
 			<property name="SellableToTrader" value="false"/>
 			<property name="Group" value="Resources"/>
 			<property name="Weight" value="1"/>
-			<property name="CraftingIngredientExp" value="5"/>
+			<property name="CraftingIngredientExp" value="2.5"/>
 			<property name="CraftingIngredientTime" value=".1"/>
 		</item>	
 		
@@ -9171,6 +9171,106 @@
 			<property name="CreativeMode" value="None"/>
 		</item>
 	<!-- END - RESOURCES ______________________________________-->
+		
+		
+	<!-- BUNDLES __________________________________________________________________________________ -->
+		<!-- ESSENCE BUNDLES -->
+		<item name="resourceCrystalMaster">
+			<property name="CreativeMode" value="None"/>
+			<property name="ItemTypeIcon" value="treasure"/>
+			<!-- <property name="HoldType" value="24"/> -->
+			<property name="HoldType" value="21"/>
+			<property name="Meshfile" value="#@modfolder:Resources/blockCrystals.unity3d?crystalArcaneSml"/>
+			<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mstone"/>
+			<property name="Weight" value="0"/>
+			<property name="Stacknumber" value="100"/>
+			<property name="EconomicValue" value="5000"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="UnlockedBy" value="sorceryDesk"/>
+			<property name="Group" value="Resources"/>
+			<property class="Action0">
+				<property name="Class" value="OpenBundle"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="close_garbage"/>
+				<property name="Create_item" value="resourceEssenceFire"/>
+				<property name="Create_item_count" value="10000"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="PlaceAsBlock"/>
+				<property name="Delay" value=".5"/>
+				<property name="Blockname" value="lightCrystal_Arcane"/>
+			</property>
+		</item>
+		<item name="resourceCrystalArcane">
+			<property name="Extends" value="resourceCrystalMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="Meshfile" value="#@modfolder:Resources/blockCrystals.unity3d?crystalArcaneSml"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceEssenceFire,resourceEssenceIce,resourceEssenceLightning"/>
+				<property name="Create_item_count" value="10000,10000,10000"/>
+			</property>
+			<property class="Action1">
+				<property name="Blockname" value="lightCrystal_Arcane"/>
+			</property>
+		</item>
+		<item name="resourceCrystalFire">
+			<property name="Extends" value="resourceCrystalMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="Meshfile" value="#@modfolder:Resources/blockCrystals.unity3d?crystalFireSml"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceEssenceFire"/>
+			</property>
+			<property class="Action1">
+				<property name="Blockname" value="lightCrystal_Fire"/>
+			</property>
+		</item>
+		<item name="resourceCrystalIce">
+			<property name="Extends" value="resourceCrystalMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="Meshfile" value="#@modfolder:Resources/blockCrystals.unity3d?crystalIceSml"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceEssenceIce"/>
+			</property>
+			<property class="Action1">
+				<property name="Blockname" value="lightCrystal_Ice"/>
+			</property>
+		</item>
+		<item name="resourceCrystalLightning">
+			<property name="Extends" value="resourceCrystalMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="Meshfile" value="#@modfolder:Resources/blockCrystals.unity3d?crystalLightningSml"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceEssenceLightning"/>
+			</property>
+			<property class="Action1">
+				<property name="Blockname" value="lightCrystal_Lightning"/>
+			</property>
+		</item>
+		<item name="resourceCrystalUnholy">
+			<property name="Extends" value="resourceCrystalMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="Meshfile" value="#@modfolder:Resources/blockCrystals.unity3d?crystalUnholySml"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceEssenceUnholy"/>
+			</property>
+			<property class="Action1">
+				<property name="Blockname" value="lightCrystal_Unholy"/>
+			</property>
+		</item>
+		<!-- <item name="resourceCrystalHoly">
+			<property name="Extends" value="resourceCrystalMaster"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="Meshfile" value="#@modfolder:Resources/blockCrystals.unity3d?crystalHolySml"/>
+			<property class="Action0">
+				<property name="Create_item" value="resourceEssenceHoly"/>
+			</property>
+			<property class="Action1">
+				<property name="Blockname" value="lightCrystal_Holy"/>
+			</property>
+		</item> -->
+	<!-- END - BUNDLES __________________________________________________________________________________ -->
 		
 	<!-- BOOK ITEMS ______________________________________-->
 		<item name="bookMasterSorcery">
@@ -10411,7 +10511,7 @@
 	<append xpath="/items/item[@name='resourceCropCottonPlant']"><property name="Tags" value="resourceCropCottonPlant,Tailor"/></append>
 
 	<!-- UPGRADE -->
-	<append xpath="/items/item[@name='meleeToolRepairT0StoneAxe' or @name='meleeToolRepairT0TazasStoneAxe' or @name='meleeToolRepairT1ClawHammer' or @name='meleeToolRepairT3Nailgun']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceEssenceFire,resourceExtractFire,resourceEssenceIce,resourceExtractIce,resourceEssenceLightning,resourceExtractLightning</append>
+	<append xpath="/items/item[@name='meleeToolRepairT0StoneAxe' or @name='meleeToolRepairT0TazasStoneAxe' or @name='meleeToolRepairT1ClawHammer' or @name='meleeToolRepairT3Nailgun']/property[@class='Action1']/property[@name='Allowed_upgrade_items']/@value">,resourceExtractOmni,resourceEssenceFire,resourceExtractFire,resourceEssenceIce,resourceExtractIce,resourceEssenceLightning,resourceExtractLightning,resourceEssenceUnholy,resourceExtractUnholy,resourceEssenceHoly,resourceExtractHoly</append>
 	<!-- MISC -->
 	<append xpath="/items/item[@name='resourceSilverNugget' or @name='resourceGoldNugget' or @name='resourceRawDiamond' or @name='casinoCoin']"><property name="CreativeMode" value="None"/></append>
 	<!-- ADMIN RESPEC -->

@@ -858,6 +858,74 @@
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".sorceryLightningDamagePermUI" operation="set" value="@$elixir_sorceryLightningDamage"/>
 							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".sorceryLightningDamagePermUI" operation="multiply" value="100"/>
 					</effect_group>
+					<!-- CALCULATE: Unholy Sorcery Damage -->
+					<effect_group name="CVAR: UNHOLY SORCERY DAMAGE">
+						<!-- set -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="@$sorceryUnholyMastery_sorceryUnholyDamage"/>
+							<!-- add -->
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@.sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$sorceryDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$weapon_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$head_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$eyes_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$face_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$coat_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$chest_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$shirt_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$gloves_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$leg_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$pants_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$boots_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value="@$elixir_sorceryUnholyDamage"/>
+							<!-- perk: biome bonus -->
+							<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="add" value=".25">
+								<requirement name="InBiome" biome="5"/>
+							</triggered_effect> -->
+							<!-- multiply -->
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="multiply" value="@$sorceryUnholyDamage_multiplier"/>
+						<!-- final networked -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryUnholyDamage" operation="set" value="@$sorceryUnholyDamage"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryUnholyDamage" operation="add" value="1"/>
+						<!-- UI: Display -->
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamageUI" operation="set" value="@$sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryUnholyDamageUI" operation="multiply" value="100"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".sorceryUnholyDamagePermUI" operation="set" value="@$elixir_sorceryUnholyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".sorceryUnholyDamagePermUI" operation="multiply" value="100"/>
+					</effect_group>
+					<!-- CALCULATE: Holy Sorcery Damage -->
+					<effect_group name="CVAR: HOLY SORCERY DAMAGE">
+						<!-- set -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="@$sorceryHolyMastery_sorceryHolyDamage"/>
+							<!-- add -->
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@.sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$sorceryDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$weapon_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$head_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$eyes_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$face_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$coat_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$chest_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$shirt_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$gloves_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$leg_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$pants_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$boots_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value="@$elixir_sorceryHolyDamage"/>
+							<!-- perk: biome bonus -->
+							<!-- <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="add" value=".25">
+								<requirement name="InBiome" biome="5"/>
+							</triggered_effect> -->
+							<!-- multiply -->
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="multiply" value="@$sorceryHolyDamage_multiplier"/>
+						<!-- final networked -->
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryHolyDamage" operation="set" value="@$sorceryHolyDamage"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="sorceryHolyDamage" operation="add" value="1"/>
+						<!-- UI: Display -->
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamageUI" operation="set" value="@$sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$sorceryHolyDamageUI" operation="multiply" value="100"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".sorceryHolyDamagePermUI" operation="set" value="@$elixir_sorceryHolyDamage"/>
+							<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".sorceryHolyDamagePermUI" operation="multiply" value="100"/>
+					</effect_group>
 					<!-- CALCULATE: ALCHEMY DAMAGE, Potency -->
 					<effect_group name="CVAR: ALCHEMY DAMAGE">
 						<!-- set -->
@@ -1366,7 +1434,7 @@
 				 <!-- END - SHRINE MANAGE -->				 
 				 
 					 <effect_group name="SUPPORTER DISCLAIMER">
-						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMaster" operation="set" value="1654207409"/>
+						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMaster" operation="set" value="4669826244"/>
 						<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$sorcerySupporterMasterCompare" operation="set" value="@$sorcerySupporterMaster"/>
 					 </effect_group>
 					 <effect_group name="SUPPORTER DISCLAIMER">
@@ -1428,16 +1496,18 @@
 				<!-- FIRE FX ______________________________________________________ -->
 					<effect_group name="BURN">
 							<requirements>
-								<requirement name="NotHasBuff" buff="spellFire"/>
-								<requirement name="NotHasBuff" buff="spellFire_Burn"/>
-								<requirement name="NotHasBuff" buff="spellFX_FireBurnEternal"/>
-								<requirement name="NotHasBuff" buff="spellFire3"/>
-								<requirement name="NotHasBuff" buff="buffRune_AspectOfFire_AuraAOE"/>
-								<requirement name="NotHasBuff" buff="spellTrap_Fire"/>
-								<requirement name="NotHasBuff" buff="spellTrap_FireFX"/>
+								<requirement name="!HasBuff" buff="spellFire"/>
+								<requirement name="!HasBuff" buff="spellFire_Burn"/>
+								<requirement name="!HasBuff" buff="spellFX_FireBurnEternal"/>
+								<requirement name="!HasBuff" buff="spellFire3"/>
+								<requirement name="!HasBuff" buff="buffRune_AspectOfFire_AuraAOE"/>
+								<requirement name="!HasBuff" buff="spellTrap_Fire"/>
+								<requirement name="!HasBuff" buff="spellTrap_FireFX"/>
 								<!-- entity -->
-								<requirement name="NotHasBuff" buff="spellEntityFire_Burn"/>
-								<requirement name="NotHasBuff" buff="spellFallenFire_Burn"/>
+								<requirement name="!HasBuff" buff="spellEntityFire_Burn"/>
+								<requirement name="!HasBuff" buff="spellFallenFire_Burn"/>
+								<!-- poi -->
+								<requirement name="!HasBuff" buff="spellFirePOI_Burn"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_FireBurn"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="fireBurning"/>
@@ -1492,6 +1562,8 @@
 								<!-- entity -->
 								<requirement name="NotHasBuff" buff="spellEntityIce_Chill"/>
 								<requirement name="NotHasBuff" buff="spellFallenIce_Chill"/>
+								<!-- poi -->
+								<requirement name="NotHasBuff" buff="spellIcePOI_Chill"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceChill"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="iceChill"/>
@@ -1536,14 +1608,24 @@
 				<!-- LIGHTNING FX ______________________________________________________ -->
 					<effect_group name="LIGHTNING SHOCK">
 							<requirements>
+								<requirement name="NotHasBuff" buff="spellLightning_Shock"/>
 								<requirement name="NotHasBuff" buff="spellEntityLightning_Shock"/>
 								<requirement name="NotHasBuff" buff="spellFallenLightning_Shock"/>
+								<requirement name="NotHasBuff" buff="spellTrap_Lightning"/>
+								<requirement name="NotHasBuff" buff="spellTrap_LightningFX"/>
+								<requirement name="NotHasBuff" buff="buffRune_AspectOfLightning_AuraAOE"/>
+								<!-- entity -->
+								<requirement name="NotHasBuff" buff="spellEntityLightning_Shock"/>
+								<requirement name="NotHasBuff" buff="spellFallenLightning_Shock"/>
+								<!-- poi -->
+								<requirement name="NotHasBuff" buff="spellLightningPOI_Shock"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_LightningShock"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="lightningArc"/>
 					</effect_group>
 					<effect_group name="LIGHTNING ELECTROCUTE">
 							<requirements>
+								<requirement name="NotHasBuff" buff="spellLightning_Electrocute"/>
 								<requirement name="NotHasBuff" buff="spellFallenLightning_Electrocute"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_LightningElectrocute"/>
@@ -1551,10 +1633,45 @@
 					</effect_group>
 					<effect_group name="LIGHTNING REGENERATE">
 							<requirements>
+								<requirement name="NotHasBuff" buff="spellEntityLightning_Regenerate"/>
 								<requirement name="NotHasBuff" buff="spellFallenLightning_regenerate"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_LightningRegen"/>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="fallenRechargeLightning"/>
+					</effect_group>
+				<!-- UNHOLY FX ______________________________________________________ -->
+					<effect_group name="UNHOLY CORRUPT">
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellUnholy"/>
+								<requirement name="NotHasBuff" buff="spellUnholy_Corrupt"/>
+								<requirement name="NotHasBuff" buff="buffRune_AspectOfUnholy_AuraAOE"/>
+								<requirement name="NotHasBuff" buff="spellTrap_Unholy"/>
+								<requirement name="NotHasBuff" buff="spellTrap_UnholyFX"/>
+								<!-- entity -->
+								<requirement name="NotHasBuff" buff="spellEntityUnholy_Corrupt"/>
+								<requirement name="NotHasBuff" buff="spellFallenUnholy_Corrupt"/>
+								<!-- poi -->
+								<requirement name="NotHasBuff" buff="spellUnholyPOI_Corrupt"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_UnholyCorrupt"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="unholyCorrupt"/>
+					</effect_group>
+				<!-- HOLY FX ______________________________________________________ -->
+					<effect_group name="HOLY PURIFY">
+							<requirements>
+								<requirement name="!HasBuff" buff="spellHoly"/>
+								<requirement name="!HasBuff" buff="spellHoly_Purify"/>
+								<requirement name="!HasBuff" buff="buffRune_AspectOfHoly_AuraAOE"/>
+								<requirement name="!HasBuff" buff="spellTrap_Holy"/>
+								<requirement name="!HasBuff" buff="spellTrap_HolyFX"/>
+								<!-- entity -->
+								<requirement name="!HasBuff" buff="spellEntityHoly_Purify"/>
+								<requirement name="!HasBuff" buff="spellFallenHoly_Purify"/>
+								<!-- poi -->
+								<requirement name="!HasBuff" buff="spellHolyPOI_Purify"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_HolyPurify"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="holyPurify"/>
 					</effect_group>
 			</buff>	
 
@@ -5839,6 +5956,288 @@
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryLightningDamage" operation="set" value="10.0"><requirement name="CVarCompare" cvar="$sorceryLightningDamage" operation="LT" value="10.0"/><requirement name="CVarCompare" cvar="sorceryLightningDamage" target="other" operation="GTE" value="10.0"/></triggered_effect>						
 					</effect_group>
 			</buff>
+		
+			<!-- CVAR: UNHOLY DAMAGE -->
+			<buff name="imprint_UnholySorcery">
+				<damage_type value="bloodloss"/><stack_type value="ignore"/><duration value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSorceryMarked"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="1,1" duration="0,1"/>
+					</effect_group>
+					<!-- SPELL CHARGING -->
+					<effect_group name="UNHOLY: Charge Stacks">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholyStack" operation="set" value="1">
+							<requirement name="CVarCompare" cvar="SorceryUnholyStack" operation="LT" value="1"/>
+							<requirement name="CVarCompare" cvar="UnholyStacksPlayer" operation="Equals" value="1" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholyStack" operation="set" value="2">
+							<requirement name="CVarCompare" cvar="SorceryUnholyStack" operation="LT" value="2"/>
+							<requirement name="CVarCompare" cvar="UnholyStacksPlayer" operation="Equals" value="2" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholyStack" operation="set" value="3">
+							<requirement name="CVarCompare" cvar="SorceryUnholyStack" operation="LT" value="3"/>
+							<requirement name="CVarCompare" cvar="UnholyStacksPlayer" operation="Equals" value="3" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholyStack" operation="set" value="4">
+							<requirement name="CVarCompare" cvar="SorceryUnholyStack" operation="LT" value="4"/>
+							<requirement name="CVarCompare" cvar="UnholyStacksPlayer" operation="GTE" value="4" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryUnholyStack" operation="set" value="@SorceryUnholyStack"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryUnholyStack" operation="multiply" value=".25"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryUnholyStack" operation="add" value="1"/>
+					</effect_group>
+					<effect_group name="UNHOLY 2: Charge Stacks">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholy2Stack" operation="set" value="1">
+							<requirement name="CVarCompare" cvar="SorceryUnholy2Stack" operation="LT" value="1"/>
+							<requirement name="CVarCompare" cvar="Unholy2StacksPlayer" operation="Equals" value="1" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholy2Stack" operation="set" value="2">
+							<requirement name="CVarCompare" cvar="SorceryUnholy2Stack" operation="LT" value="2"/>
+							<requirement name="CVarCompare" cvar="Unholy2StacksPlayer" operation="Equals" value="2" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholy2Stack" operation="set" value="3">
+							<requirement name="CVarCompare" cvar="SorceryUnholy2Stack" operation="LT" value="3"/>
+							<requirement name="CVarCompare" cvar="Unholy2StacksPlayer" operation="Equals" value="3" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholy2Stack" operation="set" value="4">
+							<requirement name="CVarCompare" cvar="SorceryUnholy2Stack" operation="LT" value="4"/>
+							<requirement name="CVarCompare" cvar="Unholy2StacksPlayer" operation="GTE" value="4" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryUnholy2Stack" operation="set" value="@SorceryUnholy2Stack"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryUnholy2Stack" operation="multiply" value=".25"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryUnholy2Stack" operation="add" value="1"/>
+					</effect_group>
+					<effect_group name="UNHOLY 3: Charge Stacks">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholy3Stack" operation="set" value="1">
+							<requirement name="CVarCompare" cvar="SorceryUnholy3Stack" operation="LT" value="1"/>
+							<requirement name="CVarCompare" cvar="Unholy3StacksPlayer" operation="Equals" value="1" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholy3Stack" operation="set" value="2">
+							<requirement name="CVarCompare" cvar="SorceryUnholy3Stack" operation="LT" value="2"/>
+							<requirement name="CVarCompare" cvar="Unholy3StacksPlayer" operation="Equals" value="2" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholy3Stack" operation="set" value="3">
+							<requirement name="CVarCompare" cvar="SorceryUnholy3Stack" operation="LT" value="3"/>
+							<requirement name="CVarCompare" cvar="Unholy3StacksPlayer" operation="Equals" value="3" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryUnholy3Stack" operation="set" value="4">
+							<requirement name="CVarCompare" cvar="SorceryUnholy3Stack" operation="LT" value="4"/>
+							<requirement name="CVarCompare" cvar="Unholy3StacksPlayer" operation="GTE" value="4" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryUnholy3Stack" operation="set" value="@SorceryUnholy3Stack"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryUnholy3Stack" operation="multiply" value=".25"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryUnholy3Stack" operation="add" value="1"/>
+					</effect_group>
+					<!-- NOTE: This ugly workaround is required until we can apply Player CVar values directly to an Entity via (ModifyCVar cvar=ENTITY value=@PLAYER) -->
+					<effect_group name="Player Unholy Damage to Entity">
+						<!-- 100,190 -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="1.0"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="1.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="1.1"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="1.1"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="1.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="1.2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="1.2"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="1.2"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="1.1"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="1.3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="1.3"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="1.3"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="1.2"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="1.4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="1.4"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="1.4"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="1.3"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="1.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="1.5"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="1.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="1.4"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="1.6"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="1.6"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="1.6"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="1.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="1.7"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="1.7"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="1.7"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="1.6"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="1.8"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="1.8"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="1.8"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="1.7"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="1.9"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="1.9"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="1.9"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="1.8"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="2.0"/></triggered_effect>
+						<!-- 200,290 -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="2.0"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="2.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="1.9"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="2.1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="2.1"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="2.1"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="2.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="2.2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="2.2"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="2.2"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="2.1"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="2.3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="2.3"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="2.3"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="2.2"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="2.4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="2.4"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="2.4"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="2.3"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="2.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="2.5"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="2.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="2.4"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="2.6"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="2.6"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="2.6"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="2.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="2.7"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="2.7"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="2.7"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="2.6"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="2.8"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="2.8"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="2.8"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="2.7"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="2.9"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="2.9"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="2.9"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="2.8"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="3.0"/></triggered_effect>						
+						<!-- 300,390 -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="3.0"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="3.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="2.9"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="3.1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="3.1"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="3.1"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="3.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="3.2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="3.2"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="3.2"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="3.1"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="3.3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="3.3"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="3.3"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="3.2"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="3.4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="3.4"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="3.4"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="3.3"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="3.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="3.5"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="3.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="3.4"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="3.6"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="3.6"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="3.6"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="3.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="3.7"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="3.7"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="3.7"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="3.6"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="3.8"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="3.8"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="3.8"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="3.7"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="3.9"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="3.9"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="3.9"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="3.8"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="4.0"/></triggered_effect>
+						<!-- 400,490 -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="4.0"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="4.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="3.9"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="4.1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="4.1"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="4.1"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="4.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="4.2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="4.2"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="4.2"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="4.1"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="4.3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="4.3"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="4.3"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="4.2"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="4.4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="4.4"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="4.4"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="4.3"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="4.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="4.5"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="4.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="4.4"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="4.6"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="4.6"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="4.6"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="4.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="4.7"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="4.7"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="4.7"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="4.6"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="4.8"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="4.8"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="4.8"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="4.7"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="4.9"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="4.9"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="4.9"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="4.8"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="5.0"/></triggered_effect>
+						<!-- 500,600 -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="5.0"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="5.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="4.9"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="5.1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="5.1"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="5.1"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="5.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="5.2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="5.2"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="5.2"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="5.1"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="5.3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="5.3"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="5.3"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="5.2"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="5.4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="5.4"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="5.4"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="5.3"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="5.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="5.5"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="5.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="5.4"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="5.6"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="5.6"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="5.6"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="5.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="5.7"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="5.7"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="5.7"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="5.6"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="5.8"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="5.8"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="5.8"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="5.7"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="5.9"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="5.9"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="5.9"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="5.8"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="6.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="6.0"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="6.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GT" value="5.9"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="6.5"/></triggered_effect>
+						<!-- 650,700,750,800,900,950,1000 MAX -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="6.5"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="6.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GTE" value="6.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="7.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="7.0"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="7.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GTE" value="7.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="7.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="7.5"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="7.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GTE" value="7.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="8.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="8.0"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="8.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GTE" value="8.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="8.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="8.5"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="8.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GTE" value="8.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="9.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="9.0"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="9.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GTE" value="9.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="9.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="9.5"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="9.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GTE" value="9.5"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="LT" value="10.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryUnholyDamage" operation="set" value="10.0"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="LT" value="10.0"/><requirement name="CVarCompare" cvar="sorceryUnholyDamage" target="other" operation="GTE" value="10.0"/></triggered_effect>						
+					</effect_group>
+			</buff>
+			
+			<!-- CVAR: HOLY DAMAGE -->
+			<buff name="imprint_HolySorcery">
+				<damage_type value="Bashing"/><stack_type value="ignore"/><duration value="1"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffSorceryMarked"/>
+						<passive_effect name="HealthChangeOT" operation="base_subtract" value="1,1" duration="0,1"/>
+					</effect_group>
+					<!-- SPELL CHARGING -->
+					<effect_group name="HOLY: Charge Stacks">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHolyStack" operation="set" value="1">
+							<requirement name="CVarCompare" cvar="SorceryHolyStack" operation="LT" value="1"/>
+							<requirement name="CVarCompare" cvar="HolyStacksPlayer" operation="Equals" value="1" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHolyStack" operation="set" value="2">
+							<requirement name="CVarCompare" cvar="SorceryHolyStack" operation="LT" value="2"/>
+							<requirement name="CVarCompare" cvar="HolyStacksPlayer" operation="Equals" value="2" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHolyStack" operation="set" value="3">
+							<requirement name="CVarCompare" cvar="SorceryHolyStack" operation="LT" value="3"/>
+							<requirement name="CVarCompare" cvar="HolyStacksPlayer" operation="Equals" value="3" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHolyStack" operation="set" value="4">
+							<requirement name="CVarCompare" cvar="SorceryHolyStack" operation="LT" value="4"/>
+							<requirement name="CVarCompare" cvar="HolyStacksPlayer" operation="GTE" value="4" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryHolyStack" operation="set" value="@SorceryHolyStack"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryHolyStack" operation="multiply" value=".25"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryHolyStack" operation="add" value="1"/>
+					</effect_group>
+					<effect_group name="HOLY 2: Charge Stacks">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHoly2Stack" operation="set" value="1">
+							<requirement name="CVarCompare" cvar="SorceryHoly2Stack" operation="LT" value="1"/>
+							<requirement name="CVarCompare" cvar="Holy2StacksPlayer" operation="Equals" value="1" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHoly2Stack" operation="set" value="2">
+							<requirement name="CVarCompare" cvar="SorceryHoly2Stack" operation="LT" value="2"/>
+							<requirement name="CVarCompare" cvar="Holy2StacksPlayer" operation="Equals" value="2" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHoly2Stack" operation="set" value="3">
+							<requirement name="CVarCompare" cvar="SorceryHoly2Stack" operation="LT" value="3"/>
+							<requirement name="CVarCompare" cvar="Holy2StacksPlayer" operation="Equals" value="3" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHoly2Stack" operation="set" value="4">
+							<requirement name="CVarCompare" cvar="SorceryHoly2Stack" operation="LT" value="4"/>
+							<requirement name="CVarCompare" cvar="Holy2StacksPlayer" operation="GTE" value="4" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryHoly2Stack" operation="set" value="@SorceryHoly2Stack"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryHoly2Stack" operation="multiply" value=".25"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryHoly2Stack" operation="add" value="1"/>
+					</effect_group>
+					<effect_group name="HOLY 3: Charge Stacks">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHoly3Stack" operation="set" value="1">
+							<requirement name="CVarCompare" cvar="SorceryHoly3Stack" operation="LT" value="1"/>
+							<requirement name="CVarCompare" cvar="Holy3StacksPlayer" operation="Equals" value="1" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHoly3Stack" operation="set" value="2">
+							<requirement name="CVarCompare" cvar="SorceryHoly3Stack" operation="LT" value="2"/>
+							<requirement name="CVarCompare" cvar="Holy3StacksPlayer" operation="Equals" value="2" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHoly3Stack" operation="set" value="3">
+							<requirement name="CVarCompare" cvar="SorceryHoly3Stack" operation="LT" value="3"/>
+							<requirement name="CVarCompare" cvar="Holy3StacksPlayer" operation="Equals" value="3" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="SorceryHoly3Stack" operation="set" value="4">
+							<requirement name="CVarCompare" cvar="SorceryHoly3Stack" operation="LT" value="4"/>
+							<requirement name="CVarCompare" cvar="Holy3StacksPlayer" operation="GTE" value="4" target="other"/>
+						</triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryHoly3Stack" operation="set" value="@SorceryHoly3Stack"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryHoly3Stack" operation="multiply" value=".25"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar=".SorceryHoly3Stack" operation="add" value="1"/>
+					</effect_group>
+					<!-- NOTE: This ugly workaround is required until we can apply Player CVar values directly to an Entity via (ModifyCVar cvar=ENTITY value=@PLAYER) -->
+					<effect_group name="Player Holy Damage to Entity">
+						<!-- 100,190 -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="1.0"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="1.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="1.1"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="1.1"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="1.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="1.2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="1.2"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="1.2"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="1.1"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="1.3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="1.3"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="1.3"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="1.2"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="1.4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="1.4"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="1.4"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="1.3"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="1.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="1.5"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="1.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="1.4"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="1.6"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="1.6"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="1.6"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="1.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="1.7"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="1.7"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="1.7"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="1.6"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="1.8"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="1.8"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="1.8"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="1.7"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="1.9"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="1.9"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="1.9"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="1.8"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="2.0"/></triggered_effect>
+						<!-- 200,290 -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="2.0"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="2.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="1.9"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="2.1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="2.1"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="2.1"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="2.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="2.2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="2.2"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="2.2"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="2.1"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="2.3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="2.3"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="2.3"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="2.2"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="2.4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="2.4"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="2.4"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="2.3"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="2.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="2.5"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="2.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="2.4"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="2.6"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="2.6"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="2.6"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="2.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="2.7"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="2.7"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="2.7"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="2.6"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="2.8"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="2.8"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="2.8"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="2.7"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="2.9"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="2.9"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="2.9"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="2.8"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="3.0"/></triggered_effect>						
+						<!-- 300,390 -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="3.0"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="3.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="2.9"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="3.1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="3.1"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="3.1"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="3.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="3.2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="3.2"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="3.2"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="3.1"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="3.3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="3.3"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="3.3"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="3.2"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="3.4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="3.4"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="3.4"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="3.3"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="3.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="3.5"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="3.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="3.4"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="3.6"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="3.6"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="3.6"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="3.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="3.7"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="3.7"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="3.7"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="3.6"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="3.8"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="3.8"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="3.8"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="3.7"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="3.9"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="3.9"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="3.9"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="3.8"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="4.0"/></triggered_effect>
+						<!-- 400,490 -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="4.0"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="4.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="3.9"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="4.1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="4.1"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="4.1"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="4.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="4.2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="4.2"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="4.2"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="4.1"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="4.3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="4.3"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="4.3"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="4.2"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="4.4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="4.4"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="4.4"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="4.3"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="4.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="4.5"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="4.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="4.4"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="4.6"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="4.6"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="4.6"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="4.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="4.7"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="4.7"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="4.7"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="4.6"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="4.8"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="4.8"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="4.8"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="4.7"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="4.9"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="4.9"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="4.9"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="4.8"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="5.0"/></triggered_effect>
+						<!-- 500,600 -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="5.0"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="5.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="4.9"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="5.1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="5.1"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="5.1"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="5.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="5.2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="5.2"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="5.2"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="5.1"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="5.3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="5.3"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="5.3"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="5.2"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="5.4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="5.4"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="5.4"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="5.3"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="5.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="5.5"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="5.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="5.4"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="5.6"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="5.6"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="5.6"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="5.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="5.7"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="5.7"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="5.7"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="5.6"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="5.8"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="5.8"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="5.8"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="5.7"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="5.9"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="5.9"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="5.9"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="5.8"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="6.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="6.0"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="6.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GT" value="5.9"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="6.5"/></triggered_effect>
+						<!-- 650,700,750,800,900,950,1000 MAX -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="6.5"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="6.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GTE" value="6.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="7.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="7.0"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="7.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GTE" value="7.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="7.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="7.5"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="7.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GTE" value="7.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="8.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="8.0"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="8.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GTE" value="8.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="8.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="8.5"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="8.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GTE" value="8.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="9.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="9.0"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="9.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GTE" value="9.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="9.5"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="9.5"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="9.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GTE" value="9.5"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="LT" value="10.0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$sorceryHolyDamage" operation="set" value="10.0"><requirement name="CVarCompare" cvar="$sorceryHolyDamage" operation="LT" value="10.0"/><requirement name="CVarCompare" cvar="sorceryHolyDamage" target="other" operation="GTE" value="10.0"/></triggered_effect>						
+					</effect_group>
+			</buff>
 		<!-- END - APPLY PLAYER CVARS -->
 	<!-- END - ENTITY BUFFS ______________________________________________________-->
 
@@ -6065,7 +6464,7 @@
 					<effect_group>
 						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="unholyConjure"/>
 						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryUnholy_bloodconjure"/>
-						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/unholyConjure.unity3d?unholyConjure" parent_transform=""/>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/unholyFX.unity3d?unholyConjure" parent_transform=""/>
 					</effect_group>
 			</buff>
 			<buff name="spellFX_ArcanePortal" hidden="true" remove_on_death="true">
@@ -6347,29 +6746,32 @@
 							<requirements compare_type="or">
 								<requirement name="HasBuff" buff="spellEntityFire_Burn"/>
 								<requirement name="HasBuff" buff="spellFallenFire_Burn"/>
+								<requirement name="HasBuff" buff="spellFirePOI_Burn"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="0" effect_name="Hot" target_tags="player"/>
 					</effect_group>
 					<effect_group name="Finish: FX Screen">
 							<requirements>
-								<requirement name="NotHasBuff" buff="buffElementHot"/>
-								<requirement name="NotHasBuff" buff="buffElementSweltering"/>
+								<requirement name="!HasBuff" buff="buffElementHot"/>
+								<requirement name="!HasBuff" buff="buffElementSweltering"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="0.5" effect_name="Hot" target_tags="player"/>
 					</effect_group>
 					<effect_group name="Cleanup">
 							<!-- NOTE: spellFX_ManageCleanup -->
 							<requirements>
-								<requirement name="NotHasBuff" buff="spellFire"/>
-								<requirement name="NotHasBuff" buff="spellFire_Burn"/>
-								<requirement name="NotHasBuff" buff="spellFX_FireBurnEternal"/>
-								<requirement name="NotHasBuff" buff="spellFire3"/>
-								<requirement name="NotHasBuff" buff="buffRune_AspectOfFire_AuraAOE"/>
-								<requirement name="NotHasBuff" buff="spellTrap_Fire"/>
-								<requirement name="NotHasBuff" buff="spellTrap_FireFX"/>
+								<requirement name="!HasBuff" buff="spellFire"/>
+								<requirement name="!HasBuff" buff="spellFire_Burn"/>
+								<requirement name="!HasBuff" buff="spellFX_FireBurnEternal"/>
+								<requirement name="!HasBuff" buff="spellFire3"/>
+								<requirement name="!HasBuff" buff="buffRune_AspectOfFire_AuraAOE"/>
+								<requirement name="!HasBuff" buff="spellTrap_Fire"/>
+								<requirement name="!HasBuff" buff="spellTrap_FireFX"/>
 								<!-- entity -->
-								<requirement name="NotHasBuff" buff="spellEntityFire_Burn"/>
-								<requirement name="NotHasBuff" buff="spellFallenFire_Burn"/>
+								<requirement name="!HasBuff" buff="spellEntityFire_Burn"/>
+								<requirement name="!HasBuff" buff="spellFallenFire_Burn"/>
+								<!-- poi -->
+								<requirement name="!HasBuff" buff="spellFirePOI_Burn"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_FireBurn"/>
 					</effect_group>
@@ -6681,6 +7083,7 @@
 							<requirements compare_type="or">
 								<requirement name="HasBuff" buff="spellEntityIce_Chill"/>
 								<requirement name="HasBuff" buff="spellFallenIce_Chill"/>
+								<requirement name="HasBuff" buff="spellIcePOI_Chill"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" fade="0" effect_name="Cold"/>
 					</effect_group>
@@ -6703,6 +7106,8 @@
 								<!-- entity -->
 								<requirement name="NotHasBuff" buff="spellEntityIce_Chill"/>
 								<requirement name="NotHasBuff" buff="spellFallenIce_Chill"/>
+								<!-- poi -->
+								<requirement name="NotHasBuff" buff="spellIcePOI_Chill"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_IceChill"/>
 					</effect_group>
@@ -6927,6 +7332,11 @@
 								<requirement name="NotHasBuff" buff="spellTrap_Lightning"/>
 								<requirement name="NotHasBuff" buff="spellTrap_LightningFX"/>
 								<requirement name="NotHasBuff" buff="buffRune_AspectOfLightning_AuraAOE"/>
+								<!-- entity -->
+								<requirement name="NotHasBuff" buff="spellEntityLightning_Shock"/>
+								<requirement name="NotHasBuff" buff="spellFallenLightning_Shock"/>
+								<!-- poi -->
+								<requirement name="NotHasBuff" buff="spellLightningPOI_Shock"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_LightningShock"/>
 					</effect_group>
@@ -7182,6 +7592,59 @@
 					</effect_group>
 			</buff>
 	
+			<!-- UNHOLY FX ______________________________________________________-->
+			<buff name="spellFX_UnholyCorrupt" hidden="true" remove_on_death="true">
+				<damage_type value="bloodloss"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
+					<effect_group name="Start">
+						<triggered_effect trigger="onSelfBuffStart" action="RemoveParticleEffectFromEntity" particle="unholyCorrupt-finish"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/unholyFX.unity3d?unholyCorrupt" parent_transform="Hips"><requirement name="!EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/unholyFX.unity3d?unholyCorrupt" parent_transform="Hips"><requirement name="!EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfEnteredGame" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/unholyFX.unity3d?unholyCorrupt" parent_transform="" local_offset="0,.3,0"><requirement name="EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/unholyFX.unity3d?unholyCorrupt" parent_transform="" local_offset="0,.3,0"><requirement name="EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="sorceryUnholy_corruption" />
+						<triggered_effect trigger="onSelfEnteredGame" action="PlaySound" sound="sorceryUnholy_corruption" />
+					</effect_group>
+					<effect_group name="Finish">
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/unholyFX.unity3d?unholyCorrupt-finish" parent_transform="Hips"><requirement name="!EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffRemove" action="AttachParticleEffectToEntity" particle="#@modfolder:Resources/unholyFX.unity3d?unholyCorrupt-finish" parent_transform="" local_offset="0,.3,0"><requirement name="EntityTagCompare" tags="animal"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="unholyCorrupt"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="FadeOutSound" sound="sorceryUnholy_corruption"/>
+						<triggered_effect trigger="onSelfLeaveGame" action="StopSound" sound="sorceryUnholy_corruption"/>
+					</effect_group>
+					<effect_group name="Start: FX Screen">
+							<requirements compare_type="or">
+								<requirement name="HasBuff" buff="spellEntityUnholy_Corrupt"/>
+								<requirement name="HasBuff" buff="spellFallenUnholy_Corrupt"/>
+								<requirement name="HasBuff" buff="spellUnholyPOI_Corrupt"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Dark" intensity="2" fade=".5" target_tags="player"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" effect_name="Greyscale" intensity=".9" fade="1" target_tags="player"/>
+					</effect_group>
+					<effect_group name="Finish: FX Screen">
+							<requirements>
+								<!-- <requirement name="NotHasBuff" buff="buffCrouching"/> -->
+							</requirements>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Dark" intensity="0" fade="2.5" target_tags="player"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Greyscale" intensity="0" fade="2.5" target_tags="player"/>
+					</effect_group>
+					<effect_group name="Cleanup">
+							<!-- NOTE: spellFX_ManageCleanup -->
+							<requirements>
+								<requirement name="NotHasBuff" buff="spellUnholy"/>
+								<requirement name="NotHasBuff" buff="spellUnholy_Corrupt"/>
+								<requirement name="NotHasBuff" buff="buffRune_AspectOfUnholy_AuraAOE"/>
+								<requirement name="NotHasBuff" buff="spellTrap_Unholy"/>
+								<requirement name="NotHasBuff" buff="spellTrap_UnholyFX"/>
+								<!-- entity -->
+								<requirement name="NotHasBuff" buff="spellEntityUnholy_Corrupt"/>
+								<requirement name="NotHasBuff" buff="spellFallenUnholy_Corrupt"/>
+								<!-- poi -->
+								<requirement name="NotHasBuff" buff="spellUnholyPOI_Corrupt"/>
+							</requirements>
+						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_UnholyCorrupt"/>
+					</effect_group>
+			</buff>
+
 		<!-- HOLY FX ______________________________________________________-->
 			<buff name="spellFX_HolyPurify" hidden="true" remove_on_death="true">
 				<damage_type value="Bashing"/><stack_type value="ignore"/><duration value="0"/><update_rate value=".5"/>
@@ -7200,7 +7663,16 @@
 					<effect_group name="Cleanup">
 							<!-- NOTE: spellFX_ManageCleanup -->
 							<requirements>
-								<requirement name="NotHasBuff" buff="spellHoly_Purify"/>
+								<requirement name="!HasBuff" buff="spellHoly"/>
+								<requirement name="!HasBuff" buff="spellHoly_Purify"/>
+								<requirement name="!HasBuff" buff="buffRune_AspectOfHoly_AuraAOE"/>
+								<requirement name="!HasBuff" buff="spellTrap_Holy"/>
+								<requirement name="!HasBuff" buff="spellTrap_HolyFX"/>
+								<!-- entity -->
+								<requirement name="!HasBuff" buff="spellEntityHoly_Purify"/>
+								<requirement name="!HasBuff" buff="spellFallenHoly_Purify"/>
+								<!-- poi -->
+								<requirement name="!HasBuff" buff="spellHolyPOI_Purify"/>
 							</requirements>
 						<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="spellFX_HolyPurify"/>
 					</effect_group>
@@ -9680,7 +10152,10 @@
 			</buff>
 		<!-- END - IMPRINTING -->
 	<!-- END - APPLY PLAYER CVARS TO ENTITY ______________________________________________________-->	
-			
+	
+<!-- END - ICE ____________________________________________________________________________________________________________ -->
+
+<!-- SPELL TRAPS ____________________________________________________________________________________________________________ -->
 			<!-- FIRE TRAP -->
 			<buff name="spellTrap_Fire">
 				<damage_type value="heat"/><stack_type value="replace"/><duration value="4"/><update_rate value="1"/>
@@ -10283,7 +10758,130 @@
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_LightningShock"/>
 					</effect_group>
 			</buff>
-<!-- END - ICE ____________________________________________________________________________________________________________ -->
+
+			<!-- UNHOLY TRAP -->
+			<buff name="spellTrap_Unholy">
+				<damage_type value="bloodloss"/><stack_type value="replace"/><duration value="5"/><update_rate value="1"/>
+					<effect_group name="VFX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_UnholyCorrupt,spellTrap_UnholyFX"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellTrap_UnholyFX"/>
+					</effect_group>
+					<effect_group name="IMPRINT: UNHOLY TRAP LEVEL - START">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="imprint_UnholySorcery"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="1"/>
+						<!-- <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="1"><requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="LT" value="1"/><requirement name="ProgressionLevel" progression_name="perkSorceryTrap2Unholy" target="other" operation="Equals" value="1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="2"><requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="LT" value="2"/><requirement name="ProgressionLevel" progression_name="perkSorceryTrap2Unholy" target="other" operation="Equals" value="2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="3"><requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="LT" value="3"/><requirement name="ProgressionLevel" progression_name="perkSorceryTrap2Unholy" target="other" operation="Equals" value="3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="4"><requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="LT" value="4"/><requirement name="ProgressionLevel" progression_name="perkSorceryTrap2Unholy" target="other" operation="Equals" value="4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="5"><requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="LT" value="5"/><requirement name="ProgressionLevel" progression_name="perkSorceryTrap2Unholy" target="other" operation="GTE" value="5"/></triggered_effect> -->
+						<!-- CLASS RUNE: Spell Trapper -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="rune_ClassSpellTrapper" operation="set" value="1"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="LT" value="1"/><requirement name="HasBuff" buff="rune_ClassSpellTrapper" target="other"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="rune_ClassSpellTrapper1" operation="set" value="1"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="LT" value="1"/><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper1" operation="LT" value="1"/><requirement name="HasBuff" buff="rune_ClassSpellTrapper1" target="other"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="rune_ClassSpellTrapper2" operation="set" value="1"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="LT" value="1"/><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper2" operation="LT" value="1"/><requirement name="HasBuff" buff="rune_ClassSpellTrapper2" target="other"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="rune_ClassSpellTrapper3" operation="set" value="1"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="LT" value="1"/><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper3" operation="LT" value="1"/><requirement name="HasBuff" buff="rune_ClassSpellTrapper3" target="other"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="rune_ClassSpellTrapper1" operation="set" value="0"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="Equals" value="1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="rune_ClassSpellTrapper2" operation="set" value="0"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="Equals" value="1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="rune_ClassSpellTrapper3" operation="set" value="0"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="Equals" value="1"/></triggered_effect>
+					</effect_group>
+					<effect_group name="IMPRINT: UNHOLY TRAP LEVEL - STACK">
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="imprint_UnholySorcery"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="1"/>
+						<!-- <triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="1"><requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="LT" value="1"/><requirement name="ProgressionLevel" progression_name="perkSorceryTrap2Unholy" target="other" operation="Equals" value="1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="2"><requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="LT" value="2"/><requirement name="ProgressionLevel" progression_name="perkSorceryTrap2Unholy" target="other" operation="Equals" value="2"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="3"><requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="LT" value="3"/><requirement name="ProgressionLevel" progression_name="perkSorceryTrap2Unholy" target="other" operation="Equals" value="3"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="4"><requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="LT" value="4"/><requirement name="ProgressionLevel" progression_name="perkSorceryTrap2Unholy" target="other" operation="Equals" value="4"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="perkSorceryTrap2Unholy" operation="set" value="5"><requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="LT" value="5"/><requirement name="ProgressionLevel" progression_name="perkSorceryTrap2Unholy" target="other" operation="GTE" value="5"/></triggered_effect> -->
+						<!-- CLASS RUNE: Spell Trapper -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="rune_ClassSpellTrapper" operation="set" value="1"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="LT" value="1"/><requirement name="HasBuff" buff="rune_ClassSpellTrapper" target="other"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="rune_ClassSpellTrapper1" operation="set" value="1"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="LT" value="1"/><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper1" operation="LT" value="1"/><requirement name="HasBuff" buff="rune_ClassSpellTrapper1" target="other"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="rune_ClassSpellTrapper2" operation="set" value="1"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="LT" value="1"/><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper2" operation="LT" value="1"/><requirement name="HasBuff" buff="rune_ClassSpellTrapper2" target="other"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="rune_ClassSpellTrapper3" operation="set" value="1"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="LT" value="1"/><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper3" operation="LT" value="1"/><requirement name="HasBuff" buff="rune_ClassSpellTrapper3" target="other"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="rune_ClassSpellTrapper1" operation="set" value="0"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="Equals" value="1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="rune_ClassSpellTrapper2" operation="set" value="0"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="Equals" value="1"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="rune_ClassSpellTrapper3" operation="set" value="0"><requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="Equals" value="1"/></triggered_effect>
+					</effect_group>
+					<effect_group name="RANK 0">
+							<requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="LTE" value="0"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0"/>
+					</effect_group>
+					<effect_group name="RANK 1">
+							<requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="Equals" value="1"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0.1"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0.1"/>
+					</effect_group>
+					<effect_group name="RANK 2">
+							<requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="Equals" value="2"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0.2"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0.2"/>
+					</effect_group>
+					<effect_group name="RANK 3">
+							<requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="Equals" value="3"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0.3"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0.3"/>
+					</effect_group>
+					<effect_group name="RANK 4">
+							<requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="Equals" value="4"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0.4"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0.4"/>
+					</effect_group>
+					<effect_group name="RANK 5">
+							<requirement name="CVarCompare" cvar="perkSorceryTrap2Unholy" operation="Equals" value="5"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0.5"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="set" value="0.5"/>
+					</effect_group>
+					<effect_group name="CALC - START">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy_x" operation="set" value="1" />
+						<!-- $sorceryUnholyDamage (%) -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="multiply" value="@$sorceryUnholyDamage"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="GT" value="0"/><requirement name="CVarCompare" cvar="$spellTrap2Unholy_x2" operation="GT" value="0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy_x" operation="add" value="@$spellTrap2Unholy_x2" />
+						<!-- DoT -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy" operation="set" value="5" />
+					<!-- CLASS RUNE: Spell Trapper -->
+						<!-- #1: Spell Trapper (+50% Damage) -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy" operation="multiply" value="1.5">
+							<requirement name="CVarCompare" cvar="rune_ClassSpellTrapper1" operation="Equals" value="1"/>
+						</triggered_effect>
+						<!-- SET: Spell Trapper (+100% Damage) -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy" operation="multiply" value="2">
+							<requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="Equals" value="1"/>
+						</triggered_effect>
+					<!-- END - CLASS RUNE: Spell Trapper -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellTrap2Unholy" operation="multiply" value="@$spellTrap2Unholy_x" />
+					</effect_group>
+					<effect_group name="CALC - START">
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy_x" operation="set" value="1" />
+						<!-- $sorceryUnholyDamage (%) -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy_x2" operation="multiply" value="@$sorceryUnholyDamage"><requirement name="CVarCompare" cvar="$sorceryUnholyDamage" operation="GT" value="0"/><requirement name="CVarCompare" cvar="$spellTrap2Unholy_x2" operation="GT" value="0"/></triggered_effect>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy_x" operation="add" value="@$spellTrap2Unholy_x2" />
+						<!-- DoT -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy" operation="set" value="3" />
+					<!-- CLASS RUNE: Spell Trapper -->
+						<!-- #1: Spell Trapper (+50% Damage) -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy" operation="multiply" value="1.5">
+							<requirement name="CVarCompare" cvar="rune_ClassSpellTrapper1" operation="Equals" value="1"/>
+						</triggered_effect>
+						<!-- SET: Spell Trapper (+100% Damage) -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy" operation="multiply" value="2">
+							<requirement name="CVarCompare" cvar="rune_ClassSpellTrapper" operation="Equals" value="1"/>
+						</triggered_effect>
+					<!-- END - CLASS RUNE: Spell Trapper -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellTrap2Unholy" operation="multiply" value="@$spellTrap2Unholy_x" />
+					</effect_group>
+					<effect_group name="TRAP: CORRUPT">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="@$spellTrap2Unholy"/>
+					</effect_group>
+					<effect_group name="TRAP RANK 0: CORRUPT">
+						<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellUnholy_Corrupt"/>
+					</effect_group>
+			</buff>
+			<buff name="spellTrap_UnholyFX">
+				<stack_type value="replace"/><duration value="4"/>
+					<effect_group name="VFX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_UnholyCorrupt"/>
+					</effect_group>
+			</buff>
+<!-- END - SPELL TRAPS ____________________________________________________________________________________________________________ -->
 
 <!-- LIGHTNING ____________________________________________________________________________________________________________ -->
 	<!-- LIGHTNING SPELLS ______________________________________________________ -->
@@ -11365,30 +11963,7 @@
 			
 	<!-- END - LIGHTNING SPELLS ______________________________________________________ -->
 	
-	<!-- BLOCK SPELLS -->
-			<!-- FIRE: Burn -->
-			<buff name="spellBlock_Fire">
-				<damage_type value="heat"/><stack_type value="replace"/><duration value="1"/>
-					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="imprint_FireSorcery,spellFire_Burn"/>
-					</effect_group>
-			</buff>
-			<!-- ICE: Chill -->
-			<buff name="spellBlock_Ice">
-				<damage_type value="cold"/><stack_type value="replace"/><duration value="1"/>
-					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="imprint_IceSorcery,spellIce_Chill"/>
-					</effect_group>
-			</buff>
-			<!-- LIGHTNING: Shock -->
-			<buff name="spellBlock_Lightning">
-				<damage_type value="electrical"/><stack_type value="replace"/><duration value="1"/>
-					<effect_group>
-						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="imprint_LightningSorcery,spellLightning_Shock"/>
-					</effect_group>
-			</buff>
-	
-	
+
 		<!-- APPLY PLAYER CVARS TO ENTITY ______________________________________________________-->	
 		<!-- IMPRINTING -->
 			<!-- IMPRINT: LIGHTNING SPELL -->
@@ -11461,7 +12036,36 @@
 			
 <!-- END - LIGHTNING ____________________________________________________________________________________________________________ -->
 
-
+<!-- UNHOLY ____________________________________________________________________________________________________________ -->
+	<!-- UNHOLY SPELLS ______________________________________________________ -->
+		<!-- SPELL: CORRUPT ______________________________________________________-->
+			<buff name="spellUnholy_Corrupt" hidden="true" remove_on_death="true">
+				<damage_type value="bloodloss"/><stack_type value="replace"/><update_rate value="1"/><duration value="5"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_UnholyCorrupt"/>
+					</effect_group>
+					<effect_group name="CALC: PLAYER">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellUnholy_Corrupt" operation="set" value="10" />
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellUnholy_Corrupt" operation="multiply" value="@$sorceryUnholyDamage"/> <!-- 1,xx -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellUnholy_Corrupt_c1" operation="set" value="20" />
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellUnholy_Corrupt_c1" operation="multiply" value="@$sorceryUnholyDamage"/>
+						<!-- stack -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellUnholy_Corrupt" operation="set" value="10" />
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellUnholy_Corrupt" operation="multiply" value="@$sorceryUnholyDamage"/>
+						<!-- add -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellUnholy_Corrupt_c1" operation="add" value="@$spellUnholy_Corrupt"/>
+					</effect_group>
+					<effect_group name="DOT">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="@$spellUnholy_Corrupt"/>
+					</effect_group>
+					<effect_group name="FINISH">
+						<triggered_effect trigger="onSelfBuffFinish" action="ModifyStats" stat="Health" operation="subtract" value="@$spellUnholy_Corrupt_c1"/>
+					</effect_group>
+					<effect_group name="BUFF OTHER">
+						<!-- <triggered_effect trigger="onSelfBuffStart" target="other" action="AddBuff" buff="spellUnholy_CorruptBuff"/> -->
+						<!-- <triggered_effect trigger="onSelfBuffUpdate" target="other" action="AddBuff" buff="spellUnholy_CorruptBuff"/> -->
+					</effect_group>
+			</buff>
 
 <!-- HOLY ____________________________________________________________________________________________________________ -->
 	<!-- HOLY SPELLS ______________________________________________________ -->
@@ -11473,12 +12077,12 @@
 					</effect_group>
 					<effect_group name="CALC: PLAYER">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Purify" operation="set" value="10" />
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Purify" operation="multiply" value="@$sorceryArcaneDamage"/> <!-- 1,xx -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Purify" operation="multiply" value="@$sorceryHolyDamage"/> <!-- 1,xx -->
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Purify_c1" operation="set" value="30" />
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Purify_c1" operation="multiply" value="@$sorceryArcaneDamage"/>
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Purify_c1" operation="multiply" value="@$sorceryHolyDamage"/>
 						<!-- stack -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellHoly_Purify" operation="set" value="10" />
-						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellHoly_Purify" operation="multiply" value="@$sorceryArcaneDamage"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellHoly_Purify" operation="multiply" value="@$sorceryHolyDamage"/>
 						<!-- add -->
 						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellHoly_Purify_c1" operation="add" value="@$spellHoly_Purify"/>
 					</effect_group>
@@ -11501,7 +12105,7 @@
 						<triggered_effect trigger="onSelfBuffStart" action="AddJournalEntry" journal="tip_sorcery_HolyPurify"/>
 					</effect_group>
 					<effect_group name="CALC">
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_PurifyHeal" operation="set" value="@$sorceryArcaneDamage"/> <!-- 1,xx -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_PurifyHeal" operation="set" value="@$sorceryHolyDamage"/> <!-- 1,xx -->
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_PurifyHeal" operation="multiply" value="5"/>
 					</effect_group>
 					<effect_group name="IMPACT">
@@ -11514,9 +12118,9 @@
 				<!-- <damage_type value="Bashing"/> --><stack_type value="replace"/><update_rate value="3"/><duration value="10"/>
 					<effect_group name="CALC: PLAYER">
 						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Retribution" operation="set" value="3" />
-						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Retribution" operation="multiply" value="@$sorceryArcaneDamage"/> <!-- 1,xx -->
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellHoly_Retribution" operation="multiply" value="@$sorceryHolyDamage"/> <!-- 1,xx -->
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spellHoly_Retribution" operation="set" value="3" />
-						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spellHoly_Retribution" operation="multiply" value="@$sorceryArcaneDamage"/>
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$spellHoly_Retribution" operation="multiply" value="@$sorceryHolyDamage"/>
 					</effect_group>
 					<effect_group name="SPELL">
 						<triggered_effect trigger="onOtherAttackedSelf" target="other" action="AddBuff" buff="imprint_ArcaneSorcery,spellHoly_Purify">
@@ -11526,6 +12130,132 @@
 			</buff>
 	<!-- END - HOLY SPELLS ______________________________________________________ -->
 <!-- END - HOLY ____________________________________________________________________________________________________________ -->
+
+<!-- BLOCK SPELLS ____________________________________________________________________________________________________________ -->
+			<!-- FIRE: Burn -->
+			<buff name="spellBlock_Fire">
+				<damage_type value="heat"/><stack_type value="ignore"/><duration value="5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="imprint_FireSorcery,spellFire_Burn"/>
+					</effect_group>
+			</buff>
+			<!-- ICE: Chill -->
+			<buff name="spellBlock_Ice">
+				<damage_type value="cold"/><stack_type value="ignore"/><duration value="5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="imprint_IceSorcery,spellIce_Chill"/>
+					</effect_group>
+			</buff>
+			<!-- LIGHTNING: Shock -->
+			<buff name="spellBlock_Lightning">
+				<damage_type value="electrical"/><stack_type value="ignore"/><duration value="5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="imprint_LightningSorcery,spellLightning_Shock"/>
+					</effect_group>
+			</buff>
+			<!-- UNHOLY: Corrupt -->
+			<buff name="spellBlock_Unholy">
+				<damage_type value="bloodloss"/><stack_type value="ignore"/><duration value="5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="imprint_UnholySorcery,spellUnholy_Corrupt"/>
+					</effect_group>
+			</buff>
+				<!-- HOLY: Purify -->
+			<buff name="spellBlock_Holy">
+				<damage_type value="Bashing"/><stack_type value="ignore"/><duration value="5"/>
+					<effect_group>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="imprint_HolySorcery,spellHoly_Purify"/>
+					</effect_group>
+			</buff>
+<!-- END - BLOCK SPELLS ____________________________________________________________________________________________________________ -->
+
+
+<!-- POI SPELLS ____________________________________________________________________________________________________________ -->
+		<!-- POI ENVIRONMENT SPELLS: Damage Player -->
+			<!-- FIRE: POI ENVIRONMENT -->
+			<buff name="spellFirePOI_Burn" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/><stack_type value="replace"/><duration value="6"/><update_rate value="1"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_FireBurn"/>
+					</effect_group>
+					<effect_group name="IMPACT">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="3"/>
+					</effect_group>
+					<effect_group name="BURN">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="3"/>
+					</effect_group>
+					<effect_group name="EXPLODE">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFallenFire_explode"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="spellFallenFire_explode"/>
+					</effect_group>
+			</buff>
+			<!-- ICE: POI ENVIRONMENT -->
+			<buff name="spellIcePOI_Chill" hidden="true" remove_on_death="true">
+				<damage_type value="cold"/><stack_type value="replace"/><duration value="4"/><update_rate value="1"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_IceChill"/>
+					</effect_group>
+					<effect_group name="IMPACT">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="3"/>
+					</effect_group>
+					<effect_group name="DOT">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="3"/>
+					</effect_group>
+					<effect_group name="CHILL">
+						<passive_effect name="WalkSpeed" operation="perc_subtract" value=".5,.3,0" duration="0,2,4"/>
+						<passive_effect name="RunSpeed" operation="perc_subtract" value=".5,.3,0" duration="0,2,4"/>
+						<passive_effect name="JumpStrength" operation="perc_subtract" value=".5,.3,0" duration="0,2,4"/>
+					</effect_group>
+					<effect_group name="FREEZE">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFallenTriggerImpact_Frozen"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="spellFallenTriggerImpact_Frozen"/>
+					</effect_group>
+			</buff>
+			<!-- LIGHTNING: POI ENVIRONMENT -->
+			<buff name="spellLightningPOI_Shock" hidden="true" remove_on_death="true">
+				<damage_type value="heat"/><stack_type value="replace"/><duration value="3"/><update_rate value="1"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_LightningShock"/>
+					</effect_group>
+					<effect_group name="IMPACT">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyStats" stat="Health" operation="subtract" value="4"/>
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyStats" stat="Health" operation="subtract" value="4"/>
+					</effect_group>
+					<effect_group name="DOT">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="4"/>
+					</effect_group>
+					<effect_group name="ELECTROCUTE">
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFallenTriggerImpact_Electrocute"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="spellFallenTriggerImpact_Electrocute"/>
+					</effect_group>
+			</buff>
+			<!-- UNHOLY: POI ENVIRONMENT -->
+			<buff name="spellUnholyPOI_Corrupt" hidden="true" remove_on_death="true">
+				<damage_type value="bloodloss"/><stack_type value="replace"/><duration value="3"/><update_rate value="1"/>
+					<effect_group name="FX">
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFX_UnholyCorrupt"/>
+					</effect_group>
+					<effect_group name="CALC: PLAYER">
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellUnholyPOI_Corrupt" operation="set" value="4" />
+						<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$spellUnholyPOI_Corrupt_c1" operation="set" value="5" />
+						<!-- stack -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellUnholyPOI_Corrupt" operation="set" value="4" />
+						<!-- add -->
+						<triggered_effect trigger="onSelfBuffStack" action="ModifyCVar" cvar="$spellUnholyPOI_Corrupt_c1" operation="add" value="@$spellUnholyPOI_Corrupt"/>
+					</effect_group>
+					<effect_group name="DOT">
+						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="@$spellUnholyPOI_Corrupt"/>
+					</effect_group>
+					<effect_group name="FINISH">
+						<triggered_effect trigger="onSelfBuffFinish" action="ModifyStats" stat="Health" operation="subtract" value="@$spellUnholyPOI_Corrupt_c1"/>
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellUnholyPOI_Corrupt" operation="set" value="0" />
+						<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$spellUnholyPOI_Corrupt_c1" operation="set" value="0" />
+					</effect_group>
+			</buff>
+<!-- END - POI SPELLS ____________________________________________________________________________________________________________ -->
 
 
 
@@ -12082,6 +12812,15 @@
 						<passive_effect name="HyperthermalResist" operation="base_add" value="50"/>
 					</effect_group>
 			</buff>
+		<!-- PERK: ATTRIBUTE UNHOLY SORCERY -->
+			<buff name="buffSorceryPerk_AttUnholy" name_key="buffSorceryPerk_AttUnholyName" description_key="buffSorceryPerk_AttUnholyDesc" icon="uic_sorcery_unholy" showonhud="false" remove_on_death="false">
+				<stack_type value="ignore"/><duration value="0"/>
+					<effect_group name="Attribute: Unholy Sorcery">
+						<!-- <passive_effect name="WalkSpeed" operation="perc_add" value="0.15" />
+						<passive_effect name="RunSpeed" operation="perc_add" value="0.15" />
+						<passive_effect name="HyperthermalResist" operation="base_add" value="50"/> -->
+					</effect_group>
+			</buff>
 		<!-- PERK: SPIRIT MASTERY - ALLY ______________________________________________________-->		
 			<buff name="buffSorceryPerk_SpiritMastery_Ally" name_key="buffSorceryPerk_SpiritMastery_AllyName" description_key="buffSorceryPerk_SpiritMastery_AllyDesc" icon="ui_symbol_spirit_sorcery" icon_color="110,60,255" icon_blink="true" hidden="false">
 				<stack_type value="replace"/><duration value="5"/>
@@ -12130,7 +12869,7 @@
 						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="potion_Stamina"/>
 						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="potion_Spirit"/>
 						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="potion_Energy"/>
-						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="potion_Lifeforce"/>
+						<!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="potion_Lifeforce"/> -->
 						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="potion_Mending"/>
 						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="potion_Remedy"/>
 						<passive_effect name="RecipeTagUnlocked" operation="base_set" value="1" tags="potion_Devour"/>
@@ -16657,6 +17396,12 @@
 						<!-- Lightning Spells -->
 						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellLightning,spellLightning2_AOE,spellLightning2,spellLightning3,spellLightning3_AOE,spellLightning_Shock,spellLightning_Debilitate,spellLightning_Electrocute"/> 
 						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="imprint_LightningSorcery,imprint_LightningSpell,imprint_LightningSpell2,imprint_LightningSpell3,imprint_LightningStaff"/>
+						<!-- Unholy Spells -->
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellUnholy,spellUnholy2_AOE,spellUnholy2,spellUnholy3,spellUnholy3_AOE,spellUnholy_Corrupt,spellUnholy_Corruption,spellUnholy_Blight,spellUnholy_Reaper"/> 
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="imprint_UnholySorcery,imprint_UnholySpell,imprint_UnholySpell2,imprint_UnholySpell3,imprint_UnholyStaff"/>
+						<!-- Holy Spells -->
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellHoly,spellHoly2_AOE,spellHoly2,spellHoly3,spellHoly3_AOE,spellHoly_Purify,spellHoly_Purified,spellHoly_Smite,spellHoly_GodRay"/> 
+						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="imprint_HolySorcery,imprint_HolySpell,imprint_HolySpell2,imprint_HolySpell3,imprint_HolyStaff"/>
 						<!-- Traps -->
 						<passive_effect name="BuffResistance" operation="base_add" value="100" tags="spellTrap_Fire,spellTrap_Ice,spellTrap_Lightning,spellTrap_Unholy,spellTrap_Holy"/>
 						<!-- Arrows -->
@@ -17228,7 +17973,7 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="3"/>
 					</effect_group>
 					<effect_group name="EXPLODE">
-							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFallenFire_explode"/>
 						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="spellFallenFire_explode"/>
 					</effect_group>
@@ -17269,8 +18014,9 @@
 						<passive_effect name="JumpStrength" operation="perc_subtract" value=".5,.3,0" duration="0,2,4"/>
 					</effect_group>
 					<effect_group name="FREEZE">
-							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="1"/>
-						<!-- <triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="spellIce_Freeze_CD"/> -->
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
+						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFallenTriggerImpact_Frozen"/>
+						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="spellFallenTriggerImpact_Frozen"/>
 					</effect_group>
 			</buff>
 			<buff name="spellEntityIce_Regenerate" hidden="true" remove_on_death="true">
@@ -17304,7 +18050,7 @@
 						<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" stat="Health" operation="subtract" value="4"/>
 					</effect_group>
 					<effect_group name="ELECTROCUTE">
-							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
+							<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="15"/>
 						<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="spellFallenTriggerImpact_Electrocute"/>
 						<triggered_effect trigger="onSelfBuffStack" action="AddBuff" buff="spellFallenTriggerImpact_Electrocute"/>
 					</effect_group>

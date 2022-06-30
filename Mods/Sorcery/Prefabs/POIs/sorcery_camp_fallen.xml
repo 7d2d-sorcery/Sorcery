@@ -25,15 +25,15 @@
   <property name="PrefabSize" value="25, 31, 25" />
   <property name="YOffset" value="-8" />
   <property class="Stats">
-    <property name="TotalVertices" value="689310" />
-    <property name="TotalTriangles" value="765390" />
+    <property name="TotalVertices" value="687343" />
+    <property name="TotalTriangles" value="763380" />
     <property class="BlockEntities">
-      <property name="Vertices" value="665094" />
-      <property name="Triangles" value="743398" />
+      <property name="Vertices" value="663995" />
+      <property name="Triangles" value="742068" />
     </property>
     <property class="ChunkMeshes0">
-      <property name="Vertices" value="21904" />
-      <property name="Triangles" value="17896" />
+      <property name="Vertices" value="21028" />
+      <property name="Triangles" value="17208" />
     </property>
     <property class="ChunkMeshes1">
       <property name="Vertices" value="0" />
@@ -60,8 +60,8 @@
       <property name="Triangles" value="0" />
     </property>
     <property class="ChunkMeshes7">
-      <property name="Vertices" value="2312" />
-      <property name="Triangles" value="4096" />
+      <property name="Vertices" value="2320" />
+      <property name="Triangles" value="4104" />
     </property>
     <property class="ChunkMeshes8">
       <property name="Vertices" value="0" />
@@ -74,9 +74,10 @@
   </property>
   <property class="IndexedBlockOffsets">
     <property class="FetchContainer">
-      <property name="0" value="14, 8, 14" />
+      <property name="0" value="12, 8, 16" />
       <property name="1" value="17, 8, 17" />
-      <property name="2" value="13, 8, 22" />
+      <property name="2" value="13, 15, 20" />
+      <property name="3" value="13, 8, 22" />
     </property>
     <property class="Rally">
       <property name="0" value="15, 8, 0" />
