@@ -1046,6 +1046,8 @@
 			<property name="CustomIconTint" value="888888"/>
 			<property name="Extends" value="lightCrystalMaster"/>
 			<property name="Model" value="#@modfolder:Resources/blockCrystals.unity3d?crystalArcane"/>
+			<property name="HeatMapStrength" value="0"/>
+			<property name="HeatMapTime" value="0"/>
 			<property name="CanPickup" value="false"/>
 			<drop event="Harvest" name="resourceEssenceFire" count="400" tag="essenceHarvestAlways"/>
 			<drop event="Harvest" name="resourceEssenceIce" count="400" tag="essenceHarvestAlways"/>
@@ -1065,6 +1067,8 @@
 			<property name="CustomIconTint" value="606060"/>
 			<property name="Extends" value="lightCrystalMaster"/>
 			<property name="Model" value="#@modfolder:Resources/blockCrystals.unity3d?crystalArcane_POI"/>
+			<property name="HeatMapStrength" value="0"/>
+			<property name="HeatMapTime" value="0"/>
 			<property name="CanPickup" value="false"/>
 			<drop event="Harvest" name="resourceEssenceFire" count="400" tag="essenceHarvestAlways"/>
 			<drop event="Harvest" name="resourceEssenceIce" count="400" tag="essenceHarvestAlways"/>
@@ -1087,7 +1091,9 @@
 					<property name="Model" value="#@modfolder:Resources/blockCrystals.unity3d?crystalClusterArcane_POI"/>
 					<property name="BigDecorationRadius" value="5"/>
 					<property name="MultiBlockDim" value="4,2,4"/>
-					<property name="CanPickup" value="false"/>
+					<property name="HeatMapStrength" value="0"/>
+			<property name="HeatMapTime" value="0"/>
+			<property name="CanPickup" value="false"/>
 					<drop event="Harvest" name="resourceEssenceFire" count="400" tag="essenceHarvestAlways"/>
 					<drop event="Harvest" name="resourceEssenceIce" count="400" tag="essenceHarvestAlways"/>
 					<drop event="Harvest" name="resourceEssenceLightning" count="400" tag="essenceHarvestAlways"/>
@@ -1107,6 +1113,8 @@
 			<property name="CustomIconTint" value="888888"/>
 			<property name="Extends" value="lightCrystalMaster"/>
 			<property name="Model" value="#@modfolder:Resources/blockCrystals.unity3d?crystalFire"/>
+			<property name="HeatMapStrength" value="0"/>
+			<property name="HeatMapTime" value="0"/>
 			<property name="CanPickup" value="false"/>
 			<drop event="Harvest" name="resourceEssenceFire" count="400" tag="essenceHarvestAlways"/>
 			<drop event="Harvest" name="resourceEssenceFire" count="120" tag="essenceFireHarvest"/>
@@ -1120,6 +1128,8 @@
 			<property name="CustomIconTint" value="606060"/>
 			<property name="Extends" value="lightCrystalMaster"/>
 			<property name="Model" value="#@modfolder:Resources/blockCrystals.unity3d?crystalFire_POI"/>
+			<property name="HeatMapStrength" value="0"/>
+			<property name="HeatMapTime" value="0"/>
 			<property name="CanPickup" value="false"/>
 			<drop event="Harvest" name="resourceEssenceFire" count="400" tag="essenceHarvestAlways"/>
 			<drop event="Harvest" name="resourceEssenceFire" count="120" tag="essenceFireHarvest"/>
@@ -1134,6 +1144,8 @@
 			<property name="CustomIconTint" value="888888"/>
 			<property name="Extends" value="lightCrystalMaster"/>
 			<property name="Model" value="#@modfolder:Resources/blockCrystals.unity3d?crystalIce"/>
+			<property name="HeatMapStrength" value="0"/>
+			<property name="HeatMapTime" value="0"/>
 			<property name="CanPickup" value="false"/>
 			<drop event="Harvest" name="resourceEssenceIce" count="400" tag="essenceHarvestAlways"/>
 			<drop event="Harvest" name="resourceEssenceIce" count="120" tag="essenceIceHarvest"/>
@@ -1147,6 +1159,8 @@
 			<property name="CustomIconTint" value="606060"/>
 			<property name="Extends" value="lightCrystalMaster"/>
 			<property name="Model" value="#@modfolder:Resources/blockCrystals.unity3d?crystalIce_POI"/>
+			<property name="HeatMapStrength" value="0"/>
+			<property name="HeatMapTime" value="0"/>
 			<property name="CanPickup" value="false"/>
 			<drop event="Harvest" name="resourceEssenceIce" count="400" tag="essenceHarvestAlways"/>
 			<drop event="Harvest" name="resourceEssenceIce" count="120" tag="essenceIceHarvest"/>
@@ -1161,6 +1175,8 @@
 			<property name="CustomIconTint" value="888888"/>
 			<property name="Extends" value="lightCrystalMaster"/>
 			<property name="Model" value="#@modfolder:Resources/blockCrystals.unity3d?crystalLightning"/>
+			<property name="HeatMapStrength" value="0"/>
+			<property name="HeatMapTime" value="0"/>
 			<property name="CanPickup" value="false"/>
 			<drop event="Harvest" name="resourceEssenceLightning" count="400" tag="essenceHarvestAlways"/>
 			<drop event="Harvest" name="resourceEssenceLightning" count="120" tag="essenceLightningHarvest"/>
@@ -1174,6 +1190,8 @@
 			<property name="CustomIconTint" value="606060"/>
 			<property name="Extends" value="lightCrystalMaster"/>
 			<property name="Model" value="#@modfolder:Resources/blockCrystals.unity3d?crystalLightning_POI"/>
+			<property name="HeatMapStrength" value="0"/>
+			<property name="HeatMapTime" value="0"/>
 			<property name="CanPickup" value="false"/>
 			<drop event="Harvest" name="resourceEssenceLightning" count="400" tag="essenceHarvestAlways"/>
 			<drop event="Harvest" name="resourceEssenceLightning" count="120" tag="essenceLightningHarvest"/>
@@ -1188,6 +1206,8 @@
 			<property name="CustomIconTint" value="888888"/>
 			<property name="Extends" value="lightCrystalMaster"/>
 			<property name="Model" value="#@modfolder:Resources/blockCrystals.unity3d?crystalUnholy"/>
+			<property name="HeatMapStrength" value="0"/>
+			<property name="HeatMapTime" value="0"/>
 			<property name="CanPickup" value="false"/>
 			<drop event="Harvest" name="resourceEssenceUnholy" count="400" tag="essenceHarvestAlways"/>
 			<drop event="Harvest" name="resourceEssenceUnholy" count="120" tag="essenceUnholyHarvest"/>
@@ -1201,6 +1221,8 @@
 			<property name="CustomIconTint" value="606060"/>
 			<property name="Extends" value="lightCrystalMaster"/>
 			<property name="Model" value="#@modfolder:Resources/blockCrystals.unity3d?crystalUnholy_POI"/>
+			<property name="HeatMapStrength" value="0"/>
+			<property name="HeatMapTime" value="0"/>
 			<property name="CanPickup" value="false"/>
 			<drop event="Harvest" name="resourceEssenceUnholy" count="400" tag="essenceHarvestAlways"/>
 			<drop event="Harvest" name="resourceEssenceUnholy" count="120" tag="essenceUnholyHarvest"/>
